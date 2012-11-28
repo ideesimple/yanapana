@@ -17,8 +17,8 @@ development:
   encoding: unicode
   database: yanapana_development
   pool: 5
-  username: yanapana
-  password: yanapana
+  username: postgres
+  password: password
   host: localhost
 
   # Connect on a TCP socket. Omitted by default since the client uses a
@@ -44,8 +44,8 @@ test:
   encoding: unicode
   database: yanapana_test
   pool: 5
-  username: yanapana
-  password: yanapana
+  username: postgres
+  password: password
   host: localhost
 
 production:
@@ -53,6 +53,6 @@ production:
   encoding: unicode
   database: yanapana_production
   pool: 5
-  username: yanapana
-  password: yanapana
+  username: postgres
+  password: password
   host: localhost
