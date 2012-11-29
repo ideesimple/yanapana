@@ -1,6 +1,6 @@
 class CreateArtists < ActiveRecord::Migration
   def change
-    create_table :artists do |t|
+    create_table :spree_artists do |t|
       t.string :name
       t.string :last_name
       t.text :address

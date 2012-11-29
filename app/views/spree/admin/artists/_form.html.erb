@@ -1,0 +1,64 @@
+<div class="left">
+  <%= f.field_container :name do  %>
+    <%= f.label :name, 'First name'%><br />
+    <%= f.text_field :name %>
+  <% end %>
+
+  <%= f.field_container :last_name do  %>
+    <%= f.label :last_name%><br />
+    <%= f.text_field :last_name %>
+  <% end %>
+
+  <%= f.field_container :address do  %>
+    <%= f.label :address%><br />
+    <%= f.text_field :address %>
+  <% end %>
+
+
+  <%= f.field_container :age do  %>
+    <%= f.label :age%><br />
+    <%= f.number_field :age, :min => 1 %>
+  <% end %>
+
+  <%= f.field_container :telephone do  %>
+    <%= f.label :telephone, 'Phone Number' %><br />
+    <%= f.text_field :telephone %>
+  <% end %>
+
+  <%= f.field_container :place do  %>
+    <%= f.label :place%><br />
+    <span id="bcountry">
+      <%= f.collection_select(:place, Spree::Country.order("name ASC").all, :id, :name) %>
+    </span>
+  <% end %>
+
+</div>
+
+<div class="right">
+  <%= f.field_container :email do  %>
+    <%= f.label :email %><br />
+    <%= f.email_field :email %>
+  <% end %>
+
+  <%= f.field_container :webpage do  %>
+    <%= f.label :webpage%><br />
+    <%= f.text_field :webpage %>
+  <% end %>
+
+  <%= f.field_container :link_twitter do  %>
+    <%= f.label :link_twitter%><br />
+    <%= f.text_field :link_twitter %>
+  <% end %>
+
+  <%= f.field_container :link_facebook do  %>
+    <%= f.label :link_facebook%><br />
+    <%= f.text_field :link_facebook %>
+  <% end %>
+
+  <%= f.field_container :type_art do  %>
+    <%= f.label :type_art %><br />
+    <%= f.text_area :type_art, :style => "height:50px" %>
+  <% end %>
+
+
+</div>
