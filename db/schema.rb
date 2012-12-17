@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121128183930) do
+ActiveRecord::Schema.define(:version => 20121210224801) do
 
   create_table "spree_activators", :force => true do |t|
     t.string   "description"
@@ -79,8 +79,14 @@ ActiveRecord::Schema.define(:version => 20121128183930) do
     t.string   "email"
     t.string   "telephone"
     t.text     "place"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
+    t.string   "portfolio"
+    t.text     "reason"
   end
 
   create_table "spree_assets", :force => true do |t|
@@ -107,6 +113,30 @@ ActiveRecord::Schema.define(:version => 20121128183930) do
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
   end
+
+  create_table "spree_causes", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.integer  "goal_facebook"
+    t.integer  "goal_twitter"
+    t.decimal  "goal_money"
+    t.string   "link_facebook"
+    t.string   "link_twitter"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
+    t.text     "video"
+    t.string   "link_pinterest"
+    t.boolean  "status"
+    t.integer  "artist_id"
+    t.integer  "organization_id"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+  end
+
+  add_index "spree_causes", ["artist_id"], :name => "index_spree_causes_on_artist_id"
+  add_index "spree_causes", ["organization_id"], :name => "index_spree_causes_on_organization_id"
 
   create_table "spree_configurations", :force => true do |t|
     t.string   "name"
@@ -248,6 +278,24 @@ ActiveRecord::Schema.define(:version => 20121128183930) do
 
   add_index "spree_orders", ["number"], :name => "index_spree_orders_on_number"
 
+  create_table "spree_organizations", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "country"
+    t.string   "contact"
+    t.string   "email"
+    t.string   "phonenumber"
+    t.string   "link_twitter"
+    t.string   "link_facebook"
+    t.text     "video"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
+  end
+
   create_table "spree_payment_methods", :force => true do |t|
     t.string   "type"
     t.string   "name"
@@ -325,6 +373,7 @@ ActiveRecord::Schema.define(:version => 20121128183930) do
     t.datetime "created_at",                           :null => false
     t.datetime "updated_at",                           :null => false
     t.integer  "count_on_hand",        :default => 0
+    t.integer  "cause_id"
   end
 
   add_index "spree_products", ["available_on"], :name => "index_spree_products_on_available_on"

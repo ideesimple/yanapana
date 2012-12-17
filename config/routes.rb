@@ -6,6 +6,10 @@ Yanapana::Application.routes.draw do
       namespace :admin do
         resources :artists do
         end
+        resources :organizations do
+        end
+        resources :causes do
+        end
       end
     end
 end

@@ -1,13 +1,6 @@
 class Spree::Admin::ArtistsController < Spree::Admin::ResourceController
-  def index
-  end
 
-  def new
-  end
+  #Se usan los metodos de la gema spree (index,new,edit,delete,show)
 
-  def edit
-  end
 
-  def show
-  end
 end

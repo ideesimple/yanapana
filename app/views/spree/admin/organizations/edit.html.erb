@@ -1,0 +1,21 @@
+<h1>Edit organization</h1>
+
+<%= form_for [:admin, @organization], :html => {:multipart => true} do |f| %>
+
+  <% if @organization.errors.any?  %>
+    <div id ="error_explanation">
+      <h2><%= pluralize(@organization.errors.count, "error")%></h2>
+
+      <ul>
+        <% @organization.errors.full_messages.each do |msg| %>
+          <li><%= msg  %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= render :partial => 'form', :locals => {:f => f} %>
+    <p>
+      <%= button t("edit") %> <%= link_to t('cancel'), admin_organization_url(@organization) %>
+    </p>
+<% end %>

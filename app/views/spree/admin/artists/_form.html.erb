@@ -1,12 +1,13 @@
 <div class="left">
-  <%= f.field_container :name do  %>
-    <%= f.label :name, 'First name'%><br />
-    <%= f.text_field :name %>
-  <% end %>
 
   <%= f.field_container :last_name do  %>
-    <%= f.label :last_name%><br />
+    <%= f.label :last_name%><span class="required">*</span><br />
     <%= f.text_field :last_name %>
+  <% end %>
+
+  <%= f.field_container :name do  %>
+    <%= f.label :name, 'First name'%><span class="required">*</span><br />
+    <%= f.text_field :name %>
   <% end %>
 
   <%= f.field_container :address do  %>
@@ -32,6 +33,11 @@
     </span>
   <% end %>
 
+  <%= f.field_container :reason do  %>
+    <%= f.label :reason %><br />
+    <%= f.text_area :reason, :style => "height:50px" %>
+  <% end %>
+
 </div>
 
 <div class="right">
@@ -43,6 +49,11 @@
   <%= f.field_container :webpage do  %>
     <%= f.label :webpage%><br />
     <%= f.text_field :webpage %>
+  <% end %>
+
+  <%= f.field_container :portfolio do  %>
+    <%= f.label :portfolio %><br />
+    <%= f.text_field :portfolio %>
   <% end %>
 
   <%= f.field_container :link_twitter do  %>
@@ -58,6 +69,11 @@
   <%= f.field_container :type_art do  %>
     <%= f.label :type_art %><br />
     <%= f.text_area :type_art, :style => "height:50px" %>
+  <% end %>
+
+  <%= f.field_container :photo do  %>
+    <%= f.label :photo%><br />
+    <%= f.file_field :photo %>
   <% end %>
 
 

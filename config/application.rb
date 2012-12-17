@@ -11,7 +11,7 @@ end
 
 module Yanapana
   class Application < Rails::Application
-    
+
     config.to_prepare do
       # Load application's model / class decorators
       Dir.glob(File.join(File.dirname(__FILE__), "../app/**/*_decorator*.rb")) do |c|
@@ -23,6 +23,7 @@ module Yanapana
         Rails.configuration.cache_classes ? require(c) : load(c)
       end
     end
+
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
@@ -71,5 +72,8 @@ module Yanapana
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    #Paperclip
+
   end
 end

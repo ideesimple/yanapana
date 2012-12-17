@@ -46,6 +46,19 @@
     <b>Number phone:</b>
     <%= @artist.telephone %>
   </p>
+  <p>
+    <b>Photo:</b>
+    <%= image_tag @artist.photo.url(:medium) %>
+  </p>
+  <p>
+    <b>Reason:</b>
+    <%= @artist.reason %>
+  </p>
+  <p>
+    <b>Portfolio:</b>
+    <%= @artist.portfolio %>
+  </p>
+
 
 <%= link_to '<img alt="Edit" src="/assets/admin/icons/edit.png">Edit'.html_safe, edit_admin_artist_path(@artist) %> |
 <%= link_to 'Back', admin_artists_path %>

@@ -1,0 +1,73 @@
+<div class="left">
+  <%= f.field_container :title do  %>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  <% end %>
+
+  <%= f.field_container :description do  %>
+    <%= f.label :description%><br />
+    <%= f.text_area :description, :style => "height:50px" %>
+  <% end %>
+
+  <%= f.field_container :goal_facebook do  %>
+    <%= f.label :goal_facebook %><br />
+    <%= f.number_field :goal_facebook, :min => 1 %>
+  <% end %>
+
+
+  <%= f.field_container :goal_twitter do  %>
+    <%= f.label :goal_twitter %><br />
+    <%= f.number_field :goal_twitter, :min => 1 %>
+  <% end %>
+
+  <%= f.field_container :goal_money do  %>
+    <%= f.label :goal_money %><br />
+    <%= f.number_field :goal_money, :min => 1 %>
+  <% end %>
+
+  <%= f.field_container :artist_id do  %>
+    <%= f.label :artist_id, 'Artist' %><br />
+    <%= f.collection_select(:artist_id, Spree::Artist.order("name ASC").all, :id, :name) %>
+  <% end %>
+
+  <%= f.field_container :organization_id do  %>
+    <%= f.label :organization_id, 'Organization' %><br />
+    <%= f.collection_select(:organization_id, Spree::Organization.order("name ASC").all, :id, :name) %>
+  <% end %>
+
+</div>
+
+<div class="right">
+
+  <%= f.field_container :link_twitter do  %>
+    <%= f.label :link_twitter%><br />
+    <%= f.text_field :link_twitter %>
+  <% end %>
+
+  <%= f.field_container :link_facebook do  %>
+    <%= f.label :link_facebook%><br />
+    <%= f.text_field :link_facebook %>
+  <% end %>
+
+  <%= f.field_container :link_pinterest do  %>
+    <%= f.label :link_pinterest %><br />
+    <%= f.text_field :link_pinterest %>
+  <% end %>
+
+
+  <%= f.field_container :video do  %>
+    <%= f.label :video %><br />
+    <%= f.text_area :video, :style => "height:50px" %>
+  <% end %>
+
+  <%= f.field_container :photo do  %>
+    <%= f.label :photo%><br />
+    <%= f.file_field :photo %>
+  <% end %>
+
+  <%= f.field_container :status do  %>
+    <%= f.label :status, "Active Cause" %><span>()</span><br />
+    <%= f.check_box :status %>
+  <% end %>
+
+</div>

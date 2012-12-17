@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  description: MyText
+  goal_facebook: 1
+  goal_twitter: 1
+  goal_money: 9.99
+  link_facebook: MyString
+  link_twitter: MyString
+  photo: 
+  video: MyText
+  link_pinterest: MyString
+  status: false
+  artist: 
+  organization: 
+
+two:
+  title: MyString
+  description: MyText
+  goal_facebook: 1
+  goal_twitter: 1
+  goal_money: 9.99
+  link_facebook: MyString
+  link_twitter: MyString
+  photo: 
+  video: MyText
+  link_pinterest: MyString
+  status: false
+  artist: 
+  organization: 

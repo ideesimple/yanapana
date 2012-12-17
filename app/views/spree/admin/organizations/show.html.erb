@@ -1,0 +1,43 @@
+<h1><%= "Organization details:" %></h1>
+
+  <p>
+    <b>Name:</b>
+    <%= @organization.name  %>
+  </p>
+  <p>
+    <b>Description:</b>
+    <%= @organization.description %>
+  </p>
+
+  <p>
+    <b>Email:</b>
+    <%= @organization.email  %>
+    </p>
+  <p>
+    <b>Person contact:</b>
+    <%= @organization.contact%>
+  </p>
+  <p>
+    <b>Country:</b>
+    <%= @organization.country %>
+  </p>
+  <p>
+    <b>Twitter:</b>
+    <%= @organization.link_twitter  %>
+  </p>
+  <p>
+    <b>Facebook:</b>
+    <%= @organization.link_facebook %>
+  </p>
+  <p>
+    <b># phone:</b>
+    <%= @organization.phonenumber %>
+  </p>
+  <p>
+    <b>Photo:</b>
+    <%= image_tag @organization.photo.url(:medium) %>
+  </p>
+
+<%= link_to '<img alt="Edit" src="/assets/admin/icons/edit.png">Edit'.html_safe, edit_admin_organization_path(@organization) %> |
+<%= link_to 'Back', admin_organizations_path %>
+

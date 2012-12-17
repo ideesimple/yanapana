@@ -9,7 +9,6 @@ gem 'pg'
 gem 'spree_heroku', :git => 'git://github.com/joneslee85/spree-heroku.git', :branch => '1-0-stable'
 
 
-
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

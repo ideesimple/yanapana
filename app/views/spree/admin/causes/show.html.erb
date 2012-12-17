@@ -1,0 +1,47 @@
+<h1><%= "Organization details:" %></h1>
+
+  <p>
+    <b>Title:</b>
+    <%= @cause.title  %>
+  </p>
+  <p>
+    <b>Description:</b>
+    <%= @cause.description %>
+  </p>
+
+  <p>
+    <b>Goal Facebook:</b>
+    <%= @cause.goal_facebook %>
+    </p>
+  <p>
+    <b>Goal Twitter:</b>
+    <%= @cause.goal_twitter%>
+  </p>
+  <p>
+    <b>Goal Money:</b>
+    <%= @cause.goal_money %>
+  </p>
+  <p>
+    <b>Twitter:</b>
+    <%= @cause.link_twitter %>
+  </p>
+  <p>
+    <b>Facebook:</b>
+    <%= @cause.link_facebook %>
+  </p>
+  <p>
+    <b>Pinterest:</b>
+    <%= @cause.link_pinterest %>
+  </p>
+  <p>
+    <b>Photo:</b>
+    <%= image_tag @cause.photo.url(:medium) %>
+  </p>
+  <p>
+    <b>Video:</b>
+    <%= @cause.video.html_safe %>
+  </p>
+
+
+<%= link_to '<img alt="Edit" src="/assets/admin/icons/edit.png">Edit'.html_safe, edit_admin_cause_path(@cause) %> |
+<%= link_to 'Back', admin_causes_path %>
