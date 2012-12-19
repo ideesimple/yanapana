@@ -4,11 +4,13 @@ class Spree::Artist < ActiveRecord::Base
   attr_accessible :address, :age, :email, :last_name, :link_facebook, :link_twitter, :name, :place, :telephone, :type_art, :webpage, :photo, :reason, :portfolio
 
   #validations
-  validates :name, :presence=>true
+  validates :name, :last_name, :presence => true
+
   validates_attachment_presence :photo
-  #validates_attachment_content_type :photo,
-  #  :content_type => ['image/jpg', 'image/png', 'image/jpeg'],
-  #  :message => "must be jpg, png, jpeg"
+
+  validates_attachment_content_type :photo,
+  :content_type => ['image/jpg', 'image/png', 'image/jpeg'],
+  :message => "must be jpg, png, jpeg"
 
   #Configurations Paperclip
   has_attached_file :photo,
@@ -18,7 +20,6 @@ class Spree::Artist < ActiveRecord::Base
     :access_key_id => Spree::Config[:s3_access_key],
     :secret_access_key => Spree::Config[:s3_secret]
     },
-    :bucket => Spree::Config[:s3_bucket],
-    :path => ":rails_root/public/assets/products/:id/:style/:basename.:extension"
+    :bucket => Spree::Config[:s3_bucket]
 
 end
