@@ -6,9 +6,9 @@ class Spree::Artist < ActiveRecord::Base
   #validations
   validates :name, :presence=>true
   validates_attachment_presence :photo
-  validates_attachment_content_type :photo,
-    :content_type => ['image/jpg', 'image/png', 'image/jpeg'],
-    :message => "must be jpg, png, jpeg"
+  #validates_attachment_content_type :photo,
+  #  :content_type => ['image/jpg', 'image/png', 'image/jpeg'],
+  #  :message => "must be jpg, png, jpeg"
 
   #Configurations Paperclip
   has_attached_file :photo,
