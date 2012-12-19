@@ -4,7 +4,10 @@ class Spree::Organization < ActiveRecord::Base
 
   attr_accessible :contact, :country, :description, :email, :link_facebook, :link_twitter, :name, :phonenumber, :photo, :video
 
+  validates :name, :description, :presence => true
+
   validates_attachment_presence :photo
+
   validates_attachment_content_type :photo,
     :content_type => ['image/jpg', 'image/png', 'image/jpeg'],
     :message => "must be jpg, png, jpeg"
@@ -12,7 +15,7 @@ class Spree::Organization < ActiveRecord::Base
 
   #Configurations Paperclip
   has_attached_file :photo,
-    :styles => {:medium=>"300x300>", :thumb=>"100x100>"},
+    :styles => {:small=>"100x100>", :product=>"240x240>"},
     :storage => Rails.env == 'production' ? 's3' : 'filesystem',
     :s3_credentials => {
     :access_key_id => Spree::Config[:s3_access_key],
