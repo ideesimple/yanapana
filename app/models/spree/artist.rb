@@ -18,6 +18,7 @@ class Spree::Artist < ActiveRecord::Base
     :access_key_id => Spree::Config[:s3_access_key],
     :secret_access_key => Spree::Config[:s3_secret]
     },
-    :bucket => Spree::Config[:s3_bucket]
+    :bucket => Spree::Config[:s3_bucket],
+    :path => ":rails_root/public/assets/products/:id/:style/:basename.:extension"
 
 end
