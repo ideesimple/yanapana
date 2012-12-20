@@ -39,6 +39,21 @@
 
 <div class="right">
 
+  <%= f.field_container :photo do  %>
+    <%= f.label :photo%><br />
+    <%= f.file_field :photo %>
+  <% end %>
+
+  <%= f.field_container :video do  %>
+    <%= f.label :video %><br />
+    <%= f.text_area :video, :style => "height:40px" %>
+  <% end %>
+
+  <%= f.field_container :video do  %>
+    <%= f.label :video %><br />
+    <%= f.text_area :video, :style => "height:40px" %>
+  <% end %>
+
   <%= f.field_container :link_twitter do  %>
     <%= f.label :link_twitter%><br />
     <%= f.text_field :link_twitter %>
@@ -52,17 +67,6 @@
   <%= f.field_container :link_pinterest do  %>
     <%= f.label :link_pinterest %><br />
     <%= f.text_field :link_pinterest %>
-  <% end %>
-
-
-  <%= f.field_container :video do  %>
-    <%= f.label :video %><br />
-    <%= f.text_area :video, :style => "height:50px" %>
-  <% end %>
-
-  <%= f.field_container :photo do  %>
-    <%= f.label :photo%><br />
-    <%= f.file_field :photo %>
   <% end %>
 
   <%= f.field_container :status do  %>
