@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121220180755) do
+ActiveRecord::Schema.define(:version => 20121220164341) do
 
   create_table "spree_activators", :force => true do |t|
     t.string   "description"
@@ -71,7 +71,7 @@ ActiveRecord::Schema.define(:version => 20121220180755) do
     t.string   "name"
     t.string   "last_name"
     t.text     "address"
-    t.integer  "age"
+    t.date     "date_of_birth"
     t.string   "type_art"
     t.string   "webpage"
     t.string   "link_twitter"
@@ -79,6 +79,7 @@ ActiveRecord::Schema.define(:version => 20121220180755) do
     t.string   "email"
     t.string   "telephone"
     t.text     "place"
+    t.string   "sex"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
     t.string   "photo_file_name"
@@ -129,6 +130,7 @@ ActiveRecord::Schema.define(:version => 20121220180755) do
     t.text     "video"
     t.string   "link_pinterest"
     t.boolean  "status"
+    t.integer  "number_goal"
     t.integer  "artist_id"
     t.integer  "organization_id"
     t.datetime "created_at",         :null => false
@@ -283,20 +285,22 @@ ActiveRecord::Schema.define(:version => 20121220180755) do
   create_table "spree_organizations", :force => true do |t|
     t.string   "name"
     t.text     "description"
-    t.integer  "country"
+    t.string   "country"
     t.string   "contact"
     t.string   "email"
     t.string   "phonenumber"
     t.string   "link_twitter"
     t.string   "link_facebook"
     t.text     "video"
+    t.string   "webpage"
+    t.string   "contact_name"
+    t.string   "contact_number"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
     t.string   "photo_file_name"
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
-    t.string   "webpage"
   end
 
   create_table "spree_payment_methods", :force => true do |t|

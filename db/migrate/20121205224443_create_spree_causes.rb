@@ -12,6 +12,7 @@ class CreateSpreeCauses < ActiveRecord::Migration
       t.text :video
       t.string :link_pinterest
       t.boolean :status
+      t.integer :number_goal
       t.references :artist
       t.references :organization
 

@@ -21,6 +21,25 @@
     <b>Goal Money:</b>
     <%= @cause.goal_money %>
   </p>
+
+  <p>
+    <b>Date Start</b>
+    <%= @cause.date_start %>
+  </p>
+  <p>
+    <b>Date Finish</b>
+    <%= @cause.date_finish %>
+  </p>
+
+  <p>
+    <b>Photo:</b>
+    <%= image_tag @cause.photo.url(:product) %>
+  </p>
+  <p>
+    <b>Video:</b>
+    <%= @cause.video.html_safe %>
+  </p>
+
   <p>
     <b>Twitter:</b>
     <%= @cause.link_twitter %>
@@ -32,14 +51,6 @@
   <p>
     <b>Pinterest:</b>
     <%= @cause.link_pinterest %>
-  </p>
-  <p>
-    <b>Photo:</b>
-    <%= image_tag @cause.photo.url(:product) %>
-  </p>
-  <p>
-    <b>Video:</b>
-    <%= @cause.video.html_safe %>
   </p>
 
 

@@ -29,6 +29,16 @@
 </div>
 
 <div class="right">
+  <%= f.field_container :photo do  %>
+    <%= f.label :photo%><br />
+    <%= f.file_field :photo %>
+  <% end %>
+
+  <%= f.field_container :webpage do  %>
+    <%= f.label :webpage %><br />
+    <%= f.text_field :webpage %>
+  <% end %>
+
   <%= f.field_container :contact do  %>
     <%= f.label :contact, 'Person contact'%><br />
     <%= f.text_field :contact %>
@@ -44,9 +54,5 @@
     <%= f.text_field :link_facebook %>
   <% end %>
 
-  <%= f.field_container :photo do  %>
-    <%= f.label :photo%><br />
-    <%= f.file_field :photo %>
-  <% end %>
 
 </div>

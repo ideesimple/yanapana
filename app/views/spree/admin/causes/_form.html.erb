@@ -49,9 +49,9 @@
     <%= f.text_area :video, :style => "height:40px" %>
   <% end %>
 
-  <%= f.field_container :video do  %>
-    <%= f.label :video %><br />
-    <%= f.text_area :video, :style => "height:40px" %>
+  <%= f.field_container :date do  %>
+    <%= f.label :date_start, 'Date Start to Finish'  %><br />
+    <%= f.date_select :date_start %> to <%= f.date_select :date_finish %>
   <% end %>
 
   <%= f.field_container :link_twitter do  %>

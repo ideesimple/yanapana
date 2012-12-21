@@ -18,12 +18,17 @@
 
   <%= f.field_container :age do  %>
     <%= f.label :age%><br />
-    <%= f.number_field :age, :min => 1 %>
+    <%= f.date_select :age %>
   <% end %>
 
   <%= f.field_container :telephone do  %>
     <%= f.label :telephone, 'Phone Number' %><br />
     <%= f.text_field :telephone %>
+  <% end %>
+
+  <%= f.field_container :email do  %>
+    <%= f.label :email %><span class="required">*</span><br />
+    <%= f.email_field :email %>
   <% end %>
 
   <%= f.field_container :place do  %>
@@ -33,25 +38,21 @@
     </span>
   <% end %>
 
-  <%= f.field_container :reason do  %>
-    <%= f.label :reason %><br />
-    <%= f.text_area :reason, :style => "height:50px" %>
-  <% end %>
-
-</div>
-
-<div class="right">
-  <%= f.field_container :email do  %>
-    <%= f.label :email %><br />
-    <%= f.email_field :email %>
-  <% end %>
-
   <%= f.field_container :webpage do  %>
     <%= f.label :webpage%><br />
     <%= f.text_field :webpage %>
   <% end %>
 
-  <%= f.field_container :portfolio do  %>
+  </div>
+
+<div class="right">
+  <%= f.field_container :reason do  %>
+    <%= f.label :reason, 'Why chose yannapana?' %><br />
+    <%= f.text_area :reason, :style => "height:50px" %>
+  <% end %>
+
+
+    <%= f.field_container :portfolio do  %>
     <%= f.label :portfolio %><br />
     <%= f.text_field :portfolio %>
   <% end %>

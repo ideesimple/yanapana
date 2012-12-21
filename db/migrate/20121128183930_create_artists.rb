@@ -4,7 +4,7 @@ class CreateArtists < ActiveRecord::Migration
       t.string :name
       t.string :last_name
       t.text :address
-      t.integer :age
+      t.date :date_of_birth
       t.string :type_art
       t.string :webpage
       t.string :link_twitter
@@ -12,6 +12,7 @@ class CreateArtists < ActiveRecord::Migration
       t.string :email
       t.string :telephone
       t.text :place
+      t.string :sex	
 
       t.timestamps
     end
