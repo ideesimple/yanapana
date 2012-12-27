@@ -12,7 +12,8 @@ class CreateSpreeOrganizations < ActiveRecord::Migration
       t.text :video
       t.string :webpage
       t.string :contact_name
-      t.string :contact_number     
+      t.string :contact_number
+      t.srtring :exemption_number     
  
       t.timestamps
     end

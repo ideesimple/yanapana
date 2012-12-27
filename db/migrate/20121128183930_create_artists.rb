@@ -7,6 +7,7 @@ class CreateArtists < ActiveRecord::Migration
       t.date :date_of_birth
       t.string :type_art
       t.string :webpage
+      t.string :portfolio
       t.string :link_twitter
       t.string :link_facebook
       t.string :email
