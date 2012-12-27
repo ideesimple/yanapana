@@ -13,7 +13,8 @@ class CreateArtists < ActiveRecord::Migration
       t.string :email
       t.string :telephone
       t.text :place
-      t.string :sex	
+      t.string :sex
+      t.text :reason	
 
       t.timestamps
     end

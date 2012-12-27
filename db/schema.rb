@@ -74,20 +74,20 @@ ActiveRecord::Schema.define(:version => 20121220164341) do
     t.date     "date_of_birth"
     t.string   "type_art"
     t.string   "webpage"
+    t.string   "portfolio"
     t.string   "link_twitter"
     t.string   "link_facebook"
     t.string   "email"
     t.string   "telephone"
     t.text     "place"
     t.string   "sex"
+    t.text     "reason"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
     t.string   "photo_file_name"
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
-    t.string   "portfolio"
-    t.text     "reason"
   end
 
   create_table "spree_assets", :force => true do |t|
@@ -295,6 +295,7 @@ ActiveRecord::Schema.define(:version => 20121220164341) do
     t.string   "webpage"
     t.string   "contact_name"
     t.string   "contact_number"
+    t.string   "exemption_number"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
     t.string   "photo_file_name"

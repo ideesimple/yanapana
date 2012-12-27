@@ -13,7 +13,7 @@ class CreateSpreeOrganizations < ActiveRecord::Migration
       t.string :webpage
       t.string :contact_name
       t.string :contact_number
-      t.srtring :exemption_number     
+      t.string :exemption_number     
  
       t.timestamps
     end
