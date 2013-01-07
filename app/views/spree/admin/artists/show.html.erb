@@ -1,6 +1,9 @@
 
 <h1><%= "Artist details:" %></h1>
-
+  <p>
+    <b>Last name:</b>
+    <%= @artist.last_name  %>
+  </p>
   <p>
     <b>Name:</b>
     <%= @artist.name  %>
@@ -8,30 +11,35 @@
   <p>
     <b>Email:</b>
     <%= @artist.email  %>
-    </p>
-  <p>
-    <b>Last name:</b>
-    <%= @artist.last_name  %>
   </p>
-
   <p>
     <b>Address:</b>
     <%= @artist.address  %>
   </p>
   <p>
-    <b>Age:</b>
-    <%= @artist.age %>
+    <b>Sex:</b>
+    <%= @artist.sex  %>
+  </p>
+
+  <p>
+    <b>Date of Birth:</b>
+    <%= @artist.date_of_birth %>
   </p>
   <p>
     <b>Country:</b>
     <%= @artist.place  %>
   </p>
   <p>
+    <b># Phone:</b>
+    <%= @artist.telephone %>
+  </p>
+
+  <p>
     <b>Type Art:</b>
     <%= @artist.type_art  %>
   </p>
   <p>
-    <b>Web page:</b>
+    <b>Webpage:</b>
     <%= @artist.webpage  %>
   </p>
   <p>
@@ -41,10 +49,6 @@
   <p>
     <b>Facebook:</b>
     <%= @artist.link_facebook %>
-  </p>
-  <p>
-    <b>Number phone:</b>
-    <%= @artist.telephone %>
   </p>
   <p>
     <b>Photo:</b>

@@ -12,7 +12,7 @@
   <tr>
     <th>Name</th>
     <th>Email</th>
-    <th>Phone Number</th>
+    <th>Website</th>
     <th>Actions</th>
   </tr>
 
@@ -20,7 +20,7 @@
     <tr>
       <td><%= link_to organization.name, admin_organization_url(organization)  %></td>
       <td><%= organization.email  %></td>
-      <td><%= organization.phonenumber  %></td>
+      <td><%= organization.webpage  %></td>
       <td>
         <%= link_to '<img alt="Edit" src="/assets/admin/icons/edit.png">Edit'.html_safe, edit_admin_organization_path(organization), :class=>"edit icon_link"  %>
         &nbsp;

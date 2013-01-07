@@ -14,7 +14,17 @@
     <%= @organization.email  %>
     </p>
   <p>
-    <b>Person contact:</b>
+    <b>Contact name:</b>
+    <%= @organization.contact_name%>
+  </p>
+
+  <p>
+    <b>Contact # phone:</b>
+    <%= @organization.contact_number%>
+  </p>
+
+  <p>
+    <b>Contact email:</b>
     <%= @organization.contact%>
   </p>
   <p>
@@ -27,6 +37,10 @@
     <%= @organization.webpage %>
   </p>
 
+  <p>
+    <b>Exemption number:</b>
+    <%= @organization.exemption_number%>
+  </p>
 
   <p>
     <b>Twitter:</b>
@@ -35,10 +49,6 @@
   <p>
     <b>Facebook:</b>
     <%= @organization.link_facebook %>
-  </p>
-  <p>
-    <b># phone:</b>
-    <%= @organization.phonenumber %>
   </p>
   <p>
     <b>Photo:</b>

@@ -10,25 +10,20 @@
     <%= f.text_field :name %>
   <% end %>
 
+  <%= f.field_container :date_of_birth do  %>
+    <%= f.label :date_of_birth%><span class="required">*</span><br />
+    <%= f.date_select :date_of_birth, :start_year => 1930, :end_year => 2012 %>
+  <% end %>
+
+  <%= f.field_container :sex do  %>
+    <%= f.label :sex%> <span class="required">*</span><br />
+    <%= f.radio_button :sex, "male" %>Male
+    <%= f.radio_button :sex, "female" %>Female
+  <% end %>
+
   <%= f.field_container :address do  %>
     <%= f.label :address%><br />
     <%= f.text_field :address %>
-  <% end %>
-
-
-  <%= f.field_container :date_of_birth do  %>
-    <%= f.label :date_of_birth%><br />
-    <%= f.date_select :date_of_birth %>
-  <% end %>
-
-  <%= f.field_container :telephone do  %>
-    <%= f.label :telephone, 'Phone Number' %><br />
-    <%= f.text_field :telephone %>
-  <% end %>
-
-  <%= f.field_container :email do  %>
-    <%= f.label :email %><span class="required">*</span><br />
-    <%= f.email_field :email %>
   <% end %>
 
   <%= f.field_container :place do  %>
@@ -38,21 +33,31 @@
     </span>
   <% end %>
 
-  <%= f.field_container :webpage do  %>
-    <%= f.label :webpage%><br />
-    <%= f.text_field :webpage %>
+  <%= f.field_container :telephone do  %>
+    <%= f.label :telephone, '# Phone' %><br />
+    <%= f.text_field :telephone %>
+  <% end %>
+
+  <%= f.field_container :email do  %>
+    <%= f.label :email %><span class="required">*</span><br />
+    <%= f.email_field :email %>
   <% end %>
 
   </div>
 
 <div class="right">
-  <%= f.field_container :reason do  %>
-    <%= f.label :reason, 'Why chose yannapana?' %><br />
-    <%= f.text_area :reason, :style => "height:50px" %>
+  <%= f.field_container :webpage do  %>
+    <%= f.label :webpage, "Website"%><span class="required">*</span><br />
+    <%= f.text_field :webpage %>
   <% end %>
 
 
-    <%= f.field_container :portfolio do  %>
+  <%= f.field_container :type_art do  %>
+    <%= f.label :type_art, 'Type of art' %><br />
+    <%= f.text_field :type_art %>
+  <% end %>
+
+  <%= f.field_container :portfolio do  %>
     <%= f.label :portfolio %><br />
     <%= f.text_field :portfolio %>
   <% end %>
@@ -67,15 +72,14 @@
     <%= f.text_field :link_facebook %>
   <% end %>
 
-  <%= f.field_container :type_art do  %>
-    <%= f.label :type_art %><br />
-    <%= f.text_area :type_art, :style => "height:50px" %>
-  <% end %>
-
-  <%= f.field_container :photo do  %>
-    <%= f.label :photo%><br />
+    <%= f.field_container :photo do  %>
+    <%= f.label :photo%><span class="required">*</span><br />
     <%= f.file_field :photo %>
   <% end %>
 
+  <%= f.field_container :reason do  %>
+    <%= f.label :reason, 'Reason to design for yannapana' %><span class="required">*</span><br />
+    <%= f.text_area :reason, :style => "height:50px" %>
+  <% end %>
 
 </div>

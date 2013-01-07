@@ -10,6 +10,7 @@
 
 <table class="index" id="listing_artists" data-hook>
   <tr>
+    <th>Lastname</th>
     <th>Name</th>
     <th>Email</th>
     <th>Webpage</th>
@@ -18,6 +19,7 @@
 
   <% @artists.each do |artist|   %>
     <tr>
+      <td><%= artist.last_name  %></td>
       <td><%= link_to artist.name, admin_artist_url(artist)  %></td>
       <td><%= artist.email  %></td>
       <td><%= artist.webpage  %></td>

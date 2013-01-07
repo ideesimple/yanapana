@@ -2,10 +2,10 @@ class Spree::Artist < ActiveRecord::Base
   has_many :causes
   accepts_nested_attributes_for :causes
 
-  attr_accessible :address, :date_of_birth, :email, :last_name, :link_facebook, :link_twitter, :name, :place, :telephone, :type_art, :webpage, :photo, :reason, :portfolio
+  attr_accessible :address, :date_of_birth, :email, :last_name, :link_facebook, :link_twitter, :name, :place, :telephone, :type_art, :webpage, :photo, :reason, :portfolio, :sex
 
   #validations
-  validates :name, :last_name, :email, :presence => true
+  validates :name, :last_name, :email, :date_of_birth, :sex, :reason, :webpage, :presence => true
 
   validates_attachment_presence :photo
 

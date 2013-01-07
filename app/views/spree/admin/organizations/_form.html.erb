@@ -1,47 +1,53 @@
 <div class="left">
   <%= f.field_container :name do  %>
-    <%= f.label :name %><br />
+    <%= f.label :name %><span class="required">*</span><br />
     <%= f.text_field :name %>
   <% end %>
 
   <%= f.field_container :description do  %>
-    <%= f.label :description %><br />
+    <%= f.label :description %><span class="required">*</span><br />
     <%= f.text_area :description, :style => "height:50px" %>
   <% end %>
 
-  <%= f.field_container :email do  %>
-    <%= f.label :email %><br />
-    <%= f.email_field :email %>
-  <% end %>
-
-  <%= f.field_container :phonenumber do  %>
-    <%= f.label :phonenumber, 'Phone Number' %><br />
-    <%= f.text_field :phonenumber %>
-  <% end %>
 
   <%= f.field_container :country do  %>
-    <%= f.label :country %><br />
+    <%= f.label :country %><span class="required">*</span><br />
     <span id="bcountry">
-      <%= f.collection_select(:country, Spree::Country.order("name ASC").all, :id, :name) %>
+      <%= f.collection_select(:country, Spree::Country.order("name ASC").all, :name, :name) %>
     </span>
+  <% end %>
+
+  <%= f.field_container :contact_name do  %>
+    <%= f.label :contact_name, 'Contact Fullname'%><span class="required">*</span><br />
+    <%= f.text_field :contact_name %>
+  <% end %>
+
+  <%= f.field_container :contact do  %>
+    <%= f.label :contact, 'Contact email'%><span class="required">*</span><br />
+    <%= f.text_field :contact %>
+  <% end %>
+
+  <%= f.field_container :contact_number do  %>
+    <%= f.label :contact_number, 'Contact number'%><span class="required">*</span><br />
+    <%= f.text_field :contact_number %>
   <% end %>
 
 </div>
 
 <div class="right">
+  <%= f.field_container :email do  %>
+    <%= f.label :email %><br />
+    <%= f.email_field :email %>
+  <% end %>
+
   <%= f.field_container :photo do  %>
-    <%= f.label :photo%><br />
+    <%= f.label :photo%><span class="required">*</span><br />
     <%= f.file_field :photo %>
   <% end %>
 
   <%= f.field_container :webpage do  %>
-    <%= f.label :webpage %><br />
+    <%= f.label :webpage %><span class="required">*</span><br />
     <%= f.text_field :webpage %>
-  <% end %>
-
-  <%= f.field_container :contact do  %>
-    <%= f.label :contact, 'Person contact'%><br />
-    <%= f.text_field :contact %>
   <% end %>
 
   <%= f.field_container :link_twitter do  %>
@@ -54,5 +60,9 @@
     <%= f.text_field :link_facebook %>
   <% end %>
 
+  <%= f.field_container :exemption_number do  %>
+    <%= f.label :exemption_number, 'Exemption number'%><br />
+    <%= f.text_field :exemption_number %>
+  <% end %>
 
 </div>
