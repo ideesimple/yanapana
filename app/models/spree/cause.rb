@@ -4,7 +4,7 @@ class Spree::Cause < ActiveRecord::Base
   has_many :products
   attr_accessible :description, :goal_facebook, :goal_money, :goal_twitter, :link_facebook, :link_pinterest, :link_twitter, :photo, :status, :title, :video, :artist_id, :organization_id, :date_start, :date_finish, :number_goal
 
-  validates :title, :description, :artist_id, :organization_id, :goal_money, :goal_facebook, :goal_twitter, :video, :presence => true
+  validates :title, :description, :artist_id, :organization_id, :goal_money, :goal_facebook, :goal_twitter, :number_goal, :presence => true
 
 
   validates_attachment_presence :photo

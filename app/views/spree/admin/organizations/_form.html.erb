@@ -28,7 +28,7 @@
   <% end %>
 
   <%= f.field_container :contact_number do  %>
-    <%= f.label :contact_number, 'Contact number'%><span class="required">*</span><br />
+    <%= f.label :contact_number, 'Contact phone #'%><span class="required">*</span><br />
     <%= f.text_field :contact_number %>
   <% end %>
 
@@ -36,12 +36,12 @@
 
 <div class="right">
   <%= f.field_container :email do  %>
-    <%= f.label :email %><br />
+    <%= f.label :email, "Organization email" %><br />
     <%= f.email_field :email %>
   <% end %>
 
   <%= f.field_container :photo do  %>
-    <%= f.label :photo%><span class="required">*</span><br />
+    <%= f.label :photo, "Organization logo"%><span class="required">*</span><br />
     <%= f.file_field :photo %>
   <% end %>
 

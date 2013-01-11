@@ -9,4 +9,6 @@ config/database.yml
 *.lock
 *.DS_Store
 *.swp
+*.swo
+*.swn
 *.out

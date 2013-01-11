@@ -10,23 +10,23 @@
   <% end %>
 
   <%= f.field_container :goal_facebook do  %>
-    <%= f.label :goal_facebook %><br />
+    <%= f.label :goal_facebook, "Share goal" %><span class="required">*</span><br />
     <%= f.number_field :goal_facebook, :min => 1 %>
   <% end %>
 
 
   <%= f.field_container :goal_twitter do  %>
-    <%= f.label :goal_twitter %><br />
+    <%= f.label :goal_twitter, "Tweet goal" %><span class="required">*</span><br />
     <%= f.number_field :goal_twitter, :min => 1 %>
   <% end %>
 
   <%= f.field_container :goal_money do  %>
-    <%= f.label :goal_money %><br />
+    <%= f.label :goal_money, "Money goal" %><span class="required">*</span><br />
     <%= f.number_field :goal_money, :min => 1 %>
   <% end %>
 
   <%= f.field_container :number_goal do  %>
-    <%= f.label :number_goal %><br />
+    <%= f.label :number_goal, "Counter goal" %><span class="required">*</span><br />
     <%= f.number_field :number_goal, :min => 1 %>
   <% end %>
 
