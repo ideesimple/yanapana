@@ -1,5 +1,4 @@
 Spree::OrdersController.class_eval do
-
   # Adds a new item to the order (creating a new order if none already exists)
   def populate
     @order = current_order(true)
@@ -21,6 +20,5 @@ Spree::OrdersController.class_eval do
       format.html { redirect_to cart_path }
       format.js
     end
-
   end
 end
