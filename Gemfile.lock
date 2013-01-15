@@ -17,6 +17,14 @@ GIT
       devise (~> 2.0.4)
       spree_core (~> 1.2.0)
 
+GIT
+  remote: git://github.com/spree/spree_gateway.git
+  revision: eee847b4266e609adf65bed0029276beb9bd3c09
+  branch: 1-1-stable
+  specs:
+    spree_gateway (1.1.0)
+      spree_core (~> 1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -257,6 +265,7 @@ DEPENDENCIES
   sass-rails (~> 3.2.3)
   spree (= 1.2.2)
   spree_auth_devise!
+  spree_gateway!
   spree_heroku!
   spree_skrill
   spree_usa_epay
