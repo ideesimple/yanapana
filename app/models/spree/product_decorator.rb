@@ -10,9 +10,7 @@ Spree::Product.class_eval do
   private
 
   def save_date
-  self.available_on = self.cause.date_start
-
+    self.available_on = self.cause.date_start
   end
-
 end
 
