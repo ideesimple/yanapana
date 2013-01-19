@@ -4,63 +4,85 @@
 
 
 <div class="product-view layout_default">
-  
-	<div class="product-essential">	
-    
-    <div class="product-img-box">		
-	    
+
+	<div class="product-essential">
+
+    <div class="product-img-box">
+
 	    <div class="zoom-container layout_default">
-	      
-	      <div class="main-image">   
-			    <%= link_to (product_image(@product, :itemprop => "image") ), @product.images.first.attachment.url(:large), :class => "main-thumbnail", :id => "zoom"  %>  
-			
+
+	      <div class="main-image">
+			    <%= link_to (product_image(@product, :itemprop => "image") ), @product.images.first.attachment.url(:large), :class => "main-thumbnail", :id => "zoom"  %>
+
 			    <div class="lightbox-btn">
-			      <%= link_to "Agrandar",@product.images.first.attachment.url(:large), :class => "lightbox", :id => "zoom" %>        
+			      <%= link_to "Agrandar",@product.images.first.attachment.url(:large), :class => "lightbox", :id => "zoom" %>
 			    </div>
-			  </div> 
-			  
+			  </div>
+
 			  <div class="more-views ">
 			    <div class="zoom-gallery slider">
-			    
+
 			    <% @product.images.each do |i| %>
 			      <div class="slide">
 			        <%= link_to (image_tag i.attachment.url(:mini)), i.attachment.url(:large), {"class" => "zoom-thumbnail thumbnail-active", "data-easyzoom-source" => i.attachment.url(:product) } %>
 			      </div>
 			    <% end %>
-			    </div>              
+			    </div>
 			  </div>
-			  
+
 			  <div class="more-views-arrow prev" style="cursor: pointer;">&nbsp;</div>
-			  <div class="more-views-arrow next" style="cursor: pointer;">&nbsp;</div>                       
-			
+			  <div class="more-views-arrow next" style="cursor: pointer;">&nbsp;</div>
+
 			</div>
 			<%= render :partial => "properties" %>
 	  </div><!-- end of .product-image-box -->
-			
-		<div class="product-shop"> 
+
+		<div class="product-shop">
 		  <div class="product-name">
 			  <h2><%= @product.name %></h2>
 			</div>
-			
+
 			<div class="price-box">
         <span class="regular-price">
           <span class="price">Precio: <%= number_to_currency @product.price %></span>
         </span>
       </div>
-      
+
       <div class="clear"></div>
-      
+
       <% if @product.description %>
       <div class="short-description">
         <div class="std"><%= @product.description %></div>
-      </div>        
+      </div>
       <% end %>
-      
+
       <div id="container1">
         <%= render :partial => "cart_form" %>
-      </div> <!-- end of .container1 -->  
-      
-        	    
+      </div> <!-- end of .container1 -->
+
+
     </div> <!-- end of .product-shop -->
   </div> <!-- end of .product-essential -->
 </div>
+
+<div class="section_container">
+  <div id="artist-section" class="artist-inspiration">
+    <section>
+      <h2 class="sub_title">The Artist</h2>
+      <div class="artist"><a href="#"><img src="images/artist.jpg" ></a></div>
+      <div class="artist_description">
+        <h2 class="sub_title">Inspiration Behind</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+      </div>
+
+      <!--Facebook like button Starts-->
+      <div class="fb-like" data-send="false" data-layout="button_count" data-width="450" data-show-faces="true"></div>
+      <!--Facebook like button Ends-->
+      <!--Twitter follotw button Starts-->
+      <div class="follow-btn"><a href="https://twitter.com/StandUpCancer" class="twitter-follow-button" data-show-count="false" data-show-screen-name="false" data-dnt="true">Follow @StandUpCancer</a></div>
+      <!--Twitter follotw button Ends-->
+    </section>
+  </div>
+</div>
+
+

@@ -1,0 +1,67 @@
+
+<%
+  paginated_products = @searcher.retrieve_products if params.key?(:keywords)
+  paginated_products ||= products
+%>
+<% active_prods = Array.new %>
+<% products.each do |product| %>
+  <% if Spree::Config[:show_zero_stock_products] || product.has_stock? %>
+    <% active_prods << product %>
+  <% end %>
+<% end %>
+
+<% if active_prods.empty? %>
+  <%= t(:no_products_found) %>
+<% elsif params.key?(:keywords) %>
+  <%= t(:search_results, :keywords => h(params[:keywords]), :count => active_prods.count) %>
+<% else %>
+  <% t(:product_results, :count => active_prods.count) %>
+<% end %>
+
+<% if products.any? %>
+  <section>
+    <!--Product List Starts-->
+    <div class="products_list products_slider">
+      <h2 class="sub_title">Products</h2>
+      <% reset_cycle('default') %>
+      <% products.each do |product| %>
+        <% if product.on_display? %>
+          <li id="product_<%= product.id %>" class="columns three <%= cycle("alpha", "secondary", "", "omega secondary", :name => "classes") %>" data-hook="products_list_item" itemscope itemtype="http://schema.org/Product">
+            <div class="product-image">
+              <%= link_to small_image(product, :itemprop => "image"), product, :itemprop => 'url' %>
+            </div>
+            <%= link_to truncate(product.name, :length => 50), product, :class => 'info', :itemprop => "name", :title => product.name %>
+            <span class="price selling" itemprop="price"><%= product.display_price %></span>
+          </li>
+        <% end %>
+      <% end %>
+      <% reset_cycle("classes") %>
+
+      <ul id="first-carousel" class="first-and-second-carousel jcarousel-skin-tango">
+       <% products.each do |product| %>
+
+         <li>
+           <div class="product_img_container">
+             <a class="product_image"><%= image_tag("image-yanapana/tshirt.jpeg")%></a>
+             <div class="price_info">
+              <a href="#top"><button type="button" title="" class="price_add"><span class="pr_price">$26.00</span><span class="pr_add"><span>Add to Cart</span></button></a>
+              </div>
+            </div>
+            <div class="product_info">
+              <h3><a href="leisure_detail.html">Made in L.A. / T-shirt</a></h3>
+              <small>Comfortable and fun to wear these T-shirt is the latest trend in fash</small>
+            </div>
+          </li>
+        <% end  %>
+      </ul>
+      </div>
+  </section>
+    <ul id="products" class="inline product-listing" data-hook>
+
+
+    </ul>
+  <% end %>
+
+<% if paginated_products.respond_to?(:num_pages) %>
+  <%= paginate paginated_products %>
+<% end %>

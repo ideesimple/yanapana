@@ -1,0 +1,38 @@
+
+        <header>
+	    <%#= render :partial => 'spree/shared/nav_bar' %>
+  	    <%#= render :partial => 'spree/shared/main_nav_bar' if store_menu? %>	
+            <div class="top_bar clear">
+                <!--Language Switcher Starts-->
+                <div class="language_switch"><a class="active" href="#" title="ENGLISH">EN</a><a href="#" title="FRENCH">FR</a><a href="#" title="SPANISH">ES</a><a href="#" title="GERMAN">DE</a> </div>
+                <!--Language Switcher Ends-->
+                <!--Top Links Starts-->
+                <ul class="top_links">
+                    <li ><a href="#">Login</a></li>
+                    <li ><a href="#">Sign Up</a></li>
+                    <li>
+                          <div class="minicart"> <a href="#" class="minicart_link" > <span class="item"><b>2</b> ITEM /</span> <span class="price"><b>$69.20</b></span> </a>
+                <div class="cart_drop"> <span class="darw"></span>
+                    <ul>
+                        <li><%= image_tag("image-yanapana/mini_c_item1.png")%><a href="#">Clogs Beach/Garden Clog</a> <span class="price">$49.90</span></li>
+                        <li><%=image_tag("image-yanapana/mini_c_item2.png")%><a href="#">Faded chambray shorts</a> <span class="price">$12.90</span></li>
+                        <div class="cart_bottom">
+                            <div class="subtotal_menu"><small>Subtotal:</small><big>$69.20</big></div>
+                            <a href="yanapana_cart.html">Checkout</a></div>
+                    </ul>
+                </div>
+            </div>
+                    </li>
+                </ul>
+                <!--Top Links Ends-->
+            </div>
+            
+    
+            
+            
+            <!--Responsive NAV-->            <div class="responsive-nav" style="display:none;">
+               
+            </div>
+            <!--Responsive NAV-->
+        </header>
+   

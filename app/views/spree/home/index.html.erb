@@ -1,0 +1,202 @@
+<% content_for :sidebar do %>
+<div data-hook="homepage_sidebar_navigation">
+  <% if "products" == params[:controller] && @taxon %>
+    <%= render :partial => 'spree/shared/filters' %>
+  <% else %>
+    <%= render :partial => 'spree/shared/taxonomies' %>
+  <% end %>
+</div>
+<% end %>
+<!--SectionContainer-->
+<div class="section_container">
+	<!--Headline Starts-->
+        <div id="headline">
+            <section>
+                <!--CART STARTS-->
+                <div id="shopping_cart" class="full_page">
+                  <div class="message success">Success: You have added <a href="yanapana_detail">L.A. t-shirt</a> to your <a href="yanapana_cart">shopping cart</a>!<a href="#" class="fr">x</a></div>
+                </div>
+                <h1>Sustainability. Solidarity. Fashion. Change.</h1>
+                <h4>$8 of each purchase are given to a cause helping the development and protection of women</h4>
+            </section>
+        </div>
+        <!--Headline Ends-->
+
+<!--Cause Starts-->
+            <div class="cause_background">
+                  <div id="cause" class="cause">
+                      <section>
+                          <!--Cause Description Starts-->
+                          <div class="cause_description">
+                              <h2>Featuring this week: Help bring education to impoverished kids in Honduras</h2>
+                              
+                           
+                                  <div class="description_text hidden_tablet hidden_movil" id="sample">
+                                       <h4>Cause</h4>
+                                       <p>Over 12,000 children in the U.S. will be diagnosed with cancer this year. The shocking news of their diagnosis is just the beginning of the long road ahead of them. Many children will face months of painful cancer treatment, which leaves them physically ill and causes them to lose their hair. They will no longer be able to enjoy their youth, but instead will spend the majority of their time in a cold, sterile hospital room where they are poked and prodded with needles.</p>    
+                                       <p>This week your purchase provides a hand-knit beanie to a child who is undergoing treatment for cancer. We are partnering with Knots of Love to bring comfort, warmth and dignity to a child who must endure painful cancer treatment. Above all, you will deliver a smile to the face of a brave child. </p>
+                                  </div>
+                           
+                              
+                              
+                              
+                              <!--Cause Video Starts-->    
+                                   <iframe class="video_description" width="560" height="315" src="http://www.youtube.com/embed/SFscKip7o-Q" frameborder="0" allowfullscreen></iframe>
+                                   <!--Cause Video Ends-->
+                                   
+                                    
+                                   
+                               <!--ORG Logo Starts-->
+                          <div id="org_description">
+                             
+                              <!--ORG Logo Ends-->
+                              <!--ORG Description Starts-->
+                             
+                              <h4 class="hidden_movil hidden_tablet">Organization</h4>
+                              <p class="hidden_movil hidden_tablet">Care is an organization dedicated to bringing gender equality to the world.  The work all around the world bring a message of equality and opportunities
+                              </p>
+                              
+                              <h1 class="org_logo"><%= link_to (image_tag('image-yanapana/org_logo.png')), "leisure_index.html" %></h1>
+                              <!--Facebook like button Starts-->
+                              <div class="fb-like" data-send="false" data-layout="button_count" data-width="450" data-show-faces="true"></div>
+                              <!--Facebook like button Ends-->
+                              <!--Twitter follotw button Starts-->
+                              <div class="follow-btn"><a href="https://twitter.com/StandUpCancer" class="twitter-follow-button" data-show-count="false" data-show-screen-name="false" data-dnt="true">Follow @StandUpCancer</a></div>                
+                              <!--Twitter follotw button Ends-->
+                             
+                              <!--Shop Now Starts-->
+                                  <h1 id="call-to-action" class="sc-button blue">Support now!</h1>
+                              <!--Shop Now Ends--> 
+                          </div>
+                          <!--ORG Description Ends-->
+                                  
+                                   
+                              
+          
+                          </div>
+                          <!--Cause Description Ends-->  
+                         
+                      </section>
+                       
+                  </div>
+            </div>
+        </div>
+        <!--Cause Ends-->
+
+
+
+<!--Goal Counter Copy Starts-->
+            <div id="goals">
+                <section>
+                <div class="goals_section">
+                    <h2 class="sub_title">You can always help us spread the word about our featured causes free of charge.
+ </h2>
+                   <ul>
+                        <div id="don_colsize">
+                            <li>
+                                <div class="donation_container">
+                                    <div class="fl">
+                                    <%= image_tag ("image-yanapana/money_icon.png")%>
+                                    </div>
+                                       <div class="fl hidden_movil">
+                                        <p>Donated so far</p>
+                                        <span class="bucks">300,000</span>
+                                        </div>
+                                </div>  
+                                <div id="goalbar" class="goalbar_style"><i class="progBar"></i></div>
+                                <div class="stats">
+                                    <h4>
+                                        <span class="nums fr">
+                                            <span class="count">$1,517</span>/
+                                            <span class="goal">$1,780</span>
+                                        </span>
+                                        <span class="word fl">Donation goal #2</span>
+                                    </h4>
+                                </div>
+                    
+                            </li>
+                        </div>
+                        <div id="fb_colsize">
+                            <li>
+                                <%= image_tag ("image-yanapana/facebook_icon.png")%>
+                                <div id="goalbar" class="goalbar_style"><i class="progBar"></i></div>
+                                <div class="stats">
+                                    <h4>
+                                        <span class="nums fr">
+                                            <span class="count">1,517</span>/
+                                            <span class="goal">1,780</span>
+                                        </span>
+                                        <span class="word fl">Share goal</span>
+                                    </h4>
+                                </div>
+                            </li>
+                        </div>
+                        <div id="tt_colsize">
+                            <li>
+                                <%= image_tag ("image-yanapana/twitter_icon.png")%>
+                                <div id="goalbar" class="goalbar_style"><i class="progBar"></i></div>
+                                <div class="stats">
+                                    <h4>
+                                        <span class="nums fr">
+                                            <span class="count">1,517</span>/
+                                            <span class="goal">1,780</span>
+                                        </span>
+                                        <span class="word fl">Tweet goal</span>
+                                    </h4>
+                                </div>
+                            </li>
+                        </div>
+                   </ul>
+                </div>
+                </section>
+            </div>
+            <!--Goal Counter Copy Ends-->
+
+
+
+
+  <% if params[:keywords] %>
+
+    <div data-hook="search_results">
+      <% if @products.empty? %>
+        <h6 class="search-results-title"><%= t(:no_products_found) %></h6>
+      <% else %>
+        <%= render :partial => 'spree/shared/products', :locals => { :products => @products, :taxon => @taxon } %>
+      <% end %>
+    </div>
+
+  <% else %>
+<!--Mid Section Starts-->
+        <div class="productos">
+      	  <%= render :partial => 'spree/shared/products', :locals => { :products => @products, :taxon => @taxon } %>
+    	</div>
+<div id="artist-section">
+                <section>
+                    <h2 class="sub_title">The Artist</h2>
+                    <div class="artist"><a href="#"><%= image_tag("image-yanapana/artist.jpg")%></a></div>
+                    <div class="artist_description">
+                        <h2 class="sub_title">Lorem ipsum</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+                        <h2 class="sub_title">adipisicing elit</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu.</p>
+                    </div>
+                     <!--Facebook like button Starts-->
+                    <div class="fb-like" data-send="false" data-layout="button_count" data-width="450" data-show-faces="true"></div>
+                    <!--Facebook like button Ends-->
+                    <!--Twitter follotw button Starts-->
+                    <div class="follow-btn"><a href="https://twitter.com/StandUpCancer" class="twitter-follow-button" data-show-count="false" data-show-screen-name="false" data-dnt="true">Follow @StandUpCancer</a></div>                
+                    <!--Twitter follotw button Ends-->
+                </section>
+            </div>
+
+            <div class="comments-section">
+                <section>
+                <h1 class="comments_tag fl">Don’t be shy! Express your thoughts about this week’s awesome cause right here: </h1>
+                <div id="comments" class="fl">
+                    <div class="fb-comments" data-href="http://example.com" data-width="700" data-num-posts="2"></div>
+                </div>
+                </section>
+            </div>
+<!--Mid Section Ends-->
+  <% end %>
+</div><!--EndSectionContainer-->

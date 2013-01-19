@@ -11,5 +11,7 @@ Yanapana::Application.routes.draw do
         resources :causes do
         end
       end
+      match "how-it-works" => "home#how_it_works", :as => :how_it_works
+
     end
 end

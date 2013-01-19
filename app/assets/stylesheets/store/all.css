@@ -6,8 +6,19 @@
 
  *= require store/spree_core
  *= require store/spree_promo
+ *= require base
+ *= require reset
+ *= require dropkick
+ *= require flexslider
+*= require jcarousel_tango
+*= require jquery.jqzoom
+*= require responsive
+*= require short_codes
+*= require simpletabs
+*= require styles
+
 
  *= require_self
- *= require_tree .
+ 
 */
 
