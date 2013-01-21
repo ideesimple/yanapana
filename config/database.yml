@@ -18,7 +18,7 @@ development:
   database: yanapana_development
   pool: 5
   username: postgres
-  password: password
+  password: rails
   host: localhost
 
   # Connect on a TCP socket. Omitted by default since the client uses a
@@ -45,7 +45,7 @@ test:
   database: yanapana_test
   pool: 5
   username: postgres
-  password: password
+  password: rails
   host: localhost
 
 production:
@@ -54,5 +54,5 @@ production:
   database: yanapana_production
   pool: 5
   username: postgres
-  password: password
+  password: rails
   host: localhost
