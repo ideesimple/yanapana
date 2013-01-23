@@ -54,6 +54,7 @@ $(document).ready(function() {
         </div>
         <!--Headline Ends-->
 
+<%= unless @cause.empty?  %>
 <!--Cause Starts-->
             <div class="cause_background">
                   <div id="cause" class="cause">
@@ -174,7 +175,7 @@ $(document).ready(function() {
             <!--Goal Counter Copy Ends-->
 
 
-
+      <% end %><!--End if exist 1 cause-->
 
   <% if params[:keywords] %>
 
@@ -190,7 +191,8 @@ $(document).ready(function() {
 <!--Mid Section Starts-->
         <div class="productos">
       	  <%= render :partial => 'spree/shared/products', :locals => { :products => @products, :taxon => @taxon } %>
-    	</div>
+        </div>
+<% unless @artist.empty? %>
 <div id="artist-section">
                 <section>
                     <h2 class="sub_title">The Artist</h2>
@@ -209,7 +211,7 @@ $(document).ready(function() {
                     <!--Twitter follotw button Ends-->
                 </section>
             </div>
-
+          <% end %>
             <div class="comments-section">
                 <section>
                 <h1 class="comments_tag fl">Don’t be shy! Express your thoughts about this week’s awesome cause right here: </h1>
