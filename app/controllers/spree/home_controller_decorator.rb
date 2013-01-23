@@ -5,7 +5,9 @@ Spree::HomeController.class_eval do
     @searcher.current_user = try_spree_current_user
     @products = @searcher.retrieve_products
     @cause = Spree::Cause.find_by_status(true)
+    unless @cause.nil?
     @artist = Spree::Artist.find_by_id(@cause.artist)
+    end
     respond_with(@products)
   end
 
