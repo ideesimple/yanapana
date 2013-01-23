@@ -8,6 +8,21 @@
 //= require jquery_ujs
 
 //= require store/spree_core
-//= require store/spree_promo
+//= require store/cart
+//= require store/product
+//= require store/checkout
+//= require around/appendAround
+//= require custom/custom
+//= require dropkick/jquery.dropkick-1.0.0
+//= require jcarousel/jquery.jcarousel
+//= require form/form_elements
+//= require jquery.easing
+//= require html5/html5
+//= require simpletabs/simpletabs_1.3
+//= require zoom/jquery.jqzoom-core
+//= require tweet/jquery.jtweetsanywhere-1.3.1.min
+//= require flexslider/jquery.flexslider-min
+//= require flexslider/jquery.flexslider
+//= require jquery.anystretch
 
-//= require_tree .
+

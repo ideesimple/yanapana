@@ -1,0 +1,81 @@
+<div class="section_container">
+  <section>
+  <% if @order.line_items.empty? %>
+      <div class="full_page">
+        <h1>Shopping cart</h1>
+        <div class="message warning"><%= t(:your_cart_is_empty) %></div>
+        <div class="action_buttonbar">
+          <%= button_to t(:continue_shopping), products_path, :class => 'continue' %>
+          <button type="button" onClick="parent.location='yanapana_index.html'" title="" class="continue">Continue</button>
+        </div>
+      </div>
+  <% else %>
+      <div id="shopping_cart" class="full_page">
+        <h1><%= t(:shopping_cart) %></h1>
+
+        <%= form_for @order, :url => update_cart_path, :html => {:id => 'update-cart'} do |order_form| %>
+
+          <div class="cart_table">
+            <%= render :partial => 'form', :locals => { :order_form => order_form } %>
+          </div>
+          <div class="totals">
+            <table id="totals-table">
+              <tr>
+                <td width="60%" colspan="1" class="align_left" ><strong>Subtotal</strong></td>
+                <td class="align_right" style=""><strong><span class="order-total"><%= @order.display_total %></span></strong></td>
+              </tr>
+              <tr>
+                <td width="60%" colspan="1" class="align_left" >Shipping cost</td>
+                <td class="align_right" style=""><span class="price">$0.00</span></td>
+              </tr>
+              <!--<tr>
+                <td width="60%" colspan="1" class="align_left total" >Grand Total</td>
+                <td class="align_right" style=""><span class="total">$109.00</span></td>
+              </tr>-->
+            </table>
+          </div>
+      <div class="action_buttonbar">
+          <%= button_tag :class => 'primary', :id => 'update-button' do %>
+            <%= t(:update) %>
+          <% end %>
+          <%= button_tag :class => 'checkout', :id => 'checkout-link', :name => 'checkout' do %>
+            <%= t(:checkout) %>
+          <% end %>
+        <% end %>
+
+          <%= form_tag empty_cart_path, :method => :put do %>
+            <p id="clear_cart_link" data-hook>
+            <%= submit_tag t(:empty_cart), :class => 'Continue' %>
+            <%= t(:or) %>
+            <%= button_tag :class => 'Continue', :id => 'checkout-link' do %>
+              <%= link_to t(:continue_shopping), products_path %>
+            <% end %>
+            </p>
+          <% end %>
+      </div>
+    </div><!--End Shopping cart-->
+
+
+    <!--CART STARTS-->
+    <div id="shopping_cart" class="full_page">
+    </div>
+    <!--CART ENDS-->
+
+    <div class="checkout_tax">
+      <div class="shipping_tax">
+        <h4>Estimate Shipping and Tax</h4>
+        <p>Enter your destination to get a shipping estimate.</p>
+        <label>Country</label><select><option>Canada</option></select><label>Postal code</label><input type="text">
+        <br class="clear"/>
+        <label>State</label><select><option>Vancouver</option></select>
+        <button type="button" title="" class="brown_btn">Get a Quote</button>
+      </div>
+    </div>
+
+  <% end %>
+  </section>
+</div>
+
+
+
+

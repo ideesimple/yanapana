@@ -1,0 +1,59 @@
+
+<div class="section_container">
+  <!--Mid Section Starts-->
+  <section>
+    <ul class="breadcrumb">
+      <li><%= link_to "Home", root_path %></li>
+      <li><a href="#">Shopping Cart</a></li>
+      <li class="active"><a href="#">Checkout</a></li>
+    </ul>
+
+    <div class="full_page">
+      <h1><%= t(:checkout) %></h1>
+      <!--CHECKOUT STEPS STARTS-->
+      <%= render :partial => 'spree/shared/error_messages', :locals => { :target => @user } %>
+      <div class="checkout_steps">
+        <ol id="checkoutSteps">
+          <li class="section allow active" id="opc-login">
+            <div class="step-title"> <span class="number">1</span>
+              <h2>Checkout Method</h2>
+            </div>
+            <div id="checkout-step-login">
+              <div id="shopping_cart" class="full_page">
+                <div class="message warning"><%= render :partial => 'spree/shared/error_messages', :locals => { :target => @order } %></div>
+              </div>
+                <div class="col2-set">
+                  <div class="col-1">
+                  <div id="registration" data-hook>
+                      <div id="account" class="columns alpha eight">
+                        <!-- TODO: add partial with registration form -->
+                      </div>
+                  </div><!--End Registration-->
+                  </div>
+                  <div class="col-2">
+                    <div id="registration" data-hook>
+                      <% if Spree::Config[:allow_guest_checkout] %>
+                        <div id="guest_checkout" data-hook class="columns omega eight">
+                          <%= render :partial => 'spree/shared/error_messages', :locals => { :target => @order } %>
+                          <h1><%= t(:guest_user_account) %></h1>
+                          <%= form_for @order, :url => update_checkout_registration_path, :method => :put, :html => { :id => 'checkout_form_registration' } do |f| %>
+                            <p>
+                              <%= f.label :email, t(:email) %><br />
+                              <%= f.email_field :email, :class => 'title' %>
+                            </p>
+                            <p><%= f.submit t(:continue), :class => 'button primary' %></p>
+                          <% end %>
+                        </div>
+                      <% end %>
+                    </div>
+                  </div><!--End col-2-->
+                </div><!--End col2-Set-->
+            </div><!--End Checkout-step-login-->
+            </li>
+        </ol>
+      </div>
+    </div>
+      <!--Newsletter_subscribe Ends-->
+  </section>
+    <!--Mid Section Ends-->
+</div>

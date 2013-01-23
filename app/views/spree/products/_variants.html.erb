@@ -1,0 +1,31 @@
+<% if @product.has_variants? %>
+
+  <% options = Array.new %>
+  <% @product.variants.active.each_with_index do |v,index|
+    next if v.option_values.empty? || (!v.in_stock && !Spree::Config[:show_zero_stock_products])
+
+    option = Array.new
+
+    option[0] = variant_options(v)
+    if variant_price_diff v
+      option[0] = option[0] + (variant_price_diff v)
+    end
+
+    option[1] = v.id
+
+    options.push(option) %>
+
+  <% end %>
+
+  <div class="size_info">
+    <div class="size_sel">
+      <label><%= t(:variants) %></label>
+      <% v_option_values = Array.new %>
+      <% options.each do |o|
+        v_option_values << "<option value='" + o[1].to_s + "'>" + o[0] + "</option>" %>
+      <% end %>
+        <%= select_tag "products[#{@product.id}]",v_option_values.join.html_safe %>
+    </div>
+  </div>
+
+<% end %>

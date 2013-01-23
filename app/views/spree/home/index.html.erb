@@ -1,3 +1,22 @@
+<% content_for :head do %>
+<script charset="utf-8" language="javascript" type="text/javascript">
+    $(document).ready(function() {
+  $(".cause_background").anystretch("http://abagond.files.wordpress.com/2012/07/poverty_board.jpg");
+  });
+</script>
+
+<script>
+$(document).ready(function() {
+
+	    $('.pr_add').click(function(){
+	        $('html, body').animate({scrollTop:0}, 'slow');
+	        return false;
+	    });
+
+	});
+</script>
+<% end %>
+
 <% content_for :sidebar do %>
 <div data-hook="homepage_sidebar_navigation">
   <% if "products" == params[:controller] && @taxon %>
@@ -28,61 +47,50 @@
                       <section>
                           <!--Cause Description Starts-->
                           <div class="cause_description">
-                              <h2>Featuring this week: Help bring education to impoverished kids in Honduras</h2>
-                              
-                           
+                              <h2><%= @cause.title %></h2>
+
+
                                   <div class="description_text hidden_tablet hidden_movil" id="sample">
                                        <h4>Cause</h4>
-                                       <p>Over 12,000 children in the U.S. will be diagnosed with cancer this year. The shocking news of their diagnosis is just the beginning of the long road ahead of them. Many children will face months of painful cancer treatment, which leaves them physically ill and causes them to lose their hair. They will no longer be able to enjoy their youth, but instead will spend the majority of their time in a cold, sterile hospital room where they are poked and prodded with needles.</p>    
+                                       <p> <%= @cause.description %> </p>
                                        <p>This week your purchase provides a hand-knit beanie to a child who is undergoing treatment for cancer. We are partnering with Knots of Love to bring comfort, warmth and dignity to a child who must endure painful cancer treatment. Above all, you will deliver a smile to the face of a brave child. </p>
                                   </div>
-                           
-                              
-                              
-                              
-                              <!--Cause Video Starts-->    
+
+                              <!--Cause Video Starts-->
                                    <iframe class="video_description" width="560" height="315" src="http://www.youtube.com/embed/SFscKip7o-Q" frameborder="0" allowfullscreen></iframe>
-                                   <!--Cause Video Ends-->
-                                   
-                                    
-                                   
+                              <!--Cause Video Ends-->
+
                                <!--ORG Logo Starts-->
                           <div id="org_description">
-                             
+
                               <!--ORG Logo Ends-->
                               <!--ORG Description Starts-->
-                             
+
                               <h4 class="hidden_movil hidden_tablet">Organization</h4>
-                              <p class="hidden_movil hidden_tablet">Care is an organization dedicated to bringing gender equality to the world.  The work all around the world bring a message of equality and opportunities
-                              </p>
-                              
-                              <h1 class="org_logo"><%= link_to (image_tag('image-yanapana/org_logo.png')), "leisure_index.html" %></h1>
+                              <p class="hidden_movil hidden_tablet"><%= @cause.organization.description%></p>
+
+                              <h1 class="org_logo"><%= link_to image_tag(@cause.organization.photo.url(:small)), "leisure_index.html" %></h1>
                               <!--Facebook like button Starts-->
                               <div class="fb-like" data-send="false" data-layout="button_count" data-width="450" data-show-faces="true"></div>
                               <!--Facebook like button Ends-->
                               <!--Twitter follotw button Starts-->
-                              <div class="follow-btn"><a href="https://twitter.com/StandUpCancer" class="twitter-follow-button" data-show-count="false" data-show-screen-name="false" data-dnt="true">Follow @StandUpCancer</a></div>                
+                              <div class="follow-btn">
+                                <a href="https://twitter.com/StandUpCancer" class="twitter-follow-button" data-show-count="false" data-show-screen-name="false" data-dnt="true">Follow</a>
+                              </div>
                               <!--Twitter follotw button Ends-->
-                             
+
                               <!--Shop Now Starts-->
                                   <h1 id="call-to-action" class="sc-button blue">Support now!</h1>
-                              <!--Shop Now Ends--> 
+                              <!--Shop Now Ends-->
                           </div>
                           <!--ORG Description Ends-->
-                                  
-                                   
-                              
-          
                           </div>
-                          <!--Cause Description Ends-->  
-                         
+                          <!--Cause Description Ends-->
                       </section>
-                       
                   </div>
             </div>
         </div>
         <!--Cause Ends-->
-
 
 
 <!--Goal Counter Copy Starts-->
@@ -100,20 +108,20 @@
                                     </div>
                                        <div class="fl hidden_movil">
                                         <p>Donated so far</p>
-                                        <span class="bucks">300,000</span>
+                                        <span class="bucks"><%= @cause.goal_money %></span>
                                         </div>
-                                </div>  
+                                </div>
                                 <div id="goalbar" class="goalbar_style"><i class="progBar"></i></div>
                                 <div class="stats">
                                     <h4>
                                         <span class="nums fr">
-                                            <span class="count">$1,517</span>/
-                                            <span class="goal">$1,780</span>
+                                            <span class="count">$<%= @cause.goal_money %></span>/
+                                            <span class="goal">$<%= @cause.goal_money %></span>
                                         </span>
-                                        <span class="word fl">Donation goal #2</span>
+                                        <span class="word fl">Donation goal #<%= @cause.number_goal %></span>
                                     </h4>
                                 </div>
-                    
+
                             </li>
                         </div>
                         <div id="fb_colsize">
@@ -124,7 +132,7 @@
                                     <h4>
                                         <span class="nums fr">
                                             <span class="count">1,517</span>/
-                                            <span class="goal">1,780</span>
+                                            <span class="goal"><%= @cause.goal_facebook %></span>
                                         </span>
                                         <span class="word fl">Share goal</span>
                                     </h4>
@@ -139,7 +147,7 @@
                                     <h4>
                                         <span class="nums fr">
                                             <span class="count">1,517</span>/
-                                            <span class="goal">1,780</span>
+                                            <span class="goal"><%= @cause.goal_twitter %></span>
                                         </span>
                                         <span class="word fl">Tweet goal</span>
                                     </h4>
@@ -175,7 +183,7 @@
                     <h2 class="sub_title">The Artist</h2>
                     <div class="artist"><a href="#"><%= image_tag("image-yanapana/artist.jpg")%></a></div>
                     <div class="artist_description">
-                        <h2 class="sub_title">Lorem ipsum</h1>
+                        <h2 class="sub_title"><%= @artist.name + " " + @artist.last_name %></h1>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
                         <h2 class="sub_title">adipisicing elit</h1>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu.</p>
@@ -184,7 +192,7 @@
                     <div class="fb-like" data-send="false" data-layout="button_count" data-width="450" data-show-faces="true"></div>
                     <!--Facebook like button Ends-->
                     <!--Twitter follotw button Starts-->
-                    <div class="follow-btn"><a href="https://twitter.com/StandUpCancer" class="twitter-follow-button" data-show-count="false" data-show-screen-name="false" data-dnt="true">Follow @StandUpCancer</a></div>                
+                    <div class="follow-btn"><a href="https://twitter.com/StandUpCancer" class="twitter-follow-button" data-show-count="false" data-show-screen-name="false" data-dnt="true">Follow @StandUpCancer</a></div>
                     <!--Twitter follotw button Ends-->
                 </section>
             </div>
@@ -200,3 +208,22 @@
 <!--Mid Section Ends-->
   <% end %>
 </div><!--EndSectionContainer-->
+
+
+<script>(function(d, s, id) {
+
+  var js, fjs = d.getElementsByTagName(s)[0];
+
+  if (d.getElementById(id)) return;
+
+  js = d.createElement(s); js.id = id;
+
+  js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1";
+
+  fjs.parentNode.insertBefore(js, fjs);
+
+  }(document, 'script', 'facebook-jssdk'));</script>
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+<div id="fb-root"></div>

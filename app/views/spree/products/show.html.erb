@@ -1,27 +1,24 @@
-<% content_for :title do %>
-  Detalle de producto - <%= @product.name %>
+<% content_for :head do %>
+<script>
+  $(document).ready(function() {
+    $('readya[href=#top]').click(function(){
+      $('html, body').animate({scriptollTop:0}, 'slow');
+      return false;
+    });
+  });
+</script>
 <% end %>
 
 
-<div class="product-view layout_default">
-
-	<div class="product-essential">
-
-    <div class="product-img-box">
-
-	    <div class="zoom-container layout_default">
-
-	      <div class="main-image">
+	   <!-- <div class="zoom-container layout_default">
+	          <div class="main-image">
 			    <%= link_to (product_image(@product, :itemprop => "image") ), @product.images.first.attachment.url(:large), :class => "main-thumbnail", :id => "zoom"  %>
-
 			    <div class="lightbox-btn">
 			      <%= link_to "Agrandar",@product.images.first.attachment.url(:large), :class => "lightbox", :id => "zoom" %>
 			    </div>
 			  </div>
-
 			  <div class="more-views ">
 			    <div class="zoom-gallery slider">
-
 			    <% @product.images.each do |i| %>
 			      <div class="slide">
 			        <%= link_to (image_tag i.attachment.url(:mini)), i.attachment.url(:large), {"class" => "zoom-thumbnail thumbnail-active", "data-easyzoom-source" => i.attachment.url(:product) } %>
@@ -29,47 +26,109 @@
 			    <% end %>
 			    </div>
 			  </div>
-
-			  <div class="more-views-arrow prev" style="cursor: pointer;">&nbsp;</div>
-			  <div class="more-views-arrow next" style="cursor: pointer;">&nbsp;</div>
-
-			</div>
-			<%= render :partial => "properties" %>
-	  </div><!-- end of .product-image-box -->
-
-		<div class="product-shop">
-		  <div class="product-name">
-			  <h2><%= @product.name %></h2>
-			</div>
-
-			<div class="price-box">
-        <span class="regular-price">
-          <span class="price">Precio: <%= number_to_currency @product.price %></span>
-        </span>
-      </div>
-
-      <div class="clear"></div>
-
-      <% if @product.description %>
-      <div class="short-description">
-        <div class="std"><%= @product.description %></div>
-      </div>
-      <% end %>
-
-      <div id="container1">
-        <%= render :partial => "cart_form" %>
-      </div> <!-- end of .container1 -->
-
-
-    </div> <!-- end of .product-shop -->
-  </div> <!-- end of .product-essential -->
-</div>
+            </div>-->
 
 <div class="section_container">
+  <section id="product-section">
+    <ul class="breadcrumb">
+      <li><%= link_to "Home", root_path %></li>
+      <li class="active"><a href="#">Product Detail</a></li>
+    </ul>
+
+    <div id="shopping_cart" class="full_page">
+
+      <div class="message success">
+        Success: You have added <a href="#"><%= @product.name %></a> to your <%= link_to "Shopping cart", cart_path %>!<a href="#" class="fr">x</a>
+      </div>
+
+    </div>
+
+    <!--PRODUCT DETAIL STARTS-->
+    <div id="product_detail">
+      <!--Product Left Starts-->
+      <div class="product_leftcol">
+        <%= link_to (product_image(@product, :itemprop => "image") ), @product.images.first.attachment.url(:large), :class => "rollover-zoom", :title => "yanapana"  %>
+
+        <!-- <span class="pr_info">ROLL OVER IMAGE TO ZOOM</span> -->
+        <ul class="pr_gallery">
+        <% @product.images.each do |i| %>
+          <%= link_to (image_tag i.attachment.url(:small)), i.attachment.url(:large), {"class" => "zoom-thumbnail thumbnail-active", "data-easyzoom-source" => i.attachment.url(:product) } %>
+        <% end %>
+        </ul>
+      </div>
+
+      <!--Product Left Ends-->
+
+      <!--Product Right Starts-->
+      <div class="product_rightcol">
+        <h1><%= @product.name %></h1>
+        <% if @product.description %>
+          <p class="short_dc"><%= @product.description %></p>
+        <% end %>
+
+
+          <%= render :partial => "cart_form" %>
+
+        <!--<div class="color_sel">
+              <label>Color :</label>
+              <select>
+                <option>BEIGE</option>
+                <option>CORAL</option>
+              </select>
+            </div>-->
+
+          <!--<div class="qty_info">
+            <div class="quantity">
+              <label>Quantity :</label>
+              <select>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+            </div>
+          </div>-->
+
+
+          <div class="product_overview">
+            <!--ORG Logo Starts-->
+            <div>
+              <!--ORG Logo Ends-->
+              <!--ORG Description Starts-->
+              <h4>Organization</h4>
+              <div class="org_logo"><%= link_to (image_tag("image-yanapana/org_logo.png")), root_path %></div>
+              <!--Facebook like button Starts-->
+              <div class="fb-like" data-send="false" data-layout="button_count" data-width="450" data-show-faces="true"></div>
+
+              <!--Facebook like button Ends-->
+
+              <!--Twitter follotw button Starts-->
+
+              <div class="follow-btn"><a href="https://twitter.com/StandUpCancer" class="twitter-follow-button" data-show-count="false" data-show-screen-name="false" data-dnt="true">Follow @StandUpCancer</a></div>
+
+              <!--Twitter follotw button Ends-->
+
+            </div>
+
+            <!--ORG Description Ends-->
+
+          </div>
+
+          <div class="product_overview hidden_movil">
+            <%= render :partial => "properties" %>
+
+          </div>
+        </div>
+        <!--Product Right Ends-->
+      </div>
+      <!--PRODUCT DETAIL ENDS-->
+    </section>
+
   <div id="artist-section" class="artist-inspiration">
     <section>
       <h2 class="sub_title">The Artist</h2>
-      <div class="artist"><a href="#"><img src="images/artist.jpg" ></a></div>
+      <div class="artist"><a href="#"><%= image_tag ("image-yanapana/artist.jpg") %></a></div>
       <div class="artist_description">
         <h2 class="sub_title">Inspiration Behind</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>

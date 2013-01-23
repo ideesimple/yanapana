@@ -5,14 +5,15 @@
       <!--[if IE 9 ]>    <html class="ie ie9" lang="<%= I18n.locale %>"> <![endif]-->
         <!--[if gt IE 9]><!--><html lang="<%= I18n.locale %>"><!--<![endif]-->
 <head>
-<%= render :partial => 'spree/layouts/head' %>
+  <%= render :partial => 'spree/layouts/head' %>
+  <%= yield :head %>
 </head>
 
 <body>
 	<div class="wrapper">
 		<div class="header_container">
       		<!--Header Starts-->
-			<%= render :partial => 'spree/layouts/header' %>
+            <%= render :partial => 'spree/layouts/header' %>
 		 </div>
 		<!--Branding Starts-->
     		<div class="branding_container">
