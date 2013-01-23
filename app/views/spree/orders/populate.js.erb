@@ -1,4 +1,4 @@
 $('#link-to-cart').html("<%= j(link_to_cart) %>");
-$('.item').html("<%= current_order.item_count %>");
+$('.item').html("<%= current_order.item_count %>/ITEM ");
 $('.price').html("<%= current_order.display_total %>");
 $('.item').effect("highlight", {}, 3000);
