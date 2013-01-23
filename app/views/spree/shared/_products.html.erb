@@ -33,34 +33,37 @@
              <div class="price_info">
               <%= form_for :order, :url => populate_orders_path, :remote => true do |f| %>
                 <%= hidden_field_tag :quantity, 1%>
+
+                <!--<a><button type="button" title="" class="price_add"><span class="pr_price"><%= product.display_price %></span><span class="pr_add"><span>Add to Cart</span></button></a>-->
+
+
                 <% if product.has_variants? %>
-                <% options = Array.new %>
-  <% product.variants.active.each_with_index do |v,index|
-    next if v.option_values.empty? || (!v.in_stock && !Spree::Config[:show_zero_stock_products])
+                  <% options = Array.new %>
+                  <% product.variants.active.each_with_index do |v,index|
+                    next if v.option_values.empty? || (!v.in_stock && !Spree::Config[:show_zero_stock_products])
 
-    option = Array.new
+                    option = Array.new
 
-    option[0] = variant_options(v)
-    if variant_price_diff v
-      option[0] = option[0] + (variant_price_diff v)
-    end
+                    option[0] = variant_options(v)
+                    if variant_price_diff v
+                      option[0] = option[0] + (variant_price_diff v)
+                    end
 
-    option[1] = v.id
+                    option[1] = v.id
 
-    options.push(option) %>
+                    options.push(option) %>
 
-  <% end %>
-<% v_option_values = Array.new %>
-      <% options.each do |o|
-        v_option_values << "<option value='" + o[1].to_s + "'>" + o[0] + "</option>" %>
-      <% end %>
-        <%= select_tag "products[#{product.id}]",v_option_values.join.html_safe %>
-
+                  <% end %>
+                  <% v_option_values = Array.new %>
+                  <% options.each do |o|
+                    v_option_values << "<option value='" + o[1].to_s + "'>" + o[0] + "</option>" %>
+                  <% end %>
+                  <%= select_tag "products[#{product.id}]",v_option_values.join.html_safe %>
                 <% end %>
-               <a><button type="button" title="" class="price_add"><span class="pr_price"><%= product.display_price %></span><span class="pr_add"><span>Add to Cart</span></button></a>
-               <%= button_tag :class => 'add_cart', :id => 'add-to-cart-button', :type => :submit do %>
-              <%= t(:add_to_cart) %>
-            <% end %>
+                <%= button_tag :class => 'price_add', :type => :submit do %>
+                  <span class="pr_price"><%= product.display_price %></span>
+                  <%= t(:add_to_cart) %>
+                <% end %>
 
               <% end %>
               </div>
@@ -76,9 +79,6 @@
     <% reset_cycle("classes") %>
       </div>
   </section>
-<% end %>
-<%= form_for :order, :url => populate_orders_path, :remote => true do |f| %>
-
 <% end %>
 
 <% if paginated_products.respond_to?(:num_pages) %>

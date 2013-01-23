@@ -8,13 +8,26 @@
 <script>
 $(document).ready(function() {
 
-	    $('.pr_add').click(function(){
-	        $('html, body').animate({scrollTop:0}, 'slow');
+	    $('.price_add').click(function(){
+            $('html, body').animate({scrollTop:0}, 'slow');
+            $('.message.success').show("slowslow");
+	        return true;
+	    });
+
+	});
+</script>
+<script>
+$(document).ready(function() {
+
+        $('a.fr').click(function(){
+            $('.message.success').hide(1000);
 	        return false;
 	    });
 
 	});
 </script>
+
+
 <% end %>
 
 <% content_for :sidebar do %>
@@ -33,7 +46,7 @@ $(document).ready(function() {
             <section>
                 <!--CART STARTS-->
                 <div id="shopping_cart" class="full_page">
-                  <div class="message success">Success: You have added <a href="yanapana_detail">L.A. t-shirt</a> to your <a href="yanapana_cart">shopping cart</a>!<a href="#" class="fr">x</a></div>
+                  <div class="message success" style="display:none">Success :D <a href="#" class="fr">x</a></div>
                 </div>
                 <h1>Sustainability. Solidarity. Fashion. Change.</h1>
                 <h4>$8 of each purchase are given to a cause helping the development and protection of women</h4>

@@ -1,12 +1,27 @@
 <% content_for :head do %>
 <script>
   $(document).ready(function() {
-    $('readya[href=#top]').click(function(){
-      $('html, body').animate({scriptollTop:0}, 'slow');
-      return false;
-    });
-  });
+
+	    $('.add_cart').click(function(){
+            $('html, body').animate({scrollTop:0}, 'slow');
+            $('.message.success').show("slow");
+	        return true;
+	    });
+
+	});
 </script>
+
+<script>
+$(document).ready(function() {
+
+        $('a.fr').click(function(){
+            $('.message.success').hide(1000);
+	        return false;
+	    });
+
+	});
+</script>
+
 <% end %>
 
 
@@ -37,8 +52,8 @@
 
     <div id="shopping_cart" class="full_page">
 
-      <div class="message success">
-        Success: You have added <a href="#"><%= @product.name %></a> to your <%= link_to "Shopping cart", cart_path %>!<a href="#" class="fr">x</a>
+      <div class="message success" style="display:none">
+        Success :D <a href="#" class="fr">x</a>
       </div>
 
     </div>
