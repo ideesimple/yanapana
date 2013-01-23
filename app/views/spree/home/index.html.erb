@@ -54,7 +54,7 @@ $(document).ready(function() {
         </div>
         <!--Headline Ends-->
 
-<%= unless @cause.empty?  %>
+<%= unless @cause.nil?  %>
 <!--Cause Starts-->
             <div class="cause_background">
                   <div id="cause" class="cause">
@@ -192,7 +192,7 @@ $(document).ready(function() {
         <div class="productos">
       	  <%= render :partial => 'spree/shared/products', :locals => { :products => @products, :taxon => @taxon } %>
         </div>
-<% unless @artist.empty? %>
+<% unless @artist.nil? %>
 <div id="artist-section">
                 <section>
                     <h2 class="sub_title">The Artist</h2>
