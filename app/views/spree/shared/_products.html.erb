@@ -58,10 +58,12 @@
                   <% options.each do |o|
                     v_option_values << "<option value='" + o[1].to_s + "'>" + o[0] + "</option>" %>
                   <% end %>
+
                   <%= select_tag "products[#{product.id}]",v_option_values.join.html_safe %>
                 <% end %>
                 <%= button_tag :class => 'price_add', :type => :submit do %>
                   <span class="pr_price"><%= product.display_price %></span>
+                  <span class="pr_add">Add to cart</span>
                   <%= t(:add_to_cart) %>
                 <% end %>
 
