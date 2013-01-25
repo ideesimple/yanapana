@@ -11,7 +11,8 @@ $(document).ready(function() {
 	    $('.price_add').click(function(){
             $('html, body').animate({scrollTop:0}, 'slow');
             $('.message.success').show("slowslow");
-	        return true;
+            return true;
+
 	    });
 
 	});
@@ -67,7 +68,6 @@ $(document).ready(function() {
                                   <div class="description_text hidden_tablet hidden_movil" id="sample">
                                        <h4>Cause</h4>
                                        <p> <%= @cause.description %> </p>
-                                       <p>This week your purchase provides a hand-knit beanie to a child who is undergoing treatment for cancer. We are partnering with Knots of Love to bring comfort, warmth and dignity to a child who must endure painful cancer treatment. Above all, you will deliver a smile to the face of a brave child. </p>
                                   </div>
 
                             <!--Cause Video Starts-->
@@ -84,7 +84,7 @@ $(document).ready(function() {
                               <h4 class="hidden_movil hidden_tablet">Organization</h4>
                               <p class="hidden_movil hidden_tablet"><%= @cause.organization.description%></p>
 
-                              <h1 class="org_logo"><%= link_to image_tag(@cause.organization.photo.url(:small)), "leisure_index.html" %></h1>
+                              <h1 class="org_logo"><%= link_to image_tag(@cause.organization.photo.url(:org)), "leisure_index.html" %></h1>
                               <!--Facebook like button Starts-->
                               <div class="fb-like" data-send="false" data-layout="button_count" data-width="450" data-show-faces="true"></div>
                               <!--Facebook like button Ends-->
@@ -180,8 +180,8 @@ $(document).ready(function() {
 
   <% if params[:keywords] %>
 
-      <% if @products_cause.empty? %>
-        <h6 class="search-results-title"><%= t(:no_products_found) %></h6>
+      <% if @products_cause.nil? %>
+        <h2><%= t(:no_products_found) %></h2>
       <% else %>
         <%= render :partial => 'spree/shared/products', :locals => { :products => @products_cause, :taxon => @taxon } %>
       <% end %>
@@ -190,8 +190,8 @@ $(document).ready(function() {
   <% else %>
 <!--Mid Section Starts-->
         <div class="productos">
-          <% if @products_cause.empty? %>
-        <h6 class="search-results-title"><%= t(:no_products_found) %></h6>
+          <% if @products_cause.nil? %>
+        <h1><%= t(:no_products_found) %></h1>
       <% else %>
         <%= render :partial => 'spree/shared/products', :locals => { :products => @products_cause, :taxon => @taxon } %>
       <% end %>
