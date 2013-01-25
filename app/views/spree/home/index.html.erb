@@ -1,7 +1,7 @@
 <% content_for :head do %>
 <script charset="utf-8" language="javascript" type="text/javascript">
     $(document).ready(function() {
-  $(".cause_background").anystretch("http://abagond.files.wordpress.com/2012/07/poverty_board.jpg");
+        $(".cause_background").anystretch("http://abagond.files.wordpress.com/2012/07/poverty_board.jpg");
   });
 </script>
 
@@ -28,7 +28,7 @@ $(document).ready(function() {
 </script>
 
 
-<% end %>
+<% end %>3
 
 <% content_for :sidebar do %>
 <div data-hook="homepage_sidebar_navigation">
@@ -70,8 +70,9 @@ $(document).ready(function() {
                                        <p>This week your purchase provides a hand-knit beanie to a child who is undergoing treatment for cancer. We are partnering with Knots of Love to bring comfort, warmth and dignity to a child who must endure painful cancer treatment. Above all, you will deliver a smile to the face of a brave child. </p>
                                   </div>
 
-                              <!--Cause Video Starts-->
-                                   <iframe class="video_description" width="560" height="315" src="http://www.youtube.com/embed/SFscKip7o-Q" frameborder="0" allowfullscreen></iframe>
+                            <!--Cause Video Starts-->
+
+                            <iframe class="video_description" width="560" height="315" src="http://www.youtube.com/embed/<%= @cause.video%>" frameborder="0" allowfullscreen></iframe>
                               <!--Cause Video Ends-->
 
                                <!--ORG Logo Starts-->
@@ -179,27 +180,30 @@ $(document).ready(function() {
 
   <% if params[:keywords] %>
 
-    <div data-hook="search_results">
-      <% if @products.empty? %>
+      <% if @products_cause.empty? %>
         <h6 class="search-results-title"><%= t(:no_products_found) %></h6>
       <% else %>
-        <%= render :partial => 'spree/shared/products', :locals => { :products => @products, :taxon => @taxon } %>
+        <%= render :partial => 'spree/shared/products', :locals => { :products => @products_cause, :taxon => @taxon } %>
       <% end %>
     </div>
 
   <% else %>
 <!--Mid Section Starts-->
         <div class="productos">
-      	  <%= render :partial => 'spree/shared/products', :locals => { :products => @products, :taxon => @taxon } %>
+          <% if @products_cause.empty? %>
+        <h6 class="search-results-title"><%= t(:no_products_found) %></h6>
+      <% else %>
+        <%= render :partial => 'spree/shared/products', :locals => { :products => @products_cause, :taxon => @taxon } %>
+      <% end %>
         </div>
 <% unless @artist.nil? %>
 <div id="artist-section">
                 <section>
                     <h2 class="sub_title">The Artist</h2>
-                    <div class="artist"><a href="#"><%= image_tag("image-yanapana/artist.jpg")%></a></div>
+                    <div class="artist"><%= link_to image_tag(@artist.photo.url(:product)), "#" %></div>
                     <div class="artist_description">
                         <h2 class="sub_title"><%= @artist.name + " " + @artist.last_name %></h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+                        <p><%= @artist.reason  %></p>
                         <h2 class="sub_title">adipisicing elit</h1>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu.</p>
                     </div>

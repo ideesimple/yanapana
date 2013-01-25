@@ -1,4 +1,6 @@
 class Spree::Cause < ActiveRecord::Base
+  require "addressable/uri"
+
   belongs_to :artist
   belongs_to :organization
   has_many :products
@@ -22,5 +24,15 @@ class Spree::Cause < ActiveRecord::Base
     :secret_access_key => Spree::Config[:s3_secret]
     },
     :bucket => Spree::Config[:s3_bucket]
+
+before_save :youtube
+before_update :youtube
+
+ def youtube
+  uri = Addressable::URI.parse(self.video)
+  if uri.query_values
+      self.video = uri.query_values["v"].to_s
+  end
+ end
 
 end

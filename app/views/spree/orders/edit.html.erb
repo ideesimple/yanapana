@@ -13,7 +13,7 @@
       <div id="shopping_cart" class="full_page">
         <h1><%= t(:shopping_cart) %></h1>
 
-        <%= form_for @order, :url => update_cart_path, :html => {:id => 'update-cart', :class => "edit_spree_prder"} do |order_form| %>
+        <%= form_for @order, :url => update_cart_path, :html => {:id => 'update-cart', :class => "edit_spree_order"} do |order_form| %>
 
           <div class="cart_table">
             <%= render :partial => 'form', :locals => { :order_form => order_form } %>
@@ -60,19 +60,7 @@
     <div id="shopping_cart" class="full_page">
     </div>
     <!--CART ENDS-->
-
-    <div class="checkout_tax">
-      <div class="shipping_tax">
-        <h4>Estimate Shipping and Tax</h4>
-        <p>Enter your destination to get a shipping estimate.</p>
-        <label>Country</label><select><option>Canada</option></select><label>Postal code</label><input type="text">
-        <br class="clear"/>
-        <label>State</label><select><option>Vancouver</option></select>
-        <button type="button" title="" class="brown_btn">Get a Quote</button>
-      </div>
-    </div>
-
-  <% end %>
+      <% end %>
   </section>
 </div>
 
