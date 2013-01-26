@@ -39,13 +39,17 @@ html[xmlns] .clearfix {
 	height: 1%;
 }
 
+.pb {padding-bottom: 50px;}
+
 header, nav, section, footer, .branding_area { width:980px; margin:0px auto;}
 .productos,
 .branding_container,
 .header_container,
 .navigation_container,
 .section_container,
-.footer_container{width:100%; clear:both; }
+.footer_container, #artist-section, .comments-section{width:100% !important; clear:both; }
+
+.section_container {overflow: hidden;}
 
 /*-----------------------------------HEADER*/
 .header_container{ height: 45px;}
@@ -85,6 +89,7 @@ nav .primary_nav > li:hover > a{color:#fff;}
 nav .primary_nav li.active > a{ text-shadow: none;color:#fff;}
 .minicart{ background:url('../../assets/image-yanapana/cart_icon3.png') no-repeat 7px center; position:relative; text-decoration:none; float: right; background-position-x: 20px; }
 .minicart_link {padding-left: 50px !important;}
+.minicart_link.sizemenu {padding: 0 !important;}
 .minicart a{ text-decoration:none; padding-left: 50px;}
 .minicart span{ color:#D4D4D4;}
 .minicart span b{font-weight:bold; color: #BCD80A;}
@@ -128,7 +133,7 @@ header ul span.item {font-family:  color: #e9e9e9;}
 .baz {display: none;}
 
 /*-----------------------------------GOALS*/
-#goals {width: 100%; overflow: hidden;
+#goals {position: relative; z-index: 1; width: 100%; overflow: hidden;
 box-shadow: 0 2px 3px #999; width: 100%; border-bottom: 5px solid #fff; padding: 20px 0; background: #ffffff; /* Old browsers */
 background: -moz-linear-gradient(top,  #ffffff 0%, #e5e5e5 100%); /* FF3.6+ */
 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#e5e5e5)); /* Chrome,Safari4+ */
@@ -183,22 +188,21 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 #first-carousel li:last-child {margin-right: 0;}
 
 /*-----------------------------------ARTIST*/
-#artist-section {padding: 40px 0px; overflow: hidden; border-bottom: solid 1px #ccc; margin-bottom: 20px; width: 980px; margin: 0 auto; border-top: 1px solid white; }
+#artist-section section {padding: 40px 0px; overflow: hidden; border-bottom: solid 1px #ccc; margin-bottom: 20px; margin: 0 auto; border-top: 1px solid white; }
 .artist-inspiration { border-bottom: none !important; }
-#artist-section p, .full_page p  {font-family: 'Istok Web'; color: #a2a2a2; font-size: 14px; line-height: 16px; line-height: 1.4; margin-bottom: 20px;}
+#artist-section p {font-family: 'Istok Web'; color: #a2a2a2; font-size: 14px; line-height: 16px; line-height: 1.4; margin-bottom: 20px;}
 .artist {width: 18%; float: left; margin: 0 4% 0 0;}
 
 /*-----------------------------------SOCIAL MEDIA BUTTONS*/
 .comments_tag {font-family: century gothic; font-size: 20px; padding: 20px 0; display:block;  margin: 0 auto;}
-.comments-section {width: 980px; margin: 0 auto; border-top: 1px solid white; overflow: hidden;}
+.comments { margin: 0 auto; border-top: 1px solid white; overflow: hidden;}
 #comments {width: 700px; margin: 0 auto;}
 .fb-like, .follow-btn {float:left; margin: 10px 15px 15px 0;}
 
 
 
 /*-----------------------------------BANNER*/
-.howtosell-img {background-image: url("http://25.media.tumblr.com/tumblr_m7ogqwpwMv1rqeb09o1_r1_1280.jpg"); background-position: center 910px; width: 100%; height: 400px; margin-bottom: 20px; }
-#banner_section { margin-top:6px; margin-bottom:15px; display:inline-block; width:100%; height:435px;}
+#banner_section{ margin-top:6px; margin-bottom:15px; display:inline-block; width:100%; height:435px;}
 #banner_section .flexslider{ width:697px; height:435px; float:left; position:relative;}
 #banner_section .flexslider .flex-direction-nav{ position:absolute; bottom:0px; left:0px;}
 #banner_section .flexslider .flex-direction-nav li{ float:left;}
@@ -206,6 +210,29 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 #banner_section .promo_banner .home_banner{ height:140px; margin-bottom:7px;}
 
 /*PRODUCTS List - Grid*/
+.cart_drop.picksize {position: absolute; top: 32px; left: 2px; width: 77px;}
+.cart_drop.picksize li {margin-left: 0; width: 100% !important; padding: 0;}
+.cart_drop.picksize li:hover {background: #ddd !important;}
+.cart_drop.picksize li a {width: 100%; padding: 21px 0 12px 12px;}
+.cart_drop.picksize li a:hover {color: #fff;}
+
+.size_drop.picksize  {position: absolute; top: 32px; left: 2px; width: 77px;}
+.size_drop.picksize li {margin-left: 0; width: 100% !important; padding: 0; cursor: pointer;}
+.size_drop.picksize li:hover {background: #ddd !important;}
+.size_drop.picksize li a {width: 100%; padding: 21px 0 12px 12px;}
+.size_drop.picksize li a:hover  {color: #fff;}
+
+.size_drop2.picksize  {position: absolute; top: 42px; left: 2px; width: 77px;}
+.size_drop2.picksize li {margin-left: 0; width: 100% !important; padding: 0;}
+.size_drop2.picksize li:hover {background: #ddd !important;}
+.size_drop2.picksize li a {width: 100%; padding: 21px 0 12px 12px;}
+.size_drop2.picksize li a:hover  {color: #fff;}
+
+.size_drop3.picksize  {position: absolute; top: 42px; left: 2px; width: 77px;}
+.size_drop3.picksize li {margin-left: 0; width: 100% !important; padding: 0;}
+.size_drop3.picksize li:hover {background: #ddd !important;}
+.size_drop3.picksize li a {width: 100%; padding: 21px 0 12px 12px;}
+.size_drop3.picksize li a:hover  {color: #fff;}
 
 .products_list{  padding: 40px 0 30px 0; display:inline-block; width:100%;border-bottom:solid 1px #ccc; }
 .products_list li{width:221px; margin-left:31px; float:left; padding-bottom:15px;}
@@ -221,7 +248,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 .products_list .price_info button .pr_price{ background:#544f4b;  padding:10px; color:#fff; font-size:14px; font-weight:bold; float:left; clear:both; width:83%; text-transform:uppercase;}
 .products_list .price_info button .pr_add{ padding:10px; color:#fff; font-size:11px; font-weight:bold; text-transform:uppercase;  float:left; clear:both; width:83%; margin-top:0px;}
 .products_list li:hover .pr_add{ margin-top:-32px;-moz-transition:all 0.3s ease-out 0s; -webkit-transition: all 0.3s ease-out;}
-.products_list .price_info a{ color:#a2a2a2; text-decoration:none; font-size:11px; display:inline-block; padding-top:10px;}
+.products_list .price_info a{ color:#a2a2a2; text-decoration:none; font-size:11px; display:inline-block;}
 
 /*PRODUCTS List - List*/
 .products_list_list{ margin-bottom:17px; display:inline-block; width:100%;}
@@ -305,6 +332,21 @@ div.simpleTabsContent p{ padding-bottom:12px; line-height:18px; color:##515151;}
 ul.simpleTabsNavigation li a { padding:5px 20px 4px 20px;}
 ul.simpleTabsNavigation li a{ background:#F3F3F3; color:#544F4B; font-weight:bold;}
 
+#caja {
+width:100%;
+display: none;
+padding:5px;
+}
+#mostrar{
+display:inline-block;
+width:100%;
+cursor: pointer;
+padding: 5px 0;
+float: left;
+}
+
+.close { font-weight: bold; color: #000; text-decoration: none; }
+
 
 /*SUBSCRIBE Block*/
 .subscribe_block{ background:#b8b2ac; display:inline-block; width:100%; padding:13px 0px; margin:20px 0px 35px;}
@@ -319,7 +361,7 @@ ul.simpleTabsNavigation li a{ background:#F3F3F3; color:#544F4B; font-weight:bol
 .subscribe_block .subscribe_nl{ width:555px; float:right; margin-right:40px;}
 .subscribe_block .subscribe_nl small{ width:267px; color:#4b4642; text-shadow:0px 1px 0px #d5cfca; font-size:11px; width:270px;  float:left;}
 .subscribe_block .subscribe_nl form{ width:268px; float:right; margin-top:-12px;}
-.subscribe_block .subscribe_nl form .input-text{ border:solid 1px #a49c96; padding:5px; border-radius:3px; width:210px; background:url(../../assets/image-yanapana/subscribe_textfield.png) repeat-x top; box-shadow:inset 1px 1px 0px #fff; color:#8f8984; float:left; margin:0px;}
+.subscribe_block .subscribe_nl form .input-text{ border:solid 1px #a49c96; padding:5px; border-radius:3px; width:210px; background:url(../images/subscribe_textfield.png) repeat-x top; box-shadow:inset 1px 1px 0px #fff; color:#8f8984; float:left; margin:0px;}
 .subscribe_block .subscribe_nl form button{ width:34px; height:27px; border:0px;background:url(../../assets/image-yanapana/subscribe_btn.png) no-repeat top; float:left; margin-left:10px; cursor:pointer;}
 
 
@@ -430,7 +472,7 @@ ul.breadcrumb li a{ color:#bdbdbd; text-decoration:none;}
 .departments > li > ul{ padding:10px 0px 10px 12px; background:#fff; display:inline-block; width:100%; border-bottom:solid 1px #d2d2d2; width:94%;display:none; margin-bottom:8px;}
 .departments > li > ul > li{ padding-bottom:6px; padding-top:6px; border-left:solid 2px #d2d2d2;}
 .departments > li > ul > li a{ color:#737373; text-decoration:none; margin-left:-7px; padding-left:15px; display:block;}
-.departments > li > ul > li a:hover{color:#2d2b29; font-weight:bold; background:url(../images/sub_arw.png) no-repeat left center;}
+.departments > li > ul > li a:hover{color:#2d2b29; font-weight:bold; background:url(../../assets/image-yanapana/sub_arw.png) no-repeat left center;}
 
 
 /*-----------------------------------FULL PAGE*/
@@ -473,7 +515,7 @@ ul.breadcrumb li a{ color:#bdbdbd; text-decoration:none;}
 .checkout_tax .shipping_tax .selector select{ width:213px;}
 .checkout_tax .shipping_tax .brown_btn{ float:right; margin-top:5px;}
 
-.checkout_discount{ float:right; width:305px;border:solid 1px #e0e0e0; border-width:2px 0px; padding:14px 16px 16px; background:url(../../assets/image-yanapana/cart_coupon.png) no-repeat right bottom #f9f8f6; margin-bottom: 40px;}
+.checkout_discount{ float:right; width:305px;border:solid 1px #e0e0e0; border-width:2px 0px; padding:14px 16px 16px; background:url(../images/cart_coupon.png) no-repeat right bottom #f9f8f6; margin-bottom: 40px;}
 .checkout_discount input[type="text"]{ border:1px solid #D7D7D7; padding:4px; width:205px;}
 .checkout_discount .brown_btn{ float:left; margin-top:22px;}
 
@@ -554,6 +596,37 @@ p.tick{ padding:10px 0px 10px 20px;background:url(../../assets/image-yanapana/ti
 .cart_drop .cart_bottom .subtotal_menu big{ display:block; font-size:18px;}
 .cart_drop .cart_bottom a{ float:right; margin:6px 0px; padding:7px; text-transform:uppercase; color:#fff; text-decoration:none; font-weight:bold; font-size:11px;}
 
+/*Size Drop*/
+.size_drop{ width:210px; border:solid 1px #e9e9e9; box-shadow:0px 1px 2px #e8e8e8; border-width:2px 1px; position:absolute; top:38px; left:-67px; background:#fff; display:none; z-index:10;}
+.size_drop ul{}
+.size_drop .darw{ display:block; background:url(../../assets/image-yanapana/cart_top2.png) no-repeat center bottom; width:7px; height:7px; position:absolute; left:181px; top:-8px;}
+.size_drop ul li{ padding:12px;  border-bottom:dotted 1px #d9d9d9; display:inline-block; width:186px; box-shadow:inset 0px 1px 0px #fff;}
+.size_drop ul li:nth-child(odd) {background:#fdfdfe;}
+.size_drop ul li:nth-child(even) {background:#f7f7f7;}
+.size_drop ul li img{ padding:1px; border:solid 2px #f0f0f1; float:left; margin-right:10px;}
+.size_drop ul li a{color:#312E2B; text-transform:uppercase; font-size:11px; text-decoration:none; display:block; padding-bottom:4px; padding-top:2px; line-height:14px;}
+.size_drop ul li span.price{ font-size:13px;}
+
+.size_drop2{ width:210px; border:solid 1px #e9e9e9; box-shadow:0px 1px 2px #e8e8e8; border-width:2px 1px; position:absolute; top:38px; left:-67px; background:#fff; display:none; z-index:10;}
+.size_drop2 ul{}
+.size_drop2 .darw{ display:block; background:url(../../assets/image-yanapana/cart_top2.png) no-repeat center bottom; width:7px; height:7px; position:absolute; left:181px; top:-8px;}
+.size_drop2 ul li{ padding:12px;  border-bottom:dotted 1px #d9d9d9; display:inline-block; width:186px; box-shadow:inset 0px 1px 0px #fff;}
+.size_drop2 ul li:nth-child(odd) {background:#fdfdfe;}
+.size_drop2 ul li:nth-child(even) {background:#f7f7f7;}
+.size_drop2 ul li img{ padding:1px; border:solid 2px #f0f0f1; float:left; margin-right:10px;}
+.size_drop2 ul li a{color:#312E2B; text-transform:uppercase; font-size:11px; text-decoration:none; display:block; padding-bottom:4px; padding-top:2px; line-height:14px;}
+.size_drop2 ul li span.price{ font-size:13px;}
+
+.size_drop3{ width:210px; border:solid 1px #e9e9e9; box-shadow:0px 1px 2px #e8e8e8; border-width:2px 1px; position:absolute; top:38px; left:-67px; background:#fff; display:none; z-index:10;}
+.size_drop3 ul{}
+.size_drop3 .darw{ display:block; background:url(../../assets/image-yanapana/cart_top2.png) no-repeat center bottom; width:7px; height:7px; position:absolute; left:181px; top:-8px;}
+.size_drop3 ul li{ padding:12px;  border-bottom:dotted 1px #d9d9d9; display:inline-block; width:186px; box-shadow:inset 0px 1px 0px #fff;}
+.size_drop3 ul li:nth-child(odd) {background:#fdfdfe;}
+.size_drop3 ul li:nth-child(even) {background:#f7f7f7;}
+.size_drop3 ul li img{ padding:1px; border:solid 2px #f0f0f1; float:left; margin-right:10px;}
+.size_drop3 ul li a{color:#312E2B; text-transform:uppercase; font-size:11px; text-decoration:none; display:block; padding-bottom:4px; padding-top:2px; line-height:14px;}
+.size_drop3 ul li span.price{ font-size:13px;}
+
 /*Page*/
 .page_sidebar{ border-top:solid 1px #E5E3E1}
 section#main_content{width:700px; float:left;}
@@ -574,7 +647,7 @@ input, select, textarea, button{ font-size:12px;}
 .success {color: #91a158; background: none repeat scroll 0 0 #f9fff1; border: 1px solid #acc600; font-size: 14px; line-height: 100%; margin-bottm: 15px; margin-top: 15px; padding: 20px 15px 20px 85px; }
 .success a {color: #544F4B; text-decoration: none;}
 .brown_btn{ color:#fff; font-size:14px; font-weight:bold; padding:8px 14px; background:#544F4B; border:0px; line-height:100%; cursor:pointer; vertical-align:middle;}
-img{ max-width:100%;}
+img{ max-width:100%; min-height: 100%;}
 
 /*Forms*/
 div.selector {
@@ -618,25 +691,26 @@ div.selector span {
 header .top_links > li.highlight a,
 nav .primary_nav li.active > a, .products_list .price_info button .pr_add, .products_list_list li .price_info button .pr_add, .cart_drop .cart_bottom a{ background:#bcd80a;}
 nav .minicart span b,
-footer .footer_customblock .shipping_info span, .footer_container, ul.breadcrumb li.active a, .product_rightcol .pr_price big, footer .footer_links li a:hover, #shopping-cart-table tr td span.pr_info, #totals-table .total, .cart_drop ul li span.price, .cart_drop .cart_bottom .subtotal_menu big, ul.simpleTabsNavigation li a.current, .side_nav li a:hover, .twitter_feed a{color:#bcd80a;}
-footer, ul.sub_menu, .sideNavCategories > ul, ul.sub_menu > li > ul, .checkout_tax .shipping_tax, .checkout_discount, .cart_drop, ul.simpleTabsNavigation li a.current {border-top-color:#bcd80a;}
+footer .footer_customblock .shipping_info span, .footer_container, ul.breadcrumb li.active, .product_rightcol .pr_price big, footer .footer_links li a:hover, #shopping-cart-table tr td span.pr_info, #totals-table .total, .cart_drop ul li span.price, .cart_drop .cart_bottom .subtotal_menu big, ul.simpleTabsNavigation li a.current, .side_nav li a:hover, .twitter_feed a{color:#bcd80a;}
+footer, ul.sub_menu, .sideNavCategories > ul, ul.sub_menu > li > ul, .checkout_tax .shipping_tax, .checkout_discount, .cart_drop, .size_drop, .size_drop2, .size_drop3, ul.simpleTabsNavigation li a.current {border-top-color:#bcd80a;}
 .flexslider .flex-direction-nav li a:hover, nav .primary_nav > li > a:hover, nav .primary_nav > li:hover > a, .product_rightcol .add_to_buttons button.add_cart, .action_buttonbar button.checkout, #shopping-cart-table tr td a.remove:hover, #shopping-cart-table tr td button.update:hover, .sideNavCategories > ul.departments > li > a:hover, .sideNavCategories > ul.departments > li > a.active, span.highlight_text{ background-color:#bcd80a;}
 .products_list li:hover img, .products_list_list li:hover img{ border-color:#BCD80A}
 .flex-caption{ border-left-color:#bcd80a}
-.footer_background {background: url("../../assets/image-yanapana/footer_bg.png"); background-repeat: repeat-x; height: 8px; margin-top: 40px; clear: both;}
-.footer_container {color: white !important; padding: 40px 0 0 0; background: #333; }
+.footer_background {background: url("../../assets/image-yanapana/footer_bg.png"); background-repeat: repeat-x; height: 8px; position: relative; top: -8px;}
+.footer_container {color: white !important; background: #333; }
 .products_list li .product_info {border-bottom-color: #ccc;}
 .navigation_container {border-top: 1px solid white; }
 .branding_container {border-bottom: 1px solid #ccc;}
 
-.header_container {background: #333; border-bottom: 5px solid white; margin-bottom: 10px; box-shadow: 0 2px 2px #999;}
+.header_container {background: #333; border-bottom: 5px solid white; margin-bottom: 0px; box-shadow: 0 2px 2px #999; position: relative; z-index: 1;}
 
 
 #cause h2, #cause h4 {color: white;}
 #cause p {color: #eee;}
 #cause #org_description p { padding-bottom: 20px ; }
 
-body {background: url("../../assets/image-yanapana/gray_jean.png");  }
+body {background: #333;}
+.jean {background: url("../../assets/image-yanapana/gray_jean.png") repeat 0 0 transparent;   }
 
 #headline h1 {color: #312E2B; text-shadow: 1px 1px 0 #fff;}
 

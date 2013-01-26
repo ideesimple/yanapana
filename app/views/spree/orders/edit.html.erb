@@ -1,5 +1,9 @@
-<div class="section_container">
+<div class="section_container jean pb">
   <section>
+    <ul class="breadcrumb">
+      <li><%= link_to "Home", root_path %></li>
+      <li class="active">Shopping Cart</li>
+    </ul>
   <% if @order.line_items.empty? %>
       <div class="full_page">
         <h1>Shopping cart</h1>

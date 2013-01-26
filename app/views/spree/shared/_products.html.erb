@@ -24,7 +24,7 @@
     <div class="products_list products_slider">
       <h2 class="sub_title">Products</h2>
       <% reset_cycle('default') %>
-    <ul id="first-carousel" class="first-and-second-carousel jcarousel-skin-tango">
+    <ul id="first-carousel">
       <% products.each do |product| %>
         <% if product.on_display? %>
           <li>
@@ -61,11 +61,20 @@
 
                   <%= select_tag "products[#{product.id}]",v_option_values.join.html_safe %>
                 <% end %>
-                <%= button_tag :class => 'price_add', :type => :submit do %>
+                <%= button_tag :class => 'addtocart_link', :type => :submit do %>
+                <a class="addtocart_link sizemenu">
                   <span class="pr_price"><%= product.display_price %></span>
                   <span class="pr_add">Add to cart</span>
-                  <%= t(:add_to_cart) %>
-                <% end %>
+                </a>
+              <% end %>
+              <div class="size_drop picksize">
+                  <ul>
+		      <li><a class="price_add">S</a></li>
+		      <li><a class="price_add">M</a></li>
+		      <li><a class="price_add">L</a></li>
+		      <li><a class="price_add">XL</a></li>
+		  </ul>
+                </div>
 
               <% end %>
               </div>
