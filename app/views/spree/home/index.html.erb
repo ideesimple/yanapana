@@ -29,7 +29,7 @@ $(document).ready(function() {
 </script>
 
 
-<% end %>3
+<% end %>
 
 <% content_for :sidebar do %>
 <div data-hook="homepage_sidebar_navigation">
@@ -41,9 +41,10 @@ $(document).ready(function() {
 </div>
 <% end %>
 <!--SectionContainer-->
+
 <div class="section_container">
 	<!--Headline Starts-->
-        <div id="headline">
+        <div id="headline" class="jean">
             <section>
                 <!--CART STARTS-->
                 <div id="shopping_cart" class="full_page">
@@ -189,15 +190,16 @@ $(document).ready(function() {
 
   <% else %>
 <!--Mid Section Starts-->
-        <div class="productos">
+
+        <div class="productos jean">
           <% if @products_cause.nil? %>
-        <h1><%= t(:no_products_found) %></h1>
+        <h6 class="search-results-title"><%= t(:no_products_found) %></h6>
       <% else %>
         <%= render :partial => 'spree/shared/products', :locals => { :products => @products_cause, :taxon => @taxon } %>
       <% end %>
         </div>
 <% unless @artist.nil? %>
-<div id="artist-section">
+<div id="artist-section" class="jean">
                 <section>
                     <h2 class="sub_title">The Artist</h2>
                     <div class="artist"><%= link_to image_tag(@artist.photo.url(:product)), "#" %></div>
@@ -216,8 +218,8 @@ $(document).ready(function() {
                 </section>
             </div>
           <% end %>
-            <div class="comments-section">
-                <section>
+            <div class="comments-section jean pb">
+                <section class="comments">
                 <h1 class="comments_tag fl">Don’t be shy! Express your thoughts about this week’s awesome cause right here: </h1>
                 <div id="comments" class="fl">
                     <div class="fb-comments" data-href="http://example.com" data-width="700" data-num-posts="2"></div>

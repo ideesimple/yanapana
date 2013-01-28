@@ -16,6 +16,24 @@ $(document).ready(function(){
 		 $('.cart_drop').slideDown(300);	
 		 }, function(){
 		 $('.cart_drop').slideUp(300);		 
+	});
+	
+	jQuery(".addtocart_link").toggle(function() {
+		 $('.size_drop').slideDown(300);	
+		 }, function(){
+		 $('.size_drop').slideUp(300);		 
+	});
+	
+	jQuery(".addtocart2_link").toggle(function() {
+		 $('.size_drop2').slideDown(300);	
+		 }, function(){
+		 $('.size_drop2').slideUp(300);		 
+	});
+	
+	jQuery(".addtocart3_link").toggle(function() {
+		 $('.size_drop3').slideDown(300);	
+		 }, function(){
+		 $('.size_drop3').slideUp(300);		 
 	});	
 
 	//SUB MENU
