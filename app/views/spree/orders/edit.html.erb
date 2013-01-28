@@ -9,7 +9,7 @@
         <h1>Shopping cart</h1>
         <div class="message warning"><%= t(:your_cart_is_empty) %></div>
         <div class="action_buttonbar">
-          <%= button_to t(:continue_shopping), products_path, :class => 'continue' %>
+          <%= button_to t(:continue_shopping), root_path, :class => 'continue' %>
           <button type="button" onClick="parent.location='yanapana_index.html'" title="" class="continue">Continue</button>
         </div>
       </div>

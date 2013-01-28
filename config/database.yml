@@ -50,4 +50,3 @@ test:
 production:
   database: yanapana_production
   <<: *login
-
