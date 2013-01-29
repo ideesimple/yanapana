@@ -24,6 +24,25 @@ $(document).ready(function() {
 	});
 </script>
 
+
+<!--Este script sirve para colapsar el quick overview-->
+  <script type="text/javascript">
+    $(function()
+    {
+
+      $("#mostrar").click(function(event) {
+        event.preventDefault();
+        $("#caja").slideToggle();
+      });
+
+      $("#caja a").click(function(event) {
+        event.preventDefault();
+        $("#caja").slideUp();
+      });
+    });
+  </script>
+
+
 <% end %>
 
 

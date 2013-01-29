@@ -41,7 +41,7 @@
       <p class="field" id="bstate">
         <% have_states = !@order.bill_address.country.states.empty? %>
 
-        <%= bill_form.label :state, t(:state) %><%= state_required_label %><br />
+        <%= bill_form.label :state, t(:state) %><br />
 
         <% state_elements = [
            bill_form.collection_select(:state_id, @order.bill_address.country.states,
