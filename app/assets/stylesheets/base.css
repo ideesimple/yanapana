@@ -190,7 +190,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 /*-----------------------------------ARTIST*/
 #artist-section section {padding: 40px 0px; overflow: hidden; border-bottom: solid 1px #ccc; margin-bottom: 20px; margin: 0 auto; border-top: 1px solid white; }
 .artist-inspiration { border-bottom: none !important; }
-#artist-section p {font-family: 'Istok Web'; color: #a2a2a2; font-size: 14px; line-height: 16px; line-height: 1.4; margin-bottom: 20px;}
+#artist-section p, .product_rightcol p {font-family: 'Istok Web'; color: #a2a2a2; font-size: 14px; line-height: 16px; line-height: 1.4; margin-bottom: 20px;}
 .artist {width: 18%; float: left; margin: 0 4% 0 0;}
 
 /*-----------------------------------SOCIAL MEDIA BUTTONS*/
@@ -280,7 +280,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 .product_rightcol{ width:590px; float:right;}
 .product_rightcol small.pr_type{ font-size:15px; color:#a29b95;}
 .product_rightcol h1{ padding:20px 0px 20px 0px; font-size:26px; color:#312e2b; text-transform:uppercase;}
-.product_rightcol p{ color:#544f4b; line-height:20px;}
 .product_rightcol .pr_price{ padding:22px 0px 20px 0px;}
 .product_rightcol .pr_price big{ font-size:29px; font-weight:bold!important; display:inline-block; padding-right:16px;}
 .product_rightcol .pr_price small{ font-size:17px; text-decoration:line-through;color:#a29b95;}
