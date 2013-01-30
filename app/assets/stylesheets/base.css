@@ -39,7 +39,12 @@ html[xmlns] .clearfix {
 	height: 1%;
 }
 
+.fl {float: left;}
+.fr {float: right;}
+
 .pb {padding-bottom: 50px;}
+.bb {border-bottom: 1px solid #ddd;}
+
 
 header, nav, section, footer, .branding_area { width:980px; margin:0px auto;}
 .productos,
@@ -287,9 +292,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 .product_rightcol .size_info label{ font-size:11px; color:#5f5a56; text-transform:uppercase; float:left; padding-right:10px; line-height:24px;}
 .product_rightcol .size_info > div{ float:left; margin-right:45px;}
 .product_rightcol .qty_info{ padding:7px 0px; display:inline-block; width:100%;}
-.product_rightcol .qty_info label{ font-size:11px; color:#5f5a56; text-transform:uppercase; float:left; padding-right:10px; line-height:24px;width:88px;}
+.product_rightcol .qty_info label{ margin-right: 33px; font-size:11px; color:#5f5a56; text-transform:uppercase; float:left; padding-right:10px; line-height:24px; }
 .product_rightcol .qty_info > div{ float:left; margin-right:45px;}
-.product_rightcol div.selector{ width:70px;}
+.product_rightcol div.selector, .product_rightcol input{ width:70px !important;}
 .product_rightcol div.selector span{width:75px;}
 .product_rightcol div.selector select{ width:84px!important;}
 
@@ -300,6 +305,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 .product_rightcol .add_to_buttons ul{ display:inline-block;}
 .product_rightcol .add_to_buttons ul li{ float:left;}
 .product_rightcol .add_to_buttons ul li a{ color:#544f4b; text-decoration:underline; font-size:13px;}
+
+.product_overview.hidden_movil > div {overflow: hidden;}
+.product_overview.hidden_movil > div h4:hover {background: #ddd;}
 
 .product_rightcol .product_overview{border-top:solid 1px #ccc; padding:15px 0px; display:inline-block; width:100%;color:#544f4b ; }
 .product_rightcol .product_overview h4{font-weight:bold; text-transform:uppercase; padding-bottom:10px;}
@@ -479,8 +487,9 @@ ul.breadcrumb li a{ color:#bdbdbd; text-decoration:none;}
 .full_page h1{ font-size:24px; color:#312e2b; text-transform:uppercase; padding:22px 0px;}
 .full_page h4{ font-size:17px; color:#312e2b; padding:10px 0px; font-weight:bold;}
 .action_buttonbar{ background:#f9f8f6; border:solid 1px #ebe2d9; padding:13px; clear:both;}
-.action_buttonbar button{ color:#fff; font-size:14px; font-weight:bold; padding:8px 14px; background:#544F4B; border:0px; line-height:100%; cursor:pointer;}
+.action_buttonbar button, .action_buttonbar input{ overflow: hidden; color:#fff; font-size:14px; font-weight:bold; padding:8px 14px; background:#544F4B; border:0px; line-height:100%; cursor:pointer; text-decoration: none;}
 .action_buttonbar button.checkout{ float:right; padding-right:28px; background:url(../../assets/image-yanapana/arrow.png) right -20px no-repeat;}
+.action_buttonbar button.checkout a{ text-decoration: none !important; color: #fff !important;} 
 
 /*CART Page*/
 #shopping-cart-table{ width:100%; border-collapse:collapse;}
@@ -512,33 +521,39 @@ ul.breadcrumb li a{ color:#bdbdbd; text-decoration:none;}
 .checkout_tax .shipping_tax .selector{ margin-right:20px; width:200px;}
 .checkout_tax .shipping_tax .selector span{ width:206px; text-transform:uppercase;}
 .checkout_tax .shipping_tax .selector select{ width:213px;}
-.checkout_tax .shipping_tax .brown_btn{ float:right; margin-top:5px;}
+.checkout_tax .shipping_tax .brown_btn, .checkout_steps input[type="submit"]{ float:right; margin-top:5px;}
 
 .checkout_discount{ float:right; width:305px;border:solid 1px #e0e0e0; border-width:2px 0px; padding:14px 16px 16px; background:url(../images/cart_coupon.png) no-repeat right bottom #f9f8f6; margin-bottom: 40px;}
 .checkout_discount input[type="text"]{ border:1px solid #D7D7D7; padding:4px; width:205px;}
-.checkout_discount .brown_btn{ float:left; margin-top:22px;}
+.checkout_discount .brown_btn, .checkout_steps input[type="submit"]{ float:left;}
 
 /*Checkout Steps*/
+
+.columns.omega.six > fieldset {display: inline-block;}
 #login-form h4 {padding-top: 0px;}
 .checkout_content, #checkout-step-billing, #checkout-step-delivery, #checkout-step-method, #checkout-step-payment, #checkout-step-confirm {padding: 20px; overflow: hidden;}
+.checkout_steps input[type="submit"] {margin-top: 20px;}
+#existing-customer label[for="user_remember_me"] {font-weight: normal;}
 
 .checkout_steps{ width:100%; float:left; line-height:18px; margin-bottom: 40px;}
 .checkout_steps .step-title{ padding:14px; font-size:15px; text-transform:uppercase; }
 .checkout_steps .step-title h2{font-size:16px; text-transform:uppercase; display:inline-block; }
-.checkout_steps .step-title span{ display:inline-block; text-align:center; padding-right:12px;}
-.checkout_steps > ol > li{border-top:solid 1px #e7ded5; margin-top:-1px;}
+.checkout_steps .step-title span{ display:inline-block; text-align:center; }
+.checkout_steps > ol > li{border-top:solid 1px #ccc; margin-top:-1px;}
 .checkout_steps > ol > li:first-child{ border:none;}
 .checkout_steps > ol > li.active .step-title{ color:#fff; background:#544f4b;}
 .checkout_steps #checkout-step-login{ padding:17px; border:solid 1px #e7ded5; display:block; overflow: hidden;}
-#checkout-step-login label{ font-size:13px; display:inline-block; padding:10px 0px;}
-#checkout-step-login .col-2 input{ border:1px solid #D7D7D7; padding:4px; width:230px;}
-.checkout_steps h3{ font-size:18px; padding-bottom:20px;}
+#checkout-step-login label{ font-size:13px; display:inline-block; padding:10px 0px; font-weight: bold; }
+.checkout_steps input[type="text"], .checkout_steps input[type="tel"], .checkout_steps input[type="email"], .checkout_steps input[type="password"]{ border:1px solid #D7D7D7; padding:4px; width:230px;}
+.checkout_steps h6{ font-size:18px; padding-bottom:20px;}
 .checkout_steps h4{ color:#312e2b; font-size:13px; font-weight:bold;}
-.checkout_steps p{ padding-bottom:12px;}
+.checkout_steps p{ padding-bottom:12px; overflow: hidden;}
 .checkout_steps a{ text-decoration:underline; color:#312e2b;}
 .checkout_steps table.form td:first-child {width: 150px; font-size: 12px; padding: 4px; font-weight: normal; text-align: left;}
 .checkout_steps table.form td {padding: 4px;}
 .large-field {padding: 5px; color: #818181; font-size: 11px; border: 1px solid #ddd; width: 230px; }
+
+
 
 #checkout-step-confirm table {width: 100%;}
 #checkout-step-confirm thead td{background: #eee; font-weight: bold;}
@@ -548,7 +563,7 @@ ul.breadcrumb li a{ color:#bdbdbd; text-decoration:none;}
 #checkout-step-confirm td {border-bottom: 1px solid #ccc;}
 #checkout-step-confirm tfoot tr:last-child td {border-bottom: none;}
 
-span.error {background: none repeat scroll 0 0 #ffe3e2; border: 1px solid #D84646; color: #FF0000; font-size: 11px;}
+span.error {background: none repeat scroll 0 0 #ffe3e2; border: 1px solid #D84646; color: #FF0000; font-size: 11px; display: inline-block;}
 
 .empty {color: #A29B95; padding: 50px 0; text-align: center;}
 
@@ -587,7 +602,7 @@ p.tick{ padding:10px 0px 10px 20px;background:url(../../assets/image-yanapana/ti
 .cart_drop ul li:nth-child(odd) {background:#fdfdfe;}
 .cart_drop ul li:nth-child(even) {background:#f7f7f7;}
 .cart_drop ul li img{ padding:1px; border:solid 2px #f0f0f1; float:left; margin-right:10px;}
-.cart_drop ul li a{color:#312E2B; text-transform:uppercase; font-size:11px; text-decoration:none; display:block; padding-bottom:4px; padding-top:2px; line-height:14px;}
+.cart_drop ul li a{color:#312E2B; text-transform:uppercase; font-size:11px; text-decoration:none; display:block; padding-bottom:4px; padding-top:2px; padding-left: 0; float: left; line-height:14px; width: 94px;}
 .cart_drop ul li span.price{ font-size:13px;}
 .cart_drop .cart_bottom{ padding:10px; display:inline-block; width:190px;}
 .cart_drop .cart_bottom .subtotal_menu{ float:left; width:80px;}
@@ -640,16 +655,19 @@ span.highlight_text{ display:inline-block; color:#fff; font-size:16px; font-styl
 
 /*GENERAL*/
 input, select, textarea, button{ font-size:12px;}
-.message{ padding:20px 15px 20px 85px; font-size:14px; line-height:100%; margin-bottom:15px;}
-.message.success{ color:#91a158; background:url(../../assets/image-yanapana/message_cart.png) no-repeat 15px center #f9fff1; border:solid 1px #dcedbf;}
+.message, .flash.notice{ padding:20px 15px 20px 85px; font-size:14px; line-height:100%; margin-bottom:15px;}
+.message.success { color:#91a158; background:url(../../assets/image-yanapana/message_cart.png) no-repeat 15px center #f9fff1; border:solid 1px #dcedbf;}
 .message.warning{ color:#91a158; background: url("../../assets/image-yanapana/message_cart.png") no-repeat scroll 15px center #FFD1D1; border:solid 1px #F8ACAC;}
-.success {color: #91a158; background: none repeat scroll 0 0 #f9fff1; border: 1px solid #acc600; font-size: 14px; line-height: 100%; margin-bottm: 15px; margin-top: 15px; padding: 20px 15px 20px 85px; }
+.success, .flash.notice {color: #91a158; background: none repeat scroll 0 0 #f9fff1; border: 1px solid #acc600; font-size: 14px; line-height: 100%; margin-bottm: 15px; margin-top: 15px; padding: 20px 15px 20px 85px; }
 .success a {color: #544F4B; text-decoration: none;}
-.brown_btn{ color:#fff; font-size:14px; font-weight:bold; padding:8px 14px; background:#544F4B; border:0px; line-height:100%; cursor:pointer; vertical-align:middle;}
-img{ max-width:100%; min-height: 100%;}
+.brown_btn, .checkout_steps input[type="submit"]{ color:#fff; font-size:14px; font-weight:bold; padding:8px 14px; background:#544F4B; border:0px; line-height:100%; cursor:pointer; vertical-align:middle;}
+img{ max-width:100%;}
+.flash.notice {margin: 0 auto; widows: auto;}
+.cart_drop ul li span a {color: #ddd; float: right; width: 5px; padding: 0; font-weight: bold;  }
+.cart_drop ul li span a:hover {color: #312E2B; }
 
 /*Forms*/
-div.selector {
+div.selector, div.selector, .product_rightcol input {
      border:solid 1px #d7d7d7; padding:3px; width:130px;
     float: left;
     padding-left: 10px;

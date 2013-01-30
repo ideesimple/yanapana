@@ -23,19 +23,13 @@
             <% end %>
           <% end %>
 
-          <div class="cart_drop"> <span class="darw"></span>
+          <div class="cart_drop">
+            <span class="darw"></span>
             <ul>
-              <% unless current_order.nil? or current_order.line_items.empty?%>
-                <!--<li><%= image_tag("image-yanapana/mini_c_item1.png")%><a href="#">Clogs Beach/Garden Clog</a> <span class="price">$49.90</span></li>-->
-                <div class="cart_bottom">
-                  <div class="subtotal_menu">
-                    <small>Subtotal:</small><big><%= current_order.display_total%></big>
-                  </div>
-                  <%= link_to "Checkout", cart_path %>
-
-                </div>
+            <% unless current_order.nil? or current_order.line_items.empty?%>
+              <%= render :partial => 'spree/shared/preview_cart', :locals => { :current_order => current_order } %>
               <% else %>
-                <div class="empty">Your Shopping cart is empty!</div>
+                <div class="empty"> Your Shopping cart is empty!</div>
               <% end %>
             </ul>
           </div>

@@ -4,19 +4,13 @@
  * the top of the compiled file, but it's generally better to create a new file per style scope.
  *
 
- 
- *= require base
- *= require reset
+ *= require styles
+
  *= require dropkick
- *= require flexslider
-*= require jcarousel_tango
-*= require jquery.jqzoom
-*= require responsive
-*= require simpletabs
-*= require styles
+ *= require jquery.jqzoom
 
 
  *= require_self
- 
+
 */
 

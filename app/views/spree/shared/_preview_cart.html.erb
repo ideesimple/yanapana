@@ -1,0 +1,15 @@
+<% current_order.line_items.each do |item| %>
+  <% image = item.variant.product.images.first %>
+  <li><%= image_tag(image.attachment.url(:mini)) %><a href="#"><%= item.variant.product.name %></a>
+    <span class="close fr"><a href="#">x</a></span>
+    <span class="price"><%= item.price  %></span>
+  </li>
+<% end %>
+
+<div class="cart_bottom">
+  <div class="subtotal_menu">
+    <small>Subtotal:</small><big><%= current_order.display_total%></big>
+  </div>
+  <%= link_to "Checkout", cart_path %>
+</div>
+
