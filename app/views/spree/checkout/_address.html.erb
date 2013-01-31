@@ -1,15 +1,47 @@
+<div class="section_container jean pb">
+  <!--Mid Section Starts-->
+  <section>
+    <ul class="breadcrumb">
+      <li><%= link_to "Home", root_path %></li>
+      <li><a href="#">Shopping Cart</a></li>
+      <li class="active">Checkout</li>
+    </ul>
+
+<div class="full_page">
+  <h1><%= t(:billing_details) %></h1>
+  
+  <div class="checkout_steps">
+    <ol id="checkoutSteps">
+      
+      <li id="checkout" class="sct">
+        <div class="step-title">Step 1: Checkout Options<a class="edit fr" href="#">Modify ></a></div>
+      </li>
+      
+      <li class="section allow active" id="opc-login">
+        <div class="step-title"> <span class="number">step 2:</span>
+        <h2>Billing Details</h2>
+        </div>
+        
+        <div id="checkout-step-billing">
+          <div id="shopping_cart" class="full_page">
+                <div class="message warning"><%= render :partial => 'spree/shared/error_messages', :locals => { :target => @order } %></div>
+              </div>
+          <div class="col2-set bb">
+          <div class="col-1">
+    
 <div class="columns alpha six" data-hook="billing_fieldset_wrapper">
 <fieldset id="billing" data-hook>
   <%= form.fields_for :bill_address do |bill_form| %>
-    <legend><%= t(:billing_address) %></legend>
+    <h6><%= t(:billing_address) %></h6>
     <div class="inner" data-hook="billing_inner">
       <p class="field" id="bfirstname">
         <%= bill_form.label :firstname, t(:first_name) %><span class="required">*</span><br />
-        <%= bill_form.text_field :firstname, :class => 'required' %>
+        <%= bill_form.text_field :firstname, :class => 'large-field' %>
+      <span class="error">First Name must be between 1 and 32 characters!</span>
       </p>
       <p class="field" id="blastname">
         <%= bill_form.label :lastname, t(:last_name) %><span class="required">*</span><br />
-        <%= bill_form.text_field :lastname, :class => 'required' %>
+        <%= bill_form.text_field :lastname, :class => 'large-field' %>
       </p>
       <% if Spree::Config[:company] %>
         <p class="field" id="bcompany">
@@ -19,7 +51,7 @@
       <% end %>
       <p class="field" id="baddress1">
         <%= bill_form.label :address1, t(:street_address) %><span class="required">*</span><br />
-        <%= bill_form.text_field :address1, :class => 'required' %>
+        <%= bill_form.text_field :address1, :class => 'large-field' %>
       </p>
       <p class="field" id="baddress2">
         <%= bill_form.label :address2, t(:street_address_2) %><br />
@@ -28,7 +60,7 @@
 
       <p class="field" id="bcity">
         <%= bill_form.label :city, t(:city) %><span class="required">*</span><br />
-        <%= bill_form.text_field :city, :class => 'required' %>
+        <%= bill_form.text_field :city, :class => 'large-field' %>
       </p>
 
       <p class="field" id="bcountry">
@@ -65,11 +97,11 @@
 
       <p class="field" id="bzipcode">
         <%= bill_form.label :zipcode, t(:zip) %><span class="required">*</span><br />
-        <%= bill_form.text_field :zipcode, :class => 'required' %>
+        <%= bill_form.text_field :zipcode, :class => 'large-field' %>
       </p>
       <p class="field" id="bphone">
         <%= bill_form.label :phone, t(:phone) %><span class="required">*</span><br />
-        <%= bill_form.phone_field :phone, :class => 'required' %>
+        <%= bill_form.phone_field :phone, :class => 'large-field' %>
       </p>
       <% if Spree::Config[:alternative_billing_phone] %>
         <p class="field" id="baltphone">
@@ -81,11 +113,14 @@
   <% end %>
 </fieldset>
 </div>
+          </div><!--Ends col1-->
+          
+          <div class="col-2">
 
 <div class="columns omega six" data-hook="shipping_fieldset_wrapper">
 <fieldset id="shipping" data-hook>
   <%= form.fields_for :ship_address do |ship_form| %>
-    <legend><%= t(:shipping_address) %></legend>
+    <h6><%= t(:shipping_address) %></h6>
     <p class="field checkbox" data-hook="use_billing">
       <%= check_box_tag 'order[use_billing]', '1', (!(@order.bill_address.empty? && @order.ship_address.empty?) && @order.bill_address.same_as?(@order.ship_address)) %>
       <%= label_tag :order_use_billing, t(:use_billing_address), :id => 'use_billing' %>
@@ -93,11 +128,11 @@
     <div class="inner" data-hook="shipping_inner">
       <p class="field" id="sfirstname">
         <%= ship_form.label :firstname, t(:first_name) %><span class="required">*</span><br />
-        <%= ship_form.text_field :firstname, :class => 'required' %>
+        <%= ship_form.text_field :firstname, :class => 'large-field' %>
       </p>
       <p class="field" id="slastname">
         <%= ship_form.label :lastname, t(:last_name) %><span class="required">*</span><br />
-        <%= ship_form.text_field :lastname, :class => 'required' %>
+        <%= ship_form.text_field :lastname, :class => 'large-field' %>
       </p>
       <% if Spree::Config[:company] %>
         <p class="field" id="scompany">
@@ -107,7 +142,7 @@
       <% end %>
       <p class="field" id="saddress1">
         <%= ship_form.label :address1, t(:street_address) %><span class="required">*</span><br />
-        <%= ship_form.text_field :address1, :class => 'required' %>
+        <%= ship_form.text_field :address1, :class => 'large-field' %>
       </p>
       <p class="field" id="saddress2">
         <%= ship_form.label :address2, t(:street_address_2) %><br />
@@ -116,7 +151,7 @@
 
       <p class="field" id="scity">
         <%= ship_form.label :city, t(:city) %><span class="required">*</span><br />
-        <%= ship_form.text_field :city, :class => 'required' %>
+        <%= ship_form.text_field :city, :class => 'large-field' %>
       </p>
 
       <p class="field" id="scountry">
@@ -151,11 +186,11 @@
 
       <p class="field" id="szipcode">
         <%= ship_form.label :zipcode, t(:zip) %><span class="required">*</span><br />
-        <%= ship_form.text_field :zipcode, :class => 'required' %>
+        <%= ship_form.text_field :zipcode, :class => 'large-field' %>
       </p>
       <p class="field" id="sphone">
         <%= ship_form.label :phone, t(:phone) %><span class="required">*</span><br />
-        <%= ship_form.phone_field :phone, :class => 'required' %>
+        <%= ship_form.phone_field :phone, :class => 'large-field' %>
       </p>
       <% if Spree::Config[:alternative_shipping_phone] %>
         <p class="field" id="saltphone">
@@ -167,7 +202,26 @@
   <% end %>
 </fieldset>
 </div>
-<hr class="clear" />
+</div><!-- Ends Col2-->
+
 <div class="form-buttons" data-hook="buttons">
   <%= submit_tag t(:save_and_continue), :class => 'continue button primary' %>
+</div>
+          
+          </div><!-- Ends ColSet-->
+        </div><!-- Ends Checkout step billing-->
+      </li>
+      <li id="checkout" class="sct">
+              <div class="step-title">Step 3: Delivery Method</div>
+            </li>
+      <li id="checkout" class="sct">
+        <div class="step-title">Step 4: Payment Method</div>
+      </li><li id="checkout" class="sct">
+        <div class="step-title">Step 5: Confirm Order</div>
+        </li>
+    </ol>
+  </div>
+  </div>
+
+  </section>
 </div>

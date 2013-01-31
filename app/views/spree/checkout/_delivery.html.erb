@@ -1,27 +1,71 @@
-<fieldset id='shipping_method' data-hook>
-  <legend><%= t(:shipping_method) %></legend>
-  <div class="inner" data-hook="shipping_method_inner">
-    <div id="methods">
-      <p class="field radios">
-        <% @order.rate_hash.each do |shipping_method| %>
-          <label>
-            <%= radio_button(:order, :shipping_method_id, shipping_method[:id]) %>
-            <%= shipping_method.name %> <%= shipping_method.display_price %>
-          </label>
-        <% end %>
-      </p>
-    </div>
-    <% if Spree::Config[:shipping_instructions] && @order.rate_hash.present? %>
-      <p id="minstrs" data-hook>
-        <%= form.label :special_instructions, t(:shipping_instructions) %><br />
-        <%= form.text_area :special_instructions, :cols => 40, :rows => 7 %>
-      </p>
-    <% end %>
-  </div>
-</fieldset>
-
-<br />
-
-<div class="form-buttons" data-hook="buttons">
-  <%= submit_tag t(:save_and_continue), :class => 'continue button primary' %>
-</div>
+<div class="section_container jean pb">
+  <section>
+    <ul class="breadcrumb">
+      <li><%= link_to "Home", root_path %></li>
+      <li><a href="#">Shopping Cart</a></li>
+      <li class="active">Checkout</li>
+    </ul>
+    
+    <div class="full_page">
+     <h1><%= t(:delivery_details) %></h1>
+        <div class="checkout_steps">
+          <ol id="checkoutSteps">
+            
+            <li id="checkout" class="sct">
+               <div class="step-title">Step 1: Checkout Options<a class="edit fr" href="#">Modify ></a></div>
+            </li>
+            <li id="checkout" class="sct">
+               <div class="step-title">Step 2: Billing Details<a class="edit fr" href="#">Modify ></a></div>
+            </li>
+            
+              <li class="section allow active" id="opc-login">
+                <div class="step-title"> <span class="number">step 3:</span>
+                  <h2>Delivery Method</h2>
+                </div>
+                <div id="checkout-step-billing">
+                  <div id="shopping_cart" class="full_page">
+                    <div class="message warning"><%= render :partial => 'spree/shared/error_messages', :locals => { :target => @order } %></div>
+                  </div>
+                    
+                    
+                <fieldset id='shipping_method' data-hook>
+                  <h6><%= t(:shipping_method) %></h6>
+                  <div class="inner" data-hook="shipping_method_inner">
+                    <div id="methods">
+                      <p class="field radios">
+                        <% @order.rate_hash.each do |shipping_method| %>
+                          <label>
+                            <%= radio_button(:order, :shipping_method_id, shipping_method[:id]) %>
+                            <%= shipping_method.name %> <%= shipping_method.display_price %>
+                          </label>
+                        <% end %>
+                      </p>
+                    </div>
+                    <% if Spree::Config[:shipping_instructions] && @order.rate_hash.present? %>
+                      <p id="minstrs" data-hook>
+                        <%= form.label :special_instructions, t(:shipping_instructions) %><br />
+                        <%= form.text_area :special_instructions, :cols => 40, :rows => 7 %>
+                      </p>
+                    <% end %>
+                  </div>
+                </fieldset>
+                
+                <br />
+                
+                <div class="form-buttons" data-hook="buttons">
+                  <%= submit_tag t(:save_and_continue), :class => 'continue button primary' %>
+                </div>
+                
+                
+                </div><!--Ends Checkout-step-billing-->
+              </li>
+            <li id="checkout" class="sct">
+              <div class="step-title">Step 4: Payment Method</div>
+            </li><li id="checkout" class="sct">
+              <div class="step-title">Step 5: Confirm Order</div>
+            </li>
+          </ol>      
+        </div><!--Ends checkout_steps-->
+    </div> <!--Ends full_page-->
+  </section>
+</div><!--Ends Section_container-->

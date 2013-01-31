@@ -1,0 +1,59 @@
+<div class="section_container jean pb">
+  <section>
+    <ul class="breadcrumb">
+      <li><%= link_to "Home", root_path %></li>
+      <li><a href="#">Shopping Cart</a></li>
+      <li class="active">Checkout</li>
+    </ul>
+    
+    <div class="full_page">
+     <h1><%= t(:delivery_details) %></h1>
+        <div class="checkout_steps">
+          <ol id="checkoutSteps">
+            <li id="checkout" class="sct">
+               <div class="step-title">Step 1: Checkout Options<a class="edit fr" href="#">Modify ></a></div>
+            </li>
+            <li id="checkout" class="sct">
+               <div class="step-title">Step 2: Billing Details<a class="edit fr" href="#">Modify ></a></div>
+            </li>
+            <li id="checkout" class="sct">
+               <div class="step-title">Step 3: Delivery Method<a class="edit fr" href="#">Modify ></a></div>
+            </li>
+            <li id="checkout" class="sct">
+               <div class="step-title">Step 4: Payment Method<a class="edit fr" href="#">Modify ></a></div>
+            </li>
+            
+            
+ <li class="section allow active" id="opc-login">
+                <div class="step-title"> <span class="number">Step 4:</span>
+                  <h2>Payment Method</h2>
+                </div>
+                <div id="checkout-step-billing">
+                  <div id="shopping_cart" class="full_page">
+                    <div class="message warning"><%= render :partial => 'spree/shared/error_messages', :locals => { :target => @order } %></div>
+                  </div>
+
+
+<fieldset id="order_details" data-hook>
+  <div class="clear"></div>
+  <legend><%= t(@order.state, :scope => :order_state).titleize %></legend>
+  <%= render :partial => 'spree/shared/order_details', :locals => { :order => @order } %>
+</fieldset>
+
+<br />
+
+<div class="form-buttons" data-hook="buttons">
+  <%= submit_tag t(:place_order), :class => 'continue button primary' %>
+  <script>disableSaveOnClick();</script>
+</div>
+                </div>
+ </li>
+
+
+
+
+     </ol>
+      </div>
+    </div>
+  </section>
+</div>

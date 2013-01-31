@@ -16,7 +16,18 @@
   <% else %>
       <div id="shopping_cart" class="full_page">
         <h1><%= t(:shopping_cart) %></h1>
-
+      <div class="action_buttonbar">
+        <%= form_tag empty_cart_path, :method => :put do %>
+            <p id="clear_cart_link" data-hook>
+              <%= button_tag :class => 'checkout', :id => 'checkout-link' do %>
+              <%= link_to t(:continue_shopping), products_path %>
+            <% end %>
+            <%= button_tag :class => 'continue', :id => 'update-button' do %>
+            <%= t(:update) %>
+          <% end %>
+            </p>
+          <% end %>
+      </div>
         <%= form_for @order, :url => update_cart_path, :html => {:id => 'update-cart', :class => "edit_spree_order"} do |order_form| %>
 
           <div class="cart_table">
@@ -39,23 +50,12 @@
             </table>
           </div>
       <div class="action_buttonbar">
-          <%= button_tag :class => 'primary', :id => 'update-button' do %>
-            <%= t(:update) %>
-          <% end %>
+          <%= submit_tag t(:empty_cart), :class => 'Continue' %>
           <%= button_tag :class => 'checkout', :id => 'checkout-link', :name => 'checkout' do %>
             <%= t(:checkout) %>
           <% end %>
         <% end %>
-
-          <%= form_tag empty_cart_path, :method => :put do %>
-            <p id="clear_cart_link" data-hook>
-            <%= submit_tag t(:empty_cart), :class => 'Continue' %>
-            <%= t(:or) %>
-            <%= button_tag :class => 'Continue', :id => 'checkout-link' do %>
-              <%= link_to t(:continue_shopping), products_path %>
-            <% end %>
-            </p>
-          <% end %>
+        
       </div>
     </div><!--End Shopping cart-->
 

@@ -1,6 +1,7 @@
 <% unless @product_properties.empty? %>
+
   <div id="product-specs">
-    <h4 class="mostrar">Quick Overview</h4>
+    <h4 id="mostrar" href="#">Quick Overview</h4>
     <div id="caja">
       <ul>
         <% for product_property in @product_properties
@@ -11,4 +12,3 @@
     </div>
    </div>
  <% end %>
-
