@@ -1,13 +1,14 @@
 
-<div class="section_container">
+<div class="section_container jean pb">
   <!--Mid Section Starts-->
   <section>
     <ul class="breadcrumb">
       <li><%= link_to "Home", root_path %></li>
       <li><a href="#">Shopping Cart</a></li>
-      <li class="active"><a href="#">Checkout</a></li>
+      <li class="active">Checkout</li>
     </ul>
 
+    
     <div class="full_page">
       <h1><%= t(:checkout) %></h1>
       <!--CHECKOUT STEPS STARTS-->
@@ -15,7 +16,7 @@
       <div class="checkout_steps">
         <ol id="checkoutSteps">
           <li class="section allow active" id="opc-login">
-            <div class="step-title"> <span class="number">1</span>
+            <div class="step-title"> <span class="number">step 1:</span>
               <h2>Checkout Method</h2>
             </div>
             <div id="checkout-step-login">
@@ -35,11 +36,11 @@
                       <% if Spree::Config[:allow_guest_checkout] %>
                         <div id="guest_checkout" data-hook class="columns omega eight">
                           <%= render :partial => 'spree/shared/error_messages', :locals => { :target => @order } %>
-                          <h1><%= t(:guest_user_account) %></h1>
+                          <h6><%= t(:guest_user_account) %></h6>
                           <%= form_for @order, :url => update_checkout_registration_path, :method => :put, :html => { :id => 'checkout_form_registration' } do |f| %>
                             <p>
-                              <%= f.label :email, t(:email) %><br />
-                              <%= f.email_field :email, :class => 'title' %>
+                              <%= f.label :email, t(:email), :class => 'important' %><br />
+                              <%= f.email_field :email, :class => 'large-field' %>
                             </p>
                             <p><%= f.submit t(:continue), :class => 'button primary' %></p>
                           <% end %>
@@ -49,6 +50,18 @@
                   </div><!--End col-2-->
                 </div><!--End col2-Set-->
             </div><!--End Checkout-step-login-->
+            </li>
+            <li id="checkout" class="sct">
+              <div class="step-title">Step 2: Billing Details</div>
+            </li>
+            <li id="checkout" class="sct">
+              <div class="step-title">Step 3: Delivery Method</div>
+            </li>
+            <li id="checkout" class="sct">
+              <div class="step-title">Step 4: Payment Method</div>
+            </li>
+            <li id="checkout" class="sct">
+              <div class="step-title">Step 5: Confirm Order</div>
             </li>
         </ol>
       </div>

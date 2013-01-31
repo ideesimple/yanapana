@@ -137,7 +137,7 @@ header .top_bar .language_switch {float: none; width: 310px; margin: 0 auto;}
 header .top_bar .language_switch a{ padding:7px 0; margin: 0 1px 1px 0; text-align: center; width: 76px; box-shadow: none;}
 header .top_links {float: none; width: 300px; margin: 0 auto; height: 31px;}
 header .top_links > li {margin: 0;} 
-header .top_links li a {padding: 10px 16px;}
+header .top_links li a {padding: 10px 14px;}
 header .top_links > li a{ font-size:11px;}
 nav .primary_nav{ display:none;}
 .header_container{ padding: 0; height: auto;}
@@ -293,6 +293,6 @@ aside#sidebar{width:310px;}
 #cause h2 {font-size: 30px; padding-bottom: 10px; }
 #cause h4 {font-size: 15px; font-weight: bold; padding-bottom: 5px;}
 #cause p {font-size: 14px; padding-bottom: 7px;}
-.checkout_steps .step-title {font-size: 12px;}
+.checkout_steps .step-title, .checkout_steps .step-title h2 {font-size: 13px !important;}
 
 }
