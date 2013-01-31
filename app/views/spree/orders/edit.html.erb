@@ -10,7 +10,6 @@
         <div class="message warning"><%= t(:your_cart_is_empty) %></div>
         <div class="action_buttonbar">
           <%= button_to t(:continue_shopping), root_path, :class => 'continue' %>
-          <button type="button" onClick="parent.location='yanapana_index.html'" title="" class="continue">Continue</button>
         </div>
       </div>
   <% else %>
@@ -22,8 +21,8 @@
               <%= button_tag :class => 'checkout', :id => 'checkout-link' do %>
               <%= link_to t(:continue_shopping), products_path %>
             <% end %>
-            <%= button_tag :class => 'continue', :id => 'update-button' do %>
-            <%= t(:update) %>
+            <%= button_tag :class => 'continue' do %>
+            <%= t(:empty) %>
           <% end %>
             </p>
           <% end %>
@@ -50,12 +49,12 @@
             </table>
           </div>
       <div class="action_buttonbar">
-          <%= submit_tag t(:empty_cart), :class => 'Continue' %>
+        <%= submit_tag t(:update), :class => 'Continue', :id => 'update-button' %>
           <%= button_tag :class => 'checkout', :id => 'checkout-link', :name => 'checkout' do %>
             <%= t(:checkout) %>
           <% end %>
         <% end %>
-        
+
       </div>
     </div><!--End Shopping cart-->
 

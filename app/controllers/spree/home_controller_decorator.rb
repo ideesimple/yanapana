@@ -12,7 +12,7 @@ Spree::HomeController.class_eval do
     respond_with(@products)
   end
 
-  def memberships
+  def dummy_confirm
   end
 
   def contact_us
