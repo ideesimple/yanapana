@@ -25,13 +25,13 @@
       <h2 class="sub_title">Products</h2>
       <% reset_cycle('default') %>
     <ul id="first-carousel">
-      <% products.each do |product| %>
+      <% products.each_with_index do |product,i| %>
         <% if product.on_display? %>
           <li>
            <div class="product_img_container">
-             <%= link_to product_image(product, :itemprop => "image"), product, :itemprop => 'url', :class=>"product_image" %>
+             <%= link_to prodsize_image(product, :itemprop => "image"), product, :itemprop => 'url', :class=>"product_image" %>
              <div class="price_info">
-              <%= form_for :order, :url => populate_orders_path, :remote => true do |f| %>
+               <%= form_for :order, :url => populate_orders_path, :html => {:id => "form"+i.to_s}, :remote => true do |f| %>
                 <%= hidden_field_tag :quantity, 1%>
 
                 <% if product.has_variants? %>
@@ -52,25 +52,29 @@
 
                   <% end %>
                   <% v_option_values = Array.new %>
-                  <% options.each do |o|
-                    v_option_values << "<option value='" + o[1].to_s + "'>" + o[0] + "</option>" %>
-                  <% end %>
-                  <%= select_tag "products[#{product.id}]",v_option_values.join.html_safe %>
+                                    <% select_tag "products[#{product.id}]",v_option_values.join.html_safe %>
                 <% end %>
-                <%= button_tag :class => 'addtocart_link', :type => :submit do %>
+                <%= button_tag :id =>"cart_" + i.to_s, :class => 'addtocart_link', :type => :submit do %>
                 <a class="addtocart_link sizemenu">
                   <span class="pr_price"><%= product.display_price %></span>
                   <span class="pr_add">Add to cart</span>
                 </a>
               <% end %>
-              <div class="size_drop picksize">
-                  <ul>
-		      <li><a class="price_add">S</a></li>
+              <%= "<div id='size_drop_#{i}' class='size_drop picksize'>".html_safe %>
+                <ul>
+                <% unless options.nil? %>
+                  <% options.each do |o|%>
+                    <li><a id = "<%= o[1].to_s %>" class='price_add'><%= o[0] %></a></li>
+                  <% end %>
+                <% end %>
+                <%= hidden_field_tag "products[#{product.id}]", 0, :id => "product_1" %>
+
+		     <!-- <li><a class="price_add">S</a></li>
 		      <li><a class="price_add">M</a></li>
 		      <li><a class="price_add">L</a></li>
-		      <li><a class="price_add">XL</a></li>
-		  </ul>
-                </div>
+          <li><a class="price_add">XL</a></li>-->
+		            </ul>
+              </div>
 
               <% end %>
               </div>

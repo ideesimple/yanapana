@@ -1,5 +1,5 @@
 $('#link-to-cart').html("<%= j(link_to_cart) %>");
-$('.item').html("<%= current_order.item_count %>/ITEM ");
+$('.item').html("<b><%= current_order.item_count %></b> ITEM /");
 $('.price').html("<%= current_order.display_total %>");
 $('.cart_drop').html("<%= escape_javascript(render :partial=> 'spree/shared/preview_cart', :locales => {:current_order => current_order})%>");
 
