@@ -3,7 +3,6 @@ db/*.sqlite3
 log/*.log
 tmp/
 .sass-cache/
-config/database.yml
 ## generic files to ignore
 *~
 *.lock
@@ -38,6 +37,3 @@ pickle-email-*.html
 .DS_Store
 *~
 
-config/settings.local.yml
-config/settings/*.local.yml
-config/environments/*.local.yml
