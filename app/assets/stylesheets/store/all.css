@@ -5,8 +5,13 @@
  *
 
  *= require styles
- *= require dropkick
+ *= require reset
+ *= require flexslider
+ *= require jcarousel_tango
+ *= require simpletabs
  *= require base
+ *= require responsive
+ *= require dropkick
  *= require jquery.jqzoom
 
 
