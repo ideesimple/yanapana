@@ -30,14 +30,11 @@ capybara-*.html
 /log/*
 /tmp/*
 /db/*.sqlite3
-/public/system/*
 /coverage/
 /spec/tmp/*
 **.orig
 rerun.txt
 pickle-email-*.html
-/public/uploads/*
-/public/spree/*
 .DS_Store
 *~
 
