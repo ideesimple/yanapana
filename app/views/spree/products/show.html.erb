@@ -105,15 +105,7 @@ $(document).ready(function() {
 
           <%= render :partial => "cart_form" %>
 
-        <!--<div class="color_sel">
-              <label>Color :</label>
-              <select>
-                <option>BEIGE</option>
-                <option>CORAL</option>
-              </select>
-            </div>-->
-
-          <!--<div class="qty_info">
+      <!--<div class="qty_info">
             <div class="quantity">
               <label>Quantity :</label>
               <select>
@@ -133,7 +125,7 @@ $(document).ready(function() {
               <!--ORG Logo Ends-->
               <!--ORG Description Starts-->
               <h4>Organization</h4>
-              <div class="org_logo"><%= link_to (image_tag("image-yanapana/org_logo.png")), root_path %></div>
+              <div class="org_logo"><%= link_to (image_tag(@product.cause.organization.photo.url(:org))), root_path %></div>
               <!--Facebook like button Starts-->
               <div class="fb-like" data-send="false" data-layout="button_count" data-width="450" data-show-faces="true"></div>
 
@@ -167,7 +159,7 @@ $(document).ready(function() {
       <div class="artist"><a href="#"><%= image_tag ("image-yanapana/artist.jpg") %></a></div>
       <div class="artist_description">
         <h2 class="sub_title">Inspiration Behind</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+        <p><%= @product.cause.inspiration  %></p>
       </div>
 
       <!--Facebook like button Starts-->

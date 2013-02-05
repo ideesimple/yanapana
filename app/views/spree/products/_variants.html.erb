@@ -24,7 +24,7 @@
       <% options.each do |o|
         v_option_values << "<option value='" + o[1].to_s + "'>" + o[0] + "</option>" %>
       <% end %>
-      <%= select_tag "products[#{@product.id}]",v_option_values.join.html_safe%>
+      <%= select_tag "products[#{@product.id}]",v_option_values.join.html_safe, :prompt => "Select" %>
     </div>
   </div>
 

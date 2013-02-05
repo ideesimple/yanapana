@@ -7,53 +7,45 @@
     </ul>
     
     <div class="full_page">
-     <h1><%= t(:delivery_details) %></h1>
+      <h1><%= t(:delivery_details) %></h1>
         <div class="checkout_steps">
           <ol id="checkoutSteps">
-            <li id="checkout" class="sct">
-               <div class="step-title">Step 1: Checkout Options<a class="edit fr" href="#">Modify ></a></div>
-            </li>
-            <li id="checkout" class="sct">
-               <div class="step-title">Step 2: Billing Details<a class="edit fr" href="#">Modify ></a></div>
-            </li>
-            <li id="checkout" class="sct">
-               <div class="step-title">Step 3: Delivery Method<a class="edit fr" href="#">Modify ></a></div>
-            </li>
-            <li id="checkout" class="sct">
-               <div class="step-title">Step 4: Payment Method<a class="edit fr" href="#">Modify ></a></div>
-            </li>
             
-            
- <li class="section allow active" id="opc-login">
-                <div class="step-title"> <span class="number">Step 4:</span>
-                  <h2>Payment Method</h2>
+            <li id="checkout" class="sct">
+               <div class="step-title">Step 1: Checkout Options</div>
+            </li>
+            <li id="checkout" class="sct">
+               <div class="step-title">Step 2: Billing Details</div>
+            </li>
+            <li id="checkout" class="sct">
+               <div class="step-title">Step 3: Delivery Method</div>
+            </li>
+            <li id="checkout" class="sct">
+               <div class="step-title">Step 4: Payment Method</div>
+            </li>
+      
+      
+            <li class="section allow active" id="opc-login">
+                <div class="step-title"> <span class="number">Step 5:</span>
+                  <h2>Confirm Order</h2>
                 </div>
-                <div id="checkout-step-billing">
+                <div id="checkout-step-confirm">
                   <div id="shopping_cart" class="full_page">
                     <div class="message warning"><%= render :partial => 'spree/shared/error_messages', :locals => { :target => @order } %></div>
                   </div>
-
-
-<fieldset id="order_details" data-hook>
-  <div class="clear"></div>
-  <legend><%= t(@order.state, :scope => :order_state).titleize %></legend>
-  <%= render :partial => 'spree/shared/order_details', :locals => { :order => @order } %>
-</fieldset>
-
-<br />
-
+                  
+                <fieldset data-hook="" id="order_summary">
+       <%= t(@order.state, :scope => :order_state).titleize %>
+                <%= render :partial => 'spree/shared/order_details', :locals => { :order => @order } %>
+                
+                </fieldset>
 <div class="form-buttons" data-hook="buttons">
   <%= submit_tag t(:place_order), :class => 'continue button primary' %>
   <script>disableSaveOnClick();</script>
 </div>
                 </div>
- </li>
-
-
-
-
-     </ol>
-      </div>
-    </div>
+            </li>
+          </ol>
+    </div><!--Ends full page-->
   </section>
 </div>

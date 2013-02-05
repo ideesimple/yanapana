@@ -1,0 +1,70 @@
+<div class="section_container jean pb">
+  <section>
+    <ul class="breadcrumb">
+      <li><%= link_to "Home", root_path %></li>
+      <li><a href="#">Shopping Cart</a></li>
+      <li class="active">Checkout</li>
+    </ul>
+
+    <div class="full_page">
+      <h1><%= t(:delivery_details) %></h1>
+        <div class="checkout_steps">
+          <ol id="checkoutSteps">
+<!--
+            <li id="checkout" class="sct">
+               <div class="step-title">Step 1: Checkout Options</div>
+            </li>
+            <li id="checkout" class="sct">
+               <div class="step-title">Step 2: Billing Details</div>
+            </li>
+            <li id="checkout" class="sct">
+               <div class="step-title">Step 3: Delivery Method</div>
+            </li>
+            <li id="checkout" class="sct">
+               <div class="step-title">Step 4: Payment Method</div>
+            </li>
+-->
+
+            <li class="section allow active" id="opc-login">
+                <!--<div class="step-title"> <span class="number">Step 5:</span>
+                  <h2>Confirm Order</h2>
+                </div>-->
+                <div id="checkout-step-confirm">
+                  <div id="shopping_cart" class="full_page">
+                    <div class="message success"><%= render :partial => 'spree/shared/error_messages', :locals => { :target => @order } %></div>
+                  </div>
+
+
+
+
+<fieldset id="order_summary" class="index columns" data-hook>
+  <h1><%= "Your " + t(:order) + " #" + @order.number + " has been processed!"%></h1>
+  <legend><% accurate_title %></legend>
+
+<div id="order" data-hook>
+  <% if params.has_key? :checkout_complete %>
+    <h1><%= t(:thank_you_for_your_order) %></h1>
+  <% else %>
+    
+  <% end %>
+  <%= render :partial => 'spree/shared/order_details', :locals => { :order => @order } %>
+
+  <br class="clear" />
+
+  <p data-hook="links">
+    <%= link_to t(:back_to_store), spree.root_path, :class => "button" %>
+    <% unless params.has_key? :checkout_complete %>
+      <% if try_spree_current_user && respond_to?(:spree_account_path) %>
+        <%= link_to t(:my_account), spree_account_path, :class => "button" %>
+      <% end %>
+    <% end %>
+  </p>
+</div>
+</fieldset>
+
+              </div>
+            </li>
+          </ol>
+    </div><!--Ends full page-->
+  </section>
+</div>

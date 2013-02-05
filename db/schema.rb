@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130115213116) do
+ActiveRecord::Schema.define(:version => 20130204183622) do
 
   create_table "spree_activators", :force => true do |t|
     t.string   "description"
@@ -88,6 +88,9 @@ ActiveRecord::Schema.define(:version => 20130115213116) do
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
+    t.string   "state"
+    t.string   "city"
+    t.string   "zip"
   end
 
   create_table "spree_assets", :force => true do |t|
@@ -137,6 +140,7 @@ ActiveRecord::Schema.define(:version => 20130115213116) do
     t.datetime "updated_at",         :null => false
     t.date     "date_start"
     t.date     "date_finish"
+    t.text     "inspiration"
   end
 
   add_index "spree_causes", ["artist_id"], :name => "index_spree_causes_on_artist_id"
@@ -302,6 +306,10 @@ ActiveRecord::Schema.define(:version => 20130115213116) do
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
+    t.text     "address"
+    t.string   "state"
+    t.string   "city"
+    t.string   "zip"
   end
 
   create_table "spree_payment_methods", :force => true do |t|

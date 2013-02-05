@@ -64,16 +64,15 @@
                 <ul>
                 <% unless options.nil? %>
                   <% options.each do |o|%>
-                    <li><a id = "<%= o[1].to_s %>" class='price_add'><%= o[0] %></a></li>
+                    <% if Spree::Variant.find(o[1]).count_on_hand > 0 %>
+                      <li><a id = "<%= o[1].to_s %>" class='price_add'  ><%= o[0] %></a></li>
+                    <% else %>
+                      <li><a class='price_add'  ><%= o[0] %> (out of stock) </a></li>
+                    <% end %>
                   <% end %>
                 <% end %>
                 <%= hidden_field_tag "products[#{product.id}]", 0, :id => "product_1" %>
-
-		     <!-- <li><a class="price_add">S</a></li>
-		      <li><a class="price_add">M</a></li>
-		      <li><a class="price_add">L</a></li>
-          <li><a class="price_add">XL</a></li>-->
-		            </ul>
+                </ul>
               </div>
 
               <% end %>

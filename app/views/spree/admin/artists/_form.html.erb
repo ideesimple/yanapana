@@ -27,25 +27,41 @@
   <% end %>
 
   <%= f.field_container :place do  %>
-    <%= f.label :place%><br />
+    <%= f.label :place, 'Country'%><br />
     <span id="bcountry">
       <%= f.collection_select(:place, Spree::Country.order("name ASC").all, :id, :name) %>
     </span>
   <% end %>
+
+  <%= f.field_container :state do  %>
+    <%= f.label :state%><br />
+    <%= f.text_field :state %>
+  <% end %>
+
+  <%= f.field_container :city do  %>
+    <%= f.label :city %><br />
+    <%= f.text_field :city %>
+  <% end %>
+
+  <%= f.field_container :zip do  %>
+    <%= f.label :zip %><br />
+    <%= f.text_field :zip %>
+  <% end %>
+
+    </div>
+
+<div class="right">
+  <%= f.field_container :email do  %>
+    <%= f.label :email %><span class="required">*</span><br />
+    <%= f.email_field :email %>
+  <% end %>
+
 
   <%= f.field_container :telephone do  %>
     <%= f.label :telephone, '# Phone' %><br />
     <%= f.text_field :telephone %>
   <% end %>
 
-  <%= f.field_container :email do  %>
-    <%= f.label :email %><span class="required">*</span><br />
-    <%= f.email_field :email %>
-  <% end %>
-
-  </div>
-
-<div class="right">
   <%= f.field_container :webpage do  %>
     <%= f.label :webpage, "Website"%><span class="required">*</span><br />
     <%= f.text_field :webpage %>

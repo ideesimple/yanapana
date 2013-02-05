@@ -556,12 +556,14 @@ ul.breadcrumb li a{ color:#bdbdbd; text-decoration:none;}
 
 
 #checkout-step-confirm table {width: 100%;}
-#checkout-step-confirm thead td{background: #eee; font-weight: bold;}
+#checkout-step-confirm thead tr th{background: #eee; font-weight: bold;}
 #checkout-step-confirm tbody, #checkout-step-confirm tfoot {background: #fff;}
-#checkout-step-confirm td {padding: 7px; text-align: right;}
-#checkout-step-confirm .name, #checkout-step-confirm .model  {text-align: left;}
-#checkout-step-confirm td {border-bottom: 1px solid #ccc;}
-#checkout-step-confirm tfoot tr:last-child td {border-bottom: none;}
+#checkout-step-confirm th {padding: 7px; text-align: right;}
+#checkout-step-confirm .name, #checkout-step-confirm .price  {text-align: left;}
+#checkout-step-confirm tr td, #checkout-step-confirm th {border-bottom: 1px solid #ccc; padding: 7px;}
+#checkout-step-confirm td {text-align: right;}
+#checkout-step-confirm td.prod_name {text-align: left;}
+
 
 span.error {background: none repeat scroll 0 0 #ffe3e2; border: 1px solid #D84646; color: #FF0000; font-size: 11px; display: inline-block;}
 
@@ -660,11 +662,19 @@ input, select, textarea, button{ font-size:12px;}
 .message.warning{ color:#91a158; background: url("../../assets/image-yanapana/message_cart.png") no-repeat scroll 15px center #FFD1D1; border:solid 1px #F8ACAC;}
 .success, .flash.notice {color: #91a158; background: none repeat scroll 0 0 #f9fff1; border: 1px solid #acc600; font-size: 14px; line-height: 100%; margin-bottm: 15px; margin-top: 15px; padding: 20px 15px 20px 85px; }
 .success a {color: #544F4B; text-decoration: none;}
-.brown_btn, .checkout_steps input[type="submit"]{ color:#fff; font-size:14px; font-weight:bold; padding:8px 14px; background:#544F4B; border:0px; line-height:100%; cursor:pointer; vertical-align:middle;}
+.brown_btn, .checkout_steps input[type="submit"], .checkout_steps a.button { text-decoration: none; float: right; color:#fff; font-size:14px; font-weight:bold; padding:8px 14px; background:#544F4B; border:0px; line-height:100%; cursor:pointer; vertical-align:middle;}
 img{ max-width:100%;}
 .flash.notice {margin: 0 auto; widows: auto;}
 .cart_drop ul li span a {color: #ddd; float: right; width: 5px; padding: 0; font-weight: bold;  }
 .cart_drop ul li span a:hover {color: #312E2B; }
+
+.howtosell-img {
+    background-image: url("http://25.media.tumblr.com/tumblr_m7ogqwpwMv1rqeb09o1_r1_1280.jpg");
+    background-position: center 910px;
+    height: 400px;
+    margin-bottom: 20px;
+    width: 100%;
+}
 
 /*Forms*/
 div.selector, div.selector, .product_rightcol input {
@@ -750,6 +760,14 @@ h2.sub_title{ font-family: century gothic, serif; font-size:18px; color:#312e2b;
 #cause h2 {   font-family: "skippy-sharp",cursive; font-size: 45px; padding-bottom: 20px;}
 #cause h4 {font-family: century gothic, serif; font-size: 20px; padding-bottom: 10px;}
 #cause p {line-height: 1.4; font-size: 16px; padding-bottom: 16px;}
+
+#artist-section p, .full_page p {
+    color: #A2A2A2;
+    font-family: 'Istok Web';
+    font-size: 14px;
+    line-height: 1.4;
+    margin-bottom: 20px;
+}	
 
 .important {font-weight: bold;}
 

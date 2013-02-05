@@ -1,0 +1,104 @@
+<div class="section_container jean pb">
+  <section>
+    <ul class="breadcrumb">
+      <li><%= link_to "Home", root_path %></li>
+      <li><a href="#">Shopping Cart</a></li>
+      <li class="active">Checkout</li>
+    </ul>
+    
+    <div class="full_page">
+      <h1><%= t(:delivery_details) %></h1>
+        <div class="checkout_steps">
+          <ol id="checkoutSteps">
+            
+            <li id="checkout" class="sct">
+               <div class="step-title">Step 1: Checkout Options<a class="edit fr" href="#">Modify ></a></div>
+            </li>
+            <li id="checkout" class="sct">
+               <div class="step-title">Step 2: Billing Details<a class="edit fr" href="#">Modify ></a></div>
+            </li>
+            <li id="checkout" class="sct">
+               <div class="step-title">Step 3: Delivery Method<a class="edit fr" href="#">Modify ></a></div>
+            </li>
+            <li id="checkout" class="sct">
+               <div class="step-title">Step 4: Payment Method<a class="edit fr" href="#">Modify ></a></div>
+            </li>
+      
+      
+            <li class="section allow active" id="opc-login">
+                <div class="step-title"> <span class="number">Step 5:</span>
+                  <h2>Confirm Order</h2>
+                </div>
+                <div id="checkout-step-confirm">
+                  <div id="shopping_cart" class="full_page">
+                    <div class="message warning"><%= render :partial => 'spree/shared/error_messages', :locals => { :target => @order } %></div>
+                  </div>
+                  
+                <fieldset data-hook="" id="order_summary">
+       
+                
+                <table class="index columns alpha omega sixteen" data-hook="order_details">
+                  <colgroup>
+                  <col width="30%" valign="middle" halign="center">
+                  <col width="10%" valign="middle">
+                  <col width="5%" valign="middle" halign="center">
+                  <col width="5%" valign="middle" halign="center">
+                  <col width="0%" valign="middle" halign="center">
+                
+                  </colgroup>
+                  <thead id="line-items" data-hook="">
+                    <tr data-hook="order_details_line_items_headers">
+                      <th class="name">Product Name</th>
+                      <th class="price">Price</th>
+                      <th class="quantity">Quantity</th>
+                      <th class="total">Total</th>
+                    </tr>
+                  </thead>
+                
+                  <tbody id="line-items" data-hook="">
+                      <tr data-hook="order_details_line_item_row">
+                        
+                        <td class="prod_name" data-hook="order_item_description">
+                          <b>Camiseta3</b>
+                          
+                        </td>
+                        <td data-hook="order_item_price" class="price"><span>$20.00</span></td>
+                        <td data-hook="order_item_qty">2</td>
+                        <td data-hook="order_item_total" class="total"><span>$40.00</span></td>
+                      </tr>
+                  </tbody>
+                  <tfoot id="order-total" data-hook="order_details_total">
+                    <tr class="total">
+                      <td colspan="3"><b>Order Total:</b></td>
+                      <td class="total"><span id="order_total">$40.00</span></td>
+                    </tr>
+                  </tfoot>
+                  <tfoot id="subtotal" data-hook="order_details_subtotal">
+                    <tr class="total" id="subtotal-row">
+                      <td colspan="3"><b>Subtotal:</b></td>
+                      <td class="total"><span>$40.00</span></td>
+                    </tr>
+                  </tfoot>
+                  <tfoot id="order-charges" data-hook="order_details_adjustments">
+                      <tr class="total">
+                        <td colspan="3"><strong>Shipping</strong></td>
+                        <td class="total"><span>$0.00</span></td>
+                      </tr>
+                  </tfoot>
+                </table>
+                
+                
+                  <br class="clear">
+                
+                  <p data-hook="links">
+                    <a href="/" class="button">Confirm Order</a>
+                  </p>
+                </div>
+                </fieldset>
+
+                </div>
+            </li>
+          </ol>
+    </div><!--Ends full page-->
+  </section>
+</div>
