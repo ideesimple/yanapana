@@ -26,15 +26,15 @@ body{
 	line-height: 0;
 	height: 0;
 }
- 
+
 .clearfix {
 	display: inline-block;
 }
- 
+
 html[xmlns] .clearfix {
 	display: block;
 }
- 
+
 * html .clearfix {
 	height: 1%;
 }
@@ -113,7 +113,7 @@ ul.sub_menu > li > ul{border-top: solid 1px #5f5a56; margin-top:10px;}
 /*-----------------------------------HEADLINE*/
 #headline {padding: 15px 0;}
 #headline h1 {margin: 15px 0 }
-header ul span.item {font-family:  color: #e9e9e9;}
+header ul span.item { color: #e9e9e9;}
 
 /*-----------------------------------CAUSE*/
 .anystretch img {position: static !important;}
@@ -161,7 +161,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 #goals div:last-child {margin-right: 0;}
 #goals #goalbar {height: 4px; float: right; width: 100%; background: none repeat scroll 0 0 transparent; border-top: 1px solid #ccc; background: #fff; margin: 8px 0; }
 #goals #goalbar i {width: 65%; background: none repeat scroll 0 0 #BCD80A; height: 4px; max-width: 100%; padding: 0; margin: 0; line-height: 0; display: block; }
-#goals h2 {color: #312E2B; font-size: 20px; text-transform: none; padding-bottom: 20px; border-bottom: 1px solid #ccc;} 
+#goals h2 {color: #312E2B; font-size: 20px; text-transform: none; padding-bottom: 20px; border-bottom: 1px solid #ccc;}
 #goals span {color: #777;}
 #goals .bucks {margin-left: 15px; font-size: 35px; color: #43403D;  }
 
@@ -329,7 +329,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 .product_rightcol .product_options > ul > li .file_upload{}
 .product_rightcol .product_options > ul > li .file_upload input{ float:left;}
 .product_rightcol .product_options > ul > li .file_upload label{ margin-bottom:10px;}
-.product_rightcol .product_options > ul > li .file_upload .button{ background:#544f4b;  padding:5px 10px; color:#fff; font-size:11px; font-weight:bold; border:none; 
+.product_rightcol .product_options > ul > li .file_upload .button{ background:#544f4b;  padding:5px 10px; color:#fff; font-size:11px; font-weight:bold; border:none;
 text-transform:uppercase;}
 
 div.simpleTabs{ clear:both; padding:0px; margin-top:10px; display:inline-block; width:100%;}
@@ -419,25 +419,25 @@ footer .footer_customblock .contact_info big{font-family: istok web, serif; font
 footer address{ display:inline-block; width:100%; border-top:solid 1px #544F4B; font-size:11px; color:#909090; padding:25px 0px; margin-top:15px; line-height:25px;}
 footer address img{ float:right;}
 
-.contact_info input {    border: 1px solid #ddd; 
-    -webkit-box-shadow: 
+.contact_info input {    border: 1px solid #ddd;
+    -webkit-box-shadow:
       inset 0 0 8px  rgba(0,0,0,0),
-            0 0 16px rgba(0,0,0,0); 
-    -moz-box-shadow: 
+            0 0 16px rgba(0,0,0,0);
+    -moz-box-shadow:
       inset 0 0 8px  rgba(0,0,0,0),
-            0 0 16px rgba(0,0,0,0); 
-    box-shadow: 
+            0 0 16px rgba(0,0,0,0);
+    box-shadow:
       inset 0 0 8px  rgba(0,0,0,0),
-            0 0 16px rgba(0,0,0,0); 
+            0 0 16px rgba(0,0,0,0);
     padding: 10px;
     background: white;
     margin: 10px 0 10px 0;
-    
+
     width: 220px;
     color: #aaa;
     font-size: 14px;
     }
-    
+
 .contact_info input:focus {border: 1px solid #aaa;}
 
 /*-----------------------------------MAIN CONTENT*/
@@ -489,7 +489,7 @@ ul.breadcrumb li a{ color:#bdbdbd; text-decoration:none;}
 .action_buttonbar{ background:#f9f8f6; border:solid 1px #ebe2d9; padding:13px; clear:both;}
 .action_buttonbar button, .action_buttonbar input{ overflow: hidden; color:#fff; font-size:14px; font-weight:bold; padding:8px 14px; background:#544F4B; border:0px; line-height:100%; cursor:pointer; text-decoration: none;}
 .action_buttonbar button.checkout{ float:right; padding-right:28px; background:url(../../assets/image-yanapana/arrow.png) right -20px no-repeat;}
-.action_buttonbar button.checkout a{ text-decoration: none !important; color: #fff !important;} 
+.action_buttonbar button.checkout a{ text-decoration: none !important; color: #fff !important;}
 
 /*CART Page*/
 #shopping-cart-table{ width:100%; border-collapse:collapse;}
@@ -688,7 +688,7 @@ div.selector, div.selector, .product_rightcol input {
 }
 div.selector select {
     cursor: pointer;
-     font-size:11px; color:#818181; 
+     font-size:11px; color:#818181;
     left: 0;
     position: absolute;
     top: 0;
@@ -767,7 +767,7 @@ h2.sub_title{ font-family: century gothic, serif; font-size:18px; color:#312e2b;
     font-size: 14px;
     line-height: 1.4;
     margin-bottom: 20px;
-}	
+}
 
 .important {font-weight: bold;}
 
