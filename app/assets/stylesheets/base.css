@@ -335,7 +335,7 @@ text-transform:uppercase;}
 div.simpleTabs{ clear:both; padding:0px; margin-top:10px; display:inline-block; width:100%;}
 ul.simpleTabsNavigation{ margin:0px;}
 div.simpleTabsContent{ padding:15px; margin-top:7px;}
-div.simpleTabsContent p{ padding-bottom:12px; line-height:18px; color:##515151;}
+div.simpleTabsContent p{ padding-bottom:12px; line-height:18px; color:#515151;}
 ul.simpleTabsNavigation li a { padding:5px 20px 4px 20px;}
 ul.simpleTabsNavigation li a{ background:#F3F3F3; color:#544F4B; font-weight:bold;}
 
