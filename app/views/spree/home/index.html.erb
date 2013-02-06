@@ -22,17 +22,25 @@ $(document).ready(function() {
 </script>
 
 
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/es_LA/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
 <% end %>
 
-<% content_for :sidebar do %>
-<div data-hook="homepage_sidebar_navigation">
-  <% if "products" == params[:controller] && @taxon %>
-    <%= render :partial => 'spree/shared/filters' %>
-  <% else %>
-    <%= render :partial => 'spree/shared/taxonomies' %>
-  <% end %>
-</div>
+<% content_for :metatags do %>
+  <%= ('<meta property="og:title" content=" Yanapana | ' + @cause.organization.name  + ' " />').html_safe %>
+  <%= ('<meta property="og:url" content="' + root_url + '" />').html_safe %>
+  <%= ('<meta property="og:image" content="' + @cause.organization.photo.url.to_s + '" />').html_safe %>
+  <%= ('<meta property="og:description" content="' + @cause.organization.description.to_s  + '" />').html_safe %>
 <% end %>
+
 <!--SectionContainer-->
 
 <div class="section_container">
@@ -80,7 +88,7 @@ $(document).ready(function() {
 
                               <h1 class="org_logo"><%= link_to image_tag(@cause.organization.photo.url(:org)), "leisure_index.html" %></h1>
                               <!--Facebook like button Starts-->
-                              <div class="fb-like" data-send="false" data-layout="button_count" data-width="450" data-show-faces="true"></div>
+                              <div class="fb-like" href="<%= @cause.organization.link_facebook  %>" data-font="arial" data-show-faces="true" data-width="50px" data-layout="button_count" data-send="false" ></div>
                               <!--Facebook like button Ends-->
                               <!--Twitter follotw button Starts-->
                               <div class="follow-btn">
@@ -203,11 +211,11 @@ $(document).ready(function() {
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu.</p>
                     </div>
                      <!--Facebook like button Starts-->
-                    <div class="fb-like" data-send="false" data-layout="button_count" data-width="450" data-show-faces="true"></div>
+                    <div class="fb-like" href="<%= @artist.link_facebook  %>" data-font="arial" data-show-faces="true" data-width="50px" data-layout="button_count" data-send="false" ></div>
                     <!--Facebook like button Ends-->
                     <!--Twitter follotw button Starts-->
                     <div class="follow-btn"><a href="https://twitter.com/StandUpCancer" class="twitter-follow-button" data-show-count="false" data-show-screen-name="false" data-dnt="true">Follow @StandUpCancer</a></div>
-                    <!--Twitter follotw button Ends-->
+                    <!--Twitter follow button Ends-->
                 </section>
             </div>
           <% end %>
@@ -215,7 +223,7 @@ $(document).ready(function() {
                 <section class="comments">
                 <h1 class="comments_tag fl">Don’t be shy! Express your thoughts about this week’s awesome cause right here: </h1>
                 <div id="comments" class="fl">
-                    <div class="fb-comments" data-href="http://example.com" data-width="700" data-num-posts="2"></div>
+                    <div class="fb-comments" data-href="<%= root_url %>" data-width="700" data-num-posts="2"></div>
                 </div>
                 </section>
             </div>
