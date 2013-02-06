@@ -35,10 +35,10 @@ $(document).ready(function() {
 <% end %>
 
 <% content_for :metatags do %>
-  <%= ('<meta property="og:title" content=" Yanapana | ' + @cause.organization.name  + ' " />').html_safe %>
+  <%= ('<meta property="og:title" content=" Yanapana | ' + @cause.title  + ' " />').html_safe %>
   <%= ('<meta property="og:url" content="' + root_url + '" />').html_safe %>
-  <%= ('<meta property="og:image" content="' + @cause.organization.photo.url.to_s + '" />').html_safe %>
-  <%= ('<meta property="og:description" content="' + @cause.organization.description.to_s  + '" />').html_safe %>
+  <%= ('<meta property="og:image" content="' + @cause.photo.url.to_s + '" />').html_safe %>
+  <%= ('<meta property="og:description" content="' + @cause.description.to_s  + '" />').html_safe %>
 <% end %>
 
 <!--SectionContainer-->
