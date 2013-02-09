@@ -12,12 +12,15 @@ Spree::OrdersController.class_eval do
     params[:variants].each do |variant_id, quantity|
       quantity = quantity.to_i
       @order.add_variant(Spree::Variant.find(variant_id), quantity) if quantity > 0
+    if @order.add_variant == false
+      @mostrar= "prueba con error"
+    end
     end if params[:variants]
 
     fire_event('spree.cart.add')
     fire_event('spree.order.contents_changed')
     respond_with(@order) do |format|
-      format.html { redirect_to cart_path }
+      format.html { redirect_to cart_path}
       format.js
     end
   end

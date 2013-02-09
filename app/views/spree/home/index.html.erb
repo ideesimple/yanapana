@@ -10,17 +10,6 @@ $(document).ready(function() {
 
 	});
 </script>
-<script>
-$(document).ready(function() {
-
-        $('a.fr').click(function(){
-            $('.message.success').hide(1000);
-	        return false;
-	    });
-
-	});
-</script>
-
 
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
@@ -35,10 +24,12 @@ $(document).ready(function() {
 <% end %>
 
 <% content_for :metatags do %>
-  <%= ('<meta property="og:title" content=" Yanapana | ' + @cause.title  + ' " />').html_safe %>
-  <%= ('<meta property="og:url" content="' + root_url + '" />').html_safe %>
-  <%= ('<meta property="og:image" content="' + @cause.photo.url(:org).to_s + '" />').html_safe %>
-  <%= ('<meta property="og:description" content="' + @cause.description.to_s  + '" />').html_safe %>
+  <% unless @cause.nil? %>
+    <%= ('<meta property="og:title" content=" Yanapana | ' + @cause.title  + ' " />').html_safe %>
+    <%= ('<meta property="og:url" content="' + root_url + '" />').html_safe %>
+    <%= ('<meta property="og:image" content="' + @cause.photo.url(:org).to_s + '" />').html_safe %>
+    <%= ('<meta property="og:description" content="' + @cause.description.to_s  + '" />').html_safe %>
+  <% end %>
 <% end %>
 
 <!--SectionContainer-->
