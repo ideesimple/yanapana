@@ -59,7 +59,7 @@
     </ul>
 
     <div id="shopping_cart" class="full_page">
-      <div id ="errror"><%= @mostrar  %></div>
+      <div id ="error"><%= flash[:error]  %></div>
       <div class="message success" style="display:none">
         Success :D <a href="#" class="fr"></a>
       </div>
@@ -128,21 +128,6 @@
 
 
 <% end %>
-
-      <!--<div class="qty_info">
-            <div class="quantity">
-              <label>Quantity :</label>
-              <select>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-              </select>
-            </div>
-          </div>-->
-
-
           <div class="product_overview">
             <!--ORG Logo Starts-->
             <div>
@@ -177,7 +162,7 @@
       <!--PRODUCT DETAIL ENDS-->
     </section>
 
-  <div id="artist-section" class="artist-inspiration">
+  <div id="artist-section" class="artist-inspiration jean">
     <section>
       <h2 class="sub_title">The Artist</h2>
       <div class="artist"><a href="#"><%= image_tag ("image-yanapana/artist.jpg") %></a></div>
