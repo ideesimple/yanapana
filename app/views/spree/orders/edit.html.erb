@@ -7,7 +7,7 @@
   <% if @order.line_items.empty? %>
       <div class="full_page">
         <h1>Shopping cart</h1>
-        <div class="message warning"><%= t(:your_cart_is_empty) %></div>
+        <div class="message"><%= t(:your_cart_is_empty) %></div>
         <div class="action_buttonbar">
           <%= button_to t(:continue_shopping), root_path, :class => 'continue' %>
         </div>

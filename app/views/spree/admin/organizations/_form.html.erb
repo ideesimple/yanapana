@@ -4,23 +4,57 @@
     <%= f.text_field :name %>
   <% end %>
 
+  <%= f.field_container :webpage do  %>
+    <%= f.label :webpage %><span class="required">*</span><br />
+    <%= f.text_field :webpage %>
+  <% end %>
+
   <%= f.field_container :description do  %>
     <%= f.label :description %><span class="required">*</span><br />
     <%= f.text_area :description, :style => "height:50px" %>
   <% end %>
 
+  <%= f.field_container :contact do  %>
+    <%= f.label :contact, 'Contact person last name'%><span class="required">*</span><br />
+    <%= f.text_field :contact %>
+  <% end %>
+
+  <%= f.field_container :contact_name do  %>
+    <%= f.label :contact_name, 'Contact First name'%><span class="required">*</span><br />
+    <%= f.text_field :contact_name %>
+  <% end %>
+
+  <%= f.field_container :email do  %>
+    <%= f.label :email %><span class="required">*</span><br />
+    <%= f.text_field :email %>
+  <% end %>
+
+  <%= f.field_container :contact_number do  %>
+    <%= f.label :contact_number, 'Contact phone #'%><span class="required">*</span><br />
+    <%= f.text_field :contact_number %>
+  <% end %>
+
+  <%= f.field_container :address do  %>
+    <%= f.label :address, 'HQ Address' %><span class="required">*</span><br />
+    <%= f.text_area :address, :style => "height:13px" %>
+  <% end %>
+
+
+</div>
+
+<div class="right">
   <%= f.field_container :city do  %>
-    <%= f.label :city %><br />
+    <%= f.label :city %><span class="required">*</span><br />
     <%= f.text_field :city %>
   <% end %>
 
   <%= f.field_container :state do  %>
-    <%= f.label :state %><br />
+    <%= f.label :state %><span class="required">*</span><br />
     <%= f.text_field :state %>
   <% end %>
 
   <%= f.field_container :zip do  %>
-    <%= f.label :zip %><br />
+    <%= f.label :zip %><span class="required">*</span><br />
     <%= f.text_field :zip %>
   <% end %>
 
@@ -31,42 +65,9 @@
     </span>
   <% end %>
 
-  <%= f.field_container :address do  %>
-    <%= f.label :address, 'Hq address' %><br />
-    <%= f.text_area :address, :style => "height:13px" %>
-  <% end %>
-
-  <%= f.field_container :contact_name do  %>
-    <%= f.label :contact_name, 'Contact Fullname'%><span class="required">*</span><br />
-    <%= f.text_field :contact_name %>
-  <% end %>
-
-</div>
-
-<div class="right">
-  <%= f.field_container :contact do  %>
-    <%= f.label :contact, 'Contact email'%><span class="required">*</span><br />
-    <%= f.text_field :contact %>
-  <% end %>
-
-  <%= f.field_container :contact_number do  %>
-    <%= f.label :contact_number, 'Contact phone #'%><span class="required">*</span><br />
-    <%= f.text_field :contact_number %>
-  <% end %>
-
-  <%= f.field_container :photo do  %>
-    <%= f.label :photo, "Organization logo"%><span class="required">*</span><br />
-    <%= f.file_field :photo %>
-  <% end %>
-
-  <%= f.field_container :webpage do  %>
-    <%= f.label :webpage %><span class="required">*</span><br />
-    <%= f.text_field :webpage %>
-  <% end %>
-
-  <%= f.field_container :link_twitter do  %>
-    <%= f.label :link_twitter%><br />
-    <%= f.text_field :link_twitter %>
+  <%= f.field_container :exemption_number do  %>
+    <%= f.label :exemption_number, 'Exemption number'%><br />
+    <%= f.text_field :exemption_number %>
   <% end %>
 
   <%= f.field_container :link_facebook do  %>
@@ -74,9 +75,14 @@
     <%= f.text_field :link_facebook %>
   <% end %>
 
-  <%= f.field_container :exemption_number do  %>
-    <%= f.label :exemption_number, 'Exemption number'%><br />
-    <%= f.text_field :exemption_number %>
+  <%= f.field_container :link_twitter do  %>
+    <%= f.label :link_twitter%><br />
+    <%= f.text_field :link_twitter %>
+  <% end %>
+
+  <%= f.field_container :photo do  %>
+    <%= f.label :photo, "Organization logo"%><span class="required">*</span><br />
+    <%= f.file_field :photo %>
   <% end %>
 
 </div>

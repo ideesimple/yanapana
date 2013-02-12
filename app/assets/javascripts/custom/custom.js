@@ -27,7 +27,7 @@ $(document).ready(function(){
 
   $('#size_drop_0 li a').click(function(){
     $('html, body').animate({scrollTop:0}, 'slow');
-    $('.message.success').fadeIn(3000).delay(3000).fadeOut(3500);
+    //$('.message.success').fadeIn(3000).delay(3000).fadeOut(3500);
     myid=$(this).attr('id');
     $('#form0 #product_1').val($(this).attr('id'));
     $('#form0').submit();
@@ -43,7 +43,7 @@ $(document).ready(function(){
 
   $('#size_drop_1 li a').click(function(){
     $('html, body').animate({scrollTop:0}, 'slow');
-    $('.message.success').fadeIn(3000).delay(3000).fadeOut(3500);
+    //$('.message.success').fadeIn(3000).delay(3000).fadeOut(3500);
     myid=$(this).attr('id');
     $('#form1 #product_1').val($(this).attr('id'));
     $('#form1').submit();
@@ -59,7 +59,7 @@ $(document).ready(function(){
 
   $('#size_drop_2 li a').click(function(){
     $('html, body').animate({scrollTop:0}, 'slow');
-    $('.message.success').fadeIn(3000).delay(3000).fadeOut(3500);
+    //$('.message.success').fadeIn(3000).delay(3000).fadeOut(3500);
     myid=$(this).attr('id');
     $('#form2 #product_1').val($(this).attr('id'));
     $('#form2').submit();
