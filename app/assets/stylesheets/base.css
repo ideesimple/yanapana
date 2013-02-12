@@ -202,7 +202,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 .comments_tag {font-family: century gothic; font-size: 20px; padding: 20px 0; display:block;  margin: 0 auto;}
 .comments { margin: 0 auto; border-top: 1px solid white; overflow: hidden;}
 #comments {width: 700px; margin: 0 auto;}
-.fb-like, .follow-btn {float:left; margin: 10px 15px 15px 0;}
+.fb-like, .follow-btn {float:left; margin: 0 15px 0 0;}
 
 
 
@@ -285,7 +285,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 .product_rightcol{ width:590px; float:right;}
 .product_rightcol small.pr_type{ font-size:15px; color:#a29b95;}
 .product_rightcol h1{ padding:20px 0px 20px 0px; font-size:26px; color:#312e2b; text-transform:uppercase;}
-.product_rightcol .pr_price{ padding:22px 0px 20px 0px;}
+.product_rightcol .pr_price{ padding:22px 0px 20px 0px; border-top:solid 1px #ccc; border-width:1px 0px; display:inline-block; width:100%;}
 .product_rightcol .pr_price big{ font-size:29px; font-weight:bold!important; display:inline-block; padding-right:16px;}
 .product_rightcol .pr_price small{ font-size:17px; text-decoration:line-through;color:#a29b95;}
 .product_rightcol .size_info{ padding:7px 0px; border:solid 1px #ccc; border-width:1px 0px; display:inline-block; width:100%;}
@@ -307,11 +307,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 .product_rightcol .add_to_buttons ul li a{ color:#544f4b; text-decoration:underline; font-size:13px;}
 
 .product_overview.hidden_movil > div {overflow: hidden;}
-.product_overview.hidden_movil > div h4:hover {background: #ddd;}
+
 
 .product_rightcol .product_overview{border-top:solid 1px #ccc; padding:15px 0px; display:inline-block; width:100%;color:#544f4b ; }
 .product_rightcol .product_overview h4{font-weight:bold; text-transform:uppercase; padding-bottom:10px;}
-.product_rightcol .product_overview li{ line-height:25px; float:none; list-style:square; list-style-position:inside;color:#A2a2a2 ;}
+.product_rightcol .product_overview li{ line-height:25px; float:none; list-style:square; list-style-position:inside;color:#5F5A56 ;}
 
 .product_rightcol .product_options{border-top:solid 1px #dedede; padding:15px 0px; display:inline-block; width:100%;color:#544f4b ; }
 .product_rightcol .product_options h4{font-weight:bold; text-transform:uppercase; padding-bottom:10px;}
@@ -541,7 +541,7 @@ ul.breadcrumb li a{ color:#bdbdbd; text-decoration:none;}
 .checkout_steps .step-title span{ display:inline-block; text-align:center; }
 .checkout_steps > ol > li{border-top:solid 1px #ccc; margin-top:-1px;}
 .checkout_steps > ol > li:first-child{ border:none;}
-.checkout_steps > ol > li.active .step-title{ color:#fff; background:#544f4b;}
+.checkout_steps > ol > li.active .step-title{ color:#fff; background:#555;}
 .checkout_steps #checkout-step-login{ padding:17px; border:solid 1px #e7ded5; display:block; overflow: hidden;}
 #checkout-step-login label{ font-size:13px; display:inline-block; padding:10px 0px; font-weight: bold; }
 .checkout_steps input[type="text"], .checkout_steps input[type="tel"], .checkout_steps input[type="email"], .checkout_steps input[type="password"]{ border:1px solid #D7D7D7; padding:4px; width:230px;}
@@ -562,7 +562,7 @@ ul.breadcrumb li a{ color:#bdbdbd; text-decoration:none;}
 #checkout-step-confirm .name, #checkout-step-confirm .price  {text-align: left;}
 #checkout-step-confirm tr td, #checkout-step-confirm th {border-bottom: 1px solid #ccc; padding: 7px;}
 #checkout-step-confirm td {text-align: right;}
-#checkout-step-confirm td.prod_name {text-align: left;}
+#checkout-step-confirm td.prod_name {text-align: left; font-weight: lighter;}
 
 
 span.error {background: none repeat scroll 0 0 #ffe3e2; border: 1px solid #D84646; color: #FF0000; font-size: 11px; display: inline-block;}
@@ -676,6 +676,10 @@ img{ max-width:100%;}
     width: 100%;
 }
 
+
+.arrow.down {background: url("../../assets/image-yanapana/dk_arrows.png") no-repeat no-repeat scroll 125px 5px transparent;}
+.arrow.down:hover {background: url("../../assets/image-yanapana/dk_arrows_hover.png") no-repeat no-repeat scroll 125px 5px transparent;} 
+
 /*Forms*/
 div.selector, div.selector, .product_rightcol input {
      border:solid 1px #d7d7d7; padding:3px; width:130px;
@@ -723,7 +727,7 @@ footer, ul.sub_menu, .sideNavCategories > ul, ul.sub_menu > li > ul, .checkout_t
 .flexslider .flex-direction-nav li a:hover, nav .primary_nav > li > a:hover, nav .primary_nav > li:hover > a, .product_rightcol .add_to_buttons button.add_cart, .action_buttonbar button.checkout, #shopping-cart-table tr td a.remove:hover, #shopping-cart-table tr td button.update:hover, .sideNavCategories > ul.departments > li > a:hover, .sideNavCategories > ul.departments > li > a.active, span.highlight_text{ background-color:#bcd80a;}
 .products_list li:hover img, .products_list_list li:hover img{ border-color:#BCD80A}
 .flex-caption{ border-left-color:#bcd80a}
-.footer_background {background: url("../../assets/image-yanapana/footer_bg.png"); background-repeat: repeat-x; height: 8px; position: relative; top: -8px;}
+.footer_background {padding-bottom: 40px; background: url("../../assets/image-yanapana/footer_bg.png"); background-repeat: repeat-x; height: 8px; position: relative; top: -8px;}
 .footer_container {color: white !important; background: #333; }
 .products_list li .product_info {border-bottom-color: #ccc;}
 .navigation_container {border-top: 1px solid white; }
