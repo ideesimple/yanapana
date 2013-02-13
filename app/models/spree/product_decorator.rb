@@ -1,5 +1,5 @@
 Spree::Product.class_eval do
-  attr_accessible :cause_id
+  attr_accessible :cause_id, :inspiration_behind
 
   belongs_to :cause
 

@@ -9,26 +9,26 @@
 
 <div class="full_page">
   <h1><%= t(:billing_details) %></h1>
-  
+
   <div class="checkout_steps">
     <ol id="checkoutSteps">
-      
+
       <li id="checkout" class="sct">
-        <div class="step-title">Step 1: Checkout Options<a class="edit fr" href="#">Modify ></a></div>
+        <div class="step-title">Step 1: Checkout Options<a class="edit fr" href="#"></a></div>
       </li>
-      
+
       <li class="section allow active" id="opc-login">
         <div class="step-title"> <span class="number">step 2:</span>
         <h2>Billing Details</h2>
         </div>
-        
+
         <div id="checkout-step-billing">
           <div id="shopping_cart" class="full_page">
-                <div class="message warning"><%= render :partial => 'spree/shared/error_messages', :locals => { :target => @order } %></div>
-              </div>
+              <div class="message"><%= render :partial => 'spree/shared/error_messages', :locals => { :target => @order } %></div>
+          </div>
           <div class="col2-set bb">
           <div class="col-1">
-    
+
 <div class="columns alpha six" data-hook="billing_fieldset_wrapper">
 <fieldset id="billing" data-hook>
   <%= form.fields_for :bill_address do |bill_form| %>
@@ -37,7 +37,7 @@
       <p class="field" id="bfirstname">
         <%= bill_form.label :firstname, t(:first_name) %><span class="required">*</span><br />
         <%= bill_form.text_field :firstname, :class => 'large-field' %>
-      <span class="error">First Name must be between 1 and 32 characters!</span>
+      <span class="error"></span>
       </p>
       <p class="field" id="blastname">
         <%= bill_form.label :lastname, t(:last_name) %><span class="required">*</span><br />
@@ -58,17 +58,18 @@
         <%= bill_form.text_field :address2 %>
       </p>
 
-      <p class="field" id="bcity">
-        <%= bill_form.label :city, t(:city) %><span class="required">*</span><br />
-        <%= bill_form.text_field :city, :class => 'large-field' %>
-      </p>
-
       <p class="field" id="bcountry">
         <%= bill_form.label :country_id, t(:country) %><span class="required">*</span><br />
         <span id="bcountry">
           <%= bill_form.collection_select :country_id, available_countries, :id, :name, {}, {:class => 'required'} %>
         </span>
       </p>
+
+      <p class="field" id="bcity">
+        <%= bill_form.label :city, t(:city) %><span class="required">*</span><br />
+        <%= bill_form.text_field :city, :class => 'large-field' %>
+      </p>
+
 
       <p class="field" id="bstate">
         <% have_states = !@order.bill_address.country.states.empty? %>
@@ -100,7 +101,7 @@
         <%= bill_form.text_field :zipcode, :class => 'large-field' %>
       </p>
       <p class="field" id="bphone">
-        <%= bill_form.label :phone, t(:phone) %><span class="required">*</span><br />
+        <%= bill_form.label :phone, t(:phone) %><span class="required"></span><br />
         <%= bill_form.phone_field :phone, :class => 'large-field' %>
       </p>
       <% if Spree::Config[:alternative_billing_phone] %>
@@ -114,7 +115,7 @@
 </fieldset>
 </div>
           </div><!--Ends col1-->
-          
+
           <div class="col-2">
 
 <div class="columns omega six" data-hook="shipping_fieldset_wrapper">
@@ -149,17 +150,18 @@
         <%= ship_form.text_field :address2 %>
       </p>
 
-      <p class="field" id="scity">
-        <%= ship_form.label :city, t(:city) %><span class="required">*</span><br />
-        <%= ship_form.text_field :city, :class => 'large-field' %>
-      </p>
-
       <p class="field" id="scountry">
         <%= ship_form.label :country_id, t(:country) %><span class="required">*</span><br />
         <span id="scountry">
           <%= ship_form.collection_select :country_id, available_countries, :id, :name, {}, {:class => 'required'} %>
         </span>
       </p>
+
+      <p class="field" id="scity">
+        <%= ship_form.label :city, t(:city) %><span class="required">*</span><br />
+        <%= ship_form.text_field :city, :class => 'large-field' %>
+      </p>
+
 
       <p class="field" id="sstate">
         <% have_states = !@order.ship_address.country.states.empty? %>
@@ -207,7 +209,7 @@
 <div class="form-buttons" data-hook="buttons">
   <%= submit_tag t(:save_and_continue), :class => 'continue button primary' %>
 </div>
-          
+
           </div><!-- Ends ColSet-->
         </div><!-- Ends Checkout step billing-->
       </li>

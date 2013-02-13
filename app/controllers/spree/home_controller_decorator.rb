@@ -1,4 +1,5 @@
 Spree::HomeController.class_eval do
+require 'enumerator'
 
   def index
     @searcher = Spree::Config.searcher_class.new(params)
@@ -6,7 +7,7 @@ Spree::HomeController.class_eval do
     @products = @searcher.retrieve_products
     @cause = Spree::Cause.find_by_status(true)
     unless @cause.nil?
-    @products_cause = @products.where(:cause_id => @cause.id)
+    @products_cause = @products.where(:cause_id => @cause.id).limit(3)
     @artist = Spree::Artist.find_by_id(@cause.artist)
     end
     respond_with(@products)

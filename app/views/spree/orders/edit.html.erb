@@ -18,14 +18,13 @@
       <div class="action_buttonbar">
         <%= form_tag empty_cart_path, :method => :put do %>
             <p id="clear_cart_link" data-hook>
-              <%= button_tag :class => 'checkout', :id => 'checkout-link' do %>
-              <%= link_to t(:continue_shopping), products_path %>
-            <% end %>
             <%= button_tag :class => 'continue' do %>
-            <%= t(:empty) %>
-          <% end %>
+              <%= t(:empty) %>
+            <% end %>
             </p>
-          <% end %>
+        <% end %>
+          <%= button_to t(:continue_shopping), root_path, :class => 'checkout' %>
+
       </div>
         <%= form_for @order, :url => update_cart_path, :html => {:id => 'update-cart', :class => "edit_spree_order"} do |order_form| %>
 
@@ -37,10 +36,6 @@
               <tr>
                 <td width="60%" colspan="1" class="align_left" ><strong>Subtotal</strong></td>
                 <td class="align_right" style=""><strong><span class="order-total"><%= @order.display_total %></span></strong></td>
-              </tr>
-              <tr>
-                <td width="60%" colspan="1" class="align_left" >Shipping cost</td>
-                <td class="align_right" style=""><span class="price">$0.00</span></td>
               </tr>
               <!--<tr>
                 <td width="60%" colspan="1" class="align_left total" >Grand Total</td>

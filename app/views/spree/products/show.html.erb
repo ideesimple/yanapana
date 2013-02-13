@@ -89,8 +89,47 @@
           <p class="short_dc"><%= @product.description %></p>
         <% end %>
 
-         <%= render :partial => "cart_form" %>
-          <div class="product_overview">
+         <%#= render :partial => "cart_form" %>
+
+         <%= form_for :order, :url => populate_orders_path do |f| %>
+
+           <% if @product.price %>
+             <div class="pr_price">
+               <% if @product.price %>
+                 <big><%= number_to_currency @product.price %></big><small></small>
+               <% end %>
+             </div>
+
+             <%= render :partial => "variants" %>
+
+             <div class="qty_info">
+               <% if @product.on_sale? %>
+                 <div class="quantity">
+                   <label>Quantity</label>
+                   <%= number_field_tag (@product.has_variants? ? :quantity : "variants[#{@product.master.id}]"),
+                     1, :class => 'title', :in => 1..@product.on_hand, :min => 1 %>
+
+
+
+                   <div class="add_to_buttons">
+                     <a href="#top"></a>
+                     <%= button_tag :class => 'add_cart', :id => 'add-to-cart-button', :type => :submit do %>
+                       <%= t(:add_to_cart) %>
+                     <% end %>
+                   </div>
+                 <% else %>
+                   <%= content_tag('strong', t(:out_of_stock)) %>
+                 </div>
+               <% end %>
+             </div>
+
+           </div>
+         <% end %>
+
+
+       <% end %>
+
+         <div class="product_overview">
             <!--ORG Logo Starts-->
             <div>
               <!--ORG Logo Ends-->
@@ -130,7 +169,7 @@
       <div class="artist"><a href="#"><%= image_tag ("image-yanapana/artist.jpg") %></a></div>
       <div class="artist_description">
         <h2 class="sub_title">Inspiration Behind</h1>
-        <p><%= @product.cause.inspiration  %></p>
+        <p><%= @product.inspiration_behind  %></p>
       </div>
 
       <!--Facebook like button Starts-->

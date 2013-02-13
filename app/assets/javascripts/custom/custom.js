@@ -18,6 +18,10 @@ $(document).ready(function(){
 		 $('.cart_drop').slideUp(300);
 	});
 
+  $(".section_container").click(function() {
+    $('.cart_drop').slideUp(300);
+  });
+
   //Codigo de select addtocart
 	jQuery("#cart_0").toggle(function() {
 		 $('#size_drop_0').slideDown(300);
