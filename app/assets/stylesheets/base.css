@@ -414,7 +414,7 @@ footer .footer_customblock{ border-left:solid 1px #544F4B; float:right; width:27
 footer .footer_customblock>div{padding:20px;}
 footer .footer_customblock .shipping_info{ line-height:22px; font-size:14px; color:#e9e9e9;  border-bottom:solid 1px #544F4B; overflow: hidden;}
 footer .footer_customblock #social_media {float: left;}
-footer .footer_customblock .shipping_info big{ font-family: century gothic, serif; text-transform:uppercase; font-size:16px; font-weight:bold;}
+footer .footer_customblock .shipping_info big{ font-family: century gothic, serif; text-transform:uppercase; font-size:16px; font-weight:bold; color: #BCD80A; }
 footer .footer_customblock .contact_info big{font-family: istok web, serif; font-size:16px; font-weight:bold; color:#e9e9e9;}
 footer address{ display:inline-block; width:100%; border-top:solid 1px #544F4B; font-size:11px; color:#909090; padding:25px 0px; margin-top:15px; line-height:25px;}
 footer address img{ float:right;}
@@ -770,7 +770,6 @@ h2.sub_title{ font-family: century gothic, serif; font-size:18px; color:#312e2b;
     font-family: 'Istok Web';
     font-size: 14px;
     line-height: 1.4;
-    margin-bottom: 20px;
 }	
 
 .important {font-weight: bold;}
