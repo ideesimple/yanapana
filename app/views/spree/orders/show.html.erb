@@ -1,3 +1,17 @@
+<% content_for :head do %>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/es_LA/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<% end %>
+
+
 <div class="section_container jean pb">
   <section>
     <ul class="breadcrumb">
@@ -30,22 +44,25 @@
                   <h2>Confirm Order</h2>
                 </div>-->
                 <div id="checkout-step-confirm">
+                   <div class="fb-like" href="<%= root_url %>" data-font="arial" data-show-faces="true" data-width="50px" data-layout="button_count" data-send="false" ></div>
+           <!--Facebook like button Ends-->
+
                   <div id="shopping_cart" class="full_page">
-                    <div class="message success"><%= render :partial => 'spree/shared/error_messages', :locals => { :target => @order } %></div>
+                    <div class="message"><% render :partial => 'spree/shared/error_messages', :locals => { :target => @order } %></div>
+
                   </div>
-
-
 
 
 <fieldset id="order_summary" class="index columns" data-hook>
   <h1><%= "Your " + t(:order) + " #" + @order.number + " has been processed!"%></h1>
   <legend><% accurate_title %></legend>
 
+
 <div id="order" data-hook>
   <% if params.has_key? :checkout_complete %>
     <h1><%= t(:thank_you_for_your_order) %></h1>
   <% else %>
-    
+
   <% end %>
   <%= render :partial => 'spree/shared/order_details', :locals => { :order => @order } %>
 
@@ -58,6 +75,7 @@
         <%= link_to t(:my_account), spree_account_path, :class => "button" %>
       <% end %>
     <% end %>
+
   </p>
 </div>
 </fieldset>
