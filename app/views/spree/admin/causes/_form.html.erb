@@ -10,7 +10,7 @@
   <% end %>
 
   <%= f.field_container :goal_facebook do  %>
-    <%= f.label :goal_facebook, "Share goal" %><span class="required">*</span><br />
+    <%= f.label :goal_facebook, "Facebook goal" %><span class="required">*</span><br />
     <%= f.number_field :goal_facebook, :min => 1 %>
   <% end %>
 
@@ -40,9 +40,14 @@
     <%= f.collection_select(:organization_id, Spree::Organization.order("name ASC").all, :id, :name) %>
   <% end %>
 
-</div>
+  </div>
 
 <div class="right">
+  <%= f.field_container :inspiration do  %>
+    <%= f.label :inspiration, ' Artist Inspiration ' %><br />
+    <%= f.text_area :inspiration, :style => "height:40px" %>
+  <% end %>
+
 
   <%= f.field_container :photo do  %>
     <%= f.label :photo%><span class="required">*</span><br />

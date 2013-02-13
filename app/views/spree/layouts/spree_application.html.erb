@@ -7,6 +7,7 @@
 <head>
   <%= render :partial => 'spree/layouts/head' %>
   <%= yield :head %>
+  <%= yield :metatags %>
 </head>
 
 <body>
@@ -60,19 +61,19 @@
                     </ul>
                     SUbmenu Ends-->
                 </li>
-                <li><a href="leisure_listing.html">Blog</a>
+                <li><a href="#">Blog</a>
                     <!--SUbmenu Starts-->
                     <!--SUbmenu Ends-->
                 </li>
-                <li><a href="leisure_listing.html">Causes</a></li>
-                <li><a href="leisure_listing.html">Contact Us</a></li>
+                <li><a href="#">Causes</a></li>
+                <li><a href="#">Contact Us</a></li>
                 <li><a href="#">Help</a></li>
                 <li><%= link_to "How it work", how_it_works_path  %></li>
 
             </ul>
             <div id="social_media">
                 <div class="find_us">
-                   <a class="facebook" href="#"></a> <a class="twitter" href="#"></a> <a class="pinterest" href="#"></a> </div>
+                   <a class="facebook" href="http://www.facebook.com/YANAPANAcom?fref=ts"></a> <a class="twitter" href="#"></a> <a class="pinterest" href="#"></a> </div>
             </div>
 
         </nav>

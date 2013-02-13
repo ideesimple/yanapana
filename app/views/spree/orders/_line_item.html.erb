@@ -28,6 +28,6 @@
     <%= money(line_item.price * line_item.quantity) unless line_item.quantity.nil? %>
   </td>
   <td class="align_center vline">
-    <%= link_to (''), '#', :class => 'remove', :id => "delete_#{dom_id(line_item)}" %>
+    <%= link_to '', nil, :class => 'remove delete', :id => "delete_#{dom_id(line_item)}" %>
   </td>
 </tr>

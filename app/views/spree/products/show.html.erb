@@ -4,7 +4,6 @@
 
 	    $('.add_cart').click(function(){
             $('html, body').animate({scrollTop:0}, 'slow');
-            $('.message.success').show("slow");
             return true;
 
             location.reload();
@@ -12,18 +11,6 @@
 
 	});
 </script>
-
-<script>
-$(document).ready(function() {
-
-        $('a.fr').click(function(){
-            $('.message.success').hide(1000);
-	        return false;
-	    });
-
-	});
-</script>
-
 
 <!--Este script sirve para colapsar el quick overview-->
   <script type="text/javascript">
@@ -72,9 +59,9 @@ $(document).ready(function() {
     </ul>
 
     <div id="shopping_cart" class="full_page">
-
+      <div id ="error"><%= flash[:error]  %></div>
       <div class="message success" style="display:none">
-        Success :D <a href="#" class="fr">x</a>
+        Success :D <a href="#" class="fr"></a>
       </div>
 
     </div>
@@ -105,30 +92,56 @@ $(document).ready(function() {
 <div class="product_overview hidden_movil">
             <%= render :partial => "properties" %>
 
+<<<<<<< HEAD
           </div>
           <%= render :partial => "cart_form" %>
+=======
+         <%#= render :partial => "cart_form" %>
+<%= form_for :order, :url => populate_orders_path do |f| %>
+>>>>>>> 9d311b793bb9c4acd1ff5d19f38b4c6c0c9f2908
 
-      <!--<div class="qty_info">
-            <div class="quantity">
-              <label>Quantity :</label>
-              <select>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-              </select>
-            </div>
-          </div>-->
+ <% if @product.price %>
+      <div class="pr_price">
+        <% if @product.price %>
+          <big><%= number_to_currency @product.price %></big><small></small>
+        <% end %>
+      </div>
+
+    <%= render :partial => "variants" %>
+
+    <div class="qty_info">
+      <% if @product.on_sale? %>
+        <div class="quantity">
+            <label>Quantity</label>
+            <%= number_field_tag (@product.has_variants? ? :quantity : "variants[#{@product.master.id}]"),
+            1, :class => 'title', :in => 1..@product.on_hand, :min => 1 %>
 
 
+
+          <div class="add_to_buttons">
+            <a href="#top"></a>
+            <%= button_tag :class => 'add_cart', :id => 'add-to-cart-button', :type => :submit do %>
+              <%= t(:add_to_cart) %>
+            <% end %>
+          </div>
+      <% else %>
+        <%= content_tag('strong', t(:out_of_stock)) %>
+        </div>
+      <% end %>
+    </div>
+
+    </div>
+  <% end %>
+
+
+<% end %>
           <div class="product_overview">
             <!--ORG Logo Starts-->
             <div>
               <!--ORG Logo Ends-->
               <!--ORG Description Starts-->
               <h4>Organization</h4>
-              <div class="org_logo"><%= link_to (image_tag("image-yanapana/org_logo.png")), root_path %></div>
+              <div class="org_logo"><%= link_to (image_tag(@product.cause.organization.photo.url(:org))), root_path %></div>
               <!--Facebook like button Starts-->
 <div class="fb-like" data-href="https://www.facebook.com/YANAPANAcom?fref=ts" data-send="false" data-layout="button_count" data-width="450" data-show-faces="true"></div>
               <!--Facebook like button Ends-->
@@ -151,13 +164,17 @@ $(document).ready(function() {
       <!--PRODUCT DETAIL ENDS-->
     </section>
 
+<<<<<<< HEAD
   <div id="artist-section" class="artist-inspiration pb">
+=======
+  <div id="artist-section" class="artist-inspiration jean">
+>>>>>>> 9d311b793bb9c4acd1ff5d19f38b4c6c0c9f2908
     <section>
       <h2 class="sub_title">The Artist</h2>
       <div class="artist"><a href="#"><%= image_tag ("image-yanapana/artist.jpg") %></a></div>
       <div class="artist_description">
         <h2 class="sub_title">Inspiration Behind</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+        <p><%= @product.cause.inspiration  %></p>
       </div>
 
       <!--Facebook like button Starts-->

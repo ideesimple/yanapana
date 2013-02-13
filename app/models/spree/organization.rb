@@ -2,7 +2,7 @@ class Spree::Organization < ActiveRecord::Base
   has_many :causes
   accepts_nested_attributes_for :causes
 
-  attr_accessible :contact, :country, :description, :email, :link_facebook, :link_twitter, :name, :phonenumber, :photo, :video, :webpage, :contact_name, :exemption_number, :contact_number
+  attr_accessible :contact, :country, :description, :email, :link_facebook, :link_twitter, :name, :phonenumber, :photo, :video, :webpage, :contact_name, :exemption_number, :contact_number, :address, :state, :city, :zip
 
   validates :name, :description, :contact, :contact_name, :contact_number, :webpage, :presence => true
 

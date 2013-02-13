@@ -29,7 +29,9 @@
         <% if product.on_display? %>
           <li>
            <div class="product_img_container">
-             <%= link_to prodsize_image(product, :itemprop => "image"), product, :itemprop => 'url', :class=>"product_image" %>
+             <% unless product.master.images.nil? %>
+               <%= link_to prodsize_image(product, :itemprop => "image"), product, :itemprop => 'url', :class=>"product_image" %>
+             <% end %>
              <div class="price_info">
                <%= form_for :order, :url => populate_orders_path, :html => {:id => "form"+i.to_s}, :remote => true do |f| %>
                 <%= hidden_field_tag :quantity, 1%>
