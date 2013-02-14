@@ -33,24 +33,6 @@
 <% end %>
 
 
-	   <!-- <div class="zoom-container layout_default">
-	          <div class="main-image">
-			    <%= link_to (product_image(@product, :itemprop => "image") ), @product.images.first.attachment.url(:large), :class => "main-thumbnail", :id => "zoom"  %>
-			    <div class="lightbox-btn">
-			      <%= link_to "Agrandar",@product.images.first.attachment.url(:large), :class => "lightbox", :id => "zoom" %>
-			    </div>
-			  </div>
-			  <div class="more-views ">
-			    <div class="zoom-gallery slider">
-			    <% @product.images.each do |i| %>
-			      <div class="slide">
-			        <%= link_to (image_tag i.attachment.url(:mini)), i.attachment.url(:large), {"class" => "zoom-thumbnail thumbnail-active", "data-easyzoom-source" => i.attachment.url(:product) } %>
-			      </div>
-			    <% end %>
-			    </div>
-			  </div>
-            </div>-->
-
 <div class="section_container jean">
   <section id="product-section">
     <ul class="breadcrumb">
@@ -70,14 +52,35 @@
     <div id="product_detail">
       <!--Product Left Starts-->
       <div class="product_leftcol">
-        <%= link_to (product_image(@product, :itemprop => "image") ), @product.images.first.attachment.url(:large), :class => "rollover-zoom", :title => "yanapana"  %>
-
+        <div id="main-image" data-hook>
+          <%= link_to (product_image(@product, :itemprop => "image") ), '#', :class => "rollover-zoom", :title => "yanapana" %>
+        </div>
         <!-- <span class="pr_info">ROLL OVER IMAGE TO ZOOM</span> -->
-        <ul class="pr_gallery">
-        <% @product.images.each do |i| %>
-          <%= link_to (image_tag i.attachment.url(:small)), i.attachment.url(:large), {"class" => "zoom-thumbnail thumbnail-active", "data-easyzoom-source" => i.attachment.url(:product) } %>
-        <% end %>
-        </ul>
+
+        <div id="thumbnails" data-hook>
+          <% if (@product.images + @product.variant_images).uniq.size > 1 %>
+            <ul id="product-thumbnails" class="thumbnails inline pr_gallery" data-hook>
+              <% @product.images.each do |i| %>
+                <li class='tmb-all' id='tmb-<%= i.id %>'>
+                  <%= link_to(image_tag(i.attachment.url(:mini)), i.attachment.url(:product), :class => 'tmb-all', :id => "tmb-#{i.id}") %>
+                </li>
+              <% end %>
+
+              <% if @product.has_variants? %>
+                <% @variants.select(&:available?).each do |v| %>
+                  <% v.images.each do |i| %>
+                    <% next if @product.images.include?(i) %>
+                    <li class='vtmb-<%= v.id %> vtmb' id='tmb-<%= i.id %>'>
+                      <%= link_to(image_tag(i.attachment.url(:mini)), i.attachment.url(:product)) %>
+                    </li>
+                  <% end %>
+                <% end %>
+              <% end %>
+            </ul>
+          <% end %>
+
+        </div>
+
       </div>
 
       <!--Product Left Ends-->
@@ -134,7 +137,7 @@
             <div>
               <!--ORG Logo Ends-->
               <!--ORG Description Starts-->
-              <h4>Organization</h4>
+              <h4></h4>
               <div class="org_logo"><%= link_to (image_tag(@product.cause.organization.photo.url(:org))), root_path %></div>
               <!--Facebook like button Starts-->
               <div class="fb-like" data-send="false" data-layout="button_count" data-width="450" data-show-faces="true"></div>
@@ -143,7 +146,7 @@
 
               <!--Twitter follotw button Starts-->
 
-              <div class="follow-btn"><a href="https://twitter.com/StandUpCancer" class="twitter-follow-button" data-show-count="false" data-show-screen-name="false" data-dnt="true">Follow @StandUpCancer</a></div>
+              <div class="follow-btn"><a href="https://twitter.com/StandUpCancer" class="twitter-follow-button" data-show-count="false" data-show-screen-name="false" data-dnt="true"></a></div>
 
               <!--Twitter follotw button Ends-->
 
@@ -176,7 +179,7 @@
       <div class="fb-like" data-send="false" data-layout="button_count" data-width="450" data-show-faces="true"></div>
       <!--Facebook like button Ends-->
       <!--Twitter follotw button Starts-->
-      <div class="follow-btn"><a href="https://twitter.com/StandUpCancer" class="twitter-follow-button" data-show-count="false" data-show-screen-name="false" data-dnt="true">Follow @StandUpCancer</a></div>
+      <div class="follow-btn"><a href="https://twitter.com/StandUpCancer" class="twitter-follow-button" data-show-count="false" data-show-screen-name="false" data-dnt="true"></a></div>
       <!--Twitter follotw button Ends-->
     </section>
   </div>
