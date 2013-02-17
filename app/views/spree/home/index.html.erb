@@ -1,7 +1,7 @@
 <% content_for :head do %>
 <script charset="utf-8" language="javascript" type="text/javascript">
     $(document).ready(function() {
-        $(".cause_background").anystretch("<%=request.protocol + request.host + @cause.photo.url%>");
+        $(".cause_background").anystretch("<%=@cause.photo.url%>");
   });
 </script>
 
