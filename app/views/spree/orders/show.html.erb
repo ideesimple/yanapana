@@ -44,8 +44,6 @@
                   <h2>Confirm Order</h2>
                 </div>-->
                 <div id="checkout-step-confirm">
-                   <div class="fb-like" href="<%= root_url %>" data-font="arial" data-show-faces="true" data-width="50px" data-layout="button_count" data-send="false" ></div>
-           <!--Facebook like button Ends-->
 
                   <div id="shopping_cart" class="full_page">
                     <div class="message"><% render :partial => 'spree/shared/error_messages', :locals => { :target => @order } %></div>
@@ -67,7 +65,13 @@
   <%= render :partial => 'spree/shared/order_details', :locals => { :order => @order } %>
 
   <br class="clear" />
+<div class="fb-like" href="<%= root_url %>" data-font="arial" data-show-faces="true" data-width="50px" data-layout="button_count" data-send="false" ></div>
+           <!--Facebook like button Ends-->
 
+           <!--Twitter follotw button Starts-->
+                               <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
+                               <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                                                   <!--Twitter follotw button Ends-->
   <p data-hook="links">
     <%= link_to t(:back_to_store), spree.root_path, :class => "button" %>
     <% unless params.has_key? :checkout_complete %>
