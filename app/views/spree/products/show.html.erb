@@ -92,8 +92,13 @@
           <p class="short_dc"><%= @product.description %></p>
         <% end %>
 
-         <%#= render :partial => "cart_form" %>
 
+	<div class="product_overview hidden_movil">
+            <%= render :partial => "properties" %>
+
+        </div>
+   
+         <%#= render :partial => "cart_form" %>
          <%= form_for :order, :url => populate_orders_path do |f| %>
 
            <% if @product.price %>
@@ -140,15 +145,15 @@
               <h4></h4>
               <div class="org_logo"><%= link_to (image_tag(@product.cause.organization.photo.url(:org))), root_path %></div>
               <!--Facebook like button Starts-->
-              <div class="fb-like" data-send="false" data-layout="button_count" data-width="450" data-show-faces="true"></div>
-
+<div class="fb-like" data-href="https://www.facebook.com/YANAPANAcom?fref=ts" data-send="false" data-layout="button_count" data-width="450" data-show-faces="true"></div>
               <!--Facebook like button Ends-->
 
-              <!--Twitter follotw button Starts-->
 
-              <div class="follow-btn"><a href="https://twitter.com/StandUpCancer" class="twitter-follow-button" data-show-count="false" data-show-screen-name="false" data-dnt="true"></a></div>
+         <!--Twitter follotw button Starts-->
+      <a href="https://twitter.com/share" class="twitter-share-button" data-url="https://www.facebook.com/YANAPANAcom?ref=ts&amp;fref=ts">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+      <!--Twitter follotw button Ends-->
 
-              <!--Twitter follotw button Ends-->
 
             </div>
 
@@ -156,15 +161,13 @@
 
           </div>
 
-          <div class="product_overview hidden_movil">
-            <%= render :partial => "properties" %>
-
-          </div>
+         
         </div>
         <!--Product Right Ends-->
       </div>
       <!--PRODUCT DETAIL ENDS-->
     </section>
+
 
   <div id="artist-section" class="artist-inspiration jean">
     <section>
@@ -179,10 +182,23 @@
       <div class="fb-like" data-send="false" data-layout="button_count" data-width="450" data-show-faces="true"></div>
       <!--Facebook like button Ends-->
       <!--Twitter follotw button Starts-->
-      <div class="follow-btn"><a href="https://twitter.com/StandUpCancer" class="twitter-follow-button" data-show-count="false" data-show-screen-name="false" data-dnt="true"></a></div>
+
+      <a href="https://twitter.com/share" class="twitter-share-button" data-url="https://www.facebook.com/YANAPANAcom?ref=ts&amp;fref=ts">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
       <!--Twitter follotw button Ends-->
     </section>
   </div>
 </div>
 
+
+<!--Facebook like script-->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 

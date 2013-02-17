@@ -7,27 +7,14 @@
     </ul>
     
     <div class="full_page">
-      <h1><%= t(:delivery_details) %></h1>
+      <h1><%= t(:Your_order_has_been_processed!) %></h1>
         <div class="checkout_steps">
           <ol id="checkoutSteps">
-            
-            <li id="checkout" class="sct">
-               <div class="step-title">Step 1: Checkout Options<a class="edit fr" href="#">Modify ></a></div>
-            </li>
-            <li id="checkout" class="sct">
-               <div class="step-title">Step 2: Billing Details<a class="edit fr" href="#">Modify ></a></div>
-            </li>
-            <li id="checkout" class="sct">
-               <div class="step-title">Step 3: Delivery Method<a class="edit fr" href="#">Modify ></a></div>
-            </li>
-            <li id="checkout" class="sct">
-               <div class="step-title">Step 4: Payment Method<a class="edit fr" href="#">Modify ></a></div>
-            </li>
       
       
             <li class="section allow active" id="opc-login">
-                <div class="step-title"> <span class="number">Step 5:</span>
-                  <h2>Confirm Order</h2>
+                <div class="step-title"> 
+                  <h2>Order #132456</h2>
                 </div>
                 <div id="checkout-step-confirm">
                   <div id="shopping_cart" class="full_page">
@@ -89,9 +76,15 @@
                 
                 
                   <br class="clear">
-                
+                  <!--Facebook like button Starts-->
+                    <div class="fb-like" data-send="false" data-layout="button_count" data-width="450" data-show-faces="true"></div>
+                    <!--Facebook like button Ends-->
+                    <!--Twitter follotw button Starts-->
+                    <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>               
+                    <!--Twitter follotw button Ends-->
                   <p data-hook="links">
-                    <a href="/" class="button">Confirm Order</a>
+                    <a href="/" class="button">Continue Shopping!</a>
                   </p>
                 </div>
                 </fieldset>
@@ -102,3 +95,13 @@
     </div><!--Ends full page-->
   </section>
 </div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+<div id="fb-root"></div>
