@@ -91,13 +91,10 @@
         <% if @product.description %>
           <p class="short_dc"><%= @product.description %></p>
         <% end %>
-
-
-	<div class="product_overview hidden_movil">
+	      <div class="product_overview hidden_movil">
             <%= render :partial => "properties" %>
-
         </div>
-   
+
          <%#= render :partial => "cart_form" %>
          <%= form_for :order, :url => populate_orders_path do |f| %>
 
@@ -117,8 +114,6 @@
                    <%= number_field_tag (@product.has_variants? ? :quantity : "variants[#{@product.master.id}]"),
                      1, :class => 'title', :in => 1..@product.on_hand, :min => 1 %>
 
-
-
                    <div class="add_to_buttons">
                      <a href="#top"></a>
                      <%= button_tag :class => 'add_cart', :id => 'add-to-cart-button', :type => :submit do %>
@@ -126,7 +121,19 @@
                      <% end %>
                    </div>
                  <% else %>
-                   <%= content_tag('strong', t(:out_of_stock)) %>
+                  <div class="quantity">
+                    <label>Quantity</label>
+                   <%= number_field_tag (@product.has_variants? ? :quantity : "variants[#{@product.master.id}]"),
+                     1, :class => 'title', :in => 1..@product.on_hand, :min => 1 %>
+
+                    <div class="add_to_buttons">
+                     <a href="#top"></a>
+                     <%= button_tag :class => 'add_cart', :id => 'add-to-cart-button', :type => :submit do %>
+                       <%= t(:add_to_cart) %>
+                     <% end %>
+                   </div>
+
+                   <% content_tag('strong', t(:out_of_stock)) %>
                  </div>
                <% end %>
              </div>
@@ -161,7 +168,7 @@
 
           </div>
 
-         
+
         </div>
         <!--Product Right Ends-->
       </div>

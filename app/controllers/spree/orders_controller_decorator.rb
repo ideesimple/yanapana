@@ -17,7 +17,11 @@ Spree::OrdersController.class_eval do
 
     params[:variants].each do |variant_id, quantity|
       quantity = quantity.to_i
-      @order.add_variant(Spree::Variant.find(variant_id), quantity) if quantity > 0
+      @item_add = @order.add_variant(Spree::Variant.find(variant_id), quantity) if quantity > 0
+      if @item_add.errors.any?
+        flash[:error] = @item_add.errors.full_messages
+        error_item = false
+      end
     end if params[:variants]
 
     fire_event('spree.cart.add')
