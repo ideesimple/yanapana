@@ -1,0 +1,103 @@
+<div class="section_container jean pb">
+	<section>
+	    <div class="full_page">
+			<ul class="breadcrumb">
+				    <li><%= link_to "Home", root_path %></li>
+				    <li class="active">Contact Us</li>
+			</ul>
+			<h1>contact us </h1>
+			<div class="col_left_main contact_page">
+				  <!--Google Maps Start-->
+            <!--Google Maps Ends-->                   
+                	<!--Contact Starts-->
+                        <address class="bordergray">
+                            <b>Yanapana</b><br/>
+                            1-800-67-9569<br/>
+                        </address>
+                    
+                    <!--Block Ends-->
+        <!--Form Starts-->
+				    <div class="block borderwhite">
+            
+				      <p class="info">Your email was sent. Huzzah!</p>
+          
+				      <form id="contact-us"  method="post">
+						  <h3>Leave a message</h3>
+                
+		
+				     <p class="alert">Error submitting the form</p>
+     
+                    
+						<ul id="contact_form">
+							    <li class="contact-selector">
+							    <select class="contact-selector" name="contact_subject">
+									<option value="1">Please Leave your Comments and Suggestions</option>
+									<option value="2">Refunds and Returns policy</option>
+									<option value="3">I want to become a featured artist</option>
+							    </select>
+							    <br />
+							    <br />
+							    </li>	    
+							    
+						    <li>
+							<input type="text" name="contactName" id="contactName"  class="txt requiredField" placeholder="Name:" />
+						     
+							<br />
+							
+							<span class="error">Forgot to enter your name!</span>
+						    
+						    </li>
+						    <li>
+							<input type="text" name="email" id="email" class="txt requiredField email" placeholder="Email:" />
+						      
+							<br />
+							<span class="error">Forgot to enter in your e-mail address.</span>
+						 
+						    </li>
+						    <li>
+							<input type="text" name="telephone" id="telephone" class="txt requiredField email" placeholder="Telephone:" />
+						      
+							<br />
+						 
+						    </li>
+						    <li>
+							<textarea name="comments" id="commentsText" class="txtarea requiredField" placeholder="Message:">
+				</textarea>
+						    
+							<br />
+							<span class="error">You forgot to enter a message!</span>
+					 
+						    </li>
+						    <li>
+							<button name="submit" type="submit" class="subbutton brown_btn contact-submit">Send us Mail!</button>
+							<input type="hidden" name="submitted" id="submitted" value="true" />
+						    </li>
+						</ul>
+					    </form>
+					</div>
+        <!--Form Ends-->
+           
+                    <!--Contact Ends-->
+				     </div>  
+			</div>
+	    
+	    <div class="col_right">
+                    <div class="block-progress">
+                        <div class="block-title">Customer Service</div>
+                            <ul>
+                                <li><a href="#">F.A.Q</a></li>
+                                <li><a href="#">Secure Payment</li>
+                                <li><a href="#">Order Tracking</li>
+                                <li><a href="#">Shipping</li>
+                                <li><a href="#">Return Policy</li>
+                            </ul>
+                    </div>
+                    <div class="right_promo">
+                    <img src="images/side_promo_banner.jpg">
+                    </div>
+                </div>
+	    
+
+	    </div>	
+	</section>    
+</div>
