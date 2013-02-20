@@ -12,14 +12,35 @@ $(document).ready(function(){
 
 
 	//SLIDE TOGGLE
-	jQuery(".minicart_link").toggle(function() {
+  jQuery(".minicart_link").toggle(function() {
 		 $('.cart_drop').slideDown(300);
 		 }, function(){
 		 $('.cart_drop').slideUp(300);
 	});
 
+  $(".section_container").click(function() {
+    $('.cart_drop').slideUp(300);
+  });
+
   //Codigo de select addtocart
-	jQuery("#cart_0").toggle(function() {
+  $('li').each(function(index){
+    $("#cart_" + index).toggle(function() {
+      $('#size_drop_' + index).slideDown(300);
+    }, function(){
+      $('#size_drop_' + index).slideUp(300);
+    });
+
+    $('#size_drop_' + index + ' li a').click(function(){
+      $('html, body').animate({scrollTop:0}, 'slow');
+      myid=$(this).attr('id');
+      $('#form' + index + ' #product_1').val($(this).attr('id'));
+      $('#form' + index).submit();
+      return false;
+    });
+
+  });
+/*
+  $("#cart_0").toggle(function() {
 		 $('#size_drop_0').slideDown(300);
 		 }, function(){
 		 $('#size_drop_0').slideUp(300);
@@ -27,12 +48,11 @@ $(document).ready(function(){
 
   $('#size_drop_0 li a').click(function(){
     $('html, body').animate({scrollTop:0}, 'slow');
-    $('.message.success').fadeIn(3000).delay(3000).fadeOut(3500);
+    //$('.message.success').fadeIn(3000).delay(3000).fadeOut(3500);
     myid=$(this).attr('id');
     $('#form0 #product_1').val($(this).attr('id'));
     $('#form0').submit();
     return false;
-
   });
 
 	jQuery("#cart_1").toggle(function() {
@@ -43,7 +63,7 @@ $(document).ready(function(){
 
   $('#size_drop_1 li a').click(function(){
     $('html, body').animate({scrollTop:0}, 'slow');
-    $('.message.success').fadeIn(3000).delay(3000).fadeOut(3500);
+    //$('.message.success').fadeIn(3000).delay(3000).fadeOut(3500);
     myid=$(this).attr('id');
     $('#form1 #product_1').val($(this).attr('id'));
     $('#form1').submit();
@@ -59,14 +79,14 @@ $(document).ready(function(){
 
   $('#size_drop_2 li a').click(function(){
     $('html, body').animate({scrollTop:0}, 'slow');
-    $('.message.success').fadeIn(3000).delay(3000).fadeOut(3500);
+    //$('.message.success').fadeIn(3000).delay(3000).fadeOut(3500);
     myid=$(this).attr('id');
     $('#form2 #product_1').val($(this).attr('id'));
     $('#form2').submit();
     return true;
 
   });
-
+*/
 	//SUB MENU
 
 	jQuery("ul.departments > li.menu_cont > a").toggle(function(){

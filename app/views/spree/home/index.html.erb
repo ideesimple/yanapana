@@ -1,7 +1,7 @@
 <% content_for :head do %>
 <script charset="utf-8" language="javascript" type="text/javascript">
     $(document).ready(function() {
-        $(".cause_background").anystretch("http://abagond.files.wordpress.com/2012/07/poverty_board.jpg");
+        $(".cause_background").anystretch("<%=@cause.photo.url%>");
   });
 </script>
 
@@ -40,8 +40,8 @@ $(document).ready(function() {
             <section>
                 <!--CART STARTS-->
                 <div id="shopping_cart" class="full_page">
-                  <div class="message success" style="display:none">Success :D <a href="#" class="fr">x</a></div>
-                </div>
+                  <div class="message success" style="display:none">Success :D </div>
+                  <div class="message warning" style="display:none"></div>
                 <h1>Sustainability. Solidarity. Fashion. Change.</h1>
                 <h4>$8 of each purchase are given to a cause helping the development and protection of women</h4>
             </section>
@@ -83,12 +83,12 @@ $(document).ready(function() {
                               <!--Facebook like button Ends-->
                               <!--Twitter follotw button Starts-->
                               <div class="follow-btn">
-                                <a href="https://twitter.com/StandUpCancer" class="twitter-follow-button" data-show-count="false" data-show-screen-name="false" data-dnt="true">Follow</a>
+                                <a href="https://twitter.com/StandUpCancer" class="twitter-follow-button" data-show-count="false" data-show-screen-name="false" data-dnt="true"></a>
                               </div>
                               <!--Twitter follotw button Ends-->
 
                               <!--Shop Now Starts-->
-                                  <h1 id="call-to-action" class="sc-button blue">Support now!</h1>
+                                  <h1 id="call-to-action" class="sc-button blue"></h1>
                               <!--Shop Now Ends-->
                           </div>
                           <!--ORG Description Ends-->
@@ -205,7 +205,7 @@ $(document).ready(function() {
                     <div class="fb-like" href="<%= @artist.link_facebook  %>" data-font="arial" data-show-faces="true" data-width="50px" data-layout="button_count" data-send="false" ></div>
                     <!--Facebook like button Ends-->
                     <!--Twitter follotw button Starts-->
-                    <div class="follow-btn"><a href="https://twitter.com/StandUpCancer" class="twitter-follow-button" data-show-count="false" data-show-screen-name="false" data-dnt="true">Follow @StandUpCancer</a></div>
+                    <div class="follow-btn"><a href="https://twitter.com/StandUpCancer" class="twitter-follow-button" data-show-count="false" data-show-screen-name="false" data-dnt="true"></a></div>
                     <!--Twitter follow button Ends-->
                 </section>
             </div>

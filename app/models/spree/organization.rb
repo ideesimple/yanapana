@@ -4,7 +4,7 @@ class Spree::Organization < ActiveRecord::Base
 
   attr_accessible :contact, :country, :description, :email, :link_facebook, :link_twitter, :name, :phonenumber, :photo, :video, :webpage, :contact_name, :exemption_number, :contact_number, :address, :state, :city, :zip
 
-  validates :name, :description, :contact, :contact_name, :contact_number, :webpage, :presence => true
+  validates :name, :description, :contact, :contact_name, :contact_number, :webpage, :email, :contact, :address, :city, :state, :zip, :presence => true
 
   validates_attachment_presence :photo
 

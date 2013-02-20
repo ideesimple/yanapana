@@ -12,13 +12,13 @@
           <ol id="checkoutSteps">
 
             <li id="checkout" class="sct">
-               <div class="step-title">Step 1: Checkout Options<a class="edit fr" href="#">Modify ></a></div>
+               <div class="step-title">Step 1: Checkout Options<a class="edit fr" href="#"></a></div>
             </li>
             <li id="checkout" class="sct">
-               <div class="step-title">Step 2: Billing Details<a class="edit fr" href="#">Modify ></a></div>
+              <div class="step-title">Step 2: Billing Details<a class="edit fr" href="#"></a></div>
             </li>
             <li id="checkout" class="sct">
-               <div class="step-title">Step 3: Delivery Method<a class="edit fr" href="#">Modify ></a></div>
+               <div class="step-title">Step 3: Delivery Method<a class="edit fr" href="#"></a></div>
             </li>
 
               <li class="section allow active" id="opc-login">
@@ -27,11 +27,11 @@
                 </div>
                 <div id="checkout-step-billing">
                   <div id="shopping_cart" class="full_page">
-                    <div class="message warning"><%= render :partial => 'spree/shared/error_messages', :locals => { :target => @order } %></div>
+                    <div class="message"><%= render :partial => 'spree/shared/error_messages', :locals => { :target => @order } %></div>
                   </div>
 
                     <fieldset id="payment" data-hook>
-                      <h6><%= t(:payment_method) %></h6>
+                      <!-- <h6><%#= t(:payment_method) %></h6>-->
                       <div data-hook="checkout_payment_step">
                         <% @order.available_payment_methods.each do |method| %>
                         <p>

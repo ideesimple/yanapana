@@ -1,5 +1,4 @@
-<%= form_for :order, :url => populate_orders_path, :remote => true do |f| %>
-<%= @mostrar  %>
+<%= form_for :order, :url => populate_orders_path do |f| %>
  <% if @product.price %>
       <div class="pr_price">
         <% if @product.price %>
@@ -32,7 +31,6 @@
 
     </div>
   <% end %>
-
 
 <% end %>
 

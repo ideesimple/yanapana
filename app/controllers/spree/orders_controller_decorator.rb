@@ -7,22 +7,21 @@ Spree::OrdersController.class_eval do
       quantity = params[:quantity].to_i if !params[:quantity].is_a?(Hash)
       quantity = params[:quantity][variant_id].to_i if params[:quantity].is_a?(Hash)
       @product = Spree::Product.find(product_id)
-      #if variant_id.blank?
-       # logger.debug "RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR"
-       # @prod = Spree::Product.find(product_id)
-      #else
-      item_add = @order.add_variant(Spree::Variant.find(variant_id), quantity) if quantity > 0
-      if item_add.errors.any?
-        flash[:error] = item_add.errors.full_messages
-        error_item = false
-      end
-      #end
+      @item_add = @order.add_variant(Spree::Variant.find(variant_id), quantity) if quantity > 0
+        if @item_add.errors.any?
+          flash[:error] = @item_add.errors.full_messages
+          error_item = false
+        end
     end if params[:products]
 
 
     params[:variants].each do |variant_id, quantity|
       quantity = quantity.to_i
-      @order.add_variant(Spree::Variant.find(variant_id), quantity) if quantity > 0
+      @item_add = @order.add_variant(Spree::Variant.find(variant_id), quantity) if quantity > 0
+      if @item_add.errors.any?
+        flash[:error] = @item_add.errors.full_messages
+        error_item = false
+      end
     end if params[:variants]
 
     fire_event('spree.cart.add')
@@ -36,6 +35,7 @@ Spree::OrdersController.class_eval do
     else
       respond_to do |format|
         format.html { redirect_to product_url(@product.permalink), :flash => { :error => flash[:error][0].to_s } }
+        format.js
       end
     end
   end

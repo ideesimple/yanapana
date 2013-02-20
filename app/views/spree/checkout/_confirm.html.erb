@@ -5,12 +5,13 @@
       <li><a href="#">Shopping Cart</a></li>
       <li class="active">Checkout</li>
     </ul>
-    
+
     <div class="full_page">
       <h1><%= t(:delivery_details) %></h1>
         <div class="checkout_steps">
+
           <ol id="checkoutSteps">
-            
+          <!--
             <li id="checkout" class="sct">
                <div class="step-title">Step 1: Checkout Options</div>
             </li>
@@ -23,8 +24,8 @@
             <li id="checkout" class="sct">
                <div class="step-title">Step 4: Payment Method</div>
             </li>
-      
-      
+            -->
+
             <li class="section allow active" id="opc-login">
                 <div class="step-title"> <span class="number">Step 5:</span>
                   <h2>Confirm Order</h2>
@@ -33,11 +34,11 @@
                   <div id="shopping_cart" class="full_page">
                     <div class="message warning"><%= render :partial => 'spree/shared/error_messages', :locals => { :target => @order } %></div>
                   </div>
-                  
+
                 <fieldset data-hook="" id="order_summary">
        <%= t(@order.state, :scope => :order_state).titleize %>
                 <%= render :partial => 'spree/shared/order_details', :locals => { :order => @order } %>
-                
+
                 </fieldset>
 <div class="form-buttons" data-hook="buttons">
   <%= submit_tag t(:place_order), :class => 'continue button primary' %>
@@ -48,4 +49,6 @@
           </ol>
     </div><!--Ends full page-->
   </section>
+
 </div>
+

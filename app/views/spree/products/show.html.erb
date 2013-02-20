@@ -33,24 +33,6 @@
 <% end %>
 
 
-	   <!-- <div class="zoom-container layout_default">
-	          <div class="main-image">
-			    <%= link_to (product_image(@product, :itemprop => "image") ), @product.images.first.attachment.url(:large), :class => "main-thumbnail", :id => "zoom"  %>
-			    <div class="lightbox-btn">
-			      <%= link_to "Agrandar",@product.images.first.attachment.url(:large), :class => "lightbox", :id => "zoom" %>
-			    </div>
-			  </div>
-			  <div class="more-views ">
-			    <div class="zoom-gallery slider">
-			    <% @product.images.each do |i| %>
-			      <div class="slide">
-			        <%= link_to (image_tag i.attachment.url(:mini)), i.attachment.url(:large), {"class" => "zoom-thumbnail thumbnail-active", "data-easyzoom-source" => i.attachment.url(:product) } %>
-			      </div>
-			    <% end %>
-			    </div>
-			  </div>
-            </div>-->
-
 <div class="section_container jean">
   <section id="product-section">
     <ul class="breadcrumb">
@@ -59,7 +41,7 @@
     </ul>
 
     <div id="shopping_cart" class="full_page">
-      <div id ="error"><%= flash[:error]  %></div>
+      <div class ="message"><%= flash[:error]  %></div>
       <div class="message success" style="display:none">
         Success :D <a href="#" class="fr"></a>
       </div>
@@ -70,14 +52,35 @@
     <div id="product_detail">
       <!--Product Left Starts-->
       <div class="product_leftcol">
-        <%= link_to (product_image(@product, :itemprop => "image") ), @product.images.first.attachment.url(:large), :class => "rollover-zoom", :title => "yanapana"  %>
-
+        <div id="main-image" data-hook>
+          <%= link_to (product_image(@product, :itemprop => "image") ), '#', :class => "rollover-zoom", :title => "yanapana" %>
+        </div>
         <!-- <span class="pr_info">ROLL OVER IMAGE TO ZOOM</span> -->
-        <ul class="pr_gallery">
-        <% @product.images.each do |i| %>
-          <%= link_to (image_tag i.attachment.url(:small)), i.attachment.url(:large), {"class" => "zoom-thumbnail thumbnail-active", "data-easyzoom-source" => i.attachment.url(:product) } %>
-        <% end %>
-        </ul>
+
+        <div id="thumbnails" data-hook>
+          <% if (@product.images + @product.variant_images).uniq.size > 1 %>
+            <ul id="product-thumbnails" class="thumbnails inline pr_gallery" data-hook>
+              <% @product.images.each do |i| %>
+                <li class='tmb-all' id='tmb-<%= i.id %>'>
+                  <%= link_to(image_tag(i.attachment.url(:mini)), i.attachment.url(:product), :class => 'tmb-all', :id => "tmb-#{i.id}") %>
+                </li>
+              <% end %>
+
+              <% if @product.has_variants? %>
+                <% @variants.select(&:available?).each do |v| %>
+                  <% v.images.each do |i| %>
+                    <% next if @product.images.include?(i) %>
+                    <li class='vtmb-<%= v.id %> vtmb' id='tmb-<%= i.id %>'>
+                      <%= link_to(image_tag(i.attachment.url(:mini)), i.attachment.url(:product)) %>
+                    </li>
+                  <% end %>
+                <% end %>
+              <% end %>
+            </ul>
+          <% end %>
+
+        </div>
+
       </div>
 
       <!--Product Left Ends-->
@@ -88,68 +91,76 @@
         <% if @product.description %>
           <p class="short_dc"><%= @product.description %></p>
         <% end %>
-
-<div class="product_overview hidden_movil">
+	      <div class="product_overview hidden_movil">
             <%= render :partial => "properties" %>
-
-<<<<<<< HEAD
-          </div>
-          <%= render :partial => "cart_form" %>
-=======
-         <%#= render :partial => "cart_form" %>
-<%= form_for :order, :url => populate_orders_path do |f| %>
->>>>>>> 9d311b793bb9c4acd1ff5d19f38b4c6c0c9f2908
-
- <% if @product.price %>
-      <div class="pr_price">
-        <% if @product.price %>
-          <big><%= number_to_currency @product.price %></big><small></small>
-        <% end %>
-      </div>
-
-    <%= render :partial => "variants" %>
-
-    <div class="qty_info">
-      <% if @product.on_sale? %>
-        <div class="quantity">
-            <label>Quantity</label>
-            <%= number_field_tag (@product.has_variants? ? :quantity : "variants[#{@product.master.id}]"),
-            1, :class => 'title', :in => 1..@product.on_hand, :min => 1 %>
-
-
-
-          <div class="add_to_buttons">
-            <a href="#top"></a>
-            <%= button_tag :class => 'add_cart', :id => 'add-to-cart-button', :type => :submit do %>
-              <%= t(:add_to_cart) %>
-            <% end %>
-          </div>
-      <% else %>
-        <%= content_tag('strong', t(:out_of_stock)) %>
         </div>
-      <% end %>
-    </div>
 
-    </div>
-  <% end %>
+         <%#= render :partial => "cart_form" %>
+         <%= form_for :order, :url => populate_orders_path do |f| %>
+
+           <% if @product.price %>
+             <div class="pr_price">
+               <% if @product.price %>
+                 <big><%= number_to_currency @product.price %></big><small></small>
+               <% end %>
+             </div>
+
+             <%= render :partial => "variants" %>
+
+             <div class="qty_info">
+               <% if @product.on_sale? %>
+                 <div class="quantity">
+                   <label>Quantity</label>
+                   <%= number_field_tag (@product.has_variants? ? :quantity : "variants[#{@product.master.id}]"),
+                     1, :class => 'title', :in => 1..@product.on_hand, :min => 1 %>
+
+                   <div class="add_to_buttons">
+                     <a href="#top"></a>
+                     <%= button_tag :class => 'add_cart', :id => 'add-to-cart-button', :type => :submit do %>
+                       <%= t(:add_to_cart) %>
+                     <% end %>
+                   </div>
+                 <% else %>
+                  <div class="quantity">
+                    <label>Quantity</label>
+                   <%= number_field_tag (@product.has_variants? ? :quantity : "variants[#{@product.master.id}]"),
+                     1, :class => 'title', :in => 1..@product.on_hand, :min => 1 %>
+
+                    <div class="add_to_buttons">
+                     <a href="#top"></a>
+                     <%= button_tag :class => 'add_cart', :id => 'add-to-cart-button', :type => :submit do %>
+                       <%= t(:add_to_cart) %>
+                     <% end %>
+                   </div>
+
+                   <% content_tag('strong', t(:out_of_stock)) %>
+                 </div>
+               <% end %>
+             </div>
+
+           </div>
+         <% end %>
 
 
-<% end %>
-          <div class="product_overview">
+       <% end %>
+
+         <div class="product_overview">
             <!--ORG Logo Starts-->
             <div>
               <!--ORG Logo Ends-->
               <!--ORG Description Starts-->
-              <h4>Organization</h4>
+              <h4></h4>
               <div class="org_logo"><%= link_to (image_tag(@product.cause.organization.photo.url(:org))), root_path %></div>
               <!--Facebook like button Starts-->
 <div class="fb-like" data-href="https://www.facebook.com/YANAPANAcom?fref=ts" data-send="false" data-layout="button_count" data-width="450" data-show-faces="true"></div>
               <!--Facebook like button Ends-->
 
+
          <!--Twitter follotw button Starts-->
       <a href="https://twitter.com/share" class="twitter-share-button" data-url="https://www.facebook.com/YANAPANAcom?ref=ts&amp;fref=ts">Tweet</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
       <!--Twitter follotw button Ends-->
+
 
             </div>
 
@@ -157,32 +168,31 @@
 
           </div>
 
-         
+
         </div>
         <!--Product Right Ends-->
       </div>
       <!--PRODUCT DETAIL ENDS-->
     </section>
 
-<<<<<<< HEAD
-  <div id="artist-section" class="artist-inspiration pb">
-=======
+
   <div id="artist-section" class="artist-inspiration jean">
->>>>>>> 9d311b793bb9c4acd1ff5d19f38b4c6c0c9f2908
     <section>
       <h2 class="sub_title">The Artist</h2>
       <div class="artist"><a href="#"><%= image_tag ("image-yanapana/artist.jpg") %></a></div>
       <div class="artist_description">
         <h2 class="sub_title">Inspiration Behind</h1>
-        <p><%= @product.cause.inspiration  %></p>
+        <p><%= @product.inspiration_behind  %></p>
       </div>
 
       <!--Facebook like button Starts-->
       <div class="fb-like" data-send="false" data-layout="button_count" data-width="450" data-show-faces="true"></div>
       <!--Facebook like button Ends-->
       <!--Twitter follotw button Starts-->
+
       <a href="https://twitter.com/share" class="twitter-share-button" data-url="https://www.facebook.com/YANAPANAcom?ref=ts&amp;fref=ts">Tweet</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
       <!--Twitter follotw button Ends-->
     </section>
   </div>
