@@ -16,7 +16,7 @@ $(document).ready(function() {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
   js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/es_LA/all.js#xfbml=1";
+  js.src = "//connect.facebook.net/es_US/all.js#xfbml=1";
   fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));
 </script>
@@ -79,7 +79,9 @@ $(document).ready(function() {
 
                               <h1 class="org_logo"><%= link_to image_tag(@cause.organization.photo.url(:org)), "leisure_index.html" %></h1>
                               <!--Facebook like button Starts-->
-                              <div class="fb-like" href="<%= @cause.organization.link_facebook  %>" data-font="arial" data-show-faces="true" data-width="50px" data-layout="button_count" data-send="false" ></div>
+
+                                <div class="fb-like" style="overflow: hidden" href="<%= @cause.organization.link_facebook  %>" data-font="arial" data-show-faces="false" data-width="0px" data-layout="button_count" data-send="false" ></div>
+
                               <!--Facebook like button Ends-->
                               <!--Twitter follotw button Starts-->
                               <div class="follow-btn">
@@ -202,7 +204,7 @@ $(document).ready(function() {
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu.</p>
                     </div>
                      <!--Facebook like button Starts-->
-                    <div class="fb-like" href="<%= @artist.link_facebook  %>" data-font="arial" data-show-faces="true" data-width="50px" data-layout="button_count" data-send="false" ></div>
+                    <div class="fb-like" style="overflow: hidden" href="<%= @artist.link_facebook %>" data-font="arial" data-show-faces="true" data-width="50px" data-layout="button_count"  data-height="30px" data-send="false" ></div>
                     <!--Facebook like button Ends-->
                     <!--Twitter follotw button Starts-->
                     <div class="follow-btn"><a href="https://twitter.com/StandUpCancer" class="twitter-follow-button" data-show-count="false" data-show-screen-name="false" data-dnt="true"></a></div>
@@ -223,20 +225,7 @@ $(document).ready(function() {
 </div><!--EndSectionContainer-->
 
 
-<script>(function(d, s, id) {
-
-  var js, fjs = d.getElementsByTagName(s)[0];
-
-  if (d.getElementById(id)) return;
-
-  js = d.createElement(s); js.id = id;
-
-  js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1";
-
-  fjs.parentNode.insertBefore(js, fjs);
-
-  }(document, 'script', 'facebook-jssdk'));</script>
 
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
-<div id="fb-root"></div>
+

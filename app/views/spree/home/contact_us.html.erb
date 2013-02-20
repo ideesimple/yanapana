@@ -1,0 +1,15 @@
+<div class="jean">
+<%= form_tag(contact_us_path,:method => "post", :multipart => false) do %>
+  <%= select_tag "name", nil%>
+  <label for="name">Full Name</label>
+  <%= text_field_tag "name", nil, :id => "name" %>
+  <label for="email">Email Address</label>
+  <%= text_field_tag "email", nil, :id => "email" %>
+  <label for="phone">Phone</label>
+  <%= text_field_tag "phone", nil, :id => "phone" %>
+  <label for="message">Message</label>
+  <%= text_area_tag "message", nil, :id => "message" %>
+
+  <%= submit_tag "Submit",:class => "button info-bg-color" %>
+<% end %>
+</div>
