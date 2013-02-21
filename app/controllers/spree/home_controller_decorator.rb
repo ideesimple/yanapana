@@ -17,7 +17,7 @@ Spree::HomeController.class_eval do
 
   def contact_us
     unless params.blank?
-      c = ContactForm.new(:name => params["name"],:email => params["email"], :message => params["message"])
+      c = Spree::ContactForm.new(:name => params["name"],:email => params["email"], :message => params["message"])
       if c.deliver
         redirect_to root_path
       end
@@ -30,7 +30,7 @@ Spree::HomeController.class_eval do
   def about_us
   end
 
-  def how_it_works
+  def dashboard
   end
 
   def privacy_policy

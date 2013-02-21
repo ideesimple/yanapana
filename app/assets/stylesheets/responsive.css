@@ -273,7 +273,11 @@ footer address img{ float:none;}
 .contact_page iframe{ width:99%; height:200px;}
 .contact_page address, .contact_page .block{ width:auto;}
 .contact_page #contact_form li input[type="text"], .contact_page #contact_form li textarea{ width:300px;}
+#contact_form span.error {width: 275px;}
 
+#uniform-undefined{width: 295px;}
+div.selector select {width: 308px;}
+div.selector span {width: 290px;}
 
 /*Listing*/
 .products_list_list li{ text-align:center;}

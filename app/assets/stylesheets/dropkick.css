@@ -31,6 +31,7 @@
   .dk_container a {
     cursor: pointer;
     text-decoration: none;
+    width: 266px;
   }
 
 /* Opens the dropdown and holds the menu label */
@@ -53,6 +54,7 @@
   -moz-transition: border-color .5s;
   -o-transition: border-color .5s;
   transition: border-color .5s;
+  width: 265px;
 }
   .dk_toggle:hover {
     border-color: #8c8c8c;

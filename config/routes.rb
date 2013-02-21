@@ -15,6 +15,8 @@ Yanapana::Application.routes.draw do
       match "dummy-confirm" => "home#dummy_confirm", :as => :dummy_confirm
       match "faq" => "home#faq", :as => :faq
       match "contact-us" => "home#contact_us", :as => :contact_us
+      match "about-us" => "home#about_us", :as => :about_us
+      match "dashboard" => "home#dashboard", :as => :dashboard
 
     end
 end

@@ -1,15 +1,15 @@
-class ContactForm < MailForm::Base
+class Spree::ContactForm < MailForm::Base
   attribute :name,  :validate => true
   attribute :email, :validate => /\A([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})\z/i
-  attribute :subject, :validate => true
+  attribute :suggestion, :validate => true
   attribute :phone
   attribute :message
 
-  SUBJECT = ['duda','quiero vender']
+  SUGGESTION = ['duda','quiero vender']
 
   class << self
-    SUBJECT.each do |subject|
-      define_method "subject_#{subject}" do
+    SUGGESTION.each do |suggestion|
+      define_method "sugg_#{suggestion}" do
         subject
       end
     end
