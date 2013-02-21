@@ -43,6 +43,7 @@ html[xmlns] .clearfix {
 .fr {float: right;}
 
 .pb {padding-bottom: 50px;}
+.pt{padding-top: 50px}
 .bb {border-bottom: 1px solid #ddd;}
 
 
@@ -776,16 +777,24 @@ h2.sub_title{ font-family: century gothic, serif; font-size:18px; color:#312e2b;
 #cause h4 {font-family: century gothic, serif; font-size: 20px; padding-bottom: 10px;}
 #cause p {line-height: 1.4; font-size: 16px; padding-bottom: 16px;}
 
-#artist-section p, .full_page p, li {
+#artist-section p, .full_page p{
     color: #A2A2A2;
     font-family: 'Istok Web';
     font-size: 14px;
     line-height: 1.4;
-    margin-bottom: 10px;
 }	
 
-.full_page ul li {list-style: disc inside none ;}
+
+
+/*FAQ*/
+#faq-style ul li a {color: #a2a2a2; font-family: istok web; font-size: 14px; line-height: 1.4; text-decoration: none; line-height: 1.4; }
+#faq-style h2 {display: inline-block; vertical-align: baseline;}
+
+#faq-style ul li  {list-style: decimal inside none ;}
+#faq-style p {margin-left: 10px; margin-bottom: 30px;}
+.faq-index {padding-bottom: 30px; margin-bottom: 30px; border-bottom: 1px solid #ccc;}
 
 .important {font-weight: bold;}
 
 .message.success a {color: #333; font-style: normal; text-decoration: none;}
+
