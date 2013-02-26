@@ -2,7 +2,7 @@
   <% image = item.variant.product.images.first %>
   <li><%= image_tag(image.attachment.url(:mini)) %><a href="#"><%= item.variant.product.name %></a>
     <span class="close fr"><a href="#"></a></span>
-    <span class="price"><%= item.price  %></span>
+    <span class="price"><%= number_to_currency(item.price)  %></span>
   </li>
 <% end %>
 

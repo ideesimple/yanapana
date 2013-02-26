@@ -29,7 +29,7 @@ Spree::OrdersController.class_eval do
 
     if error_item
       respond_with(@order) do |format|
-        format.html { redirect_to cart_path}
+        format.html { redirect_to root_path}
         format.js
       end
     else

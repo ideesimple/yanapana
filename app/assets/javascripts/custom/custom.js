@@ -19,7 +19,7 @@ $(document).ready(function(){
 	});
 
   $(".section_container").click(function() {
-    $('.cart_drop').slideUp(300);
+      $('.cart_drop').slideUp(300);
   });
 
   //Codigo de select addtocart
@@ -39,55 +39,8 @@ $(document).ready(function(){
     });
 
   });
-/*
-  $("#cart_0").toggle(function() {
-		 $('#size_drop_0').slideDown(300);
-		 }, function(){
-		 $('#size_drop_0').slideUp(300);
-	});
 
-  $('#size_drop_0 li a').click(function(){
-    $('html, body').animate({scrollTop:0}, 'slow');
-    //$('.message.success').fadeIn(3000).delay(3000).fadeOut(3500);
-    myid=$(this).attr('id');
-    $('#form0 #product_1').val($(this).attr('id'));
-    $('#form0').submit();
-    return false;
-  });
-
-	jQuery("#cart_1").toggle(function() {
-		 $('#size_drop_1').slideDown(300);
-		 }, function(){
-		 $('#size_drop_1').slideUp(300);
-	});
-
-  $('#size_drop_1 li a').click(function(){
-    $('html, body').animate({scrollTop:0}, 'slow');
-    //$('.message.success').fadeIn(3000).delay(3000).fadeOut(3500);
-    myid=$(this).attr('id');
-    $('#form1 #product_1').val($(this).attr('id'));
-    $('#form1').submit();
-    return true;
-
-  });
-
-	jQuery("#cart_2").toggle(function() {
-		 $('#size_drop_2').slideDown(300);
-		 }, function(){
-		 $('#size_drop_2').slideUp(300);
-	});
-
-  $('#size_drop_2 li a').click(function(){
-    $('html, body').animate({scrollTop:0}, 'slow');
-    //$('.message.success').fadeIn(3000).delay(3000).fadeOut(3500);
-    myid=$(this).attr('id');
-    $('#form2 #product_1').val($(this).attr('id'));
-    $('#form2').submit();
-    return true;
-
-  });
-*/
-	//SUB MENU
+  //SUB MENU
 
 	jQuery("ul.departments > li.menu_cont > a").toggle(function(){
 		$(this).addClass('active');

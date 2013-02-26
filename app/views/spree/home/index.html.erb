@@ -5,22 +5,6 @@
   });
 </script>
 
-<script>
-$(document).ready(function() {
-
-	});
-</script>
-
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/es_US/all.js#xfbml=1";
-  fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));
-</script>
-
 <% end %>
 
 <% content_for :metatags do %>
@@ -89,6 +73,7 @@ $(document).ready(function() {
                               </div>
                               <!--Twitter follotw button Ends-->
 
+                              <a data-pin-config="none" href="//pinterest.com/pin/create/button/" data-pin-do="buttonBookmark" ><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png" /></a>
                               <!--Shop Now Starts-->
                                   <h1 id="call-to-action" class="sc-button blue"></h1>
                               <!--Shop Now Ends-->
@@ -114,29 +99,30 @@ $(document).ready(function() {
                             <li>
                                 <div class="donation_container">
                                     <div class="fl">
-                                    <%= image_tag ("image-yanapana/money_icon.png")%>
+                                    <% image_tag ("image-yanapana/money_icon.png")%>
                                     </div>
                                        <div class="fl hidden_movil">
                                         <p>Donated so far</p>
-                                        <span class="bucks"><%= @cause.goal_money %></span>
+                                        <span class="bucks"><%= number_to_currency(@cause.goal_money, :precision=>0) %></span>
                                         </div>
                                 </div>
                                 <div id="goalbar" class="goalbar_style"><i class="progBar"></i></div>
                                 <div class="stats">
                                     <h4>
                                         <span class="nums fr">
-                                            <span class="count">$<%= @cause.goal_money %></span>/
-                                            <span class="goal">$<%= @cause.goal_money %></span>
+                                            <span class="count"><%= number_to_currency(@cause.goal_money, :precision=>0)%></span>/
+                                            <span class="goal"><%= number_to_currency(@cause.goal_money, :precision=>0)%></span>
                                         </span>
-                                        <span class="word fl">Donation goal #<%= @cause.number_goal %></span>
+                                        <span class="word fl">Donation goal <%= @cause.number_goal %></span>
                                     </h4>
                                 </div>
 
                             </li>
                         </div>
                         <div id="fb_colsize">
-                            <li>
-                                <%= image_tag ("image-yanapana/facebook_icon.png")%>
+                          <li>
+                            <div class="fb-like" data-href="http://yanapana-sta.herokuapp.com/" data-send="false" data-layout="button_count" data-width="450" data-show-faces="true"></div>
+                                <% image_tag ("image-yanapana/facebook_icon.png")%>
                                 <div id="goalbar" class="goalbar_style"><i class="progBar"></i></div>
                                 <div class="stats">
                                     <h4>
@@ -147,7 +133,7 @@ $(document).ready(function() {
                                         <span class="word fl">Share goal</span>
                                     </h4>
                                 </div>
-                            </li>
+                          </li>
                         </div>
                         <div id="tt_colsize">
                             <li>
@@ -225,7 +211,17 @@ $(document).ready(function() {
 </div><!--EndSectionContainer-->
 
 
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/es_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
 
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
-
+<script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"></script>

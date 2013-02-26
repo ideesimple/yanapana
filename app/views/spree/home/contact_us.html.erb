@@ -21,70 +21,45 @@
 
 				      <p class="info">Your email was sent. Huzzah!</p>
 
-				      <form id="contact-us"  method="post">
-						  <h3>Leave a message</h3>
-
-
-				     <p class="alert">Error submitting the form</p>
-
+              <%= form_tag(contact_us_path,:method => "post", :multipart => false, :class=>"contact-us") do %>
+                <h3>Leave a message</h3>
+                <% if @c.errors.any? %>
+                    <p class="alert">Error submitting the form</p>
+                    <ul>
+                      <% @c.errors.full_messages.each do |msg| %>
+                        <li>* <%= msg %></li>
+                      <% end %>
+                    </ul>
+                <% end %>
 
 						<ul id="contact_form">
-							    <li class="contact-selector">
-							    <select class="contact-selector" name="contact_subject">
-									<option value="1">Please Leave your Comments and Suggestions</option>
-									<option value="2">Refunds and Returns policy</option>
-									<option value="3">I want to become a featured artist</option>
-							    </select>
+              <li class="contact-selector">
+                <%= select_tag "suggestion", options_for_select([["Sugerencia" , "1" ],["Duda" , "2" ],["Quiero vender poleras" , "3" ]]), :class=>"contact-subject"  %>
 							    <br />
 							    <br />
-							    </li>
-                  <%= form_tag(contact_us_path,:method => "post", :multipart => false) do %>
-                    <%= select_tag "name", nil%>
-                    <label for="name">Full Name</label>
-                    <%= text_field_tag "name", nil, :id => "name" %>
-                    <label for="email">Email Address</label>
-                    <%= text_field_tag "email", nil, :id => "email" %>
-                    <label for="phone">Phone</label>
-                    <%= text_field_tag "phone", nil, :id => "phone" %>
-                    <label for="message">Message</label>
-                    <%= text_area_tag "message", nil, :id => "message" %>
-
-                    <%= submit_tag "Submit",:class => "button info-bg-color" %>
-                  <% end %>
-
+							</li>
 
 						    <li>
-							<input type="text" name="contactName" id="contactName"  class="txt requiredField" placeholder="Name:" />
-
-							<br />
-
-
+                  <%= text_field_tag "name", nil, :id => "name", :class=>"txt requireField", :placeholder=>"Name:" %>
+							    <br />
 						    </li>
 						    <li>
-							<input type="text" name="email" id="email" class="txt requiredField email" placeholder="Email:" />
-
-							<br />
-
+                  <%= text_field_tag "email", nil, :id => "email", :class=>"txt requiredField email", :placeholder=>"Email:" %>
+							    <br />
 						    </li>
 						    <li>
-							<input type="text" name="telephone" id="telephone" class="txt requiredField email" placeholder="Telephone:" />
-
-							<br />
-
+                  <%= text_field_tag "phone", nil, :id => "phone", :class=>"txt requiredField email", :placeholder=>"Telephone" %>
+							    <br />
 						    </li>
 						    <li>
-							<textarea name="comments" id="commentsText" class="txtarea requiredField" placeholder="Message:">
-				</textarea>
-
-							<br />
-
+                  <%= text_area_tag "message", nil, :id => "message", :class=>"txtxarea requireField", :placeholder=>"Message:" %>
+							    <br />
 						    </li>
-						    <li>
-							<button name="submit" type="submit" class="subbutton brown_btn contact-submit">Send us Mail!</button>
-							<input type="hidden" name="submitted" id="submitted" value="true" />
-						    </li>
-						</ul>
-					    </form>
+              <li>
+                <%= submit_tag "Send us Mail!",:class => "subbutton brown_btn contact-submit" %>
+              </li>
+          </ul>
+					    <% end %>
 					</div>
         <!--Form Ends-->
 
@@ -103,10 +78,7 @@
             <li><a href="#">Return Policy</li>
           </ul>
         </div>
-        <!--<div class="right_promo">
-          <%= image_tag 'side_promo_banner.jpg' %>
-        </div>-->
-      </div>
+              </div>
       </div>
 	</section>
 </div>
