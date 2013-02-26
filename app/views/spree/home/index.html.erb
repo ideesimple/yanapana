@@ -1,3 +1,20 @@
+<script type="text/javascript">
+$(function()
+{
+
+$("#mostrar").click(function(event) {
+event.preventDefault();
+$("#caja").slideToggle();
+});
+
+$("#caja a").click(function(event) {
+event.preventDefault();
+$("#caja").slideUp();
+});
+});
+</script>
+
+
 <% content_for :head do %>
 <script charset="utf-8" language="javascript" type="text/javascript">
     $(document).ready(function() {
@@ -39,7 +56,7 @@ $(document).ready(function() {
         <div id="headline" class="jean">
             <section>
                 <!--CART STARTS-->
-                <div id="shopping_cart" class="full_page">
+                <div id="shopping_cart">
                   <div class="message success" style="display:none">Success :D </div>
                   <div class="message warning" style="display:none"></div>
                 <h1>Sustainability. Solidarity. Fashion. Change.</h1>
@@ -55,8 +72,10 @@ $(document).ready(function() {
                       <section>
                           <!--Cause Description Starts-->
                           <div class="cause_description">
-                              <h2><%= @cause.title %></h2>
-
+                              <h2 id="mostrar"><%= @cause.title %></h2>
+			      
+			      
+				<div id="caja">
 
                                   <div class="description_text hidden_tablet hidden_movil" id="sample">
                                        <h4>Cause</h4>
@@ -96,6 +115,7 @@ $(document).ready(function() {
                           <!--ORG Description Ends-->
                           </div>
                           <!--Cause Description Ends-->
+			  </div>
                       </section>
                   </div>
             </div>

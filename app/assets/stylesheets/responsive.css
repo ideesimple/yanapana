@@ -234,7 +234,7 @@ footer address img{ float:none;}
 /*Detail Page*/
 .product_leftcol, .product_rightcol{ width:310px;}
 .product_rightcol h1{ padding-top:20px;}
-.product_rightcol .size_info label{ width:88px;}
+.product_rightcol .size_info label{ width:90px;}
 .product_rightcol .size_sel{ margin-bottom:5px;}
 .product_rightcol .add_to_buttons{ padding:15px 0px;}
 .product_rightcol .add_to_buttons span{ width:33px;}
@@ -290,6 +290,11 @@ section#main_content{width:310px;}
 aside#sidebar{width:310px;}
 
 /*Typography*/
+
+
+.product_rightcol .pr_price {display: block; padding: 10px 0px; float: left; width: 100%;  border-top: 1px solid #ccc; }
+.product_rightcol p {width: 100%; margin-bottom: 0; padding: 10px 0px;}
+
 
 #headline h1 {font-size: 35px;  margin: 15px 0 7px 0; }
 #headline h4 {font-size: 13px;}

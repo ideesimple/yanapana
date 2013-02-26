@@ -19,7 +19,7 @@ $(document).ready(function(){
 	});
 
   $(".section_container").click(function() {
-    $('.cart_drop').slideUp(300);
+    $('body').slideUp(300);
   });
 
   //Codigo de select addtocart
@@ -27,7 +27,7 @@ $(document).ready(function(){
     $("#cart_" + index).toggle(function() {
       $('#size_drop_' + index).slideDown(300);
     }, function(){
-      $('#size_drop_' + index).slideUp(300);
+      $('body' + index).slideUp(300);
     });
 
     $('#size_drop_' + index + ' li a').click(function(){

@@ -6,15 +6,16 @@
 				    <li class="active">Contact Us</li>
 			</ul>
 			<h1>contact us </h1>
+			<div class="contact-img" ></div>
 			<div class="col_left_main contact_page">
 				  <!--Google Maps Start-->
             <!--Google Maps Ends-->
                 	<!--Contact Starts-->
-                        <address class="bordergray">
-                            <b>Yanapana</b><br/>
-                            1-800-67-9569<br/>
-                        </address>
-
+			
+			<p class="bb">At YANAPANA, we are always eager and hear about our customers. 
+Make sure to go through our FAQs. Answers to most questions can be quickly found there.
+</p>
+                        
                     <!--Block Ends-->
         <!--Form Starts-->
 				    <div class="block borderwhite">
@@ -38,6 +39,7 @@
 							    <br />
 							    <br />
 							    </li>
+							    <li>
                   <%= form_tag(contact_us_path,:method => "post", :multipart => false) do %>
                     <%= select_tag "name", nil%>
                     <label for="name">Full Name</label>
@@ -47,10 +49,11 @@
                     <label for="phone">Phone</label>
                     <%= text_field_tag "phone", nil, :id => "phone" %>
                     <label for="message">Message</label>
-                    <%= text_area_tag "message", nil, :id => "message" %>
+                    <%= text_area_tag "message", nil, :id => "message"%>
 
-                    <%= submit_tag "Submit",:class => "button info-bg-color" %>
+                    <%= submit_tag "Submit",:class => "subbutton brown_btn contact-submit" %>
                   <% end %>
+                  </li>
 
 
 						    <li>
@@ -97,12 +100,24 @@
           <div class="block-title">Customer Service</div>
           <ul>
             <li><a href="#">F.A.Q</a></li>
-            <li><a href="#">Secure Payment</li>
-              <li><a href="#">Order Tracking</li>
-            <li><a href="#">Shipping</li>
-            <li><a href="#">Return Policy</li>
+            <li><a href="#">Shipping Costs</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Terms and Conditions of Returns</a></li>
+            <li><a href="#">Privacy Policy</a></li>
           </ul>
         </div>
+	<address class="bordergray">
+                            <b>Prefer to call us?</b>
+			    <br/>
+			    <br/>
+                            +1 949 200 6392          Monday-Friday 7am - 12pm PST (Americas)  
+			    <br/>
+			    <br/>
+			    + 41 (0) 78 617 50 86    Monday-Friday  1pm - 6pm CET (Europe)
+
+			    
+                        </address>
+
         <!--<div class="right_promo">
           <%= image_tag 'side_promo_banner.jpg' %>
         </div>-->
