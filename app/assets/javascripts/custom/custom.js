@@ -12,7 +12,9 @@ $(document).ready(function(){
 
 
 	//SLIDE TOGGLE
-  jQuery(".minicart_link").toggle(function() {
+
+  /*
+  $(".minicart_link").toggle(function() {
 		 $('.cart_drop').slideDown(300);
 		 }, function(){
 		 $('.cart_drop').slideUp(300);
@@ -21,9 +23,37 @@ $(document).ready(function(){
   $(".section_container").click(function() {
       $('.cart_drop').slideUp(300);
   });
+*/
+  $(".minicart_link").click( function(e){
+    e.preventDefault();
+    callbackFn();
+  });
+
+  /*
+  $("body *:not(.minicart_link)").click(function() {
+    $('.cart_drop').slideUp(300)
+  });
+  */
+  $(".section_container").click(function(){
+    $('.cart_drop').slideUp(300)
+  });
+  $(".branding_container").click(function(){
+    $('.cart_drop').slideUp(300)
+  });
+
+  function callbackFn(){
+    $(".cart_drop").is(":visible") ? $('.cart_drop').slideUp(300) : $(".cart_drop").slideDown(300);
+  }
 
   //Codigo de select addtocart
   $('li').each(function(index){
+/*
+    $("#cart_"+index).click( function(e){
+      e.preventDefault();
+      $("#size_drop_"+index).is(":visible") ?       $('#size_drop_'+index).slideUp(300) : $("#size_drop_"+index).slideDown(300);
+    });
+*/
+
     $("#cart_" + index).toggle(function() {
       $('#size_drop_' + index).slideDown(300);
     }, function(){
@@ -37,7 +67,11 @@ $(document).ready(function(){
       $('#form' + index).submit();
       return false;
     });
-
+/*
+    $(".productos").click(function(){
+      $('#size_drop_'+index).slideUp(300)
+    });
+*/
   });
 
   //SUB MENU
