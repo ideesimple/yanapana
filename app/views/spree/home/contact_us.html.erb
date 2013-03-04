@@ -23,13 +23,15 @@
 
               <%= form_tag(contact_us_path,:method => "post", :multipart => false, :class=>"contact-us") do %>
                 <h3>Leave a message</h3>
-                <% if @c.errors.any? %>
+                <% unless @c.nil? %>
+                  <% if @c.errors.any? %>
                     <p class="alert">Error submitting the form</p>
                     <ul>
                       <% @c.errors.full_messages.each do |msg| %>
                         <li>* <%= msg %></li>
                       <% end %>
                     </ul>
+                  <% end %>
                 <% end %>
 
 						<ul id="contact_form">
