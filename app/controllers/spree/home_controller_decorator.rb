@@ -4,8 +4,10 @@ Spree::HomeController.class_eval do
     @searcher = Spree::Config.searcher_class.new(params)
     @searcher.current_user = try_spree_current_user
     @products = @searcher.retrieve_products
-    @cause = Spree::Cause.find_by_status(true)
+    date_now = Date.today
+    @cause = Spree::Cause.find(:all, :conditions=>["date_start <= ? AND date_finish >= ?", date_now, date_now]).first
     unless @cause.nil?
+    logger.debug @cause
     @products_cause = @products.where(:cause_id => @cause.id).each_slice(3).to_a
     @artist = Spree::Artist.find_by_id(@cause.artist)
     end

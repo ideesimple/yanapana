@@ -8,7 +8,9 @@ class Spree::Cause < ActiveRecord::Base
 
   validates :title, :description, :artist_id, :organization_id, :goal_money, :goal_facebook, :goal_twitter, :number_goal, :presence => true
 
+  validates :description, :length => {:minimum => 50}
 
+  validate :cause_id_when_active
   validates_attachment_presence :photo
 
   validates_attachment_content_type :photo,
@@ -28,6 +30,7 @@ class Spree::Cause < ActiveRecord::Base
 before_save :youtube
 before_update :youtube
 
+
  def youtube
   uri = Addressable::URI.parse(self.video)
   if uri.query_values
@@ -35,4 +38,29 @@ before_update :youtube
   end
  end
 
+
+  def cause_id_when_active
+    if self.status == true
+      if Spree::Cause.where("status = ?", true).count > 0
+        errors.add( :id, 'there is already an active cause')
+      end
+    end
+  end
+  #def cause_status
+  #  date_now = Date.today
+  #  by_status = Spree::Cause.where("status = ?", true)
+  #  unless by_status.nil?
+  #    self.create = false
+  #  end
+    #by_status = Spree::Cause.where("date_start <= ? AND date_finish <= ? AND status = ?", self.date_start, self.date_finish, true)
+   # unless by_stat.nil?
+   #   logger.debug by_stat.count
+   #   by_stat.each do |c|
+   #     unless self.id == c.id
+   #       return false
+   #       logger.debug "QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ"
+   #     end
+   #   end
+   # end
+ # end
 end

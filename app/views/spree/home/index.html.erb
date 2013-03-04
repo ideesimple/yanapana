@@ -1,11 +1,12 @@
 <% content_for :head do %>
-<script charset="utf-8" language="javascript" type="text/javascript">
+  <% unless @cause.nil? %>
+  <script charset="utf-8" language="javascript" type="text/javascript">
     $(document).ready(function() {
       $(".cause_background").anystretch("<%=@cause.photo.url%>");
     });
 
-</script>
-
+  </script>
+  <% end %>
 <% end %>
 
 <% content_for :metatags do %>

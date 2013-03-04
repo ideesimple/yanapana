@@ -13,8 +13,8 @@
     <th>Cause</th>
     <th>Organization</th>
     <th>Goal Money</th>
-    <th>Facebook Page</th>
-    <th>Twitter Page</th>
+    <th>Date Start</th>
+    <th>Date Finish</th>
     <th>Actions</th>
 
   </tr>
@@ -24,8 +24,8 @@
       <td><%= link_to cause.title, admin_cause_url(cause)  %></td>
       <td><%= cause.organization.name %></td>
       <td><%= cause.goal_money  %></td>
-      <td><%= cause.link_facebook  %></td>
-      <td><%= cause.link_twitter  %></td>
+      <td><%= cause.date_start  %></td>
+      <td><%= cause.date_finish  %></td>
       <td>
         <%= link_to '<img alt="Edit" src="/assets/admin/icons/edit.png">Edit'.html_safe, edit_admin_cause_path(cause), :class=>"edit icon_link"  %>
         &nbsp;
