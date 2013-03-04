@@ -3,8 +3,8 @@ $('.item').html("<b><%= current_order.item_count %></b> ITEM /");
 $('.price').html("<b><%= current_order.display_total %></b>");
 $('.cart_drop').html("<ul><%= escape_javascript(render :partial=> 'spree/shared/preview_cart', :locales => {:current_order => current_order})%></ul>");
 <% if @item_add.errors.any? %>
-  $('.message.warning').html('<%= escape_javascript(flash[:error][0].to_s)%>').fadeIn(3500).delay(3000).fadeOut(3500);
+  $('.message.warning').html('<%= escape_javascript(flash[:error][0].to_s)%>').fadeIn(2000).delay(3500).fadeOut(2500);
 <% else %>
-  $('.message.success').fadeIn(3000).delay(3000).fadeOut(3500);
+  $('.message.success').fadeIn(2000).delay(3500).fadeOut(2500);
 <% end %>
 
