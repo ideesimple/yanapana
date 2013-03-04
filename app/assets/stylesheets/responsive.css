@@ -88,6 +88,15 @@ nav .primary_nav > li > a {font-size: 15px;}
 /*Contact*/
 .contact_page iframe{ width:40%; height:30%;}
 
+/*About Us*/
+.collaborators ul li {margin-right: 35px;}
+.collaborators ul li img {
+	height: 140px;
+	overflow: hidden;
+}
+
+
+
 /*Listing*/
 .products_list_list .product_info{width:312px;}
 .products_list_list .price_info{width:312px;}
@@ -278,6 +287,22 @@ footer address img{ float:none;}
 #uniform-undefined{width: 295px;}
 div.selector select {width: 308px;}
 div.selector span {width: 290px;}
+
+div.selector, div.selector {width: 295px;}
+
+/*About Us */
+.collaborators ul li {
+    width: 100%;
+    float: left;
+    
+}
+
+.collaborators ul li img {
+	max-width: 100%;
+	min-width: 100%;
+	height: auto;
+	overflow: hidden;
+}
 
 /*Listing*/
 .products_list_list li{ text-align:center;}

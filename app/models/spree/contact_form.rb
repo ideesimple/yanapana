@@ -1,7 +1,7 @@
 class Spree::ContactForm < MailForm::Base
   attribute :name,  :validate => true
   attribute :email, :validate => /\A([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})\z/i
-  attribute :suggestion, :validate => true
+  attribute :suggestion
   attribute :phone
   attribute :message
 
@@ -19,7 +19,7 @@ class Spree::ContactForm < MailForm::Base
   def headers
     {
       :subject => "My Contact Form",
-      :to => "titogo@gmail.com",
+      :to => "roberto.laraesp@gmail.com",
       :from => %("#{name}" <#{email}>)
     }
   end
