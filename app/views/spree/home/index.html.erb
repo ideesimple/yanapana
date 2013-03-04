@@ -1,3 +1,22 @@
+
+
+<script type="text/javascript">
+$(function()
+{
+
+$("#mostrar").click(function(event) {
+event.preventDefault();
+$("#caja").slideToggle();
+});
+
+$("#caja a").click(function(event) {
+event.preventDefault();
+$("#caja").slideUp();
+});
+});
+</script>
+
+
 <% content_for :head do %>
   <% unless @cause.nil? %>
   <script charset="utf-8" language="javascript" type="text/javascript">
@@ -25,7 +44,7 @@
         <div id="headline" class="jean">
             <section>
                 <!--CART STARTS-->
-                <div id="shopping_cart" class="full_page">
+                <div id="shopping_cart">
                   <div class="message success" style="display:none">Success :D </div>
                   <div class="message warning" style="display:none"></div>
                 <h1>Sustainability. Solidarity. Fashion. Change.</h1>
@@ -41,8 +60,10 @@
                       <section>
                           <!--Cause Description Starts-->
                           <div class="cause_description">
-                              <h2><%= @cause.title %></h2>
-
+                              <h2 id="mostrar"><%= @cause.title %></h2>
+			      
+			      
+				<div id="caja">
 
                                   <div class="description_text hidden_tablet hidden_movil" id="sample">
                                        <h4>Cause</h4>
@@ -83,6 +104,7 @@
                           <!--ORG Description Ends-->
                           </div>
                           <!--Cause Description Ends-->
+			  </div>
                       </section>
                   </div>
             </div>
@@ -123,8 +145,7 @@
                         </div>
                         <div id="fb_colsize">
                           <li>
-                            <div class="fb-like" data-href="http://yanapana-sta.herokuapp.com/" data-send="false" data-layout="button_count" data-width="450" data-show-faces="true"></div>
-                                <% image_tag ("image-yanapana/facebook_icon.png")%>
+                                <%= image_tag ("image-yanapana/facebook_icon.png")%>
                                 <div id="goalbar" class="goalbar_style"><i class="progBar"></i></div>
                                 <div class="stats">
                                     <h4>

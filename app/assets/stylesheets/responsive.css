@@ -88,6 +88,15 @@ nav .primary_nav > li > a {font-size: 15px;}
 /*Contact*/
 .contact_page iframe{ width:40%; height:30%;}
 
+/*About Us*/
+.collaborators ul li {margin-right: 35px;}
+.collaborators ul li img {
+	height: 140px;
+	overflow: hidden;
+}
+
+
+
 /*Listing*/
 .products_list_list .product_info{width:312px;}
 .products_list_list .price_info{width:312px;}
@@ -234,7 +243,7 @@ footer address img{ float:none;}
 /*Detail Page*/
 .product_leftcol, .product_rightcol{ width:310px;}
 .product_rightcol h1{ padding-top:20px;}
-.product_rightcol .size_info label{ width:88px;}
+.product_rightcol .size_info label{ width:90px;}
 .product_rightcol .size_sel{ margin-bottom:5px;}
 .product_rightcol .add_to_buttons{ padding:15px 0px;}
 .product_rightcol .add_to_buttons span{ width:33px;}
@@ -279,6 +288,22 @@ footer address img{ float:none;}
 div.selector select {width: 308px;}
 div.selector span {width: 290px;}
 
+div.selector, div.selector {width: 295px;}
+
+/*About Us */
+.collaborators ul li {
+    width: 100%;
+    float: left;
+    
+}
+
+.collaborators ul li img {
+	max-width: 100%;
+	min-width: 100%;
+	height: auto;
+	overflow: hidden;
+}
+
 /*Listing*/
 .products_list_list li{ text-align:center;}
 .products_list_list a.product_image{float:none; margin:auto;}
@@ -290,6 +315,11 @@ section#main_content{width:310px;}
 aside#sidebar{width:310px;}
 
 /*Typography*/
+
+
+.product_rightcol .pr_price {display: block; padding: 10px 0px; float: left; width: 100%;  border-top: 1px solid #ccc; }
+.product_rightcol p {width: 100%; margin-bottom: 0; padding: 10px 0px;}
+
 
 #headline h1 {font-size: 35px;  margin: 15px 0 7px 0; }
 #headline h4 {font-size: 13px;}

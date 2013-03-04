@@ -47,7 +47,7 @@
     </ul>
 
     <div id="shopping_cart" class="full_page">
-      <div class ="message"><%= flash[:error]  %></div>
+      <div class="message"><%= flash[:error]  %></div>
       <div class="message success" style="display:none">
         Success :D <a href="#" class="fr"></a>
       </div>
@@ -94,9 +94,20 @@
       <!--Product Right Starts-->
       <div class="product_rightcol">
         <h1><%= @product.name %></h1>
-        <% if @product.description %>
+	
+	
+	<% if @product. price %>
+             <div class="pr_price">
+               <% if @product.price %>
+                 <big><%= number_to_currency @product.price %></big><small></small>
+               <% end %>
+             </div>
+	     
+	     <% if @product.description %>
           <p class="short_dc"><%= @product.description %></p>
         <% end %>
+	
+        
 	      <div class="product_overview hidden_movil">
             <%= render :partial => "properties" %>
         </div>
@@ -104,12 +115,7 @@
          <%#= render :partial => "cart_form" %>
          <%= form_for :order, :url => populate_orders_path do |f| %>
 
-           <% if @product.price %>
-             <div class="pr_price">
-               <% if @product.price %>
-                 <big><%= number_to_currency @product.price %></big><small></small>
-               <% end %>
-             </div>
+           
 
              <%= render :partial => "variants" %>
 
