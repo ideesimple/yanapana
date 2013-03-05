@@ -1,5 +1,3 @@
-
-
 <script type="text/javascript">
 $(function()
 {
@@ -61,8 +59,8 @@ $("#caja").slideUp();
                           <!--Cause Description Starts-->
                           <div class="cause_description">
                               <h2 id="mostrar"><%= @cause.title %></h2>
-			      
-			      
+
+
 				<div id="caja">
 
                                   <div class="description_text hidden_tablet hidden_movil" id="sample">
@@ -87,7 +85,7 @@ $("#caja").slideUp();
                               <h1 class="org_logo"><%= link_to image_tag(@cause.organization.photo.url(:org)), "leisure_index.html" %></h1>
                               <!--Facebook like button Starts-->
 
-                                <div class="fb-like" style="overflow: hidden" href="<%= @cause.organization.link_facebook  %>" data-font="arial" data-show-faces="false" data-width="0px" data-layout="button_count" data-send="false" ></div>
+                                <div class="fb-like" style="overflow: hidden" href="<%= @cause.organization.link_facebook %>" data-font="arial" data-show-faces="true" data-width="50px" data-layout="button_count"  data-height="30px" data-send="false" ></div>
 
                               <!--Facebook like button Ends-->
                               <!--Twitter follotw button Starts-->

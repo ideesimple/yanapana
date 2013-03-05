@@ -57,7 +57,7 @@ $(document).ready(function(){
     $("#cart_" + index).toggle(function() {
       $('#size_drop_' + index).slideDown(300);
     }, function(){
-      $('body' + index).slideUp(300);
+      $('#size_drop_' + index).slideUp(300);
     });
 
     $('#size_drop_' + index + ' li a').click(function(){
@@ -105,7 +105,6 @@ $(document).ready(function(){
 		username: 'rohithpaul',
 		count: 1
 	});
-
 
 
 });
