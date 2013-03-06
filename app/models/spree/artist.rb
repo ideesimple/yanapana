@@ -29,6 +29,7 @@ class Spree::Artist < ActiveRecord::Base
     account = Spree::User.new
     account.email = self.email
     account.password = Spree::User.generate_token(:persistence_token)
+    accoutn.reset_password_token = account.password
     account.save
     Spree::UserMailer.reset_password_instructions(account).deliver
   end

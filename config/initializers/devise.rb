@@ -112,9 +112,6 @@ Devise.setup do |config|
   # In case of sign_out_all_scopes set to true any logout action will sign out all active scopes.
   # config.sign_out_all_scopes = false
   
-  # Defines which key will be used when recovering the password for an account
-  config.reset_password_keys = [ :email ]
-  
   # ==> Navigation configuration
   # Lists the formats that should be treated as navigational. Formats like
   # :html, should redirect to the sign in page when the user does not have
@@ -140,7 +137,7 @@ Devise.setup do |config|
   # Time interval you can reset your password with a reset password key.
   # Don't put a too small interval or your users won't have the time to
   # change their passwords.
-  config.reset_password_within = 1.hours
+  config.reset_password_within = 6.hours
   config.sign_out_via = :get
 
   config.case_insensitive_keys = [:email]
