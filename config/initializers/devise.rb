@@ -111,7 +111,10 @@ Devise.setup do |config|
   # By default sign_out is scoped (i.e. /users/sign_out affects only :user scope).
   # In case of sign_out_all_scopes set to true any logout action will sign out all active scopes.
   # config.sign_out_all_scopes = false
-
+  
+  # Defines which key will be used when recovering the password for an account
+  config.reset_password_keys = [ :email ]
+  
   # ==> Navigation configuration
   # Lists the formats that should be treated as navigational. Formats like
   # :html, should redirect to the sign in page when the user does not have
