@@ -23,4 +23,14 @@ class Spree::Artist < ActiveRecord::Base
     },
     :bucket => Spree::Config[:s3_bucket]
 
+  after_create :create_account
+
+  def create_account
+    account = Spree::User.new
+    account.email = self.email
+    account.password = Spree::User.generate_token(:persistence_token)
+    account.save
+    UserMailer.reset_password_instructions(account).deliver
+  end
+
 end

@@ -60,9 +60,7 @@ $("#caja").slideUp();
                           <div class="cause_description">
                               <h2 id="mostrar"><%= @cause.title %></h2>
 
-
-				<div id="caja">
-
+				              <div id="caja">
                                   <div class="description_text hidden_tablet hidden_movil" id="sample">
                                        <h4>Cause</h4>
                                        <p> <%= @cause.description %> </p>
@@ -82,10 +80,10 @@ $("#caja").slideUp();
                               <h4 class="hidden_movil hidden_tablet">Organization</h4>
                               <p class="hidden_movil hidden_tablet"><%= @cause.organization.description%></p>
 
-                              <h1 class="org_logo"><%= link_to image_tag(@cause.organization.photo.url(:org)), "leisure_index.html" %></h1>
+                              <h1 class="org_logo"><%= image_tag(@cause.organization.photo.url(:org))%></h1>
                               <!--Facebook like button Starts-->
 
-                                <div class="fb-like" style="overflow: hidden" href="<%= @cause.organization.link_facebook %>" data-font="arial" data-show-faces="true" data-width="50px" data-layout="button_count"  data-height="30px" data-send="false" ></div>
+                                <div class="fb-like" style="overflow: hidden" href="<%= @cause.organization.link_facebook %>" data-font="arial" data-show-faces="false" data-width="450px" data-layout="button_count" data-send="false"></div>
 
                               <!--Facebook like button Ends-->
                               <!--Twitter follotw button Starts-->
@@ -102,7 +100,7 @@ $("#caja").slideUp();
                           <!--ORG Description Ends-->
                           </div>
                           <!--Cause Description Ends-->
-			  </div>
+			                </div>
                       </section>
                   </div>
             </div>
@@ -121,7 +119,7 @@ $("#caja").slideUp();
                             <li>
                                 <div class="donation_container">
                                     <div class="fl">
-                                    <% image_tag ("image-yanapana/money_icon.png")%>
+                                    <%= image_tag ("image-yanapana/money_icon.png")%>
                                     </div>
                                        <div class="fl hidden_movil">
                                         <p>Donated so far</p>
@@ -135,7 +133,7 @@ $("#caja").slideUp();
                                             <span class="count"><%= number_to_currency(@cause.goal_money, :precision=>0)%></span>/
                                             <span class="goal"><%= number_to_currency(@cause.goal_money, :precision=>0)%></span>
                                         </span>
-                                        <span class="word fl">Donation goal <%= @cause.number_goal %></span>
+                                       <span class="word fl">Donation goal <%= @cause.number_goal %></span>
                                     </h4>
                                 </div>
 
@@ -203,12 +201,12 @@ $("#caja").slideUp();
 <div id="artist-section" class="jean">
                 <section>
                     <h2 class="sub_title">The Artist</h2>
-                    <div class="artist"><%= link_to image_tag(@artist.photo.url(:product)), "#" %></div>
+                    <div class="artist"><a><%= image_tag(@artist.photo.url(:product)) %></a></div>
                     <div class="artist_description">
                         <h2 class="sub_title"><%= @artist.name + " " + @artist.last_name %></h1>
                         <p><%= @artist.reason  %></p>
-                        <h2 class="sub_title">adipisicing elit</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu.</p>
+                        <h2 class="sub_title"></h1>
+
                     </div>
                      <!--Facebook like button Starts-->
                     <div class="fb-like" style="overflow: hidden" href="<%= @artist.link_facebook %>" data-font="arial" data-show-faces="true" data-width="50px" data-layout="button_count"  data-height="30px" data-send="false" ></div>
