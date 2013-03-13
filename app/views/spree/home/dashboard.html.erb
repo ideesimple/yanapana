@@ -1,0 +1,23 @@
+<div class="section_container jean pb">
+	<section>
+    <%# Spree::LineItem.where(Spree::Order.complete) %>
+    <%= @artist.last_name %>
+    <% unless @causes.nil? %>
+      <% @causes.each do |cause|%>
+        <%= cause.title %>
+        <% cause.products.each do |product| %>
+
+          <%= product.name %>
+          <%= Spree::Order.total_per_product(product).count%>
+          <% Spree::Order.total_per_product(product).each do |a|%>
+            <%= a.id %>
+          <% end %>
+
+          <% unless product.master.images.nil? %>
+            <%= small_image(product) %>
+          <% end %>
+        <% end %>
+      <% end %>
+    <% end %>
+  </section>
+</div>

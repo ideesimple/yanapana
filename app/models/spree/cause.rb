@@ -10,7 +10,7 @@ class Spree::Cause < ActiveRecord::Base
 
   validates :description, :length => {:minimum => 50}
 
-  validate :cause_id_when_active
+  validate :cause_id_when_active, :on => :create
   validates_attachment_presence :photo
 
   validates_attachment_content_type :photo,
@@ -58,8 +58,7 @@ before_update :youtube
    #   by_stat.each do |c|
    #     unless self.id == c.id
    #       return false
-   #       logger.debug "QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ"
-   #     end
+      #     end
    #   end
    # end
  # end

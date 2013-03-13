@@ -10,6 +10,7 @@ gem 'spree_heroku', :git => 'git://github.com/joneslee85/spree-heroku.git', :bra
 gem 'spree_gateway', :git => 'git://github.com/spree/spree_gateway.git', :branch => "1-1-stable"
 gem 'addressable'
 gem 'mail_form'
+gem 'devise_invitable', '1.0.0'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -42,3 +43,4 @@ gem 'spree', '1.2.2'
 gem 'spree_usa_epay'
 gem 'spree_skrill'
 gem 'spree_auth_devise', :github => 'spree/spree_auth_devise', :branch => '1-2-stable'
+
