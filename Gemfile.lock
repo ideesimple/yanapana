@@ -266,7 +266,11 @@ PLATFORMS
 DEPENDENCIES
   addressable
   coffee-rails (~> 3.2.1)
+<<<<<<< HEAD
   devise_invitable (= 1.0.0)
+=======
+  devise_invitable (~> 1.0.0)
+>>>>>>> 02b01325a6e0e682c5c992a5bf57d5ccba67e3dd
   jquery-rails
   mail_form
   pg

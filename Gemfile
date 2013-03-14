@@ -1,10 +1,9 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.9'
-
+gem 'devise_invitable', '~> 1.0.0'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
-
 gem 'pg'
 gem 'spree_heroku', :git => 'git://github.com/joneslee85/spree-heroku.git', :branch => '1-0-stable'
 gem 'spree_gateway', :git => 'git://github.com/spree/spree_gateway.git', :branch => "1-1-stable"

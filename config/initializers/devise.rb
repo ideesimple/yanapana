@@ -28,7 +28,7 @@ Devise.setup do |config|
   # Tell if authentication through HTTP Basic Auth is enabled. False by default.
   config.http_authenticatable = true
 
-  # Set this to true to use Basic Auth for AJAX requests.  True by default.
+  # Set this to true to use Basic Auth for AJAX requests. True by default.
   #config.http_authenticatable_on_xhr = false
 
   # The realm used in Http Basic Authentication
@@ -96,14 +96,14 @@ Devise.setup do |config|
   # ==> Configuration for :lockable
   # Defines which strategy will be used to lock an account.
   # :failed_attempts = Locks an account after a number of failed attempts to sign in.
-  # :none            = No lock strategy. You should handle locking by yourself.
+  # :none = No lock strategy. You should handle locking by yourself.
   # config.lock_strategy = :failed_attempts
 
   # Defines which strategy will be used to unlock an account.
   # :email = Sends an unlock link to the user email
-  # :time  = Re-enables login after a certain amount of time (see :unlock_in below)
-  # :both  = Enables both strategies
-  # :none  = No unlock strategy. You should handle unlocking by yourself.
+  # :time = Re-enables login after a certain amount of time (see :unlock_in below)
+  # :both = Enables both strategies
+  # :none = No unlock strategy. You should handle unlocking by yourself.
   # config.unlock_strategy = :both
 
   # Number of authentication tries before locking an account if lock_strategy
@@ -145,12 +145,12 @@ Devise.setup do |config|
   # allows you to setup OAuth, using http://github.com/roman/warden_oauth
   #
   # config.warden do |manager|
-  #   manager.oauth(:twitter) do |twitter|
-  #     twitter.consumer_secret = <YOUR CONSUMER SECRET>
-  #     twitter.consumer_key  = <YOUR CONSUMER KEY>
-  #     twitter.options :site => 'http://twitter.com'
-  #   end
-  #   manager.default_strategies(:scope => :user).unshift :twitter_oauth
+  # manager.oauth(:twitter) do |twitter|
+  # twitter.consumer_secret = <YOUR CONSUMER SECRET>
+  # twitter.consumer_key = <YOUR CONSUMER KEY>
+  # twitter.options :site => 'http://twitter.com'
+  # end
+  # manager.default_strategies(:scope => :user).unshift :twitter_oauth
   # end
   #
   # Time interval you can reset your password with a reset password key.
