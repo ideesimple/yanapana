@@ -237,7 +237,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 .artist {width: 18%; float: left; margin: 0 4% 0 0;}
 
 /*-----------------------------------SOCIAL MEDIA BUTTONS*/
-.comments_tag {font-family: 'century gothic', sans-serif; font-size: 18px; padding: 20px 0; display:block;  margin: 0 auto;}
+.comments_tag {font-family: 'century gothic', sans-serif; font-size: 17px; padding: 20px 0; display:block;  margin: 0 auto;}
 .comments { margin: 0 auto; border-top: 1px solid white; overflow: hidden;}
 #comments {width: 700px; margin: 0 auto;}
 .fb-like, .follow-btn {float:left; margin: 0 15px 0 0;}
@@ -659,8 +659,8 @@ p.tick{ padding:10px 0px 10px 20px;background:url(../../assets/image-yanapana/ti
 .collaborators li h2 {width: 100%;}
 
 /*Dashboard*/
-#profile_info > li {border-bottom: 1px solid #ddd; padding: 10px 0px;}
-#profile_info > li:last-child {
+.profile_info > li {border-bottom: 1px solid #ddd; padding: 10px 0px;}
+.profile_info > li:last-child {
     border-bottom: medium none;
 }
 
@@ -668,7 +668,7 @@ p.tick{ padding:10px 0px 10px 20px;background:url(../../assets/image-yanapana/ti
 
 #product-stats h2 {color: #fff; font-size: 15px; text-transform: uppercase; }
 
-
+#dashboard-box h5 {background: #444; color: #fff; font-size: 14px; width: 100%; }
 
 /*Toggle*/
 .toggle_box{ border:solid 1px #DEDEDE;}

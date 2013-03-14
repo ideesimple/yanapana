@@ -23,4 +23,14 @@ class Spree::Artist < ActiveRecord::Base
     },
     :bucket => Spree::Config[:s3_bucket]
 
+  after_create :create_account
+
+  def create_account
+    a =  Spree::User.new
+    a.email = self.email
+    a.save
+
+   # Spree::User.invite!(:email => "roberto.laraesp@gmail.com")
+
+  end
 end
