@@ -112,7 +112,10 @@ $("#caja").slideUp();
             <div id="goals">
                 <section>
                 <div class="goals_section">
-                    <h2 class="sub_title">You can always help us spread the word about our featured causes free of charge.
+                  <h2 class="sub_title">You can always help us spread the word about our featured causes free of charge.
+                    <% @lineitems_per_cause.each do |item|%>
+                      <%=  item.order_id %>
+                    <% end %>
  </h2>
                    <ul>
                         <div id="don_colsize">
@@ -126,7 +129,10 @@ $("#caja").slideUp();
                                         <span class="bucks"><%= number_to_currency(@cause.goal_money, :precision=>0) %></span>
                                         </div>
                                 </div>
-                                <div id="goalbar" class="goalbar_style"><i class="progBar"></i></div>
+                                <div id="goalbar" class="goalbar_style">
+                                  <%  %>
+                                  <i class="progBar" style="width:470px"></i>
+                                </div>
                                 <div class="stats">
                                     <h4>
                                         <span class="nums fr">

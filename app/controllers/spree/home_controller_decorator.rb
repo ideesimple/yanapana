@@ -13,8 +13,15 @@ Spree::HomeController.class_eval do
     date_now = Date.today
     @cause = Spree::Cause.find(:all, :conditions=>["date_start <= ? AND date_finish >= ?", date_now, date_now]).first
     unless @cause.nil?
-    @products_cause = @products.where(:cause_id => @cause.id).each_slice(3).to_a
-    @artist = Spree::Artist.find_by_id(@cause.artist)
+      @products_cause = @products.where(:cause_id => @cause.id).each_slice(3).to_a
+      #Arista asociado a esa causa
+      @artist = Spree::Artist.find_by_id(@cause.artist)
+      @products_per_cause = @products.where(:cause_id=>@cause.id)
+      variantes = []
+      @products_per_cause.each do |prod|
+        variantes << prod.variants_ids
+      end
+      @lineitems_per_cause = Spree::Order.total_line_items(variantes)
     end
     respond_with(@products)
   end
@@ -43,7 +50,6 @@ Spree::HomeController.class_eval do
   end
 
   def dashboard
-    #@causes = @artist.causes
     @causes = Spree::Cause.where(:artist_id => @artist.id)
     logger.debug "AAAAAAAAAAAAAAAAAAAAAAAAAAA"
   end
