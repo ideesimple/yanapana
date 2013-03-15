@@ -1,4 +1,3 @@
-
 <div class="section_container jean pb">
   <!--Mid Section Starts-->
   <section>
@@ -8,7 +7,7 @@
       <li class="active">Checkout</li>
     </ul>
 
-    
+
     <div class="full_page">
       <h1><%= t(:checkout) %></h1>
       <!--CHECKOUT STEPS STARTS-->
@@ -21,14 +20,30 @@
             </div>
             <div id="checkout-step-login">
               <div id="shopping_cart" class="full_page">
-                <div class="message warning"><%= render :partial => 'spree/shared/error_messages', :locals => { :target => @order } %></div>
+                <div class="message warning" style="display:none"><%= render :partial => 'spree/shared/error_messages', :locals => { :target => @order } %></div>
               </div>
                 <div class="col2-set">
                   <div class="col-1">
-                  <div id="registration" data-hook>
-                      <div id="account" class="columns alpha eight">
-                        <!-- TODO: add partial with registration form -->
-                     </div>
+                  <div id="registration_devise" data-hook>
+                    <div id="account" class="columns alpha eight">
+                      <!-- TODO: add partial with registration form -->
+                      <section>
+                        <% if flash[:alert] %>
+                          <div class="flash errors"><% flash[:alert] %></div>
+                        <% end %>
+                        <% @body_id = 'login' %>
+                        <div id="existing-customer">
+                          <h6><%= t(:login_as_existing) %></h6>
+                          <div data-hook="login">
+                          <!-- Forma de login esta en la carpeta views/spree/shared/login' -->
+                            <%= render :partial => 'spree/shared/login' %>
+                          <!-- End Form  de login -->
+                            <%= t(:or) %> <%= link_to t(:create_a_new_account), spree.signup_path %> | <%= link_to t(:forgot_password), spree.new_user_password_path %>
+                          </div>
+                        </div>
+                        <div data-hook="login_extras"></div>
+                      </section>
+                    </div><!--End div account -->
                   </div><!--End Registration-->
                   </div>
                   <div class="col-2">

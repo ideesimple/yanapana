@@ -659,16 +659,43 @@ p.tick{ padding:10px 0px 10px 20px;background:url(../../assets/image-yanapana/ti
 .collaborators li h2 {width: 100%;}
 
 /*Dashboard*/
-.profile_info > li {border-bottom: 1px solid #ddd; padding: 10px 0px;}
+.dashboard-lcol > img {border: 1px solid #bbb; margin-bottom: 5px;} 
+.dashboard-lcol {width: 215px; float: left;}
+.dashboard-rcol.fr {margin-right: 0; width: 725px !important;}
+
+.profile_info {border: 1px solid #ccc; width: 100%;}
+.profile_info > li {border-bottom: 1px solid #ddd; padding: 10px 10px;}
 .profile_info > li:last-child {
     border-bottom: medium none;
 }
 
-#product-stats, .product-stats-content {display: inline-block; padding: 14px; width: 100%; background: #555; border: 1px solid #555;}
+.product-stats-content {display: inline-block; width: 100%; background: #555; border: 1px solid #555;}
 
-#product-stats h2 {color: #fff; font-size: 15px; text-transform: uppercase; }
 
-#dashboard-box h5 {background: #444; color: #fff; font-size: 14px; width: 100%; }
+.dashboard-title {background: #444; width: 100%; overflow: hidden; border: 1px solid #444;}
+.dashboard-title h5 { color: #fff; font-size: 14px;  padding: 10px 0 10px 15px ; text-transform: uppercase; }
+
+.profile_info_container {padding: 30px; }
+.profile_info p {display: inline-block; padding: 0 !important;}
+.profile_info span {float: right;}
+
+.profile_info.stats-content p {padding: 0; display: inline-block; }
+.profile_info.stats-content span {float: right;}
+
+.product-stats-content > ul {padding: 25px 0px 25px 30px;}
+.dashboard-products > li { float: left; margin-bottom: 25px; padding-right: 30px; width: 29%; }
+.dashboard-products > li img {border: 1px solid #ccc;}
+
+.stats-content {border: 1px solid #ccc;}
+.stats.bb {padding: 5px 10px; background: #fff; }
+.stats.bb:last-child {border: none;}
+
+
+.stats > h5 {background: #BCD80A; color: #fff; font-size: 12px; padding: 5px; text-transform: uppercase;}
+.stats.bb > p {display: inline;}
+.stats.bb > span {float: right; padding-top: 5px;} 
+.stats.bb > p, .stats.bb > span {font-size: 12px; font-family: 'istok web', sans-serif !important;}
+
 
 /*Toggle*/
 .toggle_box{ border:solid 1px #DEDEDE;}
@@ -847,7 +874,7 @@ body {background: #333;}
 
 #headline h1 {color: #312E2B; text-shadow: 1px 1px 0 #fff;}
 
-.checkout_steps #checkout-step-login, #checkout-step-billing, #checkout-step-delivery, #checkout-step-method, #checkout-step-payment, #checkout-step-confirm, .toggle_content, .product-stats-content {background: url("../../assets/image-yanapana/snow.png");}
+.checkout_steps #checkout-step-login, #checkout-step-billing, #checkout-step-delivery, #checkout-step-method, #checkout-step-payment, #checkout-step-confirm, .toggle_content, .product-stats-content, .profile_info {background: url("../../assets/image-yanapana/snow.png");}
 .checkout_steps #checkout-step-login, #checkout-step-billing, #checkout-step-delivery, #checkout-step-method, #checkout-step-payment, #checkout-step-confirm, #checkout-step-confirm table, .product-stats-content {border: 1px solid #ccc;}
 
 .required {color: #FF0000;}

@@ -16,3 +16,15 @@ Deface::Override.new(:virtual_path => "spree/layouts/admin",
                                    :insert_bottom => "[data-hook='admin_tabs']",
                                    :text => "<%= tab(:causes, :label => 'Causes') %>",
                                    :disabled => false)
+#tab de preguntas
+Deface::Override.new(:virtual_path => "spree/layouts/admin",
+                                   :name => "add_faqs_tab",
+                                   :insert_bottom => "[data-hook='admin_tabs']",
+                                   :text => "<%= tab(:faqs, :label => 'Faqs') %>",
+                                   :disabled => false)
+#tab de equipo de trabajo
+Deface::Override.new(:virtual_path => "spree/layouts/admin",
+                                   :name => "add_teams_tab",
+                                   :insert_bottom => "[data-hook='admin_tabs']",
+                                   :text => "<%= tab(:teams, :label => 'Team') %>",
+                                   :disabled => false)

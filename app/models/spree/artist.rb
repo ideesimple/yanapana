@@ -26,11 +26,7 @@ class Spree::Artist < ActiveRecord::Base
   after_create :create_account
 
   def create_account
-    a =  Spree::User.new
-    a.email = self.email
-    a.save
-
-   # Spree::User.invite!(:email => "roberto.laraesp@gmail.com")
-
+    Spree::User.invite!(:email=>self.email)
   end
+
 end

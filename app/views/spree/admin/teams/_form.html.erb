@@ -1,0 +1,22 @@
+<div class="left">
+  <%= f.field_container :fullname do  %>
+    <%= f.label :fullname %><span class="required">*</span><br />
+    <%= f.text_field :fullname %>
+  <% end %>
+
+  <%= f.field_container :jobp do  %>
+    <%= f.label :jobp, 'Job Position'%><span class="required">*</span><br />
+    <%= f.text_field :jobp %>
+  <% end %>
+
+  <%= f.field_container :photo do  %>
+    <%= f.label :photo%><span class="required">*</span><br />
+    <%= f.file_field :photo %>
+  <% end %>
+</div>
+
+
+
+  
+
+

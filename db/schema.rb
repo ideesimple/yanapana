@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130307054950) do
+ActiveRecord::Schema.define(:version => 20130312232048) do
 
   create_table "spree_activators", :force => true do |t|
     t.string   "description"
@@ -178,6 +178,13 @@ ActiveRecord::Schema.define(:version => 20130307054950) do
     t.datetime "updated_at",                  :null => false
     t.string   "gateway_customer_profile_id"
     t.string   "gateway_payment_profile_id"
+  end
+
+  create_table "spree_faqs", :force => true do |t|
+    t.string   "question"
+    t.text     "answer"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "spree_gateways", :force => true do |t|
@@ -594,6 +601,17 @@ ActiveRecord::Schema.define(:version => 20130307054950) do
   add_index "spree_taxons", ["parent_id"], :name => "index_taxons_on_parent_id"
   add_index "spree_taxons", ["permalink"], :name => "index_taxons_on_permalink"
   add_index "spree_taxons", ["taxonomy_id"], :name => "index_taxons_on_taxonomy_id"
+
+  create_table "spree_teams", :force => true do |t|
+    t.string   "fullname"
+    t.string   "jobp"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
+  end
 
   create_table "spree_tokenized_permissions", :force => true do |t|
     t.integer  "permissable_id"
