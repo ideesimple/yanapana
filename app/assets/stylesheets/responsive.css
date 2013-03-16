@@ -115,9 +115,13 @@ section#main_content{width:420px;}
 
 .comments_tag {font-size: 17px;}
 
+/*DASHBOARD*/
+.dashboard-rcol.fr { width: 465px;}
+.dashboard-products > li {width: 43%;}
+
+
 }
 
-/*DASHBOARD*/
 
 
 
@@ -291,10 +295,10 @@ footer address img{ float:none;}
 #contact_form span.error {width: 275px;}
 
 #uniform-undefined{width: 295px;}
-div.selector select {width: 308px;}
-div.selector span {width: 290px;}
+div.selector select {width: 240px;}
+div.selector span {width: 230px;}
 
-div.selector, div.selector {width: 295px;}
+div.selector, div.selector {width: 225px;}
 
 /*About Us */
 .collaborators ul li {
@@ -334,5 +338,10 @@ aside#sidebar{width:310px;}
 #cause h4 {font-size: 15px; font-weight: bold; padding-bottom: 5px;}
 #cause p {font-size: 14px; padding-bottom: 7px;}
 .checkout_steps .step-title, .checkout_steps .step-title h2 {font-size: 13px !important;}
+
+
+/*DASHBOARD*/
+.dashboard-rcol.fr, .dashboard-lcol { width: 100%;}
+.dashboard-products > li {width: 90%;}
 
 }

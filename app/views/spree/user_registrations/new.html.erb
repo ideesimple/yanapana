@@ -1,10 +1,19 @@
+<div class="section_container jean pb">
+  <section>
+    <div class="full_page">
+      <ul class="breadcrumb">
+         <li><%= link_to "Home", root_path %></li>
+         <li class="active">login</li>
+      </ul>
+
+
 <% @body_id = 'signup' %>
 <div class="section_container jean pb">
 <section>
 <%= render :partial => 'spree/shared/error_messages', :locals => { :target => @user } %>
 
 <div id="new-customer">
-  <h6><%= t(:new_customer) %></h6>
+  <h3><%= t(:new_customer) %></h3>
 
   <div data-hook="signup">
 
@@ -23,4 +32,9 @@
 <div data-hook="login_extras"></div>
 </section>
 </div>
+
+
+</div><!--Full Page Ends-->
+</section>
+<
 

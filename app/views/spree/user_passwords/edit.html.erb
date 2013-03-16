@@ -1,0 +1,29 @@
+<div class="section_container jean pb">
+  <section>
+    <div class="full_page">
+      <ul class="breadcrumb">
+       <li><%= link_to "Home", root_path %></li>
+       <li><%= link_to "Login", login_path %></li>
+       <li class="active">Change password</li>
+      </ul>
+
+      <%= render :partial => 'spree/shared/error_messages', :locals => { :target => @user } %>
+      <h3><%= t(:change_my_password) %></h3>
+        <p>Fill out the form below and instructions to reset your password</p>
+
+      <%= form_for @user, :url => spree.user_password_path, :method => :put do |f| %>
+        <p>
+          <%= f.label :password, t(:password) %><br />
+          <%= f.password_field :password, :class => 'title' %><br />
+        </p>
+        <p>
+          <%= f.label :password_confirmation, t(:password_confirmation) %><br />
+          <%= f.password_field :password_confirmation, :class => 'title' %><br />
+        </p>
+        <%= f.hidden_field :reset_password_token %>
+        <%= f.submit t(:update_password), :class => 'button primary' %>
+      <% end %>
+
+    </div><!--Full Page Ends-->
+  </section>
+</div>

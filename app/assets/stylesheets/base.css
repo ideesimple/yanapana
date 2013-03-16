@@ -580,8 +580,8 @@ ul.breadcrumb li a{ color:#bdbdbd; text-decoration:none;}
 .checkout_steps > ol > li:first-child{ border:none;}
 .checkout_steps > ol > li.active .step-title{ color:#fff; background:#555;}
 .checkout_steps #checkout-step-login{ padding:17px; border:solid 1px #e7ded5; display:block; overflow: hidden;}
-#checkout-step-login label{ font-size:13px; display:inline-block; padding:10px 0px; font-weight: bold; }
-.checkout_steps input[type="text"], .checkout_steps input[type="tel"], .checkout_steps input[type="email"], .checkout_steps input[type="password"]{ border:1px solid #D7D7D7; padding:4px; width:230px;}
+#checkout-step-login label{ font-size:13px; display:inline-block; font-weight: bold; }
+.checkout_steps input[type="text"], .checkout_steps input[type="tel"], .checkout_steps input[type="email"], .checkout_steps input[type="password"] { border:1px solid #D7D7D7; padding:4px; width:230px;}
 .checkout_steps h6{ font-size:18px; padding-bottom:20px;}
 .checkout_steps h4{ color:#312e2b; font-size:13px; font-weight:bold;}
 .checkout_steps p{ padding-bottom:12px; overflow: hidden;}
@@ -611,6 +611,8 @@ span.error {background: none repeat scroll 0 0 #ffe3e2; border: 1px solid #D8464
 .checkout_steps .button-set{ padding-top:15px;}
 .col2-set button{ float:left;}
 
+.form-buttons {display: block; overflow: hidden; width: 100%; border-top:1px solid #ccc;}
+
 /*Col Right*/
 .col_right{ float:right; width:225px;}
 .col_right .block-title { font-size:16px; padding-bottom:2px; text-transform:uppercase; font-weight:bold; line-height:22px; border-bottom:solid 1px;}
@@ -624,7 +626,7 @@ span.error {background: none repeat scroll 0 0 #ffe3e2; border: 1px solid #D8464
 /*Contact Us Page*/
 
 .contact_page address{ line-height:25px; padding-bottom:15px; font-size:14px; border-bottom:solid 1px #ccc;}
-.contact_page h3, .full_page h3 { font-size:16px; padding-bottom:17px;}
+.contact_page h3, .full_page h3 { font-size:18px; padding-bottom:17px;}
 .contact_page #contact_form li { padding:8px 0px;}
 .contact_page #contact_form li input[type="text"], .contact_page #contact_form li textarea{border:1px solid #D7D7D7; padding:4px; width:364px;}
 .contact_page > iframe{ border:solid 1px #D7D7D7; padding:2px;}
@@ -661,7 +663,7 @@ p.tick{ padding:10px 0px 10px 20px;background:url(../../assets/image-yanapana/ti
 /*Dashboard*/
 .dashboard-lcol > img {border: 1px solid #bbb; margin-bottom: 5px;} 
 .dashboard-lcol {width: 215px; float: left;}
-.dashboard-rcol.fr {margin-right: 0; width: 725px !important;}
+.dashboard-rcol.fr {margin-right: 0; width: 725px;}
 
 .profile_info {border: 1px solid #ccc; width: 100%;}
 .profile_info > li {border-bottom: 1px solid #ddd; padding: 10px 10px;}
@@ -775,6 +777,8 @@ input, select, textarea, button{ font-size:12px;}
 .success, .flash.notice {color: #91a158; background: none repeat scroll 0 0 #f9fff1; border: 1px solid #acc600; font-size: 14px; line-height: 100%; margin-bottm: 15px; margin-top: 15px; padding: 20px 15px 20px 85px; }
 .success a {color: #544F4B; text-decoration: none;}
 .brown_btn, .checkout_steps input[type="submit"], .checkout_steps a.button { text-decoration: none; float: right; color:#fff; font-size:14px; font-weight:bold; padding:8px 14px; background:#544F4B; border:0px; line-height:100%; cursor:pointer; vertical-align:middle;}
+.button.primary.fl {float: none; display: inline-block;} 
+.button.primary.fl.login {margin: 0;}
 img{ max-width:100%;}
 .flash.notice {margin: 0 auto; widows: auto;}
 .cart_drop ul li span a {color: #ddd; float: right; width: 5px; padding: 0; font-weight: bold;  }
@@ -806,17 +810,17 @@ img{ max-width:100%;}
 }
 
 
-.arrow.down {background: url("../../assets/image-yanapana/dk_arrows.png") no-repeat no-repeat scroll 125px 5px transparent;}
-.arrow.down:hover {background: url("../../assets/image-yanapana/dk_arrows_hover.png") no-repeat no-repeat scroll 125px 5px transparent;} 
+.arrow.down {background: url("../../assets/image-yanapana/dk_arrows.png") no-repeat no-repeat scroll 125px 1px transparent;}
+.arrow.down:hover {background: url("../../assets/image-yanapana/dk_arrows_hover.png") no-repeat no-repeat scroll 125px 1px transparent;} 
 
 /*Forms*/
-div.selector, div.selector, .product_rightcol input {
+div.selector, .product_rightcol input {
      border:solid 1px #d7d7d7; padding:3px; width:350px;
     float: left;
     padding-left: 10px;
 	height:16px;
     position: relative;
-	width:360px;
+	width:230px;
 	background-color:#fff;
 }
 div.selector select {
@@ -825,7 +829,7 @@ div.selector select {
     left: 0;
     position: absolute;
     top: 0;
-    width: 373px;
+    width: 243px;
 	height:22px;
 }
 div.selector select option{
@@ -841,7 +845,7 @@ div.selector span {
     position: absolute;
     left: 7px;
     top: 0;
-    width: 350px;
+    width: 235px;
 	color:#818181;
 }
 
@@ -884,14 +888,14 @@ body {background: #333;}
 
 /*TYPOGRAPHY*/
 h2.sub_title{ font-family: 'century gothic', sans-serif; font-size:17px; color:#312e2b; font-weight:bold; padding-bottom:17px; padding-top: 10px; text-transform:uppercase;}
-h3 {text-transform: capitalize; font-family: 'century gothic', sans-serif; font-size: 17px; color:#312e2b; font-weight:normal; padding-bottom:12px; }
+h3 {text-transform: capitalize; font-family: inherit; font-size: 18px; color:#312e2b; font-weight:normal; padding-bottom:12px; }
 .flex-caption h3{ text-transform:uppercase; font-size:22px; line-height:30px; font-weight:bold;}
 
-#headline h1 { color: #312E2B;  font-family: "skippy-sharp",cursive; font-size: 50px; text-shadow: 1px 1px 0 #fff;}
+#headline h1 { color: #312E2B;  font-family: "skippy-sharp",cursive; font-size: 45px; text-shadow: 1px 1px 0 #fff; text-transform: uppercase; font-weight: bold;}
 #headline h4 {color: #312E2B; font-family: 'century gothic', sans-serif; font-size: 16px; text-shadow: 1px 1px 0 #fff;}
 
 #cause {text-shadow: 1px 1px 1px #222;}
-#cause h2 {   font-family: "skippy-sharp",cursive; font-size: 45px; padding-bottom: 20px;}
+#cause h2 {   font-family: "skippy-sharp",cursive; font-size: 42px; padding-bottom: 20px; text-transform: uppercase;}
 #cause h4 {font-family: 'century gothic', sans-serif; font-size: 20px; padding-bottom: 10px;}
 #cause p {line-height: 1.4; font-size: 16px; padding-bottom: 16px;}
 
@@ -917,7 +921,7 @@ filter: gray; /* IE6-9 */
 
 .collaborators h3 {border-bottom: 2px solid #ccc; margin-bottom: 7px;}
 
-#password-credentials label {font-size: 12px; font-weight: bold; font-family: sans-serif;}
+#password-credentials label, label{font-size: 12px; font-weight: bold; font-family: sans-serif;}
 
 
 /*FAQ*/
