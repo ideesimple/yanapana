@@ -16,3 +16,4 @@ class Spree::UserMailer < ActionMailer::Base
   end
 
 end
+

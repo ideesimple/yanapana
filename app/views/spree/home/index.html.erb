@@ -112,70 +112,69 @@ $("#caja").slideUp();
             <div id="goals">
                 <section>
                 <div class="goals_section">
-                  <h2 class="sub_title">You can always help us spread the word about our featured causes free of charge.
-                    <% @lineitems_per_cause.each do |item|%>
-                      <%=  item.order_id %>
-                    <% end %>
- </h2>
-                   <ul>
-                        <div id="don_colsize">
-                            <li>
-                                <div class="donation_container">
-                                    <div class="fl">
-                                    <%= image_tag ("image-yanapana/money_icon.png")%>
-                                    </div>
-                                       <div class="fl hidden_movil">
-                                        <p>Donated so far</p>
-                                        <span class="bucks"><%= number_to_currency(@cause.goal_money, :precision=>0) %></span>
-                                        </div>
-                                </div>
-                                <div id="goalbar" class="goalbar_style">
-                                  <%  %>
-                                  <i class="progBar" style="width:470px"></i>
-                                </div>
-                                <div class="stats">
-                                    <h4>
-                                        <span class="nums fr">
-                                            <span class="count"><%= number_to_currency(@cause.goal_money, :precision=>0)%></span>/
-                                            <span class="goal"><%= number_to_currency(@cause.goal_money, :precision=>0)%></span>
-                                        </span>
-                                       <span class="word fl">Donation goal <%= @cause.number_goal %></span>
-                                    </h4>
-                                </div>
+                  <h3>You can always help us spread the word about our featured causes free of charge.
+                    <%= @total %>
+                  </h3>
+                  <ul>
+                    <div id="fb_colsize">
+                      <li>
+                        <%= image_tag ("image-yanapana/facebook_icon.png")%>
+                        <div id="goalbar" class="goalbar_style"><i class="progBar"></i></div>
+                        <div class="stats">
+                          <h4>
+                            <span class="nums fr">
+                              <span class="count">1,517</span>/
+                              <span class="goal"><%= @cause.goal_facebook %></span>
+                            </span>
+                            <span class="word fl">Share goal</span>
+                          </h4>
+                        </div>
+                      </li>
+                    </div>
+                    <div id="tt_colsize">
+                      <li>
+                        <%= image_tag ("image-yanapana/twitter_icon.png")%>
+                        <div id="goalbar" class="goalbar_style"><i class="progBar"></i></div>
+                        <div class="stats">
+                          <h4>
+                            <span class="nums fr">
+                              <span class="count">1,517</span>/
+                              <span class="goal"><%= @cause.goal_twitter %></span>
+                            </span>
+                            <span class="word fl">Tweet goal</span>
+                          </h4>
+                        </div>
+                      </li>
+                    </div>
+                    <div id="don_colsize">
+                      <li>
+                        <div class="donation_container">
+                          <div class="fl">
+                            <%= image_tag ("image-yanapana/money_icon.png")%>
+                          </div>
+                          <div class="fl hidden_movil">
+                            <p>Donated so far</p>
+                            <span class="bucks"><%= number_to_currency(@cause.goal_money, :precision=>0) %></span>
+                          </div>
+                        </div>
+                        <div id="goalbar" class="goalbar_style">
+                          <% p = @total / @cause.goal_money %>
+                          <% p = 306 * p %>
+                          <i class="progBar" style="width:<%= p %>px"></i>
+                        </div>
+                        <div class="stats">
+                          <h4>
+                            <span class="nums fr">
+                              <span class="count"><%= number_to_currency(@total, :precision=>0)%></span>/
+                              <span class="goal"><%= number_to_currency(@cause.goal_money, :precision=>0)%></span>
+                            </span>
+                            <span class="word fl">Donation goal <%= @cause.number_goal %></span>
+                          </h4>
+                        </div>
 
-                            </li>
-                        </div>
-                        <div id="fb_colsize">
-                          <li>
-                                <%= image_tag ("image-yanapana/facebook_icon.png")%>
-                                <div id="goalbar" class="goalbar_style"><i class="progBar"></i></div>
-                                <div class="stats">
-                                    <h4>
-                                        <span class="nums fr">
-                                            <span class="count">1,517</span>/
-                                            <span class="goal"><%= @cause.goal_facebook %></span>
-                                        </span>
-                                        <span class="word fl">Share goal</span>
-                                    </h4>
-                                </div>
-                          </li>
-                        </div>
-                        <div id="tt_colsize">
-                            <li>
-                                <%= image_tag ("image-yanapana/twitter_icon.png")%>
-                                <div id="goalbar" class="goalbar_style"><i class="progBar"></i></div>
-                                <div class="stats">
-                                    <h4>
-                                        <span class="nums fr">
-                                            <span class="count">1,517</span>/
-                                            <span class="goal"><%= @cause.goal_twitter %></span>
-                                        </span>
-                                        <span class="word fl">Tweet goal</span>
-                                    </h4>
-                                </div>
-                            </li>
-                        </div>
-                   </ul>
+                      </li>
+                    </div>
+                  </ul>
                 </div>
                 </section>
             </div>
@@ -209,9 +208,8 @@ $("#caja").slideUp();
                     <h2 class="sub_title">The Artist</h2>
                     <div class="artist"><a><%= image_tag(@artist.photo.url(:product)) %></a></div>
                     <div class="artist_description">
-                        <h2 class="sub_title"><%= @artist.name + " " + @artist.last_name %></h1>
+                        <h3><%= @artist.name + " " + @artist.last_name %></h3>
                         <p><%= @artist.reason  %></p>
-                        <h2 class="sub_title"></h1>
 
                     </div>
                      <!--Facebook like button Starts-->
@@ -225,7 +223,7 @@ $("#caja").slideUp();
           <% end %>
             <div class="comments-section jean pb">
                 <section class="comments">
-                <h1 class="comments_tag fl">Don’t be shy! Express your thoughts about this week’s awesome cause right here: </h1>
+                <h3>Don’t be shy! Express your thoughts about this week’s awesome cause right here: </h3>
                 <div id="comments" class="fl">
                     <div class="fb-comments" data-href="<%= root_url %>" data-width="700" data-num-posts="2" data-order-by="reverse_time"></div>
                 </div>

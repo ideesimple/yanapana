@@ -39,8 +39,50 @@ html[xmlns] .clearfix {
 	height: 1%;
 }
 
-.fl {float: left;}
-.fr {float: right;}
+.one-half {
+    width: 46%;
+}
+.one-third {
+    width: 30.66%;
+}
+.two-third {
+    width: 65.33%;
+}
+.one-fourth {
+    width: 22%;
+}
+.three-fourth {
+    width: 70%;
+}
+.one-fifth {
+    width: 16.8%;
+}
+.two-fifth {
+    width: 37.6%;
+}
+.three-fifth {
+    width: 58.4%;
+}
+.four-fifth {
+    width: 67.2%;
+}
+.one-sixth {
+    width: 13.33%;
+}
+.five-sixth {
+    width: 82.67%;
+}
+.one-half, .one-third, .two-third, .three-fourth, .one-fourth, .one-fifth, .two-fifth, .three-fifth, .four-fifth, .one-sixth, .five-sixth {
+    float: left;
+    margin-bottom: 2em;
+    margin-right: 4%;
+    position: relative;
+}
+
+
+
+.fl {float: left; }
+.fr {float: right; }
 
 .pb {padding-bottom: 50px;}
 .pt{padding-top: 50px}
@@ -79,7 +121,7 @@ header .header_search button{background:url(../../assets/image-yanapana/search_b
 
 .countdown_container {width: 980px; margin: 0 auto;}
 .countdown {float: right; width: 232px; padding-top: 42px; text-shadow: 1px 1px 0 white;}
-.countdown h3 {font-family: century gothic, serif; font-size: 14px; float: left; padding: 15px 10px 0 0; text-transform: uppercase; color: #A2A2A2;}
+.countdown h3 {font-family: "Century Gothic", sans-serif; font-size: 12px; float: left; padding: 15px 10px 0 0; text-transform: uppercase; color: #A2A2A2;}
 .countdown li {display: inline-block;}
 .countdown .countdown_text li {padding: 0px 3px 2px 0px; color: #A2A2A2;}
 .countdown .countdown_numbers li {font-size: 16px; padding-right: 7px; color: #BCD80A; }
@@ -91,7 +133,7 @@ header .header_search button{background:url(../../assets/image-yanapana/search_b
 nav .primary_nav{ display:inline-block;margin:5px 2px 3px 0px; position:relative;}
 nav .primary_nav li{ float:left;}
 nav .primary_nav > li{ margin-right:2px;}
-nav .primary_nav > li > a{ display:block; padding: 12px 18px; line-height:100%; font-size:18px; color:#635D52; text-decoration:none; text-transform:uppercase; font-family: century gothic, serif; text-shadow: 1px 1px 0 white;}
+nav .primary_nav > li > a{ display:block; padding: 12px 18px; line-height:100%; font-size:16px; color:#635D52; text-decoration:none; text-transform:uppercase; font-family: 'century gothic', sans-serif; text-shadow: 1px 1px 0 white;}
 .primary_nav > li > a:hover{text-shadow: none;color:#fff;}
 nav .primary_nav > li:hover > a{color:#fff;}
 nav .primary_nav li.active > a{ text-shadow: none;color:#fff;}
@@ -157,7 +199,7 @@ box-shadow: 0 2px 3px #999; width: 100%; border-bottom: 5px solid #fff; padding:
 #goals div:last-child {margin-right: 0;}
 #goals #goalbar {height: 4px; float: right; width: 100%; background: none repeat scroll 0 0 transparent; border-top: 1px solid #ccc; background: #fff; margin: 8px 0; }
 #goals #goalbar i {width: 65%; background: none repeat scroll 0 0 #BCD80A; height: 4px; max-width: 100%; padding: 0; margin: 0; line-height: 0; display: block; }
-#goals h2 {color: #312E2B; font-size: 20px; text-transform: none; padding-bottom: 20px; border-bottom: 1px solid #ccc;}
+#goals h3 {color: #312E2B; font-size: 20px; text-transform: none; padding-bottom: 20px; border-bottom: 1px solid #ccc;}
 #goals span {color: #777;}
 #goals .bucks {margin-left: 15px; font-size: 35px; color: #43403D;  }
 
@@ -191,11 +233,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 /*-----------------------------------ARTIST*/
 #artist-section section {padding: 40px 0px; overflow: hidden; border-bottom: solid 1px #ccc; margin-bottom: 20px; margin: 0 auto; border-top: 1px solid white; }
 .artist-inspiration { border-bottom: none !important; }
-#artist-section p, .product_rightcol p {font-family: 'Istok Web'; color: #a2a2a2; font-size: 14px; line-height: 16px; line-height: 1.4; margin-bottom: 20px;}
+#artist-section p, .product_rightcol p {font-family: 'Istok Web'; color: #333; font-size: 13px; line-height: 16px; line-height: 1.4; margin-bottom: 20px;}
 .artist {width: 18%; float: left; margin: 0 4% 0 0;}
 
 /*-----------------------------------SOCIAL MEDIA BUTTONS*/
-.comments_tag {font-family: century gothic; font-size: 20px; padding: 20px 0; display:block;  margin: 0 auto;}
+.comments_tag {font-family: 'century gothic', sans-serif; font-size: 17px; padding: 20px 0; display:block;  margin: 0 auto;}
 .comments { margin: 0 auto; border-top: 1px solid white; overflow: hidden;}
 #comments {width: 700px; margin: 0 auto;}
 .fb-like, .follow-btn {float:left; margin: 0 15px 0 0;}
@@ -344,7 +386,6 @@ padding:5px;
 display:inline-block;
 width:100%;
 cursor: pointer;
-padding: 5px 0;
 float: left;
 }
 
@@ -395,7 +436,7 @@ float: left;
 #social_media .subscribe_nl form .input-text{ border:solid 1px #a49c96; padding:5px; border-radius:3px; width:210px; background:url(../../assets/image-yanapana/subscribe_textfield.png) repeat-x top; box-shadow:inset 1px 1px 0px #fff; color:#8f8984; float:left; margin:0px;}
 #social_media .subscribe_nl form button{ width:34px; height:27px; border:0px;background:url(../../assets/image-yanapana/subscribe_btn.png) no-repeat top; float:left; margin-left:10px; cursor:pointer;}
 
-
+input.button.primary, #createaccount-btn a {text-decoration: none; color:#fff; font-size:14px; font-weight:bold; padding:8px 14px; background:#544F4B; border:0px; line-height:100%; cursor:pointer; vertical-align:middle;}
 
 
 /*FOOTER*/
@@ -410,7 +451,7 @@ footer .footer_customblock{ border-left:solid 1px #544F4B; float:right; width:27
 footer .footer_customblock>div{padding:20px;}
 footer .footer_customblock .shipping_info{ line-height:22px; font-size:14px; color:#e9e9e9;  border-bottom:solid 1px #544F4B; overflow: hidden;}
 footer .footer_customblock #social_media {float: left;}
-footer .footer_customblock .shipping_info big{ font-family: century gothic, serif; text-transform:uppercase; font-size:16px; font-weight:bold; color: #BCD80A; }
+footer .footer_customblock .shipping_info big{ font-family: 'century gothic', sans-serif; text-transform:uppercase; font-size:16px; font-weight:bold; color: #BCD80A; }
 footer .footer_customblock .contact_info big{font-family: istok web, serif; font-size:16px; font-weight:bold; color:#e9e9e9;}
 footer address{ display:inline-block; width:100%; border-top:solid 1px #544F4B; font-size:11px; color:#909090; padding:25px 0px; margin-top:15px; line-height:25px;}
 footer address img{ float:right;}
@@ -479,7 +520,7 @@ ul.breadcrumb li a{ color:#bdbdbd; text-decoration:none;}
 
 
 /*-----------------------------------FULL PAGE*/
-.full_page{}
+
 .full_page h1{ font-size:24px; color:#312e2b; text-transform:uppercase; padding:22px 0px;}
 .full_page h4{ font-size:17px; color:#312e2b; padding:10px 0px; font-weight:bold;}
 .action_buttonbar{ background:#f9f8f6; border:solid 1px #ebe2d9; padding:13px; clear:both;}
@@ -547,7 +588,7 @@ ul.breadcrumb li a{ color:#bdbdbd; text-decoration:none;}
 .checkout_steps a{ text-decoration:underline; color:#312e2b;}
 .checkout_steps table.form td:first-child {width: 150px; font-size: 12px; padding: 4px; font-weight: normal; text-align: left;}
 .checkout_steps table.form td {padding: 4px;}
-.large-field {padding: 5px; color: #818181; font-size: 11px; border: 1px solid #ddd; width: 230px; }
+.large-field, input.title  {padding: 5px; color: #818181; font-size: 11px; border: 1px solid #ddd; width: 230px; }
 
 
 
@@ -572,7 +613,7 @@ span.error {background: none repeat scroll 0 0 #ffe3e2; border: 1px solid #D8464
 
 /*Col Right*/
 .col_right{ float:right; width:225px;}
-.col_right .block-title{ font-size:16px; padding-bottom:2px; text-transform:uppercase; font-weight:bold; line-height:22px; border-bottom:solid 1px;}
+.col_right .block-title { font-size:16px; padding-bottom:2px; text-transform:uppercase; font-weight:bold; line-height:22px; border-bottom:solid 1px;}
 .col_right ul{ margin-top:10px;}
 .col_right ul li{ padding:10px 0px;}
 .block-progress{ margin-bottom:15px;}
@@ -583,7 +624,7 @@ span.error {background: none repeat scroll 0 0 #ffe3e2; border: 1px solid #D8464
 /*Contact Us Page*/
 
 .contact_page address{ line-height:25px; padding-bottom:15px; font-size:14px; border-bottom:solid 1px #ccc;}
-.contact_page h3{ font-size:17px; padding-bottom:10px;}
+.contact_page h3, .full_page h3 { font-size:16px; padding-bottom:17px;}
 .contact_page #contact_form li { padding:8px 0px;}
 .contact_page #contact_form li input[type="text"], .contact_page #contact_form li textarea{border:1px solid #D7D7D7; padding:4px; width:364px;}
 .contact_page > iframe{ border:solid 1px #D7D7D7; padding:2px;}
@@ -615,9 +656,56 @@ p.tick{ padding:10px 0px 10px 20px;background:url(../../assets/image-yanapana/ti
 	margin-bottom: 10px;
 }
 
-.collaborators ul li h2 {width: 100%;}
+.collaborators li h2 {width: 100%;}
+
+/*Dashboard*/
+.dashboard-lcol > img {border: 1px solid #bbb; margin-bottom: 5px;} 
+.dashboard-lcol {width: 215px; float: left;}
+.dashboard-rcol.fr {margin-right: 0; width: 725px !important;}
+
+.profile_info {border: 1px solid #ccc; width: 100%;}
+.profile_info > li {border-bottom: 1px solid #ddd; padding: 10px 10px;}
+.profile_info > li:last-child {
+    border-bottom: medium none;
+}
+
+.product-stats-content {display: inline-block; width: 100%; background: #555; border: 1px solid #555;}
 
 
+.dashboard-title {background: #444; width: 100%; overflow: hidden; border: 1px solid #444;}
+.dashboard-title h5 { color: #fff; font-size: 14px;  padding: 10px 0 10px 15px ; text-transform: uppercase; }
+
+.profile_info_container {padding: 30px; }
+.profile_info p {display: inline-block; padding: 0 !important;}
+.profile_info span {float: right;}
+
+.profile_info.stats-content p {padding: 0; display: inline-block; }
+.profile_info.stats-content span {float: right;}
+
+.product-stats-content > ul {padding: 25px 0px 25px 30px;}
+.dashboard-products > li { float: left; margin-bottom: 25px; padding-right: 30px; width: 29%; }
+.dashboard-products > li img {border: 1px solid #ccc;}
+
+.stats-content {border: 1px solid #ccc;}
+.stats.bb {padding: 5px 10px; background: #fff; }
+.stats.bb:last-child {border: none;}
+
+
+.stats > h5 {background: #BCD80A; color: #fff; font-size: 12px; padding: 5px; text-transform: uppercase;}
+.stats.bb > p {display: inline;}
+.stats.bb > span {float: right; padding-top: 5px;} 
+.stats.bb > p, .stats.bb > span {font-size: 12px; font-family: 'istok web', sans-serif !important;}
+
+
+/*Toggle*/
+.toggle_box{ border:solid 1px #DEDEDE;}
+.toggle_box .toggle_title{display:block; border-bottom:solid 1px #DEDEDE; background-color:#555; color:#fff; text-decoration:none; font-size:14px; line-height:100%; background-image:url(../../assets/shortcodes/toggle.png); background-repeat:no-repeat; background-position:12px 12px; padding: 10px 0 10px 30px;}
+.toggle_box .toggle_title:hover{ background-color:#555;}
+.toggle_box .toggle_title.active{background-position:12px -12px; background-color:#555;}
+.toggle_box > ul{ margin:0px;}
+.toggle_box > li{ margin:0px;}
+.toggle_box > li .toggle_content{ padding:15px; line-height:18px; display:none;border-bottom:solid 1px #DEDEDE; }
+.toggle_box > li .toggle_content.active{display:block;}
 
 
 /*Cart Drop*/
@@ -786,44 +874,58 @@ body {background: #333;}
 
 #headline h1 {color: #312E2B; text-shadow: 1px 1px 0 #fff;}
 
-.checkout_steps #checkout-step-login, #checkout-step-billing, #checkout-step-delivery, #checkout-step-method, #checkout-step-payment, #checkout-step-confirm {background: url("../../assets/image-yanapana/snow.png");}
-.checkout_steps #checkout-step-login, #checkout-step-billing, #checkout-step-delivery, #checkout-step-method, #checkout-step-payment, #checkout-step-confirm, #checkout-step-confirm table {border: 1px solid #ccc;}
+.checkout_steps #checkout-step-login, #checkout-step-billing, #checkout-step-delivery, #checkout-step-method, #checkout-step-payment, #checkout-step-confirm, .toggle_content, .product-stats-content, .profile_info {background: url("../../assets/image-yanapana/snow.png");}
+.checkout_steps #checkout-step-login, #checkout-step-billing, #checkout-step-delivery, #checkout-step-method, #checkout-step-payment, #checkout-step-confirm, #checkout-step-confirm table, .product-stats-content {border: 1px solid #ccc;}
 
 .required {color: #FF0000;}
 /*-----------------------------------FONTS HERE*/
-.minicart span, h1, h2, h3, h4, h5, .product_info, .price_info, button.price_add, .footer_customblock, .product_rightcol .pr_price big, .product_rightcol .pr_price small, .product_rightcol small.pr_type, .product_rightcol .add_to_buttons button.add_cart, .message, .cart_drop .cart_bottom .subtotal_menu, ul.simpleTabsNavigation, .toggle_box .toggle_title
+.minicart span, h1, h2, h3, h4, h5, .product_info, .price_info, button.price_add, .footer_customblock, .product_rightcol .pr_price big, .product_rightcol .pr_price small, .product_rightcol small.pr_type, .product_rightcol .add_to_buttons button.add_cart, .message, .cart_drop .cart_bottom .subtotal_menu, ul.simpleTabsNavigation
 {font-family: "istok web", serif; font-weight:400;}
 
 /*TYPOGRAPHY*/
-h2.sub_title{ font-family: century gothic, serif; font-size:18px; color:#312e2b; font-weight:normal; padding-bottom:17px; padding-top: 10px; text-transform:uppercase;}
-h3 {font-family: century gothic, serif; font-size: 14px; color:#312e2b; font-weight:normal; padding-bottom:12px; text-transform:uppercase;}
+h2.sub_title{ font-family: 'century gothic', sans-serif; font-size:17px; color:#312e2b; font-weight:bold; padding-bottom:17px; padding-top: 10px; text-transform:uppercase;}
+h3 {text-transform: capitalize; font-family: 'century gothic', sans-serif; font-size: 17px; color:#312e2b; font-weight:normal; padding-bottom:12px; }
 .flex-caption h3{ text-transform:uppercase; font-size:22px; line-height:30px; font-weight:bold;}
 
 #headline h1 { color: #312E2B;  font-family: "skippy-sharp",cursive; font-size: 50px; text-shadow: 1px 1px 0 #fff;}
-#headline h4 {color: #312E2B; font-family: century gothic; font-size: 16px; text-shadow: 1px 1px 0 #fff;}
+#headline h4 {color: #312E2B; font-family: 'century gothic', sans-serif; font-size: 16px; text-shadow: 1px 1px 0 #fff;}
 
 #cause {text-shadow: 1px 1px 1px #222;}
 #cause h2 {   font-family: "skippy-sharp",cursive; font-size: 45px; padding-bottom: 20px;}
-#cause h4 {font-family: century gothic, serif; font-size: 20px; padding-bottom: 10px;}
+#cause h4 {font-family: 'century gothic', sans-serif; font-size: 20px; padding-bottom: 10px;}
 #cause p {line-height: 1.4; font-size: 16px; padding-bottom: 16px;}
 
 #artist-section p, .full_page p{
-    color: #A2A2A2;
+    color: #333;
     font-family: 'Istok Web';
-    font-size: 14px;
+    font-size: 13px;
     line-height: 1.4;
     padding-bottom: 15px;
-}	
+}
 
+.cause { 
+ background: rgba(0,0,0, 0.3);
+}
 
+.cause:hover { 
+ background: rgba(0,0,0, 0.6);
+}
+
+.anystretch { filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 10+, Firefox on Android */
+filter: gray; /* IE6-9 */
+-webkit-filter: grayscale(100%); /* Chrome 19+, Safari 6+, Safari 6+ iOS */}
+
+.collaborators h3 {border-bottom: 2px solid #ccc; margin-bottom: 7px;}
+
+#password-credentials label {font-size: 12px; font-weight: bold; font-family: sans-serif;}
 
 
 /*FAQ*/
-#faq-style ul li a  {color: #a2a2a2; font-family: istok web; font-size: 14px; line-height: 1.4; text-decoration: none; line-height: 1.4; }
+.faq-index { margin-bottom: 10px; }
+#faq-style ul {font-weight: bold;list-style: decimal inside none;}
+#faq-style ul li a  {color: #333; text-decoration: underline; font-family: istok web; font-size: 14px; line-height: 1.4; line-height: 1.4; font-weight: normal;}
 #faq-style h2 {display: inline-block; vertical-align: baseline; font-weight: bold;}
-
-#faq-style ul li  {list-style: decimal inside none ;}
-#faq-style p {margin-left: 10px; margin-bottom: 30px;}
+#faq-style p {margin-left: 20px; margin-bottom: 20px; font-weight: normal;}
 
 .important {font-weight: bold;}
 
