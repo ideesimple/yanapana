@@ -11,7 +11,7 @@ width:700px;
 #side_nav{ width:150px;}
 #main_content{ width:512px;}
 .toolbar > div.viewby{ margin-left:22px;}
-footer .footer_links > li{ padding-left:25px; width:140px;}
+footer .footer_links > li{ padding-left:25px; width:120px;}
 footer .footer_customblock{ display:none;}
 .subscribe_block .find_us{ margin-left:22px; width:120px;}
 .subscribe_block .subscribe_nl{ width:475px;}
@@ -23,7 +23,7 @@ header .header_search input{ width:82%;}
 
 /*Home*/
 
-nav .primary_nav > li > a {font-size: 15px;}
+nav .primary_nav > li > a {font-size: 13px;}
 
 .countdown_container {width: 700px;  }
 
@@ -192,6 +192,7 @@ h1.logo { display: block; width:180px; margin:auto; float:none; padding:15px 0;}
 
 .one-half {display: block;}
 
+.success, .flash.notice {text-align: center; padding: 20px 0px 20px 0px;} 
 
 #first-carousel li {width: 100%; margin: 0 auto;}
 
@@ -236,9 +237,9 @@ h1.logo { display: block; width:180px; margin:auto; float:none; padding:15px 0;}
 #social_media.subscribe_nl small{ display:none;}
 #social_media .subscribe_nl form{ margin-top:5px;}
 
-footer .footer_links > li{ width:152px; padding:0px; margin-bottom:10px;}
+footer .footer_links > li{ width:100%; padding:0px; margin-bottom:10px; border-bottom: 1px solid #544F4B;}
 footer .footer_links > li.seperator{ border:none;}
-footer .footer_customblock{ border-left:none; border-top:solid 1px #D6D6D6; width:100%; min-height:inherit;}
+footer .footer_customblock{ border-left:none; width:100%; min-height:inherit;}
 footer .footer_customblock > div{ padding:10px;}
 footer address { margin-top:0px; text-align:center;}
 footer address img{ float:none;}
@@ -338,6 +339,8 @@ aside#sidebar{width:310px;}
 #cause h4 {font-size: 15px; font-weight: bold; padding-bottom: 5px;}
 #cause p {font-size: 14px; padding-bottom: 7px;}
 .checkout_steps .step-title, .checkout_steps .step-title h2 {font-size: 13px !important;}
+
+footer .footer_links li span a { font-size: 12px; text-transform: uppercase;}
 
 
 /*DASHBOARD*/

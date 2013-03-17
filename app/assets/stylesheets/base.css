@@ -444,7 +444,7 @@ input.button.primary, #createaccount-btn a {text-decoration: none; color:#fff; f
 footer .footer_links{ display:inline-block;}
 footer .footer_links>li{ float:left; width:105px; padding:15px 0px 15px 35px; font-size:11px; }
 footer .footer_links>li:first-child{ padding-left:0px;}
-footer .footer_links li span{color:#e9e9e9; font-weight:bold; display:block; padding-bottom:12px;}
+footer .footer_links li span a{color:#e9e9e9; font-weight:bold; display:block; padding-bottom:12px;}
 footer .footer_links li a{ color:#999; display:block; padding:4px 0px; line-height:100%; text-decoration:none;}
 footer .footer_links li.seperator{border-right:solid 1px #d6d6d6;}
 footer .footer_customblock{ border-left:solid 1px #544F4B; float:right; width:272px; min-height:205px;}
@@ -613,6 +613,11 @@ span.error {background: none repeat scroll 0 0 #ffe3e2; border: 1px solid #D8464
 
 .form-buttons {display: block; overflow: hidden; width: 100%; border-top:1px solid #ccc;}
 
+.action_buttonbar {overflow: hidden;}
+#clear_cart_link {float: left; }
+#clear_cart_link button {background: orange !important;}
+.continue_shopping {float: right }
+
 /*Col Right*/
 .col_right{ float:right; width:225px;}
 .col_right .block-title { font-size:16px; padding-bottom:2px; text-transform:uppercase; font-weight:bold; line-height:22px; border-bottom:solid 1px;}
@@ -686,7 +691,7 @@ p.tick{ padding:10px 0px 10px 20px;background:url(../../assets/image-yanapana/ti
 
 .product-stats-content > ul {padding: 25px 0px 25px 30px;}
 .dashboard-products > li { float: left; margin-bottom: 25px; padding-right: 30px; width: 29%; }
-.dashboard-products > li img {border: 1px solid #ccc;}
+
 
 .stats-content {border: 1px solid #ccc;}
 .stats.bb {padding: 5px 10px; background: #fff; }
@@ -860,7 +865,7 @@ footer, ul.sub_menu, .sideNavCategories > ul, ul.sub_menu > li > ul, .checkout_t
 .flexslider .flex-direction-nav li a:hover, nav .primary_nav > li > a:hover, nav .primary_nav > li:hover > a, .product_rightcol .add_to_buttons button.add_cart, .action_buttonbar button.checkout, #shopping-cart-table tr td a.remove:hover, #shopping-cart-table tr td button.update:hover, .sideNavCategories > ul.departments > li > a:hover, .sideNavCategories > ul.departments > li > a.active, span.highlight_text{ background-color:#bcd80a;}
 .products_list li:hover img, .products_list_list li:hover img{ border-color:#BCD80A}
 .flex-caption{ border-left-color:#bcd80a}
-.footer_background {padding-bottom: 40px; background: url("../../assets/image-yanapana/footer_bg.png"); background-repeat: repeat-x; height: 8px; position: relative; top: -8px;}
+.footer_background {padding-bottom: 20px; background: url("../../assets/image-yanapana/footer_bg.png"); background-repeat: repeat-x; height: 8px; position: relative; top: -8px;}
 .footer_container {color: white !important; background: #333; }
 .products_list li .product_info {border-bottom-color: #ccc;}
 .navigation_container {border-top: 1px solid white; }
@@ -902,7 +907,7 @@ h3 {text-transform: capitalize; font-family: inherit; font-size: 18px; color:#31
 #artist-section p, .full_page p{
     color: #333;
     font-family: 'Istok Web';
-    font-size: 13px;
+    font-size: 14px;
     line-height: 1.4;
     padding-bottom: 15px;
 }
