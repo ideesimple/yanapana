@@ -39,8 +39,50 @@ html[xmlns] .clearfix {
 	height: 1%;
 }
 
-.fl {float: left;}
-.fr {float: right;}
+.one-half {
+    width: 46%;
+}
+.one-third {
+    width: 30.66%;
+}
+.two-third {
+    width: 65.33%;
+}
+.one-fourth {
+    width: 22%;
+}
+.three-fourth {
+    width: 70%;
+}
+.one-fifth {
+    width: 16.8%;
+}
+.two-fifth {
+    width: 37.6%;
+}
+.three-fifth {
+    width: 58.4%;
+}
+.four-fifth {
+    width: 67.2%;
+}
+.one-sixth {
+    width: 13.33%;
+}
+.five-sixth {
+    width: 82.67%;
+}
+.one-half, .one-third, .two-third, .three-fourth, .one-fourth, .one-fifth, .two-fifth, .three-fifth, .four-fifth, .one-sixth, .five-sixth {
+    float: left;
+    margin-bottom: 2em;
+    margin-right: 4%;
+    position: relative;
+}
+
+
+
+.fl {float: left; }
+.fr {float: right; }
 
 .pb {padding-bottom: 50px;}
 .pt{padding-top: 50px}
@@ -395,7 +437,7 @@ float: left;
 #social_media .subscribe_nl form .input-text{ border:solid 1px #a49c96; padding:5px; border-radius:3px; width:210px; background:url(../../assets/image-yanapana/subscribe_textfield.png) repeat-x top; box-shadow:inset 1px 1px 0px #fff; color:#8f8984; float:left; margin:0px;}
 #social_media .subscribe_nl form button{ width:34px; height:27px; border:0px;background:url(../../assets/image-yanapana/subscribe_btn.png) no-repeat top; float:left; margin-left:10px; cursor:pointer;}
 
-
+input.button.primary, #createaccount-btn a {text-decoration: none; color:#fff; font-size:14px; font-weight:bold; padding:8px 14px; background:#544F4B; border:0px; line-height:100%; cursor:pointer; vertical-align:middle;}
 
 
 /*FOOTER*/
@@ -479,7 +521,7 @@ ul.breadcrumb li a{ color:#bdbdbd; text-decoration:none;}
 
 
 /*-----------------------------------FULL PAGE*/
-.full_page{}
+
 .full_page h1{ font-size:24px; color:#312e2b; text-transform:uppercase; padding:22px 0px;}
 .full_page h4{ font-size:17px; color:#312e2b; padding:10px 0px; font-weight:bold;}
 .action_buttonbar{ background:#f9f8f6; border:solid 1px #ebe2d9; padding:13px; clear:both;}
@@ -547,7 +589,7 @@ ul.breadcrumb li a{ color:#bdbdbd; text-decoration:none;}
 .checkout_steps a{ text-decoration:underline; color:#312e2b;}
 .checkout_steps table.form td:first-child {width: 150px; font-size: 12px; padding: 4px; font-weight: normal; text-align: left;}
 .checkout_steps table.form td {padding: 4px;}
-.large-field {padding: 5px; color: #818181; font-size: 11px; border: 1px solid #ddd; width: 230px; }
+.large-field, input.title  {padding: 5px; color: #818181; font-size: 11px; border: 1px solid #ddd; width: 230px; }
 
 
 
@@ -572,7 +614,7 @@ span.error {background: none repeat scroll 0 0 #ffe3e2; border: 1px solid #D8464
 
 /*Col Right*/
 .col_right{ float:right; width:225px;}
-.col_right .block-title{ font-size:16px; padding-bottom:2px; text-transform:uppercase; font-weight:bold; line-height:22px; border-bottom:solid 1px;}
+.col_right .block-title { font-size:16px; padding-bottom:2px; text-transform:uppercase; font-weight:bold; line-height:22px; border-bottom:solid 1px;}
 .col_right ul{ margin-top:10px;}
 .col_right ul li{ padding:10px 0px;}
 .block-progress{ margin-bottom:15px;}
@@ -583,7 +625,7 @@ span.error {background: none repeat scroll 0 0 #ffe3e2; border: 1px solid #D8464
 /*Contact Us Page*/
 
 .contact_page address{ line-height:25px; padding-bottom:15px; font-size:14px; border-bottom:solid 1px #ccc;}
-.contact_page h3{ font-size:17px; padding-bottom:10px;}
+.contact_page h3, .full_page h3 { font-size:16px; padding-bottom:17px;}
 .contact_page #contact_form li { padding:8px 0px;}
 .contact_page #contact_form li input[type="text"], .contact_page #contact_form li textarea{border:1px solid #D7D7D7; padding:4px; width:364px;}
 .contact_page > iframe{ border:solid 1px #D7D7D7; padding:2px;}
@@ -615,9 +657,23 @@ p.tick{ padding:10px 0px 10px 20px;background:url(../../assets/image-yanapana/ti
 	margin-bottom: 10px;
 }
 
-.collaborators ul li h2 {width: 100%;}
+.collaborators li h2 {width: 100%;}
 
+/*Dashboard*/
+#profile_info > li {border-bottom: 1px solid #ddd; padding: 10px 0px;}
+#profile_info > li:last-child {
+    border-bottom: medium none;
+}
 
+/*Toggle*/
+.toggle_box{ border:solid 1px #DEDEDE;}
+.toggle_box .toggle_title{ text-align: center; display:block; border-bottom:solid 1px #DEDEDE; background-color:#333; font-weight:bold!important; color:#fff; text-decoration:none; font-size:14px; line-height:100%; background-image:url(../../assets/shortcodes/toggle.png); background-repeat:no-repeat; background-position:12px 12px; padding: 10px 0;}
+.toggle_box .toggle_title:hover{ background-color:#333;}
+.toggle_box .toggle_title.active{background-position:12px -12px; background-color:#333;}
+.toggle_box > ul{ margin:0px;}
+.toggle_box > li{ margin:0px;}
+.toggle_box > li .toggle_content{ padding:15px; line-height:18px; display:none;border-bottom:solid 1px #DEDEDE; }
+.toggle_box > li .toggle_content.active{display:block;}
 
 
 /*Cart Drop*/
@@ -786,7 +842,7 @@ body {background: #333;}
 
 #headline h1 {color: #312E2B; text-shadow: 1px 1px 0 #fff;}
 
-.checkout_steps #checkout-step-login, #checkout-step-billing, #checkout-step-delivery, #checkout-step-method, #checkout-step-payment, #checkout-step-confirm {background: url("../../assets/image-yanapana/snow.png");}
+.checkout_steps #checkout-step-login, #checkout-step-billing, #checkout-step-delivery, #checkout-step-method, #checkout-step-payment, #checkout-step-confirm, .toggle_content {background: url("../../assets/image-yanapana/snow.png");}
 .checkout_steps #checkout-step-login, #checkout-step-billing, #checkout-step-delivery, #checkout-step-method, #checkout-step-payment, #checkout-step-confirm, #checkout-step-confirm table {border: 1px solid #ccc;}
 
 .required {color: #FF0000;}
@@ -795,8 +851,8 @@ body {background: #333;}
 {font-family: "istok web", serif; font-weight:400;}
 
 /*TYPOGRAPHY*/
-h2.sub_title{ font-family: century gothic, serif; font-size:18px; color:#312e2b; font-weight:normal; padding-bottom:17px; padding-top: 10px; text-transform:uppercase;}
-h3 {font-family: century gothic, serif; font-size: 14px; color:#312e2b; font-weight:normal; padding-bottom:12px; text-transform:uppercase;}
+h2.sub_title{ font-family: century gothic, serif; font-size:16px; color:#312e2b; font-weight:bold; padding-bottom:17px; padding-top: 10px; text-transform:capitalize;}
+h3 {font-family: century gothic, serif; font-size: 19	px; color:#312e2b; font-weight:normal; padding-bottom:12px; }
 .flex-caption h3{ text-transform:uppercase; font-size:22px; line-height:30px; font-weight:bold;}
 
 #headline h1 { color: #312E2B;  font-family: "skippy-sharp",cursive; font-size: 50px; text-shadow: 1px 1px 0 #fff;}
@@ -808,22 +864,23 @@ h3 {font-family: century gothic, serif; font-size: 14px; color:#312e2b; font-wei
 #cause p {line-height: 1.4; font-size: 16px; padding-bottom: 16px;}
 
 #artist-section p, .full_page p{
-    color: #A2A2A2;
+    color: #333;
     font-family: 'Istok Web';
-    font-size: 14px;
+    font-size: 13px;
     line-height: 1.4;
     padding-bottom: 15px;
-}	
+}
 
+.collaborators h3 {border-bottom: 2px solid #ccc; margin-bottom: 7px;}
 
+#password-credentials label {font-size: 12px; font-weight: bold; font-family: sans-serif;}
 
 
 /*FAQ*/
-#faq-style ul li a  {color: #a2a2a2; font-family: istok web; font-size: 14px; line-height: 1.4; text-decoration: none; line-height: 1.4; }
+#faq-style ul {font-weight: bold;list-style: decimal inside none;}
+#faq-style ul li a  {color: #333; text-decoration: underline; font-family: istok web; font-size: 14px; line-height: 1.4; line-height: 1.4; font-weight: normal;}
 #faq-style h2 {display: inline-block; vertical-align: baseline; font-weight: bold;}
-
-#faq-style ul li  {list-style: decimal inside none ;}
-#faq-style p {margin-left: 10px; margin-bottom: 30px;}
+#faq-style p {margin-left: 10px; margin-bottom: 30px; font-weight: normal;}
 
 .important {font-weight: bold;}
 
