@@ -10,20 +10,9 @@
   <% end %>
 
   <% @body_id = 'login' %>
-  <div class="one-half">
-    <h3>New Customer</h3>
-    <p>Register Account</p>
-    <p>By creating an account you will be able to shop faster, be up to date on an order's status,
-    and keep track of the orders you have previously made.</p>
-    </br>
-    <div id="createaccount-btn">
-    <%= link_to t(:create_a_new_account), spree.signup_path %>
-    </div>
-  </div>
-  
-  <div class="one-half" id="existing-customer">
-    <h3><%= t(:login_as_existing) %></h3>
-    <p>I am a returning customer.</p>
+  <div id="existing-customer">
+    <h3><%= t(:login_as_an_artist) %></h3>
+    <p>I am an artist working with YANAPANA.</p>
     <div data-hook="login">
       <%= render :partial => 'spree/shared/login' %>
       <%= link_to t(:forgot_password), spree.new_user_password_path %>

@@ -1,0 +1,28 @@
+<div class="section_container jean pb">
+  <section>
+    <div class="full_page">
+      <ul class="breadcrumb">
+       <li><%= link_to "Home", root_path %></li>
+       <li><%= link_to "Login", login_path %></li>
+       <li class="active">Forgotten Password</li>
+      </ul>
+
+      <div id="forgot-password">
+        <h3><%= t(:forgot_password) %></h3>
+
+        <p><%= t(:instructions_to_reset_password) %></p>
+
+        <%= form_for Spree::User.new, :as => :user, :url => spree.user_password_path do |f| %>
+          <p>
+            <%= f.label :email, t(:email), :class => 'button primary' %></br>
+            <%= f.email_field :email, :class => 'title' %>
+          </p>
+          <p>
+            <%= f.submit t(:reset_password), :class => 'button primary' %>
+          </p>
+        <% end %>
+      </div>
+
+    </div><!--End full page-->
+  </section>
+</div>

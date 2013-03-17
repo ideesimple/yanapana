@@ -33,12 +33,12 @@
                         <% end %>
                         <% @body_id = 'login' %>
                         <div id="existing-customer">
-                          <h6><%= t(:login_as_existing) %></h6>
+                          <h6><%= t(:login_as_existing_user) %></h6>
                           <div data-hook="login">
                           <!-- Forma de login esta en la carpeta views/spree/shared/login' -->
                             <%= render :partial => 'spree/shared/login' %>
                           <!-- End Form  de login -->
-                            <%= t(:or) %> <%= link_to t(:create_a_new_account), spree.signup_path %> | <%= link_to t(:forgot_password), spree.new_user_password_path %>
+                           <%= link_to t(:forgot_password), spree.new_user_password_path %>
                           </div>
                         </div>
                         <div data-hook="login_extras"></div>
@@ -53,11 +53,11 @@
                           <%= render :partial => 'spree/shared/error_messages', :locals => { :target => @order } %>
                           <h6><%= t(:guest_user_account) %></h6>
                           <%= form_for @order, :url => update_checkout_registration_path, :method => :put, :html => { :id => 'checkout_form_registration' } do |f| %>
-                            <p>
+                            
                               <%= f.label :email, t(:email), :class => 'important' %><br />
-                              <%= f.email_field :email, :class => 'large-field' %>
-                            </p>
-                            <p><%= f.submit t(:continue), :class => 'button primary' %></p>
+                              <%= f.email_field :email, :class => 'large-field' %><br />
+                            
+                            <%= f.submit t(:continue), :class => 'button primary fl' %>
                           <% end %>
                         </div>
                       <% end %>
