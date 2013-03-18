@@ -101,10 +101,10 @@ $(document).ready(function(){
 	});
 
 	//TWITTER FEED    //replace "rohithpaul" with your Twitter ID
-//	$('.twitter_feed').jTweetsAnywhere({
-//		username: 'rohithpaul',
-//		count: 1
-//	});
+	$('.twitter_feed').jTweetsAnywhere({
+		username: 'rohithpaul',
+		count: 1
+	});
 
 
 

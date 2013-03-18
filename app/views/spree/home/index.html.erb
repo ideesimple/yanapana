@@ -145,10 +145,10 @@ $(function(){
                             <div id="goalbar" class="goalbar_style">
                               <i class="progBar" style="width:<%= p %>px"></i>
                             </div>
+                            <p class="count_uniq"></p>
                             <div class="stats">
                               <h4>
                                 <span class="nums fr">
-                                   <a class = "count_uniq"> </a>
                                   <span class="count"></span>/
                                   <span class="goal"><%= @cause.goal_facebook %></span>
                                 </span>
@@ -162,7 +162,7 @@ $(function(){
                         <a href= "https://twitter.com/intent/tweet?text=A+<%= (root_url + '/week' + @cause.id.to_s).html_safe %>+@yanapana&counturl=<%= (root_url + '/week' + @cause.id.to_s).html_safe %>" target="_blank"><%= image_tag ("image-yanapana/twitter_icon.png")%></a>
 
                         <div id="goalbar" class="goalbar_style"><i class="progBar"></i></div>
-                          <div class="stats">
+                         <div class="stats">
                           <h4>
                             <span class="nums fr">
                               <span class="count">1,517</span>/
