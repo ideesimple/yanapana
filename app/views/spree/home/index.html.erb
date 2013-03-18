@@ -26,12 +26,13 @@ $(function(){
       $('body').append('tweets' + tweets);
       });
     }
-
-  $(document).ready(function($){
-    var url = "<%= (root_url + '/week' + @cause.id.to_s).html_safe %>"
-    getfbcount(url);
-    gettwcount(url);
-  });
+  <% unless @cause.nil? %>
+    $(document).ready(function($){
+      var url = "<%= (root_url + '/week' + @cause.id.to_s).html_safe %>"
+      getfbcount(url);
+      gettwcount(url);
+    });
+  <% end %>
 </script>
 
 
