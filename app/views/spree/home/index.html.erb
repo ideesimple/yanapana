@@ -29,7 +29,7 @@ $(function(){
     }
   <% unless @cause.nil? %>
     $(document).ready(function($){
-      var url = "<%= (root_url + '/week' + @cause.id.to_s).html_safe %>"
+      var url = "<%= (root_url + 'week' + @cause.id.to_s).html_safe %>"
       getfbcount(url);
       gettwcount(url);
     });
