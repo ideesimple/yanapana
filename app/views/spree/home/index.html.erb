@@ -15,7 +15,10 @@ $(function(){
     $.getJSON('http://graph.facebook.com/?ids=' + url, function(data){
       fblikes = data[url].shares;
       $('body').append('fblikes ' + fblikes);
-      $('.count_uniq').html(fblikes)
+      $('#facebook_per_cause').html(fblikes)
+      var progres = fblikes * 216
+      d = document.getElementById('count_facebook');
+      d.style.width= progres + 'px';
     });
   }
 
@@ -24,7 +27,10 @@ $(function(){
     $.getJSON('http://urls.api.twitter.com/1/urls/count.json?url=' + url + '&callback=?', function(data){
       tweets = data.count;
       $('body').append('tweets' + tweets);
-      $('.count_twitts').html(tweets)
+      $('#twitts_per_cause').html(tweets)
+      var progres = tweets * 216
+      d = document.getElementById('count_twitts');
+      d.style.width= progres + 'px';
       });
     }
   <% unless @cause.nil? %>
@@ -51,7 +57,7 @@ $(function(){
 <% content_for :metatags do %>
   <% unless @cause.nil? %>
     <%= ('<meta property="og:title" content=" Yanapana | ' + @cause.title  + ' " />').html_safe %>
-    <%= ('<meta property="og:url" content="' + root_url + '/week' + @cause.id.to_s + ' " />').html_safe %>
+    <%= ('<meta property="og:url" content="' + root_url + 'week' + @cause.id.to_s + ' " />').html_safe %>
     <%= ('<meta property="og:image" content="' + @cause.photo.url(:mini).to_s + '" />').html_safe %>
     <%= ('<meta property="og:description" content="' + @cause.description.to_s  + '" />').html_safe %>
   <% end %>
@@ -143,16 +149,16 @@ $(function(){
                           <li>
                             <!--<script>function fbs_click() {u=location.href;t=document.title;window.open('http://www.facebook.com/sharer.php?u='+encodeURIComponent(u)+'&t='+encodeURIComponent(t),'sharer','toolbar=0,status=0,width=626,height=436');return false;}</script>
                             <a rel="nofollow" href="http://www.facebook.com/share.php?u=<; <%= (root_url + '/week' + @cause.id.to_s).html_safe %> >" onclick="return fbs_click()" target="_blank"><%= image_tag ("image-yanapana/facebook_icon.png")%></a>-->
-                            <a onclick="window.open(&quot;http://www.facebook.com/sharer/sharer.php?s=100&amp;p[title]=<%= @cause.title %>&amp;p[url]=<%= (root_url + '/week' + @cause.id.to_s).html_safe %>&amp;p[images][0]=<%= @cause.photo.url(:small) %> &quot;,&quot;&quot;,&quot;toolbar=0,status=0,width=580,height=315&quot;)" target="_blank" class="share fb" href="" ><%= image_tag ("image-yanapana/facebook_icon.png")%></a>
+                            <a onclick="window.open(&quot;http://www.facebook.com/sharer/sharer.php?s=100&amp;p[title]=<%= @cause.title %>&amp;p[url]=<%= (root_url + 'week' + @cause.id.to_s).html_safe %>&amp;p[images][0]=<%= @cause.photo.url(:small) %> &quot;,&quot;&quot;,&quot;toolbar=0,status=0,width=580,height=315&quot;)" target="_blank" class="share fb" href="" ><%= image_tag ("image-yanapana/facebook_icon.png")%></a>
 
                             <div id="goalbar" class="goalbar_style">
-                              <i class="progBar" style="width:<%= p %>px"></i>
+                              <i id= "count_facebook" class="progBar"></i>
                             </div>
                             <p class="count_uniq"></p>
                             <div class="stats">
                               <h4>
                                 <span class="nums fr">
-                                  <span class="count"></span>/
+                                  <span id="facebook_per_cause"  class="count"></span>/
                                   <span class="goal"><%= @cause.goal_facebook %></span>
                                 </span>
                                 <span class="word fl">Share goal</span>
@@ -162,14 +168,12 @@ $(function(){
                     </div>
                     <div id="tt_colsize">
                       <li>
-                        <a href= "https://twitter.com/intent/tweet?text=A+<%= (root_url + '/week' + @cause.id.to_s).html_safe %>+@yanapana&counturl=<%= (root_url + '/week' + @cause.id.to_s).html_safe %>" target="_blank"><%= image_tag ("image-yanapana/twitter_icon.png")%></a>
-
-                        <div id="goalbar" class="goalbar_style"><i class="progBar"></i></div>
+                        <a href= "https://twitter.com/intent/tweet?text=A+<%= (root_url + 'week' + @cause.id.to_s).html_safe %>+@yanapanawear&counturl=<%= (root_url + 'week' + @cause.id.to_s).html_safe %>" target="_blank"><%= image_tag ("image-yanapana/twitter_icon.png")%></a>
+                        <div id="goalbar" class="goalbar_style"><i id = "count_twitts" class="progBar"></i></div>
                          <div class="stats">
-                           <p class="count_twitts"></p>
                            <h4>
                             <span class="nums fr">
-                              <span class="count">1,517</span>/
+                              <span id="twitts_per_cause" class="count"></span>/
                               <span class="goal"><%= @cause.goal_twitter %></span>
                             </span>
                             <span class="word fl">Tweet goal</span>
@@ -190,7 +194,7 @@ $(function(){
                         </div>
                         <div id="goalbar" class="goalbar_style">
                           <% p = @total / @cause.goal_money %>
-                          <% p = 306 * p %>
+                          <% p = 470 * p %>
                           <i class="progBar" style="width:<%= p %>px"></i>
                         </div>
                         <div class="stats">
@@ -261,7 +265,7 @@ $(function(){
                 <h1 class="comments_tag fl">Don’t be shy! Express your thoughts about this week’s awesome cause right here: </h1>
 
                 <div id="comments" class="fl">
-                    <div class="fb-comments" data-href="<%= root_url %>" data-width="700" data-num-posts="2" data-order-by="reverse_time"></div>
+                    <div class="fb-comments" data-href="<%= (root_url + 'week' + @cause.id.to_s).html_safe %>" data-width="700" data-num-posts="2" data-order-by="reverse_time"></div>
                 </div>
                 </section>
             </div>
