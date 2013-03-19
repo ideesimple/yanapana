@@ -10,15 +10,19 @@ $(function(){
   });
 });
 
+<% unless @cause.nil? %>
+
   function getfbcount(url){
     var fblikes;
-    $.getJSON('http://graph.facebook.com/?ids=' + url, function(data){
-      fblikes = data[url].shares;
+    $.getJSON('https://api.facebook.com/method/fql.query?query=select%20%20share_count%20from%20link_stat%20where%20url='+ url +'&format=json', function(data){
+      fblikes = data[url].share_count;
       $('body').append('fblikes ' + fblikes);
       $('#facebook_per_cause').html(fblikes)
       var progres = fblikes * 216
+      var total = <%= @cause.goal_facebook %>
+      var total_facebook = progres/total
       d = document.getElementById('count_facebook');
-      d.style.width= progres + 'px';
+      d.style.width= total_facebook + 'px';
     });
   }
 
@@ -29,11 +33,13 @@ $(function(){
       $('body').append('tweets' + tweets);
       $('#twitts_per_cause').html(tweets)
       var progres = tweets * 216
+      var total = <%= @cause.goal_twitter %>
+      var total_twitter= progres / total
       d = document.getElementById('count_twitts');
-      d.style.width= progres + 'px';
+      d.style.width= total_twitter + 'px';
       });
     }
-  <% unless @cause.nil? %>
+
     $(document).ready(function($){
       var url = "<%= (root_url + 'week' + @cause.id.to_s).html_safe %>"
       getfbcount(url);
@@ -57,7 +63,7 @@ $(function(){
 <% content_for :metatags do %>
   <% unless @cause.nil? %>
     <%= ('<meta property="og:title" content=" Yanapana | ' + @cause.title  + ' " />').html_safe %>
-    <%= ('<meta property="og:url" content="' + root_url + 'week' + @cause.id.to_s + ' " />').html_safe %>
+    <%= ('<meta property="og:url" content="' + root_url + 'week-' + @cause.id.to_s + ' " />').html_safe %>
     <%= ('<meta property="og:image" content="' + @cause.photo.url(:mini).to_s + '" />').html_safe %>
     <%= ('<meta property="og:description" content="' + @cause.description.to_s  + '" />').html_safe %>
   <% end %>
@@ -168,7 +174,7 @@ $(function(){
                     </div>
                     <div id="tt_colsize">
                       <li>
-                        <a href= "https://twitter.com/intent/tweet?text=A+<%= (root_url + 'week' + @cause.id.to_s).html_safe %>+@yanapanawear&counturl=<%= (root_url + 'week' + @cause.id.to_s).html_safe %>" target="_blank"><%= image_tag ("image-yanapana/twitter_icon.png")%></a>
+                        <a href= "https://twitter.com/intent/tweet?text=A+<%= (root_url + 'week' + @cause.id.to_s).html_safe %>+@yanapanawear&counturl=<%= (root_url + 'week-' + @cause.id.to_s).html_safe %>" target="_blank"><%= image_tag ("image-yanapana/twitter_icon.png")%></a>
                         <div id="goalbar" class="goalbar_style"><i id = "count_twitts" class="progBar"></i></div>
                          <div class="stats">
                            <h4>
