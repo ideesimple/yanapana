@@ -14,13 +14,13 @@ $(function(){
 
   function getfbcount(url){
     var fblikes;
-    $.getJSON('https://api.facebook.com/method/fql.query?query=select%20%20share_count%20from%20link_stat%20where%20url='+ url +'&format=json', function(data){
+    $.getJSON('https://api.facebook.com/method/fql.query?query=select%20%20share_count%20from%20link_stat%20where%20url="'+ url +'"&format=json', function(data){
       fblikes = data[url].share_count;
       $('body').append('fblikes ' + fblikes);
       $('#facebook_per_cause').html(fblikes)
-      var progres = fblikes * 216
-      var total = <%= @cause.goal_facebook %>
-      var total_facebook = progres/total
+      var progres = fblikes * 216;
+      var total = <%= @cause.goal_facebook %>;
+      var total_facebook = progres/total;
       d = document.getElementById('count_facebook');
       d.style.width= total_facebook + 'px';
     });
@@ -31,17 +31,17 @@ $(function(){
     $.getJSON('http://urls.api.twitter.com/1/urls/count.json?url=' + url + '&callback=?', function(data){
       tweets = data.count;
       $('body').append('tweets' + tweets);
-      $('#twitts_per_cause').html(tweets)
-      var progres = tweets * 216
-      var total = <%= @cause.goal_twitter %>
-      var total_twitter= progres / total
+      $('#twitts_per_cause').html(tweets);
+      var progres = tweets * 216;
+      var total = <%= @cause.goal_twitter %>;
+      var total_twitter= progres / total;
       d = document.getElementById('count_twitts');
       d.style.width= total_twitter + 'px';
       });
     }
 
     $(document).ready(function($){
-      var url = "<%= (root_url + 'week' + @cause.id.to_s).html_safe %>"
+      var url = "<%= (root_url + 'week-' + @cause.id.to_s).html_safe %>"
       getfbcount(url);
       gettwcount(url);
     });
