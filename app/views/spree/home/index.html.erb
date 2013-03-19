@@ -14,7 +14,7 @@ $(function(){
 
   function getfbcount(url){
     var fblikes;
-    $.getJSON('https://api.facebook.com/method/fql.query?query=select%20%20share_count%20from%20link_stat%20where%20url="'+ url +'"&format=json', function(data){
+    $.getJSON('https://api.facebook.com/method/fql.query?query=select%20%20share_count%20from%20link_stat%20where%20url='+ url +'&format=json', function(data){
       fblikes = data[url].share_count;
       $('body').append('fblikes ' + fblikes);
       $('#facebook_per_cause').html(fblikes)
