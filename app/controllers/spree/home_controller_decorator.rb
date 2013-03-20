@@ -38,7 +38,7 @@ Spree::HomeController.class_eval do
   def contact_us
     if params.length > 2
       logger.debug params
-      @c = Spree::ContactForm.new(:name => params["name"],:email => params["email"], :message => params["message"])
+      @c = Spree::ContactForm.new(:name => params["name"],:email => params["email"], :message => params["message"],:suggestion=> params["suggestion"])
       if @c.deliver
         redirect_to root_path
       end
