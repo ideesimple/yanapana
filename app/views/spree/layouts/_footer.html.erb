@@ -1,12 +1,11 @@
-
 <div class="footer_container">
     <div class="footer_background"></div>
         <!--Footer Starts-->
         <footer>
             <ul class="footer_links">
-                <li><span><a href="http://localhost:3000">Home</a></span>
+                <li><span><%= link_to "Home", root_url %></span>
                     <ul class="hidden_movil">
-                        <li><a href="http://localhost:3000/#cause">Cause</a></li>
+                        <li><a href="http://localhost:3000/#cause">Cause</a><% link_to "Cause", root_url %></li>
                         <li><a href="http://localhost:3000/#goals">Goals</a></li>
                         <li><a href="http://localhost:3000/#products">Products</a></li>
                         <li><a href="http://localhost:3000/#artist">Artist</a></li>
