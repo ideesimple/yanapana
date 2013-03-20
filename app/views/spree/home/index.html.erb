@@ -95,7 +95,6 @@
                             <div id="goalbar" class="goalbar_style">
                               <i id= "count_sharesf" class="progBar"></i>
                             </div>
-                            <p class="count_uniq"></p>
                             <div class="stats">
                               <h4>
                                 <span class="nums fr">
@@ -174,13 +173,13 @@
 <!--Mid Section Starts-->
 
 
-        <div class="productos jean">
-          <% if @products_cause.nil? %>
+    <div class="productos jean">
+      <% if @products_cause.nil? %>
             <h6 class="search-results-title"><%= t(:no_products_found) %></h6>
       <% else %>
         <%= render :partial => 'spree/shared/products', :locals => { :products => @products_cause, :taxon => @taxon } %>
       <% end %>
-        </div>
+    </div>
 <% unless @artist.nil? %>
 <a name="artist"></a>
 <div id="artist-section" class="jean">
@@ -257,7 +256,6 @@
           fblikes = data[0]['share_count'];
           $('body').append('fblikes ' + fblikes);
           $('#facebook_per_cause').html(fblikes);
-          $('.count_uniq').html(fblikes);
           var progresf = fblikes * 216;
           var totalf = <%= @cause.goal_facebook %>;
           var total_facebook = progresf / totalf;
