@@ -12,6 +12,7 @@ Spree::HomeController.class_eval do
     @products = @searcher.retrieve_products
     date_now = Date.today
     @cause = Spree::Cause.find(:all, :conditions=>["date_start <= ? AND date_finish >= ?", date_now, date_now]).first
+    @cause = Spree::Cause.where("date_start > ?", Date.today).order('date_start ASC').first unless @cause
     unless @cause.nil?
       @products_cause = @products.where(:cause_id => @cause.id).each_slice(3).to_a
       #Arista asociado a esa causa
@@ -76,4 +77,20 @@ Spree::HomeController.class_eval do
 
   def terms_of_use
   end
+
+
+  def subscribe
+    email = params[:email]
+    h = Hominid::API.new("747ad60d361e1376cf91b3ff8d48a814-us6")
+    begin
+      @response = h.list_subscribe('af0a762abc', email, {:FNAME => '', :LNAME => ''}, 'html', false, true, true, false)
+    rescue
+      @response = nil
+    end
+
+    respond_to do |wants|
+      wants.js
+    end
+  end
+
 end

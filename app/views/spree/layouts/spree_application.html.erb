@@ -25,24 +25,8 @@
                     	<a name="top"></a>
 		        <!--Logo Ends-->
 		        <!--Countdown Starts-->
-		        <div class="countdown_container">
-		            <div class="countdown">
-		                <h3> Sale Time Left: </h3>
-		                <ul class="countdown_text">
-		                    <li>Days</li>
-		                    <li>Hrs.</li>
-		                    <li>Min.</li>
-		                    <li>Sec.</li>
-		                </ul>
-		                <ul class="countdown_numbers">
-		                    <li>05:</li>
-		                    <li>23:</li>
-		                    <li>17:</li>
-		                    <li>09</li>
-		                </ul>
-		            </div>
-		        </div>
-		         <!--Countdown Ends-->
+            <div id='open-until'></div>
+            <!--Countdown Ends-->
 			</div>
 	    	</div>
 		<%= yield :breadcrumbs %>
@@ -80,7 +64,7 @@
         <!--Navigation Ends-->
     </div>
 
-  <% flash_messages %>
+                  <% flash_messages %>
                   <%= yield %>
                   <%= yield :sidebar %>
 
@@ -90,6 +74,7 @@
 
               <%= render :partial => 'spree/layouts/footer' %>
 
+              <%= yield :javascripts %>
 
             <%= render :partial => 'spree/shared/google_analytics' %>
 

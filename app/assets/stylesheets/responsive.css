@@ -2,7 +2,7 @@
 /* Width of 768px */
 
 /* #Tablet (Portrait)
-================================================== */    
+================================================== */
 
 @media only screen and (min-width: 700px) and (max-width: 960px) {
 header, nav, section, footer, ul.sub_menu, .col_left_main, .branding_area, .comments-section, .comments-section.comments{
@@ -25,7 +25,7 @@ header .header_search input{ width:82%;}
 
 nav .primary_nav > li > a {font-size: 13px;}
 
-.countdown_container {width: 700px;  }
+.hasCountdown {width: 700px;  }
 
 #org_description {float: left; width: 100%; padding: 0; margin: 0;}
 
@@ -131,7 +131,7 @@ section#main_content{width:420px;}
     /* Note: Design for a width of 320px */
 
 @media only screen and (max-width: 700px) {
-	 
+
 nav, section, footer, ul.sub_menu, .col_left_main, #main_content, .branding_area, .comments-section section.comments{
 width:300px !important;
 }
@@ -153,7 +153,7 @@ header .top_bar {display: inline-block; width: 100%;}
 header .top_bar .language_switch {float: none; width: 310px; margin: 0 auto;}
 header .top_bar .language_switch a{ padding:7px 0; margin: 0 1px 1px 0; text-align: center; width: 76px; box-shadow: none;}
 header .top_links {float: none; width: 300px; margin: 0 auto; height: 31px;}
-header .top_links > li {margin: 0;} 
+header .top_links > li {margin: 0;}
 header .top_links li a {padding: 10px 14px;}
 header .top_links > li a{ font-size:11px;}
 nav .primary_nav{ display:none;}
@@ -169,7 +169,7 @@ header .minicart {max-height: 31px;}
 
 h1.logo { display: block; width:180px; margin:auto; float:none; padding:15px 0;}
 
-.countdown_container {width: 100%; border-bottom: 1px solid #ddd; }
+.hasCountdown {width: 100%; border-bottom: 1px solid #ddd; }
 .countdown {float: none; padding: 10px 0 5px 0; width: 121px; margin: 0 auto;}
 .countdown h3 {display: none;}
 .countdown .countdown_numbers li {font-size: 15px;}
@@ -192,7 +192,7 @@ h1.logo { display: block; width:180px; margin:auto; float:none; padding:15px 0;}
 
 .one-half {display: block;}
 
-.success, .flash.notice {text-align: center; padding: 20px 0px 20px 0px;} 
+.success, .flash.notice {text-align: center; padding: 20px 0px 20px 0px;}
 
 #first-carousel li {width: 100%; margin: 0 auto;}
 
@@ -305,7 +305,7 @@ div.selector, div.selector {width: 225px;}
 .collaborators ul li {
     width: 75%;
     float: left;
-    
+
 }
 
 .collaborators ul li img {

@@ -54,10 +54,18 @@
                     </div>
                 <div class="contact_info">
                     <big>Subscribe to our newsletter</big>
-                    <form action="mailing_list">
-                        <input type="text" name="Email">
-                    </form>
-                </div>
+                    <div id="newsletter">
+                      <%= form_tag subscribe_path, :remote => true, :html => {:id => 'sign-up'} do %>
+
+                        <input  type="email" value="" placeholder="Tu Correo Electrónico" id="email" name="email">
+                        <input type="submit" value="Regístrate" name="subscribe" class="sign-up">
+
+                        <span class="form-Motivationessage" id="response"></span>
+
+                      <% end %>
+                    </div>
+
+                                    </div>
             </div>
             <address>
                 <h1 class="logo_footer"> <a href="#"><%= image_tag ("image-yanapana/logo_footer.png") %></a></h1>

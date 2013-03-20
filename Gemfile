@@ -9,6 +9,7 @@ gem 'spree_gateway', :git => 'git://github.com/spree/spree_gateway.git', :branch
 gem 'addressable'
 gem 'mail_form'
 gem 'devise_invitable', '1.0.0'
+gem 'hominid'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

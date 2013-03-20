@@ -1,65 +1,3 @@
-<script type="text/javascript">
-$(function(){
-  $("#mostrar").click(function(event) {
-    event.preventDefault();
-    $("#caja").slideToggle();
-  });
-  $("#caja a").click(function(event) {
-    event.preventDefault();
-    $("#caja").slideUp();
-  });
-});
-
-<% unless @cause.nil? %>
-
-  function getfbcount(url){
-    var fblikes;
-    $.getJSON('https://api.facebook.com/method/fql.query?query=select%20%20share_count%20from%20link_stat%20where%20url='+ url +'&format=json', function(data){
-      fblikes = data[0].share_count;
-      $('body').append('fblikes ' + fblikes);
-      $('#facebook_per_cause').html(fblikes);
-      var progres = fblikes * 216;
-      var total = <%= @cause.goal_facebook %>;
-      var total_facebook = progres/total;
-      d = document.getElementById('count_facebook');
-      d.style.width= total_facebook + 'px';
-    });
-  }
-
-  function gettwcount(url){
-    var tweets;
-    $.getJSON('http://urls.api.twitter.com/1/urls/count.json?url=' + url + '&callback=?', function(data){
-      tweets = data.count;
-      $('body').append('tweets' + tweets);
-      $('#twitts_per_cause').html(tweets);
-      var progres = tweets * 216;
-      var total = <%= @cause.goal_twitter %>;
-      var total_twitter= progres / total;
-      d = document.getElementById('count_twitts');
-      d.style.width= total_twitter + 'px';
-      });
-    }
-
-    $(document).ready(function($){
-      var url = "<%= (root_url + 'week-' + @cause.id.to_s).html_safe %>"
-      getfbcount(url);
-      gettwcount(url);
-    });
-  <% end %>
-</script>
-
-
-
-<% content_for :head do %>
-  <% unless @cause.nil? %>
-  <script charset="utf-8" language="javascript" type="text/javascript">
-    $(document).ready(function() {
-      $(".cause_background").anystretch("<%=@cause.photo.url%>");
-    });
-  </script>
-  <% end %>
-<% end %>
-
 <% content_for :metatags do %>
   <% unless @cause.nil? %>
     <%= ('<meta property="og:title" content=" Yanapana | ' + @cause.title  + ' " />').html_safe %>
@@ -278,22 +216,66 @@ $(function(){
 <!--Mid Section Ends-->
   <% end %>
 
-
-
 </div><!--EndSectionContainer-->
+<% content_for :javascripts do %>
+  <% unless @cause.nil? %>
+    <%= javascript_include_tag "jquery.countdown.min" %>
+    <script charset="utf-8" language="javascript" type="text/javascript">
+    $(document).ready(function() {
+      $(".cause_background").anystretch("<%=@cause.photo.url%>");
+    });
+    </script>
 
+    <script type="text/javascript" language="javascript" charset="utf-8">
+    $(document).ready(function(){
+        var liftoffTime = new Date(<%= @cause.date_finish.to_time.to_i * 1000 %>);
+        $("#open-until").countdown({until: liftoffTime, layout: "<%= escape_javascript(render :partial => 'spree/shared/countdown')%>"
+          });
+        });
+    </script>
 
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/es_US/all.js#xfbml=1";
-  fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));
-</script>
+    <script type="text/javascript">
+      $(function(){
+        $("#mostrar").click(function(event) {
+          event.preventDefault();
+          $("#caja").slideToggle();
+          });
+        $("#caja a").click(function(event) {
+          event.preventDefault();
+          $("#caja").slideUp();
+          });
+        })
 
+      <%= render :partial => 'spree/shared/counts_facebook'  %>
 
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+      function gettwcount(url){
+      var tweets;
+      $.getJSON('http://urls.api.twitter.com/1/urls/count.json?url=' + url + '&callback=?', function(data){
+          tweets = data.count;
+          $('body').append('tweets' + tweets);
+          $('#twitts_per_cause').html(tweets);
+          var progres = tweets * 216;
+          var total = <%= @cause.goal_twitter %>;
+          var total_twitter= progres / total;
+          d = document.getElementById('count_twitts');
+          d.style.width= total_twitter + 'px';
+          });
+      }
 
-<script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"></script>
+      $(document).ready(function($){
+        var url = "<%= (root_url + 'week-' + @cause.id.to_s).html_safe %>"
+        getfbcount(url);
+        gettwcount(url);
+      });
+  </script>
+
+  <% end %>
+
+    <%= render :partial => 'spree/shared/javascript_facebook'  %>
+
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+    <script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"></script>
+
+<% end %>
+

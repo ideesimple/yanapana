@@ -119,8 +119,8 @@ header .header_search{ height:23px; width:230px; float:right; padding:3px; margi
 header .header_search input{ background:none; border:0px; padding:4px; width:82%; color:#b4b4b4;}
 header .header_search button{background:url(../../assets/image-yanapana/search_btn.png) no-repeat center; border:0px; width:20px; height:20px; float:right; margin:2px;}
 
-.countdown_container {width: 980px; margin: 0 auto;}
-.countdown {float: right; width: 232px; padding-top: 42px; text-shadow: 1px 1px 0 white;}
+.hasCountdown {width: 980px; margin: 0 auto;}
+.countdown {float: right; width: 218px; padding-top: 42px; text-shadow: 1px 1px 0 white;}
 .countdown h3 {font-family: "Century Gothic", sans-serif; font-size: 12px; float: left; padding: 15px 10px 0 0; text-transform: uppercase; color: #A2A2A2;}
 .countdown li {display: inline-block;}
 .countdown .countdown_text li {padding: 0px 3px 2px 0px; color: #A2A2A2;}
@@ -652,7 +652,7 @@ p.tick{ padding:10px 0px 10px 20px;background:url(../../assets/image-yanapana/ti
     float: left;
     margin-right: 40px;
     margin-bottom: 20px;
-   
+
 }
 
 .collaborators ul li img {
@@ -666,7 +666,7 @@ p.tick{ padding:10px 0px 10px 20px;background:url(../../assets/image-yanapana/ti
 .collaborators li h2 {width: 100%;}
 
 /*Dashboard*/
-.dashboard-lcol > img {border: 1px solid #bbb; margin-bottom: 5px;} 
+.dashboard-lcol > img {border: 1px solid #bbb; margin-bottom: 5px;}
 .dashboard-lcol {width: 215px; float: left;}
 .dashboard-rcol.fr {margin-right: 0; width: 725px;}
 
@@ -700,7 +700,7 @@ p.tick{ padding:10px 0px 10px 20px;background:url(../../assets/image-yanapana/ti
 
 .stats > h5 {background: #BCD80A; color: #fff; font-size: 12px; padding: 5px; text-transform: uppercase;}
 .stats.bb > p {display: inline;}
-.stats.bb > span {float: right; padding-top: 5px;} 
+.stats.bb > span {float: right; padding-top: 5px;}
 .stats.bb > p, .stats.bb > span {font-size: 12px; font-family: 'istok web', sans-serif !important;}
 
 
@@ -782,7 +782,7 @@ input, select, textarea, button{ font-size:12px;}
 .success, .flash.notice {color: #91a158; background: none repeat scroll 0 0 #f9fff1; border: 1px solid #acc600; font-size: 14px; line-height: 100%; margin-bottm: 15px; margin-top: 15px; padding: 20px 15px 20px 85px; }
 .success a {color: #544F4B; text-decoration: none;}
 .brown_btn, .checkout_steps input[type="submit"], .checkout_steps a.button { text-decoration: none; float: right; color:#fff; font-size:14px; font-weight:bold; padding:8px 14px; background:#544F4B; border:0px; line-height:100%; cursor:pointer; vertical-align:middle;}
-.button.primary.fl {float: none; display: inline-block;} 
+.button.primary.fl {float: none; display: inline-block;}
 .button.primary.fl.login {margin: 0;}
 img{ max-width:100%;}
 .flash.notice {margin: 0 auto; widows: auto;}
@@ -816,7 +816,7 @@ img{ max-width:100%;}
 
 
 .arrow.down {background: url("../../assets/image-yanapana/dk_arrows.png") no-repeat no-repeat scroll 125px 1px transparent;}
-.arrow.down:hover {background: url("../../assets/image-yanapana/dk_arrows_hover.png") no-repeat no-repeat scroll 125px 1px transparent;} 
+.arrow.down:hover {background: url("../../assets/image-yanapana/dk_arrows_hover.png") no-repeat no-repeat scroll 125px 1px transparent;}
 
 /*Forms*/
 div.selector, .product_rightcol input {
@@ -912,11 +912,11 @@ h3 {text-transform: capitalize; font-family: inherit; font-size: 18px; color:#31
     padding-bottom: 15px;
 }
 
-.cause { 
+.cause {
  background: rgba(0,0,0, 0.3);
 }
 
-.cause:hover { 
+.cause:hover {
  background: rgba(0,0,0, 0.6);
 }
 
