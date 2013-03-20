@@ -4,10 +4,11 @@
       fblikes = data[0].share_count;
       $('body').append('fblikes ' + fblikes);
       $('#facebook_per_cause').html(fblikes);
-      var progres = fblikes * 216;
+      $('.count_uniq').html(fblikes);
+      var progresf = fblikes * 216;
       var total = <%= @cause.goal_facebook %>;
-      var total_facebook = progres/total;
-      d = document.getElementById('count_facebook');
+      var total_facebook = progresf / total;
+      d = document.getElementById('count_sharesf');
       d.style.width= total_facebook + 'px';
     });
   }
