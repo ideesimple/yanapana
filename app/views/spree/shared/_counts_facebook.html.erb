@@ -1,13 +1,13 @@
  function getfbcount(url){
     var fblikes;
-    $.getJSON('https://api.facebook.com/method/fql.query?query=select%20%20share_count%20from%20link_stat%20where%20url=' + url + '&format=json', function(data){
-      fblikes = data[0].share_count;
+    $.getJSON('https://api.facebook.com/method/fql.query?format=json&query=select%20%20share_count%20from%20link_stat%20where%20url=' + url , function(data){
+      fblikes = data[0]['share_count'];
       $('body').append('fblikes ' + fblikes);
       $('#facebook_per_cause').html(fblikes);
       $('.count_uniq').html(fblikes);
       var progresf = fblikes * 216;
-      var total = <%= @cause.goal_facebook %>;
-      var total_facebook = progresf / total;
+      var totalf = <%= @cause.goal_facebook %>;
+      var total_facebook = progresf / totalf;
       d = document.getElementById('count_sharesf');
       d.style.width= total_facebook + 'px';
     });
