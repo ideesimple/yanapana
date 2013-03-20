@@ -119,6 +119,7 @@ header .header_search{ height:23px; width:230px; float:right; padding:3px; margi
 header .header_search input{ background:none; border:0px; padding:4px; width:82%; color:#b4b4b4;}
 header .header_search button{background:url(../../assets/image-yanapana/search_btn.png) no-repeat center; border:0px; width:20px; height:20px; float:right; margin:2px;}
 
+
 .hasCountdown {width: 980px; margin: 0 auto;}
 .countdown {float: right; width: 218px; padding-top: 42px; text-shadow: 1px 1px 0 white;}
 .countdown h3 {font-family: "Century Gothic", sans-serif; font-size: 12px; float: left; padding: 15px 10px 0 0; text-transform: uppercase; color: #A2A2A2;}
@@ -133,7 +134,7 @@ header .header_search button{background:url(../../assets/image-yanapana/search_b
 nav .primary_nav{ display:inline-block;margin:5px 2px 3px 0px; position:relative;}
 nav .primary_nav li{ float:left;}
 nav .primary_nav > li{ margin-right:2px;}
-nav .primary_nav > li > a{ display:block; padding: 12px 18px; line-height:100%; font-size:16px; color:#635D52; text-decoration:none; text-transform:uppercase; font-family: 'century gothic', sans-serif; text-shadow: 1px 1px 0 white;}
+nav .primary_nav > li > a{ display:block; padding: 12px 18px; line-height:100%; font-size:16px; color:#333; text-decoration:none; text-transform:uppercase; font-family: 'century gothic', sans-serif; text-shadow: 1px 1px 0 white;}
 .primary_nav > li > a:hover{text-shadow: none;color:#fff;}
 nav .primary_nav > li:hover > a{color:#fff;}
 nav .primary_nav li.active > a{ text-shadow: none;color:#fff;}
@@ -174,7 +175,7 @@ header ul span.item { color: #e9e9e9;}
 #cause_background {height: 400px; width: 100%;}
 
 #cause .cause_description {margin-bottom: 10px; overflow: hidden;}
-.org_logo {width: 95px;  margin-right: 20px; margin-bottom: 15px; display: inline-block; float: left;}
+.org_logo {width: 95px;  margin-right: 10px; margin-bottom: 15px; display: inline-block; float: left;}
 #like_follow {display: block; width: 100%;}
 
 #call-to-action {font-size: 18px; margin: 0 !important; float: left; clear: both;}
@@ -194,14 +195,23 @@ box-shadow: 0 2px 3px #999; width: 100%; border-bottom: 5px solid #fff; padding:
     position: relative;}
 #goals .donation_container {margin: 0 auto; width: 190px;}
 #goals .goal_container {text-align: center; float: left; margin-right: 31px; width: 31%;}
-.goals_section > ul {border-top: 1px solid white; overflow: hidden; padding: 30px 0;}
+.goals_section > ul {border-top: 1px solid white; overflow: hidden; padding: 20px 0;}
+.goals_section div {margin-bottom: 7px;} 
 #goals li { text-align: center;}
-#goals div:last-child {margin-right: 0;}
+#goals div:last-child {margin-right: 0; padding-top: 2px;}
 #goals #goalbar {height: 4px; float: right; width: 100%; background: none repeat scroll 0 0 transparent; border-top: 1px solid #ccc; background: #fff; margin: 8px 0; }
 #goals #goalbar i {width: 65%; background: none repeat scroll 0 0 #BCD80A; height: 4px; max-width: 100%; padding: 0; margin: 0; line-height: 0; display: block; }
-#goals h3 {color: #312E2B; font-size: 20px; text-transform: none; padding-bottom: 20px; border-bottom: 1px solid #ccc;}
+#goals h3 {color: #312E2B; font-size: 17px; text-transform: none; padding-bottom: 20px; border-bottom: 1px solid #ccc; font-family: 'century gothic', sans-serif; line-height: 1.4;}
 #goals span {color: #777;}
 #goals .bucks {margin-left: 15px; font-size: 35px; color: #43403D;  }
+
+.fb-icon, .tt-icon, .money-icon {height: 51px; cursor: pointer; background: no-repeat center bottom ;-moz-transition:all 0.2s ease-out 0s; -webkit-transition: all 0.2s ease-out;}
+
+.fb-icon {background: url("../../assets/image-yanapana/facebook_icon.png") no-repeat center bottom;}
+.fb-icon:hover {background-position: center top;}
+
+.tt-icon {background: url("../../assets/image-yanapana/twitter_icon.png") no-repeat center bottom;}
+.tt-icon:hover {background-position: center top;} 
 
 /*-----------------------------------COUNTERS*/
 #counters-section {box-shadow: 0 2px 3px #999; width: 100%; border-bottom: 5px solid #fff; padding: 20px 0; background: #ffffff; /* Old browsers */
@@ -237,7 +247,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 .artist {width: 18%; float: left; margin: 0 4% 0 0;}
 
 /*-----------------------------------SOCIAL MEDIA BUTTONS*/
-.comments_tag {font-family: 'century gothic', sans-serif; font-size: 17px; padding: 20px 0; display:block;  margin: 0 auto;}
+.comments_tag {font-family: 'century gothic', sans-serif; font-size: 17px; padding: 20px 0; display:block;  margin: 0 auto; line-height: 1.4;}
 .comments { margin: 0 auto; border-top: 1px solid white; overflow: hidden;}
 #comments {width: 700px; margin: 0 auto;}
 .fb-like, .follow-btn {float:left; margin: 0 15px 0 0;}
@@ -330,7 +340,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 .product_rightcol .size_info label{ font-size:11px; color:#5f5a56; text-transform:uppercase; float:left; padding-right:10px; line-height:24px;}
 .product_rightcol .size_info > div{ float:left; margin-right:45px;}
 .product_rightcol .qty_info{ padding:7px 0px; display:inline-block; width:100%;}
-.product_rightcol .qty_info label{ margin-right: 33px; font-size:11px; color:#5f5a56; text-transform:uppercase; float:left; padding-right:10px; line-height:24px; }
+.product_rightcol .qty_info label{ margin-right: 37px; font-size:11px; color:#5f5a56; text-transform:uppercase; float:left; padding-right:10px; line-height:24px; }
 .product_rightcol .qty_info > div{ float:left; margin-right:45px;}
 .product_rightcol div.selector, .product_rightcol input{ width:70px !important;}
 .product_rightcol div.selector span{width:75px;}
@@ -447,13 +457,13 @@ footer .footer_links>li:first-child{ padding-left:0px;}
 footer .footer_links li span a{color:#e9e9e9; font-weight:bold; display:block; padding-bottom:12px;}
 footer .footer_links li a{ color:#999; display:block; padding:4px 0px; line-height:100%; text-decoration:none;}
 footer .footer_links li.seperator{border-right:solid 1px #d6d6d6;}
-footer .footer_customblock{ border-left:solid 1px #544F4B; float:right; width:272px; min-height:205px;}
+footer .footer_customblock{ border-left:solid 1px #555; float:right; width:272px; min-height:205px;}
 footer .footer_customblock>div{padding:20px;}
-footer .footer_customblock .shipping_info{ line-height:22px; font-size:14px; color:#e9e9e9;  border-bottom:solid 1px #544F4B; overflow: hidden;}
+footer .footer_customblock .shipping_info{ line-height:22px; font-size:14px; color:#e9e9e9;  border-bottom:solid 1px #555; overflow: hidden;}
 footer .footer_customblock #social_media {float: left;}
 footer .footer_customblock .shipping_info big{ font-family: 'century gothic', sans-serif; text-transform:uppercase; font-size:16px; font-weight:bold; color: #BCD80A; }
 footer .footer_customblock .contact_info big{font-family: istok web, serif; font-size:16px; font-weight:bold; color:#e9e9e9;}
-footer address{ display:inline-block; width:100%; border-top:solid 1px #544F4B; font-size:11px; color:#909090; padding:25px 0px; margin-top:15px; line-height:25px;}
+footer address{ display:inline-block; width:100%; border-top:solid 1px #555; font-size:11px; color:#909090; padding:25px 0px; margin-top:15px; line-height:25px;}
 footer address img{ float:right;}
 
 .contact_info input {    border: 1px solid #ddd;
@@ -582,7 +592,7 @@ ul.breadcrumb li a{ color:#bdbdbd; text-decoration:none;}
 .checkout_steps #checkout-step-login{ padding:17px; border:solid 1px #e7ded5; display:block; overflow: hidden;}
 #checkout-step-login label{ font-size:13px; display:inline-block; font-weight: bold; }
 .checkout_steps input[type="text"], .checkout_steps input[type="tel"], .checkout_steps input[type="email"], .checkout_steps input[type="password"] { border:1px solid #D7D7D7; padding:4px; width:230px;}
-.checkout_steps h6{ font-size:18px; padding-bottom:20px;}
+.checkout_steps h6{ font-size:17px; padding-bottom:20px; font-family: 'century gothic', inherit;}
 .checkout_steps h4{ color:#312e2b; font-size:13px; font-weight:bold;}
 .checkout_steps p{ padding-bottom:12px; overflow: hidden;}
 .checkout_steps a{ text-decoration:underline; color:#312e2b;}
@@ -666,7 +676,7 @@ p.tick{ padding:10px 0px 10px 20px;background:url(../../assets/image-yanapana/ti
 .collaborators li h2 {width: 100%;}
 
 /*Dashboard*/
-.dashboard-lcol > img {border: 1px solid #bbb; margin-bottom: 5px;}
+.dashboard-lcol > img {border: 1px solid #bbb; margin-bottom: 5px;} 
 .dashboard-lcol {width: 215px; float: left;}
 .dashboard-rcol.fr {margin-right: 0; width: 725px;}
 
@@ -689,9 +699,10 @@ p.tick{ padding:10px 0px 10px 20px;background:url(../../assets/image-yanapana/ti
 .profile_info.stats-content p {padding: 0; display: inline-block; }
 .profile_info.stats-content span {float: right;}
 
+
+.product-stats-content > h3 {padding: 30px;}
 .product-stats-content > ul {padding: 25px 0px 25px 30px;}
 .dashboard-products > li { float: left; margin-bottom: 25px; padding-right: 30px; width: 29%; }
-
 
 .stats-content {border: 1px solid #ccc;}
 .stats.bb {padding: 5px 10px; background: #fff; }
@@ -779,7 +790,7 @@ input, select, textarea, button{ font-size:12px;}
 .message, .flash.notice{ padding:20px 15px 20px 85px; font-size:14px; line-height:100%; margin-bottom:15px;}
 .message.success { color:#91a158; background:url(../../assets/image-yanapana/message_cart.png) no-repeat 15px center #f9fff1; border:solid 1px #dcedbf;}
 .message.warning{ color:#91a158; background: url("../../assets/image-yanapana/message_cart.png") no-repeat scroll 15px center #FFD1D1; border:solid 1px #F8ACAC;}
-.success, .flash.notice {color: #91a158; background: none repeat scroll 0 0 #f9fff1; border: 1px solid #acc600; font-size: 14px; line-height: 100%; margin-bottm: 15px; margin-top: 15px; padding: 20px 15px 20px 85px; }
+.success, .flash.notice {text-align: center; color: #91a158; background: none repeat scroll 0 0 #f9fff1; border: 1px solid #acc600; font-size: 14px; line-height: 100%; margin-bottm: 15px; margin-top: 15px; padding: 20px 15px 20px 85px; }
 .success a {color: #544F4B; text-decoration: none;}
 .brown_btn, .checkout_steps input[type="submit"], .checkout_steps a.button { text-decoration: none; float: right; color:#fff; font-size:14px; font-weight:bold; padding:8px 14px; background:#544F4B; border:0px; line-height:100%; cursor:pointer; vertical-align:middle;}
 .button.primary.fl {float: none; display: inline-block;}
@@ -817,6 +828,9 @@ img{ max-width:100%;}
 
 .arrow.down {background: url("../../assets/image-yanapana/dk_arrows.png") no-repeat no-repeat scroll 125px 1px transparent;}
 .arrow.down:hover {background: url("../../assets/image-yanapana/dk_arrows_hover.png") no-repeat no-repeat scroll 125px 1px transparent;}
+
+.hidden_desktop {display: none;}
+
 
 /*Forms*/
 div.selector, .product_rightcol input {
@@ -863,7 +877,7 @@ nav .minicart span b,
 footer .footer_customblock .shipping_info span, .footer_container, ul.breadcrumb li.active, .product_rightcol .pr_price big, footer .footer_links li a:hover, #shopping-cart-table tr td span.pr_info, #totals-table .total, .cart_drop ul li span.price, .cart_drop .cart_bottom .subtotal_menu big, ul.simpleTabsNavigation li a.current, .side_nav li a:hover, .twitter_feed a{color:#bcd80a;}
 footer, ul.sub_menu, .sideNavCategories > ul, ul.sub_menu > li > ul, .checkout_tax .shipping_tax, .checkout_discount, .cart_drop, .size_drop, .size_drop2, .size_drop3, ul.simpleTabsNavigation li a.current {border-top-color:#bcd80a;}
 .flexslider .flex-direction-nav li a:hover, nav .primary_nav > li > a:hover, nav .primary_nav > li:hover > a, .product_rightcol .add_to_buttons button.add_cart, .action_buttonbar button.checkout, #shopping-cart-table tr td a.remove:hover, #shopping-cart-table tr td button.update:hover, .sideNavCategories > ul.departments > li > a:hover, .sideNavCategories > ul.departments > li > a.active, span.highlight_text{ background-color:#bcd80a;}
-.products_list li:hover img, .products_list_list li:hover img{ border-color:#BCD80A}
+.products_list li:hover img, .products_list_list li:hover img{ border-color:#bbb}
 .flex-caption{ border-left-color:#bcd80a}
 .footer_background {padding-bottom: 20px; background: url("../../assets/image-yanapana/footer_bg.png"); background-repeat: repeat-x; height: 8px; position: relative; top: -8px;}
 .footer_container {color: white !important; background: #333; }
@@ -892,8 +906,8 @@ body {background: #333;}
 {font-family: "istok web", serif; font-weight:400;}
 
 /*TYPOGRAPHY*/
-h2.sub_title{ font-family: 'century gothic', sans-serif; font-size:17px; color:#312e2b; font-weight:bold; padding-bottom:17px; padding-top: 10px; text-transform:uppercase;}
-h3 {text-transform: capitalize; font-family: inherit; font-size: 18px; color:#312e2b; font-weight:normal; padding-bottom:12px; }
+h2.sub_title{ font-family: 'istok web', sans-serif; font-size:18px; color:#312e2b; font-weight:bold; padding-bottom:17px; padding-top: 10px; text-transform:uppercase;}
+h3 {line-height: 1.4; text-transform: capitalize; font-family:'century gothic', sans-serif; font-size: 17px; color:#312e2b; font-weight:normal; padding-bottom:12px; }
 .flex-caption h3{ text-transform:uppercase; font-size:22px; line-height:30px; font-weight:bold;}
 
 #headline h1 { color: #312E2B;  font-family: "skippy-sharp",cursive; font-size: 45px; text-shadow: 1px 1px 0 #fff; text-transform: uppercase; font-weight: bold;}

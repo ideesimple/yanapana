@@ -18,7 +18,7 @@ footer .footer_customblock{ display:none;}
 .subscribe_block .subscribe_nl small{ width:405px;}
 .subscribe_block .subscribe_nl form{ margin-top:6px; float:left;}
 header .header_search input{ width:82%;}
-.hidden_tablet {display: none;}
+.hidden_tablet {display: none ;}
 
 
 /*Home*/
@@ -138,7 +138,7 @@ width:300px !important;
 
 header {width: 75%;}
 
-
+.hidden_desktop {display: inline-block;} 
 
 
 
@@ -231,16 +231,16 @@ h1.logo { display: block; width:180px; margin:auto; float:none; padding:15px 0;}
 .jcarousel-skin-tango .jcarousel-item{ padding:0px 35px;}
 .products_list{ padding-bottom:20px;}
 
-#social_media {display: none;}
-#social_media .find_us{ width:260px; margin-left:38px; border:none; padding:0px; box-shadow:none; margin-bottom:10px;}
+
+#social_media .find_us{ width:260px; border:none; padding:0px; box-shadow:none; margin-bottom:10px;}
 #social_media .subscribe_nl{ width:268px; margin-right:20px; padding-top:5px; border-top:solid 1px #A29C97;}
 #social_media.subscribe_nl small{ display:none;}
 #social_media .subscribe_nl form{ margin-top:5px;}
 
-footer .footer_links > li{ width:100%; padding:0px; margin-bottom:10px; border-bottom: 1px solid #544F4B;}
+footer .footer_links > li{ width:100%; padding:0px; margin-bottom:10px; border-bottom: 1px solid #555;}
 footer .footer_links > li.seperator{ border:none;}
 footer .footer_customblock{ border-left:none; width:100%; min-height:inherit;}
-footer .footer_customblock > div{ padding:10px;}
+footer .footer_customblock > div{ padding:10px 0;}
 footer address { margin-top:0px; text-align:center;}
 footer address img{ float:none;}
 
@@ -254,7 +254,7 @@ footer address img{ float:none;}
 /*Detail Page*/
 .product_leftcol, .product_rightcol{ width:310px;}
 .product_rightcol h1{ padding-top:20px;}
-.product_rightcol .size_info label{ width:90px;}
+.product_rightcol .size_info label{ width:93px;}
 .product_rightcol .size_sel{ margin-bottom:5px;}
 .product_rightcol .add_to_buttons{ padding:15px 0px;}
 .product_rightcol .add_to_buttons span{ width:33px;}
