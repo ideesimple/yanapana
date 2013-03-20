@@ -119,7 +119,8 @@ $("#caja").slideUp();
                         <div id="fb_colsize">
                           <li>
 
-                                <%= image_tag ("image-yanapana/facebook_icon.png")%>
+                                <div class="fb-icon hidden_movil"></div>
+                                <%= image_tag ("image-yanapana/facebook_icon.png"), :class=>'hidden_desktop'%>
                                 <div id="goalbar" class="goalbar_style"><i class="progBar"></i></div>
                                 <div class="stats">
                                     <h4>
@@ -134,7 +135,8 @@ $("#caja").slideUp();
                         </div>
                         <div id="tt_colsize">
                             <li>
-                                <%= image_tag ("image-yanapana/twitter_icon.png")%>
+                                <div class="tt-icon hidden_movil"></div>
+                                <%= image_tag ("image-yanapana/twitter_icon.png"), :class=>'hidden_desktop'%>
                                 <div id="goalbar" class="goalbar_style"><i class="progBar"></i></div>
                                 <div class="stats">
                                     <h4>
