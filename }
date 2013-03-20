@@ -1,0 +1,217 @@
+<div class="section_container jean pb">
+	<section>
+		<ul class="breadcrumb">
+				    <li><%= link_to "Home", root_path %></li>
+				    <li class="active">Dashboard</li>
+			</ul>
+	    <div class="full_page">
+              <h2 class="sub_title">Welcome <%= @artist.name %>!</h2>
+              <div class="dashboard-lcol">
+              <%= image_tag ("image-yanapana/artist.jpg")%>
+</br>
+</br>
+              <div id="dashboard-box">
+                <div class="dashboard-title">
+                    <h5>About</h5>
+                  </div>
+                <ul class="profile_info">
+                               <li>
+                                 <p><%= @artist.date_of_birth%></p>
+                               </li>
+                               <li>
+                                 <p><%= @artist.sex %></p>
+                               </li>
+                               <li>
+                                 <p><%= @artist.city %></p>
+                               </li>
+                               <li>
+                                 <p><%= @artist.state %></p>
+                               </li>
+                               <li>
+                                 <p><%= @artist.email %></p>
+                               </li>
+                               <li>
+                                 <p>12</p>
+                               </li>
+                               <li>
+                                 <p><%= @artist.type_art  %></p>
+                               </li>
+                               <li>
+                                 <p><%= @artist.webpage %></p>
+                               </li>
+                               <li>
+                                 <p><%= @artist.link_twitter %></p>
+                               </li>
+                               <li>
+                                 <p><%= @artist.link_facebook %></p>
+                               </li>
+                  </ul>
+              </div>
+</br>
+</br>
+              <div id="dashboard-box">
+                <div class="dashboard-title">
+                    <h5>General Stats</h5>
+                  </div>
+                <ul class="profile_info">
+                                 <li>
+                                   <p>Total Products</p><span><%= @total_per_cause %></span>
+                                 </li>
+                                 <li>
+                                   <p>Total Sales</p><span>$<%= @sales %></span>
+                                 </li>
+                                 <li>
+                                   <p>Revenue</p><span>$0.00</span>
+                                 </li>
+                </ul>
+              </div>
+              </div>
+
+              <div class="dashboard-rcol fr">
+
+                <div id="dashboard-box">
+                  <div class="dashboard-title">
+                      <h5>Profile</h5>
+                  </div>
+                <div class="profile_info">
+                  <div class="profile_info_container">
+                  <h3>Biography</h3>
+                  <p>
+  Every week we design and produce a new line of clothing, exclusively found on our website. Instead of spending money in traditional advertising and distribution to traditional storefronts, we donate that money, $8 per item sold, to causes that bring positive change to the world through women
+                  </p>
+                </br>
+              </br>
+                    <h3>Reason to design for Yanapana</h3>
+                  <p><%= @artist.reason %>  </p>
+                  </div>
+                </div>
+</br>
+</br>
+
+                 <div id="dashboard-box">
+                  <div class="dashboard-title">
+                    <h5>Product Stats</h5>
+                  </div>
+                    <div class="product-stats-content">
+
+                      <ul class="dashboard-products">
+                        <!--Recorrer todas las causas -->
+                        <% @causes.each do |cause| %>
+                          <% cause.products.each do |product| %>
+                            <li>
+                            <%= image_tag ("image-yanapana/tshirt.jpeg")%>
+                              <div class="stats-content">
+                                <div class="stats"><h5><%= product.name %></h5></div>
+                                <div class="stats bb"><p>Unit Price</p><span>$<%= product.master_price %></span></div>
+                                <div class="stats bb"><p>Sales per Unit</p><span>26</span></div>
+                                <div class="stats bb"><p>Total Sales</p><span>$520.00</span></div>
+                              </div>
+                            </li>
+                          <% end %>
+                        <% end %>
+                        <!--
+                        <li>
+                          <% image_tag ("image-yanapana/tshirt.jpeg")%>
+                                                <div class="stats-content">
+                                                  <div class="stats"><h5>Made in LA</h5></div>
+                                                    <div class="stats bb"><p>Unit Price</p><span>$20.00</span></div>
+                                                    <div class="stats bb"><p>Sales per Unit</p><span>26</span></div>
+                                                    <div class="stats bb"><p>Total Sales</p><span>$520.00</span></div>
+                                                </div>
+                        </li>
+                        <li>
+                          <% image_tag ("image-yanapana/tshirt.jpeg")%>
+                                                <div class="stats-content">
+                                                  <div class="stats"><h5>Made in LA</h5></div>
+                                                    <div class="stats bb"><p>Unit Price</p><span>$20.00</span></div>
+                                                    <div class="stats bb"><p>Sales per Unit</p><span>26</span></div>
+                                                    <div class="stats bb"><p>Total Sales</p><span>$520.00</span></div>
+                                                </div>
+                        </li>
+                        <li>
+                          <% image_tag ("image-yanapana/tshirt.jpeg")%>
+                                                <div class="stats-content">
+                                                  <div class="stats"><h5>Made in LA</h5></div>
+                                                    <div class="stats bb"><p>Unit Price</p><span>$20.00</span></div>
+                                                    <div class="stats bb"><p>Sales per Unit</p><span>26</span></div>
+                                                    <div class="stats bb"><p>Total Sales</p><span>$520.00</span></div>
+                                                </div>
+                        </li>
+                        <li>
+                          <% image_tag ("image-yanapana/tshirt.jpeg")%>
+                                                <div class="stats-content">
+                                                  <div class="stats"><h5>Made in LA</h5></div>
+                                                    <div class="stats bb"><p>Unit Price</p><span>$20.00</span></div>
+                                                    <div class="stats bb"><p>Sales per Unit</p><span>26</span></div>
+                                                    <div class="stats bb"><p>Total Sales</p><span>$520.00</span></div>
+                                                </div>
+                        </li>
+                         <li>
+                          <% image_tag ("image-yanapana/tshirt.jpeg")%>
+                                                <div class="stats-content">
+                                                  <div class="stats"><h5>Made in LA</h5></div>
+                                                    <div class="stats bb"><p>Unit Price</p><span>$20.00</span></div>
+                                                    <div class="stats bb"><p>Sales per Unit</p><span>26</span></div>
+                                                    <div class="stats bb"><p>Total Sales</p><span>$520.00</span></div>
+                                                </div>
+                        </li>
+                         <li>
+                          <% image_tag ("image-yanapana/tshirt.jpeg")%>
+                                                <div class="stats-content">
+                                                  <div class="stats"><h5>Made in LA</h5></div>
+                                                    <div class="stats bb"><p>Unit Price</p><span>$20.00</span></div>
+                                                    <div class="stats bb"><p>Sales per Unit</p><span>26</span></div>
+                                                    <div class="stats bb"><p>Total Sales</p><span>$520.00</span></div>
+                                                </div>
+                        </li>
+                         <li>
+                          <% image_tag ("image-yanapana/tshirt.jpeg")%>
+                                                <div class="stats-content">
+                                                  <div class="stats"><h5>Made in LA</h5></div>
+                                                    <div class="stats bb"><p>Unit Price</p><span>$20.00</span></div>
+                                                    <div class="stats bb"><p>Sales per Unit</p><span>26</span></div>
+                                                    <div class="stats bb"><p>Total Sales</p><span>$520.00</span></div>
+                                                </div>
+                        </li>
+                         <li>
+                          <% image_tag ("image-yanapana/tshirt.jpeg")%>
+                                                <div class="stats-content">
+                                                  <div class="stats"><h5>Made in LA</h5></div>
+                                                    <div class="stats bb"><p>Unit Price</p><span>$20.00</span></div>
+                                                    <div class="stats bb"><p>Sales per Unit</p><span>26</span></div>
+                                                    <div class="stats bb"><p>Total Sales</p><span>$520.00</span></div>
+                                                </div>
+                          </li>
+                          -->
+                      <!--Termina el bloque de recorrer las causas -->
+                      </ul>
+
+
+                    </div>
+                 </div>
+
+              </div>
+
+            </div>
+        </section>
+</div>
+
+    <%= @artist.last_name %>
+    <% unless @causes.nil? %>
+      <% @causes.each do |cause|%>
+        <%= cause.title %>
+        <% cause.products.each do |product| %>
+
+          <%= product.name %>
+          <%= Spree::Order.total_per_product(product).count%>
+          <% Spree::Order.total_per_product(product).each do |a|%>
+            <%= a.id %>
+          <% end %>
+
+          <% unless product.master.images.nil? %>
+            <% small_image(product) %>
+          <% end %>
+        <% end %>
+      <% end %>
+    <% end %>
+

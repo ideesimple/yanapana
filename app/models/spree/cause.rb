@@ -27,6 +27,8 @@ class Spree::Cause < ActiveRecord::Base
     },
     :bucket => Spree::Config[:s3_bucket]
 
+
+
 before_save :youtube
 before_update :youtube
 
