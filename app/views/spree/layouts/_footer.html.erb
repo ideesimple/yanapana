@@ -5,40 +5,40 @@
             <ul class="footer_links">
                 <li><span><%= link_to "Home", root_url %></span>
                     <ul class="hidden_movil">
-                        <li><a href="http://localhost:3000/#cause">Cause</a><% link_to "Cause", root_url %></li>
-                        <li><a href="http://localhost:3000/#goals">Goals</a></li>
-                        <li><a href="http://localhost:3000/#products">Products</a></li>
-                        <li><a href="http://localhost:3000/#artist">Artist</a></li>
-                        <li><a href="http://localhost:3000/#comments">Comments</a></li>
+                        <li><%= link_to "Cause", root_url + "#cause" %></li>
+                        <li><%= link_to "Goals", root_url + "#goals" %></li>
+                        <li><%= link_to "Products", root_url + "#products" %></li>
+                        <li><%= link_to "Artist", root_url + "#artist" %></li>
+                        <li><%= link_to "Comments", root_url + "#comments" %></li>
                     </ul>
                 </li>
-                <li><span><a href="http://localhost:3000/about-us">About Us</a></span>
+                <li><span><%= link_to "About Us", about_us_path %></span>
                     <ul class="hidden_movil">
-                        <li><a href="http://localhost:3000/about-us#whoweare">Who is YANAPANA?</a></li>
-                        <li><a href="http://localhost:3000/about-us#motivation">Our Motivation</a></li>
-                        <li><a href="http://localhost:3000/about-us#whatwedo">What We Do</a></li>
-                        <li><a href="http://localhost:3000/about-us#family">Our Family</a></li>
+                        <li><%= link_to "Who is YANAPANA?", about_us_path + "#whowearw"%></li>
+                        <li><%= link_to "Our Motivation", about_us_path + "#motivation"%></li>
+                        <li><%= link_to "What We Do", about_us_path + "#whatwedo"%></li>
+                        <li><%= link_to "Our Family", about_us_path + "#family"%></li>
                     </ul>
                 </li>
-                <li> <span><a href="http://localhost:3000/contact-us">Contact Us</a></span>
+                <li> <span><%= link_to "Contact Us", contact_us_path %></span>
                     <ul class="hidden_movil">
-                        <li><a href="http://localhost:3000/contact-us#leavemessage">Suggestions</a></li>
-                        <li><a href="http://localhost:3000/contact-us#leavemessage">Questions</a></li>
-                        <li><a href="http://localhost:3000/contact-us#leavemessage">Work With Us </a></li>
+                        <li><%= link_to "Suggestions", contact_us_path + "#leavemessage" %></li>
+                        <li><%= link_to "Questions", contact_us_path + "leavemessage" %></li>
+                        <li><%= link_to "Work With Us", contact_us_path + "leavemessage" %></li>
                     </ul>
                 </li>
-                <li> <span><a href="http://localhost:3000/how-it-works">How It Works</a></span>
+                <li> <span><%= link_to "How it Works", how_it_works_path %> </span>
                     <ul class="hidden_movil">
-                        <li><a href="http://localhost:3000/how-it-works#submityourdesigns">Submit Your Designs </a></li>
+                        <li><%= link_to "Submit Your Designs", how_it_works_path + "submityourdesigns"%></li>
                     </ul>
                 </li>
-                <li><span><a href="http://localhost:3000/faq">Help</a></span>
+                <li><span><%= link_to "Help", faq_path %></span>
                     <ul class="hidden_movil">
-                        <li><a href="http://localhost:3000/faq">Shipping Costs</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">Terms and Conditions of Returns</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Shipping Information</a></li>
+                        <li><%= link_to "Shipping Costs", faq_path %></li>
+                        <li><%= link_to "Contact Us", contact_us_path %></li>
+                        <li><%= link_to "Terms and Conditiond of Returns", faq_path %></li>
+                        <li><%= link_to "Privacy Policy", faq_path %></li>
+                        <li><%= link_to "Shipping Information", faq_path %></li>
                     </ul>
                 </li>
             </ul>
