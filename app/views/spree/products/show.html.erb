@@ -1,42 +1,9 @@
-<% content_for :head do %>
-<script>
-  $(document).ready(function() {
-
-	    $('.add_cart').click(function(){
-            $('html, body').animate({scrollTop:0}, 'slow');
-            return true;
-
-            location.reload();
-	    });
-
-	});
-</script>
-
-<!--Este script sirve para colapsar el quick overview-->
-  <script type="text/javascript">
-    $(function()
-    {
-
-      $("#mostrar").click(function(event) {
-        event.preventDefault();
-        $("#caja").slideToggle();
-      });
-
-      $("#caja a").click(function(event) {
-        event.preventDefault();
-        $("#caja").slideUp();
-      });
-    });
-  </script>
-
-
-<% end %>
-
-<% content_for :metatags do %>
+<% content_for :datos_sociales do %>
+  <% unless @product.nil? %>
     <%= ('<meta property="og:title" content=" Yanapana | ' + @product.name  + ' " />').html_safe %>
-    <%= ('<meta property="og:url" content="' + root_url + '" />').html_safe %>
-    <%= ('<meta property="og:image" content="' + product_image(@product).to_s + '" />').html_safe %>
-    <%= ('<meta property="og:description" content="' + @product.description.to_s  + '" />').html_safe %>
+    <%= ('<meta property="og:url" content="'  + product_url(@product) + '" />').html_safe %>
+    <%= ('<meta property="og:description" content="' + @product.cause.title  + '" />').html_safe %>
+    <%= ('<meta property="og:image" content="' + product_image(@product).to_s + '" />').html_safe %>  <% end %>
 <% end %>
 
 <div class="section_container jean">
@@ -166,29 +133,20 @@
               <h4></h4>
               <div class="org_logo"><%= link_to (image_tag(@product.cause.organization.photo.url(:org))), root_path %></div>
               <!--Facebook like button Starts-->
-<div class="fb-like" data-href="<%= root_url %>" data-send="false" data-layout="button_count" data-width="450" data-show-faces="true"></div>
+              <div class="fb-like" data-font="arial" data-show-faces="true" data-width="50px" data-layout="button_count" data-send="false" ></div>
               <!--Facebook like button Ends-->
 
-
          <!--Twitter follotw button Starts-->
-      <a href="https://twitter.com/share" class="twitter-share-button" data-url="https://www.facebook.com/YANAPANAcom?ref=ts&amp;fref=ts">Tweet</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-      <!--Twitter follotw button Ends-->
-
-
+         <a class="twitter-share-button" data-via="yanapana" href="https://twitter.com/share" data-text="Compartiendo el producto ">Tweet</a>
+         <!--Twitter follotw button Ends-->
             </div>
-
             <!--ORG Description Ends-->
-
           </div>
-
-
         </div>
         <!--Product Right Ends-->
       </div>
       <!--PRODUCT DETAIL ENDS-->
     </section>
-
 
   <div id="artist-section" class="artist-inspiration jean">
     <section>
@@ -209,22 +167,43 @@
       <!--Facebook like button Ends-->
       <!--Twitter follotw button Starts-->
 
-      <a href="https://twitter.com/share" class="twitter-share-button" data-url="https://www.facebook.com/YANAPANAcom?ref=ts&amp;fref=ts">Tweet</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-
+      <a href="https://twitter.com/share" class="twitter-share-button" data-url="https://www.incazteh.com?ref=ts&amp;fref=ts">Tweet</a>
       <!--Twitter follotw button Ends-->
     </section>
   </div>
 </div>
 
 
+<% content_for :javascripts do %>
 <!--Facebook like script-->
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
   js = d.createElement(s); js.id = id;
   js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
+
+
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+<!--Este script sirve para colapsar el quick overview-->
+  <script type="text/javascript">
+    $(function()
+    {
+
+      $("#mostrar").click(function(event) {
+        event.preventDefault();
+        $("#caja").slideToggle();
+      });
+
+      $("#caja a").click(function(event) {
+        event.preventDefault();
+        $("#caja").slideUp();
+      });
+    });
+  </script>
+<% end %>
+
 
