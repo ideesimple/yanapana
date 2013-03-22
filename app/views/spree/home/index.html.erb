@@ -49,7 +49,7 @@
 
                               <!--ORG Logo Ends-->
                               <!--ORG Description Starts-->
-
+                            <% if @cause.organization %>
                               <h4 class="hidden_movil hidden_tablet">Organization</h4>
                               <p class="hidden_movil hidden_tablet"><%= @cause.organization.description%></p>
 
@@ -70,6 +70,7 @@
                                   <h1 id="call-to-action" class="sc-button blue"></h1>
                               <!--Shop Now Ends-->
                           </div>
+                          <% end %>
                           <!--ORG Description Ends-->
                           </div>
                           <!--Cause Description Ends-->
