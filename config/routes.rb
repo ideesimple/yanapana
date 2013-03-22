@@ -23,6 +23,5 @@ Yanapana::Application.routes.draw do
       match "about-us" => "home#about_us", :as => :about_us
       match "dashboard" => "home#dashboard", :as => :dashboard
       match "subscribe" => "home#subscribe", :as => :subscribe
-
     end
 end

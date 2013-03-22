@@ -8,75 +8,69 @@
   <%= render :partial => 'spree/layouts/head' %>
   <%= yield :head %>
   <%= favicon_link_tag 'favicon.ico' %>
-  <%= yield :metatags %>
 </head>
 
 <body>
-	<div class="wrapper">
-		<div class="header_container">
-      		<!--Header Starts-->
-            <%= render :partial => 'spree/layouts/header' %>
-		 </div>
-		<!--Branding Starts-->
-    		<div class="branding_container jean">
-          		<div class="branding_area">
-                	<!--Logo Starts-->
-                    	<h1 class="logo"><%=link_to (image_tag("image-yanapana/logo_header.png")), root_path%></h1>
-                    	<a name="top"></a>
-		        <!--Logo Ends-->
-		        <!--Countdown Starts-->
-            <div id='open-until'></div>
-            <!--Countdown Ends-->
-			</div>
-	    	</div>
-		<%= yield :breadcrumbs %>
-            	<!--Branding Ends-->
- <div class="navigation_container jean">
-        <!--Navigation Starts-->
-        <nav>
-            <ul class="primary_nav">
-                <li class="active"><%= link_to "Home", root_path %>
-                    <!--SUbmenu Starts
-                    <ul class="sub_menu">
-                        <li> <a href="#">Dresses</a>
-                            <ul>
-                                <li><a href="#">Skirts</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    SUbmenu Ends-->
-                </li>
-                <li><a href="#">Blog</a>
-                    <!--SUbmenu Starts-->
-                    <!--SUbmenu Ends-->
-                </li>
-                <li><%= link_to "About Us", about_us_path  %></li>
-                <li><%= link_to "Contact Us", contact_us_path  %></li>
-                <li><%= link_to "How it works!", how_it_works_path  %></li>
-                <li><%= link_to "FAQ", faq_path  %></li>
-            </ul>
-            <div id="social_media">
-                <div class="find_us hidden_movil">
-                   <a class="facebook" href="http://www.facebook.com/YANAPANAcom?fref=ts"></a> <a class="twitter" href="https://twitter.com/yanapanawear"></a> <a class="pinterest" href="#"></a> </div>
-            </div>
+  <div class="wrapper">
+    <div class="header_container">
+      <!--Header Starts-->
+      <%= render :partial => 'spree/layouts/header' %>
+    </div>
+    <!--Branding Starts-->
+    <div class="branding_container jean">
+      <div class="branding_area">
+        <!--Logo Starts-->
+        <h1 class="logo"><%=link_to (image_tag("image-yanapana/logo_header.png")), root_path%></h1>
+        <!--Logo Ends-->
+        <!--Countdown Starts-->
+        <div id='open-until'></div>
+        <!--Countdown Ends-->
+      </div>
+    </div>
+    <!--Branding Ends-->
+    <div class="navigation_container jean">
+      <!--Navigation Starts-->
+      <nav>
+        <ul class="primary_nav">
+          <li class="active"><%= link_to "Home", root_path %></li>
+          <li><a href="#">Blog</a></li>
+          <li><%= link_to "About Us", about_us_path  %></li>
+          <li><%= link_to "Contact Us", contact_us_path  %></li>
+          <li><%= link_to "How it works!", how_it_works_path  %></li>
+          <li><%= link_to "FAQ", faq_path  %></li>
+        </ul>
+        <div id="social_media">
+          <div class="find_us hidden_movil">
+            <a class="facebook" href="http://www.facebook.com/YANAPANAcom?fref=ts"></a> <a class="twitter" href="https://twitter.com/yanapanawear"></a> <a class="pinterest" href="#"></a> </div>
+        </div>
 
-        </nav>
-        <!--Navigation Ends-->
+      </nav>
+      <!--Navigation Ends-->
     </div>
 
-                  <% flash_messages %>
-                  <%= yield %>
-                  <%= yield :sidebar %>
+    <%= flash_messages %>
+    <%= yield %>
+    <% yield :sidebar %>
 
 
-	</div><!--End Wrapper-->
+  </div><!--End Wrapper-->
 
 
-              <%= render :partial => 'spree/layouts/footer' %>
+  <%= render :partial => 'spree/layouts/footer' %>
+  <%@cause = Spree::Cause.where("date_start <= ? AND date_finish >= ?", Date.today, Date.today).order('date_start ASC').first%>
+  <% unless @cause.nil? %>
+    <%= javascript_include_tag "jquery.countdown.min" %>
+      <script type="text/javascript" language="javascript" charset="utf-8">
+    $(document).ready(function(){
+        var liftoffTime = new Date(<%= @cause.date_finish.to_time.to_i * 1000 %>);
+        $("#open-until").countdown({until: liftoffTime, layout: "<%= escape_javascript(render :partial => 'spree/shared/countdown')%>"
+          });
+        });
+    </script>
+  <% end %>
+  <%= yield :javascripts %>
 
-              <%= yield :javascripts %>
+  <%= render :partial => 'spree/shared/google_analytics' %>
 
-            <%= render :partial => 'spree/shared/google_analytics' %>
-
-          </body>
-        </html>
+  </body>
+</html>

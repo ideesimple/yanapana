@@ -22,7 +22,9 @@
   <% @causes.each do |cause|   %>
     <tr>
       <td><%= link_to cause.title, admin_cause_url(cause)  %></td>
-      <td><%= cause.organization.name %></td>
+      <% if cause.organization %>
+        <td><%= cause.organization.name %></td>
+      <% end %>
       <td><%= cause.goal_money  %></td>
       <td><%= cause.date_start  %></td>
       <td><%= cause.date_finish  %></td>

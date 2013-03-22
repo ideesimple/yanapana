@@ -48,20 +48,10 @@ before_update :youtube
       end
     end
   end
-  #def cause_status
-  #  date_now = Date.today
-  #  by_status = Spree::Cause.where("status = ?", true)
-  #  unless by_status.nil?
-  #    self.create = false
-  #  end
-    #by_status = Spree::Cause.where("date_start <= ? AND date_finish <= ? AND status = ?", self.date_start, self.date_finish, true)
-   # unless by_stat.nil?
-   #   logger.debug by_stat.count
-   #   by_stat.each do |c|
-   #     unless self.id == c.id
-   #       return false
-      #     end
-   #   end
-   # end
- # end
+
+
+  def self.per_week
+    date_now = Date.today
+    by_status = Spree::Cause.where("date_start <= ? AND date_finish <= ?", date_now, date_now).order('date_start ASC').first
+  end
 end
