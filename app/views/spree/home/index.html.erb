@@ -224,19 +224,10 @@
 
 
   <% unless @cause.nil? %>
-    <%= javascript_include_tag "jquery.countdown.min" %>
     <script charset="utf-8" language="javascript" type="text/javascript">
     $(document).ready(function() {
       $(".cause_background").anystretch("<%=@cause.photo.url%>");
     });
-    </script>
-
-    <script type="text/javascript" language="javascript" charset="utf-8">
-    $(document).ready(function(){
-        var liftoffTime = new Date(<%= @cause.date_finish.to_time.to_i * 1000 %>);
-        $("#open-until").countdown({until: liftoffTime, layout: "<%= escape_javascript(render :partial => 'spree/shared/countdown')%>"
-          });
-        });
     </script>
 
     <script type="text/javascript">
