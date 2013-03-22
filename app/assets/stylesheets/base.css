@@ -121,7 +121,7 @@ header .header_search button{background:url(../../assets/image-yanapana/search_b
 
 
 .hasCountdown {width: 980px; margin: 0 auto;}
-.countdown {float: right; width: 218px; padding-top: 42px; text-shadow: 1px 1px 0 white;}
+.countdown {float: right; width: 229px; padding-top: 42px; text-shadow: 1px 1px 0 white;}
 .countdown h3 {font-family: "Century Gothic", sans-serif; font-size: 12px; float: left; padding: 15px 10px 0 0; text-transform: uppercase; color: #A2A2A2;}
 .countdown li {display: inline-block;}
 .countdown .countdown_text li {padding: 0px 3px 2px 0px; color: #A2A2A2;}
@@ -196,7 +196,7 @@ box-shadow: 0 2px 3px #999; width: 100%; border-bottom: 5px solid #fff; padding:
 #goals .donation_container {margin: 0 auto; width: 190px;}
 #goals .goal_container {text-align: center; float: left; margin-right: 31px; width: 31%;}
 .goals_section > ul {border-top: 1px solid white; overflow: hidden; padding: 20px 0;}
-.goals_section div {margin-bottom: 7px;} 
+.goals_section div {margin-bottom: 7px;}
 #goals li { text-align: center;}
 #goals div:last-child {margin-right: 0; padding-top: 2px;}
 #goals #goalbar {height: 4px; float: right; width: 100%; background: none repeat scroll 0 0 transparent; border-top: 1px solid #ccc; background: #fff; margin: 8px 0; }
@@ -211,7 +211,7 @@ box-shadow: 0 2px 3px #999; width: 100%; border-bottom: 5px solid #fff; padding:
 .fb-icon:hover {background-position: center top;}
 
 .tt-icon {background: url("../../assets/image-yanapana/twitter_icon.png") no-repeat center bottom;}
-.tt-icon:hover {background-position: center top;} 
+.tt-icon:hover {background-position: center top;}
 
 /*-----------------------------------COUNTERS*/
 #counters-section {box-shadow: 0 2px 3px #999; width: 100%; border-bottom: 5px solid #fff; padding: 20px 0; background: #ffffff; /* Old browsers */
@@ -678,7 +678,7 @@ p.tick{ padding:10px 0px 10px 20px;background:url(../../assets/image-yanapana/ti
 .collaborators li h2 {width: 100%;}
 
 /*Dashboard*/
-.dashboard-lcol > img {border: 1px solid #bbb; margin-bottom: 5px;} 
+.dashboard-lcol > img {border: 1px solid #bbb; margin-bottom: 5px;}
 .dashboard-lcol {width: 215px; float: left;}
 .dashboard-rcol.fr {margin-right: 0; width: 725px;}
 
