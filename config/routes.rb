@@ -15,7 +15,6 @@ Yanapana::Application.routes.draw do
 	      resources :teams do
         end
       end
-      devise_for :user, :class_name => 'Spree::User', :controllers => { :invitation => 'devise/invitations'}
       match '/:week' => redirect('/'), :constraints => {:week => /week-[0-9]+/ }
       match "how-it-works" => "home#how_it_works", :as => :how_it_works
       match "dummy-confirm" => "home#dummy_confirm", :as => :dummy_confirm
