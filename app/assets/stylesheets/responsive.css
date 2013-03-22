@@ -34,7 +34,7 @@ nav .primary_nav > li > a {font-size: 13px;}
 #cause section iframe.video_description{width: 100%; height: 392px; float: left; margin: 0 0 20px 0;}
 
 #cause .cause_description {margin-bottom: 10px;}
-#cause section .org_logo {width: 90px; float: left;}
+#cause section .org_logo {width: 100%; float: left;}
 #cause section .fb-like, #cause section .follow-btn {float:left; margin-right: 15px;}
 
 #call-to-action {font-size: 16px}
@@ -94,6 +94,8 @@ nav .primary_nav > li > a {font-size: 13px;}
 	height: 140px;
 	overflow: hidden;
 }
+
+.aboutus-video {height: 394px;}
 
 
 
@@ -303,10 +305,16 @@ div.selector, div.selector {width: 225px;}
 
 /*About Us */
 .collaborators ul li {
+	float: none;
     width: 75%;
-    float: left;
-
+    margin: 0 auto;
+    text-align: center;
 }
+
+.aboutus-video {height: 169px;}
+
+.collaborators ul li p {text-align: center;}
+
 
 .collaborators ul li img {
 	max-width: 100%;
@@ -327,6 +335,7 @@ aside#sidebar{width:310px;}
 
 /*Typography*/
 
+#artist-section p, .full_page p {text-align: justify;}
 
 .product_rightcol .pr_price {display: block; padding: 10px 0px; float: left; width: 100%;  border-top: 1px solid #ccc; }
 .product_rightcol p {width: 100%; margin-bottom: 0; padding: 10px 0px;}
