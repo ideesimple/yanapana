@@ -121,7 +121,7 @@ header .header_search button{background:url(../../assets/image-yanapana/search_b
 
 
 .hasCountdown {width: 980px; margin: 0 auto;}
-.countdown {float: right; width: 229px; padding-top: 42px; text-shadow: 1px 1px 0 white;}
+.countdown {float: right; width: 236px; padding-top: 42px; text-shadow: 1px 1px 0 white;}
 .countdown h3 {font-family: "Century Gothic", sans-serif; font-size: 12px; float: left; padding: 15px 10px 0 0; text-transform: uppercase; color: #A2A2A2;}
 .countdown li {display: inline-block;}
 .countdown .countdown_text li {padding: 0px 3px 2px 0px; color: #A2A2A2;}
