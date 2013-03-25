@@ -72,9 +72,9 @@
 
 
       <p class="field" id="bstate">
-        <% have_states = !@order.bill_address.country.states.empty? %>
+        <%= have_states = !@order.bill_address.country.states.empty? %>
 
-        <%= bill_form.label :state, t(:state) %><br />
+        <%= bill_form.label :state, t(:state) %> <%= state_required_label %> <br />
 
         <% state_elements = [
            bill_form.collection_select(:state_id, @order.bill_address.country.states,
@@ -161,8 +161,6 @@
         <%= ship_form.label :city, t(:city) %><span class="required">*</span><br />
         <%= ship_form.text_field :city, :class => 'large-field' %>
       </p>
-
-
       <p class="field" id="sstate">
         <% have_states = !@order.ship_address.country.states.empty? %>
         <%= ship_form.label :state, t(:state) %><%= state_required_label %><br />
@@ -181,7 +179,6 @@
           document.write("<%== state_elements %>");
         <% end %>
       </p>
-
       <noscript>
         <%= ship_form.text_field :state_name, :class => state_required_class %>
       </noscript>

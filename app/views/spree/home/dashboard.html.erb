@@ -7,7 +7,7 @@
     <div class="full_page">
       <h2 class="sub_title">Welcome <%= @artist.name %>!</h2>
       <div class="dashboard-lcol">
-        <%= image_tag ("image-yanapana/artist.jpg")%>
+        <%= image_tag(@artist.photo.url(:profile_artist)) %>
         </br>
         <div id="dashboard-box" class="hidden_movil">
           <div class="dashboard-title">
@@ -19,7 +19,7 @@
             <li><p><%= @artist.city %></p></li>
             <li><p><%= @artist.state %></p></li>
             <li><p><%= @artist.email %></p></li>
-            <li><p>12</p></li>
+            <li><p><%= @artist.telephone %></p></li>
             <li><p><%= @artist.type_art  %></p></li>
             <li><p><%= @artist.webpage %></p></li>
             <li><p><%= @artist.link_twitter %></p></li>
@@ -53,10 +53,10 @@
           <div class="profile_info">
             <div class="profile_info_container">
               <h3>Biography</h3>
-              <p>Every week we design and produce a new line of clothing, exclusively found on our website. Instead of spending money in traditional advertising and distribution to traditional storefronts, we donate that money, $8 per item sold, to causes that bring positive change to the world through women</p>
+              <p>Every week we design and produce a new line of clothing, exclusively found on our website. </p>
               </br>
 
-         
+
               <h3>Reason to design for Yanapana</h3>
               <p><%= @artist.reason %></p>
             </div>
@@ -70,8 +70,9 @@
               <h5>Product Stats</h5>
             </div>
             <div class="product-stats-content">
-              <h3>You have no products yet dsfadfasdfa fasdfadf asdfadsfadfasd fadfadf afadf adfasdfga</h3>
+              <h3>You have no products yet </h3>
               <ul class="dashboard-products">
+                <% unless @causes.nil? %>
                 <!--Recorrer todas las causas -->
                 <% @causes.each do |cause| %>
                   <% cause.products.each do |product| %>
@@ -84,7 +85,7 @@
                       <% quantity_per_product = item.quantity + quantity_per_product %>
                     <% end %>
                     <li>
-                      <%= image_tag ("image-yanapana/tshirt.jpeg")%>
+                      <%= artist_products_image (product)%>
                       <div class="stats-content">
                         <div class="stats"><h5><%= product.name %></h5></div>
                         <div class="stats bb"><p>Unit Price</p><span>$<%= product.master.price %></span></div>
@@ -95,6 +96,7 @@
                   <% end %>
                 <% end %>
                 <!--Termina el bloque de recorrer las causas -->
+                <% end %>
               </ul>
             </div><!-- End Products-stats-content-->
           </div><!-- End dashboard-box -->
@@ -105,13 +107,7 @@
     </div>
   </section>
 </div>
-    <% unless @causes.nil? %>
-      <% @causes.each do |cause|%>
-        <% cause.products.each do |product| %>
           <% unless product.master.images.nil? %>
             <% small_image(product) %>
           <% end %>
-        <% end %>
-      <% end %>
-    <% end %>
 

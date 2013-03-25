@@ -23,6 +23,6 @@ Yanapana::Application.routes.draw do
       match "about-us" => "home#about_us", :as => :about_us
       match "dashboard" => "home#dashboard", :as => :dashboard
       match "subscribe" => "home#subscribe", :as => :subscribe
-      devise_for :user, :class_name => 'Spree::User', :controllers => { :invitations => 'devise/invitations' }
+      #devise_for :user, :class_name => 'Spree::User', :controllers => {:invitations => 'devise/invitations'}
     end
 end
