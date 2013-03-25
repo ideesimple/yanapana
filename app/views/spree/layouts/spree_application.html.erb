@@ -36,12 +36,12 @@
           <li><a href="#">Blog</a></li>
           <li><%= link_to "About Us", about_us_path  %></li>
           <li><%= link_to "Contact Us", contact_us_path  %></li>
-          <li><%= link_to "How it works!", how_it_works_path  %></li>
+          <li><%= link_to "Design For Us", how_it_works_path  %></li>
           <li><%= link_to "FAQ", faq_path  %></li>
         </ul>
         <div id="social_media">
           <div class="find_us hidden_movil">
-            <a class="facebook" href="http://www.facebook.com/YANAPANAcom?fref=ts"></a> <a class="twitter" href="https://twitter.com/yanapanawear"></a> <a class="pinterest" href="#"></a> </div>
+            <%= link_to '',  'http://facebook.com/YANAPANAwear?fref=ts', :class=>"facebook", :target=>"_blank"%> <%= link_to '', 'https://twitter.com/yanapanawear', :class=>"twitter", :target=>"_blank" %> <a class="pinterest" href="#"></a> </div>
         </div>
 
       </nav>

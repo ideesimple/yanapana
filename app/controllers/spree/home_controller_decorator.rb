@@ -79,9 +79,9 @@ Spree::HomeController.class_eval do
 
   def subscribe
     email = params[:email]
-    h = Hominid::API.new("747ad60d361e1376cf91b3ff8d48a814-us6")
+    h = Hominid::API.new("6c3bc75008800ae5fc53277d0bfb918d-us5")
     begin
-      @response = h.list_subscribe('af0a762abc', email, {:FNAME => '', :LNAME => ''}, 'html', false, true, true, false)
+      @response = h.list_subscribe('10fb041a72', email, {:FNAME => '', :LNAME => ''}, 'html', false, true, true, false)
     rescue
       @response = nil
     end

@@ -2,7 +2,7 @@
   <% unless @cause.nil? %>
     <%= ('<meta property="og:title" content=" Yanapana | ' + @cause.title  + ' " />').html_safe %>
     <%= ('<meta property="og:url" content="' + root_url + 'week-' + @cause.id.to_s + ' " />').html_safe %>
-    <%= ('<meta property="og:image" content="' + @cause.photo.url(:product).to_s + '" />').html_safe %>
+    <%= ('<meta property="og:image" content="' + @cause.photo.url(:small).to_s + '" />').html_safe %>
     <%= ('<meta property="og:description" content="' + @cause.description.to_s  + '" />').html_safe %>
   <% end %>
 <% end %>
@@ -91,7 +91,7 @@
                       <ul>
                         <div id="fb_colsize">
                           <li>
-                            <a onclick="window.open(&quot;http://www.facebook.com/sharer/sharer.php?s=100&amp;p[title]=<%= @cause.title %>&amp;p[url]=<%= (root_url + 'week-' + @cause.id.to_s).html_safe %>&amp;p[images][0]=<%= @cause.photo.url(:small) %> &quot;,&quot;&quot;,&quot;toolbar=0,status=0,width=580,height=315&quot;); return false" target="_blank" class="share fb" href="" >  <div class="fb-icon hidden_movil"></div><%= image_tag ("image-yanapana/facebook_icon.png"), :class=>'hidden_desktop'%>
+                            <a onclick="window.open(&quot;http://www.facebook.com/sharer/sharer.php?s=100&amp;p[title]=<%= @cause.title %>&amp;p[url]=<%= (root_url + 'week-' + @cause.id.to_s).html_safe %>&amp;p[images][0]=<%= @cause.photo.url(:product) %> &quot;,&quot;&quot;,&quot;toolbar=0,status=0,width=580,height=315&quot;); return false" target="_blank" class="share fb" href="" >  <div class="fb-icon hidden_movil"></div><%= image_tag ("image-yanapana/facebook_icon.png"), :class=>'hidden_desktop'%>
                             </a>
                             <div id="goalbar" class="goalbar_style">
                               <i id= "count_sharesf" class="progBar"></i>
@@ -110,7 +110,6 @@
                     <div id="tt_colsize">
                       <li>
                         <a href= "https://twitter.com/intent/tweet?text=A+<%= (root_url + 'week' + @cause.id.to_s).html_safe %>+@yanapanawear&counturl=<%= (root_url + 'week-' + @cause.id.to_s).html_safe %>" target="_blank"><div class="tt-icon hidden_movil"></div><%= image_tag ("image-yanapana/twitter_icon.png"), :class=>'hidden_desktop'%>
-
   </a>
                         <div id="goalbar" class="goalbar_style"><i id = "count_twitts" class="progBar"></i></div>
                          <div class="stats">

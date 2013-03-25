@@ -53,10 +53,8 @@
           <div class="profile_info">
             <div class="profile_info_container">
               <h3>Biography</h3>
-              <p>Every week we design and produce a new line of clothing, exclusively found on our website. </p>
+              <p> </p>
               </br>
-
-
               <h3>Reason to design for Yanapana</h3>
               <p><%= @artist.reason %></p>
             </div>
@@ -70,9 +68,10 @@
               <h5>Product Stats</h5>
             </div>
             <div class="product-stats-content">
-              <h3>You have no products yet </h3>
               <ul class="dashboard-products">
-                <% unless @causes.nil? %>
+                <% if @causes.empty? %>
+                  <h3>You have no products yet </h3>
+                <% else %>
                 <!--Recorrer todas las causas -->
                 <% @causes.each do |cause| %>
                   <% cause.products.each do |product| %>
@@ -95,7 +94,7 @@
                     </li>
                   <% end %>
                 <% end %>
-                <!--Termina el bloque de recorrer las causas -->
+                                  <!--Termina el bloque de recorrer las causas -->
                 <% end %>
               </ul>
             </div><!-- End Products-stats-content-->
@@ -107,7 +106,3 @@
     </div>
   </section>
 </div>
-          <% unless product.master.images.nil? %>
-            <% small_image(product) %>
-          <% end %>
-
