@@ -121,10 +121,15 @@ header .header_search button{background:url(../../assets/image-yanapana/search_b
 
 
 .hasCountdown {width: 980px; margin: 0 auto;}
+<<<<<<< HEAD
+.countdown {float: right; width: 218px; padding-top: 42px; text-shadow: 1px 1px 0 white;}
+.countdown h3 {font-family: "Century Gothic", sans-serif; font-size: 12px; float: left; padding: 15px 10px 0 0; text-transform: uppercase; color: #666;}
+=======
 .countdown {float: right; width: 236px; padding-top: 42px; text-shadow: 1px 1px 0 white;}
 .countdown h3 {font-family: "Century Gothic", sans-serif; font-size: 12px; float: left; padding: 15px 10px 0 0; text-transform: uppercase; color: #A2A2A2;}
+>>>>>>> 0953424f9f2fd615e84f224dd4371c8ba37e9a20
 .countdown li {display: inline-block;}
-.countdown .countdown_text li {padding: 0px 3px 2px 0px; color: #A2A2A2;}
+.countdown .countdown_text li {padding: 0px 3px 2px 0px; color: #666;}
 .countdown .countdown_numbers li {font-size: 16px; padding-right: 7px; color: #BCD80A; }
 .countdown_numbers {float: rigt;}
 .countdown_text {width: 241px;}
@@ -163,6 +168,8 @@ header ul span.item { color: #e9e9e9;}
 
 /*-----------------------------------CAUSE*/
 .anystretch img {position: static !important;}
+
+.triangle-w {width: 30px; height: 15px; margin-top: 15px; float: right;}
 
 #cause {  padding: 40px 0; overflow: hidden; }
 #org_description {float: left; width: 45%; }
@@ -494,7 +501,7 @@ ul.breadcrumb{ padding:12px 0px; display:inline-block; width:100%;}
 ul.breadcrumb li{ padding:0px 14px; font-size:11px; text-transform:uppercase; display:inline-block; list-style:none; background:url(../../assets/image-yanapana/arrow.png) no-repeat -10px -3px;}
 ul.breadcrumb li:first-child{ padding-left:0px; background:none;}
 ul.breadcrumb li.active{ background-position:-10px -53px;}
-ul.breadcrumb li a{ color:#bdbdbd; text-decoration:none;}
+ul.breadcrumb li a{ color:#888; text-decoration:none;}
 #main_content .products_list ul{ margin:0px -24px;}
 #main_content .products_list{ border:none;}
 #main_content .products_list li{ margin:0px 24px 24px 24px;}

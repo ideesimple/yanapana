@@ -42,6 +42,9 @@ nav .primary_nav > li > a {font-size: 13px;}
 .foo {display: none;}
 .baz {display: block;}
 
+
+
+
 /*Goals*/
 #goals .goal_container {width: 30%;}
 #goals h3 {font-size: 17px; }
@@ -198,6 +201,10 @@ h1.logo { display: block; width:180px; margin:auto; float:none; padding:15px 0;}
 
 #first-carousel li {width: 100%; margin: 0 auto;}
 
+.triangle-w {width: 22px; height: 12px; }
+
+.collaborators h3 {border-bottom: none; margin-bottom: 0; padding-bottom: 5px;}
+.collaborators p {border-bottom: 2px solid #ccc; padding-bottom: 2px; margin-bottom: 20px;}
 
 /*Goals*/
 #goals .donation_container {margin: 0;}

@@ -11,6 +11,58 @@
 </head>
 
 <body>
+<<<<<<< HEAD
+	<div class="wrapper">
+		<div class="header_container">
+      		<!--Header Starts-->
+            <%= render :partial => 'spree/layouts/header' %>
+		 </div>
+		<!--Branding Starts-->
+    		<div class="branding_container jean">
+          		<div class="branding_area">
+                	<!--Logo Starts-->
+                    	<h1 class="logo"><%=link_to (image_tag("image-yanapana/logo_header.png")), root_path%></h1>
+                    	<a name="top"></a>
+		        <!--Logo Ends-->
+		        <!--Countdown Starts-->
+            <div id='open-until'></div>
+            <!--Countdown Ends-->
+			</div>
+	    	</div>
+		<%= yield :breadcrumbs %>
+            	<!--Branding Ends-->
+ <div class="navigation_container jean">
+        <!--Navigation Starts-->
+        <nav>
+            <ul class="primary_nav">
+                <li class="active"><%= link_to "Home", root_path %>
+                    <!--SUbmenu Starts
+                    <ul class="sub_menu">
+                        <li> <a href="#">Dresses</a>
+                            <ul>
+                                <li><a href="#">Skirts</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    SUbmenu Ends-->
+                </li>
+                <li><a href="#">Blog</a>
+                    <!--SUbmenu Starts-->
+                    <!--SUbmenu Ends-->
+                </li>
+                <li><%= link_to "About Us", about_us_path  %></li>
+                <li><%= link_to "Contact Us", contact_us_path  %></li>
+                <li><%= link_to "Design for us", how_it_works_path  %></li>
+                <li><%= link_to "Help", faq_path  %></li>
+            </ul>
+            <div id="social_media">
+                <div class="find_us hidden_movil">
+                   <a class="facebook" href="http://www.facebook.com/YANAPANAcom?fref=ts"></a> <a class="twitter" href="https://twitter.com/yanapanawear"></a> <a class="pinterest" href="#"></a> </div>
+            </div>
+
+        </nav>
+        <!--Navigation Ends-->
+=======
   <div class="wrapper">
     <div class="header_container">
       <!--Header Starts-->
@@ -26,6 +78,7 @@
         <div id='open-until'></div>
         <!--Countdown Ends-->
       </div>
+>>>>>>> 0953424f9f2fd615e84f224dd4371c8ba37e9a20
     </div>
     <!--Branding Ends-->
     <div class="navigation_container jean">
