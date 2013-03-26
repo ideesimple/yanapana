@@ -39,7 +39,7 @@ Spree::HomeController.class_eval do
       logger.debug params
       @c = Spree::ContactForm.new(:name => params["name"],:email => params["email"], :message => params["message"],:suggestion=> params["suggestion"])
       if @c.deliver
-        redirect_to root_path
+        redirect_to contact_us_path + "#leavemessage", :alert => "i"
       end
     end
   end

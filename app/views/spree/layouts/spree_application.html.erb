@@ -48,7 +48,11 @@
       <!--Navigation Ends-->
     </div>
 
-    <%= flash_messages %>
+    <%unless action_name == 'contact_us' %>
+    <div class="flash alert jean">
+      <%= flash_messages %>
+    </div>
+    <% end %>
     <%= yield %>
     <% yield :sidebar %>
 
