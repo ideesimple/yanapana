@@ -17,7 +17,8 @@
     <%= line_item_description(variant) %>
   </td>
   <td class="align_center vline">
-    S
+    <% name_variant = Spree::OptionValue.find(variant.option_value_ids).first %>
+    <%= name_variant.presentation %>
   </td>
   <td class="align_center vline hidden_movil">
     <span class="price">

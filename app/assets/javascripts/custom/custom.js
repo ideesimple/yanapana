@@ -56,6 +56,7 @@ $(document).ready(function(){
 
     $("#cart_" + index).toggle(function() {
       $('#size_drop_' + index).slideDown(300);
+      $('div[id^="size_drop_"]').not('#size_drop_' + index).slideUp(300);
     }, function(){
       $('#size_drop_' + index).slideUp(300);
     });

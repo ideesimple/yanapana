@@ -19,12 +19,12 @@ Make sure to go through our FAQs. Answers to most questions can be quickly found
                     <!--Block Ends-->
         <!--Form Starts-->
 				    <div class="block borderwhite">
-
-				      <p class="info">Your email was sent. Huzzah!</p>
-
               <%= form_tag(contact_us_path,:method => "post", :multipart => false, :class=>"contact-us") do %>
               <a name="leavemessage"></a>
                 <h3>Leave a message</h3>
+                <% unless alert.blank? %>
+                  <p class="info">Your email was sent. Huzzah!</p>
+                <% end %>
                 <% unless @c.nil? %>
                   <% if @c.errors.any? %>
                     <p class="alert">Error submitting the form</p>
@@ -62,7 +62,7 @@ Make sure to go through our FAQs. Answers to most questions can be quickly found
 							    <br />
 						    </li>
               <li>
-                <%= submit_tag "Send us Mail!",:class => "subbutton brown_btn contact-submit" %>
+                <%= submit_tag "Send Mail!",:class => "subbutton brown_btn contact-submit" %>
               </li>
           </ul>
 					    <% end %>
@@ -86,13 +86,14 @@ Make sure to go through our FAQs. Answers to most questions can be quickly found
         </div>
 
 	<address>
-                            <b>Prefer to call us?</b>
+          <b>Prefer to call us?</b>
 			    <br/>
 			    <br/>
                             +1 949 200 6392          Monday-Friday </br>7am - 12pm PST (Americas)
 			    <br/>
 			    <br/>
 			    + 41 (0) 78 617 50 86    Monday-Friday </br> 1pm - 6pm CET (Europe)
+
 
 
                         </address>

@@ -2,7 +2,7 @@
   <% unless @cause.nil? %>
     <%= ('<meta property="og:title" content=" Yanapana | ' + @cause.title  + ' " />').html_safe %>
     <%= ('<meta property="og:url" content="' + root_url + 'week-' + @cause.id.to_s + ' " />').html_safe %>
-    <%= ('<meta property="og:image" content="' + @cause.photo.url(:mini).to_s + '" />').html_safe %>
+    <%= ('<meta property="og:image" content="' + @cause.photo.url(:small).to_s + '" />').html_safe %>
     <%= ('<meta property="og:description" content="' + @cause.description.to_s  + '" />').html_safe %>
   <% end %>
 <% end %>
@@ -17,7 +17,7 @@
                 <div id="shopping_cart">
                   <div class="message success" style="display:none">Success :D </div>
                   <div class="message warning" style="display:none"></div>
-                <h1>Sustainability. Solidarity. Fashion. Change.</h1>
+                  <h1>Sustainability. Solidarity. Fashion. Change.</h1>
                 <h4>$8 of each purchase are given to a cause helping the development and protection of women</h4>
             </section>
         </div>
@@ -49,7 +49,7 @@
 
                               <!--ORG Logo Ends-->
                               <!--ORG Description Starts-->
-
+                            <% if @cause.organization %>
                               <h4 class="hidden_movil hidden_tablet">Organization</h4>
                               <p class="hidden_movil hidden_tablet"><%= @cause.organization.description%></p>
 
@@ -65,11 +65,13 @@
                               </div>
                               <!--Twitter follotw button Ends-->
 
-                              <a data-pin-config="none" href="//pinterest.com/pin/create/button/" data-pin-do="buttonBookmark" ><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png" /></a>
+                              <a data-pin-config="none" href="//pinterest.com/pin/create/button/?url=<%= (root_url + 'week-' + @cause.id.to_s).html_safe%>&media=<%= @cause.organization.photo.url(:product) %>&description=<%= @cause.title %>%20at%20www.yanapana.com" data-pin-do="buttonPin" ><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png" /></a>
+
                               <!--Shop Now Starts-->
                                   <h1 id="call-to-action" class="sc-button blue"></h1>
                               <!--Shop Now Ends-->
                           </div>
+                          <% end %>
                           <!--ORG Description Ends-->
                           </div>
                           <!--Cause Description Ends-->
@@ -90,7 +92,7 @@
                       <ul>
                         <div id="fb_colsize">
                           <li>
-                            <a onclick="window.open(&quot;http://www.facebook.com/sharer/sharer.php?s=100&amp;p[title]=<%= @cause.title %>&amp;p[url]=<%= (root_url + 'week-' + @cause.id.to_s).html_safe %>&amp;p[images][0]=<%= @cause.photo.url(:small) %> &quot;,&quot;&quot;,&quot;toolbar=0,status=0,width=580,height=315&quot;); return false" target="_blank" class="share fb" href="" >  <div class="fb-icon hidden_movil"></div><%= image_tag ("image-yanapana/facebook_icon.png"), :class=>'hidden_desktop'%>
+                            <a onclick="window.open(&quot;http://www.facebook.com/sharer/sharer.php?s=100&amp;p[title]=<%= @cause.title %>&amp;p[url]=<%= (root_url + 'week-' + @cause.id.to_s).html_safe %>&amp;p[images][0]=<%= @cause.photo.url(:share_photo)%> &quot;,&quot;&quot;,&quot;toolbar=0,status=0,width=580,height=315&quot;); return false" target="_blank" class="share fb" href="" >  <div class="fb-icon hidden_movil"></div><%= image_tag ("image-yanapana/facebook_icon.png"), :class=>'hidden_desktop'%>
                             </a>
                             <div id="goalbar" class="goalbar_style">
                               <i id= "count_sharesf" class="progBar"></i>
@@ -108,8 +110,7 @@
                     </div>
                     <div id="tt_colsize">
                       <li>
-                        <a href= "https://twitter.com/intent/tweet?text=A+<%= (root_url + 'week' + @cause.id.to_s).html_safe %>+@yanapanawear&counturl=<%= (root_url + 'week-' + @cause.id.to_s).html_safe %>" target="_blank"><div class="tt-icon hidden_movil"></div><%= image_tag ("image-yanapana/twitter_icon.png"), :class=>'hidden_desktop'%>
-
+                        <a href= "https://twitter.com/intent/tweet?text=<%= @cause.title  %>+<%= (root_url + 'week-' + @cause.id.to_s).html_safe %>+@yanapanawear&counturl=<%= (root_url + 'week-' + @cause.id.to_s).html_safe %>" target="_blank"><div class="tt-icon hidden_movil"></div><%= image_tag ("image-yanapana/twitter_icon.png"), :class=>'hidden_desktop'%>
   </a>
                         <div id="goalbar" class="goalbar_style"><i id = "count_twitts" class="progBar"></i></div>
                          <div class="stats">
@@ -162,7 +163,6 @@
 
 <a name="products"></a>
   <% if params[:keywords] %>
-
       <% if @products_cause.nil? %>
         <h2><%= t(:no_products_found) %></h2>
               <% else %>
@@ -205,10 +205,11 @@
             <div class="comments-section jean pb"><a name="comments"></a>
                 <section class="comments">
                 <h1 class="comments_tag fl">Don’t be shy! Express your thoughts about this week’s awesome cause right here: </h1>
-
+                <% unless @cause.nil? %>
                 <div id="comments" class="fl">
                     <div class="fb-comments" data-href="<%= (root_url + 'week-' + @cause.id.to_s).html_safe %>" data-width="700" data-num-posts="2" data-order-by="reverse_time"></div>
                 </div>
+                <% end %>
                 </section>
             </div>
 <!--Mid Section Ends-->
@@ -225,19 +226,10 @@
 
 
   <% unless @cause.nil? %>
-    <%= javascript_include_tag "jquery.countdown.min" %>
     <script charset="utf-8" language="javascript" type="text/javascript">
     $(document).ready(function() {
       $(".cause_background").anystretch("<%=@cause.photo.url%>");
     });
-    </script>
-
-    <script type="text/javascript" language="javascript" charset="utf-8">
-    $(document).ready(function(){
-        var liftoffTime = new Date(<%= @cause.date_finish.to_time.to_i * 1000 %>);
-        $("#open-until").countdown({until: liftoffTime, layout: "<%= escape_javascript(render :partial => 'spree/shared/countdown')%>"
-          });
-        });
     </script>
 
     <script type="text/javascript">

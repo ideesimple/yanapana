@@ -11,8 +11,7 @@ Spree::HomeController.class_eval do
     @searcher.current_user = try_spree_current_user
     @products = @searcher.retrieve_products
     date_now = Date.today
-    @cause = Spree::Cause.find(:all, :conditions=>["date_start <= ? AND date_finish >= ?", date_now, date_now]).first
-    @cause = Spree::Cause.where("date_start > ?", Date.today).order('date_start ASC').first unless @cause
+    @cause = Spree::Cause.where("date_start <= ? AND date_finish >= ?", Date.today, Date.today).order('date_start ASC').first
     unless @cause.nil?
       @products_cause = @products.where(:cause_id => @cause.id).each_slice(3).to_a
       #Arista asociado a esa causa
@@ -40,7 +39,7 @@ Spree::HomeController.class_eval do
       logger.debug params
       @c = Spree::ContactForm.new(:name => params["name"],:email => params["email"], :message => params["message"],:suggestion=> params["suggestion"])
       if @c.deliver
-        redirect_to root_path
+        redirect_to contact_us_path + "#leavemessage", :alert => "i"
       end
     end
   end
@@ -78,12 +77,11 @@ Spree::HomeController.class_eval do
   def terms_of_use
   end
 
-
   def subscribe
     email = params[:email]
-    h = Hominid::API.new("747ad60d361e1376cf91b3ff8d48a814-us6")
+    h = Hominid::API.new("6c3bc75008800ae5fc53277d0bfb918d-us5")
     begin
-      @response = h.list_subscribe('af0a762abc', email, {:FNAME => '', :LNAME => ''}, 'html', false, true, true, false)
+      @response = h.list_subscribe('10fb041a72', email, {:FNAME => '', :LNAME => ''}, 'html', false, true, true, false)
     rescue
       @response = nil
     end
