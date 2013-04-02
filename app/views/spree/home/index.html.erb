@@ -53,7 +53,7 @@
                               <h4 class="hidden_movil hidden_tablet">Organization</h4>
                               <p class="hidden_movil hidden_tablet"><%= @cause.organization.description%></p>
 
-                              <h1 class="org_logo"><%= image_tag(@cause.organization.photo.url(:org))%></h1>
+                              <h1 class="org_logo"><%= link_to (image_tag(@cause.organization.photo.url(:org))), @cause.organization.webpage, :target => "_blank" %></h1>
                               <!--Facebook like button Starts-->
 
                                 <div class="fb-like" style="overflow: hidden" href="<%= @cause.organization.link_facebook %>" data-font="arial" data-show-faces="false" data-width="450px" data-layout="button_count" data-send="false"></div>
@@ -182,9 +182,9 @@
         <%= render :partial => 'spree/shared/products', :locals => { :products => @products_cause, :taxon => @taxon } %>
       <% end %>
     </div>
-<% unless @artist.nil? %>
-<a name="artist"></a>
-<div id="artist-section" class="jean">
+          <% unless @artist.nil? %>
+            <a name="artist"></a>
+            <div id="artist-section" class="jean">
                 <section>
                     <h2 class="sub_title">The Artist</h2>
                     <div class="artist"><a><%= image_tag(@artist.photo.url(:product)) %></a></div>

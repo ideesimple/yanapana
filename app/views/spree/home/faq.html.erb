@@ -20,8 +20,8 @@
         <% unless @faqs.nil? %>
           <% @faqs.each do |faq| %>
             <li>
-					    <a name="<%=faq.question%>"><h2 class="sub_title">Q: <%= faq.question  %></h2></a>
-					    <p><%= faq.answer %></p>
+					    <a name="<%=faq.question%>"><h2 class="sub_title"><%= faq.question  %></h2></a>
+					    <p><%= (faq.answer).html_safe %></p>
 			  	  </li>
           <% end %>
         <% end %>

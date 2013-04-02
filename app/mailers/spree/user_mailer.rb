@@ -11,7 +11,7 @@ class Spree::UserMailer < ActionMailer::Base
     @resource = record
      mail(:to => record.email,
                   :subject => Spree::Config[:site_name],
-                  :template_path => "devise/mailer",
+                  :template_path => "spree/mailer",
                   :template_name => "invitation_instructions")
   end
 

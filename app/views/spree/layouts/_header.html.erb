@@ -20,7 +20,9 @@
         <div class="minicart">
           <%= link_to "Cart", :class => "minicart_link" do %>
             <% if current_order%>
-              <span class="item"><b><%= current_order.item_count %></b> ITEM /</span> <span class="price"><b><%= current_order.display_total%></b></span>
+              <span class="item"><b><%= current_order.item_count %>
+              </b><% if current_order.item_count > 1 %> ITEMS <% else %>ITEM <% end %>/</span> <span class="price"><b><%= current_order.display_total%></b>
+              </span>
             <% else %>
               <span class="item"><b>Empty</b> ITEM /</span> <span class="price"><b>0</b></span>
             <% end %>
