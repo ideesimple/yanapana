@@ -117,7 +117,16 @@
                  </div>
                <% end %>
              </div>
-
+            <script type="text/javascript" charset="utf-8">
+              $("#quantity").keyup(function() {
+                var val = $("#quantity").val();
+                if(parseInt(val) < 0 || isNaN(val)) {
+                  alert("please enter valid values");
+                  $("#quantity").val("");
+                  $("#quantity").focus();
+                }
+              });
+            </script>
            </div>
          <% end %>
 
@@ -172,7 +181,7 @@
 
       <!--Facebook like button Ends-->
       <!--Twitter follotw button Starts-->
-      <a href="https://twitter.com/share" class="twitter-share-button" data-url="<%= @product.cause.artist.link_twitter %>">Tweet</a>
+<div class="follow-btn"><a href="<%= @product.cause.artist.link_twitter %>" class="twitter-follow-button" data-show-count="false" data-show-screen-name="false" data-dnt="true"></a></div>
       <!--Twitter follotw button Ends-->
     <% end %>
     </section>

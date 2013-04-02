@@ -945,7 +945,7 @@ filter: gray; /* IE6-9 */
 
 /*FAQ*/
 .faq-index { margin-bottom: 10px; }
-#faq-style ul {font-weight: bold;list-style: decimal inside none;}
+#faq-style ul {font-size: 18px;font-weight: bold;list-style: decimal inside none;}
 #faq-style ul li a  {color: #333; text-decoration: underline; font-family: istok web; font-size: 14px; line-height: 1.4; line-height: 1.4; font-weight: normal;}
 #faq-style h2 {display: inline-block; vertical-align: baseline; font-weight: bold;}
 #faq-style p {margin-left: 20px; margin-bottom: 20px; font-weight: normal;}
