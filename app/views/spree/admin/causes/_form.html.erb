@@ -32,7 +32,7 @@
 
   <%= f.field_container :artist_id do  %>
     <%= f.label :artist_id, 'Artist' %><span class="required">*</span><br />
-    <%= f.collection_select(:artist_id, Spree::Artist.order("name ASC").all, :id, :name) %>
+    <%= f.collection_select(:artist_id, Spree::Artist.order("name ASC").all, :id, :name_with_initial, :prompt => true) %>
   <% end %>
 
   <%= f.field_container :organization_id do  %>

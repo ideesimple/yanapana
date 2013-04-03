@@ -29,4 +29,8 @@ class Spree::Artist < ActiveRecord::Base
     Spree::User.invite!(:email=>self.email)
   end
 
+  def name_with_initial
+    "#{name}. #{last_name}"
+  end
+
 end
