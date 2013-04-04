@@ -31,7 +31,7 @@ nav .primary_nav > li > a {font-size: 13px;}
 
 #cause {padding: 30px 0;}
 
-#cause section iframe.video_description{width: 100%; height: 392px; float: left; margin: 0 0 20px 0;}
+#cause section iframe.video_description{width: 100%; height: 376px; float: left; margin: 0 0 20px 0;}
 
 #cause .cause_description {margin-bottom: 10px;}
 #cause section .org_logo {width: 100%; float: left;}
@@ -42,8 +42,8 @@ nav .primary_nav > li > a {font-size: 13px;}
 .foo {display: none;}
 .baz {display: block;}
 
-
-
+.triangle-w {width: 22px; height: 12px; }
+ 
 
 /*Goals*/
 #goals .goal_container {width: 30%;}
@@ -63,6 +63,10 @@ nav .primary_nav > li > a {font-size: 13px;}
 	margin-left: 0;
     margin-right: 15px;
 }
+
+.product_rightcol h1 {width: 71%; font-size: 22px; }
+.product_rightcol .pr_price {width: 24%; }
+.product_rightcol .pr_price big {font-size: 25px;}
 
 /*Banner*/
 #banner_section{ height:auto;}
@@ -172,9 +176,9 @@ header .minicart {max-height: 31px;}
 
 .branding_container {height: auto;}
 
-h1.logo { display: block; width:180px; margin:auto; float:none; padding:15px 0;}
+h1.logo { display: block; width:100%; margin:auto; float:none; padding:40px 0 10px 0;}
 
-.hasCountdown {width: 100%; border-bottom: 1px solid #ddd; }
+.hasCountdown {width: 100%;  }
 .countdown {float: none; padding: 10px 0 5px 0; width: 121px; margin: 0 auto;}
 .countdown h3 {display: none;}
 .countdown .countdown_numbers li {font-size: 15px;}
@@ -182,7 +186,7 @@ h1.logo { display: block; width:180px; margin:auto; float:none; padding:15px 0;}
 #cause {padding: 25px 0;}
 #cause .cause_description {margin-bottom: 10px;}
 #cause section .org_logo {width: 90px; padding: 0 !important; }
-#cause section iframe.video_description {width: 310px; height: 174px; margin-bottom: 20px;}
+#cause section iframe.video_description {width: 310px; height: 174px; margin-bottom: 20px; margin-top: 20px;}
 #like_follow {height: 35px;}
 #cause section .fb-like, #cause section .follow-btn {display: inline-block; margin-right: 15px;}
 #cause section h1 .sc-button {padding: 0;}
@@ -201,10 +205,14 @@ h1.logo { display: block; width:180px; margin:auto; float:none; padding:15px 0;}
 
 #first-carousel li {width: 100%; margin: 0 auto;}
 
-.triangle-w {width: 22px; height: 12px; }
+.triangle-w {width: 18px; height: 8px; }
 
 .collaborators h3 {border-bottom: none; margin-bottom: 0; padding-bottom: 5px;}
 .collaborators p {border-bottom: 2px solid #ccc; padding-bottom: 2px; margin-bottom: 20px;}
+
+.product_rightcol h1 {font-size: 22px; }
+.product_rightcol .pr_price big {font-size: 25px;}
+
 
 /*Goals*/
 #goals .donation_container {margin: 0;}
