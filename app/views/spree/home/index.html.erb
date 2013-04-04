@@ -134,7 +134,7 @@
                           </div>
                           <div class="fl hidden_movil">
                             <p>Donated so far</p>
-                            <span class="bucks"><%= number_to_currency(@cause.goal_money, :precision=>0) %></span>
+                            <span class="bucks"><%= number_to_currency(@total, :precision=>0) %></span>
                           </div>
                         </div>
                         <div id="goalbar" class="goalbar_style">
@@ -192,14 +192,14 @@
                     <div class="artist"><a><%= image_tag(@artist.photo.url(:product)) %></a></div>
                     <div class="artist_description">
                         <h3><%= @artist.name + " " + @artist.last_name %></h3>
-                        <p><%= @artist.reason  %></p>
+                        <p><%= (@artist.reason).html_safe %></p>
 
                     </div>
                      <!--Facebook like button Starts-->
                     <div class="fb-like" style="overflow: hidden" href="<%= @artist.link_facebook %>" data-font="arial" data-show-faces="true" data-width="50px" data-layout="button_count"  data-height="30px" data-send="false" ></div>
                     <!--Facebook like button Ends-->
                     <!--Twitter follotw button Starts-->
-                    <div class="follow-btn"><a href="https://twitter.com/StandUpCancer" class="twitter-follow-button" data-show-count="false" data-show-screen-name="false" data-dnt="true"></a></div>
+                    <div class="follow-btn"><a href="<%= @artist.link_twitter  %>" class="twitter-follow-button" data-show-count="false" data-show-screen-name="false" data-dnt="true"></a></div>
                     <!--Twitter follow button Ends-->
                 </section>
             </div>

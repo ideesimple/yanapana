@@ -83,7 +83,7 @@ Spree::HomeController.class_eval do
     @prueba = h.lists
     logger.debug email
     begin
-      @response = h.list_subscribe('10fb041a72', 'rlara@incaztech.com', {:FNAME => '', :LNAME => ''}, 'html', false, true, true, false)
+      @response = h.list_subscribe('5ec394c1ce', email, {:FNAME => '', :LNAME => ''}, 'html', false, true, true, true)
     rescue
       @response = nil
     end
