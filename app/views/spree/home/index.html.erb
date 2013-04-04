@@ -190,7 +190,7 @@
                     <div class="artist"><a><%= image_tag(@artist.photo.url(:product)) %></a></div>
                     <div class="artist_description">
                         <h3><%= @artist.name + " " + @artist.last_name %></h3>
-                        <p><%= @artist.reason  %></p>
+                        <p><%= (@artist.reason).html_safe %></p>
 
                     </div>
                      <!--Facebook like button Starts-->

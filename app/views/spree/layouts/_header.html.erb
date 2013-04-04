@@ -35,8 +35,10 @@
               <%= render :partial => 'spree/shared/preview_cart', :locals => { :current_order => current_order } %>
               <!--Validar que los productos sean de la causa que esta en curso -->
               <% current_order.line_items.each do |item|  %>
+                <% unless @cause.nil? %>
                 <% if @cause.id != item.variant.product.cause_id %>
                   <% current_order.empty! %>
+                <% end %>
                 <% end %>
               <% end %>
               <!--End -->
