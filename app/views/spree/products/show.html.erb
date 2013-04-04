@@ -14,14 +14,6 @@
       <li class="active">Product Detail</li>
     </ul>
 
-    <div id="shopping_cart" class="full_page">
-      <div class="message"><%= flash[:error]  %></div>
-      <div class="message success" style="display:none">
-        Success :D <a href="#" class="fr"></a>
-      </div>
-
-    </div>
-
     <!--PRODUCT DETAIL STARTS-->
     <div id="product_detail">
       <!--Product Left Starts-->
@@ -78,7 +70,7 @@
         <% end %>
 
 
-	      <div class="product_overview hidden_movil">
+	      <div class="product_overview">
             <%= render :partial => "properties" %>
         </div>
 

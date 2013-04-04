@@ -17,7 +17,7 @@
                 <div id="shopping_cart">
                   <div class="message success" style="display:none">Success :D </div>
                   <div class="message warning" style="display:none"></div>
-                  <h1>Sustainability. Solidarity. Fashion. Change.</h1>
+                  <h1>Fashion, Solidarity and Change.</h1>
                 <h4>$8 of each purchase are given to a cause helping the development and protection of women</h4>
             </section>
         </div>
@@ -30,8 +30,10 @@
                   <div id="cause" class="cause">
                       <section>
                           <!--Cause Description Starts-->
+                          <%= image_tag ("image-yanapana/trianglewhite.png"), :class=>'triangle-w'%>
                           <div class="cause_description">
-                              <h2 id="mostrar"><%= @cause.title %><%= image_tag ("image-yanapana/trianglewhite.png"), :class=>'triangle-w'%></h2>
+
+                              <h2 id="mostrar"><%= @cause.title %></h2>
 
 				              <div id="caja">
                                   <div class="description_text hidden_tablet hidden_movil" id="sample">

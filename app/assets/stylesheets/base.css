@@ -99,6 +99,8 @@ header, nav, section, footer, .branding_area { width:980px; margin:0px auto;}
 
 .section_container {overflow: hidden;}
 
+.fb_share_button {text-decoration: none;margin-right: 20px;}
+
 /*-----------------------------------HEADER*/
 .header_container{ height: 45px;}
 header .top_bar{ display:inline-block; width:100%;}
@@ -110,8 +112,8 @@ header .top_links{ margin:0px; float:right;}
 header .top_links > li{ float:left; margin-left:1px;}
 header .top_links > li a{ float: right; display:block; padding:16px 20px; line-height:100%; color:#e9e9e9;  text-decoration:none; text-transform:capitalize; }
 header .top_links > li.highlight a { color:#fff; text-shadow:none;}
-.branding_container {height: 82px; width:100%; padding-top: 50px;}
-h1.logo{ float:left; padding:10px 0px;}
+.branding_container {overflow: hidden; width:100%; padding-top: 50px;}
+h1.logo{ float:left; padding:20px 0px;}
 h1.logo_footer {float: left; margin-right: 15px; width: 23px; }
 h1.logo_movil {display: none;}
 header .header_search{ height:23px; width:230px; float:right; padding:3px; margin:30px 0px;  border:solid 1px #e1e1e1;  cursor:pointer;}
@@ -119,7 +121,7 @@ header .header_search input{ background:none; border:0px; padding:4px; width:82%
 header .header_search button{background:url(../../assets/image-yanapana/search_btn.png) no-repeat center; border:0px; width:20px; height:20px; float:right; margin:2px;}
 
 .hasCountdown {width: 980px; margin: 0 auto;}
-.countdown {float: right; width: 236px; padding-top: 42px; text-shadow: 1px 1px 0 white;}
+.countdown {float: right; width: 218px; padding-top: 65px; text-shadow: 1px 1px 0 white;}
 .countdown h3 {font-family: "Century Gothic", sans-serif; font-size: 12px; float: left; padding: 15px 10px 0 0; text-transform: uppercase; color: #666;}
 .countdown li {display: inline-block;}
 .countdown .countdown_text li {padding: 0px 3px 2px 0px; color: #666;}
@@ -143,8 +145,8 @@ nav .primary_nav li.active > a{ text-shadow: none;color:#fff;}
 .minicart span b{font-weight:bold; color: #BCD80A;}
 
 /*-----------------------------------SUBMENU*/
-ul.sub_menu{position:absolute;top:40px; left:-4000px; background-color: rgba(255, 255, 255, 0.93); background:#fff\9; padding:15px 0px; z-index:100; width:980px; box-shadow:0px 5px 6px #999;border-top:solid 3px;}
-nav .primary_nav > li:hover > ul{ left:0px;}
+ul.sub_menu{position:absolute;top:40px; left:-4000px; background-color: rgba(255, 255, 255, 0.90); background:#fff\9; padding:15px 0px; z-index:100; width:300px; box-shadow:0px 5px 6px #999;border-top:solid 3px;}
+nav .primary_nav > li:hover > ul{ left:200px;}
 ul.sub_menu > li{ width:210px; margin-left:30px;}
 ul.sub_menu li a{ line-height:20px; color:#544f4b; text-decoration:none;}
 ul.sub_menu > li > a{ font-weight:bold; text-transform:uppercase; color:#312e2b;}
@@ -161,14 +163,14 @@ header ul span.item { color: #e9e9e9;}
 /*-----------------------------------CAUSE*/
 .anystretch img {position: static !important;}
 
-.triangle-w {width: 30px; height: 15px; margin-top: 15px; float: right;}
+.triangle-w {width: 30px; height: 15px; margin-top: 20px; float: right;}
 
 #cause {  padding: 40px 0; overflow: hidden; }
 #org_description {float: left; width: 45%; }
 #cause section .description_text { float: left; }
 #cause section .description_text .issue {margin-right: 2%;}
 #cause section .description_text .solution {margin-left: 2%;}
-#cause section iframe.video_description {width: 50%; height: 275px; margin: 0 40px 0 0 ; float: left;}
+#cause section iframe.video_description {width: 50%; height: 268px; margin: 0 40px 0 0 ; float: left;}
 
 
 #cause_background {height: 400px; width: 100%;}
@@ -268,7 +270,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 .cart_drop.picksize li a {width: 100%; padding: 21px 0 12px 12px;}
 .cart_drop.picksize li a:hover {color: #fff;}
 
-.size_drop.picksize  {position: absolute; top: 32px; left: 27px; width: 77px;}
+.size_drop.picksize  {position: absolute; top: 32px; left: 27px; width: 77px; }
 .size_drop.picksize li {margin-left: 0; width: 100% !important; padding: 0; cursor: pointer;}
 .size_drop.picksize li:hover {background: #ddd !important;}
 .size_drop.picksize li a {width: 100%; padding: 21px 0 12px 12px;}
@@ -331,8 +333,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 
 .product_rightcol{ width:590px; float:right;}
 .product_rightcol small.pr_type{ font-size:15px; color:#a29b95;}
-.product_rightcol h1{ padding:20px 0px 20px 0px; font-size:26px; color:#312e2b; text-transform:uppercase; display: inline-block;}
-.product_rightcol .pr_price{ padding:22px 0px 20px 0px; display:inline-block; float: right;}
+.product_rightcol h1{ padding:20px 0px 20px 0px; font-size:26px; color:#312e2b; text-transform:uppercase; display: inline-block; width: 78%; margin-right: 5%;}
+.product_rightcol .pr_price{ padding:22px 0px 20px 0px; display:inline-block; float: right; width: 17%;}
 .product_rightcol .pr_price big{ font-size:29px; font-weight:bold!important; display:inline-block; padding-right:16px;}
 .product_rightcol .pr_price small{ font-size:17px; text-decoration:line-through;color:#a29b95;}
 .product_rightcol .size_info{ padding:7px 0px; border:solid 1px #ccc; border-width:1px 0px; display:inline-block; width:100%;}
@@ -356,8 +358,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 .product_overview.hidden_movil > div {overflow: hidden;}
 
 
-.product_rightcol .product_overview{border-top:solid 1px #ccc; padding:15px 0px; display:inline-block; width:100%;color:#544f4b ; }
-.product_rightcol .product_overview h4{font-weight:bold; text-transform:uppercase; padding-bottom:10px;}
+.product_rightcol .product_overview{border-top:solid 1px #ccc; padding:15px 0px; display:inline-block; width:100%;color:#544f4b ; overflow: hidden; }
+.product_rightcol .product_overview h4{font-weight:bold; text-transform:uppercase; font-size: 11px; font-family: arial;}
 .product_rightcol .product_overview li{ line-height:25px; float:none; list-style:square; list-style-position:inside;color:#5F5A56 ;}
 
 .product_rightcol .product_options{border-top:solid 1px #dedede; padding:15px 0px; display:inline-block; width:100%;color:#544f4b ; }
@@ -910,11 +912,11 @@ h2.sub_title{ font-family: 'istok web', sans-serif; font-size:18px; color:#312e2
 h3 {line-height: 1.4; text-transform: capitalize; font-family:'century gothic', sans-serif; font-size: 17px; color:#312e2b; font-weight:normal; padding-bottom:12px; }
 .flex-caption h3{ text-transform:uppercase; font-size:22px; line-height:30px; font-weight:bold;}
 
-#headline h1 { color: #312E2B;  font-family: "skippy-sharp",cursive; font-size: 45px; text-shadow: 1px 1px 0 #fff; text-transform: uppercase; font-weight: bold;}
+#headline h1 { color: #312E2B;  font-family: "skippy-sharp",cursive; font-size: 55px; text-shadow: 1px 1px 0 #fff;  }
 #headline h4 {color: #312E2B; font-family: 'century gothic', sans-serif; font-size: 16px; text-shadow: 1px 1px 0 #fff;}
 
 #cause {text-shadow: 1px 1px 1px #222;}
-#cause h2 {   font-family: "skippy-sharp",cursive; font-size: 42px; padding-bottom: 20px; text-transform: uppercase;}
+#cause h2 {   font-family: "skippy-sharp",cursive; font-size: 50px; padding-bottom: 20px;}
 #cause h4 {font-family: 'century gothic', sans-serif; font-size: 20px; padding-bottom: 10px;}
 #cause p {line-height: 1.4; font-size: 16px; padding-bottom: 16px;}
 
@@ -946,9 +948,9 @@ filter: gray; /* IE6-9 */
 /*FAQ*/
 .faq-index { margin-bottom: 10px; }
 #faq-style ul {font-size: 18px;font-weight: bold;list-style: decimal inside none;}
-#faq-style ul li a  {color: #333; text-decoration: underline; font-family: istok web; font-size: 14px; line-height: 1.4; line-height: 1.4; font-weight: normal;}
+#faq-style ul li a  {color: #333; text-decoration: underline; font-family: istok web; font-size: 14px; line-height: 1.4; font-weight: normal;}
 #faq-style h2 {display: inline-block; vertical-align: baseline; font-weight: bold;}
-#faq-style p {margin-left: 20px; margin-bottom: 20px; font-weight: normal;}
+#faq-style p { margin-bottom: 20px; font-weight: normal;}
 
 .important {font-weight: bold;}
 
