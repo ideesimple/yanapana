@@ -33,9 +33,17 @@
             <ul>
             <% unless current_order.nil? or current_order.line_items.empty?%>
               <%= render :partial => 'spree/shared/preview_cart', :locals => { :current_order => current_order } %>
-              <% else %>
-                <div class="empty"> Your Shopping cart is empty!</div>
+              <!--Validar que los productos sean de la causa que esta en curso -->
+              <% current_order.line_items.each do |item|  %>
+                <% if @cause.id != item.variant.product.cause_id %>
+                  <% current_order.empty! %>
+                <% end %>
               <% end %>
+              <!--End -->
+            <% else %>
+                <div class="empty"> Your Shopping cart is empty!</div>
+            <% end %>
+
             </ul>
           </div>
 
