@@ -93,4 +93,6 @@ Spree::HomeController.class_eval do
     end
   end
 
+  def landing
+  end
 end
