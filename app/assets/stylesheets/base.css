@@ -357,10 +357,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 
 .product_overview.hidden_movil > div {overflow: hidden;}
 
+.product_overview {border-bottom: 1px solid #ccc;}
+#product-specs {padding: 14px 0 ; overflow: hidden;}
 
-.product_rightcol .product_overview{border-top:solid 1px #ccc; padding:15px 0px; display:inline-block; width:100%;color:#544f4b ; overflow: hidden; }
-.product_rightcol .product_overview h4{font-weight:bold; text-transform:uppercase; font-size: 11px; font-family: arial;}
-.product_rightcol .product_overview li{ line-height:25px; float:none; list-style:square; list-style-position:inside;color:#5F5A56 ;}
+
+.product_rightcol .product_overview{border-top:solid 1px #ccc;  display:inline-block; width:100%;color:#544f4b ; overflow: hidden; }
+.product_rightcol h4{font-weight:bold; text-transform:uppercase; font-size: 11px; font-family: arial; color: #5F5A56;}
+.product_rightcol .product_overview li{ line-height:25px; float:none; list-style:square; list-style-position:inside;color:#777 ;}
 
 .product_rightcol .product_options{border-top:solid 1px #dedede; padding:15px 0px; display:inline-block; width:100%;color:#544f4b ; }
 .product_rightcol .product_options h4{font-weight:bold; text-transform:uppercase; padding-bottom:10px;}
@@ -388,17 +391,23 @@ div.simpleTabsContent p{ padding-bottom:12px; line-height:18px; color:#515151;}
 ul.simpleTabsNavigation li a { padding:5px 20px 4px 20px;}
 ul.simpleTabsNavigation li a{ background:#F3F3F3; color:#544F4B; font-weight:bold;}
 
-#caja {
+#caja, #caja2  {
 width:100%;
 display: none;
-padding:5px;
 }
-#mostrar{
+
+#mostrar, #mostrar2{
 display:inline-block;
 width:100%;
 cursor: pointer;
 float: left;
 }
+
+#size-specs {margin-top: 30px; color: #777;}
+#size-specs thead th {border-bottom: 1px solid #ccc; padding-bottom: 7px}
+#size-specs th {font-weight: bold; text-transform: capitalize; text-align: center;}
+#size-specs td {padding: 7px 15px; text-align: right;}
+
 
 .close { font-weight: bold; color: #000; text-decoration: none; }
 
