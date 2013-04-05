@@ -73,6 +73,50 @@
 	      <div class="product_overview">
             <%= render :partial => "properties" %>
         </div>
+        <div id="product-specs">
+    <h4 id="mostrar2" href="#" class="arrow down">Sizing Details</h4>
+    <div id="caja2">
+      <table id="size-specs">
+        <thead>
+          <tr>
+            <th></th>
+            <th>small</th>
+            <th>medium</th>
+            <th>large</th>
+            <th>x-large</th>
+            <th>2x-large</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Chest</td>
+            <td>32.5"</td>
+            <td>34.5"</td>
+            <td>36.5"</td>
+            <td>38.5"</td>
+            <td>42.5"</td>
+          </tr>
+          <tr>
+            <td>Waist</td>
+            <td>32.5"</td>
+            <td>34.5"</td>
+            <td>36.5"</td>
+            <td>38.5"</td>
+            <td>42.5"</td>
+          </tr>
+          <tr>
+            <td>Lenght</td>
+            <td>32.5"</td>
+            <td>34.5"</td>
+            <td>36.5"</td>
+            <td>38.5"</td>
+            <td>42.5"</td>
+          </tr>
+        </tbody>
+
+      </table>
+    </div>
+   </div>
 
          <%#= render :partial => "cart_form" %>
          <%= form_for :order, :url => populate_orders_path do |f| %>
@@ -125,7 +169,7 @@
 
        <% end %>
 
-         <div class="product_overview">
+         <div>
             <!--ORG Logo Starts-->
             <div>
               <!--ORG Logo Ends-->
@@ -203,6 +247,14 @@
       $("#mostrar").click(function(event) {
         event.preventDefault();
         $("#caja").slideToggle();
+      });
+
+    });
+    $(function()
+    {
+      $("#mostrar2").click(function(event) {
+        event.preventDefault();
+        $("#caja2").slideToggle();
       });
 
     });
