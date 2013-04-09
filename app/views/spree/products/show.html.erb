@@ -3,7 +3,6 @@
     <%= ('<meta property="og:title" content=" Yanapana | ' + @product.name  + ' " />').html_safe %>
     <%= ('<meta property="og:url" content="'  + product_url(@product) + '" />').html_safe %>
     <%= ('<meta property="og:description" content="' + @product.cause.title  + '" />').html_safe %>
-    <%= ('<meta property="og:image" content="' + product_image(@product).to_s + '" />').html_safe %>
   <% end %>
 <% end %>
 

@@ -35,15 +35,15 @@
       <nav>
         <ul class="primary_nav">
             <li <%= 'class=active' if action_name == "index" %> > <%= link_to "Home", root_path %></li>
-            
+
             <li<%= 'class=active' if action_name == "about_us" %>  ><%= link_to "About Us", about_us_path  %></li>
-            
-            <li  <%= 'class=active' if action_name == "how_it_works" %> ><%= link_to "Get involved" %>
+
+            <li  <%= 'class=active' if action_name == "how_it_works" || action_name == "partnership"%> ><%= link_to "Get involved", "#" %>
             <ul class="sub_menu">
               <li>
                 <ul>
-                  <li><a href="#">Design For Us</a></li>
-                  <li><a href="#">Non-Profit Partnership</a></li>
+                  <li><%= link_to "Design For Us", how_it_works_path  %></li>
+                  <li> <%= link_to "Non-Profit Partnership", partnership_path  %></li>
                 </ul>
               </li>
 
@@ -51,7 +51,7 @@
 
             </li>
             <li><a href="#">Blog</a></li>
-            
+
             <li  <%= 'class=active' if action_name == "faq" %> ><%= link_to "FAQ", faq_path  %></li>
 <li  <%= 'class=active' if action_name == "contact_us" %> ><%= link_to "Contact Us", contact_us_path  %></li>
         </ul>
@@ -90,7 +90,7 @@
   <% end %>
   <%= yield :javascripts %>
 
-  <%= render :partial => 'spree/shared/google_analytics' %>
+
 
   </body>
 </html>
