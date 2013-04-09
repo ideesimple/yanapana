@@ -33,8 +33,9 @@
 		<link rel="shortcut icon" href="http://sitiowebsocial.com/yanapana/wp-content/uploads/2013/03/favicon.ico" type="image/x-icon" />
 
 	<!-- WebFonts -->
-
 	<script type="text/javascript">
+	<script src="https://apis.google.com/_/scs/apps-static/_/js/k=oz.gapi.en_GB.vjJxBv1jAn0.O/m=plusone/rt=j/sv=1/d=1/ed=1/am=QQ/rs=AItRSTP9YpaLBjyU1EIwAM2tfMpS4igROA/cb=gapi.loaded_0" async=""></script><script type="text/javascript">
+
 		WebFontConfig = {
 			google: { families: [ 'Oswald', 'Podkova' ] }		};
 	</script>
@@ -56,7 +57,8 @@
 <link rel='canonical' href='http://sitiowebsocial.com/yanapana/' />
 
 	<!-- Mobile Stylesheets -->
-		<link rel="stylesheet" type="text/css" href="http://sitiowebsocial.com/yanapana/wp-content/themes/launcheffect/ss/responsive.css" media="only screen and (max-width: 590px)"/>
+
+		<link media="only screen and (max-width: 590px)" href="http://sitiowebsocial.com/yanapana/wp-content/themes/launcheffect/ss/responsive.css" type="text/css" rel="stylesheet">
 
 	<!-- Google PlusOne Button -->
 	<script type="text/javascript" src="https://apis.google.com/js/plusone.js">
@@ -83,9 +85,7 @@
 
 	<!-- Start Additional User-Defined CSS -->
 		<!-- End Additional User-Defined CSS -->
-</head>
-
-<body class="home page page-id-5 page-template page-template-launch-php lite">
+<body class="home page page-id-5 page-template page-template-launch-php lite" id="signup-bodytag">
 
 	<div id="fb-root"></div>
 
@@ -172,38 +172,37 @@ You can easily see your stats. by logging back in using your email address.</p>
 					<input type="hidden" id="templateURL" value="http://sitiowebsocial.com/yanapana/wp-content/themes/launcheffect" />
 
 					<!-- FORM (PRE-SIGNUP) -->
-					<form id="form" action="" class="signup-right">
-						<fieldset>
-							<input type="hidden" name="code" id="code" value="HATed" />
+          <%= form_tag subscribe_path, :remote => true, :html => {:id => 'sign-up'} do %>
+            <fieldset>
+              <input type="hidden" name="code" id="code" value="HATed" />
 
-							<ul id="form-layout">
-								<li class="first">
-																		<label for="email">
-										YOUR EMAIL ADDRESS
-										<span> *</span>																				<a href="#" id="reusertip">
-											Returning user?											<div id="reuserbubble">
-												Simply enter your email address and submit the form to view your stats.												<div class="reuserbubble-arrow-border"></div>
-												<div class="reuserbubble-arrow"></div>
-											</div>
-										</a>
+              <ul id="form-layout">
+                <li class="first">
+                  <label for="email">
+                    YOUR EMAIL ADDRESS
+                    <span> *</span>
+                    <a href="#" id="reusertip">
+                      Returning user?
+                      <div id="reuserbubble">
+                        Simply enter your email address and submit the form to view your stats.									<div class="reuserbubble-arrow-border"></div>
+                        <div class="reuserbubble-arrow"></div>
+                      </div>
+                    </a>
+                  </label>
 
-									</label>
-
-									<!-- START IF NO CUSTOM FIELDS //////////////////////////////////////////////////////////////////// -->
-										<div id="email-layout">
-                    <%= form_tag subscribe_path, :remote => true, :html => {:id => 'sign-up'} do %>
-                      <span id="emailinput">
-								            <input  type="email" value="" placeholder="Your Email" name="email">
-								        </span>
-										<!-- SUBMIT BUTTON -->
-										<span id="submit-button-border">
-											<span id="submit-button-spinner"></span>
+                  <!-- START IF NO CUSTOM FIELDS //////////////////////////////////////////////////////////////////// -->
+                  <div id="email-layout">
+                    <span id="emailinput">
+                      <input  type="email" value="" placeholder="Your Email" name="email">
+                    </span>
+                    <!-- SUBMIT BUTTON -->
+                    <span id="submit-button-border">
+                      <span id="submit-button-spinner"></span>
                       <input type="submit" name="submit" value="Register" id="submit-button" />
                     </span>
-                  <% end %>
                     <span class="form-Motivationessage" id="response"></span>
 
-								    </div>
+                  </div>
 
 																		<!-- //////////////////////////////////////////////////////////////////// END IF NO CUSTOM FIELDS -->
 
@@ -242,8 +241,7 @@ You can easily see your stats. by logging back in using your email address.</p>
 							<div class="clear"></div>
 
 						</fieldset>
-					</form>
-
+					       <% end %>
 					<!-- FORM (POST-SIGNUP) -->
 					<form id="success" action="">
 						<fieldset>
@@ -322,6 +320,7 @@ You can easily see your stats. by logging back in using your email address.</p>
 						<li class="inner-footer_icon facebook"><a href="https://www.facebook.com/YANAPANAwear" target="_blank">Facebook Page</a></li>
 						<li class="inner-footer_icon twitter"><a href="https://twitter.com/yanapanawear" target="_blank">Follow Me</a></li>
 																				<li class="inner-footer_icon facebooklike"><div class="fb-like" data-href="https://www.facebook.com/YANAPANAwear" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false" data-font="arial"></div></li>
+
 				<div class="clear"></div>
 	</ul>
 
@@ -360,10 +359,8 @@ You can easily see your stats. by logging back in using your email address.</p>
 	<!-- START ADDITIONAL USER-DEFINED CODE -->
 
 
+
 <div class="fb-comments" data-href="http://sitiowebsocial.com/yanapana/" data-width="470" data-num-posts="10"></div>
-
-
-
 
 		<!-- END ADDITIONAL USER-DEFINED CODE -->
 

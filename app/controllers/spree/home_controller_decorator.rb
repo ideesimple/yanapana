@@ -96,4 +96,12 @@ Spree::HomeController.class_eval do
   def landing
     render :layout => "application"
   end
+
+  def how_it_works
+  end
+
+  def partnership
+
+  end
+
 end
