@@ -20,18 +20,22 @@
                         <li><%= link_to "Our Family", about_us_path + "#family"%></li>
                     </ul>
                 </li>
-                <li> <span><%= link_to "Contact Us", contact_us_path %></span>
-                    <ul class="hidden_movil">
-                        <li><%= link_to "Suggestions", contact_us_path + "#leavemessage" %></li>
-                        <li><%= link_to "Questions", contact_us_path + "#leavemessage" %></li>
-                        <li><%= link_to "Work With Us", contact_us_path + "#leavemessage" %></li>
-                    </ul>
-                </li>
-                <li> <span><%= link_to "Get Involved", how_it_works_path %> </span>
+                <li class="hidden_movil"> <span><%= link_to "Get Involved", how_it_works_path %> </span>
                     <ul class="hidden_movil">
                         <li><%= link_to "Submit Your Designs", how_it_works_path + "#submityourdesigns"%></li>
                         <li><%= link_to "Non-Profit Partnership", how_it_works_path + "#submityourdesigns"%></li>
                     </ul>
+                </li>
+
+                <li class="hidden_desktop"> 
+                    <span><%= link_to "Design for us", how_it_works_path%> </span>
+                </li>
+
+                <li class="hidden_desktop"> 
+                    <span><%= link_to "Non-Profit Partnership", how_it_works_path %> </span>
+                </li>
+                <li class="hidden_desktop"> 
+                    <span><%= link_to "Blog", how_it_works_path %> </span>
                 </li>
                 <li><span><%= link_to "FAQ", faq_path %></span>
                     <ul class="hidden_movil">
@@ -40,6 +44,14 @@
                         <li><%= link_to "Terms and Conditiond of Returns", faq_path %></li>
                         <li><%= link_to "Privacy Policy", faq_path %></li>
                         <li><%= link_to "Shipping Information", faq_path %></li>
+                    </ul>
+                </li>
+
+                <li> <span><%= link_to "Contact Us", contact_us_path %></span>
+                    <ul class="hidden_movil">
+                        <li><%= link_to "Suggestions", contact_us_path + "#leavemessage" %></li>
+                        <li><%= link_to "Questions", contact_us_path + "#leavemessage" %></li>
+                        <li><%= link_to "Work With Us", contact_us_path + "#leavemessage" %></li>
                     </ul>
                 </li>
             </ul>
@@ -58,7 +70,7 @@
                       <%= form_tag subscribe_path, :remote => true, :html => {:id => 'sign-up'} do %>
 
                         <input  type="email" value="" placeholder="Your Email" id="email" name="email">
-                        <input type="submit" value="Register" name="subscribe" class="sign-up">
+                        <input type="submit" value="Register" name="subscribe" class="sign-up sc-button light-blue">
 
                         <span class="form-Motivationessage" id="response"></span>
 

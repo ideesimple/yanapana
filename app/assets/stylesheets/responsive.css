@@ -11,8 +11,7 @@ width:700px;
 #side_nav{ width:150px;}
 #main_content{ width:512px;}
 .toolbar > div.viewby{ margin-left:22px;}
-footer .footer_links > li{ padding-left:25px; width:120px;}
-footer .footer_customblock{ display:none;}
+footer .footer_links > li{ padding-left:25px; width:78px;}
 .subscribe_block .find_us{ margin-left:22px; width:120px;}
 .subscribe_block .subscribe_nl{ width:475px;}
 .subscribe_block .subscribe_nl small{ width:405px;}
@@ -128,8 +127,13 @@ section#main_content{width:420px;}
 .dashboard-rcol.fr { width: 465px;}
 .dashboard-products > li {width: 43%;}
 
+/*FOOTER*/
+footer .footer_customblock {width: 205px;}
+
+.contact_info input[type="email"] {width: 155px;}
 
 }
+
 
 
 
@@ -344,6 +348,9 @@ div.selector, div.selector {width: 225px;}
 .products_list_list .product_info{width:290px; text-align:left; float:none; margin:10px auto;}
 .products_list_list .price_info{width:290px; float:none; margin:auto;}
 
+
+#size-specs td {padding: 7px 10px;}
+
 /*Page*/
 section#main_content{width:310px;}
 aside#sidebar{width:310px;}
@@ -370,5 +377,10 @@ footer .footer_links li span a { font-size: 12px; text-transform: uppercase;}
 /*DASHBOARD*/
 .dashboard-rcol.fr, .dashboard-lcol { width: 100%;}
 .dashboard-products > li {width: 90%;}
+
+
+/*DASHBOARD*/
+.contact_info input[type="email"] {width: 290px;}
+
 
 }
