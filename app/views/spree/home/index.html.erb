@@ -70,7 +70,7 @@
                               <a data-pin-config="none" href="//pinterest.com/pin/create/button/?url=<%= (root_url + 'week-' + @cause.id.to_s).html_safe%>&media=<%= @cause.organization.photo.url(:product) %>&description=<%= @cause.title %>%20at%20www.yanapana.com" data-pin-do="buttonPin" ><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png" /></a>
 
                               <!--Shop Now Starts-->
-                                  <h1 id="call-to-action" class="sc-button blue"></h1>
+                              <h1 id="call-to-action" class="sc-button blue">Support!</h1>
                               <!--Shop Now Ends-->
                           </div>
                           <% end %>
@@ -83,8 +83,6 @@
             </div>
         </div>
         <!--Cause Ends-->
-
-
 <!--Goal Counter Copy Starts-->
 <a name="goals"></a>
             <div id="goals">
@@ -176,7 +174,6 @@
   <% else %>
 <!--Mid Section Starts-->
 
-
     <div class="productos jean">
       <% if @products_cause.nil? %>
             <h6 class="search-results-title"><%= t(:no_products_found) %></h6>
@@ -237,12 +234,7 @@
     <script type="text/javascript">
       $(function(){
         $("#mostrar").click(function(event) {
-          event.preventDefault();
           $("#caja").slideToggle();
-          });
-        $("#caja a").click(function(event) {
-          event.preventDefault();
-          $("#caja").slideUp();
           });
         })
 

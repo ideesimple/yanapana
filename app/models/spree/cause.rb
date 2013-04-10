@@ -4,22 +4,34 @@ class Spree::Cause < ActiveRecord::Base
   belongs_to :artist
   belongs_to :organization
   has_many :products
-  attr_accessible :description, :goal_facebook, :goal_money, :goal_twitter, :link_facebook, :link_pinterest, :link_twitter, :photo, :status, :title, :video, :artist_id, :organization_id, :date_start, :date_finish, :number_goal, :status, :inspiration
+  attr_accessible :description, :goal_facebook, :goal_money, :goal_twitter, :link_facebook, :link_pinterest, :link_twitter, :photo, :status, :title, :video, :artist_id, :organization_id, :date_start, :date_finish, :number_goal, :status, :inspiration, :sharephoto, :titleshare
 
   validates :title, :description, :artist_id, :organization_id, :goal_money, :goal_facebook, :goal_twitter, :number_goal, :presence => true
 
   validates :description, :length => {:minimum => 50}
 
-  validate :cause_id_when_active, :on => :create
+  #validate :cause_id_when_active, :on => :create
   validates_attachment_presence :photo
 
   validates_attachment_content_type :photo,
     :content_type => ['image/jpg', 'image/png', 'image/jpeg'],
     :message => "must be jpg, png, jpeg"
 
+  validates_attachment_content_type :photo,
+    :content_type => ['image/jpg', 'image/jpeg'],
+    :message => "must be jpg, jpeg"
+
 #Configurations Paperclip
   has_attached_file :photo,
     :styles => {:small=>"100x100>", :product=>"240x240>", :share_photo => "200x200!"},
+    :storage => Rails.env == 'production' ? 's3' : 'filesystem',
+    :s3_credentials => {
+    :access_key_id => Spree::Config[:s3_access_key],
+    :secret_access_key => Spree::Config[:s3_secret]
+    },
+    :bucket => Spree::Config[:s3_bucket]
+  has_attached_file :sharephoto,
+    :styles => {:small=>"100x100>", :share_photo => "200x200!"},
     :storage => Rails.env == 'production' ? 's3' : 'filesystem',
     :s3_credentials => {
     :access_key_id => Spree::Config[:s3_access_key],
@@ -41,13 +53,13 @@ before_update :youtube
  end
 
 
-  def cause_id_when_active
-    if self.status == true
-      if Spree::Cause.where("status = ?", true).count > 0
-        errors.add( :id, 'there is already an active cause')
-      end
-    end
-  end
+  #def cause_id_when_active
+  #  if self.status == true
+  #    if Spree::Cause.where("status = ?", true).count > 0
+  #      errors.add( :id, 'there is already an active cause')
+  #    end
+  #  end
+  #end
 
 
   def self.per_week

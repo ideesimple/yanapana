@@ -5,6 +5,11 @@
     <%= @cause.title  %>
   </p>
   <p>
+    <b>Title:</b>
+    <%= @cause.titleshare  %>
+  </p>
+
+  <p>
     <b>Description:</b>
     <%= @cause.description %>
   </p>
@@ -54,8 +59,8 @@
     <%= @cause.link_facebook %>
   </p>
   <p>
-    <b>Status:</b>
-    <%= @cause.status %>
+    <b>Photo:</b>
+    <%= image_tag @cause.sharephoto.url(:share_photo) %>
   </p>
 
 
