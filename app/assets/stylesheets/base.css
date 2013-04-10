@@ -628,9 +628,9 @@ ul.breadcrumb li a{ color:#888; text-decoration:none;}
 #existing-customer label[for="user_remember_me"] {font-weight: normal;}
 
 .checkout_steps{ width:100%; float:left; line-height:18px; margin-bottom: 40px;}
-.checkout_steps .step-title{ padding:14px; font-size:15px; text-transform:uppercase; }
-.checkout_steps .step-title h2{font-size:16px; text-transform:uppercase; display:inline-block; }
-.checkout_steps .step-title span{ display:inline-block; text-align:center; }
+.checkout_steps .step-title, .step-title{ padding:14px; font-size:15px; text-transform:uppercase; }
+.checkout_steps .step-title h2, .step-title h2 {font-size:16px; text-transform:uppercase; display:inline-block; }
+.checkout_steps .step-title span, .step-title span{ display:inline-block; text-align:center; }
 .checkout_steps > ol > li{border-top:solid 1px #ccc; margin-top:-1px;}
 .checkout_steps > ol > li:first-child{ border:none;}
 .checkout_steps > ol > li.active .step-title{ color:#fff; background:#555;}
@@ -914,6 +914,14 @@ div.selector span {
 	color:#818181;
 }
 
+iframe form .form-all .form-selection label {
+    font-size: 12px !important; 
+    font-family: sans-serif !important; 
+    margin-bottom: 0 !important; 
+    display: block !important; 
+    float: none !important;
+}
+
 
 /*-----------------------------------COLOR THEME HERE*/
 .navigation_container, ul.sub_menu > li > ul > li:hover, .col_right .block-title, .twitter_feed{ border-bottom-color:#BCD80A;}
@@ -940,6 +948,8 @@ footer, ul.sub_menu, .sideNavCategories > ul, ul.sub_menu > li > ul, .checkout_t
 
 body {background: #333;}
 .jean {background: url("../../assets/image-yanapana/gray_jean.png") repeat 0 0 transparent;   }
+.snow {background: url("../../assets/image-yanapana/snow.png");}
+
 
 #headline h1 {color: #312E2B; text-shadow: 1px 1px 0 #fff;}
 
