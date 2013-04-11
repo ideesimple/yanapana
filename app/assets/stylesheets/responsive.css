@@ -286,8 +286,9 @@ footer address img{ float:none;}
 .action_buttonbar{ padding:5px;}
 #shopping-cart-table td:first-child{ width:1%;}
 #shopping-cart-table td img{ display:none;}
+#shopping-cart-table tr td {padding: 12px 5px; }
 #shopping-cart-table tr td input.qty_box{ width:16px; padding:2px;}
-#shopping-cart-table th{ font-size:12px; padding:10px 0px;}
+#shopping-cart-table th{ font-size:12px; padding:10px 10px;}
 #shopping-cart-table tr td a.remove{ width:15px; height:15px;}
 #shopping-cart-table tr td span.price{ font-size:12px; font-weight:normal;}
 #shopping-cart-table tr td a.edit{ padding:0px 2px; font-size:10px;}
