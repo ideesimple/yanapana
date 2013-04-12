@@ -25,6 +25,7 @@ Yanapana::Application.routes.draw do
       match "subscribe" => "home#subscribe", :as => :subscribe
       match "landing" => "home#landing", :as => :landing
       match "partnership" => "home#partnership", :as => :partnership
+      match "landing-newsletter" => "home#landing_newsletter", :as => :newsletter
 
       #devise_for :user, :class_name => 'Spree::User', :controllers => {:invitations => 'devise/invitations'}
     end

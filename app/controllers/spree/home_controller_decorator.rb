@@ -28,7 +28,11 @@ Spree::HomeController.class_eval do
         @total = order.item_total + @total
       end
     end
+    unless @cause.nil?
     respond_with(@products)
+    else
+    redirect_to landing_path
+    end
   end
 
   def dummy_confirm
@@ -81,7 +85,21 @@ Spree::HomeController.class_eval do
     email = params[:email]
     h = Hominid::API.new('6c3bc75008800ae5fc53277d0bfb918d-us5')
     @prueba = h.lists
-    logger.debug email
+    begin
+      @response = h.list_subscribe('5ec394c1ce', email, {:FNAME => '', :LNAME => ''}, 'html', false, true, true, true)
+    rescue
+      @response = nil
+    end
+
+    respond_to do |wants|
+      wants.js
+    end
+  end
+
+  def landing_newsletter
+    email = params[:email]
+    h = Hominid::API.new('6c3bc75008800ae5fc53277d0bfb918d-us5')
+    @prueba = h.lists
     begin
       @response = h.list_subscribe('5ec394c1ce', email, {:FNAME => '', :LNAME => ''}, 'html', false, true, true, true)
     rescue

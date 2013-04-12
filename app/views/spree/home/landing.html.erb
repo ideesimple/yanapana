@@ -19,9 +19,9 @@
 
 
 			<meta name="description" content="Artists designed apparel fighting for gender equality and women&#039;s empowerment." />
-			<meta property="og:url" content="http://sitiowebsocial.com/yanapana/"/>
+      <%= ('<meta property="og:url" content="'  + landing_url + '" />').html_safe %>
 			<meta property="og:site_name" content="YANAPANA" />
-			<meta property="og:description" content="Artists designed apparel fighting for gender equality and women&#039;s empowerment." />
+      <meta property="og:description" content="Artists designed apparel fighting for gender equality and women&#039;s empowerment." />
 			<meta property="og:type" content="website"/>
 
 
@@ -40,31 +40,36 @@
 			google: { families: [ 'Oswald', 'Podkova' ] }		};
 	</script>
 
-  <%= javascript_include_tag "landingpage/all" %>
-	<link rel="alternate" type="application/rss+xml" title="YANAPANA &raquo; Sign Up Comments Feed" href="http://sitiowebsocial.com/yanapana/?feed=rss2&#038;page_id=5" />
-<link rel='stylesheet' id='lefx_css_main-css'  href='http://sitiowebsocial.com/yanapana/wp-content/themes/launcheffect/ss/main.css?ver=1.0.0' type='text/css' media='all' />
-<link rel='stylesheet' id='lefx_css_dynamic-css'  href='http://sitiowebsocial.com/yanapana/wp-content/themes/launcheffect/ss/dynamic-css.php?ver=1.61' type='text/css' media='all' />
+  <link rel="alternate" type="application/rss+xml" title="YANAPANA &raquo; Sign Up Comments Feed" href="http://sitiowebsocial.com/yanapana/?feed=rss2&#038;page_id=5" />
+  <%= stylesheet_link_tag 'landingpage/main', :media => 'all', :id => 'lefx_css_main-css'%>
+  <link rel='stylesheet' id='lefx_css_dynamic-css'  href='http://sitiowebsocial.com/yanapana/wp-content/themes/launcheffect/ss/dynamic-css.php?ver=1.61' type='text/css' media='all' />
 <script type='text/javascript' src='http://code.jquery.com/jquery-1.8.3.min.js'></script>
-<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/webfont/1.0.22/webfont.js'>script>
-<script type='text/javascript' src='http://sitiowebsocial.com/yanapana/wp-content/themes/launcheffect/js/jqModal.js'></script>
-<script type='text/javascript' src='http://sitiowebsocial.com/yanapana/wp-content/themes/launcheffect/js/spin.js'></script>
-<script type='text/javascript' src='http://sitiowebsocial.com/yanapana/wp-content/themes/launcheffect/js/jquery.imagesloaded.min.js'></script>
-<script type='text/javascript' src='http://sitiowebsocial.com/yanapana/wp-content/themes/launcheffect/js/init.js?ver=2.21'></script>
+<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/webfont/1.0.22/webfont.js'></script>
+<%= javascript_include_tag "landingpage/jqModal" %>
+<%= javascript_include_tag "landingpage/spin" %>
+<script type="text/javascript" src="http://sitiowebsocial.com/yanapana/wp-content/themes/launcheffect/js/jquery.imagesloaded.min.js"></script>
+<%= javascript_include_tag "landingpage/init" %>
+<%= javascript_include_tag "landingpage/all" %>
+
 <link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://sitiowebsocial.com/yanapana/xmlrpc.php?rsd" />
 <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://sitiowebsocial.com/yanapana/wp-includes/wlwmanifest.xml" />
 <link rel='prev' title='Sample Page' href='http://sitiowebsocial.com/yanapana/?page_id=2' />
 <meta name="generator" content="WordPress 3.5.1" />
-<link rel='canonical' href='http://sitiowebsocial.com/yanapana/' />
+<link rel='canonical' href=<%= landing_url %> />
 
 	<!-- Mobile Stylesheets -->
-
-		<link media="only screen and (max-width: 590px)" href="http://sitiowebsocial.com/yanapana/wp-content/themes/launcheffect/ss/responsive.css" type="text/css" rel="stylesheet">
+  <%= stylesheet_link_tag 'landingpage/responsive', :media => 'only screen and (max-width: 590px)'%>
 
 	<!-- Google PlusOne Button -->
-	<script type="text/javascript" src="https://apis.google.com/js/plusone.js">
+	<!--<script type="text/javascript" src="https://apis.google.com/js/plusone.js">
 	      {"parsetags": "explicit"}
 	</script>
-
+  <script type="text/javascript">
+    function renderPlusone() {
+      gapi.plusone.render('plusoneblock');
+    }
+  </script>
+  -->
 	<!-- Start Google Analytics -->
 		<!-- End Google Analytics -->
 
@@ -172,7 +177,7 @@ You can easily see your stats. by logging back in using your email address.</p>
 					<input type="hidden" id="templateURL" value="http://sitiowebsocial.com/yanapana/wp-content/themes/launcheffect" />
 
 					<!-- FORM (PRE-SIGNUP) -->
-          <%= form_tag subscribe_path, :remote => true, :html => {:id => 'sign-up'} do %>
+          <%= form_tag newsletter_path, :remote => true, :id => 'form' do %>
             <fieldset>
               <input type="hidden" name="code" id="code" value="HATed" />
 
@@ -241,7 +246,8 @@ You can easily see your stats. by logging back in using your email address.</p>
 							<div class="clear"></div>
 
 						</fieldset>
-					       <% end %>
+            </form>
+            <% end %>
 					<!-- FORM (POST-SIGNUP) -->
 					<form id="success" action="">
 						<fieldset>
@@ -273,14 +279,32 @@ You can easily see your stats. by logging back in using your email address.</p>
 
 								<div class="social-container">
 									<div class="social">
-										<div id="tweetblock" ></div>
-										<div id="fblikeblock" ></div>
-										<div id="plusoneblock" ></div>
+                    <div id="tweetblock" >
+                      <a href="https://twitter.com/share" class="twitter-share-button" data-url="<%= landing_url %>"  data-text="YANAPANA is coming to town!  Check out this hip, up and coming social enterprise dedicated to help empower women " data-count="none">Tweet</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                    </div>
+                    <div id="fblikeblock" ><div class="fb-like" data-href="<%= landing_url %>" data-send="true" data-width="120" data-show-faces="false" data-font="arial" layout="button_count"></div></div>
+
+                    <a href="#" onClick="renderPlusone();"></a>
+                    <div id="plusoneblock" >
+                      <!-- Place this tag where you want the +1 button to render. -->
+                      <div class="g-plusone" data-size="tall" data-annotation="none"></div>
+
+                      <!-- Place this tag after the last +1 button tag. -->
+                      <script type="text/javascript">
+                        (function() {
+                              var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+                                  po.src = 'https://apis.google.com/js/plusone.js';
+                                      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+                                        })();
+                                      </script>
+                    </div>
 										<script type="text/javascript">
 											var tumblr_link_name = "";
 											var tumblr_link_description = "";
 										</script>
-										<div id="tumblrblock" ></div>
+                    <div id="tumblrblock" >
+                      <a href="http://www.tumblr.com/share" title="Share on Tumblr" style="display:inline-block; text-indent:-9999px; overflow:hidden; width:81px; height:20px; background:url('http://platform.tumblr.com/v1/share_1.png') top left no-repeat transparent;">Share on Tumblr</a>
+                    </div>
 										<div id="linkinblock" ></div>
 									</div>
 									<div class="clear"></div>
@@ -290,7 +314,8 @@ You can easily see your stats. by logging back in using your email address.</p>
 							<!-- RETURNING USER REFERRAL URL -->
 							<div id="returninguserurl">
 								<div class="signup-right">
-									<label>OR, COPY AND PASTE THE LINK BELOW</label>									<input type="text" id="returningcode" value="" onclick="SelectAll('returningcode');"/>
+                  <label>OR, COPY AND PASTE THE LINK BELOW</label>
+                  <input type="text" id="returningcode" value=<%= landing_url %> onclick="SelectAll('returningcode');"/>
 								</div>
 							</div>
 
@@ -298,7 +323,7 @@ You can easily see your stats. by logging back in using your email address.</p>
 							<div id="newuser">
 								<div class="signup-right">
 																		<label for="email">OR, COPY AND PASTE THE LINK BELOW</label>
-																		<input type="text" id="successcode" value="" onclick="SelectAll('successcode');"/>
+																		<input type="text" id="successcode" value="<%= landing_url %>" onclick="SelectAll('successcode');"/>
 								</div>
 
 								<div class="clear"></div>

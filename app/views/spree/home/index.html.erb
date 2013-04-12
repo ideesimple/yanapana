@@ -164,9 +164,8 @@
 <a name="products"></a>
   <% if params[:keywords] %>
       <% if @products_cause.nil? %>
-        <h2><%= t(:no_products_found) %></h2>
-              <% else %>
-
+        <h6 class="search-results-title">no_products_found</h6>
+      <% else %>
         <%= render :partial => 'spree/shared/products', :locals => { :products => @products_cause, :taxon => @taxon } %>
       <% end %>
     </div>
@@ -175,8 +174,8 @@
 <!--Mid Section Starts-->
 
     <div class="productos jean">
-      <% if @products_cause.nil? %>
-            <h6 class="search-results-title"><%= t(:no_products_found) %></h6>
+      <% if @products_cause.empty? %>
+            <h1></h1>
       <% else %>
         <%= render :partial => 'spree/shared/products', :locals => { :products => @products_cause, :taxon => @taxon } %>
       <% end %>
