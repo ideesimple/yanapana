@@ -5,7 +5,7 @@
  *
  * @package WordPress
  * @subpackage Launch_Effect
- * 
+ *
  */
 
 
@@ -24,9 +24,9 @@
 	#Site Credits
 	#Lite Version Instructional Post
 	#Plugin: jqModal */
-	
-	
-	
+
+
+
 /* #Reset & Basics (Inspired by E. Meyers)
 ================================================== */
 
@@ -72,51 +72,51 @@
 		padding: 0;
 		box-sizing: border-box;
 		-webkit-box-sizing: border-box;
-		-moz-box-sizing: border-box;		
+		-moz-box-sizing: border-box;
 	}
-	
-	/* Undo box-sizing: border-box for Fancybox */	
+
+	/* Undo box-sizing: border-box for Fancybox */
 	#fancybox-wrap div,
 	#fancybox-wrap span,
 	#fancybox-wrap {
 		box-sizing:content-box !important;
 		-webkit-box-sizing:content-box !important;
-		-moz-box-sizing:content-box !important;			
+		-moz-box-sizing:content-box !important;
 	}
-	
+
 	html {
 		-webkit-text-size-adjust: none;
 	}
-	
-	body { 
+
+	body {
 		font-family: Arial, Helvetica, sans-serif;
 		font-size:62.5%;
 		text-align:left;
 	}
-	
+
 	html#signup-htmltag,
 	body#signup-bodytag {
 		height:100%;
 		width:100%;
 	}
-	
-	#fb-root > div { 
-		left:-575px !important; 
+
+	#fb-root > div {
+		left:-575px !important;
 	}
-	
+
 	strong {
 		font-weight:bold;
 	}
-	
+
 	em {
 		font-style:italic;
 	}
-	
+
 	.clear {
 		clear:both;
 	}
-	
-	
+
+
 	input[type=text],
 	input[type=email],
 	textarea,
@@ -124,12 +124,12 @@
 	#respond input[type=submit] {
 		-webkit-appearance: none !important;
 	}
-	
+
 	img {
 		max-width:100%;
 		height:auto;
 	}
-	
+
 	a:link,
 	a:visited,
 	a:hover,
@@ -138,18 +138,18 @@
 		-webkit-transition: color 0.2s linear;
 		-o-transition: color 0.2s linear;
 	}
-	
+
 	:focus{
 		outline:0;
 	}
-	
-	
+
+
 	/*----- To Fade In On Load -----*/
-	
+
 	#signup-content-wrapper {
 		opacity:0;
 	}
-		
+
 	.spinner {
 		width:100px !important;
 	}
@@ -186,74 +186,74 @@
 		position:relative;
 		z-index:900;
 	}
-	
+
 	#signup-page {
 		display:table-cell;
 		vertical-align:middle;
 	}
-		
+
 	#signup {
 		padding:40px;
 		margin:0 auto 80px auto;
 	}
-	
+
 
 	/*----- Sizes -----*/
-	
+
 	#signup.small {
 width:390px !important;
 	}
-	
+
 	#signup.medium {
 width:590px !important;
 	}
-	
+
 	#signup.large {
 width:740px !important;
 	}
-	
+
 	html.ie7 #signup.small {
 width:310px !important;
 	}
-	
+
 	html.ie7 #signup.medium {
 width:510px !important;
 	}
-	
+
 	html.ie7 #signup.large {
-width:660px !important;	
+width:660px !important;
 	}
-		
-		
+
+
 		/*----- Sizes: Small -----*/
-		
+
 		#signup.small ul#inner-footer li.inner-footer_icon.facebooklike,
-		#signup.small ul#inner-footer li.text-link {	
+		#signup.small ul#inner-footer li.text-link {
 			float: left;
 			display: block;
 			width: 100%;
 			margin:10px 0;
 		}
-		
+
 		#signup.small ul#inner-footer li.inner-footer_icon.facebooklike {
 			margin-bottom:30px;
 		}
 
-	
+
 		/*----- Sizes: Large 2-Column Styling -----*/
-		
+
 		#signup.large .signup-left,
 		#launchlitemodule #signup .signup-left {
 			float:left;
 			width:55%;
 			padding-right:40px;
 		}
-		
+
 		html.ie7 #signup.large .signup-left,
 		html.ie7 #launchlitemodule #signup .signup-left {
 			width:45%;
 		}
-		
+
 		#signup.large .signup-right,
 		#launchlitemodule #signup .signup-right {
 			float:left;
@@ -262,46 +262,46 @@ width:660px !important;
 
 
 	/*----- Positions -----*/
-	
+
 	#signup.left {
-		float:left; 
-		margin-left:30px; 
+		float:left;
+		margin-left:30px;
 		margin-right:0;
 	}
-	
+
 	#signup.right {
-		float:right; 
-		margin-right:30px; 
+		float:right;
+		margin-right:30px;
 		margin-left:0;
 	}
-	
+
 	#signup.center {
 		margin:0 auto 80px auto;
 	}
 
 
 	/*----- Logo and Video -----*/
-	
+
 	#signup-page header {
 		overflow:hidden;
 		position:relative;
 		margin:0 0 30px 0;
 	}
-	
+
 	#signup-page header.no-margin {
 		margin: 0;
 	}
-	
+
 	#signup-page header.no-margin h1 {
 		padding-bottom: 30px;
 	}
-	
+
 	#signup-page header h1 {
 		position:relative;
 		margin:0;
 		line-height:1.2em;
 	}
-	
+
 	#signup-page header h1.hastextheading.haslogo span {
 		margin-top:0px;
 		position:absolute;
@@ -309,16 +309,16 @@ width:660px !important;
 		left:30%;
 		width:70%;
 	}
-	
+
 	#signup-page header h1.hastextheading.haslogo img {
 		height:auto;
 		max-width: 25%;
 	}
-	
+
 	#signup-page header h1.notextheading.haslogo {
-		
+
 	}
-	
+
 	#signup-page header h1.notextheading.haslogo span {
 		text-indent:-9999px;
 		position:absolute;
@@ -326,16 +326,16 @@ width:660px !important;
 		left:0;
 		margin:0;
 	}
-	
+
 	#signup-page header h1.notextheading.nologo {
 		display:none;
 		margin:0;
 	}
-	
+
 	#signup-page .video {
 		margin:0 0 30px 0;
 	}
-	
+
 	.video {
 	 	position: relative;
 	    padding-bottom: 56.25%; /* 16/9 ratio */
@@ -343,7 +343,7 @@ width:660px !important;
 	    height: 0;
 	    overflow: hidden;
 	}
-	
+
 	.video iframe,
 	.video object,
 	.video embed {
@@ -354,11 +354,11 @@ width:660px !important;
 	    height: 100% !important;
 	    margin-bottom:15px;
 	}
-	
+
 	#signup-editor-content {
 		margin-bottom:30px;
 	}
-	
+
 	#presignup-content,
 	#success-content {
 		margin-bottom:30px;
@@ -373,16 +373,16 @@ width:660px !important;
 	#privacy-policy a {
 		text-decoration:none;
 	}
-	
+
 	#signup a:hover {
 		text-decoration:underline;
 	}
-	
+
 	#signup h2,
 	#privacy-policy h2 {
 		margin:0 0 10px 0;
 	}
-	
+
 	#signup p,
 	#privacy-policy p {
 		margin:0 0 18px 0;
@@ -396,67 +396,67 @@ width:660px !important;
 		-webkit-box-sizing:content-box;
 		-moz-box-sizing:content-box;
 	}
-	
+
 	/* YES custom fields: No bottom margin for <li> containing submit button */
 	#signup ul#form-layout li.hascf-submit-button {
 		margin:0;
 	}
-	
+
 	#signup label {
 		display:block;
 		margin:0 0 8px 0;
 		line-height:1.3em;
 	}
-	
+
 	/* Required field asterisk */
 	#signup label span {
-		color: #DA342E; 
+		color: #DA342E;
 	}
 
-	#signup input[type=text], 
-	#signup input[type=email], 	
+	#signup input[type=text],
+	#signup input[type=email],
 	#signup .radio-group,
 	#signup .checkbox-group,
-	#signup select,	
+	#signup select,
 	#signup textarea {
 width:300px;
 	}
-	
+
 	#signup textarea {
 min-width:300px;
 max-width:300px;
 	}
-	
-	html.ie7 #signup input[type=text], 
-	html.ie7 #signup input[type=email], 	
+
+	html.ie7 #signup input[type=text],
+	html.ie7 #signup input[type=email],
 	html.ie7 #signup .radio-group,
 	html.ie7 #signup .checkbox-group,
-	html.ie7 #signup select,	
+	html.ie7 #signup select,
 	html.ie7 #signup textarea {
 width:260px;
 	}
-	
+
 	html.ie7 #signup textarea {
 min-width:260px;
 max-width:260px;
 	}
-	
-	#signup input[type=text], 
-	#signup input[type=email], 
+
+	#signup input[type=text],
+	#signup input[type=email],
 	#signup textarea {
 		margin:0;
 		padding: 10px;
-		
+
 		display: block;
 		float: left;
 		overflow: hidden;
 
 		background: #F7F7F7;
 		border: 1px solid #DDD;
-		
+
 		font-family:'Lucida Grande', sans-serif;
 		font-size: 1.2em;
-		
+
 		-webkit-border-radius: 3px;
 		-moz-border-radius: 3px;
 		border-radius: 3px;
@@ -467,40 +467,40 @@ max-width:260px;
 		-webkit-transition: background-color 0.2s linear;
 		-o-transition: background-color 0.2s linear;
 	}
-	
-	#signup input:focus, 
+
+	#signup input:focus,
 	#signup textarea:focus {
 		background:#ffffff;
 		outline:0;
-		
+
 		-moz-transition: background-color 0.2s linear;
 		-webkit-transition: background-color 0.2s linear;
 		-o-transition: background-color 0.2s linear;
 	}
-	
-	#signup .radio-group input, 
+
+	#signup .radio-group input,
 	#signup .checkbox-group input {
 		float: left;
 		margin: 4px 10px 0 1px;
 	}
-												
+
 	#signup input#submit-button {
 		width:auto;
 		height:35px;
 		margin:0;
 		padding:0px 15px;
-		
+
 		background:transparent;
 		border:none;
 		color:#fff;
-		
+
 		font-family: Helvetica, Arial, sans-serif !important;
 		font-size:1.1em;
 		font-weight:bold;
 		text-transform:uppercase;
-		
+
 		cursor:pointer;
-		
+
 		-webkit-border-radius: 0px;
 		-moz-border-radius: 0px;
 		border-radius: 0px;
@@ -511,14 +511,14 @@ max-width:260px;
 		-webkit-transition: background-color 0.2s linear;
 		-o-transition: background-color 0.2s linear;
 	}
-	
+
 	#signup span#submit-button-border {
 		display:inline-block;
 		float:left;
 		position:relative;
 		overflow:hidden;
 		z-index:999;
-		
+
 		border-width:1px;
 		border-style:solid;
 
@@ -526,13 +526,13 @@ max-width:260px;
 		-moz-border-radius: 3px;
 		border-radius: 3px;
 	}
-	
+
 	#signup input#submit-button:hover {
 		-moz-transition: background-color 0.2s linear;
 		-webkit-transition: background-color 0.2s linear;
 		-o-transition: background-color 0.2s linear;
 	}
-	
+
 	#signup #submit-button-spinner {
 		position:absolute;
 		top:0;
@@ -542,41 +542,41 @@ max-width:260px;
 		padding:0;
 		display:none;
 	}
-	
-	
+
+
 	/*----- Email Field Layout (Single — No Custom Fields) -----*/
-	
+
 	/* 	Width of <li> must be specified because to keep field and button on same line, field must be set to 100% width */
 	#signup.nocf ul#form-layout li.first {
 width:300px;
 		margin:0 0 10px 0;
 	}
-	
+
 	#email-layout {
 	    display: table;
 	    width: 100%;
 	    position:relative;
 	}
-	
+
 	html.ie7 #email-layout {
 		width:320px;
 	}
-	
+
 	#email-layout label {
 	    display: table-cell;
 	}
-	
+
 	#email-layout span#emailinput {
 	    display: table-cell;
 	    width: 100%;
 	    padding-right:10px;
 	}
-	
+
 	#email-layout #email {
 	    width: 100%;
 	}
-	
-	html.ie7 #email-layout #email { 
+
+	html.ie7 #email-layout #email {
 		width: 165px;
 	}
 
@@ -585,36 +585,36 @@ width:300px;
 /* #Messages
 ================================================== */
 
-	#success, 
+	#success,
 	#success-content,
 	#newuser,
 	#returninguser,
 	#returninguserurl {
 		display:none;
 	}
-	
+
 	#pass_thru_error {
 		color:#DA342E;
 		font-size:1.1em;
 		margin:3px 0 0 0;
 		float: right;
 	}
-	
+
 	#error, .error {
 		display: none;
 		position:absolute;
 		bottom:0px;
 		left:10px;
-		
+
 		width:auto;
 		padding:2px 6px;
-		
+
 		background:#DA342E;
 		color:white;
-		
+
 		font-size:1.1em;
 		font-weight:bold;
-		
+
 		-webkit-border-top-left-radius: 2px;
 		-webkit-border-top-right-radius: 2px;
 		-moz-border-radius-topleft: 2px;
@@ -625,14 +625,14 @@ width:300px;
 		-moz-box-shadow: inset 0px 0px 3px #78000D;
 		-webkit-box-shadow: inset 0px 0px 3px #78000D;
 	}
-	
+
 	.fieldset-error {
 		bottom:-20px;
 		left:0px;
 	}
-	
+
 	span.user,
-	span.clicks, 
+	span.clicks,
 	span.conversions {
 		font-weight:bold;
 	}
@@ -642,16 +642,16 @@ width:300px;
 ================================================== */
 
 	.social-container {
-		background:url('../im/social-bg.png') repeat;
+		background:url("../../assets/image-yanapana/social-bg.png" ) repeat;
 		position:relative;
 		padding:5px 0 13px 18px;
 		margin:10px 0 30px 0;
-		
+
 		-webkit-border-radius: 3px;
 		-moz-border-radius: 3px;
 		border-radius: 3px;
 	}
-	
+
 	#fblikeblock,
 	#tweetblock,
 	#plusoneblock,
@@ -661,15 +661,15 @@ width:300px;
 		margin:10px 18px 0 0 !important;
 		height:23px !important;
 	}
-	
+
 	#fblikeblock {
 		width:135px !important;
 	}
-	
+
 	#signup .disable {
 		display:none !important;
 	}
-	
+
 	.fb_iframe_widget iframe {
 		overflow:hidden !important;
 		width: 133px !important;
@@ -689,26 +689,26 @@ width:300px;
 		position:relative;
 		float:right;
 		margin-right:0px;
-		
+
 		font-size:11px;
 		font-family: Arial, Helvetica, sans-serif;
 		text-decoration:none !important;
 	}
-	
+
 	a#reusertip:hover {
 		text-decoration: none;
 	}
-	
+
 	#reuserbubble {
 		display:none;
 		position: absolute;
 		top: -85px;
 		right: 0px;
 		z-index:901;
-		
+
 		width: 124px;
 		padding: 12px;
-		
+
 		opacity: 0.88;
 		background: black;
 		color: white;
@@ -719,15 +719,15 @@ width:300px;
 		-moz-border-radius: 3px;
 		-webkit-border-radius: 3px;
 	}
-	
+
 	.reuserbubble-arrow {
 		position:absolute;
 		bottom: -18px;
 		right: 50px;
-		
+
 		height:0;
 		width:0;
-		
+
 		border-color: #000 transparent transparent transparent;
 		border-style: solid;
 		border-width: 10px;
@@ -740,30 +740,30 @@ width:300px;
 	span.privacy-policy {
 		display:block;
 		padding-top:10px;
-		
+
 		font-family: Arial, Helvetica, sans-serif;
 		font-size:1.1em;
 		line-height:1.2em;
 	}
-	
+
 	.nocf span.privacy-policy {
 		padding-top:5px;
 	}
-	
+
 	#privacy-policy h2 {
 		margin:0 0 15px 0;
 		text-transform: capitalize;
 	}
-	
+
 	#privacy-policy a.close {
 		position:absolute;
 		top:10px;
 		right:16px;
-		
+
 		font-size:25px;
 		font-weight:bold;
 	}
-	
+
 	#privacy-policy a.close:hover {
 		text-decoration:none;
 	}
@@ -776,39 +776,39 @@ width:300px;
 	ul#inner-footer {
 		margin:22px 0 0 0;
 	}
-	
+
 	ul#inner-footer li {
 		float:right;
 		margin:0 0 0 10px;
 		padding-top:5px;
 	}
-	
+
 	ul#inner-footer li p {
 		margin:0;
 		line-height:1.4em;
 	}
-	
+
 	ul#inner-footer li p a {
 		text-decoration:none;
 	}
-	
+
 	ul#inner-footer li p a:hover {
 		text-decoration:underline;
 	}
-	
+
 	ul#inner-footer li.inner-footer_icon {
 		float:left;
 		margin:0 7px 0 0;
 		padding:0;
 	}
-	
+
 	ul#inner-footer li.inner-footer_icon a {
 		display:block;
 	 	width:24px;
 	 	height:24px;
 	 	text-indent:-9999px;
 	}
-	
+
 	ul#inner-footer li.inner-footer_icon.facebooklike {
 		width:85px;
 		margin:0;
@@ -816,43 +816,43 @@ width:300px;
 		position:relative;
 		top:4px;
 	}
-	
+
 	ul#inner-footer li.inner-footer_icon.facebook a {
-	 	background:url('../im/facebook.png') no-repeat top left;
+	 	background:url("../../assets/image-yanapana/facebook1.png" ) no-repeat top left;
 	}
-	
+
 	ul#inner-footer li.inner-footer_icon.twitter a {
-	 	background:url('../im/twitter.png') no-repeat top left;
+	 	background:url("../../assets/image-yanapana/twitter1.png" )  no-repeat top left;
 	}
-	
+
 	ul#inner-footer li.inner-footer_icon.googleplus a {
 	 	background:url('../im/googleplus.png') no-repeat top left;
 	}
-	
+
 	ul#inner-footer li.inner-footer_icon.pinterest a {
 	 	background:url('../im/pinterest.png') no-repeat top left;
 	}
-	
+
 	ul#inner-footer li.inner-footer_icon.tumblr a {
 	 	background:url('../im/tumblr.png') no-repeat top left;
 	}
-	
+
 	ul#inner-footer li.inner-footer_icon.soundcloud a {
 	 	background:url('../im/soundcloud.png') no-repeat top left;
 	}
-	
+
 	ul#inner-footer li.inner-footer_icon.linkedin a {
 	 	background:url('../im/linkedin.png') no-repeat top left;
 	}
-	
+
 	ul#inner-footer li.inner-footer_icon.youtube a {
 	 	background:url('../im/youtube.png') no-repeat top left;
 	}
-	
+
 	ul#inner-footer li.inner-footer_icon.yelp a {
 	 	background:url('../im/yelp.png') no-repeat top left;
 	}
-	
+
 	ul#inner-footer li.inner-footer_icon a:hover {
 		background-position:bottom left;
 	}
@@ -868,47 +868,47 @@ width:300px;
 		right:30px;
 		overflow:hidden;
 		z-index:1010;
-		
+
 		padding:2px 10px;
-				
+
 		background:#000;
-		
+
 		font-size:1.1em;
 	}
-	
+
 	ul#left_logo {
 		position:fixed;
 		top:30px;
 		left:30px;
 		overflow:hidden;
 		z-index:1010;
-		
+
 		padding:2px 10px;
-				
+
 		/*background:#FFF;*/
-		
+
 		font-size:1.1em;
 	}
-	
+
 		ul#left_logo_mobile {
 		display:none;
 		}
-		
+
 		ul#left_logo_mobile2 {
 		display:none;
-		}	
+		}
 
 	ul#footer li {
-		float:left; 
+		float:left;
 		color:#aaa;
 		line-height:1.8em;
 	}
-	
+
 	ul#footer li a {
 		color:#aaa;
 		text-decoration:underline;
 	}
-	
+
 	ul#footer li a.logo {
 		position:relative;
 		top:-2px;
@@ -916,9 +916,9 @@ width:300px;
 
 		height:17px;
 		width:84px;
-		
+
 		background:url('../im/mini-logo.png') no-repeat top center;
-		
+
 		text-indent:-9999px;
 	}
 
@@ -936,12 +936,12 @@ width:300px;
 		overflow: hidden;
 		z-index: 899;
 	}
-	
+
 	.lite #wrapper header {
 		width:700px;
 		margin-bottom:40px;
 	}
-	
+
 	.lite #wrapper header h1 {
 		margin:0;
 		position:relative;
@@ -949,48 +949,48 @@ width:300px;
 		font-weight:normal;
 		font-style:normal;
 		color:#252525;
-		text-shadow: none;	
+		text-shadow: none;
 		text-align:left;
 		font-size:9.0em;
 	}
-	
+
 	.lite #wrapper header h1 a {
 		text-decoration: none;
 		color:#252525;
 	}
-	
+
 	.lite #wrapper header h1 span {
 		position:absolute;
 		top:0px;
 		left:0px;
 		height:100%;
-		width:100%; 
+		width:100%;
 	}
-	
+
 	.lite #main {
 		float:left;
 		width:470px;
-	}	
-	
+	}
+
 	.lite .lepost {
 		margin:0 0 50px 0;
 	}
-	
+
 	.lite .lepost h2.posttitle {
 		margin:0 0 15px 0;
 	}
-	
+
 	.lite .lepost h2 a {
 		text-decoration:none;
 		color:#333333  !important;
 	}
-	
+
 	.lite .lepost h2 a:hover {
 		color:#00bfbf;
 		text-decoration:underline;
 	}
-	
-	.lite .lepost h1, 
+
+	.lite .lepost h1,
 	.lite .lepost h2 {
 		line-height:1.2em;
 		margin:0 0 10px 0;
@@ -1002,7 +1002,7 @@ width:300px;
 		text-shadow: 0px 1px 1px #ffffff;
 		text-transform:none;
 	}
-	
+
 	.lite .lepost h3 {
 		line-height:1.2em;
 		margin:0 0 15px 0;
@@ -1014,7 +1014,7 @@ width:300px;
 		text-shadow: none;
 		text-transform:uppercase;
 	}
-	
+
 	.lite .lepost h4 {
 		line-height:1.2em;
 		margin:0 0 10px 0;
@@ -1027,7 +1027,7 @@ width:300px;
 		text-shadow: none;
 		text-transform:uppercase;
 	}
-	
+
 	.lite .lepost p {
 		line-height:1.6em;
 		margin:0 0 25px 0;
@@ -1035,19 +1035,19 @@ width:300px;
 		font-weight:300;
 		font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
 	}
-	
+
 	.lite .lepost ul {
 		list-style-type:square;
 		margin:0 0 25px 0;
 		padding:0;
 	}
-	
+
 	.lite .lepost ol {
 		list-style-type:decimal;
 		margin:0 0 25px 0;
 		padding:0;
 	}
-	
+
 	.lite .lepost ul li,
 	.lite .lepost ol li {
 		margin:0 0 0 15px;
