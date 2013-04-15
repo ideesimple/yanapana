@@ -312,7 +312,7 @@ width:660px !important;
 
 	#signup-page header h1.hastextheading.haslogo img {
 		height:auto;
-		max-width: 25%;
+		width: 100%;
 	}
 
 	#signup-page header h1.notextheading.haslogo {
