@@ -21,7 +21,7 @@
 			<meta property="og:site_name" content="YANAPANA" />
       <meta property="og:description" content="Artists designed apparel fighting for gender equality and women&#039;s empowerment." />
 			<meta property="og:type" content="website"/>
-      <meta property="og:image" content="website"/>
+      <meta property="og:image" content="http://yanapana-sta.herokuapp.com/assets/image-yanapana/yplogo1.png"/>
 
 
 		<!-- END Meta and Open Graph Tags -->
@@ -107,7 +107,7 @@
 	    e.src = document.location.protocol +
 	      '//connect.facebook.net/en_US/all.js';
 	    document.getElementById('fb-root').appendChild(e);
-	  }());
+      }());
 	</script>
 
 	<div id="background" class=""></div>
@@ -282,7 +282,7 @@ You can easily see your stats. by logging back in using your email address.</p>
                       <a href="https://twitter.com/share" class="twitter-share-button" data-url="<%= landing_url %>"  data-text="YANAPANA is coming to town!  Check out this hip, up and coming social enterprise dedicated to help empower women " data-count="none">Tweet</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
                     </div>
                     <div id="fblikeblock" >
-                      <div class="fb-like" data-href="<%= landing_url %>" data-send="true" data-width="100" data-show-faces="false" data-font="arial" layout="button_count"></div>
+                      <div class="fb-like" data-href="<%= landing_url %>" data-send="true" data-width="120" data-show-faces="false" data-font="arial" layout="button_count"></div>
                     </div>
                     <div id="plusoneblock" >
                       <!-- Place this tag where you want the +1 button to render. -->
@@ -297,11 +297,11 @@ You can easily see your stats. by logging back in using your email address.</p>
                          })();
                       </script>
                     </div>
-										<script type="text/javascript">
+										<div id="tumblrblock" >
+                    <script type="text/javascript">
 											var tumblr_link_name = "";
 											var tumblr_link_description = "";
 										</script>
-                    <div id="tumblrblock" >
                       <a href="http://www.tumblr.com/share" title="Share on Tumblr" style="display:inline-block; text-indent:-9999px; overflow:hidden; width:81px; height:20px; background:url('http://platform.tumblr.com/v1/share_1.png') top left no-repeat transparent;">Share on Tumblr</a>
                     </div>
 										<div id="linkinblock" ></div>
@@ -384,7 +384,7 @@ You can easily see your stats. by logging back in using your email address.</p>
 
 
 
-<div class="fb-comments" data-href="http://sitiowebsocial.com/yanapana/" data-width="470" data-num-posts="10"></div>
+<div class="fb-comments" data-href="<%= landing_url %>" data-width="470" data-num-posts="10"></div>
 
 		<!-- END ADDITIONAL USER-DEFINED CODE -->
 

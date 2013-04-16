@@ -177,7 +177,7 @@
               <!--Facebook like button Starts-->
               <style> html .fb_share_button { display: -moz-inline-block; display:inline-block; color:#fff; padding:1px 20px 0 5px; height:15px; border:1px solid #d8dfea; vertical-align: top; background:#3b5998 url(http://static.ak.facebook.com/images/share/facebook_share_icon.gif?6:26981) no-repeat top right; } </style>
 
-              <a onclick="window.open(&quot;http://www.facebook.com/sharer/sharer.php?s=100&amp;p[title]=<%= ('Compartiendo '+ @product.name).html_safe %>&amp;p[url]=<%= (product_url(@product)).html_safe %>&amp;p[images][0]=<%= @product.cause.photo.url(:share_photo) %> &quot;,&quot;&quot;,&quot;toolbar=0,status=0,width=580,height=315&quot;); return false" target="_blank" class="fb_share_button" href="" >Share </a>
+              <a onclick="window.open(&quot;http://www.facebook.com/sharer/sharer.php?s=100&amp;p[title]=<%= ('Compartiendo '+ @product.name).html_safe %>&amp;p[url]=<%= (product_url(@product)).html_safe %>&amp;p[images][0]=<%= @product.cause.sharephoto.url(:share_photo) %> &quot;,&quot;&quot;,&quot;toolbar=0,status=0,width=580,height=315&quot;); return false" target="_blank" class="fb_share_button" href="" >Share </a>
 
 
               <!--Facebook like button Ends-->
