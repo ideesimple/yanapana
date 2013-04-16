@@ -5,7 +5,7 @@
 ================================================== */
 
 @media only screen and (min-width: 700px) and (max-width: 960px) {
-header, nav, section, footer, ul.sub_menu, .col_left_main, .branding_area, .comments-section, .comments-section.comments{
+header, nav, section, footer, .col_left_main, .branding_area, .comments-section, .comments-section.comments{
 width:700px;
 }
 #side_nav{ width:150px;}
@@ -33,7 +33,7 @@ nav .primary_nav > li > a {font-size: 13px;}
 #cause section iframe.video_description{width: 100%; height: 376px; float: left; margin: 0 0 20px 0;}
 
 #cause .cause_description {margin-bottom: 10px;}
-#cause section .org_logo {width: 100%; float: left;}
+#cause section .org_logo { float: left;}
 #cause section .fb-like, #cause section .follow-btn {float:left; margin-right: 15px;}
 
 #call-to-action {font-size: 16px}
@@ -43,6 +43,11 @@ nav .primary_nav > li > a {font-size: 13px;}
 
 .triangle-w {width: 22px; height: 12px; }
  
+#comments .fb-comments span iframe {width: 700px !important;}
+
+/*Feedback*/
+.feedback {text-align: center; width: 100%;}
+
 
 /*Goals*/
 #goals .goal_container {width: 30%;}
@@ -123,6 +128,11 @@ section#main_content{width:420px;}
 
 .comments_tag {font-size: 17px;}
 
+.full_page h1 {font-size: 22px;}
+
+#form-title {font-size: 16px;}
+h2.sub_title {font-size: 16px;}
+
 /*DASHBOARD*/
 .dashboard-rcol.fr { width: 465px;}
 .dashboard-products > li {width: 43%;}
@@ -149,7 +159,7 @@ nav, section, footer, ul.sub_menu, .col_left_main, #main_content, .branding_area
 width:300px !important;
 }
 
-header {width: 75%;}
+header {width: 300px;}
 
 .hidden_desktop {display: inline-block;} 
 
@@ -216,6 +226,10 @@ h1.logo { display: block; width:100%; margin:auto; float:none; padding:40px 0 10
 
 .product_rightcol h1 {font-size: 22px; }
 .product_rightcol .pr_price big {font-size: 25px;}
+
+
+/*Feedback*/
+.feedback {text-align: center; width: 100%;}
 
 
 /*Goals*/
@@ -371,6 +385,11 @@ aside#sidebar{width:310px;}
 #cause h4 {font-size: 15px; font-weight: bold; padding-bottom: 5px;}
 #cause p {font-size: 14px; padding-bottom: 7px;}
 .checkout_steps .step-title, .checkout_steps .step-title h2 {font-size: 13px !important;}
+
+.full_page h1 {font-size: 19px;}
+
+#form-title {font-size: 14px;}
+h2.sub_title {font-size: 14px;}
 
 footer .footer_links li span a { font-size: 12px; text-transform: uppercase;}
 

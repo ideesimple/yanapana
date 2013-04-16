@@ -135,7 +135,6 @@ header, nav, section, footer, .branding_area { width:980px; margin:0px auto;}
 
 
 /*-----------------------------------HEADER*/
-.header_container{ height: 45px;}
 header .top_bar{ display:inline-block; width:100%;}
 header .language_switch{ float:left; margin:12px 0px;}
 header .language_switch a{display:inline-block; background:#505050; padding:4px 8px; margin-right:3px; box-shadow:0px 1px 0px #67615c; color:#e9e9e9; text-transform:uppercase; font-size:11px; text-shadow:0px 1px 0px #272524; text-decoration:none;}
@@ -161,6 +160,33 @@ header .header_search button{background:url(../../assets/image-yanapana/search_b
 .countdown .countdown_numbers li {font-size: 16px; padding-right: 7px; color: #BCD80A; }
 .countdown_numbers {float: rigt;}
 .countdown_text {width: 241px;}
+
+/*-----------------------------------FEEDBACK*/
+
+.feedback {
+    display: inline-block; 
+    padding: 16px; 
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family:arial;
+    font-size:15px;
+    font-weight:bold;
+    padding:6px 24px;
+    text-decoration:none;
+}
+.feedback.positive {  
+    background-color:#BCD80A;
+    display:inline-block;
+    color:#ffffff;
+}
+.feedback.negative {
+    background-color:#f0c911;
+    display:inline-block;
+    color:#c92200;
+}
+
+
+
 /*-----------------------------------NAV*/
 .navigation_container{ border:solid #e5e3e1; border-width:1px 0px 3px 0px; border-bottom: 3px solid #BCD80A; }
 nav .primary_nav{ display:inline-block;margin:5px 2px 3px 0px; position:relative;}
@@ -285,6 +311,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 .comments { margin: 0 auto; border-top: 1px solid white; overflow: hidden;}
 #comments {width: 700px; margin: 0 auto;}
 .fb-like, .follow-btn {float:left; margin: 0 15px 0 0;}
+
+#comments .fb-comments span iframe {width: 980px !important;}
 
 
 
@@ -926,11 +954,11 @@ iframe form .form-all .form-selection label {
     float: none !important;
 }
 
-
+.form-all {width: 100% !important;}
 
 #jotform {border: 1px solid #ccc; overflow: hidden; }
 
-#form-title {padding: 14px; font-size: 16px; text-transform: uppercase; color: #fff; background: #555; line-height: 1.3;}
+#form-title {padding: 14px; font-size: 18px; text-transform: uppercase; color: #fff; background: #555; line-height: 1.3; font-family: istok web, sans-serif;}
 
 /*-----------------------------------COLOR THEME HERE*/
 .navigation_container, ul.sub_menu > li > ul > li:hover, .col_right .block-title, .twitter_feed{ border-bottom-color:#BCD80A;}
@@ -948,7 +976,7 @@ footer, ul.sub_menu, .sideNavCategories > ul, ul.sub_menu > li > ul, .checkout_t
 .navigation_container {border-top: 1px solid white; }
 .branding_container {border-bottom: 1px solid #ccc;}
 
-.header_container {background: #333; border-bottom: 5px solid white; margin-bottom: 0px; box-shadow: 0 2px 2px #999; position: absolute; z-index: 999;}
+.header_container {background: #333; border-bottom: 5px solid white; margin-bottom: 0px; box-shadow: 0 1px 2px #777; position: fixed; z-index: 999; top: 0;}
 
 
 #cause h2, #cause h4 {color: white;}

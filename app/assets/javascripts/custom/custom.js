@@ -62,7 +62,6 @@ $(document).ready(function(){
     });
 
     $('#size_drop_' + index + ' li a').click(function(){
-      $('html, body').animate({scrollTop:0}, 'slow');
       myid=$(this).attr('id');
       $('#form' + index + ' #product_1').val($(this).attr('id'));
       $('#form' + index).submit();

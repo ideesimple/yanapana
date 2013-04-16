@@ -670,14 +670,6 @@ width:300px;
 		display:none !important;
 	}
 
-	.fb_iframe_widget iframe {
-		overflow:hidden !important;
-		width: 133px !important;
-		height: 22px !important;
-	}
-
-	.fb_iframe_widget span {vertical-align: text-top !important;}
-
 
 
 
