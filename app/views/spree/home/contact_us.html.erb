@@ -23,6 +23,7 @@ Make sure to go through our FAQs. Answers to most questions can be quickly found
 				      <p class="info">Your email was sent. Huzzah!</p>
 
               <%= form_tag(contact_us_path,:method => "post", :multipart => false, :class=>"contact-us") do %>
+              <a name="leavemessage"></a>
                 <h3>Leave a message</h3>
                 <% unless @c.nil? %>
                   <% if @c.errors.any? %>

@@ -1,0 +1,40 @@
+<div class="section_container jean pb">
+  <section>
+    <div class="full_page">
+      <ul class="breadcrumb">
+         <li><%= link_to "Home", root_path %></li>
+         <li class="active">login</li>
+      </ul>
+
+
+<% @body_id = 'signup' %>
+<div class="section_container jean pb">
+<section>
+<%= render :partial => 'spree/shared/error_messages', :locals => { :target => @user } %>
+
+<div id="new-customer">
+  <h3><%= t(:new_customer) %></h3>
+
+  <div data-hook="signup">
+
+    <%= form_for :user, :url => spree.user_registration_path(@user) do |f| %>
+      <div data-hook="signup_inside_form">
+        <%= render :partial => 'spree/shared/user_form', :locals => { :f => f } %>
+        <p><%= f.submit t(:create), :class => 'button primary' %></p>
+      </div>
+    <% end %>
+    <%= t(:or) %> <%= link_to t(:login_as_existing), spree.login_path %>
+
+  </div>
+
+</div>
+
+<div data-hook="login_extras"></div>
+</section>
+</div>
+
+
+</div><!--Full Page Ends-->
+</section>
+<
+

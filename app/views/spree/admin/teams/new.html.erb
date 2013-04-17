@@ -1,0 +1,21 @@
+<h1>New Member</h1>
+
+<%= form_for [:admin, @team], :html => {:multipart => true} do |f| %>
+
+  <% if @team.errors.any?  %>
+    <div id ="error_explanation">
+      <h2><%= pluralize(@team.errors.count, "error")%></h2>
+
+      <ul>
+        <% @team.errors.full_messages.each do |msg| %>
+          <li><%= msg  %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= render :partial => 'form', :locals => {:f => f} %>
+    <p>
+      <%= button t("create") %> <%= link_to t('cancel'), collection_url %>
+    </p>
+<% end %>

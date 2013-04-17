@@ -17,13 +17,13 @@
         <h1><%= t(:shopping_cart) %></h1>
       <div class="action_buttonbar">
         <%= form_tag empty_cart_path, :method => :put do %>
-            <p id="clear_cart_link" data-hook>
+            <div id="clear_cart_link" data-hook>
             <%= button_tag :class => 'continue' do %>
               <%= t(:empty) %>
             <% end %>
-            </p>
+            </div>
         <% end %>
-          <%= button_to t(:continue_shopping), root_path, :class => 'checkout' %>
+          <%= button_to t(:continue_shopping), root_path, :class => 'checkout continue_shopping' %>
 
       </div>
         <%= form_for @order, :url => update_cart_path, :html => {:id => 'update-cart', :class => "edit_spree_order"} do |order_form| %>

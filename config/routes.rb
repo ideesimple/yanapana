@@ -10,6 +10,10 @@ Yanapana::Application.routes.draw do
         end
         resources :causes do
         end
+	      resources :faqs do
+        end
+	      resources :teams do
+        end
       end
       match "how-it-works" => "home#how_it_works", :as => :how_it_works
       match "dummy-confirm" => "home#dummy_confirm", :as => :dummy_confirm
@@ -17,6 +21,5 @@ Yanapana::Application.routes.draw do
       match "contact-us" => "home#contact_us", :as => :contact_us
       match "about-us" => "home#about_us", :as => :about_us
       match "dashboard" => "home#dashboard", :as => :dashboard
-
     end
 end

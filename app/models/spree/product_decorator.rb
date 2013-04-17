@@ -7,6 +7,10 @@ Spree::Product.class_eval do
 
   before_save :save_date
 
+  def variants_ids
+    self.variants.map(&:id)
+  end
+
   private
 
   def save_date

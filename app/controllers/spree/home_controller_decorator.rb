@@ -1,5 +1,11 @@
 Spree::HomeController.class_eval do
 
+  before_filter :artist_account, :only => :dashboard
+
+  def artist_account
+    @artist = Spree::Artist.find_by_email(current_user.email)
+  end
+
   def index
     @searcher = Spree::Config.searcher_class.new(params)
     @searcher.current_user = try_spree_current_user
@@ -7,7 +13,6 @@ Spree::HomeController.class_eval do
     date_now = Date.today
     @cause = Spree::Cause.find(:all, :conditions=>["date_start <= ? AND date_finish >= ?", date_now, date_now]).first
     unless @cause.nil?
-    logger.debug @cause
     @products_cause = @products.where(:cause_id => @cause.id).each_slice(3).to_a
     @artist = Spree::Artist.find_by_id(@cause.artist)
     end
@@ -30,13 +35,19 @@ Spree::HomeController.class_eval do
 
 
   def faq
+    @faqs = Spree::Faq.find(:all)
   end
 
   def about_us
+    @teams = Spree::Team.find(:all).each_slice(4).to_a
   end
 
   def dashboard
+    #@causes = @artist.causes
+    @causes = Spree::Cause.where(:artist_id => @artist.id)
+    logger.debug "AAAAAAAAAAAAAAAAAAAAAAAAAAA"
   end
+
 
   def privacy_policy
   end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130228205649) do
+ActiveRecord::Schema.define(:version => 20130312232048) do
 
   create_table "spree_activators", :force => true do |t|
     t.string   "description"
@@ -178,6 +178,13 @@ ActiveRecord::Schema.define(:version => 20130228205649) do
     t.datetime "updated_at",                  :null => false
     t.string   "gateway_customer_profile_id"
     t.string   "gateway_payment_profile_id"
+  end
+
+  create_table "spree_faqs", :force => true do |t|
+    t.string   "question"
+    t.text     "answer"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "spree_gateways", :force => true do |t|
@@ -595,6 +602,17 @@ ActiveRecord::Schema.define(:version => 20130228205649) do
   add_index "spree_taxons", ["permalink"], :name => "index_taxons_on_permalink"
   add_index "spree_taxons", ["taxonomy_id"], :name => "index_taxons_on_taxonomy_id"
 
+  create_table "spree_teams", :force => true do |t|
+    t.string   "fullname"
+    t.string   "jobp"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
+  end
+
   create_table "spree_tokenized_permissions", :force => true do |t|
     t.integer  "permissable_id"
     t.string   "permissable_type"
@@ -640,6 +658,12 @@ ActiveRecord::Schema.define(:version => 20130228205649) do
     t.datetime "remember_created_at"
     t.datetime "reset_password_sent_at"
     t.boolean  "isartist"
+    t.string   "invitation_token",       :limit => 60
+    t.datetime "invitation_sent_at"
+    t.datetime "invitation_accepted_at"
+    t.integer  "invitation_limit"
+    t.integer  "invited_by_id"
+    t.string   "invited_by_type"
   end
 
   add_index "spree_users", ["email"], :name => "email_idx_unique", :unique => true

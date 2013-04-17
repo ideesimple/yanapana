@@ -59,7 +59,9 @@
       <!--Product Left Starts-->
       <div class="product_leftcol">
         <div id="main-image" data-hook>
-          <%= link_to (product_image(@product, :itemprop => "image") ), '#', :class => "rollover-zoom", :title => "yanapana" %>
+          <a class="rollover-zom" title="yanapana">
+            <%= product_image(@product, :itemprop => "image") %>
+          </a>
         </div>
         <!-- <span class="pr_info">ROLL OVER IMAGE TO ZOOM</span> -->
 
@@ -94,20 +96,20 @@
       <!--Product Right Starts-->
       <div class="product_rightcol">
         <h1><%= @product.name %></h1>
-	
-	
+
+
 	<% if @product. price %>
              <div class="pr_price">
                <% if @product.price %>
                  <big><%= number_to_currency @product.price %></big><small></small>
                <% end %>
              </div>
-	     
+
 	     <% if @product.description %>
           <p class="short_dc"><%= @product.description %></p>
         <% end %>
-	
-        
+
+
 	      <div class="product_overview hidden_movil">
             <%= render :partial => "properties" %>
         </div>
@@ -115,7 +117,7 @@
          <%#= render :partial => "cart_form" %>
          <%= form_for :order, :url => populate_orders_path do |f| %>
 
-           
+
 
              <%= render :partial => "variants" %>
 
@@ -164,7 +166,7 @@
               <h4></h4>
               <div class="org_logo"><%= link_to (image_tag(@product.cause.organization.photo.url(:org))), root_path %></div>
               <!--Facebook like button Starts-->
-<div class="fb-like" data-href="<%= root_url %>" data-send="true" data-layout="button_count" data-width="450" data-show-faces="true"></div>
+<div class="fb-like" data-href="<%= root_url %>" data-send="false" data-layout="button_count" data-width="450" data-show-faces="true"></div>
               <!--Facebook like button Ends-->
 
 
@@ -191,9 +193,9 @@
   <div id="artist-section" class="artist-inspiration jean">
     <section>
       <h2 class="sub_title">The Artist</h2>
-      <div class="artist"><a href="#"><%= image_tag (@product.cause.artist.photo(:product))  %></a></div>
+      <div class="artist"><a><%= image_tag (@product.cause.artist.photo(:product))  %></a></div>
       <div class="artist_description">
-        <h2 class="sub_title">Inspiration Behind</h1>
+        <h3>Inspiration Behind</h3>
         <% if @product.inspiration_behind %>
           <p><%= @product.inspiration_behind  %></p>
         <% else %>
