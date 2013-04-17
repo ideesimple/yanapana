@@ -153,7 +153,7 @@ header .header_search input{ background:none; border:0px; padding:4px; width:82%
 header .header_search button{background:url(../../assets/image-yanapana/search_btn.png) no-repeat center; border:0px; width:20px; height:20px; float:right; margin:2px;}
 
 .hasCountdown {width: 980px; margin: 0 auto;}
-.countdown {float: right; width: 218px; padding-top: 65px; text-shadow: 1px 1px 0 white;}
+.countdown {float: right; width: 240px; padding-top: 65px; text-shadow: 1px 1px 0 white;}
 .countdown h3 {font-family: "Century Gothic", sans-serif; font-size: 12px; float: left; padding: 15px 10px 0 0; text-transform: uppercase; color: #666;}
 .countdown li {display: inline-block;}
 .countdown .countdown_text li {padding: 0px 3px 2px 0px; color: #666;}
@@ -164,8 +164,8 @@ header .header_search button{background:url(../../assets/image-yanapana/search_b
 /*-----------------------------------FEEDBACK*/
 
 .feedback {
-    display: inline-block; 
-    padding: 16px; 
+    display: inline-block;
+    padding: 16px;
     margin-top: 10px;
     margin-bottom: 10px;
     font-family:arial;
@@ -174,7 +174,7 @@ header .header_search button{background:url(../../assets/image-yanapana/search_b
     padding:6px 24px;
     text-decoration:none;
 }
-.feedback.positive {  
+.feedback.positive {
     background-color:#BCD80A;
     display:inline-block;
     color:#ffffff;
@@ -947,10 +947,10 @@ div.selector span {
 }
 
 iframe form .form-all .form-selection label {
-    font-size: 12px !important; 
-    font-family: sans-serif !important; 
-    margin-bottom: 0 !important; 
-    display: block !important; 
+    font-size: 12px !important;
+    font-family: sans-serif !important;
+    margin-bottom: 0 !important;
+    display: block !important;
     float: none !important;
 }
 
