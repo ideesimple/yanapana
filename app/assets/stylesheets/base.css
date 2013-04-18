@@ -133,6 +133,119 @@ header, nav, section, footer, .branding_area { width:980px; margin:0px auto;}
 .sc-button:hover{ background-color:#55504C; box-shadow: 0 0px 0 #FFFFFF inset, 0 2px 1px rgba(204, 204, 204, 0.9);}
 
 
+.qq-upload-button {
+    background: #544F4B !important;
+    -moz-transition: all 0.1s ease-in-out 0s;
+    border: 0 none !important;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Arial,sans-serif !important;
+    font-size:14px !important;
+    font-weight: bold !important;
+    padding: 8px 14px;
+    width: auto;
+    color:#fff !important;
+    margin:0 0.3em 1em 0 !important;
+    text-shadow: none !important;
+    text-decoration:none !important;
+    box-shadow: none !important;
+    -webkit-border-radius: 0px !important;
+    -moz-border-radius: 0px !important;
+    border-radius: 0px !important; 
+    font-family: arial, helvetica;
+}
+
+ 
+.form-submit-button {
+    background: #544F4B !important;
+    -moz-transition: all 0.1s ease-in-out 0s;
+    border: 0 none !important;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Arial,sans-serif !important;
+    font-size:14px !important;
+    font-weight: bold !important;
+    padding: 8px 14px;
+    width: auto;
+    color:#fff !important;
+    margin:0 0.3em 1em 0 !important;
+    text-shadow: none !important;
+    text-decoration:none !important;
+    box-shadow: none !important;
+    -webkit-border-radius: 0px !important;
+    -moz-border-radius: 0px !important;
+    border-radius: 0px !important; 
+    font-family: arial, helvetica !important;
+}
+.form-submit-button:hover {background: #444;} 
+
+.form-submit-reset{
+    background: #544F4B !important;
+    -moz-transition: all 0.1s ease-in-out 0s;
+    border: 0 none !important;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Arial,sans-serif !important;
+    font-size:14px !important;
+    font-weight: bold !important;
+    padding: 8px 14px;
+    width: auto;
+    color:#fff !important;
+    margin:0 0.3em 1em 0 !important;
+    text-shadow: none !important;
+    text-decoration:none !important;
+    box-shadow: none !important;
+    -webkit-border-radius: 0px !important;
+    -moz-border-radius: 0px !important;
+    border-radius: 0px !important; 
+    font-family: arial, helvetica;
+}
+
+.form-submit-print {
+    background: #544F4B !important;
+    -moz-transition: all 0.1s ease-in-out 0s;
+    border: 0 none !important;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Arial,sans-serif !important;
+    font-size:14px !important;
+    font-weight: bold !important;
+    padding: 8px 14px;
+    width: auto;
+    color:#fff !important;
+    margin:0 0.3em 1em 0 !important;
+    text-shadow: none !important;
+    text-decoration:none !important;
+    box-shadow: none !important;
+    -webkit-border-radius: 0px !important;
+    -moz-border-radius: 0px !important;
+    border-radius: 0px !important; 
+    font-family: arial, helvetica;
+}
+
+.form-screen-button {
+    background: #544F4B !important;
+    -moz-transition: all 0.1s ease-in-out 0s;
+    border: 0 none !important;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Arial,sans-serif !important;
+    font-size:14px !important;
+    font-weight: bold !important;
+    padding: 8px 14px;
+    width: auto;
+    color:#fff !important;
+    margin:0 0.3em 1em 0 !important;
+    text-shadow: none !important;
+    text-decoration:none !important;
+    box-shadow: none !important;
+    -webkit-border-radius: 0px !important;
+    -moz-border-radius: 0px !important;
+    border-radius: 0px !important; 
+    font-family: arial, helvetica;
+}
+
+
 
 /*-----------------------------------HEADER*/
 header .top_bar{ display:inline-block; width:100%;}
