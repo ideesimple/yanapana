@@ -78,7 +78,13 @@ Spree::HomeController.class_eval do
   def privacy_policy
   end
 
-  def terms_of_use
+  def terms_and_conditions
+  end
+
+  def terms_and_conditions_artist
+  end
+
+  def without_causes
   end
 
   def subscribe

@@ -55,8 +55,7 @@
       <!--Product Right Starts-->
       <div class="product_rightcol">
         <h1><%= @product.name %></h1>
-
-
+        <%= @product.option_types.last.prototypes %>
 	<% if @product. price %>
              <div class="pr_price">
                <% if @product.price %>

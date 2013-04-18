@@ -26,6 +26,10 @@ Yanapana::Application.routes.draw do
       match "landing" => "home#landing", :as => :landing
       match "partnership" => "home#partnership", :as => :partnership
       match "landing-newsletter" => "home#landing_newsletter", :as => :newsletter
+      match "terms-and-conditions" => "home#terms_and_conditions", :as => :terms_and_conditions
+      match "terms-and-conditions-artist" => "home#terms_and_conditions_artsit", :as => :terms_and_conditions_artist
+      match "without-causes" => "home#without_causes", :as => :without_causes
+
 
       #devise_for :user, :class_name => 'Spree::User', :controllers => {:invitations => 'devise/invitations'}
     end
