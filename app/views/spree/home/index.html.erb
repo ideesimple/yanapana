@@ -250,9 +250,6 @@
           });
     }
 
-      <%#= render :partial => 'spree/shared/counts_facebook'  %>
-
-      function gettwcount(url){
       var tweets;
       $.getJSON('http://urls.api.twitter.com/1/urls/count.json?url=' + url + '&callback=?', function(data){
           tweets = data.count;
