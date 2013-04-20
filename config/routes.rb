@@ -15,8 +15,8 @@ Yanapana::Application.routes.draw do
 	      resources :teams do
         end
       end
-      match '/:week' => redirect('/'), :constraints => {:week => /week-[0-9]+/ }
-      #match '/:week' => "home#current_cause", :constraints => {:week => /week-[0-9]+/ }
+      #match '/:week' => redirect('/'), :constraints => {:week => /week-[0-9]+/ }
+      match '/week-:week' => "home#current_cause", :as =>"current_cause"
       match "how-it-works" => "home#how_it_works", :as => :how_it_works
       match "dummy-confirm" => "home#dummy_confirm", :as => :dummy_confirm
       match "faq" => "home#faq", :as => :faq
