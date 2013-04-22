@@ -110,7 +110,9 @@
                     </div>
                     <div id="tt_colsize">
                       <li>
-                        <a href= "https://twitter.com/intent/tweet?text=<%= @cause.title  %>+<%= (root_url + 'week-' + @cause.id.to_s).html_safe %>+@yanapanawear" target="_blank" data-url="<%= (root_url + 'week-' + @cause.id.to_s).html_safe %>" data-counturl="<%= (root_url + 'week-' + @cause.id.to_s).html_safe %>"><div class="tt-icon hidden_movil"></div><%= image_tag ("image-yanapana/twitter_icon.png"), :class=>'hidden_desktop'%>
+                        <!--<a href="https://twitter.com/share" class="twitter-share-button" data-url="<#%= (root_url + 'week-' + @cause.id.to_s).html_safe %>" data-via="roberto_laraesp" data-lang="en" data-count="<#%= (root_url + 'week-' + @cause.id.to_s).html_safe %>">Tweet</a>
+                        -->
+                        <a href= "https://twitter.com/intent/tweet?original_referer=<%= (root_url + 'week-' + @cause.id.to_s).html_safe %>&text=<%= @cause.title  %>+<%= (root_url + 'week-' + @cause.id.to_s).html_safe %>+@yanapanawear&url=<%= (root_url + 'week-' + @cause.id.to_s).html_safe %>&counturl=<%= (root_url + 'week-' + @cause.id.to_s).html_safe %>&count=vertical" target="_blank" ><div class="tt-icon hidden_movil"></div><%= image_tag ("image-yanapana/twitter_icon.png"), :class=>'hidden_desktop'%>
   </a>
                         <div id="goalbar" class="goalbar_style"><i id = "count_twitts" class="progBar"></i></div>
                          <div class="stats">
