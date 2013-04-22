@@ -110,7 +110,7 @@
                     </div>
                     <div id="tt_colsize">
                       <li>
-                        <a href="https://twitter.com/share" class="twitter-share-button" data-url="<#%= (root_url + 'week-' + @cause.id.to_s).html_safe %>" data-via="roberto_laraesp" data-lang="en" data-count="<#%= (root_url + 'week-' + @cause.id.to_s).html_safe %>">Tweet</a>
+                        <a href="https://twitter.com/share" class="twitter-share-button" data-url="<%= (root_url + 'week-' + @cause.id.to_s).html_safe %>" data-via="roberto_laraesp" data-lang="en" data-count="<%= (root_url + 'week-' + @cause.id.to_s).html_safe %>">Tweet</a>
 
                         <a href= "https://twitter.com/intent/tweet?text=<%= @cause.title  %>+<%= (root_url + 'week-' + @cause.id.to_s).html_safe %>+@yanapanawear&amp;url=<%= (root_url + 'week-' + @cause.id.to_s).html_safe %>&amp;counturl=<%= (root_url + 'week-' + @cause.id.to_s).html_safe %>" target="_blank" ><div class="tt-icon hidden_movil"></div><%= image_tag ("image-yanapana/twitter_icon.png"), :class=>'hidden_desktop'%>
   </a>
