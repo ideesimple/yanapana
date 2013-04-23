@@ -1,0 +1,11 @@
+<% if @response -%>
+		$('#form, #error, #presignup-content').hide();		
+		$('#success').fadeIn(function(){
+				var successScroll = $('#signup-body').offset().top - 20;
+				$('html,body').animate({scrollTop:successScroll}, 300);
+		});
+  $('#success-content, #newuser').show();
+		
+<% else %>
+		$('#error').html('Could not register, send an email to your test for titogo@yahoo.com').fadeIn();
+<% end %>

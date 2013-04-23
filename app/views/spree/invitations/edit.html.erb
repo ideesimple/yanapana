@@ -1,0 +1,27 @@
+<div class="section_container jean pb">
+  <section>
+    <div class="full_page">
+      <ul class="breadcrumb">
+       <li><%= link_to "Home", root_path %></li>
+       <li><%= link_to "Login", login_path %></li>
+       <li class="active">Change password</li>
+      </ul>
+
+<h2>Set your password</h2>
+
+<%= form_for resource, :as => resource_name, :url => spree.user_invitation_path(resource_name), :html => { :method => :put } do |f| %>
+  <%= devise_error_messages! %>
+  <%= f.hidden_field :invitation_token %>
+
+  <p><%= f.label :password %><br />
+  <%= f.password_field :password, :class => 'title' %></p>
+
+  <p><%= f.label :password_confirmation %><br />
+  <%= f.password_field :password_confirmation, :class => 'title' %></p>
+
+  <p><%= f.submit "Set my password", :class => 'button primary' %></p>
+<% end %>
+
+</div><!--Full Page Ends-->
+  </section>
+</div>

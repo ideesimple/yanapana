@@ -1,0 +1,30 @@
+.feedback {
+    display: inline-block; 
+    padding: 16px; 
+    margin-top: 9px;
+    margin-bottom: 9px;
+    font-family:arial;
+    font-size:15px;
+    font-weight:bold;
+    padding:6px 24px;
+    text-decoration:none;
+}
+.feedback.positive {    -moz-box-shadow:inset 0px 1px 0px 0px #c1ed9c;
+    -webkit-box-shadow:inset 0px 1px 0px 0px #c1ed9c;
+    box-shadow:inset 0px 1px 0px 0px #c1ed9c;
+    background-color:#BCD80A;
+    border:1px solid #6F8B00;
+    display:inline-block;
+    color:#ffffff;
+    text-shadow:1px 1px 0px #689324;
+}
+.feedback.negative {
+        -moz-box-shadow:inset 0px 1px 0px 0px #f9eca0;
+    -webkit-box-shadow:inset 0px 1px 0px 0px #f9eca0;
+    box-shadow:inset 0px 1px 0px 0px #f9eca0;
+    background-color:#f0c911;
+    border:1px solid #e65f44;
+    display:inline-block;
+    color:#c92200;
+    text-shadow:1px 1px 0px #ded17c;
+}

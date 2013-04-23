@@ -56,12 +56,12 @@ $(document).ready(function(){
 
     $("#cart_" + index).toggle(function() {
       $('#size_drop_' + index).slideDown(300);
+      $('div[id^="size_drop_"]').not('#size_drop_' + index).slideUp(300);
     }, function(){
       $('#size_drop_' + index).slideUp(300);
     });
 
     $('#size_drop_' + index + ' li a').click(function(){
-      $('html, body').animate({scrollTop:0}, 'slow');
       myid=$(this).attr('id');
       $('#form' + index + ' #product_1').val($(this).attr('id'));
       $('#form' + index).submit();
@@ -105,6 +105,7 @@ $(document).ready(function(){
 		username: 'rohithpaul',
 		count: 1
 	});
+
 
 
 });

@@ -5,6 +5,7 @@
 // the compiled file.
 //
 //= require jquery
+//= require jquery-ui.min
 //= require jquery_ujs
 
 //= require store/spree_core

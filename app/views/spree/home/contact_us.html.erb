@@ -6,25 +6,25 @@
 				    <li class="active">Contact Us</li>
 			</ul>
 			<h1>contact us </h1>
-			<div class="contact-img" ></div>
+			<%= image_tag ("image-yanapana/contact-banner.jpg"), :class=>'contact-img'%>
 			<div class="col_left_main contact_page">
 				  <!--Google Maps Start-->
             <!--Google Maps Ends-->
                 	<!--Contact Starts-->
-			
-			<p class="bb">At YANAPANA, we are always eager and hear about our customers. 
+
+			<p class="bb">At YANAPANA, we are always eager and hear about our customers.
 Make sure to go through our FAQs. Answers to most questions can be quickly found there.
 </p>
-                        
+
                     <!--Block Ends-->
         <!--Form Starts-->
 				    <div class="block borderwhite">
-
-				      <p class="info">Your email was sent. Huzzah!</p>
-
               <%= form_tag(contact_us_path,:method => "post", :multipart => false, :class=>"contact-us") do %>
               <a name="leavemessage"></a>
                 <h3>Leave a message</h3>
+                <% unless alert.blank? %>
+                  <p class="info">Your email was sent. Huzzah!</p>
+                <% end %>
                 <% unless @c.nil? %>
                   <% if @c.errors.any? %>
                     <p class="alert">Error submitting the form</p>
@@ -38,7 +38,7 @@ Make sure to go through our FAQs. Answers to most questions can be quickly found
 
 						<ul id="contact_form" class="pb">
               <li class="contact-selector">
-                <%= select_tag "suggestion", options_for_select([["Sugerencia" , "1" ],["Duda" , "2" ],["Quiero vender poleras" , "3" ]]), :class=>"contact-subject"  %>
+                <%= select_tag "General Question", options_for_select([["General Question" , "general-question" ],["Tracking My Order" , "tracking-my-order" ],["Problem With My Order" , "problem-with-my-order" ],["Report a Website Problem" , "report-a-website-problem" ],["Interested in designing" , "interested-in-designing" ],["Charity Partnership" , "charity-partnership" ]]), :class=>"contact-subject"  %>
 							    <br />
 							    <br />
 
@@ -62,7 +62,7 @@ Make sure to go through our FAQs. Answers to most questions can be quickly found
 							    <br />
 						    </li>
               <li>
-                <%= submit_tag "Send us Mail!",:class => "subbutton brown_btn contact-submit" %>
+                <%= submit_tag "Submit",:class => "subbutton brown_btn contact-submit" %>
               </li>
           </ul>
 					    <% end %>
@@ -77,24 +77,34 @@ Make sure to go through our FAQs. Answers to most questions can be quickly found
         <div class="block-progress">
           <div class="block-title">Customer Service</div>
           <ul>
-            <li><a href="#">F.A.Q</a></li>
-            <li><a href="#">Shipping Costs</a></li>
-            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">F.A.Q.</a></li>
+            <li><a href="#">Non-Profit Partnership</a></li>
             <li><a href="#">Terms and Conditions of Returns</a></li>
             <li><a href="#">Privacy Policy</a></li>
           </ul>
         </div>
 
 	<address>
-                            <b>Prefer to call us?</b>
-			    <br/>
-			    <br/>
-                            +1 949 200 6392          Monday-Friday 7am - 12pm PST (Americas)  
-			    <br/>
-			    <br/>
-			    + 41 (0) 78 617 50 86    Monday-Friday  1pm - 6pm CET (Europe)
+          <b>Shipping Costs</b>
+          <br/>
+          <br/>
+          USA - $5.99
+          <br/>
+          <br/>
+          International - $8.99
+          <br/>
+          <br/>
 
-			    
+          <b>Prefer to call us?</b>
+			    <br/>
+			    <br/>
+                            +1 949 200 6392          Monday-Friday </br>7am - 12pm PST (Americas)
+			    <br/>
+			    <br/>
+			    + 41 (0) 78 617 50 86    Monday-Friday </br> 1pm - 6pm CET (Europe)
+
+
+
                         </address>
 
         <!--<div class="right_promo">

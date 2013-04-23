@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130312232048) do
+ActiveRecord::Schema.define(:version => 20130410224002) do
 
   create_table "spree_activators", :force => true do |t|
     t.string   "description"
@@ -136,11 +136,16 @@ ActiveRecord::Schema.define(:version => 20130312232048) do
     t.integer  "number_goal"
     t.integer  "artist_id"
     t.integer  "organization_id"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
     t.date     "date_start"
     t.date     "date_finish"
     t.text     "inspiration"
+    t.string   "sharephoto_file_name"
+    t.string   "sharephoto_content_type"
+    t.integer  "sharephoto_file_size"
+    t.datetime "sharephoto_updated_at"
+    t.string   "titleshare"
   end
 
   add_index "spree_causes", ["artist_id"], :name => "index_spree_causes_on_artist_id"

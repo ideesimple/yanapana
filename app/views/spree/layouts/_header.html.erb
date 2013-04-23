@@ -1,18 +1,18 @@
 <header>
   <div class="top_bar clear">
-    <!--Language Switcher Starts-->
+    <!--Language Switcher Starts
     <div class="language_switch"><a class="active" href="#" title="ENGLISH">EN</a><a href="#" title="FRENCH">FR</a><a href="#" title="SPANISH">ES</a><a href="#" title="GERMAN">DE</a> </div>
-    <!--Language Switcher Ends-->
-
+    Language Switcher Ends-->
+    <div class="feedback positive" style="display:none">Thank you for supporting this week YANAPANA's cause, you are awsome! </div>
+    <div class="feedback negative" style="display:none"></div>
 
     <!--Top Links Starts-->
     <ul class="top_links">
       <% if current_user %>
-        <li><%= link_to "My account", account_path %></li>
         <% unless Spree::Artist.find_by_email(current_user.email).nil?%>
-
           <li><%= link_to "Dashboard", dashboard_path %></li>
         <% end %>
+        <li><a><%= current_user.email %></a></li>
         <li><%= link_to "Logout", destroy_user_session_path %></li>
       <% else %>
         <li><%= link_to "Login", login_path %></li>
@@ -21,7 +21,9 @@
         <div class="minicart">
           <%= link_to "Cart", :class => "minicart_link" do %>
             <% if current_order%>
-              <span class="item"><b><%= current_order.item_count %></b> ITEM /</span> <span class="price"><b><%= current_order.display_total%></b></span>
+              <span class="item"><b><%= current_order.item_count %>
+              </b><% if current_order.item_count > 1 %> ITEMS <% else %>ITEM <% end %>/</span> <span class="price"><b><%= current_order.display_total%></b>
+              </span>
             <% else %>
               <span class="item"><b>Empty</b> ITEM /</span> <span class="price"><b>0</b></span>
             <% end %>
@@ -32,9 +34,19 @@
             <ul>
             <% unless current_order.nil? or current_order.line_items.empty?%>
               <%= render :partial => 'spree/shared/preview_cart', :locals => { :current_order => current_order } %>
-              <% else %>
-                <div class="empty"> Your Shopping cart is empty!</div>
+              <!--Validar que los productos sean de la causa que esta en curso -->
+              <% current_order.line_items.each do |item|  %>
+                <% unless @cause.nil? %>
+                <% if @cause.id != item.variant.product.cause_id %>
+                  <% current_order.empty! %>
+                <% end %>
+                <% end %>
               <% end %>
+              <!--End -->
+            <% else %>
+                <div class="empty"> Your Shopping cart is empty!</div>
+            <% end %>
+
             </ul>
           </div>
 

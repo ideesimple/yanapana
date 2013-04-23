@@ -11,12 +11,28 @@ Spree::HomeController.class_eval do
     @searcher.current_user = try_spree_current_user
     @products = @searcher.retrieve_products
     date_now = Date.today
-    @cause = Spree::Cause.find(:all, :conditions=>["date_start <= ? AND date_finish >= ?", date_now, date_now]).first
+    @cause = Spree::Cause.where("date_start <= ? AND date_finish >= ?", Date.today, Date.today).order('date_start ASC').first
     unless @cause.nil?
-    @products_cause = @products.where(:cause_id => @cause.id).each_slice(3).to_a
-    @artist = Spree::Artist.find_by_id(@cause.artist)
+      @products_cause = @products.where(:cause_id => @cause.id).each_slice(3).to_a
+      #Arista asociado a esa causa
+      @artist = Spree::Artist.find_by_id(@cause.artist)
+      @products_per_cause = @products.where(:cause_id=>@cause.id)
+      variantes = []
+      @products_per_cause.each do |prod|
+        variantes << prod.variants_ids
+      end
+      @lineitems_per_cause = Spree::Order.total_line_items(variantes)
+      @orders = Spree::Order.total_orders(@lineitems_per_cause.map(&:order_id))
+      @total = 0
+      @orders.each do |order|
+        @total = order.item_total + @total
+      end
     end
+    unless @cause.nil?
     respond_with(@products)
+    else
+    redirect_to landing_path
+    end
   end
 
   def dummy_confirm
@@ -25,17 +41,16 @@ Spree::HomeController.class_eval do
   def contact_us
     if params.length > 2
       logger.debug params
-      logger.debug "PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP"
-      @c = Spree::ContactForm.new(:name => params["name"],:email => params["email"], :message => params["message"])
+      @c = Spree::ContactForm.new(:name => params["name"],:email => params["email"], :message => params["message"],:suggestion=> params["suggestion"])
       if @c.deliver
-        redirect_to root_path
+        redirect_to contact_us_path + "#leavemessage", :alert => "i"
       end
     end
   end
 
 
   def faq
-    @faqs = Spree::Faq.find(:all)
+    @faqs = Spree::Faq.order("created_at ASC").all
   end
 
   def about_us
@@ -43,9 +58,20 @@ Spree::HomeController.class_eval do
   end
 
   def dashboard
-    #@causes = @artist.causes
     @causes = Spree::Cause.where(:artist_id => @artist.id)
-    logger.debug "AAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    @total_per_cause = 0
+    variantes = []
+    #Recorrer las causas
+    @causes.each do |cause|
+      contador = cause.products.count
+      @total_per_cause = contador + @total_per_cause
+      cause.products.each do |prod|
+        variantes << prod.variants_ids
+      end #Termina la iteracion de productos por causa
+    end #Termina la iteracion de causas
+    @lineitems_distinct_order = Spree::Order.total_line_items(variantes)
+    @orders_per_artist = Spree::Order.total_orders(@lineitems_distinct_order.map(&:order_id))
+    @sales = @orders_per_artist.sum(:total)
   end
 
 
@@ -54,4 +80,46 @@ Spree::HomeController.class_eval do
 
   def terms_of_use
   end
+
+  def subscribe
+    email = params[:email]
+    h = Hominid::API.new('6c3bc75008800ae5fc53277d0bfb918d-us5')
+    @prueba = h.lists
+    begin
+      @response = h.list_subscribe('5ec394c1ce', email, {:FNAME => '', :LNAME => ''}, 'html', false, true, true, true)
+    rescue
+      @response = nil
+    end
+
+    respond_to do |wants|
+      wants.js
+    end
+  end
+
+  def landing_newsletter
+    email = params[:email]
+    h = Hominid::API.new('6c3bc75008800ae5fc53277d0bfb918d-us5')
+    @prueba = h.lists
+    begin
+      @response = h.list_subscribe('5ec394c1ce', email, {:FNAME => '', :LNAME => ''}, 'html', false, true, true, true)
+    rescue
+      @response = nil
+    end
+
+    respond_to do |wants|
+      wants.js
+    end
+  end
+
+  def landing
+    render :layout => "application"
+  end
+
+  def how_it_works
+  end
+
+  def partnership
+
+  end
+
 end

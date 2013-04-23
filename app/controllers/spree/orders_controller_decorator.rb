@@ -7,12 +7,20 @@ Spree::OrdersController.class_eval do
       quantity = params[:quantity].to_i if !params[:quantity].is_a?(Hash)
       quantity = params[:quantity][variant_id].to_i if params[:quantity].is_a?(Hash)
       @product = Spree::Product.find(product_id)
+      logger.debug "QQQQQQQQQQQQQQQQQQQQQQQQQQqQQ"
+    if variant_id.empty?
+        error_item = false
+        flash[:error] = "Select a size "
+        logger.debug "PPPPPPPPPPPPPPPPPPPPPPPPPPPPPP"
+    else
       @item_add = @order.add_variant(Spree::Variant.find(variant_id), quantity) if quantity > 0
         if @item_add.errors.any?
           flash[:error] = @item_add.errors.full_messages
           error_item = false
         end
+    end
     end if params[:products]
+
 
 
     params[:variants].each do |variant_id, quantity|
@@ -33,8 +41,9 @@ Spree::OrdersController.class_eval do
         format.js
       end
     else
+      logger.debug "aaaaaaaaaaaaaaaaaaaaaaa"
       respond_to do |format|
-        format.html { redirect_to product_url(@product.permalink), :flash => { :error => flash[:error][0].to_s } }
+        format.html { redirect_to product_path(@product.permalink), :error => flash[:error][0].to_s }
         format.js
       end
     end

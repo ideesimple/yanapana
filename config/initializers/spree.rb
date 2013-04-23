@@ -9,6 +9,7 @@ Spree.config do |config|
   # Example:
   # Uncomment to override the default site name.
    config.site_name = "Yanapana"
+   config.set(:auto_capture => true)
 end
 
 Spree.user_class = "Spree::User"

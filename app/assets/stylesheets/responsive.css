@@ -2,45 +2,52 @@
 /* Width of 768px */
 
 /* #Tablet (Portrait)
-================================================== */    
+================================================== */
 
 @media only screen and (min-width: 700px) and (max-width: 960px) {
-header, nav, section, footer, ul.sub_menu, .col_left_main, .branding_area, .comments-section, .comments-section.comments{
+header, nav, section, footer, .col_left_main, .branding_area, .comments-section, .comments-section.comments{
 width:700px;
 }
 #side_nav{ width:150px;}
 #main_content{ width:512px;}
 .toolbar > div.viewby{ margin-left:22px;}
-footer .footer_links > li{ padding-left:25px; width:120px;}
-footer .footer_customblock{ display:none;}
+footer .footer_links > li{ padding-left:25px; width:78px;}
 .subscribe_block .find_us{ margin-left:22px; width:120px;}
 .subscribe_block .subscribe_nl{ width:475px;}
 .subscribe_block .subscribe_nl small{ width:405px;}
 .subscribe_block .subscribe_nl form{ margin-top:6px; float:left;}
 header .header_search input{ width:82%;}
-.hidden_tablet {display: none;}
+.hidden_tablet {display: none ;}
 
 
 /*Home*/
 
 nav .primary_nav > li > a {font-size: 13px;}
 
-.countdown_container {width: 700px;  }
+.hasCountdown {width: 700px;  }
 
 #org_description {float: left; width: 100%; padding: 0; margin: 0;}
 
 #cause {padding: 30px 0;}
 
-#cause section iframe.video_description{width: 100%; height: 392px; float: left; margin: 0 0 20px 0;}
+#cause section iframe.video_description{width: 100%; height: 376px; float: left; margin: 0 0 20px 0;}
 
 #cause .cause_description {margin-bottom: 10px;}
-#cause section .org_logo {width: 90px; float: left;}
+#cause section .org_logo { float: left;}
 #cause section .fb-like, #cause section .follow-btn {float:left; margin-right: 15px;}
 
 #call-to-action {font-size: 16px}
 
 .foo {display: none;}
 .baz {display: block;}
+
+.triangle-w {width: 22px; height: 12px; }
+ 
+#comments .fb-comments span iframe {width: 700px !important;}
+
+/*Feedback*/
+.feedback {text-align: center; width: 100%;}
+
 
 /*Goals*/
 #goals .goal_container {width: 30%;}
@@ -60,6 +67,10 @@ nav .primary_nav > li > a {font-size: 13px;}
 	margin-left: 0;
     margin-right: 15px;
 }
+
+.product_rightcol h1 {width: 71%; font-size: 22px; }
+.product_rightcol .pr_price {width: 24%; }
+.product_rightcol .pr_price big {font-size: 25px;}
 
 /*Banner*/
 #banner_section{ height:auto;}
@@ -95,6 +106,8 @@ nav .primary_nav > li > a {font-size: 13px;}
 	overflow: hidden;
 }
 
+.aboutus-video {height: 394px;}
+
 
 
 /*Listing*/
@@ -115,12 +128,22 @@ section#main_content{width:420px;}
 
 .comments_tag {font-size: 17px;}
 
+.full_page h1 {font-size: 22px;}
+
+#form-title {font-size: 16px;}
+h2.sub_title {font-size: 16px;}
+
 /*DASHBOARD*/
 .dashboard-rcol.fr { width: 465px;}
 .dashboard-products > li {width: 43%;}
 
+/*FOOTER*/
+footer .footer_customblock {width: 205px;}
+
+.contact_info input[type="email"] {width: 155px;}
 
 }
+
 
 
 
@@ -131,14 +154,14 @@ section#main_content{width:420px;}
     /* Note: Design for a width of 320px */
 
 @media only screen and (max-width: 700px) {
-	 
+
 nav, section, footer, ul.sub_menu, .col_left_main, #main_content, .branding_area, .comments-section section.comments{
 width:300px !important;
 }
 
-header {width: 75%;}
+header {width: 300px;}
 
-
+.hidden_desktop {display: inline-block;} 
 
 
 
@@ -153,7 +176,7 @@ header .top_bar {display: inline-block; width: 100%;}
 header .top_bar .language_switch {float: none; width: 310px; margin: 0 auto;}
 header .top_bar .language_switch a{ padding:7px 0; margin: 0 1px 1px 0; text-align: center; width: 76px; box-shadow: none;}
 header .top_links {float: none; width: 300px; margin: 0 auto; height: 31px;}
-header .top_links > li {margin: 0;} 
+header .top_links > li {margin: 0;}
 header .top_links li a {padding: 10px 14px;}
 header .top_links > li a{ font-size:11px;}
 nav .primary_nav{ display:none;}
@@ -167,9 +190,9 @@ header .minicart {max-height: 31px;}
 
 .branding_container {height: auto;}
 
-h1.logo { display: block; width:180px; margin:auto; float:none; padding:15px 0;}
+h1.logo { display: block; width:100%; margin:auto; float:none; padding:40px 0 10px 0;}
 
-.countdown_container {width: 100%; border-bottom: 1px solid #ddd; }
+.hasCountdown {width: 100%;  }
 .countdown {float: none; padding: 10px 0 5px 0; width: 121px; margin: 0 auto;}
 .countdown h3 {display: none;}
 .countdown .countdown_numbers li {font-size: 15px;}
@@ -177,7 +200,7 @@ h1.logo { display: block; width:180px; margin:auto; float:none; padding:15px 0;}
 #cause {padding: 25px 0;}
 #cause .cause_description {margin-bottom: 10px;}
 #cause section .org_logo {width: 90px; padding: 0 !important; }
-#cause section iframe.video_description {width: 310px; height: 174px; margin-bottom: 20px;}
+#cause section iframe.video_description {width: 310px; height: 174px; margin-bottom: 20px; margin-top: 20px;}
 #like_follow {height: 35px;}
 #cause section .fb-like, #cause section .follow-btn {display: inline-block; margin-right: 15px;}
 #cause section h1 .sc-button {padding: 0;}
@@ -192,10 +215,21 @@ h1.logo { display: block; width:180px; margin:auto; float:none; padding:15px 0;}
 
 .one-half {display: block;}
 
-
-.success, .flash.notice {text-align: center; padding: 20px 0px 20px 0px;} 
+.success, .flash.notice {text-align: center; padding: 20px 0px 20px 0px;}
 
 #first-carousel li {width: 100%; margin: 0 auto;}
+
+.triangle-w {width: 18px; height: 8px; }
+
+.collaborators h3 {border-bottom: none; margin-bottom: 0; padding-bottom: 5px;}
+.collaborators p {border-bottom: 2px solid #ccc; padding-bottom: 2px; margin-bottom: 20px;}
+
+.product_rightcol h1 {font-size: 22px; }
+.product_rightcol .pr_price big {font-size: 25px;}
+
+
+/*Feedback*/
+.feedback {text-align: center; width: 100%;}
 
 
 /*Goals*/
@@ -232,16 +266,16 @@ h1.logo { display: block; width:180px; margin:auto; float:none; padding:15px 0;}
 .jcarousel-skin-tango .jcarousel-item{ padding:0px 35px;}
 .products_list{ padding-bottom:20px;}
 
-#social_media {display: none;}
-#social_media .find_us{ width:260px; margin-left:38px; border:none; padding:0px; box-shadow:none; margin-bottom:10px;}
+
+#social_media .find_us{ width:260px; border:none; padding:0px; box-shadow:none; margin-bottom:10px;}
 #social_media .subscribe_nl{ width:268px; margin-right:20px; padding-top:5px; border-top:solid 1px #A29C97;}
 #social_media.subscribe_nl small{ display:none;}
 #social_media .subscribe_nl form{ margin-top:5px;}
 
-footer .footer_links > li{ width:100%; padding:0px; margin-bottom:10px; border-bottom: 1px solid #544F4B;}
+footer .footer_links > li{ width:100%; padding:0px; margin-bottom:10px; border-bottom: 1px solid #555;}
 footer .footer_links > li.seperator{ border:none;}
 footer .footer_customblock{ border-left:none; width:100%; min-height:inherit;}
-footer .footer_customblock > div{ padding:10px;}
+footer .footer_customblock > div{ padding:10px 0;}
 footer address { margin-top:0px; text-align:center;}
 footer address img{ float:none;}
 
@@ -255,7 +289,7 @@ footer address img{ float:none;}
 /*Detail Page*/
 .product_leftcol, .product_rightcol{ width:310px;}
 .product_rightcol h1{ padding-top:20px;}
-.product_rightcol .size_info label{ width:90px;}
+.product_rightcol .size_info label{ width:93px;}
 .product_rightcol .size_sel{ margin-bottom:5px;}
 .product_rightcol .add_to_buttons{ padding:15px 0px;}
 .product_rightcol .add_to_buttons span{ width:33px;}
@@ -266,8 +300,9 @@ footer address img{ float:none;}
 .action_buttonbar{ padding:5px;}
 #shopping-cart-table td:first-child{ width:1%;}
 #shopping-cart-table td img{ display:none;}
+#shopping-cart-table tr td {padding: 12px 5px; }
 #shopping-cart-table tr td input.qty_box{ width:16px; padding:2px;}
-#shopping-cart-table th{ font-size:12px; padding:10px 0px;}
+#shopping-cart-table th{ font-size:12px; padding:10px 10px;}
 #shopping-cart-table tr td a.remove{ width:15px; height:15px;}
 #shopping-cart-table tr td span.price{ font-size:12px; font-weight:normal;}
 #shopping-cart-table tr td a.edit{ padding:0px 2px; font-size:10px;}
@@ -304,10 +339,16 @@ div.selector, div.selector {width: 225px;}
 
 /*About Us */
 .collaborators ul li {
+	float: none;
     width: 75%;
-    float: left;
-    
+    margin: 0 auto;
+    text-align: center;
 }
+
+.aboutus-video {height: 169px;}
+
+.collaborators ul li p {text-align: center;}
+
 
 .collaborators ul li img {
 	max-width: 100%;
@@ -322,24 +363,33 @@ div.selector, div.selector {width: 225px;}
 .products_list_list .product_info{width:290px; text-align:left; float:none; margin:10px auto;}
 .products_list_list .price_info{width:290px; float:none; margin:auto;}
 
+
+#size-specs td {padding: 7px 10px;}
+
 /*Page*/
 section#main_content{width:310px;}
 aside#sidebar{width:310px;}
 
 /*Typography*/
 
+#artist-section p, .full_page p {text-align: justify;}
 
 .product_rightcol .pr_price {display: block; padding: 10px 0px; float: left; width: 100%;  border-top: 1px solid #ccc; }
 .product_rightcol p {width: 100%; margin-bottom: 0; padding: 10px 0px;}
 
 
 #headline h1 {font-size: 35px;  margin: 15px 0 7px 0; }
-#headline h4 {font-size: 13px;}
+#headline h4 {font-size: 12px; line-height: 1.3;}
 
 #cause h2 {font-size: 30px; padding-bottom: 10px; }
 #cause h4 {font-size: 15px; font-weight: bold; padding-bottom: 5px;}
 #cause p {font-size: 14px; padding-bottom: 7px;}
 .checkout_steps .step-title, .checkout_steps .step-title h2 {font-size: 13px !important;}
+
+.full_page h1 {font-size: 19px;}
+
+#form-title {font-size: 14px;}
+h2.sub_title {font-size: 14px;}
 
 footer .footer_links li span a { font-size: 12px; text-transform: uppercase;}
 
@@ -347,5 +397,10 @@ footer .footer_links li span a { font-size: 12px; text-transform: uppercase;}
 /*DASHBOARD*/
 .dashboard-rcol.fr, .dashboard-lcol { width: 100%;}
 .dashboard-products > li {width: 90%;}
+
+
+/*DASHBOARD*/
+.contact_info input[type="email"] {width: 290px;}
+
 
 }

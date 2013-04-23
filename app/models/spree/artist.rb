@@ -15,7 +15,7 @@ class Spree::Artist < ActiveRecord::Base
 
   #Configurations Paperclip
   has_attached_file :photo,
-    :styles => {:mini => "48x48>", :small=>"100x100>", :product=>"306x407!", :org =>"95x63!"},
+    :styles => {:mini => "48x48>", :small=>"100x100>", :product=>"306x407!", :org =>"95x63!", :artist_products => "203x271!", :profile_artist => "217x262!"},
     :storage => Rails.env == 'production' ? 's3' : 'filesystem',
     :s3_credentials => {
     :access_key_id => Spree::Config[:s3_access_key],
@@ -27,6 +27,10 @@ class Spree::Artist < ActiveRecord::Base
 
   def create_account
     Spree::User.invite!(:email=>self.email)
+  end
+
+  def name_with_initial
+    "#{name}. #{last_name}"
   end
 
 end

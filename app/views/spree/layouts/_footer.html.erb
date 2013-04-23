@@ -1,45 +1,57 @@
-
 <div class="footer_container">
     <div class="footer_background"></div>
         <!--Footer Starts-->
         <footer>
             <ul class="footer_links">
-                <li><span><a href="http://localhost:3000">Home</a></span>
+                <li><span><%= link_to "Home", root_url %></span>
                     <ul class="hidden_movil">
-                        <li><a href="http://localhost:3000/#cause">Cause</a></li>
-                        <li><a href="http://localhost:3000/#goals">Goals</a></li>
-                        <li><a href="http://localhost:3000/#products">Products</a></li>
-                        <li><a href="http://localhost:3000/#artist">Artist</a></li>
-                        <li><a href="http://localhost:3000/#comments">Comments</a></li>
+                        <li><%= link_to "Cause", root_url + "#cause" %></li>
+                        <li><%= link_to "Goals", root_url + "#goals" %></li>
+                        <li><%= link_to "Products", root_url + "#products" %></li>
+                        <li><%= link_to "Artist", root_url + "#artist" %></li>
+                        <li><%= link_to "Comments", root_url + "#comments" %></li>
                     </ul>
                 </li>
-                <li><span><a href="http://localhost:3000/about-us">About Us</a></span>
+                <li><span><%= link_to "About Us", about_us_path %></span>
                     <ul class="hidden_movil">
-                        <li><a href="http://localhost:3000/about-us#whoweare">Who is YANAPANA?</a></li>
-                        <li><a href="http://localhost:3000/about-us#motivation">Our Motivation</a></li>
-                        <li><a href="http://localhost:3000/about-us#whatwedo">What We Do</a></li>
-                        <li><a href="http://localhost:3000/about-us#family">Our Family</a></li>
+                        <li><%= link_to "Who is YANAPANA?", about_us_path + "#whowearw"%></li>
+                        <li><%= link_to "Our Motivation", about_us_path + "#motivation"%></li>
+                        <li><%= link_to "What We Do", about_us_path + "#whatwedo"%></li>
+                        <li><%= link_to "Our Family", about_us_path + "#family"%></li>
                     </ul>
                 </li>
-                <li> <span><a href="http://localhost:3000/contact-us">Contact Us</a></span>
+                <li class="hidden_movil"> <span><%= link_to "Get Involved", how_it_works_path %> </span>
                     <ul class="hidden_movil">
-                        <li><a href="http://localhost:3000/contact-us#leavemessage">Suggestions</a></li>
-                        <li><a href="http://localhost:3000/contact-us#leavemessage">Questions</a></li>
-                        <li><a href="http://localhost:3000/contact-us#leavemessage">Work With Us </a></li>
+                        <li><%= link_to "Submit Your Designs", how_it_works_path + "#submityourdesigns"%></li>
+                        <li><%= link_to "Non-Profit Partnership", how_it_works_path + "#submityourdesigns"%></li>
                     </ul>
                 </li>
-                <li> <span><a href="http://localhost:3000/how-it-works">How It Works</a></span>
+
+                <li class="hidden_desktop"> 
+                    <span><%= link_to "Design for us", how_it_works_path%> </span>
+                </li>
+
+                <li class="hidden_desktop"> 
+                    <span><%= link_to "Non-Profit Partnership", how_it_works_path %> </span>
+                </li>
+                <li class="hidden_desktop"> 
+                    <span><%= link_to "Blog", how_it_works_path %> </span>
+                </li>
+                <li><span><%= link_to "FAQ", faq_path %></span>
                     <ul class="hidden_movil">
-                        <li><a href="http://localhost:3000/how-it-works#submityourdesigns">Submit Your Designs </a></li>
+                        <li><%= link_to "Shipping Costs", faq_path %></li>
+                        <li><%= link_to "Contact Us", contact_us_path %></li>
+                        <li><%= link_to "Terms and Conditiond of Returns", faq_path %></li>
+                        <li><%= link_to "Privacy Policy", faq_path %></li>
+                        <li><%= link_to "Shipping Information", faq_path %></li>
                     </ul>
                 </li>
-                <li><span><a href="http://localhost:3000/faq">Help</a></span>
+
+                <li> <span><%= link_to "Contact Us", contact_us_path %></span>
                     <ul class="hidden_movil">
-                        <li><a href="http://localhost:3000/faq">Shipping Costs</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">Terms and Conditions of Returns</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Shipping Information</a></li>
+                        <li><%= link_to "Suggestions", contact_us_path + "#leavemessage" %></li>
+                        <li><%= link_to "Questions", contact_us_path + "#leavemessage" %></li>
+                        <li><%= link_to "Work With Us", contact_us_path + "#leavemessage" %></li>
                     </ul>
                 </li>
             </ul>
@@ -54,10 +66,18 @@
                     </div>
                 <div class="contact_info">
                     <big>Subscribe to our newsletter</big>
-                    <form action="mailing_list">
-                        <input type="text" name="Email">
-                    </form>
-                </div>
+                    <div id="newsletter">
+                      <%= form_tag subscribe_path, :remote => true, :html => {:id => 'sign-up'} do %>
+
+                        <input  type="email" value="" placeholder="Your Email" id="email" name="email">
+                        <input type="submit" value="Register" name="subscribe" class="sign-up sc-button light-blue">
+
+                        <span class="form-Motivationessage" id="response"></span>
+
+                      <% end %>
+                    </div>
+
+                                    </div>
             </div>
             <address>
                 <h1 class="logo_footer"> <a href="#"><%= image_tag ("image-yanapana/logo_footer.png") %></a></h1>

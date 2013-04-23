@@ -4,6 +4,11 @@
     <%= f.text_field :title %>
   <% end %>
 
+  <%= f.field_container :titleshare do  %>
+    <%= f.label :titleshare, 'Title' %><br />
+    <%= f.text_field :titleshare %>
+  <% end %>
+
   <%= f.field_container :description do  %>
     <%= f.label :description%><span class="required">*</span><br />
     <%= f.text_area :description, :style => "height:50px" %>
@@ -31,8 +36,8 @@
   <% end %>
 
   <%= f.field_container :artist_id do  %>
-    <%= f.label :artist_id, 'Artist' %><span class="required">*</span><br />
-    <%= f.collection_select(:artist_id, Spree::Artist.order("name ASC").all, :id, :name) %>
+    <%= f.label :artist_id, 'Artist' %><br />
+    <%= f.collection_select(:artist_id, Spree::Artist.order("name ASC").all, :id, :name_with_initial, :include_blank => 'None') %>
   <% end %>
 
   <%= f.field_container :organization_id do  %>
@@ -79,9 +84,9 @@
     <%= f.text_field :link_pinterest %>
   <% end %>
 
-  <%= f.field_container :status do  %>
-    <%= f.label :status, "Active Cause" %><span>()</span><br />
-    <%= f.check_box :status %>
+  <%= f.field_container :sharephoto do  %>
+    <%= f.label :sharephoto %><br />
+    <%= f.file_field :sharephoto %>
   <% end %>
 
 </div>

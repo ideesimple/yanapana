@@ -1,42 +1,9 @@
-<% content_for :head do %>
-<script>
-  $(document).ready(function() {
-
-	    $('.add_cart').click(function(){
-            $('html, body').animate({scrollTop:0}, 'slow');
-            return true;
-
-            location.reload();
-	    });
-
-	});
-</script>
-
-<!--Este script sirve para colapsar el quick overview-->
-  <script type="text/javascript">
-    $(function()
-    {
-
-      $("#mostrar").click(function(event) {
-        event.preventDefault();
-        $("#caja").slideToggle();
-      });
-
-      $("#caja a").click(function(event) {
-        event.preventDefault();
-        $("#caja").slideUp();
-      });
-    });
-  </script>
-
-
-<% end %>
-
-<% content_for :metatags do %>
+<% content_for :datos_sociales do %>
+  <% unless @product.nil? %>
     <%= ('<meta property="og:title" content=" Yanapana | ' + @product.name  + ' " />').html_safe %>
-    <%= ('<meta property="og:url" content="' + root_url + '" />').html_safe %>
-    <%= ('<meta property="og:image" content="' + product_image(@product).to_s + '" />').html_safe %>
-    <%= ('<meta property="og:description" content="' + @product.description.to_s  + '" />').html_safe %>
+    <%= ('<meta property="og:url" content="'  + product_url(@product) + '" />').html_safe %>
+    <%= ('<meta property="og:description" content="' + @product.cause.title  + '" />').html_safe %>
+  <% end %>
 <% end %>
 
 <div class="section_container jean">
@@ -45,14 +12,6 @@
       <li><%= link_to "Home", root_path %></li>
       <li class="active">Product Detail</li>
     </ul>
-
-    <div id="shopping_cart" class="full_page">
-      <div class="message"><%= flash[:error]  %></div>
-      <div class="message success" style="display:none">
-        Success :D <a href="#" class="fr"></a>
-      </div>
-
-    </div>
 
     <!--PRODUCT DETAIL STARTS-->
     <div id="product_detail">
@@ -110,14 +69,56 @@
         <% end %>
 
 
-	      <div class="product_overview hidden_movil">
+	      <div class="product_overview">
             <%= render :partial => "properties" %>
         </div>
+        <div id="product-specs">
+    <h4 id="mostrar2" href="#" class="arrow down">Sizing Details</h4>
+    <div id="caja2">
+      <table id="size-specs">
+        <thead>
+          <tr>
+            <th></th>
+            <th>small</th>
+            <th>medium</th>
+            <th>large</th>
+            <th>x-large</th>
+            <th>2x-large</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Chest</td>
+            <td>32.5"</td>
+            <td>34.5"</td>
+            <td>36.5"</td>
+            <td>38.5"</td>
+            <td>42.5"</td>
+          </tr>
+          <tr>
+            <td>Waist</td>
+            <td>32.5"</td>
+            <td>34.5"</td>
+            <td>36.5"</td>
+            <td>38.5"</td>
+            <td>42.5"</td>
+          </tr>
+          <tr>
+            <td>Lenght</td>
+            <td>32.5"</td>
+            <td>34.5"</td>
+            <td>36.5"</td>
+            <td>38.5"</td>
+            <td>42.5"</td>
+          </tr>
+        </tbody>
+
+      </table>
+    </div>
+   </div>
 
          <%#= render :partial => "cart_form" %>
          <%= form_for :order, :url => populate_orders_path do |f| %>
-
-
 
              <%= render :partial => "variants" %>
 
@@ -151,44 +152,50 @@
                  </div>
                <% end %>
              </div>
-
+            <script type="text/javascript" charset="utf-8">
+              $("#quantity").keyup(function() {
+                var val = $("#quantity").val();
+                if(parseInt(val) < 0 || isNaN(val)) {
+                  alert("please enter valid values");
+                  $("#quantity").val("");
+                  $("#quantity").focus();
+                }
+              });
+            </script>
            </div>
          <% end %>
 
 
        <% end %>
 
-         <div class="product_overview">
+         <div>
             <!--ORG Logo Starts-->
             <div>
               <!--ORG Logo Ends-->
               <!--ORG Description Starts-->
               <h4></h4>
-              <div class="org_logo"><%= link_to (image_tag(@product.cause.organization.photo.url(:org))), root_path %></div>
               <!--Facebook like button Starts-->
-<div class="fb-like" data-href="<%= root_url %>" data-send="false" data-layout="button_count" data-width="450" data-show-faces="true"></div>
+              <style> html .fb_share_button { display: -moz-inline-block; display:inline-block; color:#fff; padding:1px 20px 0 5px; height:15px; border:1px solid #d8dfea; vertical-align: top; background:#3b5998 url(http://static.ak.facebook.com/images/share/facebook_share_icon.gif?6:26981) no-repeat top right; } </style>
+
+              <a onclick="window.open(&quot;http://www.facebook.com/sharer/sharer.php?s=100&amp;p[title]=<%= ('Compartiendo '+ @product.name).html_safe %>&amp;p[url]=<%= (product_url(@product)).html_safe %>&amp;p[images][0]=<%= @product.cause.sharephoto.url(:share_photo) %> &quot;,&quot;&quot;,&quot;toolbar=0,status=0,width=580,height=315&quot;); return false" target="_blank" class="fb_share_button" href="" >Share </a>
+
+
               <!--Facebook like button Ends-->
 
-
          <!--Twitter follotw button Starts-->
-      <a href="https://twitter.com/share" class="twitter-share-button" data-url="https://www.facebook.com/YANAPANAcom?ref=ts&amp;fref=ts">Tweet</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-      <!--Twitter follotw button Ends-->
+        <a class="twitter-share-button" data-via="yanapana" href="https://twitter.com/share" data-text="buy this ">Tweet</a>
+         <!--Twitter follotw button Ends-->
 
+         <a data-pin-config="none" href="//pinterest.com/pin/create/button/?url=<%= product_url(@product.permalink) %>&media=<%= @product.images[0].attachment.url(:product) %>&description=Buy%20this%20<%= @product.name%>%20at%20www.yanapana.com" data-pin-do="buttonPin" ><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png" /></a>
 
             </div>
-
             <!--ORG Description Ends-->
-
           </div>
-
-
         </div>
         <!--Product Right Ends-->
       </div>
       <!--PRODUCT DETAIL ENDS-->
     </section>
-
 
   <div id="artist-section" class="artist-inspiration jean">
     <section>
@@ -204,27 +211,54 @@
       </div>
 
       <!--Facebook like button Starts-->
+      <% if @product.cause.artist.link_facebook %>
       <div class="fb-like" data-send="false" href="<%= @product.cause.artist.link_facebook %>" data-layout="button_count" data-width="450" data-show-faces="true" ></div>
 
       <!--Facebook like button Ends-->
       <!--Twitter follotw button Starts-->
-
-      <a href="https://twitter.com/share" class="twitter-share-button" data-url="https://www.facebook.com/YANAPANAcom?ref=ts&amp;fref=ts">Tweet</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-
+<div class="follow-btn"><a href="<%= @product.cause.artist.link_twitter %>" class="twitter-follow-button" data-show-count="false" data-show-screen-name="false" data-dnt="true"></a></div>
       <!--Twitter follotw button Ends-->
+    <% end %>
     </section>
   </div>
 </div>
 
 
+<% content_for :javascripts do %>
 <!--Facebook like script-->
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
   js = d.createElement(s); js.id = id;
   js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
+
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+  <script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"></script>
+
+<!--Este script sirve para colapsar el quick overview-->
+  <script type="text/javascript">
+    $(function()
+    {
+      $("#mostrar").click(function(event) {
+        event.preventDefault();
+        $("#caja").slideToggle();
+      });
+
+    });
+    $(function()
+    {
+      $("#mostrar2").click(function(event) {
+        event.preventDefault();
+        $("#caja2").slideToggle();
+      });
+
+    });
+  </script>
+
+  <% end %>
+
 

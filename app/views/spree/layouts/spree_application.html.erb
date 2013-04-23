@@ -8,90 +8,89 @@
   <%= render :partial => 'spree/layouts/head' %>
   <%= yield :head %>
   <%= favicon_link_tag 'favicon.ico' %>
-  <%= yield :metatags %>
+  <%= yield :datos_sociales %>
+
 </head>
 
 <body>
-	<div class="wrapper">
-		<div class="header_container">
-      		<!--Header Starts-->
-            <%= render :partial => 'spree/layouts/header' %>
-		 </div>
-		<!--Branding Starts-->
-    		<div class="branding_container jean">
-          		<div class="branding_area">
-                	<!--Logo Starts-->
-                    	<h1 class="logo"><%=link_to (image_tag("image-yanapana/logo_header.png")), root_path%></h1>
-                    	<a name="top"></a>
-		        <!--Logo Ends-->
-		        <!--Countdown Starts-->
-		        <div class="countdown_container">
-		            <div class="countdown">
-		                <h3> Sale Time Left: </h3>
-		                <ul class="countdown_text">
-		                    <li>Days</li>
-		                    <li>Hrs.</li>
-		                    <li>Min.</li>
-		                    <li>Sec.</li>
-		                </ul>
-		                <ul class="countdown_numbers">
-		                    <li>05:</li>
-		                    <li>23:</li>
-		                    <li>17:</li>
-		                    <li>09</li>
-		                </ul>
-		            </div>
-		        </div>
-		         <!--Countdown Ends-->
-			</div>
-	    	</div>
-		<%= yield :breadcrumbs %>
-            	<!--Branding Ends-->
- <div class="navigation_container jean">
-        <!--Navigation Starts-->
-        <nav>
-            <ul class="primary_nav">
-                <li class="active"><%= link_to "Home", root_path %>
-                    <!--SUbmenu Starts
-                    <ul class="sub_menu">
-                        <li> <a href="#">Dresses</a>
-                            <ul>
-                                <li><a href="#">Skirts</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    SUbmenu Ends-->
-                </li>
-                <li><a href="#">Blog</a>
-                    <!--SUbmenu Starts-->
-                    <!--SUbmenu Ends-->
-                </li>
-                <li><%= link_to "About Us", about_us_path  %></li>
-                <li><%= link_to "Contact Us", contact_us_path  %></li>
-                <li><%= link_to "How it works!", how_it_works_path  %></li>
-                <li><%= link_to "FAQ", faq_path  %></li>
-            </ul>
-            <div id="social_media">
-                <div class="find_us">
-                   <a class="facebook" href="http://www.facebook.com/YANAPANAcom?fref=ts"></a> <a class="twitter" href="#"></a> <a class="pinterest" href="#"></a> </div>
-            </div>
+  <div class="wrapper">
+    <div class="header_container">
+      <!--Header Starts-->
+      <%= render :partial => 'spree/layouts/header' %>
+    </div>
+    <!--Branding Starts-->
+    <div class="branding_container jean">
+      <div class="branding_area">
+        <!--Logo Starts-->
+        <h1 class="logo"><%=link_to (image_tag("image-yanapana/logo_header.png")), root_path%></h1>
+        <!--Logo Ends-->
+        <!--Countdown Starts-->
+        <div id='open-until'></div>
+        <!--Countdown Ends-->
+      </div>
+    </div>
+    <!--Branding Ends-->
+    <div class="navigation_container jean">
+      <!--Navigation Starts-->
+      <nav>
+        <ul class="primary_nav">
+            <li <%= 'class=active' if action_name == "index" %> > <%= link_to "Home", root_path %></li>
 
-        </nav>
-        <!--Navigation Ends-->
+            <li<%= 'class=active' if action_name == "about_us" %>  ><%= link_to "About Us", about_us_path  %></li>
+
+            <li  <%= 'class=active' if action_name == "how_it_works" || action_name == "partnership"%> ><%= link_to "Get involved", "#" %>
+            <ul class="sub_menu">
+              <li>
+                <ul>
+                  <li><%= link_to "Design For Us", how_it_works_path  %></li>
+                  <li> <%= link_to "Non-Profit Partnership", partnership_path  %></li>
+                </ul>
+              </li>
+
+            </ul>
+
+            </li>
+            <li><a href="#">Blog</a></li>
+
+            <li  <%= 'class=active' if action_name == "faq" %> ><%= link_to "FAQ", faq_path  %></li>
+<li  <%= 'class=active' if action_name == "contact_us" %> ><%= link_to "Contact Us", contact_us_path  %></li>
+        </ul>
+        <div id="social_media">
+          <div class="find_us hidden_movil">
+            <%= link_to '',  'http://facebook.com/YANAPANAwear?fref=ts', :class=>"facebook", :target=>"_blank"%> <%= link_to '', 'https://twitter.com/yanapanawear', :class=>"twitter", :target=>"_blank" %> <a class="pinterest" href="#"></a> </div>
+        </div>
+
+      </nav>
+      <!--Navigation Ends-->
     </div>
 
-  <% flash_messages %>
-                  <%= yield %>
-                  <%= yield :sidebar %>
+    <%unless action_name == 'contact_us' %>
+    <div class="flash alert jean">
+      <%= flash_messages %>
+    </div>
+    <% end %>
+    <%= yield %>
+    <% yield :sidebar %>
 
 
-	</div><!--End Wrapper-->
+  </div><!--End Wrapper-->
 
 
-              <%= render :partial => 'spree/layouts/footer' %>
+  <%= render :partial => 'spree/layouts/footer' %>
+  <%@cause = Spree::Cause.where("date_start <= ? AND date_finish >= ?", Date.today, Date.today).order('date_start ASC').first%>
+  <% unless @cause.nil? %>
+    <%= javascript_include_tag "jquery.countdown.min" %>
+      <script type="text/javascript" language="javascript" charset="utf-8">
+    $(document).ready(function(){
+        var liftoffTime = new Date(<%= @cause.date_finish.to_time.to_i * 1000 %>);
+        $("#open-until").countdown({until: liftoffTime, layout: "<%= escape_javascript(render :partial => 'spree/shared/countdown')%>"
+          });
+        });
+    </script>
+  <% end %>
+  <%= yield :javascripts %>
 
 
-            <%= render :partial => 'spree/shared/google_analytics' %>
 
-          </body>
-        </html>
+  </body>
+</html>
