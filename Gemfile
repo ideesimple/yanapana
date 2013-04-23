@@ -10,6 +10,7 @@ gem 'addressable'
 gem 'mail_form'
 gem 'devise_invitable', '1.0.0'
 gem 'hominid'
+gem 'spree_paypal_express', :git => 'https://github.com/spree/spree_paypal_express.git', :branch => '1-2-stable'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

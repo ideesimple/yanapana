@@ -15,8 +15,8 @@ Yanapana::Application.routes.draw do
 	      resources :teams do
         end
       end
-      match '/:week' => redirect('/'), :constraints => {:week => /week-[0-9]+/ }
-      #match '/:week' => "home#current_cause", :constraints => {:week => /week-[0-9]+/ }
+      #match '/:week' => redirect('/'), :constraints => {:week => /week-[0-9]+/ }
+      match '/week-:week' => "home#current_cause", :as =>"current_cause"
       match "how-it-works" => "home#how_it_works", :as => :how_it_works
       match "dummy-confirm" => "home#dummy_confirm", :as => :dummy_confirm
       match "faq" => "home#faq", :as => :faq
@@ -30,6 +30,11 @@ Yanapana::Application.routes.draw do
       match "terms-and-conditions" => "home#terms_and_conditions", :as => :terms_and_conditions
       match "terms-and-conditions-artist" => "home#terms_and_conditions_artist", :as => :terms_and_conditions_artist
       match "without-causes" => "home#without_causes", :as => :without_causes
+      match "preview-cause/:id" => "home#preview_causes", :as => :preview_cause
+      match "ordermailer" => "home#ordermailer", :as => :ordermailer
+      match "artistmailer" => "home#artistmailer", :as => :artistmailer
+      match "shipmentmailer" => "home#shipmentmailer", :as => :shipmentmailer
+
 
 
       #devise_for :user, :class_name => 'Spree::User', :controllers => {:invitations => 'devise/invitations'}
