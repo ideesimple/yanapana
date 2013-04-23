@@ -28,7 +28,7 @@ Yanapana::Application.routes.draw do
       match "partnership" => "home#partnership", :as => :partnership
       match "landing-newsletter" => "home#landing_newsletter", :as => :newsletter
       match "terms-and-conditions" => "home#terms_and_conditions", :as => :terms_and_conditions
-      match "terms-and-conditions-artist" => "home#terms_and_conditions_artsit", :as => :terms_and_conditions_artist
+      match "terms-and-conditions-artist" => "home#terms_and_conditions_artist", :as => :terms_and_conditions_artist
       match "without-causes" => "home#without_causes", :as => :without_causes
       match "preview-cause/:id" => "home#preview_cause", :as => :preview_cause
       match "preview-product/:id" => "products#preview_product", :as => :preview_product
