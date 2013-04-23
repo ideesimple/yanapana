@@ -166,7 +166,7 @@
       <% if @products_cause.nil? %>
         <h6 class="search-results-title">no_products_found</h6>
       <% else %>
-        <%= render :partial => 'spree/shared/products', :locals => { :products => @products_cause, :taxon => @taxon } %>
+        <%= render :partial => 'spree/shared/preview_products', :locals => { :products => @products_cause, :taxon => @taxon } %>
       <% end %>
     </div>
 
@@ -177,7 +177,7 @@
       <% if @products_cause.empty? %>
             <h1></h1>
       <% else %>
-        <%= render :partial => 'spree/shared/products', :locals => { :products => @products_cause, :taxon => @taxon } %>
+        <%= render :partial => 'spree/shared/preview_products', :locals => { :products => @products_cause, :taxon => @taxon } %>
       <% end %>
     </div>
           <% unless @artist.nil? %>
