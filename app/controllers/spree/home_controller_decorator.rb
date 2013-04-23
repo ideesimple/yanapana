@@ -13,7 +13,7 @@ Spree::HomeController.class_eval do
     date_now = Date.today
     @cause = Spree::Cause.where("date_start <= ? AND date_finish >= ?", Date.today, Date.today).order('date_start ASC').first
     unless @cause.nil?
-      @products_cause = @products.where(:cause_id => @cause.id).each_slice(3).to_a
+      @products_cause = @products.where(:cause_id => @cause.id).order("created_at ASC").each_slice(3).to_a
       #Arista asociado a esa causa
       @artist = Spree::Artist.find_by_id(@cause.artist)
       @products_per_cause = @products.where(:cause_id=>@cause.id)
@@ -78,7 +78,13 @@ Spree::HomeController.class_eval do
   def privacy_policy
   end
 
-  def terms_of_use
+  def terms_and_conditions
+  end
+
+  def terms_and_conditions_artist
+  end
+
+  def without_causes
   end
 
   def subscribe

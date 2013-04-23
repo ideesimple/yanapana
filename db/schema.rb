@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130410224002) do
+ActiveRecord::Schema.define(:version => 20130417210336) do
 
   create_table "spree_activators", :force => true do |t|
     t.string   "description"
@@ -266,6 +266,9 @@ ActiveRecord::Schema.define(:version => 20130410224002) do
     t.integer  "option_type_id"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
+    t.string   "chest"
+    t.string   "waist"
+    t.string   "lenght"
   end
 
   create_table "spree_option_values_variants", :id => false, :force => true do |t|
