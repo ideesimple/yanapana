@@ -163,7 +163,47 @@ Spree::HomeController.class_eval do
   end
 
   def partnership
+  end
 
+
+  def preview_cause
+    @searcher = Spree::Config.searcher_class.new(params)
+    @searcher.current_user = try_spree_current_user
+    @products = @searcher.retrieve_products
+    @cause = Spree::Cause.find_by_id(params[:id])
+    unless @cause.nil?
+      @products_cause = @products.where(:cause_id => @cause.id).order("created_at ASC").each_slice(3).to_a
+      #Arista asociado a esa causa
+      @artist = Spree::Artist.find_by_id(@cause.artist)
+      @products_per_cause = @products.where(:cause_id=>@cause.id)
+      variantes = []
+      @products_per_cause.each do |prod|
+        variantes << prod.variants_ids
+      end
+      @lineitems_per_cause = Spree::Order.total_line_items(variantes)
+      @orders = Spree::Order.total_orders(@lineitems_per_cause.map(&:order_id))
+      @total = 0
+      @orders.each do |order|
+        @total = order.item_total + @total
+      end
+    end
+    unless @cause.nil?
+    respond_with(@products)
+    else
+    redirect_to landing_path
+    end
+  end
+
+  def ordermailer
+    render :layout => "application"
+  end
+
+  def artistmailer
+    render :layout => "application"
+  end
+
+  def shipmentmailer
+    render :layout => "application"
   end
 
 end

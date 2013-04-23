@@ -30,6 +30,11 @@ Yanapana::Application.routes.draw do
       match "terms-and-conditions" => "home#terms_and_conditions", :as => :terms_and_conditions
       match "terms-and-conditions-artist" => "home#terms_and_conditions_artsit", :as => :terms_and_conditions_artist
       match "without-causes" => "home#without_causes", :as => :without_causes
+      match "preview-cause/:id" => "home#preview_causes", :as => :preview_cause
+      match "ordermailer" => "home#ordermailer", :as => :ordermailer
+      match "artistmailer" => "home#artistmailer", :as => :artistmailer
+      match "shipmentmailer" => "home#shipmentmailer", :as => :shipmentmailer
+
 
 
       #devise_for :user, :class_name => 'Spree::User', :controllers => {:invitations => 'devise/invitations'}

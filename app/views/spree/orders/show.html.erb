@@ -1,92 +1,92 @@
 <% content_for :head do %>
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/es_LA/all.js#xfbml=1";
-  fjs.parentNode.insertBefore(js, fjs);
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/es_LA/all.js#xfbml=1";
+      fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));
-</script>
+  </script>
 
 <% end %>
 
 
 <div class="section_container jean pb">
-  <section>
-    <ul class="breadcrumb">
-      <li><%= link_to "Home", root_path %></li>
-      <li><a href="#">Shopping Cart</a></li>
-      <li class="active">Checkout</li>
-    </ul>
+<section>
+<ul class="breadcrumb">
+<li><%= link_to "Home", root_path %></li>
+<li><a href="#">Shopping Cart</a></li>
+<li class="active">Checkout</li>
+</ul>
 
-    <div class="full_page">
-      <h1><%= t(:delivery_details) %></h1>
-        <div class="checkout_steps">
-          <ol id="checkoutSteps">
+<div class="full_page">
+<h1><%= "Your order has been processed!"%></h1>
+<div class="checkout_steps">
+<ol id="checkoutSteps">
 <!--
-            <li id="checkout" class="sct">
-               <div class="step-title">Step 1: Checkout Options</div>
-            </li>
-            <li id="checkout" class="sct">
-               <div class="step-title">Step 2: Billing Details</div>
-            </li>
-            <li id="checkout" class="sct">
-               <div class="step-title">Step 3: Delivery Method</div>
-            </li>
-            <li id="checkout" class="sct">
-               <div class="step-title">Step 4: Payment Method</div>
-            </li>
+  <li id="checkout" class="sct">
+<div class="step-title">Step 1: Checkout Options</div>
+</li>
+<li id="checkout" class="sct">
+<div class="step-title">Step 2: Billing Details</div>
+</li>
+<li id="checkout" class="sct">
+<div class="step-title">Step 3: Delivery Method</div>
+</li>
+<li id="checkout" class="sct">
+<div class="step-title">Step 4: Payment Method</div>
+</li>
 -->
 
-            <li class="section allow active" id="opc-login">
-                <!--<div class="step-title"> <span class="number">Step 5:</span>
-                  <h2>Confirm Order</h2>
-                </div>-->
-                <div id="checkout-step-confirm">
-
-                  <div id="shopping_cart" class="full_page">
-                    <div class="message"><% render :partial => 'spree/shared/error_messages', :locals => { :target => @order } %></div>
+<li class="section allow active" id="opc-login">
+    <div class="step-title">
+      <h2><%= t(:order) + " #" + @order.number%></h2>
+    </div>
+    <div id="checkout-step-confirm">
+<!--
+  <div id="shopping_cart" class="full_page">
+<div class="message"><#% render :partial => 'spree/shared/error_messages', :locals => { :target => @order } %></div>
 
                   </div>
+                  -->
+
+                  <fieldset id="order_summary" class="index columns" data-hook>
+                    <!--<h1><%#= "Your " + t(:order) + " #" + @order.number + " has been processed!"%></h1>-->
+                    <legend><% accurate_title %></legend>
 
 
-<fieldset id="order_summary" class="index columns" data-hook>
-  <h1><%= "Your " + t(:order) + " #" + @order.number + " has been processed!"%></h1>
-  <legend><% accurate_title %></legend>
+                    <div id="order" data-hook>
+                      <% if params.has_key? :checkout_complete %>
+                        <h1><%= t(:thank_you_for_your_order) %></h1>
+                      <% else %>
 
+                      <% end %>
+                      <%= render :partial => 'spree/shared/order_details', :locals => { :order => @order } %>
 
-<div id="order" data-hook>
-  <% if params.has_key? :checkout_complete %>
-    <h1><%= t(:thank_you_for_your_order) %></h1>
-  <% else %>
+                      <br class="clear" />
+                      <div class="fb-like" href="<%= root_url %>" data-font="arial" data-show-faces="true" data-width="50px" data-layout="button_count" data-send="false" ></div>
+                      <!--Facebook like button Ends-->
 
-  <% end %>
-  <%= render :partial => 'spree/shared/order_details', :locals => { :order => @order } %>
+                      <!--Twitter follotw button Starts-->
+                      <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
+                      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                      <!--Twitter follotw button Ends-->
+                      <p data-hook="links">
+                        <%= link_to t(:back_to_store), spree.root_path, :class => "button" %>
+                        <% unless params.has_key? :checkout_complete %>
+                          <% if try_spree_current_user && respond_to?(:spree_account_path) %>
+                            <%= link_to t(:my_account), spree_account_path, :class => "button" %>
+                          <% end %>
+                        <% end %>
 
-  <br class="clear" />
-<div class="fb-like" href="<%= root_url %>" data-font="arial" data-show-faces="true" data-width="50px" data-layout="button_count" data-send="false" ></div>
-           <!--Facebook like button Ends-->
+                      </p>
+                    </div>
+                  </fieldset>
 
-           <!--Twitter follotw button Starts-->
-                               <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
-                               <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-                                                   <!--Twitter follotw button Ends-->
-  <p data-hook="links">
-    <%= link_to t(:back_to_store), spree.root_path, :class => "button" %>
-    <% unless params.has_key? :checkout_complete %>
-      <% if try_spree_current_user && respond_to?(:spree_account_path) %>
-        <%= link_to t(:my_account), spree_account_path, :class => "button" %>
-      <% end %>
-    <% end %>
-
-  </p>
-</div>
-</fieldset>
-
-              </div>
-            </li>
-          </ol>
-    </div><!--Ends full page-->
-  </section>
-</div>
+                </div>
+              </li>
+            </ol>
+          </div><!--Ends full page-->
+        </section>
+      </div>
