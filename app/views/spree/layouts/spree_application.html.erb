@@ -6,7 +6,6 @@
         <!--[if gt IE 9]><!--><html lang="<%= I18n.locale %>"><!--<![endif]-->
 <head>
   <%= render :partial => 'spree/layouts/head' %>
-		<%= javascript_include_tag "jquery.countdown.min" %>  
   <%= yield :head %>
   <%= favicon_link_tag 'favicon.ico' %>
   <%= yield :datos_sociales %>
@@ -79,6 +78,7 @@
 
   <%= render :partial => 'spree/layouts/footer' %>
   <% @cause = Spree::Cause.where("date_start <= ? AND date_finish >= ?", Date.today, Date.today).order('date_start ASC').first %>
+		<%= javascript_include_tag "jquery.countdown.min" %>  
 		<% unless @cause.nil? %>
       <script type="text/javascript" charset="utf-8">
     			$(document).ready(function(){
