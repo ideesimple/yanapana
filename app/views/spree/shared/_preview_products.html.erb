@@ -31,7 +31,7 @@
           <li>
            <div class="product_img_container">
              <% unless product.master.images.nil? %>
-               <%= link_to prodsize_image(product, :itemprop => "image"), product, :itemprop => 'url', :class=>"product_image"  unless prodsize_image(product).nil? %>
+               <%= link_to prodsize_image(product, :itemprop => "image"), preview_product_path(product.id), :itemprop => 'url', :class=>"product_image"  unless prodsize_image(product).nil? %>
              <% end %>
             <div class="price_info">
                <%= form_for :order, :url => populate_orders_path, :html => {:id => "form"+i.to_s}, :remote => true do |f| %>
