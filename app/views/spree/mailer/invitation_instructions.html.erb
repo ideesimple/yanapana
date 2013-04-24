@@ -82,11 +82,11 @@
     <span style="font-size:24px"><span style="font-family:arial,helvetica neue,helvetica,sans-serif">ARTIST CONFIRMATION</span></span></h1>
 <br>
 <h3 style="display:block;font-family:Helvetica;font-size:16px;font-style:italic;font-weight:normal;line-height:100%;letter-spacing:normal;margin:0;text-align:left;color:#606060!important">
-    Thanks for your submission <%= @resource.email %>!</h3>
+    Thanks for your submission <%= @resource.email, :style=>"color:#BCD80A;text-decoration:none;cursor:pointer;" %>!</h3>
 <p>
     At YANAPANA, we are always on the look for talented artists from around the world who want to be part of our movement.<br>
     <br>
-    You can  <a style="color:#BCD80A;text-decoration:none;cursor:pointer;"><%= link_to 'Accept invitation', accept_user_invitation_url(@resource, :invitation_token => @resource.invitation_token) %></a> through the previews link or simply ignore this email.<br>
+    You can <%= link_to 'Accept invitation', accept_user_invitation_url(@resource, :invitation_token => @resource.invitation_token), :style=>"color:#BCD80A;text-decoration:none;cursor:pointer;" %> through the previews link or simply ignore this email.<br>
     Your account won't be created until you access the link above and set your password.<br>
     <br>
     We will review your submission and get back to you shortly.<br>
