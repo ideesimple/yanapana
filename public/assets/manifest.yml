@@ -365,8 +365,6 @@ shortcodes/warning.png: shortcodes/warning-25786a1c3415173deae6db48e478a97f.png
 shortcodes/warning/index.png: shortcodes/warning-25786a1c3415173deae6db48e478a97f.png
 admin/all.js: admin/all-8b967655830b54d62e589eb137515648.js
 admin/all/index.js: admin/all-8b967655830b54d62e589eb137515648.js
-application.js: application-0ad3d9eaf6828fa66347ab81b5d3f783.js
-application/index.js: application-0ad3d9eaf6828fa66347ab81b5d3f783.js
 store/all.js: store/all-206632be0ebc1e7516ff84ce4e0e3c21.js
 store/all/index.js: store/all-206632be0ebc1e7516ff84ce4e0e3c21.js
 admin/all.css: admin/all-2603bbfc4b166670a124aa82cdd33e38.css

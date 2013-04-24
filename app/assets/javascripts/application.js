@@ -9,6 +9,7 @@
 //
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
+//= require jquery.countdown.min
 //= require around/appendAround
 //= require custom/custom
 //= require dropkick/jquery.dropkick-1.0.0
@@ -24,5 +25,6 @@
 //= require jquery.anystretch
 //= require jquery-1.7.2.min
 //= require jquery_ujs
+
 
 
