@@ -193,8 +193,10 @@
 
                     </div>
                      <!--Facebook like button Starts-->
-                    <div class="fb-like" style="overflow: hidden" href="<%= @artist.link_facebook %>" data-font="arial" data-show-faces="true" data-width="50px" data-layout="button_count"  data-height="30px" data-send="false" ></div>
-                    <!--Facebook like button Ends-->
+                     <% if @artist.link_facebook %>
+                      <div class="fb-like" style="overflow: hidden" href="<%= @artist.link_facebook %>" data-font="arial" data-show-faces="true" data-width="50px" data-layout="button_count"  data-height="30px" data-send="false" ></div>
+                     <!--Facebook like button Ends-->
+                    <% end %>
                     <!--Twitter follotw button Starts-->
                     <div class="follow-btn"><a href="<%= @artist.link_twitter  %>" class="twitter-follow-button" data-show-count="false" data-show-screen-name="false" data-dnt="true"></a></div>
                     <!--Twitter follow button Ends-->

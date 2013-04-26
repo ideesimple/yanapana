@@ -77,16 +77,16 @@
 
 
   <%= render :partial => 'spree/layouts/footer' %>
-  <%@cause = Spree::Cause.where("date_start <= ? AND date_finish >= ?", Date.today, Date.today).order('date_start ASC').first%>
-  <% unless @cause.nil? %>
-    <%= javascript_include_tag "jquery.countdown.min" %>
-      <script type="text/javascript" language="javascript" charset="utf-8">
-    $(document).ready(function(){
+  <% @cause = Spree::Cause.where("date_start <= ? AND date_finish >= ?", Date.today, Date.today).order('date_start ASC').first %>
+		<%= javascript_include_tag "jquery.countdown.min" %>  
+		<% unless @cause.nil? %>
+      <script type="text/javascript" charset="utf-8">
+    			$(document).ready(function(){
         var liftoffTime = new Date(<%= @cause.date_finish.to_time.to_i * 1000 %>);
         $("#open-until").countdown({until: liftoffTime, layout: "<%= escape_javascript(render :partial => 'spree/shared/countdown')%>"
           });
-        });
-    </script>
+       });
+      </script>
   <% end %>
   <%= yield :javascripts %>
 

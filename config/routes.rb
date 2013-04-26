@@ -11,6 +11,7 @@ Yanapana::Application.routes.draw do
         resources :causes do
         end
 	      resources :faqs do
+          collection { post :sort }
         end
 	      resources :teams do
         end
@@ -30,7 +31,8 @@ Yanapana::Application.routes.draw do
       match "terms-and-conditions" => "home#terms_and_conditions", :as => :terms_and_conditions
       match "terms-and-conditions-artist" => "home#terms_and_conditions_artist", :as => :terms_and_conditions_artist
       match "without-causes" => "home#without_causes", :as => :without_causes
-      match "preview-cause/:id" => "home#preview_causes", :as => :preview_cause
+      match "preview-cause/:id" => "home#preview_cause", :as => :preview_cause
+      match "preview-product/:id" => "products#preview_product", :as => :preview_product
       match "ordermailer" => "home#ordermailer", :as => :ordermailer
       match "artistmailer" => "home#artistmailer", :as => :artistmailer
       match "shipmentmailer" => "home#shipmentmailer", :as => :shipmentmailer

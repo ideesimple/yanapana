@@ -8,7 +8,7 @@
 
 <h1>Listing Faqs</h1>
 
-<table class="index" id="listing_faqs" data-hook>
+<table class="index sortable" id="listing_faqs" data-hook data-sortable-link="sort_admin_faqs_url">
   <tr>
     <th>Question</th>
     <th>Answer</th>
@@ -16,8 +16,8 @@
   </tr>
 
   <% @faqs.each do |faq|   %>
-    <tr>
-      <td><%= faq.question  %></td>
+    <tr class="spree_faq" id="<%= spree_dom_id faq %>" data-hook="option_row">
+      <td><span class="handle"></span><%= faq.question  %></td>
       <td><%= faq.answer %></td>
       <td>
         <%= link_to '<img alt="Edit" src="/assets/admin/icons/edit.png">Edit'.html_safe, edit_admin_faq_path(faq), :class=>"edit icon_link"  %>
