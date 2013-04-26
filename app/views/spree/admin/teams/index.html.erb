@@ -15,7 +15,7 @@
     <th>Actions</th>
   </tr>
 
-  <% @teams.each do |team|   %>
+  <% @teams.order('created_at ASC').each do |team|   %>
     <tr>
       <td><%= link_to team.fullname, admin_team_url(team) %></td>
       <td><%= team.jobp %></td>

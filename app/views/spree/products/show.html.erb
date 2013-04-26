@@ -78,11 +78,9 @@
         <thead>
           <tr>
             <th></th>
-            <th>small</th>
-            <th>medium</th>
-            <th>large</th>
-            <th>x-large</th>
-            <th>2x-large</th>
+            <% @prototype.option_types.first.option_values.each do |option_val| %>
+                <th><%= option_val.presentation  %></th>
+            <% end %>
           </tr>
         </thead>
         <tbody>
@@ -196,7 +194,7 @@
       </div>
       <!--PRODUCT DETAIL ENDS-->
     </section>
-
+<% if @product.cause.artist %>
   <div id="artist-section" class="artist-inspiration jean">
     <section>
       <h2 class="sub_title">The Artist</h2>
@@ -221,6 +219,7 @@
     <% end %>
     </section>
   </div>
+<% end %>
 </div>
 
 

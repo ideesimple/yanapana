@@ -88,7 +88,7 @@ Spree::HomeController.class_eval do
 
 
   def faq
-    @faqs = Spree::Faq.order("created_at ASC").all
+    @faqs = Spree::Faq.order("position ASC").all
   end
 
   def about_us
