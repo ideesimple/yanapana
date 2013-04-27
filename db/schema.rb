@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130425160943) do
+ActiveRecord::Schema.define(:version => 20130426174627) do
 
   create_table "spree_activators", :force => true do |t|
     t.string   "description"
@@ -146,6 +146,7 @@ ActiveRecord::Schema.define(:version => 20130425160943) do
     t.integer  "sharephoto_file_size"
     t.datetime "sharephoto_updated_at"
     t.string   "titleshare"
+    t.string   "time_zone"
   end
 
   add_index "spree_causes", ["artist_id"], :name => "index_spree_causes_on_artist_id"
