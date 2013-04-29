@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130426174627) do
+ActiveRecord::Schema.define(:version => 20130428180049) do
 
   create_table "spree_activators", :force => true do |t|
     t.string   "description"
@@ -138,8 +138,8 @@ ActiveRecord::Schema.define(:version => 20130426174627) do
     t.integer  "organization_id"
     t.datetime "created_at",              :null => false
     t.datetime "updated_at",              :null => false
-    t.date     "date_start"
-    t.date     "date_finish"
+    t.datetime "date_start"
+    t.datetime "date_finish"
     t.text     "inspiration"
     t.string   "sharephoto_file_name"
     t.string   "sharephoto_content_type"

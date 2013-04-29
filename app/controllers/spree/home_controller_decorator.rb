@@ -7,7 +7,7 @@ Spree::HomeController.class_eval do
   end
 
   def index
-    @cause = Spree::Cause.where("date_start <= ? AND date_finish >= ?", Date.today, Date.today).order('date_start ASC').first
+    @cause = Spree::Cause.where("date_start <= ? AND date_finish >= ?", Time.zone.now, Time.zone.now).order('date_start ASC').first
 
 =begin
     @searcher = Spree::Config.searcher_class.new(params)
@@ -49,7 +49,7 @@ Spree::HomeController.class_eval do
     @searcher.current_user = try_spree_current_user
     @products = @searcher.retrieve_products
     date_now = Date.today
-    @cause = Spree::Cause.where("date_start <= ? AND date_finish >= ?", Date.today, Date.today).order('date_start ASC').first
+    @cause = Spree::Cause.where("date_start <= ? AND date_finish >= ?", Time.zone.now, Time.zone.now).order('date_start ASC').first
     unless @cause.nil?
       @products_cause = @products.where(:cause_id => @cause.id).order("created_at ASC").each_slice(3).to_a
       #Arista asociado a esa causa
