@@ -66,7 +66,13 @@
 
   <%= f.field_container :date do  %>
     <%= f.label :date_start, 'Date Start to Finish'  %><br />
-    <%= f.date_select :date_start %> to <%= f.date_select :date_finish %>
+    <%= f.datetime_select :date_start %> to <br/>
+    <%= f.datetime_select :date_finish %>
+  <% end %>
+
+  <%= f.field_container :time_zone do  %>
+    <%= f.label :time_zone %><br />
+    <%= f.time_zone_select :time_zone, ActiveSupport::TimeZone.all %>
   <% end %>
 
   <%= f.field_container :link_twitter do  %>
