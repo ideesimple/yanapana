@@ -123,6 +123,7 @@ Spree::HomeController.class_eval do
   end
 
   def without_causes
+    render :layout => "application"
   end
 
   def subscribe
