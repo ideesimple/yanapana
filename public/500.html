@@ -5,30 +5,43 @@
   <style type="text/css">
     body { background: url("../app/assets/images/image-yanapana/snow.png"); color: #666; text-align: center; font-family: century gothic, sans-serif; }
     div.dialog {
-      width: 60%;
+      width: 572px;
       padding: 0 4em;
       margin: 4em auto 0 auto;
     }
-    h1, h2, h3, h4, h5, p {margin: 0; line-height: 1.5; font-weight: normal;}
+    h1, h2, h3, h4, h5, p { margin: 0; line-height: 1.5; font-weight: normal;}
     h1 { font-size: 100%; color: #f00; line-height: 1.5em; }
     h2 {font-size: 24px;}
     h3 {font-size: 21px;}
     p {font-size: 15px;} 
     img.logo_error {width: 170px; margin-bottom: 20px;}
+    a {text-decoration: none; font-family: sans-serif; }
+    .error {padding: 6px 15px; color: #fff; margin: 15px;}
+    .fb.error {background: #3B5998;}
+    .fb.error:hover {background: #444;}
+    .tt.error {background: #4099FF;}
+    .tt.error:hover {background: #444;}
+
+/* Tablet (Portrait) */
+/* Width of 768px */
+
+/* #Tablet (Portrait)
+================================================== */
+
+@media only screen and (min-width: 700px) and (max-width: 960px) {
+
+}
 
 /*  #Mobile (Portrait)
 ================================================== */
 
     /* Note: Design for a width of 320px */
 @media only screen and (max-width: 700px) {
-    h1, h2, h3, h4, h5, p {margin: 0; line-height: 1.5; font-weight: normal;}
-    h1 { font-size: 100%; color: #f00; line-height: 1.5em; }
-    h2 {font-size: 20px;}
+    div.dialog {width: 300px; padding: 0; margin: 4em auto;}
+    img.logo_error {width: 120px; margin-bottom: 20px;}
+    h2 {font-size: 21px;}
     h3 {font-size: 18px;}
-    p {font-size: 12px;} 
-    img.logo_error {width: 100px; margin-bottom: 20px;}
-
-
+    p {font-size: 13px;}
 }
 
   </style>
@@ -39,9 +52,9 @@
   <div class="dialog">
     <img class="logo_error" src="../app/assets/images/image-yanapana/logo_yanapana_vertical_negro.png">
     <h2>Oops! We are experiencing a technical problem.</h2>
-    <h3>But no worries! Our site should be back up shortly.</h3>
-
-    <p>In the meantime, follow us on Facebook or Twitter for updates.</p>
+    <h3>But no worries! Our site should be back up shortly.</h3><br>
+    <a href="#" class="fb error">facebook</a> <a href="#" class="tt error">twitter</a> <br>
+   <br><p>In the meantime, follow us on Facebook or Twitter for updates.</p>
   </div>
 </body>
 </html>

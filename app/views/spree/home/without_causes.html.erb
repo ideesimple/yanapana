@@ -4,17 +4,24 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Yanapana</title>
 <!--CSS-->
-<link rel="stylesheet" href="css/styles_landing.css"/>
+<link rel="stylesheet" href="../../assets/stylesheets/styles_landing.css"/>
+<%= stylesheet_link_tag 'without/styles', :media => 'all'%>
+<%= stylesheet_link_tag 'without/responsive', :media => 'all'%>
 <link rel="stylesheet" href="css/short_codes.css"/>
+<%= stylesheet_link_tag 'short_codes', :media => 'all'%>
 <link rel="stylesheet" href="css/dropkick.css" />
-<link rel="stylesheet" href="css/flexslider.css" type="text/css">
+<%= stylesheet_link_tag 'without/dropkick', :media => 'all'%>
+<!-- <link rel="stylesheet" href="css/flexslider.css" type="text/css">
+<%= stylesheet_link_tag 'flexslider', :media => 'all'%> -->
 
 
 <!--Google Webfont -->
 <link href='http://fonts.googleapis.com/css?family=Istok+Web' rel='stylesheet' type='text/css'>
 <!--Javascript-->
 <script type="text/javascript" src="js/jquery-1.7.2.min.js" ></script>
-<script src="js/jquery.flexslider.js"></script>
+<%= javascript_include_tag "jquery-1.7.2.min" %>
+<!-- <script src="js/jquery.flexslider.js"></script>
+<%= javascript_include_tag "flexslider/jquery.flexslider-min" %> -->
 <script type="text/javascript" src="//use.typekit.net/xxr3kft.js"></script>
 <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 <script type="text/javascript" src="//www.hellobar.com/hellobar.js"></script>
@@ -22,6 +29,7 @@
     new HelloBar(51289,85992);
 </script>
 <script type="text/javascript" src="js/jquery.dropkick-1.0.0.js"></script>
+<%= javascript_include_tag "dropkick/jquery.dropkick-1.0.0" %>
         <script> $(document).ready(function()
         {
             $("#styled-select").dropkick();
@@ -46,7 +54,7 @@
 <div id="wrapper">
     <div id="header">
         <div class="section">
-            <div class="logo fl"> <a href="index.html"><img src="images/logo_header_inverted.png" /></a></div>
+            <div class="logo fl"><%= image_tag("image-yanapana/logo_header_inverted.png") %></div>
             <ul>
                 <li class="fl"><a class="facebook" href="#"></a></li>
                 <li class="fl"><a class="twitter" href="#"></a></li>
@@ -56,33 +64,38 @@
     </div>
     
 
-<div class="flexslider_container">
-<div class="flexslider">
+<div class="wc_video">
+<div class="flexslider section">
+    <iframe class="aboutus-video" width="560" height="315" src="http://www.youtube.com/embed/bRpimCP-DcE" frameborder="0" allowfullscreen></iframe>
+<!--Slider Starts ..
   <ul class="slides">
     <li>
-      <img src="images/banner_landing1.jpg" />
+      <%= image_tag("image-yanapana/banner_landing1.jpg") %><img src="images/banner_landing1.jpg" />
       <div class="slider-text">
         <h1>Fashion with purpose</h1>
             <h2>A part of each purpose is donated to non-profit organizations working for the empowerment of women.</h2>    
         </div>
     </li>
     <li>
-      <img src="images/banner_landing2.jpg" />
+      <%= image_tag("image-yanapana/banner_landing2.jpg") %><img src="images/banner_landing2.jpg" />
       <div class="slider-text">
         <h1>Solidarity</h1>
             <h2>Every week we feature new cause-inspired artist-designed apparel which becomes available for one full week on our website. From every unit of apparel sold, $8 will be donated to the featured charity.</h2>    
         </div>
     </li>
     <li>
-      <img src="images/banner_landing3.jpg" />
+      <%= image_tag("image-yanapana/banner_landing3.jpg") %><img src="images/banner_landing3.jpg" />
       <div class="slider-text">
         <h1>Fashion</h1>
             <h2>Every week we feature new cause-inspired artist-designed apparel which becomes available for one full week on our website. From every unit of apparel sold, $8 will be donated to the featured charity.</h2>    
         </div>
     </li>
   </ul>
+..Slider Ends -->
 </div>
 </div>
+
+
 
     
     <div id="how">
@@ -116,38 +129,6 @@ The question is... are you talented enough? Let the world and our judges decide!
             </div>
         </div>
     </div>
-    <div id="subscribe">
-        <div class="section">
-            <h2>I want to learn more!</h2>
-            <div class="subscription_container">
-                <div class="twocol fr">
-                    <h3>Get in the loop now or be left behind!</h3>
-                        
-                        <select id="styled-select" name="ocupation" tabindex="1">
-                <option >Tell us who you are?</option>  
-                <option id="artist">Awesome Person</option>
-                <option id="df" >Amazing Artist</option>
-                <option id="morelia">Incredible Organization</option>
-
-            </select>
-                        <div id="input-style">
-                            <input class="fl"type="text" autocomplete="on" placeholder="Email">
-                        <h3 class="ir sc-button light-blue">Go!</h3>
-                        </div>
-                      
-                </div>
-                <div class="twocol fl">
-                    <h3>What you get</h3>
-                            <ul>
-                                <li class="star_icon"><span>Awesome People:</span><p>Register for a chance to win free gifts! Like us on <a href="#">facebook</a> and follow us on <a href="#">twitter</a> to stay updated about our moves.</p></li>
-                                <li class="star_icon"><span>Amazing Artists:</span><p>Register or email us at artist@yanapana.com to request information.</p></li>
-                                <li class="star_icon"><span>Incredible Organization:</span><p>Register or email us at partner@yanapana.com to request information.</p></li>
-                            </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    
 <!--
     <div id="footer">
         <div class="section">
