@@ -13,6 +13,7 @@
 <%= stylesheet_link_tag 'without/dropkick', :media => 'all'%>
 <!-- <link rel="stylesheet" href="css/flexslider.css" type="text/css">
 <%= stylesheet_link_tag 'flexslider', :media => 'all'%> -->
+<%= stylesheet_link_tag 'base', :media => 'all'%> -->
 
 
 <!--Google Webfont -->
@@ -33,7 +34,7 @@
         <script> $(document).ready(function()
         {
             $("#styled-select").dropkick();
-        });  
+        });
         </script>
 
 <script type="text/javascript" charset="utf-8">
@@ -46,9 +47,9 @@
 
 <!-- mobile setting -->
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    
-    
-    
+
+
+
 </head>
 <body>
 <div id="wrapper">
@@ -62,7 +63,7 @@
             </ul>
         </div>
     </div>
-    
+
 
 <div class="wc_video">
 <div class="flexslider section">
@@ -73,21 +74,21 @@
       <%= image_tag("image-yanapana/banner_landing1.jpg") %><img src="images/banner_landing1.jpg" />
       <div class="slider-text">
         <h1>Fashion with purpose</h1>
-            <h2>A part of each purpose is donated to non-profit organizations working for the empowerment of women.</h2>    
+            <h2>A part of each purpose is donated to non-profit organizations working for the empowerment of women.</h2>
         </div>
     </li>
     <li>
       <%= image_tag("image-yanapana/banner_landing2.jpg") %><img src="images/banner_landing2.jpg" />
       <div class="slider-text">
         <h1>Solidarity</h1>
-            <h2>Every week we feature new cause-inspired artist-designed apparel which becomes available for one full week on our website. From every unit of apparel sold, $8 will be donated to the featured charity.</h2>    
+            <h2>Every week we feature new cause-inspired artist-designed apparel which becomes available for one full week on our website. From every unit of apparel sold, $8 will be donated to the featured charity.</h2>
         </div>
     </li>
     <li>
       <%= image_tag("image-yanapana/banner_landing3.jpg") %><img src="images/banner_landing3.jpg" />
       <div class="slider-text">
         <h1>Fashion</h1>
-            <h2>Every week we feature new cause-inspired artist-designed apparel which becomes available for one full week on our website. From every unit of apparel sold, $8 will be donated to the featured charity.</h2>    
+            <h2>Every week we feature new cause-inspired artist-designed apparel which becomes available for one full week on our website. From every unit of apparel sold, $8 will be donated to the featured charity.</h2>
         </div>
     </li>
   </ul>
@@ -97,17 +98,17 @@
 
 
 
-    
+
     <div id="how">
-        
+
     </div>
-    
-    
-    
+
+
+
     <div id="benefits">
         <div class="section">
-            
-           
+
+
                 <ul>
                     <li class="threecol fl">
                         <div class="icon world"></div>
@@ -132,11 +133,12 @@ The question is... are you talented enough? Let the world and our judges decide!
 <!--
     <div id="footer">
         <div class="section">
-            
-        </div> 
+
+        </div>
     </div>
 </div>
 -->
+<%= render :partial => 'spree/layouts/footer' %>
 
 </body>
 
