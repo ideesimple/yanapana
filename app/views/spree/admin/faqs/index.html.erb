@@ -8,15 +8,16 @@
 
 <h1>Listing Faqs</h1>
 
-<table class="index sortable" id="listing_faqs" data-hook data-sortable-link="sort_admin_faqs_url">
+<table class="index sortable" id="listing_faqs" data-hook data-sortable-link="faqs/sort">
+
   <tr>
     <th>Question</th>
     <th>Answer</th>
     <th>Actions</th>
   </tr>
 
-  <% @faqs.each do |faq|   %>
-    <tr class="spree_faq" id="<%= spree_dom_id faq %>" data-hook="option_row">
+  <% @faqs.order('position ASC').each do |faq|   %>
+    <tr class="spree_faq" id="<%=spree_dom_id faq%>" data-hook="option_row">
       <td><span class="handle"></span><%= faq.question  %></td>
       <td><%= faq.answer %></td>
       <td>

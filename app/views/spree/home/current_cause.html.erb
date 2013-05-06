@@ -18,7 +18,6 @@
                   <div class="message success" style="display:none">Success :D </div>
                   <div class="message warning" style="display:none"></div>
                   <h1>Fashion, Solidarity and Change.</h1>
-                  <%= @cause.date_finish %>
                 <h4>$8 of each purchase are given to a cause helping the development and protection of women</h4>
             </section>
         </div>
@@ -111,7 +110,7 @@
                     <div id="tt_colsize">
                       <li>
                         <!--<a href="https://twitter.com/share" class="twitter-share-button" data-lang="en">Tweet</a>-->
-                        <a href= "https://twitter.com/intent/tweet?text=<%= @cause.title  %>+@yanapanawear&amp;url=<%= (root_url + 'week-' + @cause.id.to_s).html_safe %>&amp;counturl=<%= (root_url + 'week-' + @cause.id.to_s).html_safe %>" target="_blank" ><div class="tt-icon hidden_movil"></div><%= image_tag ("image-yanapana/twitter_icon.png"), :class=>'hidden_desktop'%>
+                        <a href= "https://twitter.com/intent/tweet?text=<%= @cause.title  %>+@yanapanawear&amp;url= <%=(Rack::Utils.escape(root_url) + 'week-' + @cause.id.to_s).html_safe %>&amp;counturl=<%= (Rack::Utils.escape(root_url) + 'week-' + @cause.id.to_s).html_safe %>" target="_blank" ><div class="tt-icon hidden_movil"></div><%= image_tag ("image-yanapana/twitter_icon.png"), :class=>'hidden_desktop'%>
   </a>
                         <div id="goalbar" class="goalbar_style"><i id = "count_twitts" class="progBar"></i></div>
                          <div class="stats">
@@ -159,11 +158,10 @@
             </div>
             <!--Goal Counter Copy Ends-->
 
-
       <% end %><!--End if exist 1 cause-->
 
 <a name="products"></a>
-  <% if params[:keywords] %>
+<% if params[:keywords] %>
       <% if @products_cause.nil? %>
         <h6 class="search-results-title">no_products_found</h6>
       <% else %>
@@ -175,6 +173,7 @@
 <!--Mid Section Starts-->
 
     <div class="productos jean">
+
       <% if @products_cause.empty? %>
             <h1></h1>
       <% else %>

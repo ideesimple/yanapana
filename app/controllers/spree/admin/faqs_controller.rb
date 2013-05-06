@@ -4,10 +4,19 @@ class Spree::Admin::FaqsController < Spree::Admin::ResourceController
 
 
   def sort
-    params[:faq].each_with_index do |id, index|
-      Spree::Faq.update_all({position: index+1}, {id: id})
+    params[:positions].each do |id, index|
+    Spree::Faq.where(:id => id).update_all(:position => index)
     end
-    render nothing: true
+
+    respond_to do |format|
+      format.html {redirect_to admin_faqs_url}
+      format.js { render :text => 'Ok' }
+    end
+
+    #params[:faq].each_with_index do |id, index|
+     # Spree::Faq.update_all({position: index+1}, {id: id})
+    #end
+    #render nothing: true
   end
 
 end

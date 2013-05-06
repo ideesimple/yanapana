@@ -60,11 +60,16 @@ Spree::HomeController.class_eval do
         variantes << prod.variants_ids
       end
       @lineitems_per_cause = Spree::Order.total_line_items(variantes)
-      @orders = Spree::Order.total_orders(@lineitems_per_cause.map(&:order_id))
+
+      @items_per_cause = Spree::Order.total_items(variantes)
+
+      #@orders = Spree::Order.total_orders(@lineitems_per_cause.map(&:order_id))
+
       @total = 0
-      @orders.each do |order|
-        @total = order.item_total + @total
-      end
+      @total = @items_per_cause * 8
+      #@orders.each do |order|
+      #  @total = order.item_total + @total
+      #end
     end
     unless @cause.nil?
     respond_with(@products)

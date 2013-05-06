@@ -11,7 +11,9 @@ Yanapana::Application.routes.draw do
         resources :causes do
         end
 	      resources :faqs do
-          collection { post :sort }
+          collection do
+            post :sort
+          end
         end
 	      resources :teams do
         end

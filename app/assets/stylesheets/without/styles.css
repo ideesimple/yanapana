@@ -1,0 +1,179 @@
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*
+Project Name: Yanapana - Landingpage
+Author: Eduardo Sauret
+Version: 1.0.0
+*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+
+/*-----------------------------------CSS RESET*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1.3;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+::selection {background: #BCD80A; color: #fff;}
+::-moz-selection {background: #BCD80A; color: #fff;}
+::-webkit-selection {background: #BCD80A; color: #fff;}
+
+/*-----------------------------------LAYOUT*/
+
+.section {width: 980px;}
+#wrapper, #subscribe {min-width: 100%;}
+
+#header {width: 100%; padding: 5px 0; overflow: hidden;  z-index: 1; top: 30px;}
+#banner,
+#how, #benefits, #subscribe, #footer {width: 100%; overflow: hidden; }
+.section {width: 980px; margin: 0 auto; overflow: hidden;}
+
+#subscribe .section, #benefits .section {padding: 40px 0; overflow: hidden;}
+
+.threecol {width: 300px;}
+.twocol {width: 445px}
+.fl {float: left;}
+.fr {float: right;}
+
+/*-----------------------------------HEADER*/
+#header {border-bottom: 3px solid #fff;  }
+#header .logo img {width: 170px; padding-top: 7px;}
+#header .section ul {padding-top: 15px; float: right;}
+#header .section ul li a {background: bottom; width:33px; height:33px; display:inline-block; margin-right:2px;}
+#header .section ul li a:hover {background: center top;}
+#header .section ul li a.facebook {background: url("../../assets/image-yanapana/facebook_white.png") center no-repeat;}
+#header .section ul li a.facebook:hover {background-position: top;}
+#header .section ul li a.twitter {background: url("../../assets/image-yanapana/twitter_white.png") center no-repeat;}
+#header .section ul li a.twitter:hover {background-position: top;}
+#header .section ul li a.pinterest{background: url("../../assets/image-yanapana/pinterest_white.png") center;}
+#header .section ul li a.pinterest:hover{background-position: top;}
+
+/*-----------------------------------BANNER*/
+.flexslider_container, .wc_video {overflow: hidden; padding: 50px 0; position: relative; }
+.flexslider .flex-direction-nav li a {margin-right: 0 !important;}
+.flexslider {width: 980px; position: relative; margin: 0 auto !important; border: 10px solid white; box-shadow: 0px 2px 3px #999; }
+.flexslider .flex-direction-nav {position: absolute; top: 60%; width: 100%; display: none;}
+.flexslider .flex-next {float: right;}
+.flexslider ul li {margin-bottom: 0;}
+.flexslider .flex-direction-nav .flex-prev {float: left;}
+
+
+.slider-text {padding: 20px;position: absolute; width: 500px; bottom: 40px; left: 40px color: #eee; text-shadow: 1px 1px 0 #333; background: rgba(0, 0, 0, 0.3);  }
+.slider-text h1 {font-size: 19px;  font-family: century gothic; font-weight: bold !important; margin-bottom: 0 !important; }
+.slider-text h2 {font-size: 16px; margin-bottom: 0; padding-top: 10px;}
+
+
+#banner {padding: 80px 0; background: center; margin-top: 75px;}
+#banner h1 {width: 370px; margin-bottom: 20px;}
+#banner h2 {width: 615px; border-top: 4px solid white; padding: 15px 0; }
+
+/*-----------------------------------HOW*/
+#how {background: yellow;}
+
+
+
+/*-----------------------------------BENEFITS*/
+
+#benefits h2:first-child { padding: 15px 0;  border-bottom: 1px solid #BCD80A;}
+#benefits li {text-align: center; margin-right: 40px;}
+#benefits ul li:last-child {margin:0;}
+#benefits .icon {background: url("../../assets/image-yanapana/benefits_bg.png") repeat scroll 0 0 transparent; height: 72px; margin: auto auto 10px; width: 72px;}
+#benefits .icon.organization {background-position: 0 0;}
+#benefits .icon.person {background-position: -72px 0px; }
+#benefits .icon.heart {background-position: -144px 0px; }
+
+
+
+/*-----------------------------------SUBSCRIBE*/
+#subscribe h2 { padding: 15px 0; border-bottom: 2px solid #BCD80A; }
+.subscription_container {padding: 50px 0; overflow: hidden; }
+.star_icon {padding-left: 25px; background: url("../../assets/image-yanapana/star.png") no-repeat;}
+
+/*-----------------------------------INPUT*/
+#input-style {width: 100%; display: block; overflow: auto;}
+#input-style input {
+	background: #fff;
+	width: 253px;
+	border: 1px solid #ccc; 
+	padding: 13px 10px;
+	border-radius: 5px 0px 0px 5px;
+	color: #777;
+	text-shadow: 1px 1px 0 #fff;
+	height: 13px;
+}
+#input-style input:focus {border: 1px solid #8c8c8c;}
+
+#input-style h3 { border-radius: 0px 5px 5px 0px; padding: 12px ;}
+
+/*-----------------------------------FOOTER*/
+.aboutus-video { height: 550px; width: 100%; margin: 0 auto; }
+
+
+
+
+/*-----------------------------------TYPOGRAPHY*/
+h2, p, li {text-shadow: 1px 1px white;}
+.flexslider h1, .flexslider h2 {text-shadow: 1px 1px 2px #444; font-weight: normal; }
+h1, h2, h3, h4, h5 {margin-bottom: 18px;}
+h1 {font-family: skippy-sharp, cursive; font-size: 65px;}
+h2 {font-family: century gothic; font-size: 22px; font-weight: bold;}
+h3 {font-family: century gothic; font-size: 19px; font-weight: bold; }
+p, li {font-family: century gothic, sans-serif; margin-bottom: 10px; }
+.star_icon a { color: #444;}
+.dk_options li {margin-bottom: 0;}
+
+/*-----------------------------------COLOR*/
+
+
+#subscribe, .flexslider_container, .wc_video {background-image: url("../../assets/image-yanapana/gray_jean.png"); border-bottom: 1px solid #ccc; border-top: 1px solid #fff;}
+#benefits {background-image: url("../../assets/image-yanapana/snow.png"); border-top: 1px solid #fff; }
+#header {background: #333; box-shadow: 0 1px 3px #555;}
+ h3, h4, h5 {color: #000;}
+h1, .flexslider h2, .flexslider h1 {color: #fff; }
+
+.flexslider_container, #benefits {border-bottom: 1px solid #ccc;}
+p{color: #777; font-size: 14px;}
