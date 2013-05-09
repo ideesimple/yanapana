@@ -92,10 +92,7 @@
                                           You will also receive a shipping confirmation email as soon as your order leaves our facility.<br>
                                           In the meantime, do not hesitate to spread the good news about your great act and this week's amazing cause with your friends and family.<br>
                                           <br>
-                                          Love,<br>
-                                          <br>
-                                          The YANAPANA Team</p><br>
-                                          <%= t('order_mailer.confirm_email.dear_customer') %>
+                                           <%= t('order_mailer.confirm_email.dear_customer') %>
 
 <%= t('order_mailer.confirm_email.instructions') %>
 
@@ -114,7 +111,10 @@
 
 <%= t('order_mailer.confirm_email.total') %> <%= @order.display_total.to_s %>
 
-<%= t('order_mailer.confirm_email.thanks') %>
+<%= t('order_mailer.confirm_email.thanks') %><br>
+                                          Love,<br>
+                                          <br>
+                                          The YANAPANA Team</p><br>
 
                                       </td>
                                     </tr>
