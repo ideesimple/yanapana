@@ -8,9 +8,9 @@
 
 
 /* General */
-.section, #wrapper {width: 700px;}
+.section, #wrapper, .video-section {width: 700px;}
 
-.aboutus-video {height: 394px;}
+.yanapana-video {height: 381px; width: 680px; }
 
 
 /* Benefits section */
@@ -35,15 +35,17 @@
 @media only screen and (max-width: 700px) {
 
 /* General */
-.section, #wrapper {width: 300px; }
+.section, #wrapper, .video-section {width: 300px; }
 
-.aboutus-video {height: 169px;}
+.yanapana-video {height: 157px; width: 280px; }
 
 /* Benefits section */
 
 
 /* TYPOGRAPHY */
+h1 {font-size: 20px;}
 h2 {font-size: 20px;}
+h4 {font-size: 14px;}
 p {font-size: 13px;}
 
 }

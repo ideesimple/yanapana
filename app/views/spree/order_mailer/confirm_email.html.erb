@@ -80,20 +80,41 @@
                         
                             <h1 style="display:block;font-family:Helvetica;font-size:26px;font-style:normal;font-weight:bold;line-height:100%;letter-spacing:normal;margin:0;text-align:left;color:#202020!important">
                                          <br>
-                                          <span style="font-size:24px"><span style="font-family:arial,helvetica neue,helvetica,sans-serif">DELIVERY CONFIRMATION</span></span></h1>
+                                          <span style="font-size:24px"><span style="font-family:arial,helvetica neue,helvetica,sans-serif">PURCHASE CONFIRMATION</span></span></h1>
 <br>
                                         <h3 style="display:block;font-family:Helvetica;font-size:16px;font-style:italic;font-weight:normal;line-height:100%;letter-spacing:normal;margin:0;text-align:left;color:#606060!important">
-                                          Surf's up NAME!</h3>
+                                          You are AWESOME SWITCH!</h3>
 
 <p style="color: #505050;font-family: Helvetica;font-size: 14px;line-height: 150%;text-align: left;">
-                                          Your order(s) number NUMBER just left our facility on DATE via USPS.<br>
+                                          Thanks for your support! We appreciate it and so does our charity partner. We will 
+                                          print and ship your order as soon as this week's campaign is over.<br>
                                           <br>
-                                          You can track it right here:XXXXXXXXXXXXXXX.<br>
-                                          For any questions or concerns, feel free to contact us trough LINK<!--/contact-us#leavemessage-->.<br>
+                                          You will also receive a shipping confirmation email as soon as your order leaves our facility.<br>
+                                          In the meantime, do not hesitate to spread the good news about your great act and this week's amazing cause with your friends and family.<br>
                                           <br>
-                                          Keep rocking,<br>
+                                          Love,<br>
                                           <br>
-                                          The YANAPANA Team</p>
+                                          The YANAPANA Team</p><br>
+                                          <%= t('order_mailer.confirm_email.dear_customer') %>
+
+<%= t('order_mailer.confirm_email.instructions') %>
+
+============================================================
+<%= t('order_mailer.confirm_email.order_summary') %>
+============================================================
+<% @order.line_items.each do |item| %>
+  <%= item.variant.sku %> <%= raw(item.variant.product.name) %> <%= raw(item.variant.options_text) -%> (<%=item.quantity%>) @ <%= Spree::Money.new(item.price) %> = <%= Spree::Money.new(item.price * item.quantity) %>
+<% end %>
+============================================================
+<%= t('order_mailer.confirm_email.subtotal') %> <%= Spree::Money.new @order.item_total %>
+
+<% @order.adjustments.eligible.each do |adjustment| %>
+  <%= raw(adjustment.label) %> <%= adjustment.display_amount %>
+<% end %>
+
+<%= t('order_mailer.confirm_email.total') %> <%= @order.display_total.to_s %>
+
+<%= t('order_mailer.confirm_email.thanks') %>
 
                                       </td>
                                     </tr>
@@ -111,6 +132,9 @@
                     <tbody><tr>
                         
                         <td valign="top" style="padding-top: 9px;padding-right: 18px;padding-bottom: 9px;padding-left: 18px;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;color: #8b8b8b;font-family: Helvetica;font-size: 14px;line-height: 150%;text-align: left;" class="mcnTextContent">
+
+                            <p style="color: #505050;font-family: Helvetica;font-size: 14px;line-height: 150%;text-align: left;">
+                                For any questions or issues, please contact us through <a href="#">Contact Us</a>
                         
                             <div style="text-align: center;">
     <em>“Every big change in the world was once started with small steps taken by people who believed in a common cause and acted upon it”. - </em>YANAPANA</div>

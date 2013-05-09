@@ -23,7 +23,7 @@ dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+figure, figcaption, header, hgroup, 
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -64,14 +64,14 @@ table {
 
 /*-----------------------------------LAYOUT*/
 
-.section {width: 980px;}
+.section, .video-section {width: 980px;}
 #wrapper, #subscribe {min-width: 100%;}
 
-#header {width: 100%; padding: 5px 0; overflow: hidden;  z-index: 1; top: 30px;}
+#header {width: 100%; padding: 5px 0; overflow: hidden;  z-index: 1; position: relative;}
 #banner,
 #how, #benefits, #subscribe, #footer {width: 100%; overflow: hidden; }
-.section {width: 980px; margin: 0 auto; overflow: hidden;}
-
+.section  {width: 980px; margin: 0 auto; overflow: hidden;}
+.video-section {width: 980px; margin: 0 auto;}
 #subscribe .section, #benefits .section {padding: 40px 0; overflow: hidden;}
 
 .threecol {width: 300px;}
@@ -117,7 +117,6 @@ table {
 
 
 /*-----------------------------------BENEFITS*/
-
 #benefits h2:first-child { padding: 15px 0;  border-bottom: 1px solid #BCD80A;}
 #benefits li {text-align: center; margin-right: 40px;}
 #benefits ul li:last-child {margin:0;}
@@ -125,6 +124,7 @@ table {
 #benefits .icon.organization {background-position: 0 0;}
 #benefits .icon.person {background-position: -72px 0px; }
 #benefits .icon.heart {background-position: -144px 0px; }
+.benefits.section {border-top: 2px dashed #777;}
 
 
 
@@ -149,31 +149,41 @@ table {
 
 #input-style h3 { border-radius: 0px 5px 5px 0px; padding: 12px ;}
 
-/*-----------------------------------FOOTER*/
-.aboutus-video { height: 550px; width: 100%; margin: 0 auto; }
-
+/*-----------------------------------VIDEOS*/
+.yanapana-video { height: 540px; width: 960px; margin: 0 auto; border: 10px solid white; box-shadow: 0px 1px 1px #999; }
 
 
 
 /*-----------------------------------TYPOGRAPHY*/
-h2, p, li {text-shadow: 1px 1px white;}
 .flexslider h1, .flexslider h2 {text-shadow: 1px 1px 2px #444; font-weight: normal; }
-h1, h2, h3, h4, h5 {margin-bottom: 18px;}
-h1 {font-family: skippy-sharp, cursive; font-size: 65px;}
+h1, h2, h3, h5 {padding: 18px;}
+h1 {font-family: century gothic, sans-serif; font-size: 24px; text-align: center; color: #444; } 
 h2 {font-family: century gothic; font-size: 22px; font-weight: bold;}
 h3 {font-family: century gothic; font-size: 19px; font-weight: bold; }
-p, li {font-family: century gothic, sans-serif; margin-bottom: 10px; }
+h4 {font-family: century gothic; font-size: 18px; text-align: center; color: #555 !important; padding: 0; margin-bottom: 35px;}
+p, li, span {font-family: century gothic, sans-serif; margin-bottom: 10px; }
 .star_icon a { color: #444;}
 .dk_options li {margin-bottom: 0;}
 
 /*-----------------------------------COLOR*/
 
 
-#subscribe, .flexslider_container, .wc_video {background-image: url("../../assets/image-yanapana/gray_jean.png"); border-bottom: 1px solid #ccc; border-top: 1px solid #fff;}
-#benefits {background-image: url("../../assets/image-yanapana/snow.png"); border-top: 1px solid #fff; }
-#header {background: #333; box-shadow: 0 1px 3px #555;}
+#subscribe, .flexslider_container {background-image: url("../../assets/image-yanapana/gray_jean.png"); border-bottom: 1px solid #ccc; border-top: 1px solid #fff;}
+.snow {background-image: url("../../assets/image-yanapana/snow.png"); }
+#header {background: #333; box-shadow: 0 1px 1px #999;}
  h3, h4, h5 {color: #000;}
-h1, .flexslider h2, .flexslider h1 {color: #fff; }
+.flexslider h2, .flexslider h1 {color: #fff; }
 
 .flexslider_container, #benefits {border-bottom: 1px solid #ccc;}
 p{color: #777; font-size: 14px;}
+
+
+/*-----------------------------------SOCIAL MEDIA*/
+
+.social_media_without {text-align: center;}
+a.error {text-decoration: none; font-family: sans-serif; border: none;}
+    .error {padding: 6px 15px; color: #fff; margin: 15px;}
+    .fb.error {background: #3B5998;}
+    .fb.error:hover {background: #444;}
+    .tt.error {background: #4099FF;}
+    .tt.error:hover {background: #444;}
