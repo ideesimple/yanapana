@@ -65,7 +65,7 @@
     </div>
 
     <%unless action_name == 'contact_us' %>
-      <%= flash_messages %>
+      <%= @errores = flash_messages %>
     <% end %>
     <%= yield %>
     <% yield :sidebar %>

@@ -257,7 +257,12 @@
 
     });
   </script>
-
+  <%= @error %>
+  <% if :error %>
+  <script type="text/javascript">
+    $('.feedback.negative').html('Select a size').fadeIn(500).delay(2000).fadeOut(500);
+  </script>
+  <% end %>
   <% end %>
 
 
