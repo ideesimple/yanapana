@@ -131,7 +131,7 @@ section#main_content{width:420px;}
 .full_page h1 {font-size: 22px;}
 
 #form-title {font-size: 16px;}
-h2.sub_title {font-size: 16px;}
+h2.sub_title {font-size: 20px;}
 
 /*DASHBOARD*/
 .dashboard-rcol.fr { width: 465px;}
@@ -389,7 +389,7 @@ aside#sidebar{width:310px;}
 .full_page h1 {font-size: 19px;}
 
 #form-title {font-size: 14px;}
-h2.sub_title {font-size: 14px;}
+h2.sub_title {font-size: 18px;}
 
 footer .footer_links li span a { font-size: 12px; text-transform: uppercase;}
 
