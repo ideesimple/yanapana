@@ -88,21 +88,17 @@
 <p style="color: #505050;font-family: Helvetica;font-size: 14px;line-height: 150%;text-align: left;">
                                           Your order(s) number NUMBER just left our facility on DATE via USPS.<br>
                                           <br>
-                                          You can track it right here:XXXXXXXXXXXXXXX.<br>
+																																										
+                                          You can track it right here:<%= @shipment.tracking if @shipment.tracking %>.<br>
                                           For any questions or concerns, feel free to contact us trough LINK<!--/contact-us#leavemessage-->.<br>
                                           <br>
                                            <%= t('shipment_mailer.shipped_email.instructions') %>
-
-============================================================
-<%= t('shipment_mailer.shipped_email.shipment_summary') %>
-============================================================
+																																											<br>
+																																											<%= t('shipment_mailer.shipped_email.shipment_summary') %><br>
 <% @shipment.manifest.each do |item| %>
-  <%= item.variant.sku %> <%= item.variant.product.name %> <%= item.variant.options_text %>
+  <%= item.variant.sku %> <%= item.variant.product.name %> <%= item.variant.options_text %><br>
 <% end %>
-============================================================
-
-<%= t('shipment_mailer.shipped_email.track_information', :tracking => @shipment.tracking) if @shipment.tracking %>
-
+<br>
 <%= t('shipment_mailer.shipped_email.thanks') %>
 <br>
                                           Keep rocking,<br>
