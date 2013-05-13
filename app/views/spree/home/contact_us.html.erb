@@ -12,8 +12,7 @@
             <!--Google Maps Ends-->
                 	<!--Contact Starts-->
 
-			<p class="bb">At YANAPANA, we are always eager and hear about our customers.
-Make sure to go through our FAQs. Answers to most questions can be quickly found there.
+			<p class="bb">Have you checked our FAQ section? Answer to most common questions can be easily found here
 </p>
 
                     <!--Block Ends-->
@@ -54,9 +53,13 @@ Make sure to go through our FAQs. Answers to most questions can be quickly found
 							    <br />
 						    </li>
 						    <li>
-                  <%= text_field_tag "phone", nil, :id => "phone", :class=>"txt requiredField email", :placeholder=>"Telephone" %>
+                  <%= text_field_tag "phone", nil, :id => "phone", :class=>"txt requiredField email", :placeholder=>"Telephone (optional)" %>
 							    <br />
 						    </li>
+                <li>
+                  <%= text_field_tag "phone", nil, :id => "phone", :class=>"txt requiredField email", :placeholder=>"Invoice Number (optional)" %>
+                  <br />
+                </li>
 						    <li>
                   <%= text_area_tag "message", nil, :id => "message", :class=>"txtxarea requireField", :placeholder=>"Message:" %>
 							    <br />
