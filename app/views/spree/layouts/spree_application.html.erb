@@ -64,10 +64,8 @@
       <!--Navigation Ends-->
     </div>
 
-    <%unless action_name == 'contact_us' %>
-    <div class="flash alert jean">
+    <%unless action_name == 'contact_us' || controller_name == 'products' || action_name == 'index' %>
       <%= flash_messages %>
-    </div>
     <% end %>
     <%= yield %>
     <% yield :sidebar %>
