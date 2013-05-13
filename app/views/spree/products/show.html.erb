@@ -198,6 +198,7 @@
   <div id="artist-section" class="artist-inspiration jean">
     <section>
       <h2 class="sub_title">The Artist</h2>
+      <%= controller_name %>
       <div class="artist"><a><%= image_tag (@product.cause.artist.photo(:product))  %></a></div>
       <div class="artist_description">
         <h3>Inspiration Behind</h3>
@@ -257,10 +258,9 @@
 
     });
   </script>
-  <%= @error %>
-  <% if :error %>
+  <% if flash[:error]  %>
   <script type="text/javascript">
-    $('.feedback.negative').html('Select a size').fadeIn(500).delay(2000).fadeOut(500);
+    $('.feedback.negative').html('<%= flash[:error] %>').fadeIn(500).delay(2000).fadeOut(500);
   </script>
   <% end %>
   <% end %>

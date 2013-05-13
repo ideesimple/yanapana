@@ -7,44 +7,6 @@ Spree::HomeController.class_eval do
   end
 
   def index
-    @cause = Spree::Cause.where("date_start <= ? AND date_finish >= ?", Time.zone.now, Time.zone.now).order('date_start ASC').first
-
-=begin
-    @searcher = Spree::Config.searcher_class.new(params)
-    @searcher.current_user = try_spree_current_user
-    @products = @searcher.retrieve_products
-    date_now = Date.today
-    @cause = Spree::Cause.where("date_start <= ? AND date_finish >= ?", Date.today, Date.today).order('date_start ASC').first
-    unless @cause.nil?
-      @products_cause = @products.where(:cause_id => @cause.id).order("created_at ASC").each_slice(3).to_a
-      #Arista asociado a esa causa
-      @artist = Spree::Artist.find_by_id(@cause.artist)
-      @products_per_cause = @products.where(:cause_id=>@cause.id)
-      variantes = []
-      @products_per_cause.each do |prod|
-        variantes << prod.variants_ids
-      end
-      @lineitems_per_cause = Spree::Order.total_line_items(variantes)
-      @orders = Spree::Order.total_orders(@lineitems_per_cause.map(&:order_id))
-      @total = 0
-      @orders.each do |order|
-        @total = order.item_total + @total
-      end
-    end
-    unless @cause.nil?
-    respond_with(@products)
-    else
-    redirect_to landing_path
-    end
-=end
-    unless @cause.nil?
-      redirect_to current_cause_path(@cause.id)
-    else
-      redirect_to landing_path
-    end
-  end
-
-  def current_cause
     @searcher = Spree::Config.searcher_class.new(params)
     @searcher.current_user = try_spree_current_user
     @products = @searcher.retrieve_products
@@ -76,6 +38,9 @@ Spree::HomeController.class_eval do
     else
     redirect_to landing_path
     end
+  end
+
+  def current_cause
   end
 
   def dummy_confirm

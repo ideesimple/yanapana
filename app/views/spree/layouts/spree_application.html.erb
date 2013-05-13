@@ -64,8 +64,8 @@
       <!--Navigation Ends-->
     </div>
 
-    <%unless action_name == 'contact_us' %>
-      <%= @errores = flash_messages %>
+    <%unless action_name == 'contact_us' || controller_name == 'products' || action_name == 'index' %>
+      <%= flash_messages %>
     <% end %>
     <%= yield %>
     <% yield :sidebar %>

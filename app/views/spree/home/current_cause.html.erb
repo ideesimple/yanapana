@@ -15,8 +15,6 @@
             <section>
                 <!--CART STARTS-->
                 <div id="shopping_cart">
-                  <div class="message success" style="display:none">Success :D </div>
-                  <div class="message warning" style="display:none"></div>
                   <h1>Fashion, Solidarity and Change.</h1>
                 <h4>$8 of each purchase are given to a cause helping the development and protection of women</h4>
             </section>
@@ -57,14 +55,16 @@
 
                               <h1 class="org_logo"><%= link_to (image_tag(@cause.organization.photo.url(:org))), @cause.organization.webpage, :target => "_blank" %></h1>
                               <!--Facebook like button Starts-->
-
+                              <% if @cause.organization.link_facebook %>
                                 <div class="fb-like" style="overflow: hidden" href="<%= @cause.organization.link_facebook %>" data-font="arial" data-show-faces="false" data-width="450px" data-layout="button_count" data-send="false"></div>
-
+                              <% end %>
                               <!--Facebook like button Ends-->
                               <!--Twitter follotw button Starts-->
+                              <% if @cause.organization.link_twitter %>
                               <div class="follow-btn">
                                 <a href="<%= @cause.organization.link_twitter  %>" class="twitter-follow-button" data-show-count="false" data-show-screen-name="false" data-dnt="true"></a>
                               </div>
+                            <% end %>
                               <!--Twitter follotw button Ends-->
 
                               <a data-pin-config="none" href="//pinterest.com/pin/create/button/?url=<%= (root_url + 'week-' + @cause.id.to_s).html_safe%>&media=<%= @cause.organization.photo.url(:product) %>&description=<%= @cause.title %>%20at%20www.yanapana.com" data-pin-do="buttonPin" ><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png" /></a>
@@ -91,7 +91,7 @@
                       <ul>
                         <div id="fb_colsize">
                           <li>
-                            <a onclick="window.open(&quot;http://www.facebook.com/sharer/sharer.php?s=100&amp;p[title]=<%= @cause.title %>&amp;p[url]=<%= (root_url + 'week-' + @cause.id.to_s).html_safe %>&amp;p[images][0]=<%= @cause.sharephoto.url(:share_photo)%> &quot;,&quot;&quot;,&quot;toolbar=0,status=0,width=580,height=315&quot;); return false" target="_blank" class="share fb" href="" >  <div class="fb-icon hidden_movil"></div><%= image_tag ("image-yanapana/facebook_icon.png"), :class=>'hidden_desktop'%>
+                            <a onclick="window.open(&quot;http://www.facebook.com/sharer/sharer.php?s=100&amp;p[title]=<%= @cause.titleshare %>&amp;p[url]=<%= (root_url + 'week-' + @cause.id.to_s).html_safe %>&amp;p[images][0]=<%= @cause.sharephoto.url(:share_photo)%> &quot;,&quot;&quot;,&quot;toolbar=0,status=0,width=580,height=315&quot;); return false" target="_blank" class="share fb" href="" >  <div class="fb-icon hidden_movil"></div><%= image_tag ("image-yanapana/facebook_icon.png"), :class=>'hidden_desktop'%>
                             </a>
                             <div id="goalbar" class="goalbar_style">
                               <i id= "count_sharesf" class="progBar"></i>
@@ -282,4 +282,7 @@
       });
   </script>
   <% end %>
+<% end %>
+<% if @success %>
+
 <% end %>
