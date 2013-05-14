@@ -408,7 +408,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 .product_img_container {position: relative;}
 .price_info {position: absolute; bottom: 20px; right: -2px;}
 
-.rollover-zoom > img {margin-bottom: 15px; border: 1px solid #ccc;}
+#main-image a {display: inline-block !important; width: 100% !important;}
+#main-image img {margin-bottom: 8px; border: 1px solid #ccc; max-width: 100% !important; min-width: 100% !important; }
 
 #first-carousel {width: inherit !important ;}
 #first-carousel li {width: 31%;}
@@ -508,7 +509,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 
 .product_rightcol{ width:590px; float:right;}
 .product_rightcol small.pr_type{ font-size:15px; color:#a29b95;}
-.product_rightcol h1{ padding:20px 0px 20px 0px; font-size:26px; color:#312e2b; text-transform:uppercase; display: inline-block; width: 78%; margin-right: 5%;}
+.product_rightcol h1{ padding:20px 0px 20px 0px; font-size:26px; color:#312e2b; text-transform:uppercase; display: inline-block; width: 78%; margin-right: 15px;}
 .product_rightcol .pr_price{ padding:22px 0px 20px 0px; display:inline-block; float: right; width: 17%;}
 .product_rightcol .pr_price big{ font-size:29px; font-weight:bold!important; display:inline-block; padding-right:16px;}
 .product_rightcol .pr_price small{ font-size:17px; text-decoration:line-through;color:#a29b95;}
@@ -989,7 +990,7 @@ input, select, textarea, button{ font-size:12px;}
 .brown_btn, .checkout_steps input[type="submit"], .checkout_steps a.button { text-decoration: none; float: right; color:#fff; font-size:14px; font-weight:bold; padding:8px 14px; background:#544F4B; border:0px; line-height:100%; cursor:pointer; vertical-align:middle;}
 .button.primary.fl {float: none; display: inline-block;}
 .button.primary.fl.login {margin: 0;}
-img{ max-width:100%;}
+img{ max-width:100%; }
 .flash.notice {margin: 0 auto; widows: auto;}
 .cart_drop ul li span a {color: #ddd; float: right; width: 5px; padding: 0; font-weight: bold;  }
 .cart_drop ul li span a:hover {color: #312E2B; }

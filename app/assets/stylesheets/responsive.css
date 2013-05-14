@@ -217,6 +217,8 @@ h1.logo { display: block; width:100%; margin:auto; float:none; padding:40px 0 10
 
 .success, .flash.notice {text-align: center; padding: 20px 0px 20px 0px;}
 
+#first-carousel {width: 240px !important; margin: 0 auto;}
+
 #first-carousel li {width: 100%; margin: 0 auto;}
 
 .triangle-w {width: 18px; height: 8px; }
