@@ -1,3 +1,20 @@
+<script>
+  $(document).ready(function(){
+      $("#order_bill_address_attributes_country_id").change(function(){
+        alert ("prueba");
+        if (214 == this.value) {
+        $('#order_bill_address_attributes_state_name').hide();
+        $('#uniform-order_bill_address_attributes_state_id').show();
+        $('#order_bill_address_attributes_state_id').show();
+        $('#order_bill_address_attributes_state_id').removeAttr("disabled");
+        }
+        else{
+        alert ("no es USA");
+          $('#uniform-order_bill_address_attributes_state_id').hide();
+        }
+        });
+      });
+</script>
 <div class="section_container jean pb">
   <!--Mid Section Starts-->
   <section>
@@ -61,7 +78,7 @@
       <p class="field" id="bcountry">
         <%= bill_form.label :country_id, t(:country) %><span class="required">*</span><br />
         <span id="bcountry">
-          <%= bill_form.collection_select :country_id, available_countries, :id, :name, {}, {:class => 'required'} %>
+          <%= bill_form.collection_select :country_id, available_countries, :id, :name, {}, {:class => 'required', :onchange => "statechange()"} %>
         </span>
       </p>
 
@@ -81,7 +98,7 @@
                               :id, :name,
                               {:include_blank => true},
                               {:class => have_states ? state_required_class : 'hidden',
-                              :disabled => !have_states}) +
+                               :disabled => !have_states}) +
            bill_form.text_field(:state_name,
                               :class => !have_states ? state_required_class : 'hidden',
                               :disabled => have_states)
@@ -92,10 +109,9 @@
         <% end -%>
       </p>
 
-      <noscript>
+            <noscript>
         <%= bill_form.text_field :state_name, :class => state_required_class %>
       </noscript>
-
       <p class="field" id="bzipcode">
         <%= bill_form.label :zipcode, t(:zip) %><span class="required">*</span><br />
         <%= bill_form.text_field :zipcode, :class => 'large-field' %>
