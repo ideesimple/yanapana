@@ -1,7 +1,6 @@
 <script>
   $(document).ready(function(){
       $("#order_bill_address_attributes_country_id").change(function(){
-        alert ("prueba");
         if (214 == this.value) {
         $('#order_bill_address_attributes_state_name').hide();
         $('#uniform-order_bill_address_attributes_state_id').show();
@@ -9,11 +8,21 @@
         $('#order_bill_address_attributes_state_id').removeAttr("disabled");
         }
         else{
-        alert ("no es USA");
           $('#uniform-order_bill_address_attributes_state_id').hide();
         }
         });
-      });
+      $("#order_ship_address_attributes_country_id").change(function(){
+        if (214 == this.value) {
+        $('#order_ship_address_attributes_state_name').hide();
+        $('#uniform-order_ship_address_attributes_state_id').show();
+        $('#order_ship_address_attributes_state_id').show();
+        $('#order_ship_address_attributes_state_id').removeAttr("disabled");
+        }
+        else{
+        $('#uniform-order_ship_address_attributes_state_id').hide();
+        }
+        });
+  });
 </script>
 <div class="section_container jean pb">
   <!--Mid Section Starts-->
@@ -89,7 +98,7 @@
 
 
       <p class="field" id="bstate">
-        <%= have_states = !@order.bill_address.country.states.empty? %>
+        <% have_states = !@order.bill_address.country.states.empty? %>
 
         <%= bill_form.label :state, t(:state) %> <%= state_required_label %> <br />
 
