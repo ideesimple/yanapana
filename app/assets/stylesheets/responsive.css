@@ -289,12 +289,14 @@ footer address img{ float:none;}
 #main_content .products_list li{ margin:0 62px 24px;}
 
 /*Detail Page*/
-.product_leftcol, .product_rightcol{ width:310px;}
+.product_leftcol, .product_rightcol{ width:300px;}
 .product_rightcol h1{ padding-top:20px;}
-.product_rightcol .size_info label{ width:93px;}
+.product_rightcol .size_info label{ width:100px;}
 .product_rightcol .size_sel{ margin-bottom:5px;}
 .product_rightcol .add_to_buttons{ padding:15px 0px;}
 .product_rightcol .add_to_buttons span{ width:33px;}
+
+.product_rightcol .qty_info label {margin-right: 52px;}
 
 /*Cart*/
 .checkout_tax .shipping_tax, .checkout_tax .checkout_discount{ width:310px;}
@@ -317,7 +319,7 @@ footer address img{ float:none;}
 
 
 /*Checkout*/
-.checkout_steps{ width:310px;}
+.checkout_steps{ width:300px;}
 .checkout_steps #checkout-step-login{ width:87.2%; padding:19px;}
 .col2-set .col-1{ width:100%; padding-bottom:20px;}
 #checkout-step-login label{ padding:3px 0px;}
