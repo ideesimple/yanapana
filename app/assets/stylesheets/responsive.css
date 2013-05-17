@@ -46,7 +46,7 @@ nav .primary_nav > li > a {font-size: 13px;}
 #comments .fb-comments span iframe {width: 700px !important;}
 
 /*Feedback*/
-.feedback {text-align: center; width: 100%;}
+.feedback {text-align: center;}
 
 
 /*Goals*/
@@ -231,7 +231,7 @@ h1.logo { display: block; width:100%; margin:auto; float:none; padding:40px 0 10
 
 
 /*Feedback*/
-.feedback {text-align: center; width: 100%;}
+.feedback {text-align: center;}
 
 
 /*Goals*/
@@ -289,12 +289,14 @@ footer address img{ float:none;}
 #main_content .products_list li{ margin:0 62px 24px;}
 
 /*Detail Page*/
-.product_leftcol, .product_rightcol{ width:310px;}
+.product_leftcol, .product_rightcol{ width:300px;}
 .product_rightcol h1{ padding-top:20px;}
-.product_rightcol .size_info label{ width:93px;}
+.product_rightcol .size_info label{ width:100px;}
 .product_rightcol .size_sel{ margin-bottom:5px;}
 .product_rightcol .add_to_buttons{ padding:15px 0px;}
 .product_rightcol .add_to_buttons span{ width:33px;}
+
+.product_rightcol .qty_info label {margin-right: 52px;}
 
 /*Cart*/
 .checkout_tax .shipping_tax, .checkout_tax .checkout_discount{ width:310px;}
@@ -317,7 +319,7 @@ footer address img{ float:none;}
 
 
 /*Checkout*/
-.checkout_steps{ width:310px;}
+.checkout_steps{ width:300px;}
 .checkout_steps #checkout-step-login{ width:87.2%; padding:19px;}
 .col2-set .col-1{ width:100%; padding-bottom:20px;}
 #checkout-step-login label{ padding:3px 0px;}
@@ -330,7 +332,7 @@ footer address img{ float:none;}
 /*Contact*/
 .contact_page iframe{ width:99%; height:200px;}
 .contact_page address, .contact_page .block{ width:auto;}
-.contact_page #contact_form li input[type="text"], .contact_page #contact_form li textarea{ width:300px;}
+.contact_page #contact_form li input[type="text"], .contact_page #contact_form li textarea{ width:270px;}
 #contact_form span.error {width: 275px;}
 
 #uniform-undefined{width: 295px;}
@@ -380,7 +382,7 @@ aside#sidebar{width:310px;}
 .product_rightcol p {width: 100%; margin-bottom: 0; padding: 10px 0px;}
 
 
-#headline h1 {font-size: 32px;  margin: 15px 0 7px 0; }
+#headline h1 {font-size: 31px;  margin: 15px 0 7px 0; }
 #headline h4 {font-size: 12px; line-height: 1.3;}
 
 #cause h2 {font-size: 30px; padding-bottom: 10px; }
