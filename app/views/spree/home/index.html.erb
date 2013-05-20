@@ -43,7 +43,7 @@
 
                             <iframe class="video_description" width="560" height="315" src="http://www.youtube.com/embed/<%= @cause.video%>" frameborder="0" allowfullscreen></iframe>
 
-          
+
                               <!--Cause Video Ends-->
 
                                <!--ORG Logo Starts-->
@@ -94,8 +94,7 @@
                       <ul>
                         <div id="fb_colsize">
                           <li>
-                            <a onclick="window.open(http://www.facebook.com/sharer/sharer.php?s=100&amp;p[title]=<%= @cause.titleshare %>&amp;p[url]=<%= (Rack::Utils.escape(root_url) + 'week-' + @cause.id.to_s).html_safe %>&amp;p[images][0]=<%= @cause.sharephoto.url(:share_photo)%> &quot;,&quot;&quot;,&quot;toolbar=0,status=0,width=580,height=315&quot;); return false" target="_blank" class="share fb" href="" >  <div class="fb-icon hidden_movil"></div><%= image_tag ("image-yanapana/facebook_icon.png"), :class=>'hidden_desktop'%>
-                            </a>
+                            <a onclick="window.open(&quot;http://www.facebook.com/sharer/sharer.php?s=100&amp;p[title]=<%= @cause.titleshare %>&amp;p[url]=<%= (Rack::Utils.escape(root_url) + 'week-' + @cause.id.to_s).html_safe %>&amp;p[images][0]=<%= @cause.sharephoto.url(:share_photo) if @cause.sharephoto%> &quot;,&quot;&quot;,&quot;toolbar=0,status=0,width=580,height=315&quot;); return false" target="_blank" class="share fb" href="" ><div class="fb-icon hidden_movil"></div><%= image_tag ("image-yanapana/facebook_icon.png"), :class=>'hidden_desktop'%></a>
                             <div id="goalbar" class="goalbar_style">
                               <i id= "count_sharesf" class="progBar"></i>
                             </div>
