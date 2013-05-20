@@ -253,7 +253,7 @@
         var fblikes;
           $.getJSON('https://api.facebook.com/method/fql.query?format=json&query=select%20%20share_count%20from%20link_stat%20where%20url="' + url + '"', function(data){
 
-          fblikes = data[0]['shares'];
+          fblikes = data[0]['share_count'];
           $('body').append('fblikes ' + fblikes);
           $('#facebook_per_cause').html(fblikes);
           var progresf = fblikes * 216;
