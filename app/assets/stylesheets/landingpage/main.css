@@ -139,7 +139,7 @@
 		-o-transition: color 0.2s linear;
 	}
 
-	:focus{
+	a:focus{
 		outline:0;
 	}
 
@@ -1058,4 +1058,26 @@ width:300px;
 /* #Plugin: jqModal // Base styling courtesy of Brice Burgess <bhb@iceburg.net>
 ================================================== */
 
-.jqmWindow{display:none;position:absolute;top:17%;left:50%;margin-left:-240px;width:480px;padding:40px;}.jqmOverlay{background-color:#000;}* iframe.jqm{position:absolute;top:0;left:0;z-index:-1;width:expression(this.parentNode.offsetWidth+'px');height:expression(this.parentNode.offsetHeight+'px');}* html .jqmWindow{position:absolute;top:expression((document.documentElement.scrollTop||document.body.scrollTop) 0 Math.round(17*(document.documentElement.offsetHeight||document.body.clientHeight) / 100px 0 px);}
+.jqmWindow{
+  display:none;
+  position:absolute;
+  top:17%;
+  left:50%;
+  margin-left:-240px;
+  width:480px;
+  padding:40px;}
+
+.jqmOverlay{
+  background-color:#000;}
+
+  * iframe.jqm{
+      position:absolute;
+      top:0;
+      left:0;
+      z-index:-1;
+      width:expression(this.parentNode.offsetWidth+'px');
+      height:expression(this.parentNode.offsetHeight+'px');}
+
+  * html .jqmWindow{
+      position:absolute;
+      top:expression((document.documentElement.scrollTop||document.body.scrollTop) 0 Math.round(17*(document.documentElement.offsetHeight||document.body.clientHeight) / 100px 0 px);}
