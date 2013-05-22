@@ -1,7 +1,7 @@
 <% content_for :datos_sociales do %>
   <% unless @cause.nil? %>
     <%= ('<meta property="og:title" content=" Yanapana | ' + @cause.title  + ' " />').html_safe %>
-    <%= ('<meta property="og:url" content="' + root_url + 'week-' + @cause.id.to_s + ' " />').html_safe %>
+   
     <%= ('<meta property="og:image" content="' + @cause.sharephoto.url(:share_photo).to_s + '" />').html_safe if @cause.sharephoto %>
     <%= ('<meta property="og:description" content="' + @cause.description.to_s  + '" />').html_safe %>
     <meta property="fb:app_id" content="546023445420293">
