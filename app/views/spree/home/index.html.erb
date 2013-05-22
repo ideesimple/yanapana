@@ -95,7 +95,7 @@
                       <ul>
                         <div id="fb_colsize">
                           <li>
-                            <a title="Share" onclick="window.open('http://www.facebook.com/sharer/sharer.php?s=100&amp;p[title]=<%= (@cause.titleshare).html_safe %>&amp;p[url]=<%= (Rack::Utils.escape(root_url) + 'week-' + @cause.id.to_s).html_safe %>&amp;p[images][0]=<%= @cause.sharephoto.url(:share_photo) if @cause.sharephoto%>','sharer','toolbar=0,status=0,width=580,height=315'); return false;" target="_blank" class="share fb"><div class="fb-icon hidden_movil"></div><%= image_tag ("image-yanapana/facebook_icon.png"), :class=>'hidden_desktop'%></a>
+                            <a title="Share" onclick="window.open('http://www.facebook.com/sharer/sharer.php?s=100&amp;p[title]=<%=Rack::Utils.escape(@cause.titleshare)%>&amp;p[url]=<%= (root_url + 'week-' + @cause.id.to_s).html_safe %>&amp;p[images][0]=<%= @cause.sharephoto.url(:share_photo) if @cause.sharephoto%>','sharer','toolbar=0,status=0,width=580,height=315'); return false;" target="_blank" class="share fb"><div class="fb-icon hidden_movil"></div><%= image_tag ("image-yanapana/facebook_icon.png"), :class=>'hidden_desktop'%></a>
 
                             <div id="goalbar" class="goalbar_style">
                               <i id= "count_sharesf" class="progBar"></i>
