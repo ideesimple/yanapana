@@ -96,28 +96,15 @@
                       <ul>
                         <div id="fb_colsize">
                           <li>
-                            <script>
-                              FB.init({appId: "546023445420293", status: true, cookie: true});
-                              function postToFeed() {
-                                // calling the API ...
-                                var obj = {
-                                method: 'feed',
-                                redirect_uri: "<%= (root_url + 'week-' + @cause.id.to_s).html_safe %>",
-                                link: "<%= (root_url + 'week-' + @cause.id.to_s).html_safe %>",
-                                picture: 'http://fbrell.com/f8.jpg',
-                                name: 'Facebook Dialogs',
-                                caption: 'Reference Documentation',
-                                description: 'Using Dialogs to interact with people.'
-                                };
-
-                                function callback(response) {
-                                  document.getElementById('msg').innerHTML = "Post ID: " + response['post_id'];
-                                }
-                                FB.ui(obj, callback);
-                              }
-                            </script>
-                            <p id='msg'></p>
+																												<script type="text/javascript">
+function postToFeed() {
+    
+    window.open('https://www.facebook.com/dialog/feed?app_id=458358780877780&link=http://yanapana-sta.herokuapp.com/week-10&picture=http://fbrell.com/f8.jpg&name=Facebook%20Dialogs&caption=Reference%20Documentation&description=Using%20Dialogs%20to%20interact%20with%20users.&redirect_uri=http://yanapana-sta.herokuapp.com/week-10');
+	
+}
+</script>
                             <p><a onclick='postToFeed(); return false;'>Post to Feed</a></p>
+																												
                             --------
                             ---------
                             <a title="Share" onclick="window.open('http://www.facebook.com/sharer/sharer.php?s=100&amp;p[title]=<%=Rack::Utils.escape(@cause.titleshare)%>&amp;p[url]=<%= (root_url + 'week-' + @cause.id.to_s).html_safe %>&amp;p[images][0]=<%= @cause.sharephoto.url(:share_photo) if @cause.sharephoto%>','sharer','toolbar=0,status=0,width=580,height=315'); return false;" target="_blank" class="share fb"><div class="fb-icon hidden_movil"></div><%= image_tag ("image-yanapana/facebook_icon.png"), :class=>'hidden_desktop'%></a>
