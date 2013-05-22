@@ -103,7 +103,7 @@
                                 var obj = {
                                 method: 'feed',
                                 redirect_uri: "<%= (root_url + 'week-' + @cause.id.to_s).html_safe %>",
-                                link: 'https://developers.facebook.com/docs/reference/dialogs/',
+                                link: "<%= (root_url + 'week-' + @cause.id.to_s).html_safe %>",
                                 picture: 'http://fbrell.com/f8.jpg',
                                 name: 'Facebook Dialogs',
                                 caption: 'Reference Documentation',
