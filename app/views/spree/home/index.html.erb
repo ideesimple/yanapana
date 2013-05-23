@@ -95,7 +95,7 @@
                       <ul>
                         <div id="fb_colsize">
                           <li>
-                            <a target="_blank" href="http://www.facebook.com/sharer.php?u=<%= (root_url + 'week-' + @cause.id.to_s).html_safe %> " title="Share this webpage on Facebook"><div class="fb-icon hidden_movil"></div><%= image_tag ("image-yanapana/facebook_icon.png"), :class=>'hidden_desktop'%></a>
+                            <a target="_blank" onclick="return !window.open(this.href, 'Facebook', 'width=640,height=300')" href="http://www.facebook.com/sharer.php?u=<%= (root_url + 'week-' + @cause.id.to_s).html_safe %> " title="Share this webpage on Facebook" class="share fb"><div class="fb-icon hidden_movil"></div><%= image_tag ("image-yanapana/facebook_icon.png"), :class=>'hidden_desktop'%></a>
 
                             <div id="goalbar" class="goalbar_style">
                               <i id= "count_sharesf" class="progBar"></i>
