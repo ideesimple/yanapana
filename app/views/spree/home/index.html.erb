@@ -4,7 +4,7 @@
     <%= ('<meta property="og:url" content="' + root_url + 'week-' + @cause.id.to_s + ' " />').html_safe %>
     <%= ('<meta property="og:image" content="' + @cause.sharephoto.url(:share_photo).to_s + '" />').html_safe if @cause.sharephoto %>
     <%= ('<meta property="og:description" content="' + @cause.description.to_s  + '" />').html_safe %>
-    
+    <meta name="title" content="JW Player 5.1 Just Released!" />
   <% end %>
 <% end %>
 
@@ -95,7 +95,8 @@
                       <ul>
                         <div id="fb_colsize">
                           <li>
-																							
+                            <a target="_blank" href="http://www.facebook.com/sharer.php?u= http://yanapana-sta.herokuapp.com/week-10" title="Share this webpage on Facebook">Share on Facebook</a>
+
                             <a title="Share" onclick="window.open('http://www.facebook.com/sharer/sharer.php?s=100&amp;p[title]=<%=Rack::Utils.escape(@cause.titleshare)%>&amp;p[url]=<%= (root_url + 'week-' + @cause.id.to_s).html_safe %>&amp;p[images][0]=<%= @cause.sharephoto.url(:share_photo) if @cause.sharephoto%>','sharer','toolbar=0,status=0,width=580,height=315'); return false;" target="_blank" class="share fb"><div class="fb-icon hidden_movil"></div><%= image_tag ("image-yanapana/facebook_icon.png"), :class=>'hidden_desktop'%></a>
 
                             <div id="goalbar" class="goalbar_style">
