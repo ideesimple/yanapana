@@ -159,7 +159,7 @@ nav, section, footer, ul.sub_menu, .col_left_main, #main_content, .branding_area
 width:300px !important;
 }
 
-header {width: 300px;}
+header {width:300px;}
 
 .hidden_desktop {display: inline-block;} 
 
@@ -192,7 +192,7 @@ header .minicart {max-height: 31px;}
 
 h1.logo { display: block; width:100%; margin:auto; float:none; padding:40px 0 10px 0;}
 
-.hasCountdown {width: 100%;  }
+.hasCountdown {width: 100%; position: relative; bottom: 50px; }
 .countdown {float: none; padding: 10px 0 5px 0; width: 121px; margin: 0 auto;}
 .countdown h3 {display: none;}
 .countdown .countdown_numbers li {font-size: 15px;}
@@ -200,7 +200,7 @@ h1.logo { display: block; width:100%; margin:auto; float:none; padding:40px 0 10
 #cause {padding: 25px 0;}
 #cause .cause_description {margin-bottom: 10px;}
 #cause section .org_logo {width: 90px; padding: 0 !important; }
-#cause section iframe.video_description {width: 310px; height: 174px; margin-bottom: 20px; margin-top: 20px;}
+#cause section iframe.video_description {width: 300px; height: 174px; margin-bottom: 20px; margin-top: 20px;}
 #like_follow {height: 35px;}
 #cause section .fb-like, #cause section .follow-btn {display: inline-block; margin-right: 15px;}
 #cause section h1 .sc-button {padding: 0;}

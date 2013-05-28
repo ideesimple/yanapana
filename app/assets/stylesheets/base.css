@@ -353,12 +353,12 @@ header ul span.item { color: #e9e9e9;}
 #cause section .description_text { float: left; }
 #cause section .description_text .issue {margin-right: 2%;}
 #cause section .description_text .solution {margin-left: 2%;}
-#cause section iframe.video_description {width: 50%; height: 268px; margin: 0 40px 0 0 ; float: left; position: relative; z-index: 1000;}
+#cause section iframe.video_description {width: 50%; height: 268px; margin: 0 40px 0 0 ; float: left;}
 
 
 #cause_background {height: 400px; width: 100%;}
 
-#cause .cause_description {margin-bottom: 10px; overflow: hidden;}
+#cause .cause_description {margin-bottom: 10px; }
 .org_logo {width: 95px;  margin-right: 10px; margin-bottom: 15px; display: inline-block; float: left;}
 #like_follow {display: block; width: 100%;}
 
@@ -580,6 +580,7 @@ ul.simpleTabsNavigation li a{ background:#F3F3F3; color:#544F4B; font-weight:bol
 #caja, #caja2  {
 width:100%;
 display: none;
+overflow: hidden;
 }
 
 #mostrar, #mostrar2{

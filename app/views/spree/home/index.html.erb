@@ -24,16 +24,16 @@
 <% unless @cause.nil?  %>
 <!--Cause Starts-->
 <a name="cause"></a>
-            <div  id="mostrar"  class="cause_background">
+            <div  class="cause_background">
                   <div id="cause" class="cause">
                       <section>
                           <!--Cause Description Starts-->
                           <%= image_tag ("image-yanapana/trianglewhite.png"), :class=>'triangle-w'%>
                           <div class="cause_description">
 
-                              <h2 id="mostrar"><%= @cause.title %></h2>
+                              <h2 #cause .cause_description><%= @cause.title %></h2>
 
-				              <div id="caja">
+				              <div>
                                   <div class="description_text hidden_tablet hidden_movil" id="sample">
                                        <h4>Cause</h4>
                                        <p> <%= @cause.description %> </p>
@@ -41,7 +41,7 @@
 
                             <!--Cause Video Starts-->
 
-                            <iframe class="video_description" width="560" height="315" src="http://www.youtube.com/embed/<%= @cause.video%>" frameborder="0" allowfullscreen></iframe>
+                            <iframe class="video_description" width="560" height="315" src="http://www.youtube.com/embed/<%= @cause.video%>" frameborder="0" allowfullscreen="true"></iframe>
 
           
                               <!--Cause Video Ends-->
