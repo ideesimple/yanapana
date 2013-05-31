@@ -1,0 +1,255 @@
+<div class="section_container jean">
+  <section id="product-section">
+    <ul class="breadcrumb">
+      <li><%= link_to "Home", root_path %></li>
+      <li class="active">Product Detail</li>
+    </ul>
+
+    <!--PRODUCT DETAIL STARTS-->
+    <div id="product_detail">
+      <!--Product Left Starts-->
+      <div class="product_leftcol">
+        <div id="main-image" data-hook>
+          <a class="rollover-zom" title="yanapana">
+            <%= product_image(@product, :itemprop => "image") %>
+          </a>
+        </div>
+        <!-- <span class="pr_info">ROLL OVER IMAGE TO ZOOM</span> -->
+
+        <div id="thumbnails" data-hook>
+          <% if (@product.images + @product.variant_images).uniq.size > 1 %>
+            <ul id="product-thumbnails" class="thumbnails inline pr_gallery" data-hook>
+              <% @product.images.each do |i| %>
+                <li class='tmb-all' id='tmb-<%= i.id %>'>
+                  <%= link_to(image_tag(i.attachment.url(:mini)), i.attachment.url(:product), :class => 'tmb-all', :id => "tmb-#{i.id}") %>
+                </li>
+              <% end %>
+
+              <% if @product.has_variants? %>
+                <% @variants.select(&:available?).each do |v| %>
+                  <% v.images.each do |i| %>
+                    <% next if @product.images.include?(i) %>
+                    <li class='vtmb-<%= v.id %> vtmb' id='tmb-<%= i.id %>'>
+                      <%= link_to(image_tag(i.attachment.url(:mini)), i.attachment.url(:product)) %>
+                    </li>
+                  <% end %>
+                <% end %>
+              <% end %>
+            </ul>
+          <% end %>
+
+        </div>
+
+      </div>
+
+      <!--Product Left Ends-->
+
+      <!--Product Right Starts-->
+      <div class="product_rightcol">
+        <h1><%= @product.name %></h1>
+        	<% if @product. price %>
+             <div class="pr_price">
+               <% if @product.price %>
+                 <big><%= number_to_currency @product.price %></big><small></small>
+               <% end %>
+             </div>
+
+	     <% if @product.description %>
+          <p class="short_dc"><%= @product.description %></p>
+        <% end %>
+
+
+	      <div class="product_overview">
+            <%= render :partial => "properties" %>
+        </div>
+        <div id="product-specs">
+    <h4 id="mostrar2" href="#" class="arrow down">Sizing Details</h4>
+    <div id="caja2">
+      <% if @prototype %>
+      <table id="size-specs">
+        <thead>
+          <tr>
+            <th></th>
+            <th>small</th>
+            <th>medium</th>
+            <th>large</th>
+            <th>x-large</th>
+            <th>2x-large</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Chest</td>
+            <% @prototype.option_types.first.option_values.each do |option_val| %>
+              <% if option_val.chest %>
+                <td><%= option_val.chest  %></td>
+              <% end %>
+            <% end %>
+          </tr>
+          <tr>
+            <td>Waist</td>
+            <% @prototype.option_types.first.option_values.each do |option_val| %>
+              <% if option_val.waist %>
+                <td><%= option_val.waist %></td>
+              <% end %>
+            <% end %>
+          </tr>
+          <tr>
+            <td>Lenght</td>
+            <% @prototype.option_types.first.option_values.each do |option_val| %>
+              <% if option_val.lenght %>
+                <td><%= option_val.lenght %></td>
+              <% end %>
+            <% end %>
+          </tr>
+        </tbody>
+
+      </table>
+      <% end %>
+    </div>
+   </div>
+
+         <%#= render :partial => "cart_form" %>
+         <%= form_for :order, :url => populate_orders_path do |f| %>
+
+             <%= render :partial => "variants" %>
+
+             <div class="qty_info">
+               <% if @product.on_sale? %>
+                 <div class="quantity">
+                   <label>Quantity</label>
+                   <%= number_field_tag (@product.has_variants? ? :quantity : "variants[#{@product.master.id}]"),
+                     1, :class => 'title', :in => 1..@product.on_hand, :min => 1 %>
+
+                   <div class="add_to_buttons">
+                     <a href="#top"></a>
+                     <%= button_tag :class => 'add_cart', :id => 'add-to-cart-button', :type => :submit do %>
+                       <%= t(:add_to_cart) %>
+                     <% end %>
+                   </div>
+                 <% else %>
+                  <div class="quantity">
+                    <label>Quantity</label>
+                   <%= number_field_tag (@product.has_variants? ? :quantity : "variants[#{@product.master.id}]"),
+                     1, :class => 'title', :in => 1..@product.on_hand, :min => 1 %>
+
+                    <div class="add_to_buttons">
+                     <a href="#top"></a>
+                     <%= button_tag :class => 'add_cart', :id => 'add-to-cart-button', :type => :submit do %>
+                       <%= t(:add_to_cart) %>
+                     <% end %>
+                   </div>
+
+                   <% content_tag('strong', t(:out_of_stock)) %>
+                 </div>
+               <% end %>
+             </div>
+            <script type="text/javascript" charset="utf-8">
+              $("#quantity").keyup(function() {
+                var val = $("#quantity").val();
+                if(parseInt(val) < 0 || isNaN(val)) {
+                  alert("please enter valid values");
+                  $("#quantity").val("");
+                  $("#quantity").focus();
+                }
+              });
+            </script>
+           </div>
+         <% end %>
+
+
+       <% end %>
+
+         <div>
+            <!--ORG Logo Starts-->
+            <div>
+              <!--ORG Logo Ends-->
+              <!--ORG Description Starts-->
+              <h4></h4>
+              <!--Facebook like button Starts-->
+              <style> html .fb_share_button { display: -moz-inline-block; display:inline-block; color:#fff; padding:1px 20px 0 5px; height:15px; border:1px solid #d8dfea; vertical-align: top; background:#3b5998 url(http://static.ak.facebook.com/images/share/facebook_share_icon.gif?6:26981) no-repeat top right; } </style>
+
+              <a onclick="window.open(&quot;http://www.facebook.com/sharer/sharer.php?s=100&amp;p[title]=<%= ('Compartiendo '+ @product.name).html_safe %>&amp;p[url]=<%= (product_url(@product)).html_safe %>&amp;p[images][0]=<%= @product.cause.sharephoto.url(:share_photo) if @product.cause.sharephoto %> &quot;,&quot;&quot;,&quot;toolbar=0,status=0,width=580,height=315&quot;); return false" target="_blank" class="fb_share_button" href="" >Share </a>
+
+
+              <!--Facebook like button Ends-->
+
+         <!--Twitter follotw button Starts-->
+        <a class="twitter-share-button" data-via="yanapana" href="https://twitter.com/share" data-text="buy this ">Tweet</a>
+         <!--Twitter follotw button Ends-->
+
+         <a data-pin-config="none" href="//pinterest.com/pin/create/button/?url=<%= product_url(@product.permalink) %>&media=<%= @product.images[0].attachment.url(:product) %>&description=Buy%20this%20<%= @product.name%>%20at%20www.yanapana.com" data-pin-do="buttonPin" ><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png" /></a>
+
+            </div>
+            <!--ORG Description Ends-->
+          </div>
+        </div>
+        <!--Product Right Ends-->
+      </div>
+      <!--PRODUCT DETAIL ENDS-->
+ 		</section>
+<% if @product.cause.artist  %>
+  <div id="artist-section" class="artist-inspiration jean">
+    <section>
+      <h2 class="sub_title">The Artist</h2>
+      <div class="artist"><a><%= image_tag (@product.cause.artist.photo(:product)) %></a></div>
+      <div class="artist_description">
+        <h3>Inspiration Behind</h3>
+        <% if @product.inspiration_behind %>
+          <p><%= @product.inspiration_behind  %></p>
+        <% else %>
+          <p>No description</p>
+        <% end %>
+      </div>
+
+      <!--Facebook like button Starts-->
+      <% if @product.cause.artist.link_facebook %>
+      <div class="fb-like" data-send="false" href="<%= @product.cause.artist.link_facebook %>" data-layout="button_count" data-width="450" data-show-faces="true" ></div>
+
+      <!--Facebook like button Ends-->
+      <!--Twitter follotw button Starts-->
+<div class="follow-btn"><a href="<%= @product.cause.artist.link_twitter %>" class="twitter-follow-button" data-show-count="false" data-show-screen-name="false" data-dnt="true"></a></div>
+      <!--Twitter follotw button Ends-->
+    <% end %>
+    </section>
+  </div>
+<% end %>
+</div>
+
+
+<% content_for :javascripts do %>
+<!--Facebook like script-->
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+  <script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"></script>
+
+<!--Este script sirve para colapsar el quick overview-->
+  <script type="text/javascript">
+    $(function()
+    {
+      $("#mostrar").click(function(event) {
+        event.preventDefault();
+        $("#caja").slideToggle();
+      });
+
+    });
+    $(function()
+    {
+      $("#mostrar2").click(function(event) {
+        event.preventDefault();
+        $("#caja2").slideToggle();
+      });
+
+    });
+  </script>
+
+  <% end %>

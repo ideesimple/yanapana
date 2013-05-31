@@ -1,0 +1,148 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Yanapana</title>
+<!--CSS-->
+<%= stylesheet_link_tag 'base', :media => 'all'%>
+<%= stylesheet_link_tag 'without/styles', :media => 'all'%>
+<%= stylesheet_link_tag 'without/responsive', :media => 'all'%>
+<%= stylesheet_link_tag 'short_codes', :media => 'all'%>
+<%= stylesheet_link_tag 'without/dropkick', :media => 'all'%>
+<!-- <link rel="stylesheet" href="css/flexslider.css" type="text/css">
+<%= stylesheet_link_tag 'flexslider', :media => 'all'%> -->
+<%= stylesheet_link_tag 'responsive', :media => 'all'%>
+
+
+
+<!--Google Webfont -->
+<link href='http://fonts.googleapis.com/css?family=Istok+Web' rel='stylesheet' type='text/css'>
+<!--Javascript-->
+<%= javascript_include_tag "jquery-1.7.2.min" %>
+<!-- <script src="js/jquery.flexslider.js"></script>
+<%= javascript_include_tag "flexslider/jquery.flexslider-min" %> -->
+<script type="text/javascript" src="//use.typekit.net/xxr3kft.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+<script type="text/javascript" src="//www.hellobar.com/hellobar.js"></script>
+<script type="text/javascript">
+    new HelloBar(51289,85992);
+</script>
+<%= javascript_include_tag "dropkick/jquery.dropkick-1.0.0" %>
+        <script> $(document).ready(function()
+        {
+            $("#styled-select").dropkick();
+        });
+        </script>
+
+<script type="text/javascript" charset="utf-8">
+  $(window).load(function() {
+    $(".flexslider").flexslider();
+  });
+</script>
+
+
+
+<!-- mobile setting -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+</head>
+<body>
+<div id="wrapper" class="snow">
+    <div id="header">
+        <div class="section">
+            <div class="logo fl"><%= image_tag("image-yanapana/logo_header_inverted.png") %></div>
+            <ul>
+                <li class="fl"><%= link_to '',  'http://facebook.com/YANAPANAwear?fref=ts', :class=>"facebook", :target=>"_blank"%></li>
+                <li class="fl"><%= link_to '', 'https://twitter.com/yanapanawear', :class=>"twitter", :target=>"_blank" %></li>
+                <li class="fl"><a class="pinterest" href="#"></a></li>
+            </ul>
+        </div>
+    </div>
+
+
+<div class="wc_video">
+<div class="video-section">
+    <iframe class="yanapana-video" width="560" height="315" src="http://www.youtube.com/embed/bRpimCP-DcE" frameborder="0" allowfullscreen></iframe>
+<!--Slider Starts ..
+  <ul class="slides">
+    <li>
+      <%= image_tag("image-yanapana/banner_landing1.jpg") %><img src="images/banner_landing1.jpg" />
+      <div class="slider-text">
+        <h1>Fashion with purpose</h1>
+            <h2>A part of each purpose is donated to non-profit organizations working for the empowerment of women.</h2>
+        </div>
+    </li>
+    <li>
+      <%= image_tag("image-yanapana/banner_landing2.jpg") %><img src="images/banner_landing2.jpg" />
+      <div class="slider-text">
+        <h1>Solidarity</h1>
+            <h2>Every week we feature new cause-inspired artist-designed apparel which becomes available for one full week on our website. From every unit of apparel sold, $8 will be donated to the featured charity.</h2>
+        </div>
+    </li>
+    <li>
+      <%= image_tag("image-yanapana/banner_landing3.jpg") %><img src="images/banner_landing3.jpg" />
+      <div class="slider-text">
+        <h1>Fashion</h1>
+            <h2>Every week we feature new cause-inspired artist-designed apparel which becomes available for one full week on our website. From every unit of apparel sold, $8 will be donated to the featured charity.</h2>
+        </div>
+    </li>
+  </ul>
+..Slider Ends -->
+<h1>We are currently preparing our next campaign</h1>
+<h4>To get updates from YANAPANA connect with us via</h4>
+<div class="social_media_without">
+<a href="http://facebook.com/YANAPANAwear?fref=ts" class="fb error">facebook</a><span>or</span><a href="https://twitter.com/yanapanawear" class="tt error">twitter</a>
+</div>
+</div>
+</div>
+
+
+
+
+    <div id="how">
+
+    </div>
+
+
+
+    <div id="benefits">
+        <div class="benefits section">
+
+
+                <ul>
+                    <li class="threecol fl">
+                        <div class="icon world"></div>
+                        <h2>Awesome People </h2>
+                        <p>Psst! Once we launch we will give away one free iPad mini and 20 free T-shirts.  You might want to register... just saying...</p>
+                    </li>
+                    <li class="threecol fl">
+                        <div class="icon person"></div>
+                        <h2>Amazing Artists</h2>
+                        <p>We can help you expose your artwork through printed apparel to the world... and even earn some cash!
+The question is... are you talented enough? Let the world and our judges decide!</p>
+                    </li>
+                    <li class="threecol fl">
+                        <div class="icon heart"></div>
+                        <h2>Incredible Organizations</h2>
+                        <p>We can help your charitable organization raise awareness and funds by reaching new audiences... at no charge to you of course!</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+<!--
+    <div id="footer">
+        <div class="section">
+
+        </div>
+    </div>
+</div>
+-->
+<%= render :partial => 'spree/layouts/footer' %>
+
+</body>
+
+
+</html>

@@ -6,9 +6,11 @@ $('#link-to-cart').html("<%= j(link_to_cart) %>");
 <% end %>
 $('.price').html("<b><%= current_order.display_total %></b>");
 $('.cart_drop').html("<ul><%= escape_javascript(render :partial=> 'spree/shared/preview_cart', :locales => {:current_order => current_order})%></ul>");
+
 <% if @item_add.errors.any? %>
   $('.feedback.negative').html('<%= escape_javascript(flash[:error][0].to_s)%>').fadeIn(500).delay(2000).fadeOut(500);
 <% else %>
   $('.feedback.positive').fadeIn(700).delay(3000).fadeOut(700);
 <% end %>
 
+$('div[id^="size_drop_"]').slideUp(300);

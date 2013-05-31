@@ -19,7 +19,7 @@
 
   </tr>
 
-  <% @causes.each do |cause|   %>
+  <% @causes.order('date_start DESC').each do |cause|   %>
     <tr>
       <td><%= link_to cause.title, admin_cause_url(cause)  %></td>
       <% if cause.organization %>

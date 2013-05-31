@@ -10,6 +10,8 @@
   <div class="subtotal_menu">
     <small>Subtotal:</small><big><%= current_order.display_total%></big>
   </div>
-  <%= link_to "Checkout", cart_path %>
+  <% unless action_name == 'preview_cause' || action_name == 'preview_product' %>
+    <%= link_to "Checkout", cart_path %>
+  <% end %>
 </div>
 

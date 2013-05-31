@@ -37,6 +37,34 @@ module Spree
       respond_with(@product)
     end
 
+    def preview_product
+      @product = Product.find_by_id(params[:id])
+      return unless @product
+
+      @variants = Variant.active.includes([:option_values, :images]).where(:product_id => @product.id)
+      @product_properties = ProductProperty.includes(:property).where(:product_id => @product.id)
+			@prototype = @product.option_types.first.prototypes.first
+
+      referer = request.env['HTTP_REFERER']
+      if referer
+        begin
+          referer_path = URI.parse(request.env['HTTP_REFERER']).path
+          # Fix for #2249
+        rescue URI::InvalidURIError
+          # Do nothing
+        else
+          if referer_path && referer_path.match(/\/t\/(.*)/)
+            @taxon = Taxon.find_by_permalink($1)
+          end
+        end
+      end
+
+      respond_with(@product)
+    end
+
+
+
+
     private
       def accurate_title
         @product ? @product.name : super

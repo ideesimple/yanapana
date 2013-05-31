@@ -1,0 +1,51 @@
+/* Tablet (Portrait) */
+/* Width of 768px */
+
+/* #Tablet (Portrait)
+================================================== */
+
+@media only screen and (min-width: 700px) and (max-width: 960px) {
+
+
+/* General */
+.section, #wrapper, .video-section {width: 700px;}
+
+.yanapana-video {height: 381px; width: 680px; }
+
+
+/* Benefits section */
+#benefits li {text-align: center; margin-right: 20px;}
+#benefits ul li:last-child {margin:0;}
+.threecol {width: 220px;}
+
+/* TYPOGRAPHY */
+
+}
+
+
+
+
+
+
+/*  #Mobile (Portrait)
+================================================== */
+
+    /* Note: Design for a width of 320px */
+
+@media only screen and (max-width: 700px) {
+
+/* General */
+.section, #wrapper, .video-section {width: 300px; }
+
+.yanapana-video {height: 157px; width: 280px; }
+
+/* Benefits section */
+
+
+/* TYPOGRAPHY */
+h1 {font-size: 20px;}
+h2 {font-size: 20px;}
+h4 {font-size: 14px;}
+p {font-size: 13px;}
+
+}

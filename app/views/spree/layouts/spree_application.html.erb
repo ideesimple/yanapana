@@ -50,24 +50,22 @@
             </ul>
 
             </li>
-            <li><a href="#">Blog</a></li>
+            <li><a href="http://yanapana.tumblr.com/" target="blank">Blog</a></li>
 
             <li  <%= 'class=active' if action_name == "faq" %> ><%= link_to "FAQ", faq_path  %></li>
 <li  <%= 'class=active' if action_name == "contact_us" %> ><%= link_to "Contact Us", contact_us_path  %></li>
         </ul>
         <div id="social_media">
           <div class="find_us hidden_movil">
-            <%= link_to '',  'http://facebook.com/YANAPANAwear?fref=ts', :class=>"facebook", :target=>"_blank"%> <%= link_to '', 'https://twitter.com/yanapanawear', :class=>"twitter", :target=>"_blank" %> <a class="pinterest" href="#"></a> </div>
+            <%= link_to '',  'http://facebook.com/YANAPANAwear?fref=ts', :class=>"facebook", :target=>"_blank"%> <%= link_to '', 'https://twitter.com/yanapanawear', :class=>"twitter", :target=>"_blank" %><%= link_to '', 'https://pinterest.com/yanapana', :class=>"pinterest", :target=>"_blank" %> </div>
         </div>
 
       </nav>
       <!--Navigation Ends-->
     </div>
 
-    <%unless action_name == 'contact_us' %>
-    <div class="flash alert jean">
+    <%unless action_name == 'contact_us' || controller_name == 'products' || action_name == 'index' %>
       <%= flash_messages %>
-    </div>
     <% end %>
     <%= yield %>
     <% yield :sidebar %>
@@ -77,16 +75,16 @@
 
 
   <%= render :partial => 'spree/layouts/footer' %>
-  <%@cause = Spree::Cause.where("date_start <= ? AND date_finish >= ?", Date.today, Date.today).order('date_start ASC').first%>
-  <% unless @cause.nil? %>
-    <%= javascript_include_tag "jquery.countdown.min" %>
-      <script type="text/javascript" language="javascript" charset="utf-8">
-    $(document).ready(function(){
-        var liftoffTime = new Date(<%= @cause.date_finish.to_time.to_i * 1000 %>);
-        $("#open-until").countdown({until: liftoffTime, layout: "<%= escape_javascript(render :partial => 'spree/shared/countdown')%>"
+  <% @cause = Spree::Cause.where("date_start <= ? AND date_finish >= ?", Time.zone.now, Time.zone.now).order('date_start ASC').first %>
+		<%= javascript_include_tag "jquery.countdown.min" %>
+    <% unless @cause.nil? %>
+      <script type="text/javascript" charset="utf-8">
+    			$(document).ready(function(){
+        var liftoffTime = new Date(<%= @cause.date_finish.to_i * 1000 %>);
+        $("#open-until").countdown({until: liftoffTime, layout: "<%= escape_javascript(render :partial => 'spree/shared/countdown')%>", expiryUrl: "<%= root_url %>"
           });
-        });
-    </script>
+       });
+     </script>
   <% end %>
   <%= yield :javascripts %>
 

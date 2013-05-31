@@ -16,16 +16,14 @@
             <% end %>
 			      </ul>
         </div>
-      <ul>
         <% unless @faqs.nil? %>
-          <% @faqs.each do |faq| %>
-            <li>
-					    <a name="<%=faq.question%>"><h2 class="sub_title"><%= faq.question  %></h2></a>
+          <% var = 0 %>
+          <% @faqs.each_with_index do |faq, index| %>
+            <% var = index + 1 %>
+              <a name="<%=faq.question%>"><h2 class="sub_title"><%= var %>.<%= faq.question  %></h2></a>
 					    <p><%= (faq.answer).html_safe %></p>
-			  	  </li>
           <% end %>
         <% end %>
-			</ul>
     </div>
 	</section>
 </div>
