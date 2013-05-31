@@ -9,7 +9,7 @@ Spree::OrdersController.class_eval do
       @product = Spree::Product.find(product_id)
     if variant_id.empty?
         error_item = false
-        flash[:error] = "Select a size "
+        flash[:error] = "Please select a size before adding to cart!"
         @error = "Select a Size"
     else
       @item_add = @order.add_variant(Spree::Variant.find(variant_id), quantity) if quantity > 0
