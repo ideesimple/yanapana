@@ -71,8 +71,8 @@
   <% end %>
 
   <%= f.field_container :time_zone do  %>
-    <%= f.label :time_zone %><br />
-    <%= f.time_zone_select :time_zone, ActiveSupport::TimeZone.all %>
+    <% f.label :time_zone %><br />
+    <% f.time_zone_select :time_zone, ActiveSupport::TimeZone.all %>
   <% end %>
 
   <%= f.field_container :link_twitter do  %>
