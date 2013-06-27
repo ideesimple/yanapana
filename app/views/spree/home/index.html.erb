@@ -132,7 +132,8 @@
                       <li>
                         <div class="donation_container">
                           <div class="fl">
-                            <%= image_tag ("image-yanapana/money_icon.png")%>
+                            <% image_tag ("image-yanapana/money_icon.png")%>
+                            <a data-pin-config="none" href="//pinterest.com/pin/create/button/?url=<%= (root_url + 'week-' + @cause.id.to_s).html_safe %>&media=<%= @cause.sharephoto.url(:share_photo) %>&description=Purchase%20this%20limited%20edition%20<%= %>%20and%20help%20support%20this%20week's%20awesome%20cause.%20www.yanapana.com" data-pin-do="buttonPin"><img src="image-yanapana/money_icon.png" /></a>
                           </div>
                           <div class="fl hidden_movil">
                             <p>Donated so far</p>
@@ -142,12 +143,12 @@
                         <div id="goalbar" class="goalbar_style">
                           <% p = @total / @cause.goal_money %>
                           <% p = 470 * p %>
-                          <i class="progBar" style="width:<%= p %>px"></i>
+                          <i class="progBar" id="count_pins"></i>
                         </div>
                         <div class="stats">
                           <h4>
                             <span class="nums fr">
-                              <span class="count"><%= number_to_currency(@total, :precision=>0)%></span>/
+                              <span id="pins_per_cause" class="count"><% number_to_currency(@total, :precision=>0)%></span>/
                               <span class="goal"><%= number_to_currency(@cause.goal_money, :precision=>0)%></span>
                             </span>
                             <span class="word fl">Donation goal <%= @cause.number_goal %></span>
@@ -248,8 +249,8 @@
       $(function(){
         $("#mostrar").click(function(event) {
           $("#caja").slideToggle();
-          });
         });
+      });
 
         function getfbcount(url){
         var fblikes;
@@ -278,12 +279,27 @@
           d.style.width= total_twitter + 'px';
           });
       }
+      
+      function getpins(url){
+      var pins;
+      $.getJSON('http://api.pinterest.com/v1/urls/count.json?callback=receiveCount&url=' + url , function(data){
+          pins = data.count;
+          $('body').append('pins' + pins);
+          $('#pins_per_cause').html(pins);
+          var progres = pins * 470;
+          var total = <%= @cause.goal_money %>;
+          var total_pins= progres / total;
+          d = document.getElementById('count_pins');
+          d.style.width= total_pins + 'px';
+          });
+      }
 
       $(document).ready(function($){
         var url = "<%= (root_url + 'week-' + @cause.id.to_s).html_safe %>"
 
         getfbcount(url);
         gettwcount(url);
+        getpins(url);
       });
   </script>
   <% end %>
