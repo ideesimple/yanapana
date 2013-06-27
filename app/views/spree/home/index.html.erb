@@ -283,7 +283,7 @@
       function getpins(url){
       var pins;
       $.getJSON('http://api.pinterest.com/v1/urls/count.json?callback=receiveCount&url=' + url , function(data){
-          pins = data.count;
+          pins = data['count'];
           $('body').append('pins' + pins);
           $('#pins_per_cause').html(pins);
           var progres = pins * 470;
