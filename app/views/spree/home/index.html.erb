@@ -148,7 +148,7 @@
                         <div class="stats">
                           <h4>
                             <span class="nums fr">
-                              <span id="pins_per_cause" class="count"><% number_to_currency(@total, :precision=>0)%></span>/
+                              <span id="pins_per_cause" class="count"></span>/
                               <span class="goal"><%= number_to_currency(@cause.goal_money, :precision=>0)%></span>
                             </span>
                             <span class="word fl">Donation goal <%= @cause.number_goal %></span>
@@ -282,7 +282,7 @@
       
       function getpins(url){
       var pins;
-      $.getJSON('http://api.pinterest.com/v1/urls/count.json?callback=receiveCount&url=' + url , function(data){
+      $.getJSON('http://api.pinterest.com/v1/urls/count.json?callback=&url=' + url , function(data){
           pins = data['count'];
           $('body').append('pins' + pins);
           $('#pins_per_cause').html(pins);
