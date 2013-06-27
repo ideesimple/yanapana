@@ -282,7 +282,7 @@
       
       function getpins(url){
       var pins;
-      $.getJSON('http://api.pinterest.com/v1/urls/count.json?callback=&url=' + url , function(data){
+      $.getJSON('http://api.pinterest.com/v1/urls/count.json?url=' + url + '&callback=?', function(data){
           pins = data['count'];
           $('body').append('pins' + pins);
           $('#pins_per_cause').html(pins);
