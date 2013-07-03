@@ -81,7 +81,7 @@ table {
 
 /*-----------------------------------HEADER*/
 #header {border-bottom: 3px solid #fff;  }
-#header .logo img {width: 170px; padding-top: 7px;}
+#header .logo img {width: 130px; padding-top: 12px;}
 #header .section ul {padding-top: 15px; float: right;}
 #header .section ul li a {background: bottom; width:33px; height:33px; display:inline-block; margin-right:2px;}
 #header .section ul li a:hover {background: center top;}
@@ -150,7 +150,8 @@ table {
 #input-style h3 { border-radius: 0px 5px 5px 0px; padding: 12px ;}
 
 /*-----------------------------------VIDEOS*/
-.yanapana-video { height: 540px; width: 960px; margin: 0 auto; border: 10px solid white; box-shadow: 0px 1px 1px #999; }
+.yanapana-video { height: 540px; width: 960px; margin: 0 auto; border: 10px solid white; -webkit-box-shadow: 0px 12px 12px 12px #999;
+box-shadow: 0px 1px 1px 1px #999;  }
 
 
 
@@ -158,9 +159,9 @@ table {
 .flexslider h1, .flexslider h2 {text-shadow: 1px 1px 2px #444; font-weight: normal; }
 h1, h2, h3, h5 {padding: 18px;}
 h1 {font-family: century gothic, sans-serif; font-size: 24px; text-align: center; color: #444; } 
-h2 {font-family: century gothic; font-size: 22px; font-weight: bold;}
-h3 {font-family: century gothic; font-size: 19px; font-weight: bold; }
-h4 {font-family: century gothic; font-size: 18px; text-align: center; color: #555 !important; padding: 0; margin-bottom: 35px;}
+h2 {font-family: century gothic, sans-serif; font-size: 22px; font-weight: bold;}
+h3 {font-family: century gothic, sans-serif; font-size: 19px; font-weight: bold; }
+h4 {font-family: century gothic, sans-serif; font-size: 18px; text-align: center; color: #555 !important; padding: 0; margin-bottom: 35px;}
 p, li, span {font-family: century gothic, sans-serif; margin-bottom: 10px; }
 .star_icon a { color: #444;}
 .dk_options li {margin-bottom: 0;}
@@ -187,3 +188,5 @@ a.error {text-decoration: none; font-family: sans-serif; border: none;}
     .fb.error:hover {background: #444;}
     .tt.error {background: #4099FF;}
     .tt.error:hover {background: #444;}
+
+

@@ -271,7 +271,7 @@ header .top_links > li a{ float: right; display:block; padding:8px 20px; line-he
 header .top_links > li.highlight a { color:#fff; text-shadow:none;}
 .branding_container {overflow: hidden; width:100%; padding-top: 50px;}
 h1.logo{ float:left; padding:20px 0px; width: 300px;}
-h1.logo_footer {float: left; margin-right: 15px; width: 23px; }
+h1.logo_footer {float: left; margin-right: 15px; width: 23px; padding: 0; }
 h1.logo_movil {display: none;}
 header .header_search{ height:23px; width:230px; float:right; padding:3px; margin:30px 0px;  border:solid 1px #e1e1e1;  cursor:pointer;}
 header .header_search input{ background:none; border:0px; padding:4px; width:82%; color:#b4b4b4;}
@@ -1119,7 +1119,7 @@ footer, ul.sub_menu, .sideNavCategories > ul, ul.sub_menu > li > ul, .checkout_t
 .navigation_container {border-top: 1px solid white; }
 .branding_container {border-bottom: 1px solid #ccc;}
 
-.header_container {background: #333; border-bottom: 5px solid white; margin-bottom: 0px; box-shadow: 0 1px 1px #999; position: fixed; z-index: 999; top: 0;}
+.header_container {background: #333; border-bottom: 5px solid white; margin-bottom: 0px; box-shadow: 0 1px 1px #999; position: fixed; z-index: 999; top: 0; }
 
 
 #cause h2, #cause h4 {color: white;}
@@ -1139,7 +1139,7 @@ body {background: #333;}
 .required {color: #FF0000;}
 /*-----------------------------------FONTS HERE*/
 .minicart span, h1, h2, h3, h4, .product_info, .price_info, button.price_add, .footer_customblock, .product_rightcol .pr_price big, .product_rightcol .pr_price small, .product_rightcol small.pr_type, .product_rightcol .add_to_buttons button.add_cart, .message, .cart_drop .cart_bottom .subtotal_menu, ul.simpleTabsNavigation
-{font-family: "istok web", serif; font-weight:400;}
+{font-family: "istok web", sans-serif; font-weight:400;}
 
 /*TYPOGRAPHY*/
 h2.sub_title{ font-family: 'istok web', sans-serif; font-size:20px; color:#312e2b; font-weight:bold; padding-bottom:17px; padding-top: 20px; text-transform:capitalize;}
