@@ -1,0 +1,8 @@
+<%= render :partial => 'spree/admin/shared/configuration_menu' %>
+
+<h1>TextHome Settings</h1>
+
+<h4>Text at Home</h4>
+<p><%= Spree::Config[:text_home] %></p>
+
+<%= link_to_with_icon 'edit', t(:edit), edit_admin_review_settings_path, :id => 'admin_reviews_link' %>
