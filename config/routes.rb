@@ -17,6 +17,7 @@ Yanapana::Application.routes.draw do
         end
 	      resources :teams do
         end
+        resource :review_settings 
       end
       #match '/:week' => redirect('/'), :constraints => {:week => /week-[0-9]+/ }
       match '/week-:week' => "home#index"
@@ -38,8 +39,6 @@ Yanapana::Application.routes.draw do
       match "ordermailer" => "home#ordermailer", :as => :ordermailer
       match "artistmailer" => "home#artistmailer", :as => :artistmailer
       match "shipmentmailer" => "home#shipmentmailer", :as => :shipmentmailer
-
-
 
       #devise_for :user, :class_name => 'Spree::User', :controllers => {:invitations => 'devise/invitations'}
     end
