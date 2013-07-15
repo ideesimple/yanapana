@@ -28,7 +28,6 @@
                   <div id="cause" class="cause">
                       <section>
                           <!--Cause Description Starts-->
-                          <%= image_tag ("image-yanapana/trianglewhite.png"), :class=>'triangle-w'%>
                           <div class="cause_description">
 
                               <h2 #cause .cause_description><%= @cause.title %></h2>
@@ -69,10 +68,10 @@
                             <% end %>
                               <!--Twitter follotw button Ends-->
 
-                              <a data-pin-config="none" href="//pinterest.com/pin/create/button/?url=<%= (root_url + 'week-' + @cause.id.to_s).html_safe%>&media=<%= @cause.organization.photo.url(:product) %>&description=<%= @cause.title %>%20at%20www.yanapana.com" data-pin-do="buttonPin" ><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png" /></a>
+                              <div class="follow-btn"><a data-pin-config="none" href="//pinterest.com/pin/create/button/?url=<%= (root_url + 'week-' + @cause.id.to_s).html_safe%>&media=<%= @cause.organization.photo.url(:product) %>&description=<%= @cause.title %>%20at%20www.yanapana.com" data-pin-do="buttonPin" ><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png" /></a></div>
 
                               <!--Shop Now Starts-->
-                              <h1 id="call-to-action" class="sc-button blue">Support!</h1>
+                             <!-- <h1 id="call-to-action" class="sc-button blue">Support!</h1>-->
                               <!--Shop Now Ends-->
                           </div>
                           <% end %>
@@ -94,7 +93,7 @@
                       <ul>
                         <div id="fb_colsize">
                           <li>
-                            <a onclick="window.open(&quot;http://www.facebook.com/sharer/sharer.php?s=100&amp;p[title]=<%= @cause.titleshare %>&amp;p[url]=<%= (Rack::Utils.escape(root_url) + 'week-' + @cause.id.to_s).html_safe %>&amp;p[images][0]=<%= @cause.sharephoto.url(:share_photo)%> &quot;,&quot;&quot;,&quot;toolbar=0,status=0,width=580,height=315&quot;); return false" target="_blank" class="share fb" href="" >  <div class="fb-icon hidden_movil"></div><%= image_tag ("image-yanapana/facebook_icon.png"), :class=>'hidden_desktop'%>
+                            <a onclick="window.open(&quot;http://www.facebook.com/sharer/sharer.php?s=100&amp;p[title]=<%= @cause.titleshare %>&amp;p[url]=<%= (Rack::Utils.escape(root_url) + 'week-' + @cause.id.to_s).html_safe %>&amp;p[images][0]=<%= @cause.sharephoto.url(:share_photo)%> &quot;,&quot;&quot;,&quot;toolbar=0,status=0,width=580,height=315&quot;); return false" target="_blank" class="share fb" href="" >  <div class="fb-icon hidden_movil"></div><%= image_tag ("image-yanapana/facebook_icon2.png"), :class=>'hidden_desktop'%>
                             </a>
                             <div id="goalbar" class="goalbar_style">
                               <i id= "count_sharesf" class="progBar"></i>
@@ -113,7 +112,7 @@
                     <div id="tt_colsize">
                       <li>
                         <!--<a href="https://twitter.com/share" class="twitter-share-button" data-lang="en">Tweet</a>-->
-                        <a href="https://twitter.com/intent/tweet?text=<%= @cause.title  %>+@yanapanawear&amp;original_referer=<%=(Rack::Utils.escape(root_url) + 'week-' + @cause.id.to_s).html_safe %>&amp;url=<%=(Rack::Utils.escape(root_url) + 'week-' + @cause.id.to_s).html_safe %>&amp;counturl=<%= (Rack::Utils.escape(root_url) + 'week-' + @cause.id.to_s).html_safe %>" target="_blank" ><div class="tt-icon hidden_movil"></div><%= image_tag ("image-yanapana/twitter_icon.png"), :class=>'hidden_desktop'%>
+                        <a href="https://twitter.com/intent/tweet?text=<%= @cause.title  %>+@yanapanawear&amp;original_referer=<%=(Rack::Utils.escape(root_url) + 'week-' + @cause.id.to_s).html_safe %>&amp;url=<%=(Rack::Utils.escape(root_url) + 'week-' + @cause.id.to_s).html_safe %>&amp;counturl=<%= (Rack::Utils.escape(root_url) + 'week-' + @cause.id.to_s).html_safe %>" target="_blank" ><div class="tt-icon hidden_movil"></div><%= image_tag ("image-yanapana/twitter_icon2.png"), :class=>'hidden_desktop'%>
   </a>
                         <div id="goalbar" class="goalbar_style"><i id = "count_twitts" class="progBar"></i></div>
                          <div class="stats">
@@ -131,7 +130,7 @@
                       <li>
                         <div class="donation_container">
                           <div class="fl">
-                            <%= image_tag ("image-yanapana/money_icon.png")%>
+                            <%= image_tag ("image-yanapana/money_icon2.png")%>
                           </div>
                           <div class="fl hidden_movil">
                             <p>Donated so far</p>
