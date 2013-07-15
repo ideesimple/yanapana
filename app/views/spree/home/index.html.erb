@@ -53,7 +53,7 @@
                               <!--ORG Logo Ends-->
                               <!--ORG Description Starts-->
                             <% if @cause.organization %>
-                              <h4 class="hidden_movil hidden_tablet">Organization</h4>
+                              <h4 class="hidden_movil hidden_tablet"><%= @cause.organization.name %></h4>
                               <p class="hidden_movil hidden_tablet"><%= @cause.organization.description%></p>
 
                               <h1 class="org_logo"><%= link_to (image_tag(@cause.organization.photo.url(:org))), @cause.organization.webpage, :target => "_blank" %></h1>
@@ -306,6 +306,6 @@
 <% end %>
 <% if flash[:notice] %>
   <script type="text/javascript">
-    $('.feedback.positive').html("Thank you for supporting this week YANAPANA's cause, you are awesome!").fadeIn(500).delay(2000).fadeOut(500);
+    $('.feedback.positive').html("Thank you for supporting this week YANAPANA's cause, you are awesome!").fadeIn(500).delay(4000).fadeOut(500);
   </script>
 <% end %>
