@@ -1,9 +1,9 @@
 <% content_for :datos_sociales do %>
   <% unless @cause.nil? %>
-    <%= ('<meta property="og:title" content=" Yanapana | ' + @cause.titleshare  + ' " />').html_safe %>
+    <%= ('<meta property="og:title" content=" Yanapana | ' + @cause.titleshare.to_s  + ' " />').html_safe %>
     <%= ('<meta property="og:url" content="' + root_url + 'week-' + @cause.id.to_s + ' " />').html_safe %>
     <%= ('<meta property="og:image" content="' + @cause.sharephoto.url(:share_photo).to_s + '" />').html_safe if @cause.sharephoto %>
-    <%= ('<meta property="og:description" content="Every purchase helps support this weeks cause. Wear YANAPANA, help change lives" />').html_safe %>
+    <%= ('<meta property="og:description" content="Every purchase helps support this weeks cause. Wear YANAPANA, change lives" />').html_safe %>
     <meta name="title" content="JW Player 5.1 Just Released!" />
   <% end %>
 <% end %>
