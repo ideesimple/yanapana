@@ -29,7 +29,6 @@
                   <div id="cause" class="cause">
                       <section>
                           <!--Cause Description Starts-->
-                          <%= image_tag ("image-yanapana/trianglewhite.png"), :class=>'triangle-w'%>
                           <div class="cause_description">
 
                               <h2 #cause .cause_description><%= @cause.title %></h2>
@@ -70,10 +69,10 @@
                             <% end %>
                               <!--Twitter follotw button Ends-->
 
-                              <a data-pin-config="none" href="//pinterest.com/pin/create/button/?url=<%= (root_url + 'week-' + @cause.id.to_s).html_safe%>&media=<%=@cause.sharephoto.url(:share_photo) %>&description=<%= @cause.title %>%20at%20www.yanapana.com" data-pin-do="buttonPin" ><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png" /></a>
+                              <div class="follow-btn"><a data-pin-config="none" href="//pinterest.com/pin/create/button/?url=<%= (root_url + 'week-' + @cause.id.to_s).html_safe%>&media=<%= @cause.organization.photo.url(:product) %>&description=<%= @cause.title %>%20at%20www.yanapana.com" data-pin-do="buttonPin" ><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png" /></a></div>
 
                               <!--Shop Now Starts-->
-                              <h1 id="call-to-action" class="sc-button blue">Support!</h1>
+                             <!-- <h1 id="call-to-action" class="sc-button blue">Support!</h1>-->
                               <!--Shop Now Ends-->
                           </div>
                           <% end %>
@@ -95,8 +94,7 @@
                       <ul>
                         <div id="fb_colsize">
                           <li>
-                            <a target="_blank" onclick="return !window.open(this.href, 'Facebook', 'width=640,height=300')" href="http://www.facebook.com/sharer.php?u=<%= (root_url + 'week-' + @cause.id.to_s).html_safe %> " title="Share this webpage on Facebook" class="share fb"><div class="fb-icon hidden_movil"></div><%= image_tag ("image-yanapana/facebook_icon.png"), :class=>'hidden_desktop'%></a>
-
+                            <a target="_blank" onclick="return !window.open(this.href, 'Facebook', 'width=640,height=300')" href="http://www.facebook.com/sharer.php?u=<%= (root_url + 'week-' + @cause.id.to_s).html_safe %> " title="Share this webpage on Facebook" class="share fb"><div class="fb-icon hidden_movil"></div><%= image_tag ("image-yanapana/facebook_icon2.png"), :class=>'hidden_desktop'%></a>
                             <div id="goalbar" class="goalbar_style">
                               <i id= "count_sharesf" class="progBar"></i>
                             </div>
@@ -114,7 +112,7 @@
                     <div id="tt_colsize">
                       <li>
                         <!--<a href="https://twitter.com/share" class="twitter-share-button" data-lang="en">Tweet</a>-->
-                        <a href="https://twitter.com/intent/tweet?text=<%= @cause.title  %>+@yanapanawear&amp;original_referer=<%=(Rack::Utils.escape(root_url) + 'week-' + @cause.id.to_s).html_safe %>&amp;url=<%=(Rack::Utils.escape(root_url) + 'week-' + @cause.id.to_s).html_safe %>&amp;counturl=<%= (Rack::Utils.escape(root_url) + 'week-' + @cause.id.to_s).html_safe %>" target="_blank" ><div class="tt-icon hidden_movil"></div><%= image_tag ("image-yanapana/twitter_icon.png"), :class=>'hidden_desktop'%>
+                        <a href="https://twitter.com/intent/tweet?text=<%= @cause.title  %>+@yanapanawear&amp;original_referer=<%=(Rack::Utils.escape(root_url) + 'week-' + @cause.id.to_s).html_safe %>&amp;url=<%=(Rack::Utils.escape(root_url) + 'week-' + @cause.id.to_s).html_safe %>&amp;counturl=<%= (Rack::Utils.escape(root_url) + 'week-' + @cause.id.to_s).html_safe %>" target="_blank" ><div class="tt-icon hidden_movil"></div><%= image_tag ("image-yanapana/twitter_icon2.png"), :class=>'hidden_desktop'%>
   </a>
                         <div id="goalbar" class="goalbar_style"><i id = "count_twitts" class="progBar"></i></div>
                          <div class="stats">
@@ -132,7 +130,7 @@
                       <li>
                         <div class="donation_container">
                           <div class="fl">
-                            <%= image_tag ("image-yanapana/money_icon.png")%>
+                            <%= image_tag ("image-yanapana/money_icon2.png")%>
                           </div>
                           <div class="fl hidden_movil">
                             <p>Donated so far</p>

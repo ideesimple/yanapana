@@ -28,7 +28,7 @@
     <ul id="first-carousel">
       <% a.each do |product| %>
         <% if product.on_display? %>
-          <li>
+          <li class="home_products">
            <div class="product_img_container">
              <% unless product.master.images.nil? %>
                <%= link_to prodsize_image(product, :itemprop => "image"), product, :itemprop => 'url', :class=>"product_image"  unless prodsize_image(product).nil? %>
