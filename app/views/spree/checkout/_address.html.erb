@@ -1,30 +1,59 @@
 <script>
   $(document).ready(function(){
-      $("#order_bill_address_attributes_country_id").change(function(){
-        if (214 == this.value) {
-          $('#order_bill_address_attributes_state_name').hide();
-          $('#uniform-order_bill_address_attributes_state_id').show();
-          $('#order_bill_address_attributes_state_id').show();
-          $('#order_bill_address_attributes_state_id').removeAttr("disabled");
-        }
-        else{
-          $('#uniform-order_bill_address_attributes_state_id').hide();
-        }
-      });
-      $("#order_ship_address_attributes_country_id").change(function(){
-        if (214 == this.value) {
-          $('#order_ship_address_attributes_state_name').hide();
-          $('#uniform-order_ship_address_attributes_state_id').show();
-          $('#order_ship_address_attributes_state_id').show();
-          $('#order_ship_address_attributes_state_id').removeAttr("disabled");
-        }
-        else{
-          $('#uniform-order_ship_address_attributes_state_id').hide();
-        }
-      });
-      
+  $("#order_bill_address_attributes_country_id").change(function(){
+    if (214 == this.value) {
+      $('#order_bill_address_attributes_state_name').hide();
+      $('#uniform-order_bill_address_attributes_state_id').show();
+      $('#order_bill_address_attributes_state_id').show();
+      $('#order_bill_address_attributes_state_id').removeAttr("disabled");
+    }
+    else{
+      $('#uniform-order_bill_address_attributes_state_id').hide();
+    }
   });
+  $("#order_ship_address_attributes_country_id").change(function(){
+    if (214 == this.value) {
+      $('#order_ship_address_attributes_state_name').hide();
+      $('#uniform-order_ship_address_attributes_state_id').show();
+      $('#order_ship_address_attributes_state_id').show();
+      $('#order_ship_address_attributes_state_id').removeAttr("disabled");
+    }
+    else{
+      $('#uniform-order_ship_address_attributes_state_id').hide();
+    }
+  });
+  $('input#use_shipping').click(function() {
+    if ($(this).is(':checked')) {
+      $('#billing .inner').show();
+      document.getElementById('order_bill_address_attributes_firstname').setAttribute('value',document.getElementById('order_ship_address_attributes_firstname').value);
+      document.getElementById('order_bill_address_attributes_lastname').setAttribute('value',document.getElementById('order_ship_address_attributes_lastname').value);
+      document.getElementById('order_bill_address_attributes_address1').setAttribute('value',document.getElementById('order_ship_address_attributes_address1').value);
+      document.getElementById('order_bill_address_attributes_address2').setAttribute('value',document.getElementById('order_ship_address_attributes_address2').value);
+      document.getElementById('order_bill_address_attributes_country_id').setAttribute('value',document.getElementById('order_ship_address_attributes_country_id').value);
+      document.getElementById('order_bill_address_attributes_city').setAttribute('value',document.getElementById('order_ship_address_attributes_city').value);
+      document.getElementById('order_bill_address_attributes_state_id').setAttribute('value',document.getElementById('order_ship_address_attributes_state_id').value);
+      document.getElementById('order_bill_address_attributes_state_name').setAttribute('value',document.getElementById('order_ship_address_attributes_state_name').value);
+      document.getElementById('order_bill_address_attributes_zipcode').setAttribute('value',document.getElementById('order_ship_address_attributes_zipcode').value);
+      document.getElementById('order_bill_address_attributes_phone').setAttribute('value',document.getElementById('order_ship_address_attributes_phone').value);
+      return ($('#billing .inner input, #billing .inner select')).prop('disable', true);
+      } else {
+      $('#billing .inner').show();
+      document.getElementById('order_bill_address_attributes_firstname').setAttribute('value','');
+      document.getElementById('order_bill_address_attributes_lastname').setAttribute('value','');
+      document.getElementById('order_bill_address_attributes_address1').setAttribute('value','');
+      document.getElementById('order_bill_address_attributes_address2').setAttribute('value','');
+      document.getElementById('order_bill_address_attributes_country_id').setAttribute('value','');
+      document.getElementById('order_bill_address_attributes_city').setAttribute('value','');
+      document.getElementById('order_bill_address_attributes_state_id').setAttribute('value','');
+      document.getElementById('order_bill_address_attributes_state_name').setAttribute('value','');
+      document.getElementById('order_bill_address_attributes_zipcode').setAttribute('value','');
+      document.getElementById('order_bill_address_attributes_phone').setAttribute('value','');
+      $('#billing .inner input, #shipping .inner select').prop('disabled', false);
+    }
+  }).triggerHandler('click');
+});
 </script>
+
 <div class="section_container jean pb">
   <!--Mid Section Starts-->
   <section>
@@ -59,10 +88,7 @@
               <fieldset id="shipping" data-hook>
                 <%= form.fields_for :ship_address do |ship_form| %>
                   <h6><%= t(:shipping_address) %></h6>
-                  <p class="field checkbox" data-hook="use_billing">
-                  <%= check_box_tag 'order[use_billing]', '1', (!(@order.bill_address.empty? && @order.ship_address.empty?) && @order.bill_address.same_as?(@order.ship_address)) %>
-                  <%= label_tag :order_use_billing, t(:use_shipping_address), :id => 'use_billing' %>
-                  </p>
+                  
                   <div class="inner" data-hook="shipping_inner">
                     <p class="field" id="sfirstname">
                     <%= ship_form.label :firstname, t(:first_name) %><span class="required">*</span><br />
@@ -132,7 +158,7 @@
                       <%= ship_form.text_field :zipcode, :class => 'large-field' %>
                     </p>
                     <p class="field" id="sphone">
-                      <%= ship_form.label :phone, t(:phone) %><span class="required">*</span><br />
+                      <%= ship_form.label :phone, t(:phone) %><br />
                       <%= ship_form.phone_field :phone, :class => 'large-field' %>
                     </p>
                     <% if Spree::Config[:alternative_shipping_phone] %>
@@ -152,6 +178,12 @@
             <fieldset id="billing" data-hook>
             <%= form.fields_for :bill_address do |bill_form| %>
               <h6><%= t(:billing_address) %></h6>
+              <p class="field checkbox" data-hook="use_billing">
+                <% check_box_tag 'order[use_billing]', '1', (!(@order.bill_address.empty? && @order.ship_address.empty?) && @order.bill_address.same_as?(@order.ship_address)) %>
+                
+                <%= label_tag :order_use_shipping, t(:use_shipping_address), :id => 'use_billing' %>
+                <%= check_box_tag 'use_shipping', '1', (!(@order.bill_address.empty? && @order.ship_address.empty?) && @order.bill_address.same_as?(@order.ship_address))%>
+              </p>
               <div class="inner" data-hook="billing_inner">
                 <p class="field" id="bfirstname">
                   <%= bill_form.label :firstname, t(:first_name) %><span class="required">*</span><br />
@@ -211,7 +243,7 @@
                   <%= bill_form.text_field :zipcode, :class => 'large-field' %>
                 </p>
                 <p class="field" id="bphone">
-                  <%= bill_form.label :phone, t(:phone) %><span class="required"></span><br />
+                  <%= bill_form.label :phone, t(:phone) %><span></span><br />
                   <%= bill_form.phone_field :phone, :class => 'large-field' %>
                 </p>
                 <% if Spree::Config[:alternative_billing_phone] %>

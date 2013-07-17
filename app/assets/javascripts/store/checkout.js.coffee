@@ -40,7 +40,7 @@ $ ->
     ($ 'input#order_use_billing').click(->
       if ($ this).is(':checked')
         ($ '#billing .inner').hide()
-        ($ '#billing .inner input, #billing .inner select').prop 'disabled', true
+        ($ '#billing .inner input, #billing .inner select').prop 'disable', true
       else
         ($ '#billing .inner').show()
         ($ '#billing .inner input, #shipping .inner select').prop 'disabled', false
@@ -49,7 +49,7 @@ $ ->
         else
           ($ 'span#sstate select').hide().prop 'disabled', true
     ).triggerHandler 'click'
-
+    
   if ($ '#checkout_form_payment').is('*')
     # Activate already checked payment method if form is re-rendered
     # i.e. if user enters invalid data

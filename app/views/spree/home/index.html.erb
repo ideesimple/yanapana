@@ -37,7 +37,7 @@
 				              <div id="caja">
                                   <div class="description_text hidden_tablet hidden_movil" id="sample">
                                        <h4>Cause</h4>
-                                       <p> <%= @cause.description %> </p>
+                                       <p> <%= (@cause.description).html_safe %> </p>
                                   </div>
 
                             <!--Cause Video Starts-->
@@ -70,7 +70,7 @@
                             <% end %>
                               <!--Twitter follotw button Ends-->
 
-                              <a data-pin-config="none" href="//pinterest.com/pin/create/button/?url=<%= (root_url + 'week-' + @cause.id.to_s).html_safe%>&media=<%=@cause.sharephoto.url(:share_photo) %>&description=<%= @cause.title %>%20at%20www.yanapana.com" data-pin-do="buttonPin" ><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png" /></a>
+                              <a data-pin-config="none" href="//pinterest.com/pin/create/button/?url=<%= (root_url + 'week-' + @cause.id.to_s).html_safe%>&media=<%= Rack::Utils.escape(@cause.sharephoto.url(:share_photo)) %>&description=<%= @cause.title %>%20at%20www.yanapana.com" data-pin-do="buttonPin" ><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png" /></a>
 
                               <!--Shop Now Starts-->
                               <h1 id="call-to-action" class="sc-button blue">Support!</h1>
@@ -132,7 +132,7 @@
                       <li>
                         <div class="donation_container">
                           <div class="fl">
-                            <a href="//pinterest.com/pin/create/button/?url=<%= (root_url + 'week-' + @cause.id.to_s).html_safe %>&media=<%= (@cause.sharephoto.url(:share_photo)).html_safe %>&description=Every%20purchase%20helps%20support%20this%20weeks%20cause%20Wear%20YANAPANA%20changes%20lives" data-pin-do="buttonPin" data-pin-config="none"><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png" /></a>
+                            <a href="//pinterest.com/pin/create/button/?url=<%= (root_url + 'week-' + @cause.id.to_s).html_safe %>&media=<%= Rack::Utils.escape(@cause.sharephoto.url(:share_photo))%>&description=Every%20purchase%20helps%20support%20this%20week's%20cause.%20Wear%20YANAPANA,%20changes%20lives." data-pin-do="buttonPin" data-pin-config="none"><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png" /></a>
                           </div>
                           <div class="fl hidden_movil">
                             <p></p>
@@ -305,6 +305,6 @@
 <% end %>
 <% if flash[:notice] %>
   <script type="text/javascript">
-    $('.feedback.positive').html("Thank you for supporting this week YANAPANA's cause, you are awesome!").fadeIn(500).delay(4000).fadeOut(500);
+    $('.feedback.positive').html("Thanks for adding me to your cart. :)").fadeIn(500).delay(7000).fadeOut(500);
   </script>
 <% end %>
