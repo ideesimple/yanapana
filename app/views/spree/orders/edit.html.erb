@@ -37,10 +37,17 @@
                 <td width="60%" colspan="1" class="align_left" ><strong>Subtotal</strong></td>
                 <td class="align_right" style=""><strong><span class="order-total"><%= @order.display_total %></span></strong></td>
               </tr>
-              <!--<tr>
-                <td width="60%" colspan="1" class="align_left total" >Grand Total</td>
-                <td class="align_right" style=""><span class="total">$109.00</span></td>
-              </tr>-->
+              <% unless @order.adjustments.eligible.blank? %> 
+                <% render "spree/orders/adjustments" unless @order.adjustments.eligible.blank? %>
+                <% @order.adjustments.eligible.each do |adjustment| %>
+                  <tr>
+                    <td width="60%" colspam="1" class="align_left"><%= adjustment.label %></td>
+                    <td class="align_right"><%= money(adjustment.amount) %></td>
+                  </tr>  
+                <% end %>
+              <% end %>
+              <!-- <td width="60%" colspan="1" class="align_left total" >Grand Total</td>
+               <td class="align_right" style=""><span class="total">$109.00</span></td>--!>
             </table>
           </div>
       <div class="action_buttonbar">

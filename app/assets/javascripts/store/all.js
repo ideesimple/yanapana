@@ -11,7 +11,6 @@
 //= require store/spree_core
 //= require store/cart
 //= require store/product
-//= require store/checkout
 //= require around/appendAround
 //= require custom/custom
 //= require dropkick/jquery.dropkick-1.0.0

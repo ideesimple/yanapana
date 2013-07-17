@@ -1,29 +1,59 @@
 <script>
   $(document).ready(function(){
-      $("#order_bill_address_attributes_country_id").change(function(){
-        if (214 == this.value) {
-        $('#order_bill_address_attributes_state_name').hide();
-        $('#uniform-order_bill_address_attributes_state_id').show();
-        $('#order_bill_address_attributes_state_id').show();
-        $('#order_bill_address_attributes_state_id').removeAttr("disabled");
-        }
-        else{
-          $('#uniform-order_bill_address_attributes_state_id').hide();
-        }
-        });
-      $("#order_ship_address_attributes_country_id").change(function(){
-        if (214 == this.value) {
-        $('#order_ship_address_attributes_state_name').hide();
-        $('#uniform-order_ship_address_attributes_state_id').show();
-        $('#order_ship_address_attributes_state_id').show();
-        $('#order_ship_address_attributes_state_id').removeAttr("disabled");
-        }
-        else{
-        $('#uniform-order_ship_address_attributes_state_id').hide();
-        }
-        });
+  $("#order_bill_address_attributes_country_id").change(function(){
+    if (214 == this.value) {
+      $('#order_bill_address_attributes_state_name').hide();
+      $('#uniform-order_bill_address_attributes_state_id').show();
+      $('#order_bill_address_attributes_state_id').show();
+      $('#order_bill_address_attributes_state_id').removeAttr("disabled");
+    }
+    else{
+      $('#uniform-order_bill_address_attributes_state_id').hide();
+    }
   });
+  $("#order_ship_address_attributes_country_id").change(function(){
+    if (214 == this.value) {
+      $('#order_ship_address_attributes_state_name').hide();
+      $('#uniform-order_ship_address_attributes_state_id').show();
+      $('#order_ship_address_attributes_state_id').show();
+      $('#order_ship_address_attributes_state_id').removeAttr("disabled");
+    }
+    else{
+      $('#uniform-order_ship_address_attributes_state_id').hide();
+    }
+  });
+  $('input#use_shipping').click(function() {
+    if ($(this).is(':checked')) {
+      $('#billing .inner').show();
+      document.getElementById('order_bill_address_attributes_firstname').setAttribute('value',document.getElementById('order_ship_address_attributes_firstname').value);
+      document.getElementById('order_bill_address_attributes_lastname').setAttribute('value',document.getElementById('order_ship_address_attributes_lastname').value);
+      document.getElementById('order_bill_address_attributes_address1').setAttribute('value',document.getElementById('order_ship_address_attributes_address1').value);
+      document.getElementById('order_bill_address_attributes_address2').setAttribute('value',document.getElementById('order_ship_address_attributes_address2').value);
+      document.getElementById('order_bill_address_attributes_country_id').setAttribute('value',document.getElementById('order_ship_address_attributes_country_id').value);
+      document.getElementById('order_bill_address_attributes_city').setAttribute('value',document.getElementById('order_ship_address_attributes_city').value);
+      document.getElementById('order_bill_address_attributes_state_id').setAttribute('value',document.getElementById('order_ship_address_attributes_state_id').value);
+      document.getElementById('order_bill_address_attributes_state_name').setAttribute('value',document.getElementById('order_ship_address_attributes_state_name').value);
+      document.getElementById('order_bill_address_attributes_zipcode').setAttribute('value',document.getElementById('order_ship_address_attributes_zipcode').value);
+      document.getElementById('order_bill_address_attributes_phone').setAttribute('value',document.getElementById('order_ship_address_attributes_phone').value);
+      return ($('#billing .inner input, #billing .inner select')).prop('disable', true);
+      } else {
+      $('#billing .inner').show();
+      document.getElementById('order_bill_address_attributes_firstname').setAttribute('value','');
+      document.getElementById('order_bill_address_attributes_lastname').setAttribute('value','');
+      document.getElementById('order_bill_address_attributes_address1').setAttribute('value','');
+      document.getElementById('order_bill_address_attributes_address2').setAttribute('value','');
+      document.getElementById('order_bill_address_attributes_country_id').setAttribute('value','');
+      document.getElementById('order_bill_address_attributes_city').setAttribute('value','');
+      document.getElementById('order_bill_address_attributes_state_id').setAttribute('value','');
+      document.getElementById('order_bill_address_attributes_state_name').setAttribute('value','');
+      document.getElementById('order_bill_address_attributes_zipcode').setAttribute('value','');
+      document.getElementById('order_bill_address_attributes_phone').setAttribute('value','');
+      $('#billing .inner input, #shipping .inner select').prop('disabled', false);
+    }
+  }).triggerHandler('click');
+});
 </script>
+
 <div class="section_container jean pb">
   <!--Mid Section Starts-->
   <section>
@@ -54,196 +84,188 @@
           </div>
           <div class="col2-set">
           <div class="col-1">
+           <div class="columns alpha six" data-hook="shipping_fieldset_wrapper">
+              <fieldset id="shipping" data-hook>
+                <%= form.fields_for :ship_address do |ship_form| %>
+                  <h6><%= t(:shipping_address) %></h6>
+                  
+                  <div class="inner" data-hook="shipping_inner">
+                    <p class="field" id="sfirstname">
+                    <%= ship_form.label :firstname, t(:first_name) %><span class="required">*</span><br />
+                    <%= ship_form.text_field :firstname, :class => 'large-field' %>
+                    </p>
+                    <p class="field" id="slastname">
+                    <%= ship_form.label :lastname, t(:last_name) %><span class="required">*</span><br />
+                    <%= ship_form.text_field :lastname, :class => 'large-field' %>
+                    </p>
+                    <% if Spree::Config[:company] %>
+                      <p class="field" id="scompany">
+                      <%= ship_form.label :company, t(:company) %><br />
+                      <%= ship_form.text_field :company %>
+                      </p>
+                    <% end %>
+                    <p class="field" id="saddress1">
+                    <%= ship_form.label :address1, t(:street_address) %><span class="required">*</span><br />
+                    <%= ship_form.text_field :address1, :class => 'large-field' %>
+                    </p>
+                    <p class="field" id="saddress2">
+                    <%= ship_form.label :address2, t(:street_address_2) %><br />
+                    <%= ship_form.text_field :address2 %>
+                    </p>
 
-<div class="columns alpha six" data-hook="billing_fieldset_wrapper">
-<fieldset id="shipping" data-hook>
-  <%= form.fields_for :ship_address do |ship_form| %>
-    <h6><%= t(:shipping_address) %></h6>
-    <div class="inner" data-hook="shipping_inner">
-      <p class="field" id="sfirstname">
-        <%= ship_form.label :firstname, t(:first_name) %><span class="required">*</span><br />
-        <%= ship_form.text_field :firstname, :class => 'large-field' %>
-      </p>
-      <p class="field" id="slastname">
-        <%= ship_form.label :lastname, t(:last_name) %><span class="required">*</span><br />
-        <%= ship_form.text_field :lastname, :class => 'large-field' %>
-      </p>
-      <% if Spree::Config[:company] %>
-        <p class="field" id="scompany">
-          <%= ship_form.label :company, t(:company) %><br />
-          <%= ship_form.text_field :company %>
-        </p>
-      <% end %>
-      <p class="field" id="saddress1">
-        <%= ship_form.label :address1, t(:street_address) %><span class="required">*</span><br />
-        <%= ship_form.text_field :address1, :class => 'large-field' %>
-      </p>
-      <p class="field" id="saddress2">
-        <%= ship_form.label :address2, t(:street_address_2) %><br />
-        <%= ship_form.text_field :address2 %>
-      </p>
+                   <p class="field" id="scountry">
+                    <%= ship_form.label :country_id, t(:country) %><span class="required">*</span><br />
+                    <span id="scountry">
+                      <%= ship_form.collection_select :country_id, available_countries, :id, :name, {}, {:class => 'required'} %>
+                    </span>
+                    </p>
 
-      <p class="field" id="scountry">
-        <%= ship_form.label :country_id, t(:country) %><span class="required">*</span><br />
-        <span id="scountry">
-          <%= ship_form.collection_select :country_id, available_countries, :id, :name, {}, {:class => 'required'} %>
-        </span>
-      </p>
-
-      <p class="field" id="scity">
-        <%= ship_form.label :city, t(:city) %><span class="required">*</span><br />
-        <%= ship_form.text_field :city, :class => 'large-field' %>
-      </p>
-      <p class="field" id="sstate">
-        <% have_states = !@order.ship_address.country.states.empty? %>
-        <%= ship_form.label :state, t(:state) %><%= state_required_label %><br />
-        <% state_elements = [
-           ship_form.collection_select(:state_id, @order.ship_address.country.states,
-                              :id, :name,
-                              {:include_blank => true},
-                              {:class => have_states ? state_required_class : 'hidden',
-                              :disabled => !have_states}) +
-           ship_form.text_field(:state_name,
-                              :class => !have_states ? state_required_class : 'hidden',
-                              :disabled => have_states)
-           ].join.gsub('"', "'").gsub("\n", "")
-        %>
-        <%= javascript_tag do -%>
-          document.write("<%== state_elements %>");
-        <% end %>
-      </p>
-      <noscript>
-        <%= ship_form.text_field :state_name, :class => state_required_class %>
-      </noscript>
-
-      <p class="field" id="szipcode">
-        <%= ship_form.label :zipcode, t(:zip) %><span class="required">*</span><br />
-        <%= ship_form.text_field :zipcode, :class => 'large-field' %>
-      </p>
-      <p class="field" id="sphone">
-        <%= ship_form.label :phone, t(:phone) %><span class="required">*</span><br />
-        <%= ship_form.phone_field :phone, :class => 'large-field' %>
-      </p>
-      <% if Spree::Config[:alternative_shipping_phone] %>
-        <p class="field" id="saltphone">
-          <%= ship_form.label :alternative_phone, t(:alternative_phone) %><br />
-          <%= ship_form.phone_field :alternative_phone %>
-        </p>
-      <% end %>
-    </div>
-  <% end %>
-</fieldset>
+                    <p class="field" id="scity">
+                    <%= ship_form.label :city, t(:city) %><span class="required">*</span><br />
+                    <%= ship_form.text_field :city, :class => 'large-field' %>
+                    </p>
+                    <p class="field" id="sstate">
+                    <% have_states = !@order.ship_address.country.states.empty? %>
+                    <%= ship_form.label :state, t(:state) %><%= state_required_label %><br />
+                    <% state_elements = [
+                      ship_form.collection_select(:state_id, @order.ship_address.country.states,
+                                                  :id, :name,
+                                                  {:include_blank => true},
+                                                  {:class => have_states ? state_required_class : 'hidden',
+                                                   :disabled => !have_states}) +
+                                                   ship_form.text_field(:state_name,
+                                                                        :class => !have_states ? state_required_class : 'hidden',
+                                                                        :disabled => have_states)
+                      ].join.gsub('"', "'").gsub("\n", "")
+                    %>
+                    <%= javascript_tag do -%>
+                      document.write("<%== state_elements %>");
+                    <% end %>
+                    </p>
+                    <noscript>
+                      <%= ship_form.text_field :state_name, :class => state_required_class %>
+                    </noscript>
+                    <p class="field" id="szipcode">
+                      <%= ship_form.label :zipcode, t(:zip) %><span class="required">*</span><br />
+                      <%= ship_form.text_field :zipcode, :class => 'large-field' %>
+                    </p>
+                    <p class="field" id="sphone">
+                      <%= ship_form.label :phone, t(:phone) %><br />
+                      <%= ship_form.phone_field :phone, :class => 'large-field' %>
+                    </p>
+                    <% if Spree::Config[:alternative_shipping_phone] %>
+                    <p class="field" id="saltphone">
+                      <%= ship_form.label :alternative_phone, t(:alternative_phone) %><br />
+                      <%= ship_form.phone_field :alternative_phone %>
+                    </p>
+                    <% end %>
+                  </div>
+                <% end %>
+              </fieldset>
+            </div> 
           </div><!--Ends col1-->
-        </div>
 
           <div class="col-2">
-
-<div class="columns omega six" data-hook="shipping_fieldset_wrapper">
-<fieldset id="billing" data-hook>
-  <%= form.fields_for :bill_address do |bill_form| %>
-    <h6><%= t(:billing_address) %></h6>
-        <p class="field checkbox" data-hook="use_billing">
-      <%= check_box_tag 'order[use_billing]', '1', (!(@order.bill_address.empty? && @order.ship_address.empty?) && @order.bill_address.same_as?(@order.ship_address)) %>
-      <%= label_tag :order_use_billing, t(:use_shipping_address), :id => 'use_billing' %>
-    </p>
-    <div class="inner" data-hook="billing_inner">
-      <p class="field" id="bfirstname">
-        <%= bill_form.label :firstname, t(:first_name) %><span class="required">*</span><br />
-        <%= bill_form.text_field :firstname, :class => 'large-field' %>
-      <span class="error"></span>
-      </p>
-      <p class="field" id="blastname">
-        <%= bill_form.label :lastname, t(:last_name) %><span class="required">*</span><br />
-        <%= bill_form.text_field :lastname, :class => 'large-field' %>
-      </p>
-      <% if Spree::Config[:company] %>
-        <p class="field" id="bcompany">
-          <%= bill_form.label :company, t(:company) %><br />
-          <%= bill_form.text_field :company %>
-        </p>
-      <% end %>
-      <p class="field" id="baddress1">
-        <%= bill_form.label :address1, t(:street_address) %><span class="required">*</span><br />
-        <%= bill_form.text_field :address1, :class => 'large-field' %>
-      </p>
-      <p class="field" id="baddress2">
-        <%= bill_form.label :address2, t(:street_address_2) %><br />
-        <%= bill_form.text_field :address2 %>
-      </p>
-
-      <p class="field" id="bcountry">
-        <%= bill_form.label :country_id, t(:country) %><span class="required">*</span><br />
-        <span id="bcountry">
-          <%= bill_form.collection_select :country_id, available_countries, :id, :name, {}, {:class => 'required', :onchange => "statechange()"} %>
-        </span>
-      </p>
-
-      <p class="field" id="bcity">
-        <%= bill_form.label :city, t(:city) %><span class="required">*</span><br />
-        <%= bill_form.text_field :city, :class => 'large-field' %>
-      </p>
-
-
-      <p class="field" id="bstate">
-        <% have_states = !@order.bill_address.country.states.empty? %>
-
-        <%= bill_form.label :state, t(:state) %> <%= state_required_label %> <br />
-
-        <% state_elements = [
-           bill_form.collection_select(:state_id, @order.bill_address.country.states,
+           <div class="columns omega six" data-hook="billing_fieldset_wrapper">
+            <fieldset id="billing" data-hook>
+            <%= form.fields_for :bill_address do |bill_form| %>
+              <h6><%= t(:billing_address) %></h6>
+              <p class="field checkbox" data-hook="use_billing">
+                <% check_box_tag 'order[use_billing]', '1', (!(@order.bill_address.empty? && @order.ship_address.empty?) && @order.bill_address.same_as?(@order.ship_address)) %>
+                
+                <%= label_tag :order_use_shipping, t(:use_shipping_address), :id => 'use_billing' %>
+                <%= check_box_tag 'use_shipping', '1', (!(@order.bill_address.empty? && @order.ship_address.empty?) && @order.bill_address.same_as?(@order.ship_address))%>
+              </p>
+              <div class="inner" data-hook="billing_inner">
+                <p class="field" id="bfirstname">
+                  <%= bill_form.label :firstname, t(:first_name) %><span class="required">*</span><br />
+                  <%= bill_form.text_field :firstname, :class => 'large-field' %>
+                </p>
+                <p class="field" id="blastname">
+                  <%= bill_form.label :lastname, t(:last_name) %><span class="required">*</span><br />
+                  <%= bill_form.text_field :lastname, :class => 'large-field' %>
+                </p>
+                <% if Spree::Config[:company] %>
+                <p class="field" id="bcompany">
+                  <%= bill_form.label :company, t(:company) %><br />
+                  <%= bill_form.text_field :company %>
+                </p>
+                <% end %>
+                <p class="field" id="baddress1">
+                  <%= bill_form.label :address1, t(:street_address) %><span class="required">*</span><br />
+                  <%= bill_form.text_field :address1, :class => 'large-field' %>
+                </p>
+                <p class="field" id="baddress2">
+                  <%= bill_form.label :address2, t(:street_address_2) %><br />
+                  <%= bill_form.text_field :address2 %>
+                </p>
+                <p class="field" id="bcountry">
+                  <%= bill_form.label :country_id, t(:country) %><span class="required">*</span><br />
+                  <span id="bcountry">
+                    <%= bill_form.collection_select :country_id, available_countries, :id, :name, {}, {:class => 'required', :onchange => "statechange()"} %>
+                  </span>
+                </p>
+                <p class="field" id="bcity">
+                  <%= bill_form.label :city, t(:city) %><span class="required">*</span><br />
+                  <%= bill_form.text_field :city, :class => 'large-field' %>
+                </p>
+                <p class="field" id="bstate">
+                  <% have_states = !@order.bill_address.country.states.empty? %>
+                  <%= bill_form.label :state, t(:state) %> <%= state_required_label %> <br />
+                  <% state_elements = [
+                  bill_form.collection_select(:state_id, @order.bill_address.country.states,
                               :id, :name,
                               {:include_blank => true},
                               {:class => have_states ? state_required_class : 'hidden',
                                :disabled => !have_states}) +
-           bill_form.text_field(:state_name,
+                  bill_form.text_field(:state_name,
                               :class => !have_states ? state_required_class : 'hidden',
                               :disabled => have_states)
-           ].join.gsub('"', "'").gsub("\n", "")
-        %>
-        <%= javascript_tag do -%>
-          document.write("<%== state_elements %>");
-        <% end -%>
-      </p>
+                  ].join.gsub('"', "'").gsub("\n", "")
+                  %>
+                  <%= javascript_tag do -%>
+                  document.write("<%== state_elements %>");
+                  <% end -%>
+                </p>
+                <noscript>
+                  <%= bill_form.text_field :state_name, :class => state_required_class %>
+                </noscript>
+                <p class="field" id="bzipcode">
+                  <%= bill_form.label :zipcode, t(:zip) %><span class="required">*</span><br />
+                  <%= bill_form.text_field :zipcode, :class => 'large-field' %>
+                </p>
+                <p class="field" id="bphone">
+                  <%= bill_form.label :phone, t(:phone) %><span></span><br />
+                  <%= bill_form.phone_field :phone, :class => 'large-field' %>
+                </p>
+                <% if Spree::Config[:alternative_billing_phone] %>
+                <p class="field" id="baltphone">
+                  <%= bill_form.label :alternative_phone, t(:alternative_phone) %><br />
+                  <%= bill_form.phone_field :alternative_phone %>
+                </p>
+                <% end %>
+              </div>
+            <% end %>
+            </fieldset>
+          </div>   
+          </div><!-- Ends Col2-->
 
-            <noscript>
-        <%= bill_form.text_field :state_name, :class => state_required_class %>
-      </noscript>
-      <p class="field" id="bzipcode">
-        <%= bill_form.label :zipcode, t(:zip) %><span class="required">*</span><br />
-        <%= bill_form.text_field :zipcode, :class => 'large-field' %>
-      </p>
-      <p class="field" id="bphone">
-        <%= bill_form.label :phone, t(:phone) %><span class="required"></span><br />
-        <%= bill_form.phone_field :phone, :class => 'large-field' %>
-      </p>
-      <% if Spree::Config[:alternative_billing_phone] %>
-        <p class="field" id="baltphone">
-          <%= bill_form.label :alternative_phone, t(:alternative_phone) %><br />
-          <%= bill_form.phone_field :alternative_phone %>
-        </p>
-      <% end %>
-    </div>
-  <% end %>
-</fieldset>
-</div>
-</div><!-- Ends Col2-->
-
-<div class="form-buttons" data-hook="buttons">
-  <p> Customs Disclaimer: Orders shipping outside the USA may be subject to custom and other fees. Please contact your local customs office for more information. </p>
-  <%= submit_tag t(:save_and_continue), :class => 'continue button primary' %>
-</div>
+          <div class="form-buttons" data-hook="buttons">
+            <p> Customs Disclaimer: Orders shipping outside the USA may be subject to custom and other fees. Please contact your local customs office for more information. </p>
+            <%= submit_tag t(:save_and_continue), :class => 'continue button primary' %>
+          </div>
 
           </div><!-- Ends ColSet-->
         </div><!-- Ends Checkout step billing-->
       </li>
       <li id="checkout" class="sct">
-              <div class="step-title">Step 3: Delivery Method</div>
-            </li>
+        <div class="step-title">Step 3: Delivery Method</div>
+      </li>
       <li id="checkout" class="sct">
         <div class="step-title">Step 4: Payment Method</div>
       </li><li id="checkout" class="sct">
         <div class="step-title">Step 5: Confirm Order</div>
-        </li>
+      </li>
     </ol>
   </div>
   </div>

@@ -63,7 +63,7 @@
              </div>
 
 	     <% if @product.description %>
-          <p class="short_dc"><%= @product.description %></p>
+          <p class="short_dc"><%= (@product.description).html_safe %></p>
         <% end %>
 
 
@@ -208,16 +208,15 @@ html .fb_share_button i {
 
 </style>
 
-              <a onclick="window.open(&quot;http://www.facebook.com/sharer/sharer.php?s=100&amp;p[title]=<%= ('Purchase this limited edition '+ @product.name + ' and help support this weeks awesome cause.').html_safe %>&amp;p[url]=<%= (product_url(@product)).html_safe %>&amp;p[images][0]=<%= @product.cause.sharephoto.url(:share_photo) if @product.cause.sharephoto %> &quot;,&quot;&quot;,&quot;toolbar=0,status=0,width=580,height=315&quot;); return false" target="_blank" class="fb_share_button" href="" ><i></i><span>Share</span> </a>
 
-
+              <a onclick="window.open('http://www.facebook.com/sharer/sharer.php?s=100&amp;p[title]=Purchase this limited edition <%= @product.name %> and help support this weeks awesome cause.&amp;p[url]=<%= (product_url(@product)).html_safe %>&amp;p[images][0]=<%= @product.images[0].attachment.url(:share_photo) if @product.images[0] %>','','toolbar=0,status=0,width=580,height=315'); return false" target="_blank" class="fb_share_button" href="" ><i></i><span>Share</span> </a>
               <!--Facebook like button Ends-->
 
          <!--Twitter follotw button Starts-->
         <a class="twitter-share-button" data-via="yanapana" href="https://twitter.com/share" data-text="Purchase this limited edition product and help support this week's awesome cause.">Tweet</a>
          <!--Twitter follotw button Ends-->
 
-         <a data-pin-config="none" href="//pinterest.com/pin/create/button/?url=<%= product_url(@product.permalink) %>&media=<%= @product.images[0].attachment.url(:share_photo) %>&description=Purchase%20this%20limited%20edition%20<%= @product.name%>%20and%20help%20support%20this%20week's%20awesome%20cause.%20www.yanapana.com" data-pin-do="buttonPin" ><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png" /></a>
+         <a data-pin-config="none" href="//pinterest.com/pin/create/button/?url=<%= product_url(@product.permalink) %>&media=<%= Rack::Utils.escape(@product.images[0].attachment.url(:share_photo)) %>&description=Purchase%20this%20limited%20edition%20<%= @product.name%>%20and%20help%20support%20this%20week's%20awesome%20cause.%20www.yanapana.com" data-pin-do="buttonPin" ><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png" /></a>
 
             </div>
             <!--ORG Description Ends-->
@@ -302,7 +301,7 @@ html .fb_share_button i {
   </script>
   <% if flash[:error]  %>
   <script type="text/javascript">
-    $('.feedback.negative').html('<%= flash[:error] %>').fadeIn(500).delay(5000).fadeOut(500);
+    $('.feedback.negative').html('<%= flash[:error] %>').fadeIn(500).delay(7000).fadeOut(500);
   </script>
   <% end %>
   <% end %>

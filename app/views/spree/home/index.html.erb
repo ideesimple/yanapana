@@ -1,9 +1,9 @@
 <% content_for :datos_sociales do %>
   <% unless @cause.nil? %>
-    <%= ('<meta property="og:title" content=" Yanapana | ' + @cause.titleshare  + ' " />').html_safe %>
+    <%= ('<meta property="og:title" content=" Yanapana | ' + @cause.titleshare.to_s  + ' " />').html_safe %>
     <%= ('<meta property="og:url" content="' + root_url + 'week-' + @cause.id.to_s + ' " />').html_safe %>
     <%= ('<meta property="og:image" content="' + @cause.sharephoto.url(:share_photo).to_s + '" />').html_safe if @cause.sharephoto %>
-    <%= ('<meta property="og:description" content="Every purchase helps support this weeks cause. Wear YANAPANA, help change lives" />').html_safe %>
+    <%= ('<meta property="og:description" content="Every purchase helps support this week&#39;s cause. Wear YANAPANA, change lives" />').html_safe %>
     <meta name="title" content="JW Player 5.1 Just Released!" />
   <% end %>
 <% end %>
@@ -17,7 +17,7 @@
                 <!--CART STARTS-->
                 <div id="shopping_cart">
                   <h1>Fashion, Solidarity and Change.</h1>
-                <h4>$8 of each purchase are given to a cause helping the development and protection of women</h4>
+                <h4><%= Spree::Config[:text_home] %></h4>
             </section>
         </div>
         <!--Headline Ends-->
@@ -36,7 +36,7 @@
 				              <div>
                                   <div class="description_text hidden_tablet hidden_movil" id="sample">
                                        <h4>Cause</h4>
-                                       <p> <%= @cause.description %> </p>
+                                       <p> <%= (@cause.description).html_safe %> </p>
                                   </div>
 
                             <!--Cause Video Starts-->
@@ -52,7 +52,7 @@
                               <!--ORG Logo Ends-->
                               <!--ORG Description Starts-->
                             <% if @cause.organization %>
-                              <h4 class="hidden_movil hidden_tablet">Organization</h4>
+                              <h4 class="hidden_movil hidden_tablet"><%= @cause.organization.name %></h4>
                               <p class="hidden_movil hidden_tablet"><%= @cause.organization.description%></p>
 
                               <h1 class="org_logo"><%= link_to (image_tag(@cause.organization.photo.url(:org))), @cause.organization.webpage, :target => "_blank" %></h1>
@@ -69,7 +69,7 @@
                             <% end %>
                               <!--Twitter follotw button Ends-->
 
-                              <div class="follow-btn"><a data-pin-config="none" href="//pinterest.com/pin/create/button/?url=<%= (root_url + 'week-' + @cause.id.to_s).html_safe%>&media=<%= @cause.organization.photo.url(:product) %>&description=<%= @cause.title %>%20at%20www.yanapana.com" data-pin-do="buttonPin" ><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png" /></a></div>
+                              <div class="follow-btn"><a data-pin-config="none" href="//pinterest.com/pin/create/button/?url=<%= (root_url + 'week-' + @cause.id.to_s).html_safe%>&media=<%= Rack::Utils.escape(@cause.sharephoto.url(:share_photo)) %>&description=<%= @cause.title %>%20at%20www.yanapana.com" data-pin-do="buttonPin" ><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png" /></a></div>
 
                               <!--Shop Now Starts-->
                              <!-- <h1 id="call-to-action" class="sc-button blue">Support!</h1>-->
@@ -131,21 +131,22 @@
                         <div class="donation_container">
                           <div class="fl">
                             <%= image_tag ("image-yanapana/money_icon2.png")%>
+                            <a href="//pinterest.com/pin/create/button/?url=<%= (root_url + 'week-' + @cause.id.to_s).html_safe %>&media=<%= Rack::Utils.escape(@cause.sharephoto.url(:share_photo))%>&description=Every%20purchase%20helps%20support%20this%20week's%20cause.%20Wear%20YANAPANA,%20changes%20lives." data-pin-do="buttonPin" data-pin-config="none"><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png" /></a>
                           </div>
                           <div class="fl hidden_movil">
-                            <p>Donated so far</p>
-                            <span class="bucks"><%= number_to_currency(@cause.goal_money, :precision=>0) %></span>
+                            <p></p>
+                            <span class="bucks"><% number_to_currency(@cause.goal_money, :precision=>0) %></span>
                           </div>
                         </div>
                         <div id="goalbar" class="goalbar_style">
                           <% p = @total / @cause.goal_money %>
                           <% p = 470 * p %>
-                          <i class="progBar" style="width:<%= p %>px"></i>
+                          <i class="progBar" id="count_pins"></i>
                         </div>
                         <div class="stats">
                           <h4>
                             <span class="nums fr">
-                              <span class="count"><%= number_to_currency(@total, :precision=>0)%></span>/
+                              <span id="pins_per_cause" class="count"></span>/
                               <span class="goal"><%= number_to_currency(@cause.goal_money, :precision=>0)%></span>
                             </span>
                             <span class="word fl">Donation goal <%= @cause.number_goal %></span>
@@ -246,8 +247,8 @@
       $(function(){
         $("#mostrar").click(function(event) {
           $("#caja").slideToggle();
-          });
         });
+      });
 
         function getfbcount(url){
         var fblikes;
@@ -276,18 +277,33 @@
           d.style.width= total_twitter + 'px';
           });
       }
+      
+      function getpins(url){
+      var pins;
+      $.getJSON('http://api.pinterest.com/v1/urls/count.json?url=' + url + '&callback=?', function(data){
+          pins = data['count'];
+          $('body').append('pins' + pins);
+          $('#pins_per_cause').html(pins);
+          var progres = pins * 470;
+          var total = <%= @cause.goal_money %>;
+          var total_pins= progres / total;
+          d = document.getElementById('count_pins');
+          d.style.width= total_pins + 'px';
+          });
+      }
 
       $(document).ready(function($){
         var url = "<%= (root_url + 'week-' + @cause.id.to_s).html_safe %>"
 
         getfbcount(url);
         gettwcount(url);
+        getpins(url);
       });
   </script>
   <% end %>
 <% end %>
 <% if flash[:notice] %>
   <script type="text/javascript">
-    $('.feedback.positive').html("Thank you for supporting this week YANAPANA's cause, you are awesome!").fadeIn(500).delay(2000).fadeOut(500);
+    $('.feedback.positive').html("Thanks for adding me to your cart. :)").fadeIn(500).delay(7000).fadeOut(500);
   </script>
 <% end %>
