@@ -21,7 +21,7 @@
 	#Returning User Tooltip
 	#Privacy Policy Modal
 	#Footer
-	#Site Credits
+	#Site CREDITS
 	#Lite Version Instructional Post
 	#Plugin: jqModal */
 
@@ -670,11 +670,11 @@ width:300px;
 		display:none !important;
 	}
 
-	#fblikeblock .fb_iframe_widget iframe {
+	/*#fblikeblock .fb_iframe_widget iframe {
 		overflow:hidden !important;
 		width: 133px !important;
 		height: 22px !important;
-	}
+	}*/
 
 	#fblikeblock .fb_iframe_widget span {vertical-align: text-top !important;}
 
