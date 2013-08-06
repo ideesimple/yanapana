@@ -207,7 +207,7 @@
           <% end %>
             <div class="comments-section jean pb"><a name="comments"></a>
                 <section class="comments">
-                <h1 class="comments_tag fl">Don’t be shy! Express your thoughts about this week’s awesome cause right here: </h1>
+                <h1 class="comments_tag fl">What do you think about the featured cause?</h1>
                 <% unless @cause.nil? %>
                 <div id="comments" class="fl">
                     <div class="fb-comments" data-href="<%= (root_url + 'week-' + @cause.id.to_s).html_safe %>" data-width="700" data-num-posts="2" data-order-by="reverse_time"></div>

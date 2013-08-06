@@ -839,7 +839,7 @@ span.error {background: none repeat scroll 0 0 #ffe3e2; border: 1px solid #D8464
 
 .action_buttonbar {overflow: hidden;}
 #clear_cart_link {float: left; }
-#clear_cart_link button {background: orange !important;}
+#clear_cart_link button {background: #544F4B !important;}
 .continue_shopping {float: right }
 
 .form-buttons > p {margin-top: 15px;}
