@@ -209,7 +209,7 @@ html .fb_share_button i {
 </style>
 
 
-              <a onclick="window.open('http://www.facebook.com/sharer/sharer.php?s=100&amp;p[title]=Purchase this limited edition <%= @product.name %> and help support this weeks awesome cause.&amp;p[url]=<%= (product_url(@product)).html_safe %>&amp;p[images][0]=<%= @product.images[0].attachment.url(:share_photo) if @product.images[0] %>','','toolbar=0,status=0,width=580,height=315'); return false" target="_blank" class="fb_share_button" href="" ><i></i><span>Share</span> </a>
+              <a onclick="window.open('http://www.facebook.com/sharer/sharer.php?s=100&amp;p[title]=Purchase this limited edition <%= @product.name %> and help support this week&#39;s awesome cause.&amp;p[url]=<%= (product_url(@product)).html_safe %>&amp;p[images][0]=<%= @product.images[0].attachment.url(:share_photo) if @product.images[0] %>','','toolbar=0,status=0,width=580,height=315'); return false" target="_blank" class="fb_share_button" href="" ><i></i><span>Share</span> </a>
               <!--Facebook like button Ends-->
 
          <!--Twitter follotw button Starts-->

@@ -36,7 +36,7 @@ Spree::HomeController.class_eval do
     unless @cause.nil?
     respond_with(@products)
     else
-    redirect_to landing_path
+    redirect_to without_causes_path
     end
   end
 
@@ -116,7 +116,7 @@ Spree::HomeController.class_eval do
     h = Hominid::API.new('6c3bc75008800ae5fc53277d0bfb918d-us5')
     @prueba = h.lists
     begin
-      @response = h.list_subscribe('5ec394c1ce', email, {:FNAME => '', :LNAME => ''}, 'html', false, true, true, true)
+      @response = h.list_subscribe('395d0d08cd', email, {:FNAME => '', :LNAME => ''}, 'html', false, true, true, true)
     rescue
       @response = nil
     end
