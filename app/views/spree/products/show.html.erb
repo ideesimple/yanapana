@@ -1,8 +1,9 @@
 <% content_for :datos_sociales do %>
   <% unless @product.nil? %>
-    <%= ('<meta property="og:title" content=" Yanapana | ' + @product.name  + ' " />').html_safe %>
-    <%= ('<meta property="og:url" content="'  + product_url(@product) + '" />').html_safe %>
-    <%= ('<meta property="og:description" content="' + @product.cause.title  + '" />').html_safe %>
+    <meta property="og:title" content=" Yanapana | <%= @product.name %>" />
+    <meta property="og:url" content=" <%=product_url(@product)%> " />
+    <meta property="og:image" content="<%= @product.images[0].attachment.url(:share_photo) if @product.images[0] %>" /> 
+    <meta property="og:description" content="Purchase this limited edition <%= @product.name %> and help support this week&#39;s awesome cause." />
   <% end %>
 <% end %>
 
@@ -211,6 +212,7 @@ html .fb_share_button i {
 
               <a onclick="window.open('http://www.facebook.com/sharer/sharer.php?s=100&amp;p[title]=Purchase this limited edition <%= @product.name %> and help support this weeks awesome cause.&amp;p[url]=<%= (product_url(@product)).html_safe %>&amp;p[images][0]=<%= @product.images[0].attachment.url(:share_photo) if @product.images[0] %>','','toolbar=0,status=0,width=580,height=315'); return false" target="_blank" class="fb_share_button" href="" ><i></i><span>Share</span> </a>
               <!--Facebook like button Ends-->
+              <a target="_blank" onclick="return !window.open(this.href, 'Facebook', 'width=640,height=300')" href="http://www.facebook.com/sharer.php?u=<%= (product_url(@product)).html_safe %> " title="Share this webpage on Facebook" class="fb_share_button"><i></i><span>Share</span></a>
 
          <!--Twitter follotw button Starts-->
         <a class="twitter-share-button" data-via="yanapana" href="https://twitter.com/share" data-text="Purchase this limited edition product and help support this week's awesome cause.">Tweet</a>
