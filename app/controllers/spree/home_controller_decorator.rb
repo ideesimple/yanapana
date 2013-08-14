@@ -82,7 +82,9 @@ Spree::HomeController.class_eval do
     @sales = @orders_per_artist.sum(:total)
   end
 
-
+  def dashboard_organization
+  end
+  
   def privacy_policy
   end
 

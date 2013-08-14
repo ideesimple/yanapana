@@ -40,6 +40,7 @@ Yanapana::Application.routes.draw do
       match "artistmailer" => "home#artistmailer", :as => :artistmailer
       match "shipmentmailer" => "home#shipmentmailer", :as => :shipmentmailer
       match "privacy-policy" => "home#privacy_policy", :as => :privacy_policy
+      match "dashboard-organization" => "home#dashboard_organization", :as => :dashboard_organization
       #devise_for :user, :class_name => 'Spree::User', :controllers => {:invitations => 'devise/invitations'}
     end
 end
