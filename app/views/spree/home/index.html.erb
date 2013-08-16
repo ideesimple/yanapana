@@ -130,8 +130,7 @@
                       <li>
                         <div class="donation_container">
                           <div class="fl">
-                            <%= image_tag ("image-yanapana/money_icon2.png")%>
-                            <a href="//pinterest.com/pin/create/button/?url=<%= (root_url + 'week-' + @cause.id.to_s).html_safe %>&media=<%= Rack::Utils.escape(@cause.sharephoto.url(:share_photo))%>&description=Every%20purchase%20helps%20support%20this%20week's%20cause.%20Wear%20YANAPANA,%20changes%20lives." data-pin-do="buttonPin" data-pin-config="none"><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png" /></a>
+                            <a id="id="mybutton"" href="//pinterest.com/pin/create/button/?url=<%= (root_url + 'week-' + @cause.id.to_s).html_safe %>&media=<%= Rack::Utils.escape(@cause.sharephoto.url(:share_photo))%>&description=Every%20purchase%20helps%20support%20this%20week's%20cause.%20Wear%20YANAPANA,%20changes%20lives." data-pin-do="buttonPin" data-pin-config="none"><%= image_tag ("image-yanapana/pinterest-icon.png") %></a>
                           </div>
                           <div class="fl hidden_movil">
                             <p></p>
@@ -300,6 +299,13 @@
         getpins(url);
       });
   </script>
+
+<script>
+    var element = document.getElementById('mybutton');
+    (function(x){ for (var n in x) if (n.indexOf('PIN_')==0) return x[n]; return null; })(window).f.render.buttonPin(element);
+</script>
+
+
   <% end %>
 <% end %>
 <% if flash[:notice] %>
