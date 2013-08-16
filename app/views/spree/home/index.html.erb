@@ -130,8 +130,9 @@
                       <li>
                         <div class="donation_container">
                           <div class="fl">
-                            <%= image_tag ("image-yanapana/money_icon2.png")%>
                             <a href="//pinterest.com/pin/create/button/?url=<%= (root_url + 'week-' + @cause.id.to_s).html_safe %>&media=<%= Rack::Utils.escape(@cause.sharephoto.url(:share_photo))%>&description=Every%20purchase%20helps%20support%20this%20week's%20cause.%20Wear%20YANAPANA,%20changes%20lives." data-pin-do="buttonPin" data-pin-config="none"><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png" /></a>
+                            <!-- <a href="javascript:void((function(){var e=document.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','http://assets.pinterest.com/js/pinmarklet.js?r='+Math.random()*99999999);document.body.appendChild(e)})());" title="Pin It" id="BigPinItButton" style="display:inline-block; height:25px; width:49px; background-image:url(http://pintalk.net/wp-content/uploads/2012/09/Pin-It-Button-Pinterest-Badge.png)!important; text-decoration:none; border:none;"></a>
+                            --!>
                           </div>
                           <div class="fl hidden_movil">
                             <p></p>
@@ -302,7 +303,7 @@
   </script>
   <% end %>
 <% end %>
-<% if flash[:notice] %>
+<% if flash[:message] %>
   <script type="text/javascript">
     $('.feedback.positive').html("Thanks for adding me to your cart. :)").fadeIn(500).delay(7000).fadeOut(500);
   </script>

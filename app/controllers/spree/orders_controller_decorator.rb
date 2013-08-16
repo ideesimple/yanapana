@@ -36,7 +36,7 @@ Spree::OrdersController.class_eval do
 
     if error_item
       respond_with(@order) do |format|
-        format.html { redirect_to root_path, :flash => { :notice => "Success"}}
+        format.html { redirect_to root_path, :flash => { :message => "Success"}}
         format.js
       end
     else

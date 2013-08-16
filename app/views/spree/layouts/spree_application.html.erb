@@ -17,7 +17,9 @@
     <div class="header_container">
       <!--Header Starts-->
       <%= render :partial => 'spree/layouts/header' %>
+    
     </div>
+    
     <!--Branding Starts-->
     <div class="branding_container jean">
       <div class="branding_area">
@@ -63,8 +65,7 @@
       </nav>
       <!--Navigation Ends-->
     </div>
-
-    <%unless action_name == 'contact_us' || controller_name == 'products' || action_name == 'index' %>
+    <% unless action_name == 'contact_us' || controller_name == 'products'%>
       <%= flash_messages %>
     <% end %>
     <%= yield %>

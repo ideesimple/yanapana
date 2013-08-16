@@ -67,4 +67,25 @@ before_update :youtube
     date_now = Date.today
     by_status = Spree::Cause.where("date_start <= ? AND date_finish <= ?", date_now, date_now).order('date_start ASC').first
   end
+
+  def self.total_money()
+      products_per_cause = Spree::Products.where(:cause_id=>self.id)
+      variantes = []
+      products_per_cause.each do |prod|
+        variantes << prod.variants_ids
+      end
+      lineitems_per_cause = Spree::Order.total_line_items(variantes)
+
+      items_per_cause = Spree::Order.total_items(variantes)
+
+      orders = Spree::Order.total_orders(lineitems_per_cause.map(&:order_id))
+      total = 0
+      orders.each do |order|
+        total = order.item_total + total
+      end
+
+      return total
+  end
+
+
 end
