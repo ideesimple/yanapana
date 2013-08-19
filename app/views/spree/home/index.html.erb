@@ -134,7 +134,7 @@
                           </div>
                           <div class="fl hidden_movil">
                             <p></p>
-                            <span class="bucks"><% number_with_precision(@cause.goal_money, :precision=>0) %></span>
+                            <span class="bucks"><% @cause.goal_pinterest %></span>
                           </div>
                         </div>
                         <div id="goalbar" class="goalbar_style">
@@ -146,9 +146,9 @@
                           <h4>
                             <span class="nums fr">
                               <span id="pins_per_cause" class="count"></span>/
-                              <span class="goal"><%= number_with_precision(@cause.goal_money, :precision=>0)%></span>
+                              <span class="goal"><%= @cause.goal_pinterest%></span>
                             </span>
-                            <span class="word fl">Donation goal <%= @cause.number_goal %></span>
+                            <span class="word fl">Pinterest goal <%= @cause.number_goal %></span>
                           </h4>
                         </div>
 
