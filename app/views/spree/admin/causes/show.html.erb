@@ -23,6 +23,10 @@
     <%= @cause.goal_twitter%>
   </p>
   <p>
+    <b>Goal Pinterest:</b>
+    <%= @cause.goal_twitter%>
+  </p>
+  <p>
     <b>Goal Money:</b>
     <%= @cause.goal_money %>
   </p>
@@ -49,15 +53,7 @@
     <b>Video:</b>
     <%= @cause.video.html_safe %>
   </p>
-
-  <p>
-    <b>Twitter:</b>
-    <%= @cause.link_twitter %>
-  </p>
-  <p>
-    <b>Facebook:</b>
-    <%= @cause.link_facebook %>
-  </p>
+  
   <p>
     <b>Photo:</b>
     <%= image_tag @cause.sharephoto.url(:share_photo) %>

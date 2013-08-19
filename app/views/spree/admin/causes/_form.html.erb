@@ -15,18 +15,23 @@
   <% end %>
 
   <%= f.field_container :goal_facebook do  %>
-    <%= f.label :goal_facebook, "Facebook goal" %><span class="required">*</span><br />
+    <%= f.label :goal_facebook, "Goal Facebook" %><span class="required">*</span><br />
     <%= f.number_field :goal_facebook, :min => 1 %>
   <% end %>
 
 
   <%= f.field_container :goal_twitter do  %>
-    <%= f.label :goal_twitter, "Tweet goal" %><span class="required">*</span><br />
+    <%= f.label :goal_twitter, "Goal Twitter" %><span class="required">*</span><br />
     <%= f.number_field :goal_twitter, :min => 1 %>
   <% end %>
-
+  
+  <%= f.field_container :goal_pinterest do  %>
+    <%= f.label :goal_pinterest, "Goal Pinterest" %><span class="required">*</span><br />
+    <%= f.number_field :goal_pinterest, :min => 1 %>
+  <% end %>
+  
   <%= f.field_container :goal_money do  %>
-    <%= f.label :goal_money, "Money goal" %><span class="required">*</span><br />
+    <%= f.label :goal_money, "Goal Money" %><span class="required">*</span><br />
     <%= f.number_field :goal_money, :min => 1 %>
   <% end %>
 
@@ -35,6 +40,11 @@
     <%= f.number_field :number_goal, :min => 1 %>
   <% end %>
 
+  
+
+  </div>
+
+<div class="right">
   <%= f.field_container :artist_id do  %>
     <%= f.label :artist_id, 'Artist' %><br />
     <%= f.collection_select(:artist_id, Spree::Artist.order("name ASC").all, :id, :name_with_initial, :include_blank => 'None') %>
@@ -44,10 +54,6 @@
     <%= f.label :organization_id, 'Organization' %><span class="required">*</span><br />
     <%= f.collection_select(:organization_id, Spree::Organization.order("name ASC").all, :id, :name) %>
   <% end %>
-
-  </div>
-
-<div class="right">
   <%= f.field_container :inspiration do  %>
     <%= f.label :inspiration, ' Artist Inspiration ' %><br />
     <%= f.text_area :inspiration, :style => "height:40px" %>
@@ -73,21 +79,6 @@
   <%= f.field_container :time_zone do  %>
     <% f.label :time_zone %><br />
     <% f.time_zone_select :time_zone, ActiveSupport::TimeZone.all %>
-  <% end %>
-
-  <%= f.field_container :link_twitter do  %>
-    <%= f.label :link_twitter%><br />
-    <%= f.text_field :link_twitter %>
-  <% end %>
-
-  <%= f.field_container :link_facebook do  %>
-    <%= f.label :link_facebook%><br />
-    <%= f.text_field :link_facebook %>
-  <% end %>
-
-  <%= f.field_container :link_pinterest do  %>
-    <%= f.label :link_pinterest %><br />
-    <%= f.text_field :link_pinterest %>
   <% end %>
 
   <%= f.field_container :sharephoto do  %>

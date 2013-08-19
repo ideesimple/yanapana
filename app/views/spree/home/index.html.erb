@@ -131,6 +131,7 @@
                             <a href="//pinterest.com/pin/create/button/?url=<%= (root_url + 'week-' + @cause.id.to_s).html_safe %>&media=<%= Rack::Utils.escape(@cause.sharephoto.url(:share_photo))%>&description=Every%20purchase%20helps%20support%20this%20week's%20cause.%20Wear%20YANAPANA,%20changes%20lives." data-pin-do="buttonPin" data-pin-config="none"><div class="pin-icon hidden_movil"></div><%= image_tag ("image-yanapana/pinterest_icon.png"), :class => "hidden_desktop" %></a>
             
                         <div class="goalbar goalbar_style">
+
                           <% p = @total / @cause.goal_money %>
                           <% p = 470 * p %>
                           <i class="progBar" id="count_pins"></i>
@@ -139,7 +140,7 @@
                           <h4>
                             <span class="nums fr">
                               <span id="pins_per_cause" class="count"></span>/
-                              <span class="goal"><%= number_to_currency(@cause.goal_money, :precision=>0)%></span>
+                              <span class="goal"><%= @cause.goal_pinterest%></span>
                             </span>
                             <span class="word fl">Pinterest goal <%= @cause.number_goal %></span>
                           </h4>
@@ -227,7 +228,17 @@
       fjs.parentNode.insertBefore(js, fjs);
       }(document, 'script', 'facebook-jssdk'));
     </script>
-
+    
+    <script>
+      $(document).on("click", ".share-button-pin", function(e) {
+        var $this, url;
+        e.preventDefault();
+        $this = $(this);
+        url = $this.attr("href");
+        return window.open(url, 'popUpWindow', 'height=500,width=600,left=10,top=10,resizeable=yes,scrollable=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes');
+      });
+    </script>
+    
   <% unless @cause.nil? %>
     <script charset="utf-8" language="javascript" type="text/javascript">
     $(document).ready(function() {
