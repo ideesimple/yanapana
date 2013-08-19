@@ -4,7 +4,7 @@ class Spree::Cause < ActiveRecord::Base
   belongs_to :artist
   belongs_to :organization
   has_many :products
-  attr_accessible :description, :goal_facebook, :goal_money, :goal_twitter, :goal_pinterest, :photo, :status, :title, :video, :artist_id, :organization_id, :date_start, :date_finish, :number_goal, :status, :inspiration, :sharephoto, :titleshare, :time_zone
+  attr_accessible :description, :goal_facebook, :goal_money, :goal_twitter, :goal_pinterest, :photo, :status, :title, :video, :artist_id, :organization_id, :date_start, :date_finish, :number_goal, :status, :inspiration, :sharephoto, :titleshare
 
   validates :title, :description, :organization_id, :goal_money, :goal_facebook, :goal_twitter, :number_goal, :presence => true
 
