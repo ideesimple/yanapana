@@ -11,6 +11,7 @@
 //= require store/spree_core
 //= require store/cart
 //= require store/product
+//= require store/chart.min
 //= require around/appendAround
 //= require custom/custom
 //= require dropkick/jquery.dropkick-1.0.0
@@ -24,5 +25,3 @@
 //= require flexslider/jquery.flexslider-min
 //= require flexslider/jquery.flexslider
 //= require jquery.anystretch
-
-

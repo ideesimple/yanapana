@@ -1,7 +1,76 @@
 <div class="section_container jean pb">
-  <% unless @causes.nil? %> 
-    <% @causes.each do |cause| %>
-      <%= cause.total_money %>
-    <% end %>
-  <% end %>
+  <section>
+    <ul class="breadcrumb">
+      <li><%= link_to "Home", root_path %></li>
+      <li class="active">Dashboard</li>
+    </ul>
+    <div class="full_page">
+      <h2 class="sub_title">Welcome <%= @organization.name %>!</h2>
+      <div class="dashboard-lcol">
+        <%= image_tag @organization.photo.url(:product) %>
+        </br>
+        <div id="dashboard-box" class="hidden_movil">
+          <div class="dashboard-title">
+            <h5>About</h5>
+          </div>
+          <ul class="profile_info">
+            <li><p><%= @organization.webpage %></p></li>
+            <li><p><%= @organization.description %></p></li>
+            <li><p><%= @organization.email %></p></li>
+            <li><p><%= @organization.contact_number %></p></li>
+            <li><p><%= @organization.city %></p></li>
+            <li><p><%= @organization.state %></p></li>
+            <li><p><%= @organization.zip %></p></li>
+            <li><p><%= @organization.country %></p></li>
+            <li><p><%= @organization.exemption_number %></p></li>
+            <li><p><%= @organization.link_twitter %></p></li>
+            <li><p><%= @organization.link_facebook %></p></li>
+          </ul>
+        </div>
+
+      </div>
+      <div class="dashboard-rcol fr">
+        <div id="dashboard-box" class="hidden_movil">
+          <div class="dashboard-title">
+            <h5>Resumen de causas</h5>
+          </div>
+          <div class="profile_info">
+            <div class="profile_info_container">
+              
+              <canvas id="canvas" height="200" width="200"></canvas>
+
+				<script>
+					var doughnutData = [{value: 30,color:"#bcd806"},{value : 120,color : "#708C00"}];
+					var myDoughnut = new Chart(document.getElementById("canvas").getContext("2d")).Doughnut(doughnutData);
+				</script>
+              
+            </div>
+          </div><!-- End profile_info-->
+
+          </br>
+          </br>
+
+          <div id="dashboard-box">
+            <div class="dashboard-title">
+              <h5>Product Stats</h5>
+            </div>
+            <div class="product-stats-content">
+              <ul class="dashboard-products">
+                <li>
+                	<canvas id="canvas2" height="100" width="100"></canvas>
+
+					<script>
+						var doughnutData = [{value: 30,color:"#bcd806"},{value : 120,color : "#708C00"}];
+						var myDoughnut = new Chart(document.getElementById("canvas2").getContext("2d")).Doughnut(doughnutData);
+					</script>
+                </li>
+              </ul>
+            </div><!-- End Products-stats-content-->
+          </div><!-- End dashboard-box -->
+
+        </div>
+
+      </div>
+    </div>
+  </section>
 </div>

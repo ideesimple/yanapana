@@ -24,7 +24,7 @@
     <div class="branding_container jean">
       <div class="branding_area">
         <!--Logo Starts-->
-        <h1 class="logo"><%=link_to (image_tag("image-yanapana/logo_header.png")), root_path%></h1>
+        <h1 class="logo"><%=link_to image_tag("image-yanapana/logo_header.png"), root_path%></h1>
         <!--Logo Ends-->
         <!--Countdown Starts-->
         <div id='open-until'></div>
@@ -88,8 +88,6 @@
      </script>
   <% end %>
   <%= yield :javascripts %>
-
-
 
   </body>
 </html>
