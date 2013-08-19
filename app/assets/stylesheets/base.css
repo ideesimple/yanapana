@@ -373,31 +373,31 @@ header ul span.item { color: #e9e9e9;}
 #goals {position: relative; z-index: 1; width: 100%; overflow: hidden;
 box-shadow: 0 1px 1px #999; width: 100%; border-bottom: 5px solid #fff; background: url("../../assets/image-yanapana/snow.png");}
 
-#don_colsize {width: 48%;    float: left;
-    margin-right: 4%;
-    position: relative;}
-#fb_colsize, #tt_colsize {width: 22%;     float: left;
-    margin-right: 4%;
-    position: relative;}
+.social-colsize {width: 30%;float: left;margin-right: 4%;position: relative;}
 #goals .donation_container {margin: 0 auto; width: 190px;}
 #goals .goal_container {text-align: center; float: left; margin-right: 31px; width: 31%;}
 .goals_section > ul {overflow: hidden; padding: 20px 0;}
 .goals_section div {margin-bottom: 7px;}
 #goals li { text-align: center;}
-#goals div:last-child {margin-right: 0; padding-top: 2px;}
-#goals #goalbar {height: 4px; float: right; width: 100%; background: none repeat scroll 0 0 transparent; border-top: 1px solid #ccc; background: #fff; margin: 8px 0; }
-#goals #goalbar i {width: 65%; background: none repeat scroll 0 0 #BCD80A; height: 4px; max-width: 100%; padding: 0; margin: 0; line-height: 0; display: block; }
+#goals div:last-child {margin-right: 0;}
+#goals .goalbar {height: 4px; float: right; width: 100%; background: none repeat scroll 0 0 transparent; border-top: 1px solid #ccc; background: #fff; margin: 8px 0; }
+#goals .goalbar i {width: 65%; background: none repeat scroll 0 0 #BCD80A; height: 4px; max-width: 100%; padding: 0; margin: 0; line-height: 0; display: block; }
 #goals h3 {color: #312E2B; font-size: 17px; text-transform: none; padding-bottom: 20px; border-bottom: 1px solid #ccc; font-family: 'century gothic', sans-serif; line-height: 1.4;}
 #goals span {color: #777;}
 #goals .bucks {margin-left: 15px; font-size: 35px; color: #43403D;  }
 
-.fb-icon, .tt-icon, .money-icon {height: 51px; cursor: pointer; background: no-repeat center bottom ;-moz-transition:all 0.2s ease-out 0s; -webkit-transition: all 0.2s ease-out;}
+.fb-icon, .tt-icon, .pin-icon {
+    height: 51px; cursor: pointer; 
+    background: no-repeat center bottom ;
+    -moz-transition:all 0.2s ease-out 0s; 
+    -webkit-transition: all 0.2s ease-out;
+}
 
 .fb-icon {background: url("../../assets/image-yanapana/facebook_icon2.png") no-repeat center bottom;}
-.fb-icon:hover {background-position: center top;}
-
 .tt-icon {background: url("../../assets/image-yanapana/twitter_icon2.png") no-repeat center bottom;}
-.tt-icon:hover {background-position: center top;}
+.pin-icon {background: url("../../assets/image-yanapana/pinterest_icon.png") no-repeat center bottom;}
+
+.tt-icon:hover, .pin-icon:hover, .fb-icon:hover {background-position: center top;}
 
 /*-----------------------------------COUNTERS*/
 #counters-section {box-shadow: 0 2px 3px #999; width: 100%; border-bottom: 5px solid #fff; padding: 20px 0; background: #ffffff; /* Old browsers */
