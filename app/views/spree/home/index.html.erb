@@ -130,11 +130,11 @@
                       <li>
                         <div class="donation_container">
                           <div class="fl">
-                            <a href="//pinterest.com/pin/create/button/?url=<%= (root_url + 'week-' + @cause.id.to_s).html_safe %>&media=<%= Rack::Utils.escape(@cause.sharephoto.url(:share_photo))%>&description=Every%20purchase%20helps%20support%20this%20week's%20cause.%20Wear%20YANAPANA,%20changes%20lives." data-pin-do="buttonPin" data-pin-config="none"><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png" /></a>
+                            <a href="//pinterest.com/pin/create/button/?url=<%= (root_url + 'week-' + @cause.id.to_s).html_safe %>&media=<%= Rack::Utils.escape(@cause.sharephoto.url(:share_photo))%>&description=Every%20purchase%20helps%20support%20this%20week's%20cause.%20Wear%20YANAPANA,%20changes%20lives." data-pin-do="buttonPin" data-pin-config="none" class="share-button-pin" target="_blank"><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png" /></a>
                           </div>
                           <div class="fl hidden_movil">
                             <p></p>
-                            <span class="bucks"><% number_to_currency(@cause.goal_money, :precision=>0) %></span>
+                            <span class="bucks"><% number_with_precision(@cause.goal_money, :precision=>0) %></span>
                           </div>
                         </div>
                         <div id="goalbar" class="goalbar_style">
@@ -146,7 +146,7 @@
                           <h4>
                             <span class="nums fr">
                               <span id="pins_per_cause" class="count"></span>/
-                              <span class="goal"><%= number_to_currency(@cause.goal_money, :precision=>0)%></span>
+                              <span class="goal"><%= number_with_precision(@cause.goal_money, :precision=>0)%></span>
                             </span>
                             <span class="word fl">Donation goal <%= @cause.number_goal %></span>
                           </h4>
@@ -234,7 +234,17 @@
       fjs.parentNode.insertBefore(js, fjs);
       }(document, 'script', 'facebook-jssdk'));
     </script>
-
+    
+    <script>
+      $(document).on("click", ".share-button-pin", function(e) {
+        var $this, url;
+        e.preventDefault();
+        $this = $(this);
+        url = $this.attr("href");
+        return window.open(url, 'popUpWindow', 'height=500,width=600,left=10,top=10,resizeable=yes,scrollable=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes');
+      });
+    </script>
+    
   <% unless @cause.nil? %>
     <script charset="utf-8" language="javascript" type="text/javascript">
     $(document).ready(function() {
