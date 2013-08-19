@@ -2,6 +2,7 @@
   <% unless @causes.nil? %> 
     <% @causes.each do |cause| %>
       <%= cause.total_money %>
+      <%= cause.title %>
     <% end %>
   <% end %>
 </div>
