@@ -83,7 +83,7 @@
                       <% quantity_per_product = item.quantity + quantity_per_product %>
                     <% end %>
                     <li>
-                      <%= artist_products_image (product)%>
+                      <%= product_image(product) %>
                       <div class="stats-content">
                         <div class="stats"><h5><%= product.name %></h5></div>
                         <div class="stats bb"><p>Unit Price</p><span>$<%= product.master.price %></span></div>

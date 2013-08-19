@@ -23,4 +23,10 @@ class Spree::Organization < ActiveRecord::Base
     },
     :bucket => Spree::Config[:s3_bucket]
 
+    after_create :create_account
+
+    def create_account
+      Spree::User.invite!(:email=>self.email)
+    end
+
 end

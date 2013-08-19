@@ -1,0 +1,7 @@
+<div class="section_container jean pb">
+  <% unless @causes.nil? %> 
+    <% @causes.each do |cause| %>
+      <%= cause.total_money %>
+    <% end %>
+  <% end %>
+</div>

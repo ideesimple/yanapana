@@ -1,9 +1,14 @@
 Spree::HomeController.class_eval do
 
   before_filter :artist_account, :only => :dashboard
-
+  before_filter :organization_account, :only => :dashboard_organization
+  
   def artist_account
     @artist = Spree::Artist.find_by_email(current_user.email)
+  end
+  
+  def organization_account
+    @organization = Spree::Organization.find_by_email(current_user.email)
   end
 
   def index
@@ -83,6 +88,8 @@ Spree::HomeController.class_eval do
   end
 
   def dashboard_organization
+    @causes = Spree::Cause.where(:organization_id => @organization.id)
+    
   end
   
   def privacy_policy

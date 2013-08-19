@@ -92,10 +92,10 @@
                 <section>
                 <div class="goals_section">
                       <ul>
-                        <div id="fb_colsize">
+                        <div class="social-colsize">
                           <li>
                             <a target="_blank" onclick="return !window.open(this.href, 'Facebook', 'width=640,height=300')" href="http://www.facebook.com/sharer.php?u=<%= (root_url + 'week-' + @cause.id.to_s).html_safe %> " title="Share this webpage on Facebook" class="share fb"><div class="fb-icon hidden_movil"></div><%= image_tag ("image-yanapana/facebook_icon2.png"), :class=>'hidden_desktop'%></a>
-                            <div id="goalbar" class="goalbar_style">
+                            <div class="goalbar goalbar_style">
                               <i id= "count_sharesf" class="progBar"></i>
                             </div>
                             <div class="stats">
@@ -109,12 +109,12 @@
                             </div>
                       </li>
                     </div>
-                    <div id="tt_colsize">
+                    <div class="social-colsize">
                       <li>
                         <!--<a href="https://twitter.com/share" class="twitter-share-button" data-lang="en">Tweet</a>-->
-                        <a href="https://twitter.com/intent/tweet?text=<%= @cause.title  %>+@yanapanawear&amp;original_referer=<%=(Rack::Utils.escape(root_url) + 'week-' + @cause.id.to_s).html_safe %>&amp;url=<%=(Rack::Utils.escape(root_url) + 'week-' + @cause.id.to_s).html_safe %>&amp;counturl=<%= (Rack::Utils.escape(root_url) + 'week-' + @cause.id.to_s).html_safe %>" target="_blank" ><div class="tt-icon hidden_movil"></div><%= image_tag ("image-yanapana/twitter_icon2.png"), :class=>'hidden_desktop'%>
-  </a>
-                        <div id="goalbar" class="goalbar_style"><i id = "count_twitts" class="progBar"></i></div>
+                        <a href="https://twitter.com/intent/tweet?text=<%= @cause.title  %>+@yanapanawear&amp;original_referer=<%=(Rack::Utils.escape(root_url) + 'week-' + @cause.id.to_s).html_safe %>&amp;url=<%=(Rack::Utils.escape(root_url) + 'week-' + @cause.id.to_s).html_safe %>&amp;counturl=<%= (Rack::Utils.escape(root_url) + 'week-' + @cause.id.to_s).html_safe %>" target="_blank" ><div class="tt-icon hidden_movil"></div><%= image_tag ("image-yanapana/twitter_icon2.png"), :class=>'hidden_desktop'%></a>
+
+                        <div class="goalbar goalbar_style"><i id = "count_twitts" class="progBar"></i></div>
                          <div class="stats">
                            <h4>
                             <span class="nums fr">
@@ -126,18 +126,11 @@
                         </div>
                       </li>
                     </div>
-                    <div id="don_colsize">
+                    <div class="social-colsize">
                       <li>
-                        <div class="donation_container">
-                          <div class="fl">
-                            <a id="id="mybutton"" href="//pinterest.com/pin/create/button/?url=<%= (root_url + 'week-' + @cause.id.to_s).html_safe %>&media=<%= Rack::Utils.escape(@cause.sharephoto.url(:share_photo))%>&description=Every%20purchase%20helps%20support%20this%20week's%20cause.%20Wear%20YANAPANA,%20changes%20lives." data-pin-do="buttonPin" data-pin-config="none"><%= image_tag ("image-yanapana/pinterest-icon.png") %></a>
-                          </div>
-                          <div class="fl hidden_movil">
-                            <p></p>
-                            <span class="bucks"><% number_to_currency(@cause.goal_money, :precision=>0) %></span>
-                          </div>
-                        </div>
-                        <div id="goalbar" class="goalbar_style">
+                            <a href="//pinterest.com/pin/create/button/?url=<%= (root_url + 'week-' + @cause.id.to_s).html_safe %>&media=<%= Rack::Utils.escape(@cause.sharephoto.url(:share_photo))%>&description=Every%20purchase%20helps%20support%20this%20week's%20cause.%20Wear%20YANAPANA,%20changes%20lives." data-pin-do="buttonPin" data-pin-config="none"><div class="pin-icon hidden_movil"></div><%= image_tag ("image-yanapana/pinterest_icon.png"), :class => "hidden_desktop" %></a>
+            
+                        <div class="goalbar goalbar_style">
                           <% p = @total / @cause.goal_money %>
                           <% p = 470 * p %>
                           <i class="progBar" id="count_pins"></i>
@@ -148,7 +141,7 @@
                               <span id="pins_per_cause" class="count"></span>/
                               <span class="goal"><%= number_to_currency(@cause.goal_money, :precision=>0)%></span>
                             </span>
-                            <span class="word fl">Donation goal <%= @cause.number_goal %></span>
+                            <span class="word fl">Pinterest goal <%= @cause.number_goal %></span>
                           </h4>
                         </div>
 
@@ -224,7 +217,6 @@
    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
    <script src="//platform.twitter.com/widgets.js" type="text/javascript"></script>
-    <script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"></script>
 
     <div id="fb-root"></div>
     <script>(function(d, s, id) {
@@ -308,7 +300,7 @@
 
   <% end %>
 <% end %>
-<% if flash[:notice] %>
+<% if flash[:message] %>
   <script type="text/javascript">
     $('.feedback.positive').html("Thanks for adding me to your cart. :)").fadeIn(500).delay(7000).fadeOut(500);
   </script>
