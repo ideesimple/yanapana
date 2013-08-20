@@ -36,6 +36,12 @@
           </div>
           <div class="profile_info">
             <div class="profile_info_container">
+              <% unless @causes.nil? %> 
+                <% @causes.each do |cause| %>
+                  <%= cause.total_money %>
+                  <%= cause.title %>
+                <% end %>
+              <% end %>
               
               <canvas class="ib" id="canvas" height="200" width="200"></canvas>
 

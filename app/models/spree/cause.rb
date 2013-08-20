@@ -1,6 +1,6 @@
 class Spree::Cause < ActiveRecord::Base
   require "addressable/uri"
-
+  
   belongs_to :artist
   belongs_to :organization
   has_many :products
@@ -9,7 +9,6 @@ class Spree::Cause < ActiveRecord::Base
   validates :title, :description, :organization_id, :goal_money, :goal_facebook, :goal_twitter, :number_goal, :presence => true
 
   validates :description, :length => {:minimum => 50}
- 
 
   #validate :cause_id_when_active, :on => :create
   validates_attachment_presence :photo
@@ -68,18 +67,16 @@ before_update :youtube
     by_status = Spree::Cause.where("date_start <= ? AND date_finish <= ?", date_now, date_now).order('date_start ASC').first
   end
 
-  def self.total_money()
-      products_per_cause = Spree::Products.where(:cause_id=>self.id)
+  def total_money
+      products_per_cause = Spree::Product.where(:cause_id=>id)
       variantes = []
       products_per_cause.each do |prod|
         variantes << prod.variants_ids
       end
       lineitems_per_cause = Spree::Order.total_line_items(variantes)
 
-      items_per_cause = Spree::Order.total_items(variantes)
-
       orders = Spree::Order.total_orders(lineitems_per_cause.map(&:order_id))
-      total = 0
+      total = 0.00
       orders.each do |order|
         total = order.item_total + total
       end
