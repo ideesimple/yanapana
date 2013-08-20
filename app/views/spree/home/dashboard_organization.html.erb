@@ -9,7 +9,7 @@
       <div class="dashboard-lcol">
         <%= image_tag @organization.photo.url(:product) %>
         </br>
-        <div id="dashboard-box" class="hidden_movil">
+        <div id="dashboard-box">
           <div class="dashboard-title">
             <h5>About</h5>
           </div>
@@ -30,19 +30,26 @@
 
       </div>
       <div class="dashboard-rcol fr">
-        <div id="dashboard-box" class="hidden_movil">
+        <div id="dashboard-box">
           <div class="dashboard-title">
-            <h5>Resumen de causas</h5>
+            <h5>General info</h5>
           </div>
           <div class="profile_info">
             <div class="profile_info_container">
               
-              <canvas id="canvas" height="200" width="200"></canvas>
+              <canvas class="ib" id="canvas" height="200" width="200"></canvas>
 
 				<script>
-					var doughnutData = [{value: 30,color:"#bcd806"},{value : 120,color : "#708C00"}];
+					var doughnutData = [{value: 10,color:"#ffe033"},{value : 100,color : "#BCD806"}];
 					var myDoughnut = new Chart(document.getElementById("canvas").getContext("2d")).Doughnut(doughnutData);
 				</script>
+
+				<div class="ib general-cause graphics">
+          <p class="yellow">Organization: <strong>$30</strong></p>
+					<p class="green">Cause: <strong>$120</strong></p>
+          <p class="total-don">Total donations: <strong>$150</strong></p>
+          <p class="total-don">Total causes: <strong>5</strong></p>
+				</div>
               
             </div>
           </div><!-- End profile_info-->
@@ -52,18 +59,49 @@
 
           <div id="dashboard-box">
             <div class="dashboard-title">
-              <h5>Product Stats</h5>
+              <h5>Causes overview</h5>
             </div>
             <div class="product-stats-content">
-              <ul class="dashboard-products">
-                <li>
+              <ul>
+                <li class="graphics single-cause">
                 	<canvas id="canvas2" height="100" width="100"></canvas>
+                  <p><strong>"Salvando al soldado Ryan"</strong></p>
+                  <p class="yellow">Organization: <strong>$30</strong></p>
+                  <p class="green">Cause: <strong>$120</strong></p>
+                  <p class="total-don">Total: <strong>$150</strong></p>
 
-					<script>
-						var doughnutData = [{value: 30,color:"#bcd806"},{value : 120,color : "#708C00"}];
-						var myDoughnut = new Chart(document.getElementById("canvas2").getContext("2d")).Doughnut(doughnutData);
-					</script>
+        					<script>
+        						var doughnutData = [{value: 10,color:"#ffe033"},{value : 100,color : "#BCD806"}];
+        						var myDoughnut = new Chart(document.getElementById("canvas2").getContext("2d")).Doughnut(doughnutData);
+        					</script>
                 </li>
+
+                <li class="graphics single-cause">
+                  <canvas id="canvas3" height="100" width="100"></canvas>
+                  <p><strong>"Salvando a Willie"</strong></p>
+                  <p class="yellow">Organization: <strong>$30</strong></p>
+                  <p class="green">Cause: <strong>$120</strong></p>
+                  <p class="total-don">Total: <strong>$150</strong></p>
+
+                  <script>
+                    var doughnutData = [{value: 20,color:"#ffe033"},{value : 100,color : "#BCD806"}];
+                    var myDoughnut = new Chart(document.getElementById("canvas3").getContext("2d")).Doughnut(doughnutData);
+                  </script>
+                </li>
+
+                <li class="graphics single-cause">
+                  <canvas id="canvas4" height="100" width="100"></canvas>
+                  <p><strong>"Salvando a Willie"</strong></p>
+                  <p class="yellow">Organization: <strong>$30</strong></p>
+                  <p class="green">Cause: <strong>$120</strong></p>
+                  <p class="total-don">Total: <strong>$150</strong></p>
+
+                  <script>
+                    var doughnutData = [{value: 40,color:"#ffe033"},{value : 100,color : "#BCD806"}];
+                    var myDoughnut = new Chart(document.getElementById("canvas4").getContext("2d")).Doughnut(doughnutData);
+                  </script>
+                </li>
+
               </ul>
             </div><!-- End Products-stats-content-->
           </div><!-- End dashboard-box -->

@@ -82,7 +82,7 @@ html[xmlns] .clearfix {
 }
 
 
-
+.ib{display: inline-block;vertical-align: top;}
 .fl {float: left; }
 .fr {float: right; }
 
@@ -368,6 +368,7 @@ header ul span.item { color: #e9e9e9;}
 
 .foo {display: block;}
 .baz {display: none;}
+
 
 /*-----------------------------------GOALS*/
 #goals {position: relative; z-index: 1; width: 100%; overflow: hidden;
@@ -915,7 +916,7 @@ p.tick{ padding:10px 0px 10px 20px;background:url(../../assets/image-yanapana/ti
 .dashboard-title h5 { color: #fff; font-size: 14px;  padding: 10px 0 10px 15px ; text-transform: uppercase; }
 
 .profile_info_container {padding: 30px; }
-.profile_info p {display: inline-block; padding: 0 !important;}
+.profile_info p {padding: 0 !important;}
 .profile_info span {float: right;}
 
 .profile_info.stats-content p {padding: 0; display: inline-block; }
@@ -924,7 +925,9 @@ p.tick{ padding:10px 0px 10px 20px;background:url(../../assets/image-yanapana/ti
 
 .product-stats-content > h3 {padding: 30px;}
 .product-stats-content > ul {padding: 25px 0px 25px 30px;}
-.dashboard-products > li { float: left; margin-bottom: 25px; padding-right: 30px; width: 29%; }
+.dashboard-products > li, .single-cause { float: left; margin-bottom: 25px;}
+
+.dashboard-products > li {padding-right: 30px; width: 29%; }
 
 .stats-content {border: 1px solid #ccc;}
 .stats.bb {padding: 5px 10px; background: #fff; }
@@ -1161,7 +1164,6 @@ h3 {line-height: 1.4; text-transform: capitalize; font-family:'century gothic', 
     color: #333;
     font-family: century gothic, sans-serif ;
     font-size: 13px;
-    line-height: 1.4;
     padding-bottom: 15px;
 }
 
@@ -1195,3 +1197,32 @@ h5 {font-family: sans-serif; font-size: 12px; font-weight: bold;}
 
 .message.success a {color: #333; font-style: normal; text-decoration: none;}
 
+
+/* ORGANIZATION DASHBOARD */
+
+
+.graphics{padding: 2em;background: white;box-shadow: 1px 1px 2px gainsboro;}
+
+.general-cause{margin-left: 4em;width: 40%}
+
+.graphics p{display: block;}
+
+.single-cause{margin-right: 1em;height: 250px;width: 24%}
+
+.single-cause:nth-child(3n){margin-right:0;}
+
+.single-cause p{font-size: 14px;line-height: 24px;padding-bottom: 0}
+
+.total-don{margin-left:20px;}
+
+.single-cause canvas{margin:0 auto;display: block;margin-bottom: 1em;}
+
+.general-cause p{font-size: 16px;line-height: 30px}
+
+.graphics strong{font-weight:bold;}
+
+p.green:before, p.yellow:before{content: "☻";padding-right: 5px}
+
+p.yellow:before{color: #ffe033;}
+
+p.green:before{color: #BCD806;}
