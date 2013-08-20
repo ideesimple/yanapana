@@ -1226,3 +1226,5 @@ p.green:before, p.yellow:before{content: "☻";padding-right: 5px}
 p.yellow:before{color: #ffe033;}
 
 p.green:before{color: #BCD806;}
+
+.coupon-code{border-top: 1px solid #ccc;padding-top:2.4em}

@@ -186,7 +186,7 @@ header .header_search{ width:150px; margin-bottom:-43px; margin-top:32px; float:
 header .header_search input{ width:76%;}
 header .header_search button{ margin:0px;}
 
-header .minicart {max-height: 31px;}
+header .minicart {max-height: 31px;margin-left:60px }
 
 .branding_container {height: auto;}
 
@@ -443,6 +443,10 @@ footer .footer_links li span a { font-size: 12px; text-transform: uppercase;}
 .header_container{ padding: 0; height: auto; position: absolute; }
 
 .feedback {position:fixed; top: 0; z-index: 9999;}
+
+.cart_drop{left:0}
+
+.cart_drop .darw{left:115px;}
 
 }
 
