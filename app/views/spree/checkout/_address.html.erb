@@ -32,6 +32,19 @@
       document.getElementById('order_bill_address_attributes_country_id').setAttribute('value',document.getElementById('order_ship_address_attributes_country_id').value);
       document.getElementById('order_bill_address_attributes_city').setAttribute('value',document.getElementById('order_ship_address_attributes_city').value);
       document.getElementById('order_bill_address_attributes_state_id').setAttribute('value',document.getElementById('order_ship_address_attributes_state_id').value);
+      if (214 == document.getElementById('order_ship_address_attributes_country_id').value) {
+        $('#uniform-order_bill_address_attributes_state_id span').text($('#uniform-order_ship_address_attributes_state_id span').text());
+        var Myvar = document.getElementById('order_ship_address_attributes_state_id').value
+        $("#order_bill_address_attributes_state_id option[value="+Myvar+"]").attr('selected', 'selected');
+        }
+        else{
+        var Myvar = document.getElementById('order_ship_address_attributes_country_id').value
+        $("#order_bill_address_attributes_country_id option[value="+Myvar+"]").attr('selected', 'selected');
+        $('#uniform-order_bill_address_attributes_state_id').hide();
+        $('#order_bill_address_attributes_state_name').show();
+        $('#order_bill_address_attributes_state_id').attr('class','');
+        $('#uniform-order_bill_address_attributes_country_id span').text($('#uniform-order_ship_address_attributes_country_id span').text());
+      }
       document.getElementById('order_bill_address_attributes_state_name').setAttribute('value',document.getElementById('order_ship_address_attributes_state_name').value);
       document.getElementById('order_bill_address_attributes_zipcode').setAttribute('value',document.getElementById('order_ship_address_attributes_zipcode').value);
       document.getElementById('order_bill_address_attributes_phone').setAttribute('value',document.getElementById('order_ship_address_attributes_phone').value);
