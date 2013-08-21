@@ -88,8 +88,8 @@ Spree::HomeController.class_eval do
   end
 
   def dashboard_organization
-    @causes = Spree::Cause.where(:organization_id => @organization.id)
-    
+    @causes = Spree::Cause.where(:organization_id => @organization.id).each_slice(3).to_a
+    @total_causes = Spree::Cause.where(:organization_id => @organization.id).count 
   end
   
   def privacy_policy

@@ -37,26 +37,27 @@
           <div class="profile_info">
             <div class="profile_info_container">
               <% unless @causes.nil? %> 
-                <% @causes.each do |cause| %>
-                  <%= cause.total_money %>
-                  <%= cause.title %>
+                <% all_causes_money = 0  %>
+                <% @causes.each do |c| %>
+                  <% c.each do |cause|%>
+                    <% all_causes_money = all_causes_money + cause.total_money %>
+                  <% end %>
                 <% end %>
-              <% end %>
               
               <canvas class="ib" id="canvas" height="200" width="200"></canvas>
 
 				<script>
-					var doughnutData = [{value: 10,color:"#ffe033"},{value : 100,color : "#BCD806"}];
+                  var doughnutData = [{value: <%= organization_total = (all_causes_money*10)/100 %>,color:"#ffe033"},{value : <%= cause_total = (all_causes_money*90)/100 %>,color : "#BCD806"}];
 					var myDoughnut = new Chart(document.getElementById("canvas").getContext("2d")).Doughnut(doughnutData);
 				</script>
 
 				<div class="ib general-cause graphics">
-          <p class="yellow">Organization: <strong>$30</strong></p>
-					<p class="green">Cause: <strong>$120</strong></p>
-          <p class="total-don">Total donations: <strong>$150</strong></p>
-          <p class="total-don">Total causes: <strong>5</strong></p>
+                  <p class="yellow">Organization: <strong>$<%= organization_total %></strong></p>
+					<p class="green">Cause: <strong>$<%= cause_total %></strong></p>
+          <p class="total-don">Total donations: <strong>$<%= all_causes_money %></strong></p>
+          <p class="total-don">Total causes: <strong><%= @total_causes %></strong></p>
 				</div>
-              
+              <% end %>
             </div>
           </div><!-- End profile_info-->
 
@@ -68,47 +69,26 @@
               <h5>Causes overview</h5>
             </div>
             <div class="product-stats-content">
+            <% unless @causes.nil? %> 
+              <% @causes.each do |c| %>
               <ul>
-                <li class="graphics single-cause">
+                <% c.each do |cause|%>
+                  <li class="graphics single-cause">
                 	<canvas id="canvas2" height="100" width="100"></canvas>
-                  <p><strong>"Salvando al soldado Ryan"</strong></p>
-                  <p class="yellow">Organization: <strong>$30</strong></p>
-                  <p class="green">Cause: <strong>$120</strong></p>
-                  <p class="total-don">Total: <strong>$150</strong></p>
+                  <p><strong>"<%=cause.title%>"</strong></p>
+                  <p class="yellow">Organization: <strong>$<%= organization_graph = (cause.total_money*10)/100 %></strong></p>
+                  <p class="green">Cause: <strong>$<%= cause_graph = (cause.total_money*90)/100 %></strong></p>
+                  <p class="total-don">Total: <strong>$<%= cause.total_money %></strong></p>
 
         					<script>
-        						var doughnutData = [{value: 10,color:"#ffe033"},{value : 100,color : "#BCD806"}];
+                              var doughnutData = [{value: <%= organization_graph %>,color:"#ffe033"},{value : <%= cause_graph %>,color : "#BCD806"}];
         						var myDoughnut = new Chart(document.getElementById("canvas2").getContext("2d")).Doughnut(doughnutData);
         					</script>
                 </li>
-
-                <li class="graphics single-cause">
-                  <canvas id="canvas3" height="100" width="100"></canvas>
-                  <p><strong>"Salvando a Willie"</strong></p>
-                  <p class="yellow">Organization: <strong>$30</strong></p>
-                  <p class="green">Cause: <strong>$120</strong></p>
-                  <p class="total-don">Total: <strong>$150</strong></p>
-
-                  <script>
-                    var doughnutData = [{value: 20,color:"#ffe033"},{value : 100,color : "#BCD806"}];
-                    var myDoughnut = new Chart(document.getElementById("canvas3").getContext("2d")).Doughnut(doughnutData);
-                  </script>
-                </li>
-
-                <li class="graphics single-cause">
-                  <canvas id="canvas4" height="100" width="100"></canvas>
-                  <p><strong>"Salvando a Willie"</strong></p>
-                  <p class="yellow">Organization: <strong>$30</strong></p>
-                  <p class="green">Cause: <strong>$120</strong></p>
-                  <p class="total-don">Total: <strong>$150</strong></p>
-
-                  <script>
-                    var doughnutData = [{value: 40,color:"#ffe033"},{value : 100,color : "#BCD806"}];
-                    var myDoughnut = new Chart(document.getElementById("canvas4").getContext("2d")).Doughnut(doughnutData);
-                  </script>
-                </li>
-
+                <% end %>
               </ul>
+              <% end %><!--@causes.each -->
+            <% end %>
             </div><!-- End Products-stats-content-->
           </div><!-- End dashboard-box -->
 
