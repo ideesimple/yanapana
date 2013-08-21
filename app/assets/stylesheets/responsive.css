@@ -142,11 +142,13 @@ footer .footer_customblock {width: 205px;}
 
 .contact_info input[type="email"] {width: 155px;}
 
+.single-cause{width: 34%}
+
+.general-cause{width: 80%;margin:2em auto 0;}
+
+canvas.ib{display:block;margin:0 auto;}
+
 }
-
-
-
-
 
 /*  #Mobile (Portrait)
 ================================================== */
@@ -162,8 +164,6 @@ width:300px !important;
 header {width: 300px;}
 
 .hidden_desktop {display: inline-block;} 
-
-
 
 /*General*/
 header{ position:relative;}
@@ -186,7 +186,7 @@ header .header_search{ width:150px; margin-bottom:-43px; margin-top:32px; float:
 header .header_search input{ width:76%;}
 header .header_search button{ margin:0px;}
 
-header .minicart {max-height: 31px;}
+header .minicart {max-height: 31px;margin-left:60px }
 
 .branding_container {height: auto;}
 
@@ -232,6 +232,7 @@ h1.logo { display: block; width:100%; margin:auto; float:none; padding:40px 0 10
 
 #cause section .fb-like, #cause section .follow-btn {float:right; margin-left: 15px;}
 
+canvas.ib{display: block;margin:0 auto;}
 /*Feedback*/
 .feedback {text-align: center;}
 
@@ -406,11 +407,15 @@ footer .footer_links li span a { font-size: 12px; text-transform: uppercase;}
 
 /*DASHBOARD*/
 .contact_info input[type="email"] {width: 290px;}
+
+.single-cause{width: 70%}
+
+.general-cause{width: 80%;margin-left: 0;margin-top:2em }
+
 }
 
 /*  #IPad & IPad Mini (Portrait & Landscape)
 ================================================== */
-
 
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
 
@@ -438,6 +443,10 @@ footer .footer_links li span a { font-size: 12px; text-transform: uppercase;}
 .header_container{ padding: 0; height: auto; position: absolute; }
 
 .feedback {position:fixed; top: 0; z-index: 9999;}
+
+.cart_drop{left:0}
+
+.cart_drop .darw{left:115px;}
 
 }
 
