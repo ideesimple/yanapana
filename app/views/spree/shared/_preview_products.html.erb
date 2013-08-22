@@ -70,7 +70,7 @@
                     <li><a id = "<%= o[1].to_s %>" class='price_add'  ><%= o[0] %></a></li>
                   <% end %>
                 <% end %>
-                <%= hidden_field_tag "products[#{product.id}]", 0, :id => "product_1" %>
+                <% hidden_field_tag "products[#{product.id}]", 0, :id => "product_1" %>
                 </ul>
               </div>
 

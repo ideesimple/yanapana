@@ -1,7 +1,16 @@
+<% content_for :datos_sociales do %>
+  <% unless @product.nil? %>
+    <meta property="og:title" content=" Yanapana | <%= @product.name %>" />
+    <meta property="og:url" content=" <%=product_url(@product)%> " />
+    <meta property="og:image" content="<%= @product.images[0].attachment.url(:share_photo) if @product.images[0] %>" /> 
+    <meta property="og:description" content="Purchase this limited edition <%= @product.name %> and help support this week&#39;s awesome cause." />
+  <% end %>
+<% end %>
+
 <div class="section_container jean">
   <section id="product-section">
     <ul class="breadcrumb">
-      <li><%= link_to "Home", root_path %></li>
+      <li><%= link_to "Home", preview_cause_path(@product.cause.id) %></li>
       <li class="active">Product Detail</li>
     </ul>
 
@@ -55,7 +64,7 @@
              </div>
 
 	     <% if @product.description %>
-          <p class="short_dc"><%= @product.description %></p>
+          <p class="short_dc"><%= (@product.description).html_safe %></p>
         <% end %>
 
 
@@ -70,11 +79,9 @@
         <thead>
           <tr>
             <th></th>
-            <th>small</th>
-            <th>medium</th>
-            <th>large</th>
-            <th>x-large</th>
-            <th>2x-large</th>
+            <% @prototype.option_types.first.option_values.each do |option_val| %>
+                <th><%= option_val.presentation  %></th>
+            <% end %>
           </tr>
         </thead>
         <tbody>
@@ -95,7 +102,7 @@
             <% end %>
           </tr>
           <tr>
-            <td>Lenght</td>
+            <td>Length</td>
             <% @prototype.option_types.first.option_values.each do |option_val| %>
               <% if option_val.lenght %>
                 <td><%= option_val.lenght %></td>
@@ -110,7 +117,7 @@
    </div>
 
          <%#= render :partial => "cart_form" %>
-         <%= form_for :order, :url => populate_orders_path do |f| %>
+         <%= form_tag :order do |f| %>
 
              <%= render :partial => "variants" %>
 
@@ -123,35 +130,19 @@
 
                    <div class="add_to_buttons">
                      <a href="#top"></a>
-                     <%= button_tag :class => 'add_cart', :id => 'add-to-cart-button', :type => :submit do %>
+                     <%= button_tag :class => 'add_cart', :id => 'preview' do %>
                        <%= t(:add_to_cart) %>
                      <% end %>
                    </div>
                  <% else %>
-                  <div class="quantity">
-                    <label>Quantity</label>
-                   <%= number_field_tag (@product.has_variants? ? :quantity : "variants[#{@product.master.id}]"),
-                     1, :class => 'title', :in => 1..@product.on_hand, :min => 1 %>
-
-                    <div class="add_to_buttons">
-                     <a href="#top"></a>
-                     <%= button_tag :class => 'add_cart', :id => 'add-to-cart-button', :type => :submit do %>
-                       <%= t(:add_to_cart) %>
-                     <% end %>
-                   </div>
-
+                 
                    <% content_tag('strong', t(:out_of_stock)) %>
                  </div>
                <% end %>
              </div>
             <script type="text/javascript" charset="utf-8">
-              $("#quantity").keyup(function() {
-                var val = $("#quantity").val();
-                if(parseInt(val) < 0 || isNaN(val)) {
-                  alert("please enter valid values");
-                  $("#quantity").val("");
-                  $("#quantity").focus();
-                }
+              $("#preview").click(function(e) {
+               	e.preventDefault();
               });
             </script>
            </div>
@@ -167,18 +158,50 @@
               <!--ORG Description Starts-->
               <h4></h4>
               <!--Facebook like button Starts-->
-              <style> html .fb_share_button { display: -moz-inline-block; display:inline-block; color:#fff; padding:1px 20px 0 5px; height:15px; border:1px solid #d8dfea; vertical-align: top; background:#3b5998 url(http://static.ak.facebook.com/images/share/facebook_share_icon.gif?6:26981) no-repeat top right; } </style>
+              <style>
+html .fb_share_button {
+font-weight: normal;
+font-family: arial;
+font-size: 11px;
+text-shadow:none;
+display: -moz-inline-block;
+display:inline-block;
+-webkit-border-radius: 3px;
+-moz-border-radius: 3px;
+border-radius: 3px;
+color:#3B5998;
+padding:4px 4px;
+height:11px;
+border:1px solid #CAD4E7;
+vertical-align: top;
+background: #ECEEF5;
+}
+html .fb_share_button:hover {
+  border:1px solid #9DACCE;
+ }
 
-              <a onclick="window.open(&quot;http://www.facebook.com/sharer/sharer.php?s=100&amp;p[title]=<%= ('Compartiendo '+ @product.name).html_safe %>&amp;p[url]=<%= (product_url(@product)).html_safe %>&amp;p[images][0]=<%= @product.cause.sharephoto.url(:share_photo) if @product.cause.sharephoto %> &quot;,&quot;&quot;,&quot;toolbar=0,status=0,width=580,height=315&quot;); return false" target="_blank" class="fb_share_button" href="" >Share </a>
+html .fb_share_button i {
+  background: url("https://fbstatic-a.akamaihd.net/rsrc.php/v2/yn/r/EQu0O0CL23S.png") no-repeat scroll 0 -1px transparent;
+  display:inline-block;
+  margin-right: 2px;
+  width: 14px;
+  height: 12px;
+}
+
+
+.fb_share_button > span {position: relative; bottom: 2px;}
+
+</style>
 
 
               <!--Facebook like button Ends-->
+              <a target="_blank" onclick="return !window.open(this.href, 'Facebook', 'width=640,height=300')" href="http://www.facebook.com/sharer.php?u=<%= (product_url(@product)).html_safe %> " title="Share this webpage on Facebook" class="fb_share_button"><i></i><span>Share</span></a>
 
          <!--Twitter follotw button Starts-->
-        <a class="twitter-share-button" data-via="yanapana" href="https://twitter.com/share" data-text="buy this ">Tweet</a>
+        <a class="twitter-share-button" data-via="yanapana" href="https://twitter.com/share" data-text="Purchase this limited edition product and help support this week's awesome cause.">Tweet</a>
          <!--Twitter follotw button Ends-->
 
-         <a data-pin-config="none" href="//pinterest.com/pin/create/button/?url=<%= product_url(@product.permalink) %>&media=<%= @product.images[0].attachment.url(:product) %>&description=Buy%20this%20<%= @product.name%>%20at%20www.yanapana.com" data-pin-do="buttonPin" ><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png" /></a>
+         <a data-pin-config="none" href="//pinterest.com/pin/create/button/?url=<%= product_url(@product.permalink) %>&media=<%= Rack::Utils.escape(@product.images[0].attachment.url(:share_photo)) %>&description=Purchase%20this%20limited%20edition%20<%= @product.name%>%20and%20help%20support%20this%20week's%20awesome%20cause.%20www.yanapana.com" data-pin-do="buttonPin" ><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png" /></a>
 
             </div>
             <!--ORG Description Ends-->
@@ -187,12 +210,12 @@
         <!--Product Right Ends-->
       </div>
       <!--PRODUCT DETAIL ENDS-->
- 		</section>
-<% if @product.cause.artist  %>
+    </section>
+<% if @product.cause.artist %>
   <div id="artist-section" class="artist-inspiration jean">
     <section>
       <h2 class="sub_title">The Artist</h2>
-      <div class="artist"><a><%= image_tag (@product.cause.artist.photo(:product)) %></a></div>
+      <div class="artist"><a><%= image_tag (@product.cause.artist.photo(:product))  %></a></div>
       <div class="artist_description">
         <h3>Inspiration Behind</h3>
         <% if @product.inspiration_behind %>
@@ -232,6 +255,16 @@
 
   <script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"></script>
 
+  <!--SEND BUTTON-->
+  <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
 <!--Este script sirve para colapsar el quick overview-->
   <script type="text/javascript">
     $(function()
@@ -251,5 +284,12 @@
 
     });
   </script>
-
+  
+		<% if flash[:error]  %>
+  	<script type="text/javascript">
+    $('.feedback.negative').html('<%= flash[:error] %>').fadeIn(500).delay(7000).fadeOut(500);
+  	</script>
   <% end %>
+ 
+<% end %>
+
