@@ -69,7 +69,7 @@
                             <% end %>
                               <!--Twitter follotw button Ends-->
 
-                              <div class="follow-btn"><a data-pin-config="none" href="//pinterest.com/pin/create/button/?url=<%= (root_url + 'week-' + @cause.id.to_s).html_safe%>&media=<%= Rack::Utils.escape(@cause.sharephoto.url(:share_photo)) %>&description=<%= @cause.title %>%20at%20www.yanapana.com" data-pin-do="buttonPin" ><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png" /></a></div>
+                              <div class="follow-btn"><a data-pin-config="none" href="//pinterest.com/pin/create/button/?url=<%= (root_url + 'week-' + @cause.id.to_s).html_safe%>&media=<%= Rack::Utils.escape(@cause.sharephoto.url(:share_photo)) %>&description=<%= @cause.title %>%20at%20www.yanapana.com" data-pin-do="buttonPin" target="_blank"><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png" /></a></div>
 
                               <!--Shop Now Starts-->
                              <!-- <h1 id="call-to-action" class="sc-button blue">Support!</h1>-->
@@ -131,9 +131,6 @@
                       <a href="//pinterest.com/pin/create/button/?url=<%= (root_url + 'week-' + @cause.id.to_s).html_safe %>&media=<%= Rack::Utils.escape(@cause.sharephoto.url(:share_photo))%>&description=Every%20purchase%20helps%20support%20this%20week's%20cause.%20Wear%20YANAPANA,%20changes%20lives." data-pin-do="buttonPin" data-pin-config="none" class="share-button-pin" target="_blank"><div class="pin-icon hidden_movil"></div><%= image_tag ("image-yanapana/pinterest_icon.png"), :class => "hidden_desktop" %></a>
             
                         <div class="goalbar goalbar_style">
-
-                          <% p = @total / @cause.goal_money %>
-                          <% p = 470 * p %>
                           <i class="progBar" id="count_pins"></i>
                         </div>
                         <div class="stats">
@@ -259,7 +256,7 @@
           fblikes = data[0]['share_count'];
           $('body').append('fblikes ' + fblikes);
           $('#facebook_per_cause').html(fblikes);
-          var progresf = fblikes * 216;
+          var progresf = fblikes * 294;
           var totalf = <%= @cause.goal_facebook %>;
           var total_facebook = progresf / totalf;
           d = document.getElementById('count_sharesf');
@@ -272,7 +269,7 @@
           tweets = data.count;
           $('body').append('tweets' + tweets);
           $('#twitts_per_cause').html(tweets);
-          var progres = tweets * 216;
+          var progres = tweets * 294;
           var total = <%= @cause.goal_twitter %>;
           var total_twitter= progres / total;
           d = document.getElementById('count_twitts');
@@ -286,8 +283,8 @@
           pins = data['count'];
           $('body').append('pins' + pins);
           $('#pins_per_cause').html(pins);
-          var progres = pins * 470;
-          var total = <%= @cause.goal_money %>;
+          var progres = pins * 294;
+          var total = <%= @cause.goal_pinterest %>;
           var total_pins= progres / total;
           d = document.getElementById('count_pins');
           d.style.width= total_pins + 'px';
