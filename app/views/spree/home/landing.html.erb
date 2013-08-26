@@ -163,7 +163,7 @@
 					<input type="hidden" id="templateURL" value="http://sitiowebsocial.com/yanapana/wp-content/themes/launcheffect" />
 
 					<!-- FORM (PRE-SIGNUP) -->
-          <%= form_tag newsletter_path, :remote => true, :id => 'form' do %>
+          <%= form_tag newsletter_path, :remote => true, :html => {:id => 'form'} do %>
             <fieldset>
               <input type="hidden" name="code" id="code" value="HATed" />
 

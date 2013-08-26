@@ -108,7 +108,6 @@ Spree::HomeController.class_eval do
   def subscribe
     email = params[:email]
     h = Hominid::API.new('6c3bc75008800ae5fc53277d0bfb918d-us5')
-    @prueba = h.lists
     begin
       @response = h.list_subscribe('5ec394c1ce', email, {:FNAME => '', :LNAME => ''}, 'html', false, true, true, true)
     rescue
@@ -123,7 +122,6 @@ Spree::HomeController.class_eval do
   def landing_newsletter
     email = params[:email]
     h = Hominid::API.new('6c3bc75008800ae5fc53277d0bfb918d-us5')
-    @prueba = h.lists
     begin
       @response = h.list_subscribe('395d0d08cd', email, {:FNAME => '', :LNAME => ''}, 'html', false, true, true, true)
     rescue
