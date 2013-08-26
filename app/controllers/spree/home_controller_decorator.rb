@@ -41,7 +41,7 @@ Spree::HomeController.class_eval do
     unless @cause.nil?
     respond_with(@products)
     else
-    redirect_to without_causes_path
+    redirect_to landing_path
     end
   end
 
