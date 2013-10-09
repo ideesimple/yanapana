@@ -27,7 +27,7 @@
                   <% if Spree::Config[:allow_guest_checkout] %>
                         <div id="guest_checkout" data-hook class="columns omega eight">
                           <%= render :partial => 'spree/shared/error_messages', :locals => { :target => @order } %>
-                          <h6><%= t(:guest_user_account) %></h6>
+                          <h6>Please enter your email address</h6>
                           <%= form_for @order, :url => update_checkout_registration_path, :method => :put, :html => { :id => 'checkout_form_registration' } do |f| %>
 
                               <%= f.label :email, t(:email), :class => 'important' %><br />
