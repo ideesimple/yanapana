@@ -17,4 +17,8 @@ Spree::Order.class_eval do
     Spree::LineItem.where('order_id in (?) AND variant_id in (?)', Spree::Order.complete.map(&:id), variantes).sum(&:quantity)
   end
 
+  def cause_now
+    @cause = Spree::Cause.where("date_start <= ? AND date_finish >= ?", Time.zone.now, Time.zone.now).order('date_start ASC').first
+    return @cause
+  end
 end

@@ -1,107 +1,123 @@
+<% content_for :head do %>
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/es_US/all.js#xfbml=1";
+      fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+  </script>
+    <% @order = Spree::Order.last%>
+    <meta property="og:title" content=" Yanapana" />
+    <meta property="og:url" content=" <%= root_url %> " />
+    <meta property="og:image" content="<%= @order.cause_now.sharephoto.url(:share_photo) %>" />
+    <meta property="og:description" content="Purchase this limited edition and help support this week&#39;s awesome cause." />
+<% end %>
+
+<% @order = Spree::Order.last%>
 <div class="section_container jean pb">
-  <section>
-    <ul class="breadcrumb">
-      <li><%= link_to "Home", root_path %></li>
-      <li><a href="#">Shopping Cart</a></li>
-      <li class="active">Checkout</li>
-    </ul>
-    
-    <div class="full_page">
-      <h1><%= t(:Your_order_has_been_processed!) %></h1>
-        <div class="checkout_steps">
-          <ol id="checkoutSteps">
-      
-      
-            <li class="section allow active" id="opc-login">
-                <div class="step-title"> 
-                  <h2>Order #132456</h2>
-                </div>
-                <div id="checkout-step-confirm">
-                  <div id="shopping_cart" class="full_page">
-                    <div class="message warning"><%= render :partial => 'spree/shared/error_messages', :locals => { :target => @order } %></div>
+<section>
+<ul class="breadcrumb">
+<li><%= link_to "Home", root_path %></li>
+<li><a href="#">Shopping Cart</a></li>
+<li class="active">Checkout</li>
+</ul>
+
+<div class="full_page">
+<h1><%= "Your order has been processed!"%></h1>
+<div class="checkout_steps">
+<ol id="checkoutSteps">
+
+<li class="section allow active" id="opc-login">
+    <div class="step-title">
+      <h2><%= t(:order) + " #" + @order.number%></h2>
+    </div>
+    <div id="checkout-step-confirm">
+<!--
+  <div id="shopping_cart" class="full_page">
+<div class="message"><#% render :partial => 'spree/shared/error_messages', :locals => { :target => @order } %></div>
+
                   </div>
-                  
-                <fieldset data-hook="" id="order_summary">
-       
-                
-                <table class="index columns alpha omega sixteen" data-hook="order_details">
-                  <colgroup>
-                  <col width="30%" valign="middle" halign="center">
-                  <col width="10%" valign="middle">
-                  <col width="5%" valign="middle" halign="center">
-                  <col width="5%" valign="middle" halign="center">
-                  <col width="0%" valign="middle" halign="center">
-                
-                  </colgroup>
-                  <thead id="line-items" data-hook="">
-                    <tr data-hook="order_details_line_items_headers">
-                      <th class="name">Product Name</th>
-                      <th class="price">Price</th>
-                      <th class="quantity">Quantity</th>
-                      <th class="total">Total</th>
-                    </tr>
-                  </thead>
-                
-                  <tbody id="line-items" data-hook="">
-                      <tr data-hook="order_details_line_item_row">
-                        
-                        <td class="prod_name" data-hook="order_item_description">
-                          <b>Camiseta3</b>
-                          
-                        </td>
-                        <td data-hook="order_item_price" class="price"><span>$20.00</span></td>
-                        <td data-hook="order_item_qty">2</td>
-                        <td data-hook="order_item_total" class="total"><span>$40.00</span></td>
-                      </tr>
-                  </tbody>
-                  <tfoot id="order-total" data-hook="order_details_total">
-                    <tr class="total">
-                      <td colspan="3"><b>Order Total:</b></td>
-                      <td class="total"><span id="order_total">$40.00</span></td>
-                    </tr>
-                  </tfoot>
-                  <tfoot id="subtotal" data-hook="order_details_subtotal">
-                    <tr class="total" id="subtotal-row">
-                      <td colspan="3"><b>Subtotal:</b></td>
-                      <td class="total"><span>$40.00</span></td>
-                    </tr>
-                  </tfoot>
-                  <tfoot id="order-charges" data-hook="order_details_adjustments">
-                      <tr class="total">
-                        <td colspan="3"><strong>Shipping</strong></td>
-                        <td class="total"><span>$0.00</span></td>
-                      </tr>
-                  </tfoot>
-                </table>
-                
-                
-                  <br class="clear">
-                  <!--Facebook like button Starts-->
-                    <div class="fb-like" data-send="false" data-layout="button_count" data-width="450" data-show-faces="true"></div>
-                    <!--Facebook like button Ends-->
-                    <!--Twitter follotw button Starts-->
-                    <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>               
-                    <!--Twitter follotw button Ends-->
-                  <p data-hook="links">
-                    <a href="/" class="button">Continue Shopping!</a>
-                  </p>
-                </div>
-                </fieldset>
+                  -->
+
+                  <fieldset id="order_summary" class="index columns" data-hook>
+                    <!--<h1><%#= "Your " + t(:order) + " #" + @order.number + " has been processed!"%></h1>-->
+                    <legend><% accurate_title %></legend>
+                    <h3 align="center">Thanks for supporting our movement and helping us make this a better world!</h3>
+                    <h4 align="center">Now, make sure to tell your friends and family so that they can also help change lives!</h4>
+                    <style>
+                      html .fb_share_button {
+                        font-weight: normal;
+                        font-family: arial;
+                        font-size: 11px;
+                        text-shadow:none;
+                        display: -moz-inline-block;
+                        display:inline-block;
+                        -webkit-border-radius: 3px;
+                        -moz-border-radius: 3px;
+                        border-radius: 3px;
+                        color:#3B5998;
+                        padding:4px 4px;
+                        height:11px;
+                        border:1px solid #CAD4E7;
+                        vertical-align: top;
+                        background: #ECEEF5;
+                      }
+                      html .fb_share_button:hover {
+                        border:1px solid #9DACCE;
+                      }
+
+                      html .fb_share_button i {
+                        background: url("https://fbstatic-a.akamaihd.net/rsrc.php/v2/yn/r/EQu0O0CL23S.png") no-repeat scroll 0 -1px transparent;
+                        display:inline-block;
+                        margin-right: 2px;
+                        width: 14px;
+                        height: 12px;
+                      }
+
+
+                      .fb_share_button > span {position: relative; bottom: 2px;}
+
+                    </style>
+
+              <!--Facebook like button Ends-->
+
+                    <h4 align="center">
+                      <a target="_blank" onclick="return !window.open(this.href, 'Facebook', 'width=640,height=300')" href="http://www.facebook.com/sharer.php?u=<%= (root_url).html_safe %> " title="Share this webpage on Facebook" class="fb_share_button"><i></i><span>Share</span></a>
+                      <a class="twitter-share-button" data-via="yanapanawear" href="https://twitter.com/share" data-text="<%= @order.cause_now.title  %>+@yanapanawear.">Tweet</a>
+                    </h4>
+                    <div id="order" data-hook>
+                      <% if params.has_key? :checkout_complete %>
+                        <h1><%= t(:thank_you_for_your_order) %></h1>
+
+                      <% else %>
+
+                      <% end %>
+                      <%= render :partial => 'spree/shared/order_details', :locals => { :order => @order } %>
+
+                      <br class="clear" />
+                      <div class="fb-like" href="<%= root_url %>" data-font="arial" data-show-faces="true" data-width="50px" data-layout="button_count" data-send="false" ></div>
+                      <!--Facebook like button Ends-->
+
+                      <!--Twitter follotw button Starts-->
+                      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                      <!--Twitter follotw button Ends-->
+                      <p data-hook="links">
+                        <%= link_to t(:back_to_store), spree.root_path, :class => "button" %>
+                        <% unless params.has_key? :checkout_complete %>
+                          <% if try_spree_current_user && respond_to?(:spree_account_path) %>
+                            <%= link_to t(:my_account), spree_account_path, :class => "button" %>
+                          <% end %>
+                        <% end %>
+
+                      </p>
+                    </div>
+                  </fieldset>
 
                 </div>
-            </li>
-          </ol>
-    </div><!--Ends full page-->
-  </section>
-</div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
-
-<div id="fb-root"></div>
+              </li>
+            </ol>
+          </div><!--Ends full page-->
+        </section>
+      </div>

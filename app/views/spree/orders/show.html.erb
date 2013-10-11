@@ -4,13 +4,18 @@
     var js, fjs = d.getElementsByTagName(s)[0];
     if (d.getElementById(id)) return;
       js = d.createElement(s); js.id = id;
-      js.src = "//connect.facebook.net/es_LA/all.js#xfbml=1";
+      js.src = "//connect.facebook.net/es_US/all.js#xfbml=1";
       fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));
   </script>
 
 <% end %>
-
+<% content_for :datos_sociales do %>
+  <% if @order.try(:cause) %>
+    <meta property="og:title" content=" Yanapana" />
+    <meta property="og:url" content=" <%= root_url %> " />
+  <% end %>
+<% end %>
 
 <div class="section_container jean pb">
 <section>
@@ -24,20 +29,6 @@
 <h1><%= "Your order has been processed!"%></h1>
 <div class="checkout_steps">
 <ol id="checkoutSteps">
-<!--
-  <li id="checkout" class="sct">
-<div class="step-title">Step 1: Checkout Options</div>
-</li>
-<li id="checkout" class="sct">
-<div class="step-title">Step 2: Billing Details</div>
-</li>
-<li id="checkout" class="sct">
-<div class="step-title">Step 3: Delivery Method</div>
-</li>
-<li id="checkout" class="sct">
-<div class="step-title">Step 4: Payment Method</div>
-</li>
--->
 
 <li class="section allow active" id="opc-login">
     <div class="step-title">
@@ -54,11 +45,13 @@
                   <fieldset id="order_summary" class="index columns" data-hook>
                     <!--<h1><%#= "Your " + t(:order) + " #" + @order.number + " has been processed!"%></h1>-->
                     <legend><% accurate_title %></legend>
-
+                    <h3 align="center">Thanks for supporting our movement and helping us make this a better world!</h3>
+                    <h4 align="center">Now, make sure to tell your friends and family so that they can also help change lives!</h4>
 
                     <div id="order" data-hook>
                       <% if params.has_key? :checkout_complete %>
                         <h1><%= t(:thank_you_for_your_order) %></h1>
+
                       <% else %>
 
                       <% end %>
@@ -69,7 +62,7 @@
                       <!--Facebook like button Ends-->
 
                       <!--Twitter follotw button Starts-->
-                      <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
+                      <a class="twitter-share-button" data-via="yanapana" href="https://twitter.com/share" data-text="<%= @cause.title  %>+@yanapanawear.">Tweet</a>
                       <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
                       <!--Twitter follotw button Ends-->
                       <p data-hook="links">
