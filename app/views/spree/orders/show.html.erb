@@ -8,13 +8,10 @@
       fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));
   </script>
-
-<% end %>
-<% content_for :datos_sociales do %>
-  <% if @order.try(:cause) %>
     <meta property="og:title" content=" Yanapana" />
     <meta property="og:url" content=" <%= root_url %> " />
-  <% end %>
+    <meta property="og:image" content="<%= @order.cause_now.sharephoto.url(:share_photo) %>" />
+    <meta property="og:description" content="Every purchase helps support this week&#39;s cause. Wear YANAPANA, change lives." />
 <% end %>
 
 <div class="section_container jean pb">
@@ -47,7 +44,47 @@
                     <legend><% accurate_title %></legend>
                     <h3 align="center">Thanks for supporting our movement and helping us make this a better world!</h3>
                     <h4 align="center">Now, make sure to tell your friends and family so that they can also help change lives!</h4>
+                    <style>
+                      html .fb_share_button {
+                        font-weight: normal;
+                        font-family: arial;
+                        font-size: 11px;
+                        text-shadow:none;
+                        display: -moz-inline-block;
+                        display:inline-block;
+                        -webkit-border-radius: 3px;
+                        -moz-border-radius: 3px;
+                        border-radius: 3px;
+                        color:#3B5998;
+                        padding:4px 4px;
+                        height:11px;
+                        border:1px solid #CAD4E7;
+                        vertical-align: top;
+                        background: #ECEEF5;
+                      }
+                      html .fb_share_button:hover {
+                        border:1px solid #9DACCE;
+                      }
 
+                      html .fb_share_button i {
+                        background: url("https://fbstatic-a.akamaihd.net/rsrc.php/v2/yn/r/EQu0O0CL23S.png") no-repeat scroll 0 -1px transparent;
+                        display:inline-block;
+                        margin-right: 2px;
+                        width: 14px;
+                        height: 12px;
+                      }
+
+
+                      .fb_share_button > span {position: relative; bottom: 2px;}
+
+                    </style>
+
+              <!--Facebook like button Ends-->
+
+                    <h4 align="center">
+                      <a target="_blank" onclick="return !window.open(this.href, 'Facebook', 'width=640,height=300')" href="http://www.facebook.com/sharer.php?u=<%= (root_url).html_safe %> " title="Share this webpage on Facebook" class="fb_share_button"><i></i><span>Share</span></a>
+                      <a class="twitter-share-button" data-via="yanapanawear" href="https://twitter.com/share" data-text="<%= @order.cause_now.title  %>+@yanapanawear." data-url="<%= root_url %>">Tweet</a>
+                    </h4>
                     <div id="order" data-hook>
                       <% if params.has_key? :checkout_complete %>
                         <h1><%= t(:thank_you_for_your_order) %></h1>
