@@ -85,7 +85,7 @@
 
                     <h4 align="center">
                       <a target="_blank" onclick="return !window.open(this.href, 'Facebook', 'width=640,height=300')" href="http://www.facebook.com/sharer.php?u=<%= (root_url).html_safe %> " title="Share this webpage on Facebook" class="fb_share_button"><i></i><span>Share</span></a>
-                      <a class="twitter-share-button" data-via="yanapanawear" href="https://twitter.com/share" data-text="<%= @order.cause_now.title  %>+@yanapanawear.">Tweet</a>
+                      <a class="twitter-share-button" data-via="yanapanawear" href="https://twitter.com/share" data-text="<%= @order.cause_now.title  %>+@yanapanawear." data-url="<%= root_url %>">Tweet</a>
                     </h4>
                     <div id="order" data-hook>
                       <% if params.has_key? :checkout_complete %>
@@ -97,7 +97,6 @@
                       <%= render :partial => 'spree/shared/order_details', :locals => { :order => @order } %>
 
                       <br class="clear" />
-                      <div class="fb-like" href="<%= root_url %>" data-font="arial" data-show-faces="true" data-width="50px" data-layout="button_count" data-send="false" ></div>
                       <!--Facebook like button Ends-->
 
                       <!--Twitter follotw button Starts-->
